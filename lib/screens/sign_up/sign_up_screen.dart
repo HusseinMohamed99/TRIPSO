@@ -2,7 +2,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/screens/home/home_screen.dart';
-import 'package:tripso/shared/styles/styles.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
 import '../../shared/animation/fade_animation.dart';
 import '../../shared/components/app_bar.dart';
 import '../../shared/components/buttons.dart';

@@ -14,7 +14,7 @@ import '../../shared/components/text_form_field.dart';
 import '../../shared/cubit/SignInCubit/sign_in_cubit.dart';
 import '../../shared/cubit/SignInCubit/sign_in_state.dart';
 import '../../shared/network/cache_helper.dart';
-import '../../shared/styles/styles.dart';
+import '../../shared/styles/asset_path.dart';
 import '../password/forget_password_screen.dart';
 import '../sign_up/sign_up_screen.dart';
 

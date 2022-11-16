@@ -8,7 +8,7 @@ import '../../shared/components/navigator.dart';
 import '../../shared/components/scrollable_form.dart';
 import '../../shared/components/sized_box.dart';
 import '../../shared/styles/colors.dart';
-import '../../shared/styles/styles.dart';
+import '../../shared/styles/asset_path.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnBoard extends StatelessWidget {

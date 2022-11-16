@@ -10,7 +10,7 @@ import '../../shared/components/text_form_field.dart';
 import '../../shared/cubit/SignUpCubit/sign_up_cubit.dart';
 import '../../shared/cubit/SignUpCubit/sign_up_state.dart';
 import '../../shared/styles/colors.dart';
-import '../../shared/styles/styles.dart';
+import '../../shared/styles/asset_path.dart';
 import 'auth.dart';
 
 class UpdatePassword extends StatefulWidget {

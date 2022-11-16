@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/screens/home/home_screen.dart';
 import 'package:tripso/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/shared/styles/colors.dart';
-import 'package:tripso/shared/styles/styles.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
 import '../../shared/components/app_bar.dart';
 import '../../shared/constants/constants.dart';
 import '../../shared/components/navigator.dart';

@@ -13,7 +13,7 @@ import '../../shared/animation/fade_animation.dart';
 import '../../shared/components/navigator.dart';
 import '../../shared/cubit/restPasswordCubit/rest_password_cubit.dart';
 import '../../shared/cubit/restPasswordCubit/rest_password_state.dart';
-import '../../shared/styles/styles.dart';
+import '../../shared/styles/asset_path.dart';
 
 enum AuthMode { forgot, verify }
 
