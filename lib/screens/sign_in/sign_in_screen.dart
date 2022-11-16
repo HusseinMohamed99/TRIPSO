@@ -33,6 +33,8 @@ class SignInScreen extends StatelessWidget {
         if (state is SignInSuccessState) {
           CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
             uId = state.uid;
+            navigateAndFinish(context,
+                const HomeScreen());
           });
         } else if (state is SignInErrorState) {
           showToast(
@@ -151,9 +153,9 @@ class SignInScreen extends StatelessWidget {
                                     SignInCubit.get(context).userSignIn(
                                       email: emailController.text,
                                       password: passwordController.text,
+
                                     );
-                                    navigateAndFinish(context,
-                                        const HomeScreen());
+
                                   }
                                 },
                                 text: 'Sign in',

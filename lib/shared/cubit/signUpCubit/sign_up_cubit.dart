@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/shared/cubit/SignUpCubit/sign_up_state.dart';
 import 'package:tripso/shared/styles/styles.dart';
 import '../../../model/user_model.dart';
+import '../../components/show_toast.dart';
 
 class SignUpCubit extends Cubit<SignUpStates> {
   SignUpCubit() : super(SignUpInitialState());
@@ -54,10 +55,17 @@ class SignUpCubit extends Cubit<SignUpStates> {
         .set(model.toMap())
         .then((value) {
       emit(UserCreateSuccessState(uId));
+      showToast(
+        state: ToastStates.success,
+        text: 'Sign up Successful',
+      );
+
     }).catchError((error) {
       emit(UserCreateErrorState(error.toString()));
-
-
+      showToast(
+        state: ToastStates.error,
+        text: 'Sign up Rejected',
+      );
     });
   }
 

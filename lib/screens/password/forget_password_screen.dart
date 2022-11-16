@@ -21,8 +21,7 @@ class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
 
   @override
-  State<ForgotPassword>  createState() => _ForgotPasswordState();
-
+  State<ForgotPassword> createState() => _ForgotPasswordState();
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
@@ -44,7 +43,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   }
 
   void sendOtp() async {
-    EmailAuth.sessionName = "Company Name";
+    EmailAuth.sessionName = "TRIPSO APP";
     bool result =
         await EmailAuth.sendOtp(receiverMail: emailController.value.text);
     if (result) {
@@ -170,159 +169,155 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         const FadeAnimation(
                           1.0,
                           child: Image(
-
                               image: AssetImage(AssetPath.resetPasswordImage)),
                         ),
                         space(width: 0, height: 10),
                         Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 50.0),
-                            child: _authMode == AuthMode.forgot
-                                ? defaultTextFormField(
-                                    color: const Color(0xff938E8E)
-                                        .withOpacity(0.3),
-                                    context: context,
-                                    controller: emailController,
-                                    keyboardType: TextInputType.emailAddress,
-                                    prefix: Icons.alternate_email,
-                                    validate: (value) {
-                                      if (value!.isEmpty) {
-                                        return 'Email is Required';
-                                      }
-                                      return null;
-                                    },
-                                    hint: 'E-mail Address',
-                                  )
-                                : (submitValid)
-                                    ? PinCodeTextField(
-                              appContext: context,
-                              pastedTextStyle: TextStyle(
-                                color: const Color(0xff938E8E)
-                                    .withOpacity(0.5),
-                                fontWeight: FontWeight.bold,
-                              ),
-                              length: 6,
-                              obscureText: true,
-                              obscuringCharacter: '*',
-                              obscuringWidget: const FlutterLogo(
-                                size: 24,
-                              ),
-                              blinkWhenObscuring: true,
-                              animationType: AnimationType.fade,
-                              validator: (value) {
-                                if (value!.length < 6) {
-                                  return 'Digit Code is Required';
-                                }
-                                return null;
-                              },
-                              pinTheme: PinTheme(
-                                activeColor: secondaryColor,
-                                selectedColor: primaryColor,
-                                inactiveColor: Colors.grey,
-                                disabledColor: Colors.yellow,
-                                activeFillColor: secondaryColor,
-                                selectedFillColor: secondaryColor,
-                                inactiveFillColor: secondaryColor,
-                                errorBorderColor: Colors.redAccent,
-                                shape: PinCodeFieldShape.circle,
-                                borderRadius:
-                                BorderRadius.circular(5),
-                                fieldHeight: 50,
-                                fieldWidth: 40,
-                              ),
-                              cursorColor: Colors.black,
-                              animationDuration:
-                              const Duration(milliseconds: 300),
-                              enableActiveFill: true,
-                              // errorAnimationController: errorController,
-                              controller: otpController,
-                              keyboardType: TextInputType.number,
-                              boxShadows: const [
-                                BoxShadow(
-                                  offset: Offset(0, 1),
-                                  color: Colors.black12,
-                                  blurRadius: 10,
+                          padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                          child: _authMode == AuthMode.forgot
+                              ? defaultTextFormField(
+                                  color:
+                                      const Color(0xff938E8E).withOpacity(0.3),
+                                  context: context,
+                                  controller: emailController,
+                                  keyboardType: TextInputType.emailAddress,
+                                  prefix: Icons.alternate_email,
+                                  validate: (value) {
+                                    if (value!.isEmpty) {
+                                      return 'Email is Required';
+                                    }
+                                    return null;
+                                  },
+                                  hint: 'E-mail Address',
                                 )
-                              ],
-                              onCompleted: (v) {
-                                debugPrint("Completed");
-                              },
-                              // onTap: () {
-                              //   print("Pressed");
-                              // },
-                              onChanged: (value) {
-                                debugPrint(value);
-                              },
-                              beforeTextPaste: (text) {
-                                debugPrint("Allowing to paste $text");
-                                //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-                                //but you can show anything you want here, like your pop up saying wrong paste format or etc
-                                return true;
-                              },
-                            )
-                                    : PinCodeTextField(
-                                        appContext: context,
-                                        pastedTextStyle: TextStyle(
-                                          color: const Color(0xff938E8E)
-                                              .withOpacity(0.5),
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                        length: 6,
-                                        obscureText: true,
-                                        obscuringCharacter: '*',
-                                        obscuringWidget: const FlutterLogo(
-                                          size: 24,
-                                        ),
-                                        blinkWhenObscuring: true,
-                                        animationType: AnimationType.fade,
-                                        validator: (value) {
-                                          if (value!.length < 6) {
-                                            return 'Digit Code is Required';
-                                          }
-                                          return null;
-                                        },
-                                        pinTheme: PinTheme(
-                                          activeColor: secondaryColor,
-                                          selectedColor: primaryColor,
-                                          inactiveColor: Colors.grey,
-                                          disabledColor: Colors.yellow,
-                                          activeFillColor: secondaryColor,
-                                          selectedFillColor: secondaryColor,
-                                          inactiveFillColor: secondaryColor,
-                                          errorBorderColor: Colors.redAccent,
-                                          shape: PinCodeFieldShape.circle,
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                          fieldHeight: 50,
-                                          fieldWidth: 40,
-                                        ),
-                                        cursorColor: Colors.black,
-                                        animationDuration:
-                                            const Duration(milliseconds: 300),
-                                        enableActiveFill: true,
-                                        // errorAnimationController: errorController,
-                                        controller: otpController,
-                                        keyboardType: TextInputType.number,
-                                        boxShadows: const [
-                                          BoxShadow(
-                                            offset: Offset(0, 1),
-                                            color: Colors.black12,
-                                            blurRadius: 10,
-                                          )
-                                        ],
-                                        onCompleted: (v) {
-                                          debugPrint("Completed");
-                                        },
-                                        onChanged: (value) {
-                                          debugPrint(value);
-                                        },
-                                        beforeTextPaste: (text) {
-                                          debugPrint("Allowing to paste $text");
-                                          //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-                                          //but you can show anything you want here, like your pop up saying wrong paste format or etc
-                                          return true;
-                                        },
+                              : (submitValid)
+                                  ? PinCodeTextField(
+                                      appContext: context,
+                                      pastedTextStyle: TextStyle(
+                                        color: const Color(0xff938E8E)
+                                            .withOpacity(0.5),
+                                        fontWeight: FontWeight.bold,
                                       ),
+                                      length: 6,
+                                      obscureText: true,
+                                      obscuringCharacter: '*',
+                                      obscuringWidget: const FlutterLogo(
+                                        size: 24,
+                                      ),
+                                      blinkWhenObscuring: true,
+                                      animationType: AnimationType.fade,
+                                      validator: (value) {
+                                        if (value!.length < 6) {
+                                          return 'Digit Code is Required';
+                                        }
+                                        return null;
+                                      },
+                                      pinTheme: PinTheme(
+                                        activeColor: secondaryColor,
+                                        selectedColor: primaryColor,
+                                        inactiveColor: Colors.grey,
+                                        disabledColor: Colors.yellow,
+                                        activeFillColor: secondaryColor,
+                                        selectedFillColor: secondaryColor,
+                                        inactiveFillColor: secondaryColor,
+                                        errorBorderColor: Colors.redAccent,
+                                        shape: PinCodeFieldShape.circle,
+                                        borderRadius: BorderRadius.circular(5),
+                                        fieldHeight: 50,
+                                        fieldWidth: 40,
+                                      ),
+                                      cursorColor: Colors.black,
+                                      animationDuration:
+                                          const Duration(milliseconds: 300),
+                                      enableActiveFill: true,
+                                      // errorAnimationController: errorController,
+                                      controller: otpController,
+                                      keyboardType: TextInputType.number,
+                                      boxShadows: const [
+                                        BoxShadow(
+                                          offset: Offset(0, 1),
+                                          color: Colors.black12,
+                                          blurRadius: 10,
+                                        )
+                                      ],
+                                      onCompleted: (v) {
+                                        debugPrint("Completed");
+                                      },
+                                      // onTap: () {
+                                      //   print("Pressed");
+                                      // },
+                                      onChanged: (value) {
+                                        debugPrint(value);
+                                      },
+                                      beforeTextPaste: (text) {
+                                        debugPrint("Allowing to paste $text");
+                                        //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
+                                        //but you can show anything you want here, like your pop up saying wrong paste format or etc
+                                        return true;
+                                      },
+                                    )
+                                  : PinCodeTextField(
+                                      appContext: context,
+                                      pastedTextStyle: TextStyle(
+                                        color: const Color(0xff938E8E)
+                                            .withOpacity(0.5),
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      length: 6,
+                                      obscureText: true,
+                                      obscuringCharacter: '*',
+                                      obscuringWidget: const FlutterLogo(
+                                        size: 24,
+                                      ),
+                                      blinkWhenObscuring: true,
+                                      animationType: AnimationType.fade,
+                                      validator: (value) {
+                                        if (value!.length < 6) {
+                                          return 'Digit Code is Required';
+                                        }
+                                        return null;
+                                      },
+                                      pinTheme: PinTheme(
+                                        activeColor: secondaryColor,
+                                        selectedColor: primaryColor,
+                                        inactiveColor: Colors.grey,
+                                        disabledColor: Colors.yellow,
+                                        activeFillColor: secondaryColor,
+                                        selectedFillColor: secondaryColor,
+                                        inactiveFillColor: secondaryColor,
+                                        errorBorderColor: Colors.redAccent,
+                                        shape: PinCodeFieldShape.circle,
+                                        borderRadius: BorderRadius.circular(5),
+                                        fieldHeight: 50,
+                                        fieldWidth: 40,
+                                      ),
+                                      cursorColor: Colors.black,
+                                      animationDuration:
+                                          const Duration(milliseconds: 300),
+                                      enableActiveFill: true,
+                                      // errorAnimationController: errorController,
+                                      controller: otpController,
+                                      keyboardType: TextInputType.number,
+                                      boxShadows: const [
+                                        BoxShadow(
+                                          offset: Offset(0, 1),
+                                          color: Colors.black12,
+                                          blurRadius: 10,
+                                        )
+                                      ],
+                                      onCompleted: (v) {
+                                        debugPrint("Completed");
+                                      },
+                                      onChanged: (value) {
+                                        debugPrint(value);
+                                      },
+                                      beforeTextPaste: (text) {
+                                        debugPrint("Allowing to paste $text");
+                                        //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
+                                        //but you can show anything you want here, like your pop up saying wrong paste format or etc
+                                        return true;
+                                      },
+                                    ),
                         ),
                         space(width: 0, height: 50),
                         defaultButton(
