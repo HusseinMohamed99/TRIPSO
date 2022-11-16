@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
           'HOME Screen',
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 45,
               height: 1.3,
               fontWeight: FontWeight.w600,
