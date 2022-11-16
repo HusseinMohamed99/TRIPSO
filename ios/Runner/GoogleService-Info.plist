@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>685122047268-t6sk2b9d71dq9aijvqh2ahsmndn0etuf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.685122047268-t6sk2b9d71dq9aijvqh2ahsmndn0etuf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCjpNH8u1kJti8E-YpUeEN3XOdogLarRlQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>685122047268</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.tripso</string>
+	<key>PROJECT_ID</key>
+	<string>tripso-1fb71</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tripso-1fb71.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:685122047268:ios:ec46abf9ae2836deb777b1</string>
+</dict>
+</plist>

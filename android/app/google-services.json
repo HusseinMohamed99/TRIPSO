@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "536479207520",
+    "project_id": "tripso-ac883",
+    "storage_bucket": "tripso-ac883.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536479207520:android:347cc00c15d8219bf0b305",
+        "android_client_info": {
+          "package_name": "com.example.tripso"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536479207520-p9ajb2dp723clcmp1btut4j2ddp66o8h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwTFt1yGvqAv-7pm6q8SyY0bCyiQQaB_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536479207520-p9ajb2dp723clcmp1btut4j2ddp66o8h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "536479207520-atp51lgm4hpnfcp2b4ce1gd28rpq5gfp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tripso"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
