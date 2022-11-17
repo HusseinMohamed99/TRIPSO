@@ -21,7 +21,7 @@ class ResetPasswordCubit extends Cubit<ResetPasswordStates> {
       emit(ResetPasswordSuccessState());
     }).catchError((error) {
       debugPrint(error.toString());
-      emit(ResetPasswordErrorState());
+
     });
   }
 

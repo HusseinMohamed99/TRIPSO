@@ -1,10 +1,13 @@
-import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:tripso/screens/splash/splash_screen.dart';
 import 'package:tripso/shared/bloc_observer.dart';
 import 'package:tripso/shared/constants/constants.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'shared/network/cache_helper.dart';
 import 'firebase_options.dart';
 
@@ -14,13 +17,18 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-
   Bloc.observer = MyBlocObserver();
 
   await CacheHelper.init();
 
   uId = CacheHelper.getData(key: 'uId');
-
+  // Widget widget;
+  // if (uId != null) {
+  //   widget = const HomeScreen();
+  // } else {
+  //   widget = const OnBoard();
+  // }
+  debugPrint(uId);
   runApp(const MyApp());
 }
 
@@ -30,19 +38,32 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: (context, child) => ResponsiveWrapper.builder(child,
-          maxWidth: 1200,
-          minWidth: 390,
-          defaultScale: true,
-          breakpoints: const [
-            ResponsiveBreakpoint.resize(390, name: MOBILE),
-            ResponsiveBreakpoint.autoScale(800, name: TABLET),
-            ResponsiveBreakpoint.resize(1000, name: DESKTOP),
-          ],
-          background: Container(color: const Color(0xFFF5F5F5))),
-      debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => TripsoCubit()..getUserData()),
+      ],
+      child: BlocConsumer<TripsoCubit,TripsoStates>(
+          listener: (context, state) {},
+          builder: (context, state) {
+            SystemChrome.setPreferredOrientations([
+              DeviceOrientation.portraitUp,
+              DeviceOrientation.portraitDown,
+            ]);
+            return MaterialApp(
+              builder: (context, child) => ResponsiveWrapper.builder(child,
+                  maxWidth: 1200,
+                  minWidth: 390,
+                  defaultScale: true,
+                  breakpoints: const [
+                    ResponsiveBreakpoint.resize(390, name: MOBILE),
+                    ResponsiveBreakpoint.autoScale(800, name: TABLET),
+                    ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+                  ],
+                  background: Container(color: const Color(0xFFF5F5F5))),
+              debugShowCheckedModeBanner: false,
+              home: const SplashScreen(),
+            );
+          }),
     );
   }
 }

@@ -7,39 +7,25 @@ import '../../shared/components/buttons.dart';
 import '../../shared/components/navigator.dart';
 import '../../shared/components/sized_box.dart';
 import '../../shared/components/text_form_field.dart';
-import '../../shared/cubit/SignUpCubit/sign_up_cubit.dart';
-import '../../shared/cubit/SignUpCubit/sign_up_state.dart';
+import '../../shared/cubit/tripsoCubit/tripso_cubit.dart';
+import '../../shared/cubit/tripsoCubit/tripso_state.dart';
 import '../../shared/styles/colors.dart';
 import '../../shared/styles/asset_path.dart';
-import 'auth.dart';
 
-class UpdatePassword extends StatefulWidget {
-  const UpdatePassword({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<UpdatePassword> createState() => _UpdatePasswordState();
-}
-
-class _UpdatePasswordState extends State<UpdatePassword> {
-  var passController = TextEditingController();
-  var confirmPassController = TextEditingController();
-  var updateFormKey = GlobalKey<FormState>();
-
-  Future<void> _submit(String newPassword) async {
-    await AuthServices().changePassword(newPassword);
-  }
-
-  bool isLoading = false;
+class UpdatePassword extends StatelessWidget {
+  const UpdatePassword({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) => SignUpCubit(),
-      child: BlocConsumer<SignUpCubit, SignUpStates>(
+    var newPasswordController = TextEditingController();
+    var confirmationPasswordController = TextEditingController();
+
+    // var userModel = TripsoCubit.get(context).userModel;
+    return BlocConsumer<TripsoCubit, TripsoStates>(
           listener: (context, state) {},
           builder: (context, state) {
+            var updatePasswordKey = GlobalKey<FormState>();
+            var cubit = TripsoCubit.get(context);
             return Scaffold(
               appBar: AppBar(
                 systemOverlayStyle: const SystemUiOverlayStyle(
@@ -50,8 +36,8 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                 elevation: 0,
                 leading: IconButton(
                   onPressed: () {
-                    passController.clear();
-                    confirmPassController.clear();
+                    newPasswordController.clear();
+                    confirmationPasswordController.clear();
                     pop(context);
                   },
                   icon: const Icon(
@@ -72,7 +58,7 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                 ),
               ),
               body: Form(
-                key: updateFormKey,
+                key: updatePasswordKey,
                 child: CustomScrollView(slivers: [
                   SliverFillRemaining(
                     hasScrollBody: false,
@@ -114,19 +100,23 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                               defaultTextFormField(
                                 color: const Color(0xff938E8E).withOpacity(0.3),
                                 context: context,
-                                controller: passController,
+                                controller: newPasswordController,
                                 keyboardType: TextInputType.visiblePassword,
-                                validate: (value) {
+                                validate: (String? value) {
                                   if (value!.isEmpty) {
                                     return 'Password is Required';
+                                  }
+                                  if (value !=
+                                      confirmationPasswordController.text) {
+                                    return ' Password is not the same';
                                   }
                                   return null;
                                 },
                                 prefix: Icons.lock_outline_sharp,
-                                suffix: SignUpCubit.get(context).suffix,
-                                isPassword: SignUpCubit.get(context).isPassword,
+                                suffix: cubit.suffix,
+                                isPassword: cubit.isPassword,
                                 suffixPressed: () {
-                                  SignUpCubit.get(context).showPassword();
+                                  cubit.showPassword();
                                 },
                                 hint: 'Password',
                               ),
@@ -134,19 +124,22 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                               defaultTextFormField(
                                 color: const Color(0xff938E8E).withOpacity(0.3),
                                 context: context,
-                                controller: confirmPassController,
+                                controller: confirmationPasswordController,
                                 keyboardType: TextInputType.visiblePassword,
                                 validate: (value) {
                                   if (value!.isEmpty) {
-                                    return 'Confirm New Password is Required';
+                                    return 'Password is Required';
+                                  }
+                                  if (value != newPasswordController.text) {
+                                    return ' Password is not the same';
                                   }
                                   return null;
                                 },
                                 prefix: Icons.lock_outline_sharp,
-                                suffix: SignUpCubit.get(context).suffix,
-                                isPassword: SignUpCubit.get(context).isPassword,
+                                suffix: cubit.suffix,
+                                isPassword: cubit.isPassword,
                                 suffixPressed: () {
-                                  SignUpCubit.get(context).showPassword();
+                                  cubit.showPassword();
                                 },
                                 hint: 'Confirm New Password',
                               )
@@ -154,9 +147,7 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                           ),
                         ),
                         space(width: 0, height: 50),
-                        isLoading
-                            ? const CircularProgressIndicator()
-                            : defaultButton(
+                        defaultButton(
                                 color: primaryColor,
                                 widget: Text(
                                   'Reset Password',
@@ -168,26 +159,20 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                                   ),
                                 ),
                                 function: () {
-                                  setState(() {
-                                    isLoading = true;
-                                  });
-                                  passController.text ==
-                                          confirmPassController.text
-                                      ? _submit(passController.text)
-                                      : debugPrint("failed");
-                                  setState(() {
-                                    isLoading = false;
-                                  });
-                                  pop(context);
+                                  if (updatePasswordKey.currentState!
+                                      .validate()) {
+                                    cubit.changeUserPassword(
+                                      password: newPasswordController.text,
+                                    );
+                                  }
                                 },
-                              ),
+                              )
                       ],
                     ),
                   ),
                 ]),
               ),
             );
-          }),
-    );
+          });
   }
 }
