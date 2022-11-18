@@ -34,7 +34,7 @@ dependencies:
   simple_animations: ^4.2.0
   supercharged: ^2.1.1
   http: ^0.13.5
-  email_auth: ^0.0.1
+  email_auth:  ^1.0.0
   pin_code_fields: ^7.4.0
 
   # firebase

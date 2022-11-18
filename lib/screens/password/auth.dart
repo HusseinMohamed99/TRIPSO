@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthServices {
    String? _token;
 
-  Future<void> _authenticate(
+  Future<void> authenticate(
       String email, String password, String urlSegment) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     final url =  Uri.https('https://identitytoolkit.com/v1/accounts:$urlSegment?key=""');
@@ -37,11 +37,11 @@ class AuthServices {
   }
 
   Future<void> signUp(String email, String password) async {
-    return _authenticate(email, password, 'signUp');
+    return authenticate(email, password, 'signUp');
   }
 
   Future<void> login(String email, String password) async {
-    return _authenticate(email, password, 'signInWithPassword');
+    return authenticate(email, password, 'signInWithPassword');
   }
 
   Future<void> changePassword(String newPassword) async {

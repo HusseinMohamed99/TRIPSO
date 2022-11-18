@@ -9,7 +9,8 @@ Future<bool?> alertDialog({
   required String image,
   required String title,
   required String text,
-}){
+  required Function()? function,
+}) {
   return Alert(
     style: AlertStyle(
       animationType: AnimationType.grow,
@@ -17,12 +18,10 @@ Future<bool?> alertDialog({
       backgroundColor: secondaryColor,
       isCloseButton: false,
       descStyle: GoogleFonts.roboto(
-          color: color,
-          fontSize: 24,
-          fontWeight: FontWeight.w700),
+          color: color, fontSize: 24, fontWeight: FontWeight.w700),
     ),
     //   padding: EdgeInsets.zero,
-    image:   Image(
+    image: Image(
       image: AssetImage(image),
       height: 200,
       width: 300,
@@ -32,16 +31,12 @@ Future<bool?> alertDialog({
     desc: title,
     buttons: [
       DialogButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
+        onPressed: function,
         color: primaryColor,
         child: Text(
           text,
           style: GoogleFonts.roboto(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.w700),
+              color: Colors.white, fontSize: 24, fontWeight: FontWeight.w700),
         ),
       )
     ],
