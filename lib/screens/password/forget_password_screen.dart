@@ -191,7 +191,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       padding: const EdgeInsets.symmetric(horizontal: 50.0),
                       child: _authMode == AuthMode.forgot
                           ? defaultTextFormField(
-                              color: const Color(0xff938E8E).withOpacity(0.3),
+                              color:Colors.grey.shade400,
                               context: context,
                               controller: emailController,
                               keyboardType: TextInputType.emailAddress,
@@ -362,20 +362,21 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 if (_authMode == AuthMode.forgot) {
                                   sendOtp();
                                   _switchAuthMode();
+                                   alertDialog(
+                                       context: context,
+                                       color: Colors.green,
+                                       image: AssetPath.warningImage,
+                                       title: 'Check Your Mail',
+                                       text: 'Done',
+                                       function: () {
+                                        pop(context);
+                                       });
                                 } else {
                                   verify();
                                   otpController.clear();
                                   navigateTo(context, const UpdatePassword());
                                 }
-                                // alertDialog(
-                                //     context: context,
-                                //     color: Colors.green,
-                                //     image: AssetPath.warningImage,
-                                //     title: 'Check your mail',
-                                //     text: 'Done',
-                                //     function: () {
-                                //      pop(context);
-                                //     });
+
                               }
                             },
                             widget: Text(
