@@ -19,6 +19,7 @@ Widget defaultTextFormField({
   IconData? prefix,
   Function? suffixPressed,
   TextStyle? style,
+  String obscuringCharacter = '•',
 }) {
   return TextFormField(
     focusNode: focusNode,
@@ -31,7 +32,7 @@ Widget defaultTextFormField({
     ),
     maxLines: 1,
     minLines: 1,
-    // obscuringCharacter: obscuring!,
+    obscuringCharacter: obscuringCharacter,
     controller: controller,
     validator: validate,
     enabled: isClickable,
