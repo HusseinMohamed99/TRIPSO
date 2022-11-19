@@ -33,8 +33,7 @@ class SignInScreen extends StatelessWidget {
         if (state is SignInSuccessState) {
           CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
             uId = state.uid;
-            navigateAndFinish(context,
-                const HomeScreen());
+            navigateAndFinish(context, const HomeScreen());
           });
         } else if (state is SignInErrorState) {
           showToast(
@@ -53,130 +52,92 @@ class SignInScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: FadeAnimation(1.5,
+              child: FadeAnimation(
+                1.5,
                 child: Scaffold(
                   backgroundColor: Colors.transparent,
                   appBar: defaultAppBar(),
                   body: customScrollableForm(
-                      child: Form(
-                        key: formKey,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            space(width: 0 ,height: 240),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 50),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    'Email Address',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  space(width: 0 ,height: 8),
-                                  defaultTextFormField(
-                                    color: Colors.white30,
-                                    context: context,
-                                    controller: emailController,
-                                    keyboardType: TextInputType.emailAddress,
-                                    validate: (String? value) {
-                                      if (value!.isEmpty) {
-                                        return 'Email Address is Required';
-                                      }
-                                      return null;
-                                    },
-                                    hint: 'Email Address',
-                                    prefix: Icons.alternate_email,
-                                  ),
-                                  space(width: 0 ,height: 26),
-                                  const Text(
-                                    'Password',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  space(width: 0 ,height: 8),
-                                  defaultTextFormField(
-                                    color: Colors.white30,
-                                    context: context,
-                                    controller: passwordController,
-                                    keyboardType: TextInputType.visiblePassword,
-                                    validate: (String? value) {
-                                      if (value!.isEmpty) {
-                                        return 'Password is Required';
-                                      }
-                                      return null;
-                                    },
-                                    prefix: Icons.lock_outline_sharp,
-                                    suffix: SignInCubit.get(context).suffix,
-                                    isPassword: SignInCubit.get(context).isPassword,
-                                    suffixPressed: () {
-                                      SignInCubit.get(context).showPassword();
-                                    },
-                                    hint: 'Enter Password',
-                                  ),
-                                ],
-                              ),
-                            ),
-                            space(width: 0 ,height: 17),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 50),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  TextButton(
-                                    onPressed: () {
-                                      navigateTo(
-                                          context,  const ForgotPassword());
-                                    },
-                                    child: const Text(
-                                      'Forgot Password ?',
-                                      style: TextStyle(
-                                        color: primaryColor,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            space(width: 0 ,height: 104),
-                            Center(
-                              child: defaultMaterialButton(
-                                function: () {
-                                  if (formKey.currentState!.validate()) {
-                                    SignInCubit.get(context).userSignIn(
-                                      email: emailController.text,
-                                      password: passwordController.text,
-
-                                    );
-
-                                  }
-                                },
-                                text: 'Sign in',
-                                color: primaryColor,
-                              ),
-                            ),
-                            space(width: 0 ,height: 28),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                    child: Form(
+                      key: formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          space(width: 0, height: 240),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 50),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Text(
-                                  'Don\'t have an account?',
-                                  style: TextStyle(color: Colors.white),
+                                  'Email Address',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
+                                space(width: 0, height: 8),
+                                defaultTextFormField(
+                                  color: Colors.white30,
+                                  context: context,
+                                  controller: emailController,
+                                  keyboardType: TextInputType.emailAddress,
+                                  validate: (String? value) {
+                                    if (value!.isEmpty) {
+                                      return 'Email Address is Required';
+                                    }
+                                    return null;
+                                  },
+                                  hint: 'Email Address',
+                                  prefix: Icons.alternate_email,
+                                ),
+                                space(width: 0, height: 26),
+                                const Text(
+                                  'Password',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                space(width: 0, height: 8),
+                                defaultTextFormField(
+                                  color: Colors.white30,
+                                  context: context,
+                                  controller: passwordController,
+                                  obscuringCharacter: '*',
+                                  keyboardType: TextInputType.visiblePassword,
+                                  validate: (String? value) {
+                                    if (value!.isEmpty) {
+                                      return 'Password is Required';
+                                    }
+                                    return null;
+                                  },
+                                  prefix: Icons.lock_outline_sharp,
+                                  suffix: SignInCubit.get(context).suffix,
+                                  isPassword:
+                                      SignInCubit.get(context).isPassword,
+                                  suffixPressed: () {
+                                    SignInCubit.get(context).showPassword();
+                                  },
+                                  hint: 'Enter Password',
+                                ),
+                              ],
+                            ),
+                          ),
+                          space(width: 0, height: 17),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 50),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
                                 TextButton(
                                   onPressed: () {
-                                    // navigateAndFinish(context, const RegisterScreen());
-                                    navigateTo(context, const RegisterScreen());
+                                    navigateTo(context, const ForgotPassword());
                                   },
                                   child: const Text(
-                                    'Sign up',
+                                    'Forgot Password ?',
                                     style: TextStyle(
                                       color: primaryColor,
                                     ),
@@ -184,10 +145,47 @@ class SignInScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                          ],
-                        ),
+                          ),
+                          space(width: 0, height: 104),
+                          Center(
+                            child: defaultMaterialButton(
+                              function: () {
+                                if (formKey.currentState!.validate()) {
+                                  SignInCubit.get(context).userSignIn(
+                                    email: emailController.text,
+                                    password: passwordController.text,
+                                  );
+                                }
+                              },
+                              text: 'Sign in',
+                              color: primaryColor,
+                            ),
+                          ),
+                          space(width: 0, height: 28),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                'Don\'t have an account?',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  navigateTo(context, const RegisterScreen());
+                                },
+                                child: const Text(
+                                  'Sign up',
+                                  style: TextStyle(
+                                    color: primaryColor,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
+                  ),
                 ),
               ),
             ),

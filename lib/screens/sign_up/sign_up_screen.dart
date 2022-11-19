@@ -178,6 +178,7 @@ class RegisterScreen extends StatelessWidget {
                                     defaultTextFormField(
                                       color: Colors.white30,
                                       context: context,
+                                      obscuringCharacter: '*',
                                       controller: passwordController,
                                       keyboardType:
                                           TextInputType.visiblePassword,
@@ -203,8 +204,8 @@ class RegisterScreen extends StatelessWidget {
                               ),
                               space(width: 0, height: 70),
                               ConditionalBuilder(
-                                  condition: state is! SignUpLoadingState,
-                                  builder: (context) => defaultMaterialButton(
+                                condition: state is! SignUpLoadingState,
+                                builder: (context) => defaultMaterialButton(
                                   function: () {
                                     if (formKey.currentState!.validate()) {
                                       SignUpCubit.get(context).userSignUp(
@@ -217,13 +218,11 @@ class RegisterScreen extends StatelessWidget {
                                   },
                                   text: 'Sign up',
                                   color: primaryColor,
-                                ),fallback: (BuildContext context) =>
-            const Center(child:  CircularProgressIndicator()),
-            ),
-
-
-
-
+                                ),
+                                fallback: (BuildContext context) =>
+                                    const Center(
+                                        child: CircularProgressIndicator()),
+                              ),
                             ],
                           ),
                         ],

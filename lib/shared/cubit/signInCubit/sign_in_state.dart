@@ -19,11 +19,5 @@ class SignInErrorState extends SignInStates{
 
 class ShowPasswordState extends SignInStates{}
 
-// get user Reload states
-class SignInReloadLoadingState extends SignInStates {}
-class SignInReloadSuccessState extends SignInStates {}
-class SignInReloadErrorState extends SignInStates {
-  final String? errorString ;
-  SignInReloadErrorState(this.errorString);
-}
+
 

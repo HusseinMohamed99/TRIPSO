@@ -22,12 +22,7 @@ void main() async {
   await CacheHelper.init();
 
   uId = CacheHelper.getData(key: 'uId');
-  // Widget widget;
-  // if (uId != null) {
-  //   widget = const HomeScreen();
-  // } else {
-  //   widget = const OnBoard();
-  // }
+
   debugPrint(uId);
   runApp(const MyApp());
 }

@@ -20,13 +20,10 @@ Widget defaultMaterialButton({
     color: color,
   ),
   child: MaterialButton(
-
     clipBehavior : Clip.antiAliasWithSaveLayer,
     height: 22,
     minWidth: 59,
     onPressed: function,
-    // color: color,
-
     child: FittedBox(
       child: Text(
         textAlign : TextAlign.center,
@@ -65,12 +62,9 @@ Widget defaultButton({
     height: 22,
     minWidth: 59,
     onPressed: function,
-    // color: color,
-
     child: FittedBox(
       child: widget,
       ),
     ),
-
 );
 

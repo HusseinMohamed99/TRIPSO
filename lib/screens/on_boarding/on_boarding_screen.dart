@@ -139,7 +139,6 @@ class OnBoard extends StatelessWidget {
               color: primaryColor,
             ),
             space(width: 0 ,height: 26),
-
             defaultMaterialButton(
               function: () {
                 navigateTo(context, const RegisterScreen());

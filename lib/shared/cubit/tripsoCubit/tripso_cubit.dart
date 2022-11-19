@@ -51,8 +51,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
 ///END : ChangeUserPassword
 
 // ----------------------------------------------------------//
-
-// ----------------------------------------------------------//
   ///START : Show Password
   IconData suffix = Icons.visibility_outlined;
   bool isPassword = true;

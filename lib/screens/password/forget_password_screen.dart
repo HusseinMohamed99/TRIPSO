@@ -247,7 +247,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   animationDuration:
                                       const Duration(milliseconds: 300),
                                   enableActiveFill: true,
-                                  // errorAnimationController: errorController,
                                   controller: otpController,
                                   keyboardType: TextInputType.number,
                                   boxShadows: const [
@@ -260,9 +259,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   onCompleted: (v) {
                                     debugPrint("Completed");
                                   },
-                                  // onTap: () {
-                                  //   print("Pressed");
-                                  // },
                                   onChanged: (value) {
                                     debugPrint(value);
                                   },
@@ -312,7 +308,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   animationDuration:
                                       const Duration(milliseconds: 300),
                                   enableActiveFill: true,
-                                  // errorAnimationController: errorController,
                                   controller: otpController,
                                   keyboardType: TextInputType.number,
                                   boxShadows: const [
@@ -330,8 +325,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   },
                                   beforeTextPaste: (text) {
                                     debugPrint("Allowing to paste $text");
-                                    //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-                                    //but you can show anything you want here, like your pop up saying wrong paste format or etc
                                     return true;
                                   },
                                 ),
@@ -405,7 +398,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           ),
                           color: primaryColor,
                         ),
-
                   ],
                 ),
               ),
