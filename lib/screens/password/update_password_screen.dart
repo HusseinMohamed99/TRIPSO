@@ -104,7 +104,7 @@ class UpdatePassword extends StatelessWidget {
                           child: Column(
                             children: [
                               defaultTextFormField(
-                                color: const Color(0xff938E8E).withOpacity(0.3),
+                          color:Colors.grey.shade400,
                                 context: context,
                                 controller: newPasswordController,
                                 keyboardType: TextInputType.visiblePassword,
@@ -129,7 +129,7 @@ class UpdatePassword extends StatelessWidget {
                               ),
                               space(width: 0, height: 30),
                               defaultTextFormField(
-                                color: const Color(0xff938E8E).withOpacity(0.3),
+                                color:Colors.grey.shade400,
                                 context: context,
                                 controller: confirmationPasswordController,
                                 keyboardType: TextInputType.visiblePassword,
