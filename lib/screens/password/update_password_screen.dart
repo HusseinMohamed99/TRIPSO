@@ -108,6 +108,7 @@ class UpdatePassword extends StatelessWidget {
                                 context: context,
                                 controller: newPasswordController,
                                 keyboardType: TextInputType.visiblePassword,
+                                obscuringCharacter: '*',
                                 validate: (String? value) {
                                   if (value!.isEmpty) {
                                     return 'Password is Required';
@@ -132,6 +133,7 @@ class UpdatePassword extends StatelessWidget {
                                 context: context,
                                 controller: confirmationPasswordController,
                                 keyboardType: TextInputType.visiblePassword,
+                                obscuringCharacter: '*',
                                 validate: (value) {
                                   if (value!.isEmpty) {
                                     return 'Password is Required';
