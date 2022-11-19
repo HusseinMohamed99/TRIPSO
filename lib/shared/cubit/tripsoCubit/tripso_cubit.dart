@@ -61,7 +61,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
     emit(ShowPasswordState());
   }
-
 ///END : Show Password
 
 //------------------------------------------------------------//

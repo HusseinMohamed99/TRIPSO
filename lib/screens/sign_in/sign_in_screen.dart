@@ -106,7 +106,7 @@ class SignInScreen extends StatelessWidget {
                                   color: Colors.white30,
                                   context: context,
                                   controller: passwordController,
-                                  obscuringCharacter: '*',
+                                  //obscuringCharacter: '*',
                                   keyboardType: TextInputType.visiblePassword,
                                   validate: (String? value) {
                                     if (value!.isEmpty) {

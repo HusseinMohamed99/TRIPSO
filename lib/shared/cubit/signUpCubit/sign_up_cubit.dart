@@ -80,3 +80,4 @@ class SignUpCubit extends Cubit<SignUpStates> {
     emit(ChangePasswordSignUpState());
   }
 }
+

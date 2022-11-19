@@ -42,17 +42,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   void initState() {
     super.initState();
     // Initialize the package
-    emailAuth =  EmailAuth(
+    emailAuth = EmailAuth(
       sessionName: "TRIPSO APP",
     );
   }
 
-
-
   void sendOtp() async {
-    //EmailAuth.sessionName = ;
-    bool result = await emailAuth!.sendOtp(
-        recipientMail: emailController.value.text, otpLength: 6);
+    bool result = await emailAuth!
+        .sendOtp(recipientMail: emailController.value.text, otpLength: 6);
     if (result) {
       setState(() {
         submitValid = true;
@@ -222,7 +219,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                     size: 24,
                                   ),
                                   blinkWhenObscuring: true,
-
                                   validator: (value) {
                                     if (value!.length < 6) {
                                       return 'Digit Code is Required';
@@ -332,72 +328,69 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     space(width: 0, height: 50),
                     uId == null
                         ? defaultButton(
-                          function: () {
-                            if (forgetFormKey.currentState!.validate()) {
-                              ResetPasswordCubit.get(context).resetPassword(
-                                email: emailController.text,
-                              );
-                              alertDialog(
-                                  context: context,
-                                  color: Colors.green,
-                                  image: AssetPath.warningImage,
-                                  title: 'Check your mail',
-                                  text: 'Done',
-                                  function: () {
-                                    navigateAndFinish(
-                                        context, const SignInScreen());
-                                  });
-                            }
-                          },
-                          widget: Text(
-                            'Verify Email With Link',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.roboto(
-                              fontSize: 19,
-                              color: const Color(0xffFFFFFF),
-                              fontWeight: FontWeight.w500,
+                            function: () {
+                              if (forgetFormKey.currentState!.validate()) {
+                                ResetPasswordCubit.get(context).resetPassword(
+                                  email: emailController.text,
+                                );
+                                alertDialog(
+                                    context: context,
+                                    color: Colors.green,
+                                    image: AssetPath.warningImage,
+                                    title: 'Check your mail',
+                                    text: 'Done',
+                                    function: () {
+                                      navigateAndFinish(
+                                          context, const SignInScreen());
+                                    });
+                              }
+                            },
+                            widget: Text(
+                              'Verify Email',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.roboto(
+                                fontSize: 19,
+                                color: const Color(0xffFFFFFF),
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
-                          ),
-                          color: primaryColor,
-                        )
+                            color: primaryColor,
+                          )
                         : defaultButton(
-                          function: () {
-                            if (forgetFormKey.currentState!.validate()) {
-                              if (_authMode == AuthMode.forgot) {
-                              sendOtp();
-                              _switchAuthMode();
-                              pop(context);
-                            } else {
-                              pop(context);
-                              verify();
-                              otpController.clear();
-                              navigateTo(
-                                  context, const UpdatePassword());
-                            }
-                              alertDialog(
-                                  context: context,
-                                  color: Colors.green,
-                                  image: AssetPath.warningImage,
-                                  title: 'Check your mail',
-                                  text: 'Done',
-                                  function: () {
-                                pop(context);
-                                  });
-                            }
-                          },
-                          widget: Text(
-                            _authMode == AuthMode.forgot
-                                ? 'Verify Email With Code'
-                                : 'Confirm',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.roboto(
-                              fontSize: 19,
-                              color: const Color(0xffFFFFFF),
-                              fontWeight: FontWeight.w500,
+                            function: () {
+                              if (forgetFormKey.currentState!.validate()) {
+                                if (_authMode == AuthMode.forgot) {
+                                  sendOtp();
+                                  _switchAuthMode();
+                                } else {
+                                  verify();
+                                  otpController.clear();
+                                  navigateTo(context, const UpdatePassword());
+                                }
+                                // alertDialog(
+                                //     context: context,
+                                //     color: Colors.green,
+                                //     image: AssetPath.warningImage,
+                                //     title: 'Check your mail',
+                                //     text: 'Done',
+                                //     function: () {
+                                //      pop(context);
+                                //     });
+                              }
+                            },
+                            widget: Text(
+                              _authMode == AuthMode.forgot
+                                  ? 'Verify Email'
+                                  : 'Confirm',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.roboto(
+                                fontSize: 19,
+                                color: const Color(0xffFFFFFF),
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
+                            color: primaryColor,
                           ),
-                          color: primaryColor,
-                        ),
                   ],
                 ),
               ),

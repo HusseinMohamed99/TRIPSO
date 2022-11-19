@@ -12,3 +12,16 @@ PreferredSizeWidget defaultAppBar ()=> AppBar(
   scrolledUnderElevation: 0,
   toolbarHeight: 0,
 );
+
+
+PreferredSizeWidget secondAppBar ()=> AppBar(
+  systemOverlayStyle: const SystemUiOverlayStyle(
+      statusBarBrightness: Brightness.dark,
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark
+  ),
+  backgroundColor: Colors.transparent,
+  elevation: 0,
+  scrolledUnderElevation: 0,
+  toolbarHeight: 0,
+);

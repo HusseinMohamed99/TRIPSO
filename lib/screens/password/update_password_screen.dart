@@ -21,7 +21,6 @@ class UpdatePassword extends StatelessWidget {
     var newPasswordController = TextEditingController();
     var confirmationPasswordController = TextEditingController();
 
-    // var userModel = TripsoCubit.get(context).userModel;
     return BlocConsumer<TripsoCubit, TripsoStates>(
           listener: (context, state)
           {

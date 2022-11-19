@@ -178,7 +178,7 @@ class RegisterScreen extends StatelessWidget {
                                     defaultTextFormField(
                                       color: Colors.white30,
                                       context: context,
-                                      obscuringCharacter: '*',
+                                      //obscuringCharacter: '*',
                                       controller: passwordController,
                                       keyboardType:
                                           TextInputType.visiblePassword,
