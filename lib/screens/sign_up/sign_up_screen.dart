@@ -214,6 +214,10 @@ class RegisterScreen extends StatelessWidget {
                                         firstName: firstnameController.text,
                                         lastName: lastnameController.text,
                                       );
+                                      emailController.clear();
+                                      passwordController.clear();
+                                      firstnameController.clear();
+                                      lastnameController.clear();
                                     }
                                   },
                                   text: 'Sign up',

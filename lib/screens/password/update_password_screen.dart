@@ -149,7 +149,7 @@ class UpdatePassword extends StatelessWidget {
                                 suffixPressed: () {
                                   cubit.showPassword();
                                 },
-                                hint: 'Confirm New Password',
+                                hint: 'Confirm Password',
                               )
                             ],
                           ),
@@ -158,7 +158,7 @@ class UpdatePassword extends StatelessWidget {
                         defaultButton(
                                 color: primaryColor,
                                 widget: Text(
-                                  'Reset Password',
+                                  'Change Password',
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.roboto(
                                     fontSize: 19,
@@ -172,6 +172,8 @@ class UpdatePassword extends StatelessWidget {
                                     cubit.changeUserPassword(
                                       password: newPasswordController.text,
                                     );
+                                    newPasswordController.clear();
+                                    confirmationPasswordController.clear();
                                   }
                                 },
                               )

@@ -342,6 +342,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                     function: () {
                                       navigateAndFinish(
                                           context, const SignInScreen());
+                                      emailController.clear();
                                     });
                               }
                             },

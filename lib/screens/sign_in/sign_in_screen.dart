@@ -155,6 +155,8 @@ class SignInScreen extends StatelessWidget {
                                     email: emailController.text,
                                     password: passwordController.text,
                                   );
+                                  emailController.clear();
+                                  passwordController.clear();
                                 }
                               },
                               text: 'Sign in',
