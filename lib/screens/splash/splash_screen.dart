@@ -37,7 +37,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
   void initState() {
     super.initState();
     animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 3));
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
     fadingAnimation =
         Tween<double>(begin: 0.1, end: 1).animate(animationController!);
 
@@ -105,7 +105,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
 
   void goToNextView() {
     Widget widget;
-    Future.delayed(const Duration(seconds: 4), () {
+    Future.delayed(const Duration(seconds: 2), () {
       if (uId != null) {
         widget = const HomeScreen();
       } else {
