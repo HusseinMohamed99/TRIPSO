@@ -8,6 +8,7 @@ import 'package:tripso/shared/bloc_observer.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/styles/colors.dart';
 import 'shared/network/cache_helper.dart';
 import 'firebase_options.dart';
 
@@ -56,6 +57,8 @@ class MyApp extends StatelessWidget {
                   ],
                   background: Container(color: const Color(0xFFF5F5F5))),
               debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                  colorSchemeSeed: primaryColor, useMaterial3: true,),
               home: const SplashScreen(),
             );
           }),

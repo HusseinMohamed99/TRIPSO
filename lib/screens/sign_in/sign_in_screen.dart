@@ -1,3 +1,4 @@
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:tripso/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -54,7 +55,7 @@ class SignInScreen extends StatelessWidget {
               ),
               child: FadeAnimation(
                 1.5,
-                child: Scaffold(
+                child: PlatformScaffold(
                   backgroundColor: Colors.transparent,
                   appBar: defaultAppBar(),
                   body: customScrollableForm(

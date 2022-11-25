@@ -160,16 +160,15 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   email: emailController.text,
                                 );
                                 alertDialog(
-                                    context: context,
-                                    color: Colors.green,
-                                    image: AssetPath.warningImage,
-                                    title: 'Check your mail',
-                                    text: 'Done',
-                                    function: () {
-                                      navigateAndFinish(
-                                          context, const SignInScreen());
-                                      emailController.clear();
-                                    });
+                                  context: context,
+                                  title: 'Forget Password?',
+                                  function: () {
+                                    navigateAndFinish(
+                                        context, const SignInScreen());
+                                    emailController.clear();
+                                  },
+                                  content: 'Check your mail',
+                                );
                               }
                             },
                             widget: Text(
@@ -190,14 +189,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   sendOtp();
                                   _switchAuthMode();
                                   alertDialog(
-                                      context: context,
-                                      color: Colors.green,
-                                      image: AssetPath.warningImage,
-                                      title: 'Check Your Mail',
-                                      text: 'Done',
-                                      function: () {
-                                        pop(context);
-                                      });
+                                    context: context,
+                                    title: 'Forget Password?',
+                                    function: () {
+                                      pop(context);
+                                    },
+                                    content: 'Check your mail',
+                                  );
                                 } else {
                                   verify();
                                   otpController.clear();

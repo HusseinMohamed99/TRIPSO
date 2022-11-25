@@ -1,3 +1,4 @@
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:tripso/screens/sign_in/sign_in_screen.dart';
@@ -27,7 +28,7 @@ class OnBoard extends StatelessWidget {
             ),
           ),
           child: FadeAnimation(1.3,
-            child: Scaffold(
+            child: PlatformScaffold(
               appBar: defaultAppBar(),
               backgroundColor: Colors.transparent,
               body: Padding(

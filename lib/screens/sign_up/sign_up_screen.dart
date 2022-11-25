@@ -1,6 +1,7 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:tripso/screens/home/home_screen.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import '../../shared/animation/fade_animation.dart';
@@ -50,8 +51,8 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               child: FadeAnimation(
-                1.5,
-                child: Scaffold(
+                1.0,
+                child: PlatformScaffold(
                   backgroundColor: Colors.transparent,
                   appBar: defaultAppBar(),
                   body: customScrollableForm(
