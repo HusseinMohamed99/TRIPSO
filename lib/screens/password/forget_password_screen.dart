@@ -1,3 +1,4 @@
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:tripso/screens/password/update_password_screen.dart';
 import 'package:tripso/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/components/alert_dialog.dart';
@@ -88,25 +89,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           );
         }
       }, builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(
-            systemOverlayStyle: const SystemUiOverlayStyle(
-                statusBarBrightness: Brightness.dark,
-                statusBarColor: Colors.transparent,
-                statusBarIconBrightness: Brightness.dark),
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            leading: IconButton(
-              onPressed: () {
-                emailController.clear();
-                pop(context);
-              },
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.black,
-              ),
-            ),
-            titleSpacing: 1,
+        return PlatformScaffold(
+          appBar: PlatformAppBar(
             title: Text(
               'Reset Password',
               style: GoogleFonts.roboto(
@@ -117,7 +101,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 ),
               ),
             ),
-            actions: [
+            backgroundColor: Colors.transparent,
+            trailingActions: [
               if (_authMode == AuthMode.verify)
                 TextButton(
                   onPressed: sendOtp,
@@ -138,7 +123,29 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                 ),
             ],
+            leading: IconButton(
+              onPressed: () {
+                emailController.clear();
+                pop(context);
+              },
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ),
+            ),
+            material: (context, __)  => MaterialAppBarData(
+              systemOverlayStyle: const SystemUiOverlayStyle(
+                  statusBarBrightness: Brightness.dark,
+                  statusBarColor: Colors.transparent,
+                  statusBarIconBrightness: Brightness.dark),
+              elevation: 0,
+              titleSpacing: 1,
+            ),
+            cupertino: (context, __) => CupertinoNavigationBarData(
+              brightness: Brightness.dark,
+            ),
           ),
+
           body: Form(
             key: forgetFormKey,
             child: CustomScrollView(slivers: [

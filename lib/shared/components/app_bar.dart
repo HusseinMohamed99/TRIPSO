@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 PlatformAppBar defaultAppBar ()=> PlatformAppBar(
-  material: (context, __)  => MaterialAppBarData(
+  backgroundColor: Colors.transparent,
+  material: (_, __)  => MaterialAppBarData(
     systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarBrightness: Brightness.light,
-        statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.light
     ),
     backgroundColor: Colors.transparent,
@@ -14,27 +14,23 @@ PlatformAppBar defaultAppBar ()=> PlatformAppBar(
     scrolledUnderElevation: 0,
     toolbarHeight: 0,
   ),
-  cupertino: (_, __) => CupertinoNavigationBarData(
-    backgroundColor: Colors.transparent,
-  ),
-
+ cupertino: (_, __) => CupertinoNavigationBarData(),
 );
 
 
 PlatformAppBar secondAppBar ()=> PlatformAppBar(
-  material: (context, __)  => MaterialAppBarData(
+  backgroundColor: Colors.transparent,
+  material: (_, __)  => MaterialAppBarData(
     systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.dark,
-        statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark
-    ),
-    backgroundColor: Colors.transparent,
+      statusBarBrightness: Brightness.dark,
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark
+  ),
     elevation: 0,
     scrolledUnderElevation: 0,
-    toolbarHeight: 0,
-  ),
-  cupertino: (_, __) => CupertinoNavigationBarData(
-    backgroundColor: Colors.transparent,
-  ),
+    toolbarHeight: 0,),
+   cupertino: (_, __) => CupertinoNavigationBarData(
+     brightness: Brightness.dark,
+   ),
 
 );

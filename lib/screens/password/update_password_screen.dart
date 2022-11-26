@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/screens/sign_in/sign_in_screen.dart';
 import '../../shared/animation/fade_animation.dart';
@@ -28,14 +29,9 @@ class UpdatePassword extends StatelessWidget {
     }, builder: (context, state) {
       var updatePasswordKey = GlobalKey<FormState>();
       var cubit = TripsoCubit.get(context);
-      return Scaffold(
-        appBar: AppBar(
-          systemOverlayStyle: const SystemUiOverlayStyle(
-              statusBarBrightness: Brightness.dark,
-              statusBarColor: Colors.transparent,
-              statusBarIconBrightness: Brightness.dark),
+      return PlatformScaffold(
+        appBar:PlatformAppBar(
           backgroundColor: Colors.transparent,
-          elevation: 0,
           leading: IconButton(
             onPressed: () {
               newPasswordController.clear();
@@ -47,7 +43,7 @@ class UpdatePassword extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          titleSpacing: 1,
+
           title: Text(
             'New Password',
             style: GoogleFonts.roboto(
@@ -57,6 +53,20 @@ class UpdatePassword extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
+          ),
+
+
+
+          material: (context, __)  => MaterialAppBarData(
+            systemOverlayStyle: const SystemUiOverlayStyle(
+                statusBarBrightness: Brightness.dark,
+                statusBarColor: Colors.transparent,
+                statusBarIconBrightness: Brightness.dark),
+            elevation: 0,
+            titleSpacing: 1,
+          ),
+          cupertino: (context, __) => CupertinoNavigationBarData(
+            brightness: Brightness.dark,
           ),
         ),
         body: Form(

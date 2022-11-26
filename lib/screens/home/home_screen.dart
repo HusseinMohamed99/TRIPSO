@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/shared/components/buttons.dart';
-
 import '../../shared/components/app_bar.dart';
 import '../../shared/components/log_out.dart';
 import '../../shared/styles/colors.dart';
