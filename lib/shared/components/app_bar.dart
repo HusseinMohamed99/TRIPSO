@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 PlatformAppBar defaultAppBar ()=> PlatformAppBar(
-
   material: (context, __)  => MaterialAppBarData(
     systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarBrightness: Brightness.light,
