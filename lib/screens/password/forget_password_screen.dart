@@ -48,6 +48,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     );
   }
 
+
+
   void sendOtp() async {
     bool result = await emailAuth!
         .sendOtp(recipientMail: emailController.value.text, otpLength: 6);

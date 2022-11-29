@@ -1,4 +1,3 @@
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
@@ -32,12 +31,19 @@ class RegisterScreen extends StatelessWidget {
       create: (BuildContext context) => SignUpCubit(),
       child:
           BlocConsumer<SignUpCubit, SignUpStates>(listener: (context, state) {
-        if (state is UserCreateSuccessState) {
-          CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
-            uId = state.uid;
-            showToast(text: 'Sign up Successful', state: ToastStates.success);
-            navigateAndFinish(context, const HomeScreen());
-          });
+        if (state is! SignUpLoadingState) {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return const Center(child: CircularProgressIndicator());
+              });
+          if (state is UserCreateSuccessState) {
+            CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
+              uId = state.uid;
+              showToast(text: 'Sign up Successful', state: ToastStates.success);
+              navigateAndFinish(context, const HomeScreen());
+            });
+          }
         }
       }, builder: (context, state) {
         return Stack(
@@ -204,29 +210,23 @@ class RegisterScreen extends StatelessWidget {
                                 ),
                               ),
                               space(width: 0, height: 70),
-                              ConditionalBuilder(
-                                condition: state is! SignUpLoadingState,
-                                builder: (context) => defaultMaterialButton(
-                                  function: () {
-                                    if (formKey.currentState!.validate()) {
-                                      SignUpCubit.get(context).userSignUp(
-                                        email: emailController.text,
-                                        password: passwordController.text,
-                                        firstName: firstnameController.text,
-                                        lastName: lastnameController.text,
-                                      );
-                                      emailController.clear();
-                                      passwordController.clear();
-                                      firstnameController.clear();
-                                      lastnameController.clear();
-                                    }
-                                  },
-                                  text: 'Sign up',
-                                  color: primaryColor,
-                                ),
-                                fallback: (BuildContext context) =>
-                                    const Center(
-                                        child: CircularProgressIndicator()),
+                              defaultMaterialButton(
+                                function: () {
+                                  if (formKey.currentState!.validate()) {
+                                    SignUpCubit.get(context).userSignUp(
+                                      email: emailController.text,
+                                      password: passwordController.text,
+                                      firstName: firstnameController.text,
+                                      lastName: lastnameController.text,
+                                    );
+                                    emailController.clear();
+                                    passwordController.clear();
+                                    firstnameController.clear();
+                                    lastnameController.clear();
+                                  }
+                                },
+                                text: 'Sign up',
+                                color: primaryColor,
                               ),
                             ],
                           ),

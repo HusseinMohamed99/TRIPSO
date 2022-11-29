@@ -225,3 +225,27 @@ class PasswordFormField extends StatelessWidget {
     );
   }
 }
+
+
+// import 'package:flutter/material.dart';
+//
+// import 'auth.dart';
+//
+// class UpdatePassword extends StatefulWidget {
+//   const UpdatePassword({
+//     Key? key,
+//   }) : super(key: key);
+//
+//   @override
+//   _UpdatePasswordState createState() => _UpdatePasswordState();
+// }
+//
+// class _UpdatePasswordState extends State<UpdatePassword> {
+//   final TextEditingController _passController = TextEditingController();
+//
+//   final TextEditingController _confirmPassController = TextEditingController();
+//
+//   Future<void> _submit(String newPassword) async {
+//     await AuthServices().changePassword(newPassword);
+//   }
+

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/shared/components/buttons.dart';
+import '../../shared/animation/fade_animation.dart';
 import '../../shared/components/app_bar.dart';
 import '../../shared/components/log_out.dart';
 import '../../shared/styles/colors.dart';
@@ -13,26 +14,29 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return PlatformScaffold(
       appBar: secondAppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'HOME Screen',
-              style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 45,
-                  height: 1.3,
-                  fontWeight: FontWeight.w600,
+      body: FadeAnimation(
+        1.5,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'HOME Screen',
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 45,
+                    height: 1.3,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
-            ),
-            defaultMaterialButton(function: ()
-            {
-              logOut(context);
-            }, text: 'logOut',  color: primaryColor,)
-          ],
+              defaultMaterialButton(function: ()
+              {
+                logOut(context);
+              }, text: 'logOut',  color: primaryColor,)
+            ],
+          ),
         ),
       ),
     );

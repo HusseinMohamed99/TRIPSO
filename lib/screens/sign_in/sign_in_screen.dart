@@ -31,6 +31,13 @@ class SignInScreen extends StatelessWidget {
       create: (BuildContext context) => SignInCubit(),
       child:
           BlocConsumer<SignInCubit, SignInStates>(listener: (context, state) {
+        if (state is! SignInLoadingState) {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return const Center(child: CircularProgressIndicator());
+              });
+        }
         if (state is SignInSuccessState) {
           CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
             uId = state.uid;

@@ -24,7 +24,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       emit(GetUserDataErrorState(error.toString()));
     });
   }
-
   // ----------------------------------------------------------//
   ///START : ChangeUserPassword
   void changeUserPassword({
