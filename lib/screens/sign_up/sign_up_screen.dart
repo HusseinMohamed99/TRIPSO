@@ -46,198 +46,193 @@ class RegisterScreen extends StatelessWidget {
           }
         }
       }, builder: (context, state) {
-        return Stack(
-          children: [
-            Container(
-              constraints: const BoxConstraints.expand(),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(AssetPath.signUPImage),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: FadeAnimation(
-                1.0,
-                child: PlatformScaffold(
-                  backgroundColor: Colors.transparent,
-                  appBar: defaultAppBar(),
-                  body: customScrollableForm(
-                    child: Form(
-                      key: formKey,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+        return Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(AssetPath.signUPImage),
+              fit: BoxFit.fill,
+            ),
+          ),
+          child: FadeAnimation(
+            1.0,
+            child: PlatformScaffold(
+              backgroundColor: Colors.transparent,
+              appBar: defaultAppBar(),
+              body: customScrollableForm(
+                child: Form(
+                  key: formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          pop(context);
+                        },
+                        icon: const Icon(
+                          Icons.arrow_back,
+                          size: 25,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          IconButton(
-                            onPressed: () {
-                              pop(context);
-                            },
-                            icon: const Icon(
-                              Icons.arrow_back,
-                              size: 25,
-                              color: Colors.white,
+                          Container(
+                            margin: const EdgeInsets.only(
+                                top: 30, bottom: 50, right: 20, left: 20),
+                            child: const Text(
+                              'Create Account',
+                              style: TextStyle(
+                                  fontSize: 30,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                margin: const EdgeInsets.only(
-                                    top: 30, bottom: 50, right: 20, left: 20),
-                                child: const Text(
-                                  'Create Account',
+                          space(width: 0, height: 32),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 50),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'First Name',
                                   style: TextStyle(
-                                      fontSize: 30,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                              ),
-                              space(width: 0, height: 32),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 50),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      'First Name',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    space(width: 0, height: 8),
-                                    defaultTextFormField(
-                                      color: Colors.white30,
-                                      context: context,
-                                      controller: firstnameController,
-                                      keyboardType: TextInputType.name,
-                                      validate: (String? value) {
-                                        if (value!.isEmpty) {
-                                          return 'First Name is Required';
-                                        }
-                                        return null;
-                                      },
-                                      prefix: Icons.edit_outlined,
-                                      hint: 'First Name',
-                                    ),
-                                    space(width: 0, height: 20),
-                                    const Text(
-                                      'Last Name',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    space(width: 0, height: 8),
-                                    defaultTextFormField(
-                                      color: Colors.white30,
-                                      context: context,
-                                      controller: lastnameController,
-                                      keyboardType: TextInputType.name,
-                                      validate: (String? value) {
-                                        if (value!.isEmpty) {
-                                          return 'Last Name is Required';
-                                        }
-                                        return null;
-                                      },
-                                      prefix: Icons.edit_outlined,
-                                      hint: 'Last Name',
-                                    ),
-                                    space(width: 0, height: 20),
-                                    const Text(
-                                      'Email Address',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    space(width: 0, height: 8),
-                                    defaultTextFormField(
-                                      color: Colors.white30,
-                                      context: context,
-                                      controller: emailController,
-                                      keyboardType: TextInputType.emailAddress,
-                                      validate: (String? value) {
-                                        if (value!.isEmpty) {
-                                          return 'Email is Required';
-                                        } else if (value.length < 16) {
-                                          return 'Sorry, your mail must be\n between 16 and 30 characters long.';
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                      prefix: Icons.alternate_email,
-                                      hint: 'Email Address',
-                                    ),
-                                    space(width: 0, height: 20),
-                                    const Text(
-                                      'Password',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    space(width: 0, height: 8),
-                                    defaultTextFormField(
-                                      color: Colors.white30,
-                                      context: context,
-                                      obscuringCharacter: '*',
-                                      controller: passwordController,
-                                      keyboardType:
-                                          TextInputType.visiblePassword,
-                                      validate: (String? value) {
-                                        if (value!.isEmpty) {
-                                          return "Password is Required";
-                                        } else if (value.length < 8) {
-                                          return "Use, 8 characters or more for your password";
-                                        }
-                                        return null;
-                                      },
-                                      prefix: Icons.lock_outline_sharp,
-                                      suffix: SignUpCubit.get(context).suffix,
-                                      isPassword:
-                                          SignUpCubit.get(context).isPassword,
-                                      suffixPressed: () {
-                                        SignUpCubit.get(context).showPassword();
-                                      },
-                                      hint: 'Password',
-                                    ),
-                                  ],
+                                space(width: 0, height: 8),
+                                defaultTextFormField(
+                                  color: Colors.white30,
+                                  context: context,
+                                  controller: firstnameController,
+                                  keyboardType: TextInputType.name,
+                                  validate: (String? value) {
+                                    if (value!.isEmpty) {
+                                      return 'First Name is Required';
+                                    }
+                                    return null;
+                                  },
+                                  prefix: Icons.edit_outlined,
+                                  hint: 'First Name',
                                 ),
-                              ),
-                              space(width: 0, height: 70),
-                              defaultMaterialButton(
-                                function: () {
-                                  if (formKey.currentState!.validate()) {
-                                    SignUpCubit.get(context).userSignUp(
-                                      email: emailController.text,
-                                      password: passwordController.text,
-                                      firstName: firstnameController.text,
-                                      lastName: lastnameController.text,
-                                    );
-                                    emailController.clear();
-                                    passwordController.clear();
-                                    firstnameController.clear();
-                                    lastnameController.clear();
-                                  }
-                                },
-                                text: 'Sign up',
-                                color: primaryColor,
-                              ),
-                            ],
+                                space(width: 0, height: 20),
+                                const Text(
+                                  'Last Name',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                space(width: 0, height: 8),
+                                defaultTextFormField(
+                                  color: Colors.white30,
+                                  context: context,
+                                  controller: lastnameController,
+                                  keyboardType: TextInputType.name,
+                                  validate: (String? value) {
+                                    if (value!.isEmpty) {
+                                      return 'Last Name is Required';
+                                    }
+                                    return null;
+                                  },
+                                  prefix: Icons.edit_outlined,
+                                  hint: 'Last Name',
+                                ),
+                                space(width: 0, height: 20),
+                                const Text(
+                                  'Email Address',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                space(width: 0, height: 8),
+                                defaultTextFormField(
+                                  color: Colors.white30,
+                                  context: context,
+                                  controller: emailController,
+                                  keyboardType: TextInputType.emailAddress,
+                                  validate: (String? value) {
+                                    if (value!.isEmpty) {
+                                      return 'Email is Required';
+                                    } else if (value.length < 16) {
+                                      return 'Sorry, your mail must be\n between 16 and 30 characters long.';
+                                    } else {
+                                      return null;
+                                    }
+                                  },
+                                  prefix: Icons.alternate_email,
+                                  hint: 'Email Address',
+                                ),
+                                space(width: 0, height: 20),
+                                const Text(
+                                  'Password',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                space(width: 0, height: 8),
+                                defaultTextFormField(
+                                  color: Colors.white30,
+                                  context: context,
+                                  obscuringCharacter: '*',
+                                  controller: passwordController,
+                                  keyboardType:
+                                      TextInputType.visiblePassword,
+                                  validate: (String? value) {
+                                    if (value!.isEmpty) {
+                                      return "Password is Required";
+                                    } else if (value.length < 8) {
+                                      return "Use, 8 characters or more for your password";
+                                    }
+                                    return null;
+                                  },
+                                  prefix: Icons.lock_outline_sharp,
+                                  suffix: SignUpCubit.get(context).suffix,
+                                  isPassword:
+                                      SignUpCubit.get(context).isPassword,
+                                  suffixPressed: () {
+                                    SignUpCubit.get(context).showPassword();
+                                  },
+                                  hint: 'Password',
+                                ),
+                              ],
+                            ),
+                          ),
+                          space(width: 0, height: 70),
+                          defaultMaterialButton(
+                            function: () {
+                              if (formKey.currentState!.validate()) {
+                                SignUpCubit.get(context).userSignUp(
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                  firstName: firstnameController.text,
+                                  lastName: lastnameController.text,
+                                );
+                                emailController.clear();
+                                passwordController.clear();
+                                firstnameController.clear();
+                                lastnameController.clear();
+                              }
+                            },
+                            text: 'Sign up',
+                            color: primaryColor,
                           ),
                         ],
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),
             ),
-          ],
+          ),
         );
       }),
     );

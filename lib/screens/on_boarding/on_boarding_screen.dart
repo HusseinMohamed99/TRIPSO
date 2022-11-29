@@ -17,40 +17,35 @@ class OnBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          constraints: const BoxConstraints.expand(),
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AssetPath.onBoardImage),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: FadeAnimation(1.3,
-            child: PlatformScaffold(
-              appBar: defaultAppBar(),
-              backgroundColor: Colors.transparent,
-              body: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                child: Center(
-                  child: customScrollableForm(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          space(width: 0 ,height: 270),
-                          welcomeText(),
-                          space(width: 0 ,height: 89),
-                          button(context),
-                        ],
-                      ),
-                    ),
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AssetPath.onBoardImage),
+          fit: BoxFit.fill,
+        ),
+      ),
+      child: FadeAnimation(1.3,
+        child: PlatformScaffold(
+          appBar: defaultAppBar(),
+          backgroundColor: Colors.transparent,
+          body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50.0),
+            child: Center(
+              child: customScrollableForm(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      space(width: 0 ,height: 270),
+                      welcomeText(),
+                      space(width: 0 ,height: 89),
+                      button(context),
+                    ],
+                  ),
                 ),
-              ),
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 
