@@ -24,7 +24,7 @@ void navigateTo(context, {required String routeName, Object? arguments}) {
   Navigator.pushNamed(context, routeName, arguments: arguments);
 }
 
-void navigateToWithRoute(context, widget) {
+void navigateToWithRouting(context, widget) {
   Navigator.push(context, widget);
   Navigator.push(context, Routing().createRoute(widget));
 }
@@ -35,7 +35,7 @@ void navigateAndFinish(context,
       context, routeName, arguments: arguments, (route) => false);
 }
 
-void navigateAndFinishWithRoute(context, widget) {
+void navigateAndFinishWithRouting(context, widget) {
   Navigator.pushAndRemoveUntil(context, Routing().createRoute(widget), (route) {
     return false;
   });
