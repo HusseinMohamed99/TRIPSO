@@ -29,8 +29,11 @@ void navigateToWithRouting(context, widget) {
   Navigator.push(context, Routing().createRoute(widget));
 }
 
-void navigateAndFinish(context,
-    {required String routeName, Object? arguments, Widget? widget}) {
+void navigateAndFinish(
+  context, {
+  required String routeName,
+  Object? arguments,
+}) {
   Navigator.pushNamedAndRemoveUntil(
       context, routeName, arguments: arguments, (route) => false);
 }
