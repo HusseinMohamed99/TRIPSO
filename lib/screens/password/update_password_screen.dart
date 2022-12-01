@@ -12,6 +12,7 @@ import '../../shared/cubit/tripsoCubit/tripso_cubit.dart';
 import '../../shared/cubit/tripsoCubit/tripso_state.dart';
 import '../../shared/styles/colors.dart';
 import '../../shared/styles/asset_path.dart';
+import '../sign_in/sign_in_screen.dart';
 
 class UpdatePassword extends StatelessWidget {
   static const String routeName = 'update_password_screen';
@@ -24,7 +25,7 @@ class UpdatePassword extends StatelessWidget {
 
     return BlocConsumer<TripsoCubit, TripsoStates>(listener: (context, state) {
       if (state is ChangeUserPasswordSuccessState) {
-        navigateAndFinish(context, routeName: 'SignInScreen');
+        navigateAndFinish(context,routeName: SignInScreen.routeName);
       }
     }, builder: (context, state) {
       var updatePasswordKey = GlobalKey<FormState>();

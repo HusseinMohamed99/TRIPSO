@@ -1,6 +1,8 @@
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tripso/screens/home/home_screen.dart';
+import 'package:tripso/screens/password/forget_password_screen.dart';
 import 'package:tripso/shared/styles/colors.dart';
 import '../../shared/animation/fade_animation.dart';
 import '../../shared/components/app_bar.dart';
@@ -15,6 +17,7 @@ import '../../shared/cubit/SignInCubit/sign_in_cubit.dart';
 import '../../shared/cubit/SignInCubit/sign_in_state.dart';
 import '../../shared/network/cache_helper.dart';
 import '../../shared/styles/asset_path.dart';
+import '../sign_up/sign_up_screen.dart';
 
 
 class SignInScreen extends StatelessWidget {
@@ -40,7 +43,7 @@ class SignInScreen extends StatelessWidget {
         if (state is SignInSuccessState) {
           CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
             uId = state.uid;
-            navigateAndFinish(context, routeName: 'HomeScreen');
+            navigateAndFinish(context, routeName: HomeScreen.routeName);
           });
         } else if (state is SignInErrorState) {
           showToast(
@@ -138,7 +141,7 @@ class SignInScreen extends StatelessWidget {
                           children: [
                             TextButton(
                               onPressed: () {
-                                navigateTo(context,  routeName: 'ForgotPassword');
+                                navigateTo(context,routeName: ForgotPassword.routeName);
                               },
                               child: const Text(
                                 'Forgot Password ?',
@@ -177,7 +180,7 @@ class SignInScreen extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              navigateTo(context, routeName: 'SignUpScreen',);
+                              navigateTo(context, routeName: SignUpScreen.routeName);
 
                             },
                             child: const Text(

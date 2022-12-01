@@ -5,6 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:tripso/screens/home/home_screen.dart';
 import 'package:tripso/screens/on_boarding/on_boarding_screen.dart';
+import 'package:tripso/screens/password/forget_password_screen.dart';
+import 'package:tripso/screens/password/update_password_screen.dart';
+import 'package:tripso/screens/sign_in/sign_in_screen.dart';
+import 'package:tripso/screens/sign_up/sign_up_screen.dart';
+import 'package:tripso/screens/splash/splash_screen.dart';
 import 'package:tripso/shared/bloc_observer.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
@@ -73,16 +78,17 @@ class MyApp extends StatelessWidget {
                 colorSchemeSeed: primaryColor,
                 useMaterial3: true,
               ),
-              // routes: {
-              //   OnBoard.routeName: (_) => const OnBoard(),
-              //   HomeScreen.routeName: (_) => const HomeScreen(),
-              //   SignInScreen.routeName: (_) => const SignInScreen(),
-              //   SignUpScreen.routeName: (_) => const SignUpScreen(),
-              //   ForgotPassword.routeName: (_) => const ForgotPassword(),
-              //   UpdatePassword.routeName: (_) => const UpdatePassword(),
-              // },
-              // initialRoute: OnBoard.routeName,
-              home: startWidget,
+              routes: {
+                SplashScreen.routeName: (_) => const SplashScreen(),
+                OnBoard.routeName: (_) => const OnBoard(),
+                HomeScreen.routeName: (_) => const HomeScreen(),
+                SignInScreen.routeName: (_) => const SignInScreen(),
+                SignUpScreen.routeName: (_) => const SignUpScreen(),
+                ForgotPassword.routeName: (_) => const ForgotPassword(),
+                UpdatePassword.routeName: (_) => const UpdatePassword(),
+              },
+              initialRoute: SplashScreen.routeName,
+              //home: startWidget,
             );
           }),
     );

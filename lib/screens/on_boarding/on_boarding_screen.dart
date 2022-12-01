@@ -10,6 +10,9 @@ import '../../shared/styles/colors.dart';
 import '../../shared/styles/asset_path.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../sign_in/sign_in_screen.dart';
+import '../sign_up/sign_up_screen.dart';
+
 class OnBoard extends StatelessWidget {
   static const String routeName = 'onBoard_screen';
   const OnBoard({Key? key}) : super(key: key);
@@ -128,7 +131,7 @@ class OnBoard extends StatelessWidget {
           children: [
             defaultMaterialButton(
               function: () {
-                navigateAndFinish(context,routeName: 'SignInScreen');
+                navigateAndFinish(context,routeName: SignInScreen.routeName);
               },
               text: 'Sign in',
               color: primaryColor,
@@ -136,7 +139,7 @@ class OnBoard extends StatelessWidget {
             space(width: 0 ,height: 26),
             defaultMaterialButton(
               function: () {
-                navigateTo(context,routeName: 'SignUpScreen');
+                navigateTo(context,routeName: SignUpScreen.routeName);
               },
               text: 'Sign up',
               color: primaryColor.withOpacity(0.30),

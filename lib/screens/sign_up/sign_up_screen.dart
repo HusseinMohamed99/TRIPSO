@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:tripso/screens/home/home_screen.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import '../../shared/animation/fade_animation.dart';
 import '../../shared/components/app_bar.dart';
@@ -41,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
             CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
               uId = state.uid;
               showToast(text: 'Sign up Successful', state: ToastStates.success);
-              navigateAndFinish(context, routeName: 'HomeScreen');
+              navigateAndFinish(context, routeName: HomeScreen.routeName);
             });
           }
         }

@@ -1,4 +1,5 @@
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:tripso/screens/password/update_password_screen.dart';
 import 'package:tripso/shared/components/alert_dialog.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/sized_box.dart';
@@ -17,6 +18,7 @@ import '../../shared/components/show_toast.dart';
 import '../../shared/cubit/restPasswordCubit/rest_password_cubit.dart';
 import '../../shared/cubit/restPasswordCubit/rest_password_state.dart';
 import '../../shared/styles/asset_path.dart';
+import '../sign_in/sign_in_screen.dart';
 
 enum AuthMode { forgot, verify }
 
@@ -172,7 +174,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   title: 'Forget Password?',
                                   function: () {
                                     navigateAndFinish(
-                                        context, routeName: 'SignInScreen');
+                                        context, routeName: SignInScreen.routeName);
                                     emailController.clear();
                                   },
                                   content: 'Check your mail',
@@ -207,7 +209,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 } else {
                                   verify();
                                   otpController.clear();
-                                  navigateTo(context, routeName: 'UpdatePassword');
+                                  navigateTo(context, routeName: UpdatePassword.routeName);
                                 }
                               }
                             },
