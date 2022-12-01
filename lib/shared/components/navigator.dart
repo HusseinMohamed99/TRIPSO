@@ -23,20 +23,29 @@ void pop(context) {
   Navigator.pop(context);
 }
 
-void navigateTo(context, String routeName) {
+void navigateTo(context,{required String routeName,Object? arguments }) {
 
-  Navigator.pushNamed(context, routeName);
+  Navigator.pushNamed( context, routeName,arguments: arguments);
   // Navigator.push(
   //     context,
   //     Routing().createRoute(widget));
 }
 
-void navigateAndFinish(context, widget) {
-  Navigator.pushAndRemoveUntil(
+void navigateAndFinish(context,{required String routeName,Object? arguments }) {
+
+
+  Navigator.pushNamedAndRemoveUntil(
       context,
-      Routing().createRoute(widget), (route) {
-    return false;
-  });
+      routeName,
+      arguments:arguments ,
+    (route) =>false);
+
+
+  // Navigator.pushAndRemoveUntil(
+  //     context,
+  //     Routing().createRoute(widget), (route) {
+  //   return false;
+  // });
 }
 
 

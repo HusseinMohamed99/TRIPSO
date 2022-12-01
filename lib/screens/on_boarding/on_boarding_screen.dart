@@ -1,7 +1,6 @@
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:flutter/material.dart';
-import 'package:tripso/screens/sign_in/sign_in_screen.dart';
 import '../../shared/components/app_bar.dart';
 import '../../shared/components/buttons.dart';
 import '../../shared/components/navigator.dart';
@@ -129,7 +128,7 @@ class OnBoard extends StatelessWidget {
           children: [
             defaultMaterialButton(
               function: () {
-                navigateAndFinish(context, const SignInScreen());
+                navigateAndFinish(context,routeName: 'SignInScreen');
               },
               text: 'Sign in',
               color: primaryColor,
@@ -137,7 +136,7 @@ class OnBoard extends StatelessWidget {
             space(width: 0 ,height: 26),
             defaultMaterialButton(
               function: () {
-                navigateTo(context, 'SignUpScreen');
+                navigateTo(context,routeName: 'SignUpScreen');
               },
               text: 'Sign up',
               color: primaryColor.withOpacity(0.30),

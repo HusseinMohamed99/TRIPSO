@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/screens/sign_in/sign_in_screen.dart';
 import '../../shared/animation/fade_animation.dart';
 import '../../shared/components/buttons.dart';
 import '../../shared/components/navigator.dart';
@@ -25,7 +24,7 @@ class UpdatePassword extends StatelessWidget {
 
     return BlocConsumer<TripsoCubit, TripsoStates>(listener: (context, state) {
       if (state is ChangeUserPasswordSuccessState) {
-        navigateAndFinish(context, const SignInScreen());
+        navigateAndFinish(context, routeName: 'SignInScreen');
       }
     }, builder: (context, state) {
       var updatePasswordKey = GlobalKey<FormState>();

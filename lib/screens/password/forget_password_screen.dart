@@ -1,5 +1,4 @@
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:tripso/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/components/alert_dialog.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/sized_box.dart';
@@ -173,7 +172,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   title: 'Forget Password?',
                                   function: () {
                                     navigateAndFinish(
-                                        context, const SignInScreen());
+                                        context, routeName: 'SignInScreen');
                                     emailController.clear();
                                   },
                                   content: 'Check your mail',
@@ -208,7 +207,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 } else {
                                   verify();
                                   otpController.clear();
-                                  navigateTo(context,  'UpdatePassword');
+                                  navigateTo(context, routeName: 'UpdatePassword');
                                 }
                               }
                             },

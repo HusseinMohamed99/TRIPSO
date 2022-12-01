@@ -1,5 +1,4 @@
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:tripso/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/shared/styles/colors.dart';
@@ -41,7 +40,7 @@ class SignInScreen extends StatelessWidget {
         if (state is SignInSuccessState) {
           CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
             uId = state.uid;
-            navigateAndFinish(context, const HomeScreen());
+            navigateAndFinish(context, routeName: 'HomeScreen');
           });
         } else if (state is SignInErrorState) {
           showToast(
@@ -139,7 +138,7 @@ class SignInScreen extends StatelessWidget {
                           children: [
                             TextButton(
                               onPressed: () {
-                                navigateTo(context,  'ForgotPassword');
+                                navigateTo(context,  routeName: 'ForgotPassword');
                               },
                               child: const Text(
                                 'Forgot Password ?',
@@ -178,7 +177,8 @@ class SignInScreen extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              navigateTo(context,  'SignUpScreen');
+                              navigateTo(context, routeName: 'SignUpScreen',);
+
                             },
                             child: const Text(
                               'Sign up',
