@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
+import 'package:tripso/shared/components/log_out.dart';
+import 'package:tripso/shared/styles/colors.dart';
+
 import '../../shared/animation/fade_animation.dart';
-import '../../shared/components/app_bar.dart';
-import '../../shared/components/log_out.dart';
-import '../../shared/styles/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = 'home_screen';
+
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
