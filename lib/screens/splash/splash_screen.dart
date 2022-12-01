@@ -3,13 +3,12 @@ import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/screens/home/home_screen.dart';
 import 'package:tripso/screens/on_boarding/on_boarding_screen.dart';
+import 'package:tripso/shared/components/app_bar.dart';
+import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/size_config.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
-
-import '../../shared/components/app_bar.dart';
-import '../../shared/components/navigator.dart';
-import '../../shared/components/size_config.dart';
-import '../../shared/constants/constants.dart';
 
 class SplashScreen extends StatelessWidget {
   static const String routeName = 'splash_screen';
