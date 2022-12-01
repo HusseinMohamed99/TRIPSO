@@ -15,6 +15,7 @@ import '../../shared/styles/colors.dart';
 import '../../shared/styles/asset_path.dart';
 
 class UpdatePassword extends StatelessWidget {
+  static const String routeName = 'update_password_screen';
   const UpdatePassword({super.key});
 
   @override

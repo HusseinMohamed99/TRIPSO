@@ -16,10 +16,10 @@ import '../../shared/cubit/SignInCubit/sign_in_cubit.dart';
 import '../../shared/cubit/SignInCubit/sign_in_state.dart';
 import '../../shared/network/cache_helper.dart';
 import '../../shared/styles/asset_path.dart';
-import '../password/forget_password_screen.dart';
-import '../sign_up/sign_up_screen.dart';
+
 
 class SignInScreen extends StatelessWidget {
+  static const String routeName = 'sign_in_screen';
   const SignInScreen({Key? key}) : super(key: key);
 
   @override
@@ -139,7 +139,7 @@ class SignInScreen extends StatelessWidget {
                           children: [
                             TextButton(
                               onPressed: () {
-                                navigateTo(context, const ForgotPassword());
+                                navigateTo(context,  'ForgotPassword');
                               },
                               child: const Text(
                                 'Forgot Password ?',
@@ -178,7 +178,7 @@ class SignInScreen extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              navigateTo(context, const RegisterScreen());
+                              navigateTo(context,  'SignUpScreen');
                             },
                             child: const Text(
                               'Sign up',

@@ -2,7 +2,6 @@ import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:tripso/screens/sign_in/sign_in_screen.dart';
-import 'package:tripso/screens/sign_up/sign_up_screen.dart';
 import '../../shared/components/app_bar.dart';
 import '../../shared/components/buttons.dart';
 import '../../shared/components/navigator.dart';
@@ -13,6 +12,7 @@ import '../../shared/styles/asset_path.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnBoard extends StatelessWidget {
+  static const String routeName = 'onBoard_screen';
   const OnBoard({Key? key}) : super(key: key);
 
   @override
@@ -137,7 +137,7 @@ class OnBoard extends StatelessWidget {
             space(width: 0 ,height: 26),
             defaultMaterialButton(
               function: () {
-                navigateTo(context, const RegisterScreen());
+                navigateTo(context, 'SignUpScreen');
               },
               text: 'Sign up',
               color: primaryColor.withOpacity(0.30),

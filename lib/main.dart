@@ -24,6 +24,7 @@ void main() async {
   await CacheHelper.init();
 
   uId = CacheHelper.getData(key: 'uId');
+
   Widget widget;
   if (uId != null) {
     widget = const HomeScreen();
@@ -31,17 +32,16 @@ void main() async {
     widget = const OnBoard();
   }
 
-
-
-  debugPrint(uId);
-  runApp( MyApp(
+  debugPrint('*** User ID == $uId ***');
+  runApp(MyApp(
     startWidget: widget,
   ));
 }
 
 class MyApp extends StatelessWidget {
-  final  Widget startWidget;
-  const MyApp({super.key,required this.startWidget});
+  static const String routeName = 'startWidget';
+  final Widget startWidget;
+  const MyApp({super.key, required this.startWidget});
 
   // This widget is the root of your application.
   @override
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => TripsoCubit()..getUserData()),
       ],
-      child: BlocConsumer<TripsoCubit,TripsoStates>(
+      child: BlocConsumer<TripsoCubit, TripsoStates>(
           listener: (context, state) {},
           builder: (context, state) {
             SystemChrome.setPreferredOrientations([
@@ -70,8 +70,19 @@ class MyApp extends StatelessWidget {
                   background: Container(color: const Color(0xFFF5F5F5))),
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
-                  colorSchemeSeed: primaryColor, useMaterial3: true,),
-              home:  startWidget,
+                colorSchemeSeed: primaryColor,
+                useMaterial3: true,
+              ),
+              // routes: {
+              //   OnBoard.routeName: (_) => const OnBoard(),
+              //   HomeScreen.routeName: (_) => const HomeScreen(),
+              //   SignInScreen.routeName: (_) => const SignInScreen(),
+              //   SignUpScreen.routeName: (_) => const SignUpScreen(),
+              //   ForgotPassword.routeName: (_) => const ForgotPassword(),
+              //   UpdatePassword.routeName: (_) => const UpdatePassword(),
+              // },
+              // initialRoute: OnBoard.routeName,
+              home: startWidget,
             );
           }),
     );

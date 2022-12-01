@@ -17,8 +17,9 @@ import '../../shared/cubit/SignUpCubit/sign_up_state.dart';
 import '../../shared/network/cache_helper.dart';
 import '../../shared/styles/colors.dart';
 
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatelessWidget {
+  static const String routeName = 'sign_up_screen';
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -8,6 +8,7 @@ import '../../shared/components/log_out.dart';
 import '../../shared/styles/colors.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const String routeName = 'home_screen';
   const HomeScreen({Key? key}) : super(key: key);
 
   @override

@@ -1,5 +1,4 @@
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:tripso/screens/password/update_password_screen.dart';
 import 'package:tripso/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/components/alert_dialog.dart';
 import 'package:tripso/shared/components/buttons.dart';
@@ -23,6 +22,7 @@ import '../../shared/styles/asset_path.dart';
 enum AuthMode { forgot, verify }
 
 class ForgotPassword extends StatefulWidget {
+  static const String routeName = 'forget_password_screen';
   const ForgotPassword({Key? key}) : super(key: key);
 
   @override
@@ -208,7 +208,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 } else {
                                   verify();
                                   otpController.clear();
-                                  navigateTo(context, const UpdatePassword());
+                                  navigateTo(context,  'UpdatePassword');
                                 }
                               }
                             },

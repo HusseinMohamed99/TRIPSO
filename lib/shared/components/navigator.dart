@@ -23,10 +23,12 @@ void pop(context) {
   Navigator.pop(context);
 }
 
-void navigateTo(context, widget) {
-  Navigator.push(
-      context,
-      Routing().createRoute(widget));
+void navigateTo(context, String routeName) {
+
+  Navigator.pushNamed(context, routeName);
+  // Navigator.push(
+  //     context,
+  //     Routing().createRoute(widget));
 }
 
 void navigateAndFinish(context, widget) {

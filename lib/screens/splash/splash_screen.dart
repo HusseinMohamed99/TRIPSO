@@ -11,6 +11,8 @@
 // import '../../shared/components/size_config.dart';
 //
 // class SplashScreen extends StatelessWidget {
+
+//static const String routeName = 'splash_screen';
 //   const SplashScreen({Key? key}) : super(key: key);
 //
 //   @override
