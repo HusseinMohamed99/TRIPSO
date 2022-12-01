@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
-import 'package:tripso/screens/splash/splash_screen.dart';
+import 'package:tripso/screens/home/home_screen.dart';
+import 'package:tripso/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/shared/bloc_observer.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
@@ -23,13 +24,24 @@ void main() async {
   await CacheHelper.init();
 
   uId = CacheHelper.getData(key: 'uId');
+  Widget widget;
+  if (uId != null) {
+    widget = const HomeScreen();
+  } else {
+    widget = const OnBoard();
+  }
+
+
 
   debugPrint(uId);
-  runApp(const MyApp());
+  runApp( MyApp(
+    startWidget: widget,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final  Widget startWidget;
+  const MyApp({super.key,required this.startWidget});
 
   // This widget is the root of your application.
   @override
@@ -59,7 +71,7 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
                   colorSchemeSeed: primaryColor, useMaterial3: true,),
-              home: const SplashScreen(),
+              home:  startWidget,
             );
           }),
     );
