@@ -1,15 +1,14 @@
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/animation/fade_animation.dart';
+
 import '../../shared/components/app_bar.dart';
 import '../../shared/components/buttons.dart';
 import '../../shared/components/navigator.dart';
 import '../../shared/components/scrollable_form.dart';
 import '../../shared/components/sized_box.dart';
-import '../../shared/styles/colors.dart';
 import '../../shared/styles/asset_path.dart';
-import 'package:google_fonts/google_fonts.dart';
-
+import '../../shared/styles/colors.dart';
 import '../sign_in/sign_in_screen.dart';
 import '../sign_up/sign_up_screen.dart';
 
@@ -27,18 +26,18 @@ class OnBoard extends StatelessWidget {
         ),
       ),
       child: FadeAnimation(1.3,
-        child: PlatformScaffold(
+        child: Scaffold(
           appBar: defaultAppBar(),
           backgroundColor: Colors.transparent,
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             child: Center(
               child: customScrollableForm(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      space(width: 0 ,height: 270),
-                      welcomeText(),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    space(width: 0, height: 270),
+                    welcomeText(),
                       space(width: 0 ,height: 89),
                       button(context),
                     ],

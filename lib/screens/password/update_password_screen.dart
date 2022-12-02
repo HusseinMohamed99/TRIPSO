@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import '../../shared/animation/fade_animation.dart';
 import '../../shared/components/buttons.dart';
 import '../../shared/components/navigator.dart';
+import '../../shared/components/scrollable_form.dart';
 import '../../shared/components/sized_box.dart';
 import '../../shared/components/text_form_field.dart';
 import '../../shared/cubit/tripsoCubit/tripso_cubit.dart';
 import '../../shared/cubit/tripsoCubit/tripso_state.dart';
-import '../../shared/styles/colors.dart';
 import '../../shared/styles/asset_path.dart';
+import '../../shared/styles/colors.dart';
 import '../sign_in/sign_in_screen.dart';
 
 class UpdatePassword extends StatelessWidget {
@@ -30,8 +31,15 @@ class UpdatePassword extends StatelessWidget {
     }, builder: (context, state) {
       var updatePasswordKey = GlobalKey<FormState>();
       var cubit = TripsoCubit.get(context);
-      return PlatformScaffold(
-        appBar:PlatformAppBar(
+      return Scaffold(
+        appBar: AppBar(
+          centerTitle: false,
+          systemOverlayStyle: const SystemUiOverlayStyle(
+              statusBarBrightness: Brightness.dark,
+              statusBarColor: Colors.transparent,
+              statusBarIconBrightness: Brightness.dark),
+          elevation: 0,
+          titleSpacing: 1,
           backgroundColor: Colors.transparent,
           leading: IconButton(
             onPressed: () {
@@ -56,43 +64,27 @@ class UpdatePassword extends StatelessWidget {
             ),
           ),
 
-
-
-          material: (context, __)  => MaterialAppBarData(
-            systemOverlayStyle: const SystemUiOverlayStyle(
-                statusBarBrightness: Brightness.dark,
-                statusBarColor: Colors.transparent,
-                statusBarIconBrightness: Brightness.dark),
-            elevation: 0,
-            titleSpacing: 1,
-          ),
-          cupertino: (context, __) => CupertinoNavigationBarData(
-            brightness: Brightness.dark,
-          ),
         ),
         body: Form(
           key: updatePasswordKey,
-          child: CustomScrollView(slivers: [
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Column(
-                children: [
-                  space(width: 0, height: 25),
-                  title(),
-                  assetImage(),
-                  space(width: 0, height: 60),
-                  PasswordFormField(
-                      newPasswordController: newPasswordController,
-                      confirmationPasswordController:
-                          confirmationPasswordController,
-                      cubit: cubit),
+          child: customScrollableForm(
+            child: Column(
+              children: [
+                space(width: 0, height: 25),
+                title(),
+                assetImage(),
+                space(width: 0, height: 60),
+                PasswordFormField(
+                    newPasswordController: newPasswordController,
+                    confirmationPasswordController:
+                        confirmationPasswordController,
+                    cubit: cubit),
                   space(width: 0, height: 50),
                   buildDefaultButton(updatePasswordKey, cubit,
                       newPasswordController, confirmationPasswordController)
                 ],
               ),
             ),
-          ]),
         ),
       );
     });

@@ -1,4 +1,9 @@
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:email_auth/email_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:tripso/screens/password/update_password_screen.dart';
 import 'package:tripso/shared/components/alert_dialog.dart';
 import 'package:tripso/shared/components/buttons.dart';
@@ -6,14 +11,10 @@ import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/styles/colors.dart';
-import 'package:flutter/material.dart';
-import 'package:email_auth/email_auth.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
+
 import '../../shared/animation/fade_animation.dart';
 import '../../shared/components/navigator.dart';
+import '../../shared/components/scrollable_form.dart';
 import '../../shared/components/show_toast.dart';
 import '../../shared/cubit/restPasswordCubit/rest_password_cubit.dart';
 import '../../shared/cubit/restPasswordCubit/rest_password_state.dart';
@@ -92,8 +93,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           );
         }
       }, builder: (context, state) {
-        return PlatformScaffold(
-          appBar: PlatformAppBar(
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: false,
+            systemOverlayStyle: const SystemUiOverlayStyle(
+                statusBarBrightness: Brightness.dark,
+                statusBarColor: Colors.transparent,
+                statusBarIconBrightness: Brightness.dark),
+            elevation: 0,
             title: Text(
               'Reset Password',
               style: GoogleFonts.roboto(
@@ -105,22 +112,21 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               ),
             ),
             backgroundColor: Colors.transparent,
-            trailingActions: [
+            actions: [
               if (_authMode == AuthMode.verify)
                 TextButton(
                   onPressed: sendOtp,
                   child: Text(
                     'Resend Code',
                     style: GoogleFonts.roboto(
-                      fontSize: 17,
-                      letterSpacing: 1,
+                      fontSize: 15,
                       shadows: [
-                        const Shadow(color: Colors.black, offset: Offset(0, -5))
+                        const Shadow(color: Colors.blue, offset: Offset(0, -5))
                       ],
                       color: Colors.transparent,
                       decoration: TextDecoration.underline,
                       decorationColor: primaryColor,
-                      decorationThickness: 2,
+                      decorationThickness: 5,
                       decorationStyle: TextDecorationStyle.dashed,
                     ),
                   ),
@@ -136,35 +142,22 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 color: Colors.black,
               ),
             ),
-            material: (context, __)  => MaterialAppBarData(
-              systemOverlayStyle: const SystemUiOverlayStyle(
-                  statusBarBrightness: Brightness.dark,
-                  statusBarColor: Colors.transparent,
-                  statusBarIconBrightness: Brightness.dark),
-              elevation: 0,
-              titleSpacing: 1,
-            ),
-            cupertino: (context, __) => CupertinoNavigationBarData(
-              brightness: Brightness.dark,
-            ),
           ),
 
           body: Form(
             key: forgetFormKey,
-            child: CustomScrollView(slivers: [
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: Column(
-                  children: [
-                    space(width: 0, height: 25),
-                    title(),
-                    assetImage(),
-                    space(width: 0, height: 10),
-                    formField(),
-                    space(width: 0, height: 50),
-                    uId == null
-                        ? defaultButton(
-                            function: () {
+            child: customScrollableForm(
+              child: Column(
+                children: [
+                  space(width: 0, height: 25),
+                  title(),
+                  assetImage(),
+                  space(width: 0, height: 10),
+                  formField(),
+                  space(width: 0, height: 50),
+                  uId == null
+                      ? defaultButton(
+                          function: () {
                               if (forgetFormKey.currentState!.validate()) {
                                 ResetPasswordCubit.get(context).resetPassword(
                                   email: emailController.text,
@@ -229,7 +222,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ],
                 ),
               ),
-            ]),
           ),
         );
       }),

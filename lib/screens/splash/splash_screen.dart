@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/screens/home/home_screen.dart';
 import 'package:tripso/screens/on_boarding/on_boarding_screen.dart';
@@ -66,7 +65,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
           fit: BoxFit.cover,
         ),
       ),
-      child: PlatformScaffold(
+      child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: defaultAppBar(),
         body: Column(

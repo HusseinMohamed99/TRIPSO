@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:tripso/screens/home/home_screen.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
+
 import '../../shared/animation/fade_animation.dart';
 import '../../shared/components/app_bar.dart';
 import '../../shared/components/buttons.dart';
-import '../../shared/constants/constants.dart';
 import '../../shared/components/navigator.dart';
 import '../../shared/components/scrollable_form.dart';
 import '../../shared/components/show_toast.dart';
 import '../../shared/components/sized_box.dart';
 import '../../shared/components/text_form_field.dart';
+import '../../shared/constants/constants.dart';
 import '../../shared/cubit/SignUpCubit/sign_up_cubit.dart';
 import '../../shared/cubit/SignUpCubit/sign_up_state.dart';
 import '../../shared/network/cache_helper.dart';
@@ -56,7 +56,7 @@ class SignUpScreen extends StatelessWidget {
           ),
           child: FadeAnimation(
             1.0,
-            child: PlatformScaffold(
+            child: Scaffold(
               backgroundColor: Colors.transparent,
               appBar: defaultAppBar(),
               body: customScrollableForm(

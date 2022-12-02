@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:tripso/shared/components/app_bar.dart';
@@ -15,7 +14,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(
+    return Scaffold(
       appBar: secondAppBar(),
       body: FadeAnimation(
         1.5,

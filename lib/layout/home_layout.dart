@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+
 import '../shared/components/app_bar.dart';
 
 class HomeLayout extends StatelessWidget {
@@ -8,7 +8,7 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(
+    return Scaffold(
       appBar: defaultAppBar(),
       body: const Text('HOME LAYOUT'),
     );

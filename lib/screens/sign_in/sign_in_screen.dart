@@ -1,18 +1,18 @@
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/screens/home/home_screen.dart';
 import 'package:tripso/screens/password/forget_password_screen.dart';
 import 'package:tripso/shared/styles/colors.dart';
+
 import '../../shared/animation/fade_animation.dart';
 import '../../shared/components/app_bar.dart';
 import '../../shared/components/buttons.dart';
-import '../../shared/constants/constants.dart';
 import '../../shared/components/navigator.dart';
 import '../../shared/components/scrollable_form.dart';
 import '../../shared/components/show_toast.dart';
 import '../../shared/components/sized_box.dart';
 import '../../shared/components/text_form_field.dart';
+import '../../shared/constants/constants.dart';
 import '../../shared/cubit/SignInCubit/sign_in_cubit.dart';
 import '../../shared/cubit/SignInCubit/sign_in_state.dart';
 import '../../shared/network/cache_helper.dart';
@@ -61,7 +61,7 @@ class SignInScreen extends StatelessWidget {
           ),
           child: FadeAnimation(
             1.5,
-            child: PlatformScaffold(
+            child: Scaffold(
               backgroundColor: Colors.transparent,
               appBar: defaultAppBar(),
               body: customScrollableForm(
