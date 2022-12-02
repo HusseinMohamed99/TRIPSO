@@ -15,8 +15,9 @@ import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/colors.dart';
-import 'shared/network/cache_helper.dart';
+
 import 'firebase_options.dart';
+import 'shared/network/cache_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,23 +31,12 @@ void main() async {
 
   uId = CacheHelper.getData(key: 'uId');
 
-  Widget widget;
-  if (uId != null) {
-    widget = const HomeScreen();
-  } else {
-    widget = const OnBoard();
-  }
-
   debugPrint('*** User ID == $uId ***');
-  runApp(MyApp(
-    startWidget: widget,
-  ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  static const String routeName = 'startWidget';
-  final Widget startWidget;
-  const MyApp({super.key, required this.startWidget});
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
