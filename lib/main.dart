@@ -32,7 +32,24 @@ void main() async {
   uId = CacheHelper.getData(key: 'uId');
 
   debugPrint('*** User ID == $uId ***');
-  runApp(const MyApp());
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => TripsoCubit()..getUserData()),
+      ],
+      child: BlocConsumer<TripsoCubit, TripsoStates>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          SystemChrome.setPreferredOrientations([
+            DeviceOrientation.portraitUp,
+            DeviceOrientation.portraitDown,
+          ]);
+
+          return const MyApp();
+        },
+      ),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -41,46 +58,33 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => TripsoCubit()..getUserData()),
-      ],
-      child: BlocConsumer<TripsoCubit, TripsoStates>(
-          listener: (context, state) {},
-          builder: (context, state) {
-            SystemChrome.setPreferredOrientations([
-              DeviceOrientation.portraitUp,
-              DeviceOrientation.portraitDown,
-            ]);
-            return MaterialApp(
-              builder: (context, child) => ResponsiveWrapper.builder(child,
-                  maxWidth: 1200,
-                  minWidth: 392,
-                  defaultScale: true,
-                  breakpoints: const [
-                    ResponsiveBreakpoint.resize(392, name: MOBILE),
-                    ResponsiveBreakpoint.autoScale(800, name: TABLET),
-                    ResponsiveBreakpoint.resize(1000, name: DESKTOP),
-                  ],
-                  background: Container(color: const Color(0xFFF5F5F5))),
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                colorSchemeSeed: primaryColor,
-                useMaterial3: true,
-              ),
-              routes: {
-                SplashScreen.routeName: (_) => const SplashScreen(),
-                OnBoard.routeName: (_) => const OnBoard(),
-                HomeScreen.routeName: (_) => const HomeScreen(),
-                SignInScreen.routeName: (_) => const SignInScreen(),
-                SignUpScreen.routeName: (_) => const SignUpScreen(),
-                ForgotPassword.routeName: (_) => const ForgotPassword(),
-                UpdatePassword.routeName: (_) => const UpdatePassword(),
-              },
-              initialRoute: SplashScreen.routeName,
-              //home: startWidget,
-            );
-          }),
+    return MaterialApp(
+      builder: (context, child) => ResponsiveWrapper.builder(child,
+          maxWidth: 1200,
+          minWidth: 392,
+          defaultScale: true,
+          breakpoints: const [
+            ResponsiveBreakpoint.resize(392, name: MOBILE),
+            ResponsiveBreakpoint.autoScale(800, name: TABLET),
+            ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+          ],
+          background: Container(color: const Color(0xFFF5F5F5))),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorSchemeSeed: primaryColor,
+        useMaterial3: true,
+      ),
+      routes: {
+        SplashScreen.routeName: (_) => const SplashScreen(),
+        OnBoard.routeName: (_) => const OnBoard(),
+        HomeScreen.routeName: (_) => const HomeScreen(),
+        SignInScreen.routeName: (_) => const SignInScreen(),
+        SignUpScreen.routeName: (_) => const SignUpScreen(),
+        ForgotPassword.routeName: (_) => const ForgotPassword(),
+        UpdatePassword.routeName: (_) => const UpdatePassword(),
+      },
+      initialRoute: SplashScreen.routeName,
+      //home: startWidget,
     );
   }
 }
