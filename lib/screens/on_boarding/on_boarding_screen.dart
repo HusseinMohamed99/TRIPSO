@@ -25,7 +25,8 @@ class OnBoard extends StatelessWidget {
           fit: BoxFit.fill,
         ),
       ),
-      child: FadeAnimation(1.3,
+      child: FadeAnimation(
+        1.3,
         child: Scaffold(
           appBar: defaultAppBar(),
           backgroundColor: Colors.transparent,
@@ -38,11 +39,11 @@ class OnBoard extends StatelessWidget {
                   children: [
                     space(width: 0, height: 270),
                     welcomeText(),
-                      space(width: 0 ,height: 89),
-                      button(context),
-                    ],
-                  ),
+                    space(width: 0, height: 89),
+                    button(context),
+                  ],
                 ),
+              ),
             ),
           ),
         ),
@@ -50,95 +51,97 @@ class OnBoard extends StatelessWidget {
     );
   }
 
-  Widget welcomeText() => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          FittedBox(
-            child: Text(
-              'BE\nREADY',
-              style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 45,
-                  height: 1.3,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ),
-          Row(
-            children: [
-              FittedBox(
-                child: Text(
-                  'TO',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
-                      height: 1.3,
-                      color: Colors.white,
-                      fontSize: 45,
-                      fontWeight: FontWeight.w600,
-                    ),
+  Widget welcomeText() => Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            FittedBox(
+              child: Text(
+                'BE\nREADY',
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 45,
+                    height: 1.3,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
-              FittedBox(
-                child: Text(
-                  'UR',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
-                      height: 1.3,
-                      color: Color(0xff60D0E6),
-                      fontSize: 45,
-                      fontWeight: FontWeight.w600,
+            ),
+            Row(
+              children: [
+                FittedBox(
+                  child: Text(
+                    'TO',
+                    style: GoogleFonts.roboto(
+                      textStyle: const TextStyle(
+                        height: 1.3,
+                        color: Colors.white,
+                        fontSize: 45,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          FittedBox(
-            child: Text(
-              'NEXT',
-              style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
-                  height: 1.3,
-                  color: Color(0xff60D0E6),
-                  fontSize: 45,
-                  fontWeight: FontWeight.w600,
+                FittedBox(
+                  child: Text(
+                    'UR',
+                    style: GoogleFonts.roboto(
+                      textStyle: const TextStyle(
+                        height: 1.3,
+                        color: Color(0xff60D0E6),
+                        fontSize: 45,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            FittedBox(
+              child: Text(
+                'NEXT',
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                    height: 1.3,
+                    color: Color(0xff60D0E6),
+                    fontSize: 45,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ),
-          ),
-          FittedBox(
-            child: Text(
-              'ADVENTURE',
-              style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
-                  height: 1.3,
-                  color: Colors.white,
-                  fontSize: 45,
-                  fontWeight: FontWeight.w600,
+            FittedBox(
+              child: Text(
+                'ADVENTURE',
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                    height: 1.3,
+                    color: Colors.white,
+                    fontSize: 45,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       );
 
-  Widget button(context) => Center(
+  Widget button(context) => Expanded(
         child: Column(
           children: [
             defaultMaterialButton(
               function: () {
-                navigateAndFinish(context,routeName: SignInScreen.routeName);
+                navigateAndFinish(context, routeName: SignInScreen.routeName);
               },
               text: 'Sign in',
               color: primaryColor,
             ),
-            space(width: 0 ,height: 26),
+            space(width: 0, height: 26),
             defaultMaterialButton(
               function: () {
-                navigateTo(context,routeName: SignUpScreen.routeName);
+                navigateTo(context, routeName: SignUpScreen.routeName);
               },
               text: 'Sign up',
               color: primaryColor.withOpacity(0.30),
