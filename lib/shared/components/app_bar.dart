@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-AppBar defaultAppBar() => AppBar(
+PreferredSizeWidget defaultAppBar() => AppBar(
       backgroundColor: Colors.transparent,
       systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarBrightness: Brightness.light,
@@ -11,7 +11,7 @@ AppBar defaultAppBar() => AppBar(
       toolbarHeight: 0,
     );
 
-AppBar secondAppBar() => AppBar(
+PreferredSizeWidget secondAppBar() => AppBar(
       backgroundColor: Colors.transparent,
       systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarBrightness: Brightness.dark,

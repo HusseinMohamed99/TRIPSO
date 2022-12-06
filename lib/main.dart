@@ -84,7 +84,6 @@ class MyApp extends StatelessWidget {
         UpdatePassword.routeName: (_) => const UpdatePassword(),
       },
       initialRoute: SplashScreen.routeName,
-      //home: startWidget,
     );
   }
 }
