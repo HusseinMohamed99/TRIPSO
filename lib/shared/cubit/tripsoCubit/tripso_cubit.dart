@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+
 import '../../../model/user_model.dart';
 import '../../components/show_toast.dart';
 import '../../constants/constants.dart';
@@ -60,7 +61,8 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
     emit(ShowPasswordState());
   }
-///END : Show Password
+
+///END : Show Done
 
 //------------------------------------------------------------//
 }
