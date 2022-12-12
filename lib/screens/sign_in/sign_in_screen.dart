@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/screens/home/home_screen.dart';
 import 'package:tripso/screens/password/forget_password_screen.dart';
+import 'package:tripso/shared/adaptive/indicator.dart';
+import 'package:tripso/shared/components/indicator.dart';
 import 'package:tripso/shared/styles/colors.dart';
 
 import '../../shared/animation/fade_animation.dart';
@@ -33,11 +35,11 @@ class SignInScreen extends StatelessWidget {
       create: (BuildContext context) => SignInCubit(),
       child:
           BlocConsumer<SignInCubit, SignInStates>(listener: (context, state) {
-        if (state is! SignInLoadingState) {
+            if (state is SignInLoadingState) {
           showDialog(
               context: context,
               builder: (context) {
-                return const Center(child: CircularProgressIndicator());
+                return Center(child: AdaptiveIndicator(os: getOs()));
               });
         }
         if (state is SignInSuccessState) {
