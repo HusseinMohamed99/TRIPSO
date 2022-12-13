@@ -21,7 +21,6 @@ import '../../shared/network/cache_helper.dart';
 import '../../shared/styles/asset_path.dart';
 import '../sign_up/sign_up_screen.dart';
 
-
 class SignInScreen extends StatelessWidget {
   static const String routeName = 'sign_in_screen';
   const SignInScreen({Key? key}) : super(key: key);
@@ -35,7 +34,7 @@ class SignInScreen extends StatelessWidget {
       create: (BuildContext context) => SignInCubit(),
       child:
           BlocConsumer<SignInCubit, SignInStates>(listener: (context, state) {
-            if (state is SignInLoadingState) {
+        if (state is SignInLoadingState) {
           showDialog(
               context: context,
               builder: (context) {
@@ -125,8 +124,7 @@ class SignInScreen extends StatelessWidget {
                               },
                               prefix: Icons.lock_outline_sharp,
                               suffix: SignInCubit.get(context).suffix,
-                              isPassword:
-                                  SignInCubit.get(context).isPassword,
+                              isPassword: SignInCubit.get(context).isPassword,
                               suffixPressed: () {
                                 SignInCubit.get(context).showPassword();
                               },
@@ -143,7 +141,8 @@ class SignInScreen extends StatelessWidget {
                           children: [
                             TextButton(
                               onPressed: () {
-                                navigateTo(context,routeName: ForgotPassword.routeName);
+                                navigateTo(context,
+                                    routeName: ForgotPassword.routeName);
                               },
                               child: const Text(
                                 'Forgot Password ?',
@@ -182,8 +181,8 @@ class SignInScreen extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              navigateTo(context, routeName: SignUpScreen.routeName);
-
+                              navigateTo(context,
+                                  routeName: SignUpScreen.routeName);
                             },
                             child: const Text(
                               'Sign up',
