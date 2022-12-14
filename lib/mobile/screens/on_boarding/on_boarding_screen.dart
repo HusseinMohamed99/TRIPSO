@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
+import 'package:tripso/mobile/screens/sign_up/sign_up_screen.dart';
 import 'package:tripso/shared/animation/fade_animation.dart';
-
-import '../../shared/components/app_bar.dart';
-import '../../shared/components/buttons.dart';
-import '../../shared/components/navigator.dart';
-import '../../shared/components/scrollable_form.dart';
-import '../../shared/components/sized_box.dart';
-import '../../shared/styles/asset_path.dart';
-import '../../shared/styles/colors.dart';
-import '../sign_in/sign_in_screen.dart';
-import '../sign_up/sign_up_screen.dart';
+import 'package:tripso/shared/components/app_bar.dart';
+import 'package:tripso/shared/components/buttons.dart';
+import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/scrollable_form.dart';
+import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
+import 'package:tripso/shared/styles/colors.dart';
 
 class OnBoard extends StatelessWidget {
   static const String routeName = 'onBoard_screen';
+
   const OnBoard({Key? key}) : super(key: key);
 
   @override

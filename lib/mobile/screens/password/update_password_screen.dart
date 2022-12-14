@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../shared/animation/fade_animation.dart';
-import '../../shared/components/buttons.dart';
-import '../../shared/components/navigator.dart';
-import '../../shared/components/scrollable_form.dart';
-import '../../shared/components/sized_box.dart';
-import '../../shared/components/text_form_field.dart';
-import '../../shared/cubit/tripsoCubit/tripso_cubit.dart';
-import '../../shared/cubit/tripsoCubit/tripso_state.dart';
-import '../../shared/styles/asset_path.dart';
-import '../../shared/styles/colors.dart';
-import '../sign_in/sign_in_screen.dart';
+import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
+import 'package:tripso/shared/animation/fade_animation.dart';
+import 'package:tripso/shared/components/buttons.dart';
+import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/scrollable_form.dart';
+import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/components/text_form_field.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
+import 'package:tripso/shared/styles/colors.dart';
 
 class UpdatePassword extends StatelessWidget {
   static const String routeName = 'update_password_screen';
+
   const UpdatePassword({super.key});
 
   @override
