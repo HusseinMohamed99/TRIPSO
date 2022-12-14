@@ -1,5 +1,6 @@
+import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/components/show_toast.dart';
-import '../../screens/sign_in/sign_in_screen.dart';
+
 import '../network/cache_helper.dart';
 import 'navigator.dart';
 

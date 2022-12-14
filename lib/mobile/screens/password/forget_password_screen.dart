@@ -4,27 +4,27 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:tripso/screens/password/update_password_screen.dart';
+import 'package:tripso/mobile/screens/password/update_password_screen.dart';
+import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
+import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:tripso/shared/components/alert_dialog.dart';
 import 'package:tripso/shared/components/buttons.dart';
+import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/scrollable_form.dart';
+import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
 import 'package:tripso/shared/constants/constants.dart';
+import 'package:tripso/shared/cubit/restPasswordCubit/rest_password_cubit.dart';
+import 'package:tripso/shared/cubit/restPasswordCubit/rest_password_state.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
-
-import '../../shared/animation/fade_animation.dart';
-import '../../shared/components/navigator.dart';
-import '../../shared/components/scrollable_form.dart';
-import '../../shared/components/show_toast.dart';
-import '../../shared/cubit/restPasswordCubit/rest_password_cubit.dart';
-import '../../shared/cubit/restPasswordCubit/rest_password_state.dart';
-import '../../shared/styles/asset_path.dart';
-import '../sign_in/sign_in_screen.dart';
 
 enum AuthMode { forgot, verify }
 
 class ForgotPassword extends StatefulWidget {
   static const String routeName = 'forget_password_screen';
+
   const ForgotPassword({Key? key}) : super(key: key);
 
   @override

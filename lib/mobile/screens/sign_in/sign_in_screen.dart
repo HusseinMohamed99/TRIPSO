@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tripso/screens/home/home_screen.dart';
-import 'package:tripso/screens/password/forget_password_screen.dart';
+import 'package:tripso/mobile/screens/home/home_screen.dart';
+import 'package:tripso/mobile/screens/password/forget_password_screen.dart';
+import 'package:tripso/mobile/screens/sign_up/sign_up_screen.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
+import 'package:tripso/shared/animation/fade_animation.dart';
+import 'package:tripso/shared/components/app_bar.dart';
+import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/indicator.dart';
+import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/scrollable_form.dart';
+import 'package:tripso/shared/components/show_toast.dart';
+import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/components/text_form_field.dart';
+import 'package:tripso/shared/constants/constants.dart';
+import 'package:tripso/shared/cubit/SignInCubit/sign_in_state.dart';
+import 'package:tripso/shared/cubit/signInCubit/sign_in_cubit.dart';
+import 'package:tripso/shared/network/cache_helper.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
-
-import '../../shared/animation/fade_animation.dart';
-import '../../shared/components/app_bar.dart';
-import '../../shared/components/buttons.dart';
-import '../../shared/components/navigator.dart';
-import '../../shared/components/scrollable_form.dart';
-import '../../shared/components/show_toast.dart';
-import '../../shared/components/sized_box.dart';
-import '../../shared/components/text_form_field.dart';
-import '../../shared/constants/constants.dart';
-import '../../shared/cubit/SignInCubit/sign_in_cubit.dart';
-import '../../shared/cubit/SignInCubit/sign_in_state.dart';
-import '../../shared/network/cache_helper.dart';
-import '../../shared/styles/asset_path.dart';
-import '../sign_up/sign_up_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   static const String routeName = 'sign_in_screen';
+
   const SignInScreen({Key? key}) : super(key: key);
 
   @override

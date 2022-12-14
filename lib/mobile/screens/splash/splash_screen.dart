@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/screens/home/home_screen.dart';
-import 'package:tripso/screens/on_boarding/on_boarding_screen.dart';
+import 'package:tripso/mobile/screens/home/home_screen.dart';
+import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/size_config.dart';
