@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/shared/cubit/SignUpCubit/sign_up_state.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
+
 import '../../../model/user_model.dart';
 import '../../components/show_toast.dart';
 
@@ -52,7 +53,7 @@ class SignUpCubit extends Cubit<SignUpStates> {
     FirebaseFirestore.instance
         .collection('users')
         .doc(uId)
-        .set(model.toMap())
+        .set(model.toFireStore())
         .then((value) {
       emit(UserCreateSuccessState(uId));
       showToast(
