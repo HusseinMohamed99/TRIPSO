@@ -24,10 +24,10 @@ void navigateTo(context, {required String routeName, Object? arguments}) {
   Navigator.pushNamed(context, routeName, arguments: arguments);
 }
 
-void navigateToWithRouting(context, widget) {
-  Navigator.push(context, widget);
-  Navigator.push(context, Routing().createRoute(widget));
-}
+// void navigateToWithRouting(context, widget) {
+//   Navigator.push(context, widget);
+//   Navigator.push(context, Routing().createRoute(widget));
+// }
 
 void navigateAndFinish(
   context, {
@@ -38,8 +38,8 @@ void navigateAndFinish(
       context, routeName, arguments: arguments, (route) => false);
 }
 
-void navigateAndFinishWithRouting(context, widget) {
-  Navigator.pushAndRemoveUntil(context, Routing().createRoute(widget), (route) {
-    return false;
-  });
-}
+// void navigateAndFinishWithRouting(context, widget) {
+//   Navigator.pushAndRemoveUntil(context, Routing().createRoute(widget), (route) {
+//     return false;
+//   });
+// }

@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 
-Widget customScrollableForm({
-  required Widget child,
-}) => CustomScrollView(
-  slivers:
-  [
-    SliverFillRemaining(
-      hasScrollBody: false,
-      child: child,
-    )
-  ],
-);
+class CustomScrollableForm extends StatelessWidget {
+  final Widget child;
 
+  const CustomScrollableForm({required this.child, Key? key}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: child,
+        )
+      ],
+    );
+  }
+}
 
-
-
-
-
-
-
+// Widget customScrollableForm({
+//   required Widget child,
+// }) => CustomScrollView(
+//   slivers:
+//   [
+//     SliverFillRemaining(
+//       hasScrollBody: false,
+//       child: child,
+//     )
+//   ],
+// );

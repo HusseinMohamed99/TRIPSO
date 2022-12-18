@@ -1,13 +1,13 @@
 import 'package:email_auth/email_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:tripso/mobile/screens/password/update_password_screen.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
+import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/animation/fade_animation.dart';
-import 'package:tripso/shared/components/alert_dialog.dart';
+import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/scrollable_form.dart';
@@ -48,24 +48,29 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     emailAuth = EmailAuth(
       sessionName: "TRIPSO APP",
     );
+
+    var remoteServerConfiguration = {
+      "server": "server url",
+      "serverKey": "serverKey"
+    };
+    emailAuth?.config(remoteServerConfiguration);
   }
 
-
+  verify() {
+    emailAuth!.validateOtp(
+      recipientMail: emailController.value.text,
+      userOtp: otpController.value.text,
+    );
+  }
 
   void sendOtp() async {
     bool result = await emailAuth!
-        .sendOtp(recipientMail: emailController.value.text, otpLength: 6);
+        .sendOtp(recipientMail: emailController.value.text, otpLength: 5);
     if (result) {
       setState(() {
         submitValid = true;
       });
     }
-  }
-
-  void verify() {
-    emailAuth!.validateOtp(
-        recipientMail: emailController.value.text,
-        userOtp: otpController.value.text);
   }
 
   void _switchAuthMode() {
@@ -94,134 +99,117 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         }
       }, builder: (context, state) {
         return Scaffold(
-          appBar: AppBar(
-            centerTitle: false,
-            systemOverlayStyle: const SystemUiOverlayStyle(
-                statusBarBrightness: Brightness.dark,
-                statusBarColor: Colors.transparent,
-                statusBarIconBrightness: Brightness.dark),
-            elevation: 0,
-            title: Text(
-              'Reset Password',
-              style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
-            backgroundColor: Colors.transparent,
-            actions: [
-              if (_authMode == AuthMode.verify)
-                TextButton(
-                  onPressed: sendOtp,
-                  child: Text(
-                    'Resend Code',
-                    style: GoogleFonts.roboto(
-                      fontSize: 15,
-                      shadows: [
-                        const Shadow(color: Colors.blue, offset: Offset(0, -5))
-                      ],
-                      color: Colors.transparent,
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      decorationThickness: 5,
-                      decorationStyle: TextDecorationStyle.dashed,
-                    ),
-                  ),
-                ),
-            ],
-            leading: IconButton(
-              onPressed: () {
+          appBar: primaryAppBar(
+              title: 'Reset Password',
+              function: () {
                 emailController.clear();
                 pop(context);
               },
-              icon: const Icon(
+              iconData: const Icon(
                 Icons.arrow_back,
-                color: Colors.black,
               ),
-            ),
-          ),
-
+              actions: [
+                if (_authMode == AuthMode.verify)
+                  TextButton(
+                    onPressed: sendOtp,
+                    child: Text(
+                      'Resend Code',
+                      style: GoogleFonts.roboto(
+                        fontSize: 15,
+                        shadows: [
+                          const Shadow(
+                              color: Colors.blue, offset: Offset(0, -5))
+                        ],
+                        color: Colors.transparent,
+                        decoration: TextDecoration.underline,
+                        decorationColor: primaryColor,
+                        decorationThickness: 5,
+                        decorationStyle: TextDecorationStyle.dashed,
+                      ),
+                    ),
+                  ),
+              ]),
           body: Form(
             key: forgetFormKey,
-            child: customScrollableForm(
+            child: CustomScrollableForm(
               child: Column(
                 children: [
-                  space(width: 0, height: 25),
+                  const Space(width: 0, height: 25),
                   title(),
                   assetImage(),
-                  space(width: 0, height: 10),
+                  const Space(width: 0, height: 10),
                   formField(),
-                  space(width: 0, height: 50),
+                  const Space(width: 0, height: 50),
                   uId == null
                       ? defaultButton(
                           function: () {
-                              if (forgetFormKey.currentState!.validate()) {
-                                ResetPasswordCubit.get(context).resetPassword(
-                                  email: emailController.text,
-                                );
-                                alertDialog(
-                                  context: context,
-                                  title: 'Forget Password?',
-                                  function: () {
-                                    navigateAndFinish(
-                                        context, routeName: SignInScreen.routeName);
-                                    emailController.clear();
-                                  },
-                                  content: 'Check your mail',
-                                );
-                              }
-                            },
-                            widget: Text(
-                              'Verify Email',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.roboto(
-                                fontSize: 19,
-                                color: const Color(0xffFFFFFF),
-                                fontWeight: FontWeight.w500,
-                              ),
+                            if (forgetFormKey.currentState!.validate()) {
+                              ResetPasswordCubit.get(context).resetPassword(
+                                email: emailController.text,
+                              );
+
+                              MyDialog.showLoadingDialog(context, 'Loading...');
+                              MyDialog.hideDialog(context);
+                              MyDialog.showMessage(context, 'Check your mail',
+                                  posActionTitle: 'OK', posAction: () {
+                                navigateAndFinish(context,
+                                    routeName: SignInScreen.routeName);
+                                emailController.clear();
+                              });
+                            }
+                          },
+                          widget: Text(
+                            'Verify Email',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.roboto(
+                              fontSize: 19,
+                              color: const Color(0xffFFFFFF),
+                              fontWeight: FontWeight.w500,
                             ),
-                            color: primaryColor,
-                          )
-                        : defaultButton(
-                            function: () {
-                              if (forgetFormKey.currentState!.validate()) {
-                                if (_authMode == AuthMode.forgot) {
-                                  sendOtp();
-                                  _switchAuthMode();
-                                  alertDialog(
-                                    context: context,
-                                    title: 'Forget Password?',
-                                    function: () {
-                                      pop(context);
-                                    },
-                                    content: 'Check your mail',
-                                  );
-                                } else {
-                                  verify();
-                                  otpController.clear();
-                                  navigateTo(context, routeName: UpdatePassword.routeName);
-                                }
-                              }
-                            },
-                            widget: Text(
-                              _authMode == AuthMode.forgot
-                                  ? 'Verify Email'
-                                  : 'Confirm',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.roboto(
-                                fontSize: 19,
-                                color: const Color(0xffFFFFFF),
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            color: primaryColor,
                           ),
-                  ],
-                ),
+                          color: primaryColor,
+                        )
+                      : defaultButton(
+                          function: () {
+                            if (forgetFormKey.currentState!.validate()) {
+                              MyDialog.showLoadingDialog(context, 'Loading...');
+                              MyDialog.hideDialog(context);
+                              if (_authMode == AuthMode.forgot) {
+                                MyDialog.showLoadingDialog(
+                                    context, 'Loading...');
+                                MyDialog.hideDialog(context);
+                                sendOtp();
+                                _switchAuthMode();
+                                MyDialog.showLoadingDialog(
+                                    context, 'Loading...');
+                                MyDialog.hideDialog(context);
+                              } else {
+                                MyDialog.showLoadingDialog(
+                                    context, 'Loading...');
+                                MyDialog.hideDialog(context);
+                                verify();
+                                otpController.clear();
+                                navigateTo(context,
+                                    routeName: UpdatePassword.routeName);
+                              }
+                            }
+                          },
+                          widget: Text(
+                            _authMode == AuthMode.forgot
+                                ? 'Verify Email'
+                                : 'Confirm',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.roboto(
+                              fontSize: 19,
+                              color: const Color(0xffFFFFFF),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          color: primaryColor,
+                        ),
+                ],
               ),
+            ),
           ),
         );
       }),
@@ -240,7 +228,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   fontSize: 25,
                   fontWeight: FontWeight.w500),
             ),
-            space(width: 0, height: 10),
+            const Space(width: 0, height: 10),
             Text(
               _authMode == AuthMode.forgot
                   ? 'Enter the Email address associated with'
@@ -271,7 +259,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget formField() => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50.0),
         child: _authMode == AuthMode.forgot
-            ? defaultTextFormField(
+            ? DefaultTextFormField(
                 color: Colors.grey.shade400,
                 context: context,
                 controller: emailController,
@@ -287,12 +275,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               )
             : (submitValid)
                 ? PinCodeTextField(
-                    appContext: context,
+          appContext: context,
                     pastedTextStyle: TextStyle(
                       color: const Color(0xff938E8E).withOpacity(0.5),
                       fontWeight: FontWeight.bold,
                     ),
-                    length: 6,
+                    length: 5,
                     obscureText: true,
                     obscuringCharacter: '*',
                     obscuringWidget: const FlutterLogo(
@@ -300,7 +288,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                     blinkWhenObscuring: true,
                     validator: (value) {
-                      if (value!.length < 6) {
+                      if (value!.length < 5) {
                         return 'Digit Code is Required';
                       }
                       return null;
@@ -345,12 +333,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     },
                   )
                 : PinCodeTextField(
-                    appContext: context,
+          appContext: context,
                     pastedTextStyle: TextStyle(
                       color: const Color(0xff938E8E).withOpacity(0.5),
                       fontWeight: FontWeight.bold,
                     ),
-                    length: 6,
+                    length: 5,
                     obscureText: true,
                     obscuringCharacter: '*',
                     obscuringWidget: const FlutterLogo(
@@ -359,7 +347,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     blinkWhenObscuring: true,
                     //  animationType: AnimationType.fade,
                     validator: (value) {
-                      if (value!.length < 6) {
+                      if (value!.length < 5) {
                         return 'Digit Code is Required';
                       }
                       return null;
