@@ -21,3 +21,18 @@ class ChangeUserPasswordErrorState extends TripsoStates {
 
 class ShowPasswordState extends TripsoStates {}
 // ///END : ChangeUserPassword
+
+
+
+///START : GetCityData
+
+class GetCityDataLoadingState extends TripsoStates {}
+
+class GetCityDataSuccessState extends TripsoStates {}
+
+class GetCityDataErrorState extends TripsoStates {
+
+  final String error ;
+  GetCityDataErrorState(this.error);
+}
+///END : GetCityData
