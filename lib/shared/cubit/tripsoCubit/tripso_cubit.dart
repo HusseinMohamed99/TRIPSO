@@ -7,6 +7,8 @@ import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 
+import '../../../model/city_model.dart';
+
 class TripsoCubit extends Cubit<TripsoStates> {
   TripsoCubit() : super(TripsoInitialState());
 
@@ -63,9 +65,32 @@ class TripsoCubit extends Cubit<TripsoStates> {
         isPassword ? Icons.visibility_outlined : Icons.visibility_off_outlined;
 
     emit(ShowPasswordState());
+
   }
 
   ///END : Show Password
 
 //------------------------------------------------------------//
+///START : GetCityData
+
+  CityModel? cityModel;
+  void getCityData() {
+    emit(GetCityDataLoadingState());
+    FirebaseFirestore.instance
+        .collection('city').doc().get().then((value) {
+      cityModel = CityModel.fromFireStore(value.data()!);
+      emit(GetCityDataSuccessState());
+    }).catchError((error) {
+      debugPrint(error.toString());
+      emit(GetCityDataErrorState(error.toString()));
+    });
+  }
+
+///END : City Data
+//------------------------------------------------------------//
+
 }
+
+
+
+
