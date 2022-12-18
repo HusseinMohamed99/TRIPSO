@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
               ),
               home: LayoutBuilder(
                   builder: (BuildContext context, BoxConstraints constraints) {
-                    if (kDebugMode) {
+                if (kDebugMode) {
                   print(constraints.minWidth.toInt());
                   print(constraints.minHeight.toInt());
                 }
