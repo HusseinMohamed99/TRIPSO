@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
+import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/scrollable_form.dart';
-import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
 import 'package:tripso/shared/constants/constants.dart';
@@ -33,17 +33,37 @@ class SignUpScreen extends StatelessWidget {
       child:
           BlocConsumer<SignUpCubit, SignUpStates>(listener: (context, state) {
         if (state is! SignUpLoadingState) {
-          showDialog(
-              context: context,
-              builder: (context) {
-                return const Center(child: CircularProgressIndicator());
-              });
+          MyDialog.showLoadingDialog(context, 'Loading...');
           if (state is UserCreateSuccessState) {
+            MyDialog.showLoadingDialog(context, 'SignUp is successfully');
             CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
               uId = state.uid;
-              showToast(text: 'Sign up Successful', state: ToastStates.success);
+              MyDialog.hideDialog(context);
               navigateAndFinish(context, routeName: HomeScreen.routeName);
             });
+          } else if (state is UserCreateErrorState) {
+            MyDialog.showLoadingDialog(context, 'SignUp is Error');
+            MyDialog.hideDialog(context);
+            MyDialog.showMessage(context, 'SignUp is Error',
+                posActionTitle: 'Try Again',
+                posAction: () {
+                  if (formKey.currentState!.validate()) {
+                    SignUpCubit.get(context).userSignUp(
+                      email: emailController.text,
+                      password: passwordController.text,
+                      firstName: firstnameController.text,
+                      lastName: lastnameController.text,
+                    );
+                    emailController.clear();
+                    passwordController.clear();
+                    firstnameController.clear();
+                    lastnameController.clear();
+                  }
+                },
+                negActionTitle: 'Cancel',
+                negAction: () {
+                  Navigator.pop(context);
+                });
           }
         }
       }, builder: (context, state) {
@@ -58,8 +78,8 @@ class SignUpScreen extends StatelessWidget {
             1.0,
             child: Scaffold(
               backgroundColor: Colors.transparent,
-              appBar: defaultAppBar(),
-              body: customScrollableForm(
+              appBar: secondaryAppBar(),
+              body: CustomScrollableForm(
                 child: Form(
                   key: formKey,
                   child: Column(
@@ -72,7 +92,7 @@ class SignUpScreen extends StatelessWidget {
                         icon: const Icon(
                           Icons.arrow_back,
                           size: 25,
-                          color: Colors.white,
+                          color: secondaryColor,
                         ),
                       ),
                       Column(
@@ -80,33 +100,32 @@ class SignUpScreen extends StatelessWidget {
                         children: [
                           Container(
                             margin: const EdgeInsets.only(
-                                top: 30, bottom: 50, right: 20, left: 20),
+                                top: 30, bottom: 28, right: 20, left: 20),
                             child: const Text(
                               'Create Account',
                               style: TextStyle(
                                   fontSize: 30,
-                                  color: Colors.white,
+                                  color: secondaryColor,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
-                          space(width: 0, height: 32),
+                          const Space(width: 0, height: 32),
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 50),
+                            padding: const EdgeInsets.symmetric(horizontal: 50),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Text(
                                   'First Name',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: secondaryColor,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                space(width: 0, height: 8),
-                                defaultTextFormField(
-                                  color: Colors.white30,
+                                const Space(width: 0, height: 8),
+                                DefaultTextFormField(
+                                  color: secondaryColor.withOpacity(0.3),
                                   context: context,
                                   controller: firstnameController,
                                   keyboardType: TextInputType.name,
@@ -119,18 +138,18 @@ class SignUpScreen extends StatelessWidget {
                                   prefix: Icons.edit_outlined,
                                   hint: 'First Name',
                                 ),
-                                space(width: 0, height: 20),
+                                const Space(width: 0, height: 20),
                                 const Text(
                                   'Last Name',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: secondaryColor,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                space(width: 0, height: 8),
-                                defaultTextFormField(
-                                  color: Colors.white30,
+                                const Space(width: 0, height: 8),
+                                DefaultTextFormField(
+                                  color: secondaryColor.withOpacity(0.3),
                                   context: context,
                                   controller: lastnameController,
                                   keyboardType: TextInputType.name,
@@ -143,18 +162,18 @@ class SignUpScreen extends StatelessWidget {
                                   prefix: Icons.edit_outlined,
                                   hint: 'Last Name',
                                 ),
-                                space(width: 0, height: 20),
+                                const Space(width: 0, height: 20),
                                 const Text(
                                   'Email Address',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: secondaryColor,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                space(width: 0, height: 8),
-                                defaultTextFormField(
-                                  color: Colors.white30,
+                                const Space(width: 0, height: 8),
+                                DefaultTextFormField(
+                                  color: secondaryColor.withOpacity(0.3),
                                   context: context,
                                   controller: emailController,
                                   keyboardType: TextInputType.emailAddress,
@@ -170,23 +189,22 @@ class SignUpScreen extends StatelessWidget {
                                   prefix: Icons.alternate_email,
                                   hint: 'Email Address',
                                 ),
-                                space(width: 0, height: 20),
+                                const Space(width: 0, height: 20),
                                 const Text(
                                   'Password',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: secondaryColor,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                space(width: 0, height: 8),
-                                defaultTextFormField(
-                                  color: Colors.white30,
+                                const Space(width: 0, height: 8),
+                                DefaultTextFormField(
+                                  color: secondaryColor.withOpacity(0.3),
                                   context: context,
                                   obscuringCharacter: '*',
                                   controller: passwordController,
-                                  keyboardType:
-                                      TextInputType.visiblePassword,
+                                  keyboardType: TextInputType.visiblePassword,
                                   validate: (String? value) {
                                     if (value!.isEmpty) {
                                       return "Password is Required";
@@ -207,7 +225,7 @@ class SignUpScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          space(width: 0, height: 70),
+                          const Space(width: 0, height: 70),
                           defaultMaterialButton(
                             function: () {
                               if (formKey.currentState!.validate()) {

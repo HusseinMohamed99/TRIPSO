@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/shared/animation/fade_animation.dart';
-import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/log_out.dart';
 import 'package:tripso/shared/styles/colors.dart';
@@ -14,20 +13,18 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: secondAppBar(),
-      body: FadeAnimation(
-        1.5,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'HOME Screen',
-                style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 45,
+    return FadeAnimation(
+      1.5,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'HOME Screen',
+              style: GoogleFonts.roboto(
+                textStyle: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 45,
                     height: 1.3,
                     fontWeight: FontWeight.w600,
                   ),
@@ -40,7 +37,6 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }

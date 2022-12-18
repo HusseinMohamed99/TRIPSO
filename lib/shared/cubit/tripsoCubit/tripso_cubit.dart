@@ -14,18 +14,12 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   // ----------------------------------------------------------//
   ///START : GetUserData
+  UserModel? userModel;
 
   void getUserData() {
     emit(GetUserDataLoadingState());
-    FirebaseFirestore.instance
-        .collection('users')
-        .withConverter<UserModel>(
-            fromFirestore: ((snapshot, _) =>
-                UserModel.fromFireStore(snapshot.data()!)),
-            toFirestore: (users, _) => users.toFireStore())
-        .doc(uId)
-        .get()
-        .then((value) {
+    FirebaseFirestore.instance.collection('users').doc(uId).get().then((value) {
+      userModel = UserModel.fromFireStore(value.data()!);
       emit(GetUserDataSuccessState());
     }).catchError((error) {
       debugPrint(error.toString());

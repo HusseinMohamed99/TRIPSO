@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/shared/cubit/SignInCubit/sign_in_state.dart';
-import '../../components/show_toast.dart';
 
 
 
@@ -15,24 +14,13 @@ class SignInCubit extends Cubit<SignInStates> {
     required String email,
     required String password,
   })async {
-    debugPrint('Done');
     emit(SignInLoadingState());
   await  FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: password)
         .then((value) {
     emit(SignInSuccessState(value.user!.uid));
-    showToast(
-      state: ToastStates.success,
-      text: 'Sign in Successful',
-    );
-
     }).catchError((error) {
     emit(SignInErrorState(error.toString()));
-    showToast(
-      state: ToastStates.error,
-      text: 'Sign in Failed',
-    );
-
     });
   }
 ///END : SignIn With E-mail & Password
