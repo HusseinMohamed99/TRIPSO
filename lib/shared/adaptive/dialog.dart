@@ -2,11 +2,16 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 
 class MyDialog {
-  static void showLoadingDialog(BuildContext context, String message,
-      {bool isDismissible = true}) {
+  static void showLoadingDialog(
+    BuildContext context,
+    String message, {
+    bool isDismissible = true,
+  }) {
     showDialog(
       context: context,
       builder: (context) {
@@ -15,8 +20,17 @@ class MyDialog {
             content: Row(
               children: [
                 const CircularProgressIndicator(),
-                space(width: 15, height: 0),
-                Text(message)
+                const Space(width: 15, height: 0),
+                Text(
+                  message,
+                  style: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                )
               ],
             ),
           );
@@ -26,8 +40,17 @@ class MyDialog {
           content: Row(
             children: [
               const CupertinoActivityIndicator(),
-              space(width: 15, height: 0),
-              Text(message),
+              const Space(width: 15, height: 0),
+              Text(
+                message,
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
             ],
           ),
         );
@@ -54,7 +77,9 @@ class MyDialog {
               posAction();
             }
           },
-          child: Text(posActionTitle)));
+          child: Text(
+            posActionTitle,
+          )));
     }
     if (negActionTitle != null) {
       actions.add(TextButton(
@@ -64,20 +89,40 @@ class MyDialog {
               negAction();
             }
           },
-          child: Text(negActionTitle)));
+          child: Text(
+            negActionTitle,
+          )));
     }
     showDialog(
       context: context,
       builder: (context) {
         if (Platform.operatingSystem == 'android') {
           return AlertDialog(
-            content: Text(message),
+            content: Text(
+              message,
+              style: GoogleFonts.roboto(
+                textStyle: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
             actions: actions,
           );
         }
 
         return CupertinoAlertDialog(
-          content: Text(message),
+          content: Text(
+            message,
+            style: GoogleFonts.roboto(
+              textStyle: const TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
           actions: actions,
         );
       },
@@ -86,6 +131,6 @@ class MyDialog {
   }
 
   static void hideDialog(context) {
-    Navigator.pop(context);
+    pop(context);
   }
 }

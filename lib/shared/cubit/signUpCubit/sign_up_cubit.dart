@@ -2,11 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tripso/model/user_model.dart';
 import 'package:tripso/shared/cubit/SignUpCubit/sign_up_state.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 
-import '../../../model/user_model.dart';
-import '../../components/show_toast.dart';
 
 class SignUpCubit extends Cubit<SignUpStates> {
   SignUpCubit() : super(SignUpInitialState());
@@ -19,7 +18,6 @@ class SignUpCubit extends Cubit<SignUpStates> {
     required String firstName,
     required String lastName,
   }) async {
-    debugPrint('Done');
     emit(SignUpLoadingState());
     FirebaseAuth.instance
         .createUserWithEmailAndPassword(
@@ -56,17 +54,8 @@ class SignUpCubit extends Cubit<SignUpStates> {
         .set(model.toFireStore())
         .then((value) {
       emit(UserCreateSuccessState(uId));
-      showToast(
-        state: ToastStates.success,
-        text: 'Sign up Successful',
-      );
-
     }).catchError((error) {
       emit(UserCreateErrorState(error.toString()));
-      showToast(
-        state: ToastStates.error,
-        text: 'Sign up Rejected',
-      );
     });
   }
 

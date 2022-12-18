@@ -28,18 +28,17 @@ class OnBoard extends StatelessWidget {
       child: FadeAnimation(
         1.3,
         child: Scaffold(
-          appBar: defaultAppBar(),
+          appBar: secondaryAppBar(),
           backgroundColor: Colors.transparent,
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             child: Center(
-              child: customScrollableForm(
+              child: CustomScrollableForm(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    space(width: 0, height: 270),
+                    const Spacer(),
                     welcomeText(),
-                    space(width: 0, height: 89),
                     button(context),
                   ],
                 ),
@@ -52,6 +51,7 @@ class OnBoard extends StatelessWidget {
   }
 
   Widget welcomeText() => Expanded(
+    flex: 2,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -60,47 +60,32 @@ class OnBoard extends StatelessWidget {
                 'BE\nREADY',
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
-                    color: Colors.white,
+                    color: secondaryColor,
                     fontSize: 45,
                     height: 1.3,
                     fontWeight: FontWeight.w600,
                   ),
+            ),
+          ),
+        ),
+        Row(
+          children: [
+            FittedBox(
+              child: Text(
+                'TO',
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                    height: 1.3,
+                        color: secondaryColor,
+                        fontSize: 45,
+                        fontWeight: FontWeight.w600,
+                      ),
                 ),
               ),
             ),
-            Row(
-              children: [
-                FittedBox(
-                  child: Text(
-                    'TO',
-                    style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                        height: 1.3,
-                        color: Colors.white,
-                        fontSize: 45,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-                FittedBox(
-                  child: Text(
-                    'UR',
-                    style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                        height: 1.3,
-                        color: Color(0xff60D0E6),
-                        fontSize: 45,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
             FittedBox(
               child: Text(
-                'NEXT',
+                'UR',
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
                     height: 1.3,
@@ -111,24 +96,40 @@ class OnBoard extends StatelessWidget {
                 ),
               ),
             ),
-            FittedBox(
-              child: Text(
-                'ADVENTURE',
-                style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                    height: 1.3,
-                    color: Colors.white,
+          ],
+        ),
+        FittedBox(
+          child: Text(
+            'NEXT',
+            style: GoogleFonts.roboto(
+              textStyle: const TextStyle(
+                height: 1.3,
+                color: Color(0xff60D0E6),
+                fontSize: 45,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ),
+        FittedBox(
+          child: Text(
+            'ADVENTURE',
+            style: GoogleFonts.roboto(
+              textStyle: const TextStyle(
+                height: 1.3,
+                    color: secondaryColor,
                     fontSize: 45,
                     fontWeight: FontWeight.w600,
                   ),
-                ),
-              ),
             ),
-          ],
+          ),
         ),
+      ],
+    ),
       );
 
   Widget button(context) => Expanded(
+    flex: 1,
         child: Column(
           children: [
             defaultMaterialButton(
@@ -138,7 +139,7 @@ class OnBoard extends StatelessWidget {
               text: 'Sign in',
               color: primaryColor,
             ),
-            space(width: 0, height: 26),
+            const Space(width: 0, height: 26),
             defaultMaterialButton(
               function: () {
                 navigateTo(context, routeName: SignUpScreen.routeName);
@@ -148,6 +149,6 @@ class OnBoard extends StatelessWidget {
             ),
             //  space(0, 50),
           ],
-        ),
+    ),
       );
 }

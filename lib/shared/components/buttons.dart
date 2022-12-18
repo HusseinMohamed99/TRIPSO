@@ -57,7 +57,6 @@ Widget defaultButton({
     color: color,
   ),
   child: MaterialButton(
-
     clipBehavior : Clip.antiAliasWithSaveLayer,
     height: 22,
     minWidth: 59,
