@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tripso/mobile/screens/explore/explore.dart';
+import 'package:tripso/mobile/screens/home/home_screen.dart';
 import 'package:tripso/model/user_model.dart';
 import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
@@ -12,7 +14,33 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   static TripsoCubit get(context) => BlocProvider.of(context);
 
-  // ----------------------------------------------------------//
+  ///START : ChangeBottomNavBar
+  int currentIndex = 0;
+  List<Widget> screens = [
+    const ExploreScreen(),
+    const HomeScreen(),
+    const HomeScreen(),
+    const HomeScreen(),
+  ];
+
+  List<String> titles = [
+    'Explore',
+    'Wishlist',
+    'My Plans',
+    'Profile',
+  ];
+
+  void changeIndex(int index) {
+    currentIndex = index;
+    if (index == 0) getUserData();
+    if (index == 1) getUserData();
+    if (index == 2) getUserData();
+    if (index == 3) getUserData();
+    emit(ChangeBottomNavBarState());
+  }
+
+  ///END : ChangeBottomNavBar
+
   ///START : GetUserData
   UserModel? userModel;
 
@@ -27,7 +55,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  // ----------------------------------------------------------//
   ///START : ChangeUserPassword
   void changeUserPassword({
     required String password,
@@ -49,14 +76,11 @@ class TripsoCubit extends Cubit<TripsoStates> {
       debugPrint(error.toString());
     });
   }
-
   ///END : ChangeUserPassword
 
-// ----------------------------------------------------------//
   ///START : Show Password
   IconData suffix = Icons.visibility_outlined;
   bool isPassword = true;
-
   void showPassword() {
     isPassword = !isPassword;
     suffix =
@@ -64,8 +88,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
     emit(ShowPasswordState());
   }
-
   ///END : Show Password
 
-//------------------------------------------------------------//
 }

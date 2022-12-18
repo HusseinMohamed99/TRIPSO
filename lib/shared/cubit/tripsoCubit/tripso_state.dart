@@ -11,13 +11,26 @@ class GetUserDataErrorState extends TripsoStates {
 }
 ///END : GetUserData
  //------------------------------------------------------------//
- ///START : ChangeUserPassword
+
+///START : ChangeUserPassword
 class ChangeUserPasswordLoadingState extends TripsoStates {}
+
 class ChangeUserPasswordSuccessState extends TripsoStates {}
+
 class ChangeUserPasswordErrorState extends TripsoStates {
-  final String error ;
+  final String error;
+
   ChangeUserPasswordErrorState(this.error);
 }
 
+///END : ChangeUserPassword
+
+/// START : ShowPassword
 class ShowPasswordState extends TripsoStates {}
-// ///END : ChangeUserPassword
+
+///END : ShowPassword
+
+/// START : ChangeUserPassword
+class ChangeBottomNavBarState extends TripsoStates {}
+
+/// END : ChangeUserPassword
