@@ -83,7 +83,6 @@ class MyApp extends StatelessWidget {
               routes: {
                 OnBoard.routeName: (_) => const OnBoard(),
                 HomeScreen.routeName: (_) => const HomeScreen(),
-                //HomeLayout.routeName: (_) => HomeLayout(),
                 SignInScreen.routeName: (_) => const SignInScreen(),
                 SignUpScreen.routeName: (_) => const SignUpScreen(),
                 ForgotPassword.routeName: (_) => const ForgotPassword(),
