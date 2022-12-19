@@ -13,6 +13,11 @@ class AssetPath{
   static const String dubaiImage = "assets/images/dubai.jpg";
   static const String romeImage = "assets/images/rome.jpg";
   static const String tripsoImage = "assets/images/tripso.jpg";
+  static const String homeImage = "assets/images/home.png";
+  static const String planImage = "assets/images/plan.png";
+  static const String searchImage = "assets/images/search.png";
+  static const String userImage = "assets/images/user.png";
+  static const String wishlistImage = "assets/images/wishlist.png";
 }
 
 
