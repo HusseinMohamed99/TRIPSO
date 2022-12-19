@@ -6,12 +6,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/desktop/desktop_screen.dart';
 import 'package:tripso/firebase_options.dart';
 import 'package:tripso/layout/layout.dart';
+import 'package:tripso/mobile/screens/all_plans/all_plans.dart';
+import 'package:tripso/mobile/screens/description/description.dart';
+import 'package:tripso/mobile/screens/explore/explore.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
+import 'package:tripso/mobile/screens/my_plan/my_plans.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/mobile/screens/password/forget_password_screen.dart';
 import 'package:tripso/mobile/screens/password/update_password_screen.dart';
+import 'package:tripso/mobile/screens/profile/my_profile.dart';
+import 'package:tripso/mobile/screens/search/search_screen.dart';
+import 'package:tripso/mobile/screens/sights/sights.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/mobile/screens/sign_up/sign_up_screen.dart';
+import 'package:tripso/mobile/screens/top_plans/top_plans.dart';
+import 'package:tripso/mobile/screens/wishlist/wishlist.dart';
 import 'package:tripso/shared/bloc_observer.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
@@ -89,6 +98,15 @@ class MyApp extends StatelessWidget {
                 SignUpScreen.routeName: (_) => const SignUpScreen(),
                 ForgotPassword.routeName: (_) => const ForgotPassword(),
                 UpdatePassword.routeName: (_) => const UpdatePassword(),
+                SearchScreen.routeName: (_) => const SearchScreen(),
+                MyProfileScreen.routeName: (_) => const MyProfileScreen(),
+                WishListScreen.routeName: (_) => const WishListScreen(),
+                ExploreScreen.routeName: (_) => const ExploreScreen(),
+                MyPlansScreen.routeName: (_) => const MyPlansScreen(),
+                TopPlansScreen.routeName: (_) => const TopPlansScreen(),
+                AllPlansScreen.routeName: (_) => const AllPlansScreen(),
+                DescriptionScreen.routeName: (_) => const DescriptionScreen(),
+                SightsScreen.routeName: (_) => const SightsScreen(),
                 DesktopScreen.routeName: (_) => const DesktopScreen(),
               },
               initialRoute: '/',

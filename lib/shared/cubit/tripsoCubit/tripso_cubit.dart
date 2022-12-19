@@ -3,7 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/mobile/screens/explore/explore.dart';
-import 'package:tripso/mobile/screens/home/home_screen.dart';
+import 'package:tripso/mobile/screens/my_plan/my_plans.dart';
+import 'package:tripso/mobile/screens/profile/my_profile.dart';
+import 'package:tripso/mobile/screens/wishlist/wishlist.dart';
 import 'package:tripso/model/user_model.dart';
 import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
@@ -18,9 +20,9 @@ class TripsoCubit extends Cubit<TripsoStates> {
   int currentIndex = 0;
   List<Widget> screens = [
     const ExploreScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+    const WishListScreen(),
+    const MyPlansScreen(),
+    const MyProfileScreen(),
   ];
 
   List<String> titles = [

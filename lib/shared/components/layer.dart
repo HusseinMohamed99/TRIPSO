@@ -15,7 +15,7 @@ class LayerImage extends StatelessWidget {
         borderRadius: BorderRadius.all(
           Radius.circular(20),
         ),
-        color: Color.fromRGBO(0, 0, 0, 0.5),
+        color: Color.fromRGBO(0, 0, 0, 0.3),
       ),
     );
   }
