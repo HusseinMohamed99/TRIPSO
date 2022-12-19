@@ -12,6 +12,16 @@ PreferredSizeWidget secondaryAppBar() => AppBar(
       toolbarHeight: 0,
     );
 
+PreferredSizeWidget thirdAppBar() => AppBar(
+      backgroundColor: Colors.transparent,
+      systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarBrightness: Brightness.light,
+          statusBarIconBrightness: Brightness.light),
+      elevation: 0,
+      scrolledUnderElevation: 0,
+      toolbarHeight: 0,
+    );
+
 PreferredSizeWidget primaryAppBar({
   required String title,
   required Function() function,

@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/desktop/desktop_screen.dart';
 import 'package:tripso/firebase_options.dart';
+import 'package:tripso/layout/layout.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/mobile/screens/password/forget_password_screen.dart';
@@ -34,7 +35,7 @@ void main() async {
 
   Widget widget;
   if (uId != null) {
-    widget = HomeScreen();
+    widget = const HomeScreen();
   } else {
     widget = const OnBoard();
   }
@@ -70,7 +71,7 @@ class MyApp extends StatelessWidget {
               ),
               home: LayoutBuilder(
                   builder: (BuildContext context, BoxConstraints constraints) {
-                    if (kDebugMode) {
+                if (kDebugMode) {
                   print(constraints.minWidth.toInt());
                   print(constraints.minHeight.toInt());
                 }
@@ -83,6 +84,7 @@ class MyApp extends StatelessWidget {
               routes: {
                 OnBoard.routeName: (_) => const OnBoard(),
                 HomeScreen.routeName: (_) => const HomeScreen(),
+                HomeLayout.routeName: (_) => const HomeLayout(),
                 SignInScreen.routeName: (_) => const SignInScreen(),
                 SignUpScreen.routeName: (_) => const SignUpScreen(),
                 ForgotPassword.routeName: (_) => const ForgotPassword(),

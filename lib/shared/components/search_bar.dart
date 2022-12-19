@@ -5,6 +5,7 @@ class SearchBar extends StatelessWidget {
   const SearchBar({
     required this.function,
     this.width,
+    this.height,
     this.title,
     this.iconSize,
     this.iconColor,
@@ -14,7 +15,6 @@ class SearchBar extends StatelessWidget {
     this.fontWeightTitle,
     this.iconData,
     this.readOnly,
-    this.height,
     Key? key,
   }) : super(key: key);
 
