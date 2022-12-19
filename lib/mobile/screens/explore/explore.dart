@@ -214,76 +214,78 @@ class ExploreScreen extends StatelessWidget {
     );
   }
 
-  Widget listOfPlans() => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(children: [
-          Stack(
-            alignment: Alignment.bottomLeft,
-            children: [
-              Container(
-                alignment: Alignment.bottomLeft,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                height: 155,
-                width: 270,
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
+  Widget listOfPlans() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(children: [
+        Stack(
+          alignment: Alignment.bottomLeft,
+          children: [
+            Container(
+              alignment: Alignment.bottomLeft,
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              height: 155,
+              width: 270,
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      AssetPath.gizaImage,
                     ),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                        AssetPath.gizaImage,
+                  )),
+            ),
+            const LayerImage(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12.0),
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.calendar_month_rounded,
+                            size: 27,
+                            color: secondaryColor,
+                          )),
+                      Text(
+                        '3 Days',
+                        style: GoogleFonts.roboto(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w500,
+                          color: secondaryColor,
+                        ),
                       ),
-                    )),
-              ),
-              const LayerImage(),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0),
-                child: Row(
-                  children: [
-                    Column(
-                      children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.calendar_month_rounded,
-                              size: 27,
-                              color: secondaryColor,
-                            )),
-                        Text(
-                          '3 Days',
-                          style: GoogleFonts.roboto(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.remove_red_eye_outlined,
+                            size: 27,
                             color: secondaryColor,
-                          ),
+                          )),
+                      Text(
+                        '25 Sights',
+                        style: GoogleFonts.roboto(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w500,
+                          color: secondaryColor,
                         ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.remove_red_eye_outlined,
-                              size: 27,
-                              color: secondaryColor,
-                            )),
-                        Text(
-                          '25 Sights',
-                          style: GoogleFonts.roboto(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
-                            color: secondaryColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-            ],
-          ),
-        ]),
-      );
+            ),
+          ],
+        ),
+      ]),
+    );
+  }
 }
