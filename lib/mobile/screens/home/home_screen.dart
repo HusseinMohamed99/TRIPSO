@@ -5,6 +5,7 @@ import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/log_out.dart';
 import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/styles/colors.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -38,6 +39,10 @@ class HomeScreen extends StatelessWidget {
                 },
                 text: 'logOut',
                 color: primaryColor,
+              ),
+              const Space(
+                width: 0,
+                height: 40,
               ),
               defaultMaterialButton(
                 function: () {

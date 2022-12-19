@@ -194,19 +194,16 @@ class ExploreScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 155,
-              child: Expanded(
-                child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, _) {
-                      return listOfPlans();
-                    },
-                    separatorBuilder: (context, _) {
-                      return const Space(height: 0, width: 0);
-                    },
-                    itemCount: 6),
-              ),
+            Expanded(
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, _) {
+                    return listOfPlans();
+                  },
+                  separatorBuilder: (context, _) {
+                    return const Space(height: 0, width: 0);
+                  },
+                  itemCount: 6),
             ),
           ],
         );
