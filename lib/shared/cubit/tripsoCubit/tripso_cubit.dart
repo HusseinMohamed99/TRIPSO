@@ -25,17 +25,15 @@ class TripsoCubit extends Cubit<TripsoStates> {
     const MyPlansScreen(),
     const MyProfileScreen(),
   ];
-
   List<String> titles = [
     'Explore',
     'Wishlist',
     'My Plans',
     'Profile',
   ];
-
   void changeIndex(int index) {
     currentIndex = index;
-    if (index == 0) getUserData();
+    if (index == 0) getCityData();
     if (index == 1) getUserData();
     if (index == 2) getUserData();
     if (index == 3) getUserData();
@@ -46,7 +44,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   ///START : GetUserData
   UserModel? userModel;
-
   void getUserData() {
     emit(GetUserDataLoadingState());
     FirebaseFirestore.instance.collection('users').doc(uId).get().then((value) {
@@ -79,12 +76,12 @@ class TripsoCubit extends Cubit<TripsoStates> {
       debugPrint(error.toString());
     });
   }
+
   ///END : ChangeUserPassword
 
   ///START : Show Password
   IconData suffix = Icons.visibility_outlined;
   bool isPassword = true;
-
   void showPassword() {
     isPassword = !isPassword;
     suffix =
@@ -97,12 +94,16 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   ///START : GetCityData
   CityModel? cityModel;
-
   void getCityData() {
     emit(GetCityDataLoadingState());
-    FirebaseFirestore.instance.collection('city').doc().get().then((value) {
+    FirebaseFirestore.instance
+        .collection('city')
+        .doc('Abu Dhabi')
+        .get()
+        .then((value) {
       cityModel = CityModel.fromFireStore(value.data()!);
       emit(GetCityDataSuccessState());
+      print(value.data());
     }).catchError((error) {
       debugPrint(error.toString());
       emit(GetCityDataErrorState(error.toString()));
@@ -110,4 +111,5 @@ class TripsoCubit extends Cubit<TripsoStates> {
   }
 
   ///END : City Data
+
 }

@@ -9,7 +9,6 @@ import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
@@ -23,6 +22,7 @@ class ExploreScreen extends StatelessWidget {
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
+        var tripsoCubit = TripsoCubit.get(context).cityModel;
         return SingleChildScrollView(
           child: Column(
             children: [
@@ -32,22 +32,22 @@ class ExploreScreen extends StatelessWidget {
                   Container(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     height: 250,
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
+                    decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(40),
                           bottomRight: Radius.circular(40),
                         ),
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage(
-                            AssetPath.gizaImage,
+                          image: NetworkImage(
+                            tripsoCubit!.image,
                           ),
                         )),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Text(
-                      'Giza',
+                      tripsoCubit.name,
                       style: GoogleFonts.roboto(
                         fontSize: 40,
                         fontWeight: FontWeight.w500,
@@ -98,7 +98,7 @@ class ExploreScreen extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 color: Color.fromRGBO(216, 119, 119, 0.15),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(19)),
+                                BorderRadius.all(Radius.circular(19)),
                               ),
                               child: const CircleAvatar(
                                 radius: 22,
@@ -140,7 +140,7 @@ class ExploreScreen extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 color: Color.fromRGBO(105, 155, 247, 0.15),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(19)),
+                                BorderRadius.all(Radius.circular(19)),
                               ),
                               child: const CircleAvatar(
                                 radius: 22,
@@ -182,7 +182,7 @@ class ExploreScreen extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 color: Color.fromRGBO(133, 84, 150, 0.15),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(19)),
+                                BorderRadius.all(Radius.circular(19)),
                               ),
                               child: const CircleAvatar(
                                 radius: 22,

@@ -62,7 +62,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => TripsoCubit()..getUserData()),
+        BlocProvider(
+            create: (context) => TripsoCubit()
+              ..getUserData()
+              ..getCityData()),
       ],
       child: BlocConsumer<TripsoCubit, TripsoStates>(
           listener: (context, state) {},
