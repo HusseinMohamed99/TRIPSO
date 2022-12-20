@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/mobile/screens/top_plans/top_plans.dart';
+import 'package:tripso/model/city_model.dart';
 import 'package:tripso/shared/components/layer.dart';
-import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
 
-class TopPlansItem extends StatelessWidget {
-  const TopPlansItem({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(20),
-      onTap: () {
-        navigateTo(context, routeName: TopPlansScreen.routeName);
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(children: [
-          Stack(
+Widget topPlansItem(BuildContext context, CityModel cityModel) {
+  return InkWell(
+    borderRadius: BorderRadius.circular(20),
+    onTap: () {
+      print(cityModel.name);
+      //navigateTo(context, routeName: TopPlansScreen.routeName);
+    },
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(children: [
+        Stack(
             alignment: Alignment.bottomLeft,
             children: [
               Container(
@@ -27,16 +22,16 @@ class TopPlansItem extends StatelessWidget {
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 height: 155,
                 width: 270,
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                      cityModel.image,
                     ),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                        AssetPath.gizaImage,
-                      ),
-                    )),
+                  )),
               ),
               const LayerImage(),
               Padding(
@@ -92,4 +87,3 @@ class TopPlansItem extends StatelessWidget {
       ),
     );
   }
-}

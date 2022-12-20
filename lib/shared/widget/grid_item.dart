@@ -1,53 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/mobile/screens/sights/sights.dart';
+import 'package:tripso/model/city_model.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
 
-class GridItemSights extends StatelessWidget {
-  const GridItemSights({Key? key}) : super(key: key);
-  static const List<Icon> iconStar = [
-    Icon(
+const List<Icon> iconStar = [
+  Icon(
+    Icons.star,
+    color: Colors.blue,
+    size: 20,
+  ),
+  Icon(
+    Icons.star,
+    color: Colors.blue,
+    size: 20,
+  ),
+  Icon(
       Icons.star,
       color: Colors.blue,
       size: 20,
     ),
     Icon(
       Icons.star,
-      color: Colors.blue,
-      size: 20,
-    ),
-    Icon(
-      Icons.star,
-      color: Colors.blue,
-      size: 20,
-    ),
-    Icon(
-      Icons.star,
-      color: Colors.blue,
-      size: 20,
-    ),
-    Icon(
-      Icons.star,
-      color: Colors.blue,
-      size: 20,
-    ),
-  ];
+    color: Colors.blue,
+    size: 20,
+  ),
+  Icon(
+    Icons.star,
+    color: Colors.blue,
+    size: 20,
+  ),
+];
 
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(20),
-      onTap: () {
-        navigateTo(context, routeName: SightsScreen.routeName);
-      },
-      child: Stack(
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        children: [
-          Card(
-            elevation: 0,
+Widget gridItemSights(BuildContext context, CityModel cityModel) {
+  return InkWell(
+    borderRadius: BorderRadius.circular(20),
+    onTap: () {
+      navigateTo(context, routeName: SightsScreen.routeName);
+    },
+    child: Stack(
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      children: [
+        Card(
+          elevation: 0,
             color: secondaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
@@ -60,15 +57,15 @@ class GridItemSights extends StatelessWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: const Image(
-                        image: AssetImage(
-                          AssetPath.gizaImage,
-                        ),
-                        height: 100,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
+                    child: Image(
+                      image: NetworkImage(
+                        cityModel.image,
                       ),
+                      height: 100,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
                     ),
+                  ),
                     const LayerImage(
                       height: 100,
                     ),
@@ -80,12 +77,12 @@ class GridItemSights extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'The Giza Pyramids',
-                        style: GoogleFonts.roboto(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                        ),
+                        cityModel.name,
+                      style: GoogleFonts.roboto(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
                       ),
+                    ),
                       Row(
                         children: iconStar,
                       ),
@@ -126,4 +123,3 @@ class GridItemSights extends StatelessWidget {
       ),
     );
   }
-}

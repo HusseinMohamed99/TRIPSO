@@ -9,6 +9,7 @@ import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
@@ -22,7 +23,9 @@ class ExploreScreen extends StatelessWidget {
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
+        // WeatherModel? weatherData;
         var tripsoCubit = TripsoCubit.get(context).cityModel;
+        // weatherData = Provider.of<WeatherProvider>(context).weatherData;
         return SingleChildScrollView(
           child: Column(
             children: [
@@ -75,6 +78,31 @@ class ExploreScreen extends StatelessWidget {
                               color: secondaryColor,
                             )),
                       )),
+                  Positioned(
+                    bottom: 20,
+                    right: 40,
+                    child: Text(
+                      '34°',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.roboto(
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                        color: secondaryColor,
+                      ),
+                    ),
+                  ),
+                  const Positioned(
+                    bottom: 60,
+                    right: 5,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      child: Image(
+                        image: AssetImage(
+                          AssetPath.clearImage,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
               Padding(
@@ -98,7 +126,7 @@ class ExploreScreen extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 color: Color.fromRGBO(216, 119, 119, 0.15),
                                 borderRadius:
-                                BorderRadius.all(Radius.circular(19)),
+                                    BorderRadius.all(Radius.circular(19)),
                               ),
                               child: const CircleAvatar(
                                 radius: 22,
@@ -140,7 +168,7 @@ class ExploreScreen extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 color: Color.fromRGBO(105, 155, 247, 0.15),
                                 borderRadius:
-                                BorderRadius.all(Radius.circular(19)),
+                                    BorderRadius.all(Radius.circular(19)),
                               ),
                               child: const CircleAvatar(
                                 radius: 22,
@@ -182,7 +210,7 @@ class ExploreScreen extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 color: Color.fromRGBO(133, 84, 150, 0.15),
                                 borderRadius:
-                                BorderRadius.all(Radius.circular(19)),
+                                    BorderRadius.all(Radius.circular(19)),
                               ),
                               child: const CircleAvatar(
                                 radius: 22,
@@ -277,6 +305,7 @@ class PopularSightsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cubit = TripsoCubit.get(context);
     return Column(
       children: [
         Padding(
@@ -301,8 +330,8 @@ class PopularSightsWidget extends StatelessWidget {
           mainAxisSpacing: 0,
           childAspectRatio: 4 / 6,
           children: List.generate(
-            4,
-            (index) => const GridItemSights(),
+            cubit.city.length,
+            (index) => gridItemSights(context, cubit.city[index]),
           ),
         ),
       ],
@@ -317,6 +346,8 @@ class TopPlansWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cubit = TripsoCubit.get(context);
+
     return Column(
       children: [
         Padding(
@@ -336,13 +367,13 @@ class TopPlansWidget extends StatelessWidget {
           height: 155,
           child: ListView.separated(
               scrollDirection: Axis.horizontal,
-              itemBuilder: (context, _) {
-                return const TopPlansItem();
+              itemBuilder: (context, index) {
+                return topPlansItem(context, cubit.city[index]);
               },
               separatorBuilder: (context, _) {
                 return const Space(height: 0, width: 0);
               },
-              itemCount: 6),
+              itemCount: cubit.city.length),
         ),
       ],
     );

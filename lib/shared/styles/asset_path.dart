@@ -18,6 +18,7 @@ class AssetPath{
   static const String searchImage = "assets/images/search.png";
   static const String userImage = "assets/images/user.png";
   static const String wishlistImage = "assets/images/wishlist.png";
+  static const String clearImage = "assets/images/clear.png";
 }
 
 
