@@ -33,10 +33,10 @@ dependencies:
   responsive_framework: ^0.2.0
   simple_animations: ^4.2.0
   supercharged: ^2.1.1
-  http: ^0.13.5
   email_auth:  ^1.0.0
   pin_code_fields: ^7.4.0
   lottie: ^2.0.0
+  google_nav_bar: ^5.0.6
 
   # firebase
   firebase_core: ^2.1.1
@@ -44,9 +44,9 @@ dependencies:
   cloud_firestore: ^4.0.3
   firebase_storage: ^11.0.3
   firebase_messaging: ^14.0.3
-  device_preview: ^1.1.0
-  google_nav_bar: ^5.0.6
-  flutter_svg: ^1.1.6
+
+
+
 
 
 

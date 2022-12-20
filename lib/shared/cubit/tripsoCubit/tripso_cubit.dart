@@ -98,7 +98,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     emit(GetCityDataLoadingState());
     FirebaseFirestore.instance
         .collection('city')
-        .doc('Abu Dhabi')
+        .doc('Aswan')
         .get()
         .then((value) {
       cityModel = CityModel.fromFireStore(value.data()!);
@@ -111,5 +111,15 @@ class TripsoCubit extends Cubit<TripsoStates> {
   }
 
   ///END : City Data
+  List<CityModel> city = [];
+  List<String> cId = [];
 
+  getData() async {
+    FirebaseFirestore.instance.collection('city').get().then((value) {
+      for (var element in value.docs) {
+        city.add(CityModel.fromFireStore(element.data()));
+        cId.add(element.id);
+      }
+    });
+  }
 }
