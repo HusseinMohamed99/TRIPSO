@@ -6,6 +6,7 @@ import 'package:tripso/mobile/screens/explore/explore.dart';
 import 'package:tripso/mobile/screens/my_plan/my_plans.dart';
 import 'package:tripso/mobile/screens/profile/my_profile.dart';
 import 'package:tripso/mobile/screens/wishlist/wishlist.dart';
+import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/user_model.dart';
 import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
@@ -83,6 +84,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   ///START : Show Password
   IconData suffix = Icons.visibility_outlined;
   bool isPassword = true;
+
   void showPassword() {
     isPassword = !isPassword;
     suffix =
@@ -90,6 +92,22 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
     emit(ShowPasswordState());
   }
+
   ///END : Show Password
 
+  ///START : GetCityData
+  CityModel? cityModel;
+
+  void getCityData() {
+    emit(GetCityDataLoadingState());
+    FirebaseFirestore.instance.collection('city').doc().get().then((value) {
+      cityModel = CityModel.fromFireStore(value.data()!);
+      emit(GetCityDataSuccessState());
+    }).catchError((error) {
+      debugPrint(error.toString());
+      emit(GetCityDataErrorState(error.toString()));
+    });
+  }
+
+  ///END : City Data
 }
