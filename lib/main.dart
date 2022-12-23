@@ -26,7 +26,7 @@ import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -65,8 +65,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) => TripsoCubit()
               ..getUserData()
-              ..getCityData()
-              ..getData()),
+              ..getData()
+              ..getCityData()),
       ],
       child: BlocConsumer<TripsoCubit, TripsoStates>(
           listener: (context, state) {},
@@ -78,10 +78,7 @@ class MyApp extends StatelessWidget {
 
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                colorSchemeSeed: primaryColor,
-                useMaterial3: true,
-              ),
+              theme: ThemeApp.lightTheme,
               home: LayoutBuilder(
                   builder: (BuildContext context, BoxConstraints constraints) {
                 if (kDebugMode) {

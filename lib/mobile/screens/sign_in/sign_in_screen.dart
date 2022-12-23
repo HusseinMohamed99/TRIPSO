@@ -40,6 +40,7 @@ class SignInScreen extends StatelessWidget {
           CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
             uId = state.uid;
             MyDialog.hideDialog(context);
+
             navigateAndFinish(context, routeName: HomeScreen.routeName);
           });
         } else if (state is SignInErrorState) {

@@ -38,6 +38,9 @@ Widget gridItemSights(BuildContext context, CityModel cityModel) {
   return InkWell(
     borderRadius: BorderRadius.circular(20),
     onTap: () {
+      print(cityModel.name);
+      print(cityModel.cId);
+      print(cityModel.image);
       navigateTo(context, routeName: SightsScreen.routeName);
     },
     child: Stack(
