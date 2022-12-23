@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/mobile/screens/explore/explore.dart';
 import 'package:tripso/mobile/screens/my_plan/my_plans.dart';
 import 'package:tripso/mobile/screens/profile/my_profile.dart';
+import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/mobile/screens/wishlist/wishlist.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/user_model.dart';
@@ -20,7 +21,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   ///START : ChangeBottomNavBar
   int currentIndex = 0;
   List<Widget> screens = [
-    const ExploreScreen(),
+     const ExploreScreen(),
     const WishListScreen(),
     const MyPlansScreen(),
     const MyProfileScreen(),
@@ -33,7 +34,12 @@ class TripsoCubit extends Cubit<TripsoStates> {
   ];
   void changeIndex(int index) {
     currentIndex = index;
-    if (index == 0) getCityData();
+    if (index == 0)
+    {
+      getCityData();
+      WeatherProvider();
+
+    }
     if (index == 1) getUserData();
     if (index == 2) getUserData();
     if (index == 3) getUserData();
