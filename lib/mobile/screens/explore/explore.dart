@@ -5,6 +5,7 @@ import 'package:tripso/mobile/screens/all_plans/all_plans.dart';
 import 'package:tripso/mobile/screens/description/description.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
 import 'package:tripso/mobile/screens/sights/sights.dart';
+import 'package:tripso/model/city_model.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
@@ -23,9 +24,8 @@ class ExploreScreen extends StatelessWidget {
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        // WeatherModel? weatherData;
-        var tripsoCubit = TripsoCubit.get(context).cityModel;
-        // weatherData = Provider.of<WeatherProvider>(context).weatherData;
+        CityModel cityModel =
+            (ModalRoute.of(context)?.settings.arguments) as CityModel;
         return SingleChildScrollView(
           child: Column(
             children: [
@@ -37,20 +37,20 @@ class ExploreScreen extends StatelessWidget {
                     height: 250,
                     decoration: BoxDecoration(
                         borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(40),
-                          bottomRight: Radius.circular(40),
+                          bottomLeft: Radius.circular(20),
+                          bottomRight: Radius.circular(20),
                         ),
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                            tripsoCubit!.image,
+                            cityModel.image,
                           ),
                         )),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Text(
-                      tripsoCubit.name,
+                      cityModel.name,
                       style: GoogleFonts.roboto(
                         fontSize: 40,
                         fontWeight: FontWeight.w500,
@@ -347,7 +347,6 @@ class TopPlansWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cubit = TripsoCubit.get(context);
-
     return Column(
       children: [
         Padding(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/mobile/screens/top_plans/top_plans.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/shared/components/layer.dart';
+import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/styles/colors.dart';
 
 Widget topPlansItem(BuildContext context, CityModel cityModel) {
@@ -9,7 +11,9 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
     borderRadius: BorderRadius.circular(20),
     onTap: () {
       print(cityModel.name);
-      //navigateTo(context, routeName: TopPlansScreen.routeName);
+      print(cityModel.cId);
+      print(cityModel.image);
+      navigateTo(context, routeName: TopPlansScreen.routeName);
     },
     child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -23,7 +27,7 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
                 height: 155,
                 width: 270,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                     Radius.circular(20),
                   ),
                   image: DecorationImage(

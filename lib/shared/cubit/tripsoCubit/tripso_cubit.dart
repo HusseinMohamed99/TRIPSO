@@ -94,16 +94,16 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   ///START : GetCityData
   CityModel? cityModel;
-  void getCityData() {
+  void getData() {
     emit(GetCityDataLoadingState());
     FirebaseFirestore.instance
-        .collection('city')
+        .collection('cities')
         .doc('Aswan')
         .get()
         .then((value) {
       cityModel = CityModel.fromFireStore(value.data()!);
       emit(GetCityDataSuccessState());
-      print(value.data());
+      //print(value.data());
     }).catchError((error) {
       debugPrint(error.toString());
       emit(GetCityDataErrorState(error.toString()));
@@ -114,12 +114,14 @@ class TripsoCubit extends Cubit<TripsoStates> {
   List<CityModel> city = [];
   List<String> cId = [];
 
-  getData() async {
-    FirebaseFirestore.instance.collection('city').get().then((value) {
-      for (var element in value.docs) {
+  getCityData() async {
+    FirebaseFirestore.instance.collection('cities').get().then((value) {
+      value.docs.forEach((element) {
         city.add(CityModel.fromFireStore(element.data()));
         cId.add(element.id);
-      }
+        // print(element.data());
+        //  print('====================================');
+      });
     });
   }
 }
