@@ -25,12 +25,12 @@ class HomeScreen extends StatelessWidget {
       builder: (context, state) {
         return SafeArea(
           child: Scaffold(
-            body: SingleChildScrollView(
-              child: Column(
-                children: [
-                  cubit.city == null
-                      ? Center(child: AdaptiveIndicator(os: getOs()))
-                      : Stack(
+            body: cubit.city.isEmpty
+                ? Center(child: AdaptiveIndicator(os: getOs()))
+                : SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Stack(
                           children: [
                             Column(
                               children: [
@@ -105,10 +105,10 @@ class HomeScreen extends StatelessWidget {
                                     })),
                           ],
                         ),
-                  gridICitiesItem(context),
-                ],
-              ),
-            ),
+                        gridICitiesItem(context),
+                      ],
+                    ),
+                  ),
           ),
         );
       },

@@ -121,7 +121,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   List<String> cId = [];
 
   getCityData() async {
-    FirebaseFirestore.instance.collection('cities').snapshots().listen((value) {
+    FirebaseFirestore.instance.collection('cities').get().then((value) {
       value.docs.forEach((element) {
         city.add(CityModel.fromFireStore(element.data()));
         cId.add(element.id);
