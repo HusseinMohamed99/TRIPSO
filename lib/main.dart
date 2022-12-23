@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 import 'package:tripso/desktop/desktop_screen.dart';
 import 'package:tripso/firebase_options.dart';
 import 'package:tripso/layout/layout.dart';
@@ -14,12 +15,14 @@ import 'package:tripso/mobile/screens/my_plan/my_plans.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/mobile/screens/password/forget_password_screen.dart';
 import 'package:tripso/mobile/screens/password/update_password_screen.dart';
+import 'package:tripso/mobile/screens/popular_sights/popular_sights.dart';
 import 'package:tripso/mobile/screens/profile/my_profile.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
 import 'package:tripso/mobile/screens/sights/sights.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/mobile/screens/sign_up/sign_up_screen.dart';
 import 'package:tripso/mobile/screens/top_plans/top_plans.dart';
+import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/mobile/screens/wishlist/wishlist.dart';
 import 'package:tripso/shared/bloc_observer.dart';
 import 'package:tripso/shared/constants/constants.dart';
@@ -49,7 +52,11 @@ void main() async {
     widget = const OnBoard();
   }
 
-  runApp(MyApp(startWidget: widget));
+  runApp(ChangeNotifierProvider(
+      create: (context) {
+        return WeatherProvider();
+      },
+      child: MyApp(startWidget: widget)));
 }
 
 class MyApp extends StatelessWidget {
@@ -75,7 +82,6 @@ class MyApp extends StatelessWidget {
               DeviceOrientation.portraitUp,
               DeviceOrientation.portraitDown,
             ]);
-
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: ThemeApp.lightTheme,
@@ -108,6 +114,8 @@ class MyApp extends StatelessWidget {
                 AllPlansScreen.routeName: (_) => const AllPlansScreen(),
                 DescriptionScreen.routeName: (_) => const DescriptionScreen(),
                 SightsScreen.routeName: (_) => const SightsScreen(),
+                PopularSightsScreen.routeName: (_) =>
+                    const PopularSightsScreen(),
                 DesktopScreen.routeName: (_) => const DesktopScreen(),
               },
               initialRoute: '/',

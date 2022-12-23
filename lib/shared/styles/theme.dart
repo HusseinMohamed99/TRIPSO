@@ -18,33 +18,42 @@ class ThemeApp {
     cardColor: Colors.white,
     textTheme: TextTheme(
       headline1: GoogleFonts.roboto(
-        fontSize: 35,
-        fontWeight: FontWeight.w500,
+        fontSize: 36,
+        fontWeight: FontWeight.bold,
         color: Colors.black,
       ),
       headline2: GoogleFonts.roboto(
         fontSize: 30,
         color: Colors.black,
+        fontWeight: FontWeight.bold,
       ),
       headline3: GoogleFonts.roboto(
         fontSize: 25,
         color: Colors.black,
+        fontWeight: FontWeight.bold,
       ),
       headline4: GoogleFonts.roboto(
-        fontSize: 20,
+        fontSize: 22,
         color: Colors.black,
+        fontWeight: FontWeight.w500,
       ),
       headline5: GoogleFonts.roboto(
         fontSize: 20,
-        color: Colors.black,
+        fontWeight: FontWeight.w500,
       ),
       headline6: GoogleFonts.roboto(
-        fontSize: 20,
+        fontSize: 17,
         color: Colors.black,
       ),
-      subtitle2: GoogleFonts.roboto(
-        fontSize: 15,
+      subtitle1: GoogleFonts.roboto(
+        fontSize: 14,
         color: Colors.black,
+        fontWeight: FontWeight.w500,
+      ),
+      subtitle2: GoogleFonts.roboto(
+        fontSize: 12,
+        color: Colors.black,
+        fontWeight: FontWeight.w500,
       ),
     ),
   );

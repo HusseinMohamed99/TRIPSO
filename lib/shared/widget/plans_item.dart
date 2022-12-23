@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/mobile/screens/top_plans/top_plans.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/styles/colors.dart';
 
 Widget topPlansItem(BuildContext context, CityModel cityModel) {
   return InkWell(
     borderRadius: BorderRadius.circular(20),
     onTap: () {
-      print(cityModel.name);
-      print(cityModel.cId);
-      print(cityModel.image);
       navigateTo(context, routeName: TopPlansScreen.routeName);
     },
     child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: const EdgeInsets.only(left: 16,right: 16),
       child: Column(children: [
         Stack(
             alignment: Alignment.bottomLeft,
@@ -24,7 +21,7 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
               Container(
                 alignment: Alignment.bottomLeft,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                height: 155,
+                height: 150,
                 width: 270,
                 decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(
@@ -37,7 +34,7 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
                     ),
                   )),
               ),
-              const LayerImage(),
+               const LayerImage(height: 150,),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
                 child: Row(
@@ -53,15 +50,11 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
                             )),
                         Text(
                           '3 Days',
-                          style: GoogleFonts.roboto(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
-                            color: secondaryColor,
-                            height: 0.2,
-                          ),
+                          style: Theme.of(context).textTheme.subtitle1?.copyWith(color: secondaryColor)
                         ),
                       ],
                     ),
+                    const   Space(height: 0, width: 5),
                     Column(
                       children: [
                         IconButton(
@@ -73,12 +66,7 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
                             )),
                         Text(
                           '25 Sights',
-                          style: GoogleFonts.roboto(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
-                            color: secondaryColor,
-                            height: 0.2,
-                          ),
+                           style: Theme.of(context).textTheme.subtitle1?.copyWith(color: secondaryColor)
                         ),
                       ],
                     ),

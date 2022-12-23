@@ -40,7 +40,7 @@ class SearchBar extends StatelessWidget {
         height: height ?? 45,
         width: width ?? 294,
         child: TextFormField(
-          readOnly: readOnly == false,
+          readOnly: readOnly!,
           style: TextStyle(color: styleColor ?? Colors.black),
           onTap: () => function(),
           decoration: InputDecoration(
