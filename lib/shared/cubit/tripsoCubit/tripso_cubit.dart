@@ -12,6 +12,8 @@ import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 
+import '../../../model/place_model.dart';
+
 class TripsoCubit extends Cubit<TripsoStates> {
   TripsoCubit() : super(TripsoInitialState());
 
@@ -119,6 +121,36 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         city.add(CityModel.fromFireStore(element.data()));
         cId.add(element.id);
+      }
+    });
+  }
+
+  ///START : GetPlaceData
+  PlaceModel? placeModel;
+  void getPlaceData() {
+    emit(GetPlaceDataLoadingState());
+    FirebaseFirestore.instance
+        .collection('city')
+        .doc('Florence')
+        .get()
+        .then((value) {
+      placeModel = PlaceModel.fromFireStore(value.data()!);
+      emit(GetPlaceDataSuccessState());
+      print(value.data());
+    }).catchError((error) {
+      debugPrint(error.toString());
+      emit(GetPlaceDataErrorState(error.toString()));
+    });
+  }
+  ///END : Place Data
+  List<PlaceModel> place = [];
+  List<String> pId = [];
+
+  getDataPlaces() async {
+    FirebaseFirestore.instance.collectionGroup('places').get().then((value) {
+      for (var element in value.docs) {
+        place.add(PlaceModel.fromFireStore(element.data()));
+        pId.add(element.id);
       }
     });
   }

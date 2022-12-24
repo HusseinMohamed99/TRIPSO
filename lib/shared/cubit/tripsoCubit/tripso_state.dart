@@ -25,15 +25,22 @@ class ChangeUserPasswordErrorState extends TripsoStates {
 
 ///END : ChangeUserPassword
 
+//------------------------------------------------------------//
+
 /// START : ShowPassword
 class ShowPasswordState extends TripsoStates {}
 
 ///END : ShowPassword
 
+//------------------------------------------------------------//
+
+
 /// START : ChangeUserPassword
 class ChangeBottomNavBarState extends TripsoStates {}
 
 /// END : ChangeUserPassword
+
+//------------------------------------------------------------//
 
 ///START : GetCityData
 
@@ -48,3 +55,21 @@ class GetCityDataErrorState extends TripsoStates {
 }
 
 ///END : GetCityData
+
+//------------------------------------------------------------//
+
+//START : GetPlaceData
+
+class GetPlaceDataLoadingState extends TripsoStates {}
+
+class GetPlaceDataSuccessState extends TripsoStates {}
+
+class GetPlaceDataErrorState extends TripsoStates {
+  final String error;
+
+  GetPlaceDataErrorState(this.error);
+}
+
+///END : GetPlaceData
+
+//------------------------------------------------------------//
