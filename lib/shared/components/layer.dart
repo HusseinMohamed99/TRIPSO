@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LayerImage extends StatelessWidget {
-  const LayerImage({this.width, this.height, Key? key}) : super(key: key);
+   const LayerImage({this.borderRadius,this.width, this.height, Key? key}) : super(key: key);
   final double? width;
   final double? height;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +12,11 @@ class LayerImage extends StatelessWidget {
       clipBehavior: Clip.antiAliasWithSaveLayer,
       height: height ?? 155,
       width: width ?? 270,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(
+      decoration:  BoxDecoration(
+        borderRadius: borderRadius?? const BorderRadius.all(
           Radius.circular(20),
         ),
-        color: Color.fromRGBO(0, 0, 0, 0.3),
+        color: const Color.fromRGBO(0, 0, 0, 0.3),
       ),
     );
   }

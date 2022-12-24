@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:tripso/mobile/screens/all_plans/all_plans.dart';
 import 'package:tripso/mobile/screens/description/description.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
 import 'package:tripso/mobile/screens/sights/sights.dart';
+import 'package:tripso/model/weather_model.dart';
+import 'package:tripso/shared/provider/weather_provider.dart';
+import 'package:tripso/model/city_model.dart';
+import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
@@ -20,47 +23,49 @@ class ExploreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CityModel cityModel =
+        (ModalRoute.of(context)?.settings.arguments) as CityModel;
+    WeatherModel weatherData;
+    weatherData = Provider.of<WeatherProvider>(context).weatherData!;
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        // WeatherModel? weatherData;
-        var tripsoCubit = TripsoCubit.get(context).cityModel;
-        // weatherData = Provider.of<WeatherProvider>(context).weatherData;
         return SingleChildScrollView(
           child: Column(
             children: [
               Stack(
-                alignment: Alignment.bottomLeft,
+                alignment: Alignment.center,
                 children: [
-                  Container(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    height: 250,
-                    decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(40),
-                          bottomRight: Radius.circular(40),
-                        ),
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            tripsoCubit!.image,
-                          ),
-                        )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Text(
-                      tripsoCubit.name,
-                      style: GoogleFonts.roboto(
-                        fontSize: 40,
-                        fontWeight: FontWeight.w500,
-                        color: secondaryColor,
+                  Stack(
+                    children: [
+                      Container(
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        height: 250,
+                        decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                            ),
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                cityModel.image,
+                              ),
+                            )),
                       ),
-                    ),
+                      const LayerImage(
+                        height: 250,
+                        width: double.infinity,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(20),
+                          bottomRight: Radius.circular(20),
+                        ),
+                      )
+                    ],
                   ),
                   Positioned(
                       top: 10,
-                      right: 10,
+                      left: 10,
                       child: Card(
                         elevation: 2,
                         color: Colors.black.withOpacity(0.5),
@@ -78,30 +83,38 @@ class ExploreScreen extends StatelessWidget {
                               color: secondaryColor,
                             )),
                       )),
-                  Positioned(
-                    bottom: 20,
-                    right: 40,
-                    child: Text(
-                      '34°',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.roboto(
-                        fontSize: 50,
-                        fontWeight: FontWeight.bold,
-                        color: secondaryColor,
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 25,
+                        backgroundColor: Colors.transparent,
+                        child: Image.asset(weatherData.getImage()),
                       ),
-                    ),
-                  ),
-                  const Positioned(
-                    bottom: 60,
-                    right: 5,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      child: Image(
-                        image: AssetImage(
-                          AssetPath.clearImage,
+                      const Space(height: 10, width: 0),
+                      Text(
+                        cityModel.name,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline1
+                            ?.copyWith(color: secondaryColor),
+                      ),
+                      Text(
+                        weatherData.weatherStateName,
+                        style: const TextStyle(
+                          color: secondaryColor,
+                          fontSize: 20,
+                          // fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ),
+                      const Space(height: 10, width: 0),
+                      Text(
+                        '${weatherData.temp.toInt().toString()}°',
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline1
+                            ?.copyWith(color: secondaryColor),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -139,15 +152,8 @@ class ExploreScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text(
-                            'Description',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.roboto(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
+                          Text('Historical',
+                              style: Theme.of(context).textTheme.headline4),
                         ],
                       ),
                     ),
@@ -181,15 +187,8 @@ class ExploreScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text(
-                            'Plans',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.roboto(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
+                          Text('Plans',
+                              style: Theme.of(context).textTheme.headline4),
                         ],
                       ),
                     ),
@@ -223,15 +222,8 @@ class ExploreScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text(
-                            'Sights',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.roboto(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
+                          Text('Sights',
+                              style: Theme.of(context).textTheme.headline4),
                         ],
                       ),
                     ),
@@ -256,11 +248,10 @@ class ExploreScreen extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Text(
                         'All Plans',
-                        style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                          color: Colors.blue,
-                        ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline5
+                            ?.copyWith(color: Colors.blueAccent),
                       )),
                 ),
               ),
@@ -269,6 +260,7 @@ class ExploreScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20.0,
+                  vertical: 10,
                 ),
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
@@ -282,11 +274,10 @@ class ExploreScreen extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Text(
                         'All Popular Sights',
-                        style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                          color: Colors.blue,
-                        ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline5
+                            ?.copyWith(color: Colors.blueAccent),
                       )),
                 ),
               ),
@@ -294,6 +285,41 @@ class ExploreScreen extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class TopPlansWidget extends StatelessWidget {
+  const TopPlansWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var cubit = TripsoCubit.get(context);
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(bottom: 8.0, left: 16, top: 5),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child:
+                Text('Top Plans', style: Theme.of(context).textTheme.headline2),
+          ),
+        ),
+        SizedBox(
+          height: 150,
+          child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return topPlansItem(context, cubit.city[index]);
+              },
+              separatorBuilder: (context, _) {
+                return const Space(height: 0, width: 0);
+              },
+              itemCount: cubit.city.length - 15),
+        ),
+      ],
     );
   }
 }
@@ -309,71 +335,27 @@ class PopularSightsWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 8.0, left: 20),
+          padding: const EdgeInsets.only(bottom: 8.0, left: 16),
           child: Align(
             alignment: Alignment.centerLeft,
             child: Text(
               'Popular Sights',
-              style: GoogleFonts.roboto(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.headline2,
             ),
           ),
         ),
         GridView.count(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           crossAxisCount: 2,
           crossAxisSpacing: 6.0,
-          mainAxisSpacing: 0,
-          childAspectRatio: 4 / 6,
+          mainAxisSpacing: 10,
+          childAspectRatio: 1 / 1.25,
           children: List.generate(
-            cubit.city.length,
+            cubit.city.length - 10,
             (index) => gridItemSights(context, cubit.city[index]),
           ),
-        ),
-      ],
-    );
-  }
-}
-
-class TopPlansWidget extends StatelessWidget {
-  const TopPlansWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    var cubit = TripsoCubit.get(context);
-
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0, left: 20, top: 5),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Top Plans',
-              style: GoogleFonts.roboto(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 155,
-          child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return topPlansItem(context, cubit.city[index]);
-              },
-              separatorBuilder: (context, _) {
-                return const Space(height: 0, width: 0);
-              },
-              itemCount: cubit.city.length),
         ),
       ],
     );

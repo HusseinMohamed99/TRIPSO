@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class DesktopScreen extends StatelessWidget {
   const DesktopScreen({Key? key}) : super(key: key);
@@ -11,7 +10,7 @@ class DesktopScreen extends StatelessWidget {
       body: Center(
         child: Text(
           'Coming Soon',
-          style: GoogleFonts.elMessiri(fontSize: 40),
+          style: Theme.of(context).textTheme.headline1,
         ),
       ),
     );

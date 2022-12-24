@@ -1,13 +1,12 @@
 
 class CityModel {
-  //String? history;
-  String? cId;
+  String cId;
   String image;
   String name;
 
   CityModel({
     required this.name,
-    this.cId,
+    required this.cId,
     required this.image,
   });
 
