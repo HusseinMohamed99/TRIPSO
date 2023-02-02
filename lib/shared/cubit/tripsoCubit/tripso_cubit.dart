@@ -162,4 +162,3 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 }
-}

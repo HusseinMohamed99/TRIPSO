@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:tripso/desktop/desktop_screen.dart';
 import 'package:tripso/firebase_options.dart';
@@ -82,44 +83,51 @@ class MyApp extends StatelessWidget {
               DeviceOrientation.portraitUp,
               DeviceOrientation.portraitDown,
             ]);
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: ThemeApp.lightTheme,
-              home: LayoutBuilder(
-                  builder: (BuildContext context, BoxConstraints constraints) {
-                if (kDebugMode) {
-                  print(constraints.minWidth.toInt());
-                  print(constraints.minHeight.toInt());
-                }
-                if (constraints.minWidth.toInt() <= 500 &&
-                    constraints.minHeight.toInt() <= 900) {
-                  return startWidget;
-                }
-                return const DesktopScreen();
-              }),
-              routes: {
-                OnBoard.routeName: (_) => const OnBoard(),
-                HomeScreen.routeName: (_) => const HomeScreen(),
-                HomeLayout.routeName: (_) => const HomeLayout(),
-                SignInScreen.routeName: (_) => const SignInScreen(),
-                SignUpScreen.routeName: (_) => const SignUpScreen(),
-                ForgotPassword.routeName: (_) => const ForgotPassword(),
-                UpdatePassword.routeName: (_) => const UpdatePassword(),
-                SearchScreen.routeName: (_) => const SearchScreen(),
-                MyProfileScreen.routeName: (_) => const MyProfileScreen(),
-                WishListScreen.routeName: (_) => const WishListScreen(),
-                ExploreScreen.routeName: (_) => const ExploreScreen(),
-                MyPlansScreen.routeName: (_) => const MyPlansScreen(),
-                TopPlansScreen.routeName: (_) => const TopPlansScreen(),
-                AllPlansScreen.routeName: (_) => const AllPlansScreen(),
-                DescriptionScreen.routeName: (_) => const DescriptionScreen(),
-                SightsScreen.routeName: (_) => const SightsScreen(),
-                PopularSightsScreen.routeName: (_) =>
-                    const PopularSightsScreen(),
-                DesktopScreen.routeName: (_) => const DesktopScreen(),
-              },
-              initialRoute: '/',
-            );
+            return ScreenUtilInit(
+                designSize: const Size(360, 690),
+                minTextAdapt: true,
+                splitScreenMode: true,
+                builder: (context, child) {
+                  return MaterialApp(
+                    debugShowCheckedModeBanner: false,
+                    theme: ThemeApp.lightTheme,
+                    home: LayoutBuilder(builder:
+                        (BuildContext context, BoxConstraints constraints) {
+                      if (kDebugMode) {
+                        print(constraints.minWidth.toInt());
+                        print(constraints.minHeight.toInt());
+                      }
+                      if (constraints.minWidth.toInt() <= 500 &&
+                          constraints.minHeight.toInt() <= 900) {
+                        return startWidget;
+                      }
+                      return const DesktopScreen();
+                    }),
+                    routes: {
+                      OnBoard.routeName: (_) => const OnBoard(),
+                      HomeScreen.routeName: (_) => const HomeScreen(),
+                      HomeLayout.routeName: (_) => const HomeLayout(),
+                      SignInScreen.routeName: (_) => const SignInScreen(),
+                      SignUpScreen.routeName: (_) => const SignUpScreen(),
+                      ForgotPassword.routeName: (_) => const ForgotPassword(),
+                      UpdatePassword.routeName: (_) => const UpdatePassword(),
+                      SearchScreen.routeName: (_) => const SearchScreen(),
+                      MyProfileScreen.routeName: (_) => const MyProfileScreen(),
+                      WishListScreen.routeName: (_) => const WishListScreen(),
+                      ExploreScreen.routeName: (_) => const ExploreScreen(),
+                      MyPlansScreen.routeName: (_) => const MyPlansScreen(),
+                      TopPlansScreen.routeName: (_) => const TopPlansScreen(),
+                      AllPlansScreen.routeName: (_) => const AllPlansScreen(),
+                      DescriptionScreen.routeName: (_) =>
+                          const DescriptionScreen(),
+                      SightsScreen.routeName: (_) => const SightsScreen(),
+                      PopularSightsScreen.routeName: (_) =>
+                          const PopularSightsScreen(),
+                      DesktopScreen.routeName: (_) => const DesktopScreen(),
+                    },
+                    initialRoute: '/',
+                  );
+                });
           }),
     );
   }

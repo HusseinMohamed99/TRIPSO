@@ -31,7 +31,6 @@ class UpdatePassword extends StatelessWidget {
       if (state is ChangeUserPasswordLoadingState) {
         MyDialog.showLoadingDialog(context, 'Loading...');
       }
-
       if (state is ChangeUserPasswordSuccessState) {
         MyDialog.showLoadingDialog(context, 'Change password is successfully');
         MyDialog.hideDialog(context);
@@ -154,8 +153,13 @@ class UpdatePassword extends StatelessWidget {
       );
 
   Widget assetImage() => const FadeAnimation(
-    1.0,
-        child: Image(image: AssetImage(AssetPath.changePasswordImage)),
+        1.0,
+        child: Image(
+          image: AssetImage(
+            AssetPath.changePasswordImage,
+          ),
+          height: 300,
+        ),
       );
 }
 
