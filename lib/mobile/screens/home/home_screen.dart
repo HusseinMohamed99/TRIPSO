@@ -1,6 +1,13 @@
+import 'dart:async';
+import 'dart:io';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
+import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
@@ -13,9 +20,44 @@ import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
 import 'package:tripso/shared/widget/grid_city_items.dart';
 
-class HomeScreen extends StatelessWidget {
-  static const String routeName = 'home_screen';
-  const HomeScreen({Key? key}) : super(key: key);
+class CitiesScreen extends StatefulWidget {
+  static const String routeName = 'CitiesScreen';
+
+  const CitiesScreen({Key? key}) : super(key: key);
+
+  @override
+  State<CitiesScreen> createState() => _CitiesScreenState();
+}
+
+class _CitiesScreenState extends State<CitiesScreen> {
+  dynamic dropdownValue = 'All Cities';
+
+  late StreamSubscription subscription;
+  bool isDeviceConnected = false;
+  bool isAlertSet = false;
+
+  getConnectivity() =>
+      subscription = Connectivity().onConnectivityChanged.listen(
+        (ConnectivityResult result) async {
+          isDeviceConnected = await InternetConnectionChecker().hasConnection;
+          if (!isDeviceConnected && isAlertSet == false) {
+            showDialogBox();
+            setState(() => isAlertSet = true);
+          }
+        },
+      );
+
+  @override
+  void initState() {
+    getConnectivity();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    subscription.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +71,12 @@ class HomeScreen extends StatelessWidget {
                 ? Center(child: AdaptiveIndicator(os: getOs()))
                 : SingleChildScrollView(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Stack(
                           children: [
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Stack(
                                     alignment: AlignmentDirectional.bottomStart,
@@ -40,30 +84,31 @@ class HomeScreen extends StatelessWidget {
                                       Container(
                                         clipBehavior:
                                             Clip.antiAliasWithSaveLayer,
-                                        height: 250,
-                                        decoration: const BoxDecoration(
+                                        height: 270.h,
+                                        decoration: BoxDecoration(
                                             borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(20),
-                                              bottomRight: Radius.circular(20),
+                                              bottomLeft: Radius.circular(20.r),
+                                              bottomRight:
+                                                  Radius.circular(20.r),
                                             ),
-                                            image: DecorationImage(
+                                            image: const DecorationImage(
                                               fit: BoxFit.cover,
                                               image: AssetImage(
                                                 AssetPath.dubaiImage,
                                               ),
                                             )),
                                       ),
-                                      const LayerImage(
-                                        height: 250,
+                                      LayerImage(
+                                        height: 270.h,
                                         width: double.infinity,
                                         borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(20),
-                                          bottomRight: Radius.circular(20),
+                                          bottomLeft: Radius.circular(20.r),
+                                          bottomRight: Radius.circular(20.r),
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 15, bottom: 50),
+                                        padding: EdgeInsets.only(
+                                            left: 15.r, bottom: 50.r),
                                         child: Text(
                                           'Where do you\nwant to go ?',
                                           style: Theme.of(context)
@@ -75,37 +120,82 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                       ),
                                     ]),
-                                const Space(height: 50, width: 0),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Destinations',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline2,
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                Space(height: 30.h, width: 0.w),
+                                Space(height: 5.h, width: 0.w),
+                                if (dropdownValue == 'All Cities')
+                                  gridCitiesItem(context, cubit.placeModel!),
+                                if (dropdownValue == 'Egypt')
+                                  gridEGItem(context, cubit.placeModel!),
+                                if (dropdownValue == 'Italy')
+                                  gridITItem(context, cubit.placeModel!),
+                                if (dropdownValue == 'France')
+                                  gridFRItem(context, cubit.placeModel!),
+                                if (dropdownValue == 'UAE')
+                                  gridUAEItem(context, cubit.placeModel!),
                               ],
                             ),
                             Positioned(
-                                top: 221,
-                                right: 33,
-                                left: 33,
-                                child: SearchBar(
-                                    readOnly: true,
-                                    function: () {
-                                      navigateTo(context,
-                                          routeName: SearchScreen.routeName);
-                                    })),
+                              top:
+                                  MediaQuery.of(context).size.height.h * 0.22.h,
+                              right: 10.sp,
+                              left: 10.sp,
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: SearchBar(
+                                        readOnly: true,
+                                        function: () {
+                                          navigateTo(context,
+                                              routeName:
+                                                  SearchScreen.routeName);
+                                        }),
+                                  ),
+                                  Card(
+                                    elevation: 3,
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: 40.h,
+                                      width: 100.w,
+                                      child: DropdownButton(
+                                        iconSize: 20.sp,
+                                        underline: const Divider(
+                                          color: Colors.white,
+                                        ),
+                                        icon: const Icon(
+                                            Icons.keyboard_arrow_down),
+                                        items: [
+                                          'All Cities',
+                                          'Egypt',
+                                          'Italy',
+                                          'France',
+                                          'UAE',
+                                        ].map((e) {
+                                          return DropdownMenuItem(
+                                            value: e,
+                                            child: Center(
+                                              child: Text(
+                                                e,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .headline6,
+                                              ),
+                                            ),
+                                          );
+                                        }).toList(),
+                                        onChanged: (newValue) {
+                                          setState(() {
+                                            dropdownValue = newValue;
+                                          });
+                                        },
+                                        value: dropdownValue,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
-                        gridICitiesItem(context),
                       ],
                     ),
                   ),
@@ -115,20 +205,151 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget gridICitiesItem(BuildContext context) {
+  showDialogBox() {
+    if (Platform.operatingSystem == 'android') {
+      return showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: const Text('No Connection'),
+          content: const Text('Please check your internet connectivity'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () async {
+                Navigator.pop(context, 'Cancel');
+                setState(() => isAlertSet = false);
+                isDeviceConnected =
+                    await InternetConnectionChecker().hasConnection;
+                if (!isDeviceConnected && isAlertSet == false) {
+                  showDialogBox();
+                  setState(() => isAlertSet = true);
+                }
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        ),
+      );
+    }
+    return showCupertinoDialog<String>(
+      context: context,
+      builder: (BuildContext context) => CupertinoAlertDialog(
+        title: const Text('No Connection'),
+        content: const Text('Please check your internet connectivity'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () async {
+              Navigator.pop(context, 'Cancel');
+              setState(() => isAlertSet = false);
+              isDeviceConnected =
+                  await InternetConnectionChecker().hasConnection;
+              if (!isDeviceConnected && isAlertSet == false) {
+                showDialogBox();
+                setState(() => isAlertSet = true);
+              }
+            },
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget gridCitiesItem(BuildContext context, PlaceModel placeModel) {
     var cubit = TripsoCubit.get(context);
     return GridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      shrinkWrap: true,
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,
+      crossAxisSpacing: 2.0.w,
+      mainAxisSpacing: 2.h,
+      childAspectRatio: 1.h / 1.2.h,
+      children: List.generate(
+          cubit.city.length,
+          (index) => GridCitiesItem(
+                placeModel,
+                cityModel: cubit.city[index],
+              )),
+    );
+  }
+
+  Widget gridEGItem(BuildContext context, PlaceModel placeModel) {
+    var cubit = TripsoCubit.get(context);
+
+    return GridView.count(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 2,
-      crossAxisSpacing: 15.0,
-      mainAxisSpacing: 5,
-      childAspectRatio: 1 / 1.2,
+      crossAxisSpacing: 15.0.w,
+      mainAxisSpacing: 5.h,
+      childAspectRatio: 1 / 1.1.h,
       children: List.generate(
-        cubit.city.length,
-        (index) => gridCitiesItem(context, cubit.city[index]),
-      ),
+          cubit.cityEG.length,
+          (index) => GridEGItem(
+                placeModel,
+                cityModel: cubit.cityEG[index],
+              )),
+    );
+  }
+
+  Widget gridITItem(BuildContext context, PlaceModel placeModel) {
+    var cubit = TripsoCubit.get(context);
+
+    return GridView.count(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,
+      crossAxisSpacing: 15.0.w,
+      mainAxisSpacing: 5.h,
+      childAspectRatio: 1 / 1.1.h,
+      children: List.generate(
+          cubit.cityIT.length,
+          (index) => GridITItem(
+                placeModel,
+                cityModel: cubit.cityIT[index],
+              )),
+    );
+  }
+
+  Widget gridUAEItem(BuildContext context, PlaceModel placeModel) {
+    var cubit = TripsoCubit.get(context);
+
+    return GridView.count(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,
+      crossAxisSpacing: 15.0.w,
+      mainAxisSpacing: 5.h,
+      childAspectRatio: 1 / 1.1.h,
+      children: List.generate(
+          cubit.cityUAE.length,
+          (index) => GridUAEItem(
+                placeModel,
+                cityModel: cubit.cityUAE[index],
+              )),
+    );
+  }
+
+  Widget gridFRItem(BuildContext context, PlaceModel placeModel) {
+    var cubit = TripsoCubit.get(context);
+
+    return GridView.count(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,
+      crossAxisSpacing: 15.0.w,
+      mainAxisSpacing: 5.h,
+      childAspectRatio: 1 / 1.1.h,
+      children: List.generate(
+          cubit.cityFR.length,
+          (index) => GridFRItem(
+                placeModel,
+                cityModel: cubit.cityFR[index],
+              )),
     );
   }
 }

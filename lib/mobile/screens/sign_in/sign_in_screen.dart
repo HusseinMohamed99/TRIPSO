@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
 import 'package:tripso/mobile/screens/password/forget_password_screen.dart';
 import 'package:tripso/mobile/screens/sign_up/sign_up_screen.dart';
@@ -14,6 +15,7 @@ import 'package:tripso/shared/components/text_form_field.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/SignInCubit/sign_in_state.dart';
 import 'package:tripso/shared/cubit/signInCubit/sign_in_cubit.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
@@ -31,7 +33,7 @@ class SignInScreen extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context) => SignInCubit(),
       child:
-          BlocConsumer<SignInCubit, SignInStates>(listener: (context, state) {
+      BlocConsumer<SignInCubit, SignInStates>(listener: (context, state) {
         if (state is SignInLoadingState) {
           MyDialog.showLoadingDialog(context, 'Loading...');
         }
@@ -41,7 +43,8 @@ class SignInScreen extends StatelessWidget {
             uId = state.uid;
             MyDialog.hideDialog(context);
 
-            navigateAndFinish(context, routeName: HomeScreen.routeName);
+            TripsoCubit.get(context).getUserData();
+            navigateAndFinish(context, routeName: CitiesScreen.routeName);
           });
         } else if (state is SignInErrorState) {
           MyDialog.showLoadingDialog(context, 'Login is Error');
@@ -87,20 +90,19 @@ class SignInScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 50),
+                              padding: EdgeInsets.symmetric(horizontal: 50.r),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text(
+                                  Text(
                                     'Email Address',
                                     style: TextStyle(
                                       color: secondaryColor,
-                                      fontSize: 14,
+                                      fontSize: 14.sp,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
-                                  const Space(width: 0, height: 8),
+                                  Space(width: 0.w, height: 8.h),
                                   DefaultTextFormField(
                                     color: secondaryColor.withOpacity(0.3),
                                     context: context,
@@ -115,16 +117,16 @@ class SignInScreen extends StatelessWidget {
                                     hint: 'Email Address',
                                     prefix: Icons.alternate_email,
                                   ),
-                                  const Space(width: 0, height: 26),
-                                  const Text(
+                                  Space(width: 0.w, height: 26.h),
+                                  Text(
                                     'Password',
                                     style: TextStyle(
                                       color: secondaryColor,
-                                      fontSize: 14,
+                                      fontSize: 14.sp,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
-                                  const Space(width: 0, height: 8),
+                                  Space(width: 0.w, height: 8.h),
                                   DefaultTextFormField(
                                     color: secondaryColor.withOpacity(0.3),
                                     context: context,
@@ -150,8 +152,7 @@ class SignInScreen extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 50),
+                              padding: EdgeInsets.symmetric(horizontal: 50.r),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
@@ -173,7 +174,7 @@ class SignInScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const Space(width: 0, height: 30),
+                      Space(width: 0.w, height: 30.h),
                       Expanded(
                         flex: 1,
                         child: Column(
@@ -194,10 +195,9 @@ class SignInScreen extends StatelessWidget {
                                 color: primaryColor,
                               ),
                             ),
-                            const Space(width: 0, height: 28),
+                            Space(width: 0.w, height: 28.h),
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 50.0),
+                              padding: EdgeInsets.symmetric(horizontal: 50.0.r),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [

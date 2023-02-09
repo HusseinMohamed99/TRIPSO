@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:tripso/shared/styles/colors.dart';
 
@@ -12,7 +13,7 @@ void showToast({
     timeInSecForIosWeb: 10,
     backgroundColor: chooseToastColor(state),
     textColor: secondaryColor,
-    fontSize: 16.0,
+    fontSize: 16.0.sp,
   );
 }
 

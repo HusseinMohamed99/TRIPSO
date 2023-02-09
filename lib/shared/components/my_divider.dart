@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Widget myDivider({Color? color}) {
-  return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 8),
-    width: double.infinity,
-    height: 1.0,
-    color: color ?? Colors.grey,
-  );
+class MyDivider extends StatelessWidget {
+  const MyDivider({this.color, this.height, this.width, Key? key})
+      : super(key: key);
+  final double? width;
+  final double? height;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width ?? double.infinity,
+      height: height ?? 2.0.h,
+      color: color ?? Colors.grey,
+    );
+  }
 }

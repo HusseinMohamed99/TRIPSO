@@ -1,7 +1,7 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
@@ -20,13 +20,13 @@ class MyDialog {
             content: Row(
               children: [
                 const CircularProgressIndicator(),
-                const Space(width: 15, height: 0),
+                Space(width: 15.w, height: 0.h),
                 Text(
                   message,
                   style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
+                    textStyle: TextStyle(
                       color: Colors.black,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -40,13 +40,13 @@ class MyDialog {
           content: Row(
             children: [
               const CupertinoActivityIndicator(),
-              const Space(width: 15, height: 0),
+              Space(width: 15.w, height: 0.h),
               Text(
                 message,
                 style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
+                  textStyle: TextStyle(
                     color: Colors.black,
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -101,9 +101,9 @@ class MyDialog {
             content: Text(
               message,
               style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
+                textStyle: TextStyle(
                   color: Colors.black,
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -116,9 +116,9 @@ class MyDialog {
           content: Text(
             message,
             style: GoogleFonts.roboto(
-              textStyle: const TextStyle(
+              textStyle: TextStyle(
                 color: Colors.black,
-                fontSize: 20,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
               ),
             ),

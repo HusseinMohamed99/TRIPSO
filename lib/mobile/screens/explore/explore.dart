@@ -1,11 +1,18 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:tripso/mobile/screens/all_plans/all_plans.dart';
-import 'package:tripso/mobile/screens/description/description.dart';
+import 'package:tripso/mobile/screens/historical_city/historical_city.dart';
+import 'package:tripso/mobile/screens/plans/all_plans.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
+import 'package:tripso/mobile/screens/sights/popular_sights.dart';
 import 'package:tripso/mobile/screens/sights/sights.dart';
+import 'package:tripso/model/arg_model.dart';
+import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/weather_model.dart';
+import 'package:tripso/shared/components/custom_painter.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/shared/components/layer.dart';
@@ -13,7 +20,8 @@ import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
+import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
 
@@ -23,8 +31,8 @@ class ExploreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CityModel cityModel =
-        (ModalRoute.of(context)?.settings.arguments) as CityModel;
+    ScreenArgs screenArgs =
+        ModalRoute.of(context)!.settings.arguments as ScreenArgs;
     WeatherModel weatherData;
     weatherData = Provider.of<WeatherProvider>(context).weatherData!;
     return BlocConsumer<TripsoCubit, TripsoStates>(
@@ -33,256 +41,401 @@ class ExploreScreen extends StatelessWidget {
         return SingleChildScrollView(
           child: Column(
             children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Stack(
-                    children: [
-                      Container(
-                        clipBehavior: Clip.antiAliasWithSaveLayer,
-                        height: 250,
-                        decoration: BoxDecoration(
-                            borderRadius: const BorderRadius.only(
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                            ),
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                cityModel.image,
-                              ),
-                            )),
-                      ),
-                      const LayerImage(
-                        height: 250,
-                        width: double.infinity,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20),
-                        ),
-                      )
-                    ],
-                  ),
-                  Positioned(
-                      top: 10,
-                      left: 10,
-                      child: Card(
-                        elevation: 2,
-                        color: Colors.black.withOpacity(0.5),
-                        clipBehavior: Clip.antiAliasWithSaveLayer,
-                        shape: const StadiumBorder(
-                            side: BorderSide(color: secondaryColor)),
-                        child: IconButton(
-                            onPressed: () {
-                              navigateTo(context,
-                                  routeName: SearchScreen.routeName);
-                            },
-                            icon: const Icon(
-                              Icons.search,
-                              size: 28,
-                              color: secondaryColor,
-                            )),
-                      )),
-                  Column(
-                    children: [
-                      CircleAvatar(
-                        radius: 25,
-                        backgroundColor: Colors.transparent,
-                        child: Image.asset(weatherData.getImage()),
-                      ),
-                      const Space(height: 10, width: 0),
-                      Text(
-                        cityModel.name,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline1
-                            ?.copyWith(color: secondaryColor),
-                      ),
-                      Text(
-                        weatherData.weatherStateName,
-                        style: const TextStyle(
-                          color: secondaryColor,
-                          fontSize: 20,
-                          // fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Space(height: 10, width: 0),
-                      Text(
-                        '${weatherData.temp.toInt().toString()}°',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline1
-                            ?.copyWith(color: secondaryColor),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20, top: 15),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              navigateTo(context,
-                                  routeName: DescriptionScreen.routeName);
-                            },
-                            borderRadius: BorderRadius.circular(19),
-                            child: Container(
-                              alignment: Alignment.center,
-                              width: 65,
-                              height: 63,
-                              decoration: const BoxDecoration(
-                                color: Color.fromRGBO(216, 119, 119, 0.15),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(19)),
-                              ),
-                              child: const CircleAvatar(
-                                radius: 22,
-                                backgroundColor: Colors.transparent,
-                                child: Icon(
-                                  Icons.camera_alt_outlined,
-                                  size: 28,
-                                  color: Color(0xffD87777),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Text('Historical',
-                              style: Theme.of(context).textTheme.headline4),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              navigateTo(context,
-                                  routeName: AllPlansScreen.routeName);
-                            },
-                            borderRadius: BorderRadius.circular(19),
-                            child: Container(
-                              alignment: Alignment.center,
-                              width: 65,
-                              height: 63,
-                              decoration: const BoxDecoration(
-                                color: Color.fromRGBO(105, 155, 247, 0.15),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(19)),
-                              ),
-                              child: const CircleAvatar(
-                                radius: 22,
-                                backgroundColor: Colors.transparent,
-                                child: Icon(
-                                  Icons.flag,
-                                  size: 28,
-                                  color: Color(0xff699BF7),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Text('Plans',
-                              style: Theme.of(context).textTheme.headline4),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              navigateTo(context,
-                                  routeName: SightsScreen.routeName);
-                            },
-                            borderRadius: BorderRadius.circular(19),
-                            child: Container(
-                              alignment: Alignment.center,
-                              width: 65,
-                              height: 63,
-                              decoration: const BoxDecoration(
-                                color: Color.fromRGBO(133, 84, 150, 0.15),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(19)),
-                              ),
-                              child: const CircleAvatar(
-                                radius: 22,
-                                backgroundColor: Colors.transparent,
-                                child: Icon(
-                                  Icons.remove_red_eye_outlined,
-                                  size: 28,
-                                  color: Color(0xff855496),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Text('Sights',
-                              style: Theme.of(context).textTheme.headline4),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              CityDetails(screenArgs: screenArgs, weatherData: weatherData),
+              RowWidget(screenArgs: screenArgs),
+              PopularSightsWidget(
+                  cityModel: screenArgs.cityModel,
+                  placeModel: screenArgs.placeModel),
+              Space(height: 20.h, width: 0.w),
               const TopPlansWidget(),
-              const Space(height: 20, width: 0),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20.0,
-                ),
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: const BorderSide(width: 2.0, color: primaryColor),
-                  ),
-                  onPressed: () {
-                    navigateTo(context, routeName: AllPlansScreen.routeName);
-                  },
-                  child: Container(
-                      width: double.infinity,
-                      alignment: Alignment.center,
-                      child: Text(
-                        'All Plans',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline5
-                            ?.copyWith(color: Colors.blueAccent),
-                      )),
-                ),
-              ),
-              const Space(height: 20, width: 0),
-              const PopularSightsWidget(),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20.0,
-                  vertical: 10,
-                ),
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: const BorderSide(width: 2.0, color: primaryColor),
-                  ),
-                  onPressed: () {
-                    navigateTo(context, routeName: AllPlansScreen.routeName);
-                  },
-                  child: Container(
-                      width: double.infinity,
-                      alignment: Alignment.center,
-                      child: Text(
-                        'All Popular Sights',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline5
-                            ?.copyWith(color: Colors.blueAccent),
-                      )),
-                ),
-              ),
+              Space(height: 20.h, width: 0.w),
+              const AllPlansButton(),
             ],
           ),
+        );
+      },
+    );
+  }
+}
+
+class AllPlansButton extends StatelessWidget {
+  const AllPlansButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.0.r,
+      ),
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
+        ),
+        onPressed: () {
+          navigateTo(context, routeName: AllPlansScreen.routeName);
+        },
+        child: Container(
+            width: double.infinity,
+            alignment: Alignment.center,
+            child: Text(
+              'All Plans',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline5
+                  ?.copyWith(color: ThemeApp.blueColor),
+            )),
+      ),
+    );
+  }
+}
+
+class CityDetails extends StatelessWidget {
+  const CityDetails({
+    Key? key,
+    required this.screenArgs,
+    required this.weatherData,
+  }) : super(key: key);
+
+  final ScreenArgs screenArgs;
+  final WeatherModel weatherData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Stack(
+          children: [
+            ClipPath(
+              clipper: ImageCustomPainter(0),
+              child: Container(
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                height: 200.h,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20.r),
+                      bottomRight: Radius.circular(20.r),
+                    ),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                        screenArgs.cityModel.image,
+                      ),
+                    )),
+              ),
+            ),
+            ClipPath(
+              clipper: ImageCustomPainter(0),
+              child: LayerImage(
+                height: 200.h,
+                width: double.infinity,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20.r),
+                  bottomRight: Radius.circular(20.r),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Positioned(
+          top: 10.sp,
+          left: 10.sp,
+          child: Card(
+            elevation: 2,
+            color: Colors.black.withOpacity(0.5),
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            shape: const StadiumBorder(
+                side: BorderSide(color: ThemeApp.secondaryColor)),
+            child: IconButton(
+              onPressed: () {
+                if (Navigator.canPop(context)) {
+                  pop(context);
+                }
+              },
+              icon: const Icon(
+                Icons.arrow_back,
+                color: ThemeApp.secondaryColor,
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+            top: 10.sp,
+            right: 10.sp,
+            child: Card(
+              elevation: 2,
+              color: Colors.black.withOpacity(0.5),
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              shape: const StadiumBorder(
+                  side: BorderSide(color: ThemeApp.secondaryColor)),
+              child: IconButton(
+                onPressed: () {
+                  navigateTo(context, routeName: SearchScreen.routeName);
+                },
+                icon: const ImageIcon(
+                  AssetImage(
+                    AssetPath.searchImage,
+                  ),
+                  color: ThemeApp.secondaryColor,
+                ),
+              ),
+            )),
+        Column(
+          children: [
+            CircleAvatar(
+              radius: 25.r,
+              backgroundColor: Colors.transparent,
+              child: Image.asset(weatherData.getImage()),
+            ),
+            Space(height: 10.h, width: 0.w),
+            Text(
+              screenArgs.cityModel.name,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline1
+                  ?.copyWith(color: ThemeApp.secondaryColor),
+            ),
+            Text(
+              weatherData.weatherStateName,
+              style: TextStyle(
+                color: ThemeApp.secondaryColor,
+                fontSize: 20.sp,
+                // fontWeight: FontWeight.bold,
+              ),
+            ),
+            Space(height: 10.h, width: 0.w),
+            Text(
+              '${weatherData.temp.toInt().toString()}°',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline1
+                  ?.copyWith(color: ThemeApp.secondaryColor),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class RowWidget extends StatelessWidget {
+  const RowWidget({
+    Key? key,
+    required this.screenArgs,
+  }) : super(key: key);
+
+  final ScreenArgs screenArgs;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 20.r, top: 0.r),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    navigateTo(
+                      context,
+                      routeName: HistoricalCity.routeName,
+                      arguments: CityModel(
+                        history: screenArgs.cityModel.history,
+                        name: screenArgs.cityModel.name,
+                        cId: screenArgs.cityModel.cId,
+                        country: screenArgs.cityModel.country,
+                        image: screenArgs.cityModel.image,
+                      ),
+                    );
+                  },
+                  borderRadius: BorderRadius.circular(19.r),
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 65.w,
+                    height: 55.h,
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(216, 119, 119, 0.15),
+                      borderRadius: BorderRadius.all(Radius.circular(19.r)),
+                    ),
+                    child: CircleAvatar(
+                      radius: 22.r,
+                      backgroundColor: Colors.transparent,
+                      child: Icon(
+                        Icons.camera_alt_outlined,
+                        size: 28.sp,
+                        color: const Color.fromARGB(255, 216, 119, 119),
+                      ),
+                    ),
+                  ),
+                ),
+                Text('Historical',
+                    style: Theme.of(context).textTheme.headline6),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    navigateTo(context, routeName: AllPlansScreen.routeName);
+                  },
+                  borderRadius: BorderRadius.circular(19.r),
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 65.w,
+                    height: 55.h,
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(105, 155, 247, 0.15),
+                      borderRadius: BorderRadius.all(Radius.circular(19.r)),
+                    ),
+                    child: CircleAvatar(
+                      radius: 22.r,
+                      backgroundColor: Colors.transparent,
+                      child: Icon(
+                        Icons.flag,
+                        size: 28.sp,
+                        color: const Color.fromARGB(255, 105, 155, 247),
+                      ),
+                    ),
+                  ),
+                ),
+                Text('Plans', style: Theme.of(context).textTheme.headline6),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    navigateTo(
+                      context,
+                      routeName: SightsScreen.routeName,
+                      arguments: PlaceModel(
+                        name: screenArgs.placeModel.name,
+                        history: screenArgs.placeModel.history,
+                        hours: screenArgs.placeModel.hours,
+                        image: screenArgs.placeModel.image,
+                        location: screenArgs.placeModel.location,
+                        tickets: screenArgs.placeModel.tickets,
+                        pId: screenArgs.placeModel.pId,
+                      ),
+                    );
+                  },
+                  borderRadius: BorderRadius.circular(19.r),
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 65.w,
+                    height: 55.h,
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(133, 84, 150, 0.15),
+                      borderRadius: BorderRadius.all(Radius.circular(19.r)),
+                    ),
+                    child: CircleAvatar(
+                      radius: 22.r,
+                      backgroundColor: Colors.transparent,
+                      child: Icon(
+                        Icons.remove_red_eye_outlined,
+                        size: 28.sp,
+                        color: const Color.fromARGB(255, 133, 84, 150),
+                      ),
+                    ),
+                  ),
+                ),
+                Text('Sights', style: Theme.of(context).textTheme.headline6),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class PopularSightsWidget extends StatelessWidget {
+  const PopularSightsWidget({
+    Key? key,
+    required this.cityModel,
+    required this.placeModel,
+  }) : super(key: key);
+
+  final CityModel cityModel;
+  final PlaceModel placeModel;
+
+  @override
+  Widget build(BuildContext context) {
+    var cubit = TripsoCubit.get(context);
+    return BlocConsumer<TripsoCubit, TripsoStates>(
+      listener: (context, state) {
+        // TODO: implement listener
+      },
+      builder: (context, state) {
+        return Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(bottom: 8.0.r, left: 16.r),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Popular Sights',
+                  style: Theme.of(context).textTheme.headline2,
+                ),
+              ),
+            ),
+            CarouselSlider(
+              items: List.generate(
+                cubit.place.length,
+                (index) => GridItemSights(placeModel: cubit.place[index]),
+              ),
+              options: CarouselOptions(
+                height: 408.h,
+                enlargeCenterPage: true,
+                disableCenter: true,
+                viewportFraction: .8,
+                autoPlay: true,
+                autoPlayCurve: Curves.fastOutSlowIn,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.0.r,
+                vertical: 10.r,
+              ),
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
+                ),
+                onPressed: () async {
+                  TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+                  TripsoCubit.get(context).getDataForCity(cityModel.cId);
+                  navigateTo(
+                    context,
+                    routeName: PopularSightsScreen.routeName,
+                    arguments: ScreenArgs(
+                        cityModel: cityModel, placeModel: placeModel),
+                  );
+                  debugPrint('City ID = ${cityModel.cId}');
+                },
+                child: Container(
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    child: AutoSizeText(
+                      'All Popular Sights',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline5
+                          ?.copyWith(color: ThemeApp.blueColor),
+                    )),
+              ),
+            ),
+          ],
         );
       },
     );
@@ -300,7 +453,7 @@ class TopPlansWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 8.0, left: 16, top: 5),
+          padding: EdgeInsets.only(bottom: 8.0.r, left: 16.r, top: 5.r),
           child: Align(
             alignment: Alignment.centerLeft,
             child:
@@ -308,14 +461,14 @@ class TopPlansWidget extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 150,
+          height: 270.h,
           child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return topPlansItem(context, cubit.city[index]);
               },
               separatorBuilder: (context, _) {
-                return const Space(height: 0, width: 0);
+                return Space(height: 0.h, width: 0.w);
               },
               itemCount: cubit.city.length - 15),
         ),
@@ -324,40 +477,4 @@ class TopPlansWidget extends StatelessWidget {
   }
 }
 
-class PopularSightsWidget extends StatelessWidget {
-  const PopularSightsWidget({
-    Key? key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    var cubit = TripsoCubit.get(context);
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0, left: 16),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Popular Sights',
-              style: Theme.of(context).textTheme.headline2,
-            ),
-          ),
-        ),
-        GridView.count(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          crossAxisCount: 2,
-          crossAxisSpacing: 6.0,
-          mainAxisSpacing: 10,
-          childAspectRatio: 1 / 1.25,
-          children: List.generate(
-            cubit.city.length - 10,
-            (index) => gridItemSights(context, cubit.city[index]),
-          ),
-        ),
-      ],
-    );
-  }
-}

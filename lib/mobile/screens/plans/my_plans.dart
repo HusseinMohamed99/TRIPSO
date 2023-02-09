@@ -3,15 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 
-class WishListScreen extends StatelessWidget {
-  const WishListScreen({Key? key}) : super(key: key);
-  static const String routeName = 'WishList';
+class MyPlansScreen extends StatelessWidget {
+  const MyPlansScreen({Key? key}) : super(key: key);
+  static const String routeName = 'MyPlans';
 
   @override
   Widget build(BuildContext context) {
     var tripsoCubit = TripsoCubit.get(context).cityModel;
     return BlocConsumer<TripsoCubit, TripsoStates>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        // TODO: implement listener
+      },
       builder: (context, state) {
         return Center(
           child: Column(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/mobile/screens/sign_up/sign_up_screen.dart';
@@ -10,6 +11,7 @@ import 'package:tripso/shared/components/scrollable_form.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class OnBoard extends StatelessWidget {
   static const String routeName = 'onBoard_screen';
@@ -31,7 +33,7 @@ class OnBoard extends StatelessWidget {
           appBar: secondaryAppBar(),
           backgroundColor: Colors.transparent,
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50.0),
+            padding: EdgeInsets.symmetric(horizontal: 50.0.r),
             child: Center(
               child: CustomScrollableForm(
                 child: Column(
@@ -59,38 +61,66 @@ class OnBoard extends StatelessWidget {
               child: Text(
                 'BE\nREADY',
                 style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                    color: secondaryColor,
-                    fontSize: 45,
-                    height: 1.3,
+                  textStyle: TextStyle(
+                    color: ThemeApp.secondaryColor,
+                    fontSize: 45.sp,
+                    height: 1.3.h,
                     fontWeight: FontWeight.w600,
                   ),
-            ),
-          ),
-        ),
-        Row(
-          children: [
-            FittedBox(
-              child: Text(
-                'TO',
-                style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                    height: 1.3,
-                        color: secondaryColor,
-                        fontSize: 45,
-                        fontWeight: FontWeight.w600,
-                      ),
                 ),
               ),
             ),
+            Row(
+              children: [
+                FittedBox(
+                  child: Text(
+                    'TO',
+                    style: GoogleFonts.roboto(
+                      textStyle: TextStyle(
+                        height: 1.3.h,
+                        color: ThemeApp.secondaryColor,
+                        fontSize: 45.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+                FittedBox(
+                  child: Text(
+                    'UR',
+                    style: GoogleFonts.roboto(
+                      textStyle: TextStyle(
+                        height: 1.3.h,
+                        color: ThemeApp.primaryColor,
+                        fontSize: 45.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+            ),
+          ],
+        ),
+        FittedBox(
+          child: Text(
+            'NEXT',
+                style: GoogleFonts.roboto(
+                  textStyle: TextStyle(
+                    height: 1.3.h,
+                    color: ThemeApp.primaryColor,
+                    fontSize: 45.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+        ),
             FittedBox(
               child: Text(
-                'UR',
+                'ADVENTURE',
                 style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                    height: 1.3,
-                    color: Color(0xff60D0E6),
-                    fontSize: 45,
+                  textStyle: TextStyle(
+                    height: 1.3.h,
+                    color: ThemeApp.secondaryColor,
+                    fontSize: 45.sp,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -98,34 +128,6 @@ class OnBoard extends StatelessWidget {
             ),
           ],
         ),
-        FittedBox(
-          child: Text(
-            'NEXT',
-            style: GoogleFonts.roboto(
-              textStyle: const TextStyle(
-                height: 1.3,
-                color: Color(0xff60D0E6),
-                fontSize: 45,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-        ),
-        FittedBox(
-          child: Text(
-            'ADVENTURE',
-            style: GoogleFonts.roboto(
-              textStyle: const TextStyle(
-                height: 1.3,
-                    color: secondaryColor,
-                    fontSize: 45,
-                    fontWeight: FontWeight.w600,
-                  ),
-            ),
-          ),
-        ),
-      ],
-    ),
       );
 
   Widget button(context) => Expanded(
@@ -139,7 +141,7 @@ class OnBoard extends StatelessWidget {
               text: 'Sign in',
               color: primaryColor,
             ),
-            const Space(width: 0, height: 26),
+            Space(width: 0.w, height: 26.h),
             defaultMaterialButton(
               function: () {
                 navigateTo(context, routeName: SignUpScreen.routeName);
@@ -149,6 +151,6 @@ class OnBoard extends StatelessWidget {
             ),
             //  space(0, 50),
           ],
-    ),
+        ),
       );
 }

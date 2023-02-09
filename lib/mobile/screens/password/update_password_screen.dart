@@ -31,6 +31,7 @@ class UpdatePassword extends StatelessWidget {
       if (state is ChangeUserPasswordLoadingState) {
         MyDialog.showLoadingDialog(context, 'Loading...');
       }
+
       if (state is ChangeUserPasswordSuccessState) {
         MyDialog.showLoadingDialog(context, 'Change password is successfully');
         MyDialog.hideDialog(context);
@@ -155,9 +156,7 @@ class UpdatePassword extends StatelessWidget {
   Widget assetImage() => const FadeAnimation(
         1.0,
         child: Image(
-          image: AssetImage(
-            AssetPath.changePasswordImage,
-          ),
+          image: AssetImage(AssetPath.changePasswordImage),
           height: 300,
         ),
       );
@@ -233,25 +232,3 @@ class PasswordFormField extends StatelessWidget {
     );
   }
 }
-
-// import 'package:flutter/material.dart';
-//
-// import 'auth.dart';
-//
-// class UpdatePassword extends StatefulWidget {
-//   const UpdatePassword({
-//     Key? key,
-//   }) : super(key: key);
-//
-//   @override
-//   _UpdatePasswordState createState() => _UpdatePasswordState();
-// }
-//
-// class _UpdatePasswordState extends State<UpdatePassword> {
-//   final TextEditingController _passController = TextEditingController();
-//
-//   final TextEditingController _confirmPassController = TextEditingController();
-//
-//   Future<void> _submit(String newPassword) async {
-//     await AuthServices().changePassword(newPassword);
-//   }
