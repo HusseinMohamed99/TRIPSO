@@ -135,10 +135,9 @@ class _CitiesScreenState extends State<CitiesScreen> {
                               ],
                             ),
                             Positioned(
-                              top:
-                                  MediaQuery.of(context).size.height.h * 0.22.h,
-                              right: 10.sp,
-                              left: 10.sp,
+                              top: 250.h,
+                              right: 10.w,
+                              left: 10.w,
                               child: Row(
                                 children: [
                                   Expanded(

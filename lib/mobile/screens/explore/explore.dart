@@ -255,8 +255,8 @@ class RowWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(19.r),
                   child: Container(
                     alignment: Alignment.center,
-                    width: 65.w,
-                    height: 55.h,
+                    width: 70.w,
+                    height: 65.h,
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(216, 119, 119, 0.15),
                       borderRadius: BorderRadius.all(Radius.circular(19.r)),
@@ -288,8 +288,8 @@ class RowWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(19.r),
                   child: Container(
                     alignment: Alignment.center,
-                    width: 65.w,
-                    height: 55.h,
+                    width: 70.w,
+                    height: 65.h,
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(105, 155, 247, 0.15),
                       borderRadius: BorderRadius.all(Radius.circular(19.r)),
@@ -332,8 +332,8 @@ class RowWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(19.r),
                   child: Container(
                     alignment: Alignment.center,
-                    width: 65.w,
-                    height: 55.h,
+                    width: 70.w,
+                    height: 65.h,
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(133, 84, 150, 0.15),
                       borderRadius: BorderRadius.all(Radius.circular(19.r)),

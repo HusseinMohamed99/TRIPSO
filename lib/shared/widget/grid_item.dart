@@ -71,7 +71,7 @@ class GridItemSights extends StatelessWidget {
             elevation: 6,
             color: secondaryColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.r),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,19 +81,19 @@ class GridItemSights extends StatelessWidget {
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(20.r),
                       child: Image(
                         image: NetworkImage(
                           placeModel.image,
                         ),
-                        height: 400.h,
-                        width: double.infinity,
+                        height: 399.h,
+                        width: double.infinity.w,
                         fit: BoxFit.cover,
                       ),
                     ),
                     LayerImage(
-                      height: 400.h,
-                      width: double.infinity,
+                      height: 399.h,
+                      width: double.infinity.w,
                     ),
                     Padding(
                       padding: EdgeInsets.all(10.0.r),
@@ -141,8 +141,8 @@ class GridItemSights extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 15.sp,
-            right: 20.sp,
+            top: 15.h,
+            right: 20.w,
             child: CircleAvatar(
               backgroundColor: Colors.grey.shade800,
               child: IconButton(
