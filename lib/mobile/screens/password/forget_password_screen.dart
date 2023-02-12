@@ -42,22 +42,37 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           listener: (context, state) {},
           builder: (context, state) {
             return Scaffold(
-              appBar: primaryAppBar(
-                title: '',
-                function: () {
-                  emailController.clear();
-                  pop(context);
-                },
-                iconData: Icon(
-                  Icons.arrow_back,
-                  size: 25.sp,
-                ),
-              ),
+              appBar: secondaryAppBar(),
               body: Form(
                 key: forgetFormKey,
                 child: CustomScrollableForm(
                   child: Column(
                     children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5).r,
+                        child: Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                pop(context);
+                              },
+                              icon: Icon(
+                                Icons.arrow_back,
+                                size: 25.sp,
+                              ),
+                            ),
+                            Space(width: 10.w, height: 0.h),
+                            Text(
+                              'Forgot Your Password?',
+                              style: GoogleFonts.roboto(
+                                  color: primaryColor,
+                                  fontSize: 25.sp,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Space(width: 0.w, height: 15.h),
                       title(),
                       assetImage(),
                       formField(),
@@ -91,33 +106,29 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   }
 
   Widget title() => FittedBox(
-        child: Column(
-          children: [
-            Text(
-              'Forgot Your Password?',
-              style: GoogleFonts.roboto(
-                  color: primaryColor,
-                  fontSize: 25.sp,
-                  fontWeight: FontWeight.w500),
-            ),
-            Space(width: 0, height: 10.h),
-            Text(
-              'Enter the Email address associated with',
-              style: GoogleFonts.roboto(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w500,
-                color: Colors.black.withOpacity(0.5),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
+          child: Column(
+            children: [
+              Text(
+                'Enter the Email address associated with',
+                style: GoogleFonts.roboto(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black.withOpacity(0.5),
+                ),
               ),
-            ),
-            Text(
-              'your account',
-              style: GoogleFonts.roboto(
-                fontSize: 17.sp,
+              Text(
+                'your account',
+                style: GoogleFonts.roboto(
+                  fontSize: 17.sp,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
+
   Widget assetImage() => const FadeAnimation(
         1.0,
         child: Image(image: AssetImage(AssetPath.resetPasswordImage)),

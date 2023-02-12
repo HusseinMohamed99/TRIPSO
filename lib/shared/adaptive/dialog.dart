@@ -79,6 +79,7 @@ class MyDialog {
           },
           child: Text(
             posActionTitle,
+            style: TextStyle(fontSize: 15.sp),
           )));
     }
     if (negActionTitle != null) {
@@ -91,6 +92,7 @@ class MyDialog {
           },
           child: Text(
             negActionTitle,
+            style: TextStyle(fontSize: 15.sp),
           )));
     }
     showDialog(

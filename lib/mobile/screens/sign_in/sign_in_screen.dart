@@ -78,148 +78,163 @@ class SignInScreen extends StatelessWidget {
             child: Scaffold(
               backgroundColor: Colors.transparent,
               appBar: secondaryAppBar(),
-              body: Form(
-                key: formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Column(
+              body: Center(
+                child: Form(
+                  key: formKey,
+                  child: SingleChildScrollView(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20).r,
+                        SingleChildScrollView(
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'Email Address',
-                                style: TextStyle(
-                                  color: ThemeApp.secondaryColor,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w600,
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20)
+                                        .r,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Email Address',
+                                      style: TextStyle(
+                                        color: ThemeApp.secondaryColor,
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    Space(width: 0.w, height: 8.h),
+                                    DefaultTextFormField(
+                                      color: ThemeApp.secondaryColor
+                                          .withOpacity(0.3),
+                                      context: context,
+                                      controller: emailController,
+                                      keyboardType: TextInputType.emailAddress,
+                                      validate: (String? value) {
+                                        if (value!.isEmpty) {
+                                          return 'Email Address is Required';
+                                        }
+                                        return null;
+                                      },
+                                      hint: 'Email Address',
+                                      prefix: Icons.alternate_email,
+                                    ),
+                                    Space(width: 0.w, height: 26.h),
+                                    Text(
+                                      'Password',
+                                      style: TextStyle(
+                                        color: ThemeApp.secondaryColor,
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    Space(width: 0.w, height: 8.h),
+                                    DefaultTextFormField(
+                                      color: ThemeApp.secondaryColor
+                                          .withOpacity(0.3),
+                                      context: context,
+                                      controller: passwordController,
+                                      obscuringCharacter: '*',
+                                      keyboardType:
+                                          TextInputType.visiblePassword,
+                                      validate: (String? value) {
+                                        if (value!.isEmpty) {
+                                          return 'Password is Required';
+                                        }
+                                        return null;
+                                      },
+                                      prefix: Icons.lock_outline_sharp,
+                                      suffix: SignInCubit.get(context).suffix,
+                                      isPassword:
+                                          SignInCubit.get(context).isPassword,
+                                      suffixPressed: () {
+                                        SignInCubit.get(context).showPassword();
+                                      },
+                                      hint: 'Enter Password',
+                                    ),
+                                  ],
                                 ),
                               ),
-                              Space(width: 0.w, height: 8.h),
-                              DefaultTextFormField(
-                                color: ThemeApp.secondaryColor.withOpacity(0.3),
-                                context: context,
-                                controller: emailController,
-                                keyboardType: TextInputType.emailAddress,
-                                validate: (String? value) {
-                                  if (value!.isEmpty) {
-                                    return 'Email Address is Required';
-                                  }
-                                  return null;
-                                },
-                                hint: 'Email Address',
-                                prefix: Icons.alternate_email,
-                              ),
-                              Space(width: 0.w, height: 26.h),
-                              Text(
-                                'Password',
-                                style: TextStyle(
-                                  color: ThemeApp.secondaryColor,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w600,
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20)
+                                        .r,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {
+                                        navigateTo(context,
+                                            routeName:
+                                                ForgotPassword.routeName);
+                                      },
+                                      child: Text(
+                                        'Forgot Password ?',
+                                        style: TextStyle(
+                                            color: ThemeApp.primaryColor,
+                                            fontSize: 15.sp),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              Space(width: 0.w, height: 8.h),
-                              DefaultTextFormField(
-                                color: ThemeApp.secondaryColor.withOpacity(0.3),
-                                context: context,
-                                controller: passwordController,
-                                obscuringCharacter: '*',
-                                keyboardType: TextInputType.visiblePassword,
-                                validate: (String? value) {
-                                  if (value!.isEmpty) {
-                                    return 'Password is Required';
-                                  }
-                                  return null;
-                                },
-                                prefix: Icons.lock_outline_sharp,
-                                suffix: SignInCubit.get(context).suffix,
-                                isPassword: SignInCubit.get(context).isPassword,
-                                suffixPressed: () {
-                                  SignInCubit.get(context).showPassword();
-                                },
-                                hint: 'Enter Password',
                               ),
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20).r,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  navigateTo(context,
-                                      routeName: ForgotPassword.routeName);
+                        Space(width: 0.w, height: 20.h),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Center(
+                              child: defaultMaterialButton(
+                                function: () {
+                                  if (formKey.currentState!.validate()) {
+                                    SignInCubit.get(context).userSignIn(
+                                      email: emailController.text,
+                                      password: passwordController.text,
+                                    );
+                                    emailController.clear();
+                                    passwordController.clear();
+                                  }
                                 },
-                                child: Text(
-                                  'Forgot Password ?',
-                                  style: TextStyle(
-                                      color: ThemeApp.primaryColor,
-                                      fontSize: 15.sp),
-                                ),
+                                text: 'Sign in',
+                                color: ThemeApp.primaryColor,
                               ),
-                            ],
-                          ),
+                            ),
+                            Space(width: 0.w, height: 10.h),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20.0)
+                                      .r,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Don\'t have an account?',
+                                    style: TextStyle(
+                                        color: ThemeApp.secondaryColor,
+                                        fontSize: 15.sp),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      navigateTo(context,
+                                          routeName: SignUpScreen.routeName);
+                                    },
+                                    child: Text(
+                                      'SignUp Now!',
+                                      style: TextStyle(
+                                          color: ThemeApp.primaryColor,
+                                          fontSize: 15.sp),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                    Space(width: 0.w, height: 20.h),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: defaultMaterialButton(
-                            function: () {
-                              if (formKey.currentState!.validate()) {
-                                SignInCubit.get(context).userSignIn(
-                                  email: emailController.text,
-                                  password: passwordController.text,
-                                );
-                                emailController.clear();
-                                passwordController.clear();
-                              }
-                            },
-                            text: 'Sign in',
-                            color: ThemeApp.primaryColor,
-                          ),
-                        ),
-                        Space(width: 0.w, height: 10.h),
-                        Padding(
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 20.0).r,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Don\'t have an account?',
-                                style: TextStyle(
-                                    color: ThemeApp.secondaryColor,
-                                    fontSize: 15.sp),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  navigateTo(context,
-                                      routeName: SignUpScreen.routeName);
-                                },
-                                child: Text(
-                                  'SignUp Now!',
-                                  style: TextStyle(
-                                      color: ThemeApp.primaryColor,
-                                      fontSize: 15.sp),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),

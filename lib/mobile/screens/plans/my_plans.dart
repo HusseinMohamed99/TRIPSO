@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
 
 class MyPlansScreen extends StatelessWidget {
   const MyPlansScreen({Key? key}) : super(key: key);
@@ -11,34 +13,32 @@ class MyPlansScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var tripsoCubit = TripsoCubit.get(context).cityModel;
     return BlocConsumer<TripsoCubit, TripsoStates>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         return Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Center(
-                child: Container(
-                  width: 200,
-                  height: 200,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/Group5@3x.png'),
-                    ),
+              Container(
+                width: 200.w,
+                height: 220.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18).r,
+                  image: const DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(AssetPath.emptyImage),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: 30.h,
               ),
               Text(
                 'Your ${tripsoCubit!.name} is Empty',
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.black,
-                  fontSize: 17,
+                  fontSize: 17.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),

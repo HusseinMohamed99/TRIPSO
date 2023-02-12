@@ -48,8 +48,8 @@ class TripsoCubit extends Cubit<TripsoStates> {
       getDataPlaces(cityModel!.cId);
       getDataForCity(cityModel!.cId);
     }
-    if (index == 1) getUserData();
-    if (index == 2) getUserData();
+    if (index == 1) {}
+    if (index == 2) {}
     if (index == 3) getUserData();
     emit(ChangeBottomNavBarState());
   }
