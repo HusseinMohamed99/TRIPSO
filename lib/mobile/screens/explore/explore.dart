@@ -78,16 +78,17 @@ class CityDetails extends StatelessWidget {
               clipBehavior: Clip.antiAliasWithSaveLayer,
               height: 200.h,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: const Radius.circular(20).r,
-                    bottomRight: const Radius.circular(20).r,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: const Radius.circular(20).r,
+                  bottomRight: const Radius.circular(20).r,
+                ),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                    screenArgs.cityModel.image,
                   ),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                      screenArgs.cityModel.image,
-                    ),
-                  )),
+                ),
+              ),
             ),
             LayerImage(
               height: 200.h,
@@ -457,16 +458,17 @@ class TopPlansWidget extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 270.h,
+          height: 220.h,
           child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return topPlansItem(context, cubit.city[index]);
-              },
-              separatorBuilder: (context, _) {
-                return Space(height: 0.h, width: 0.w);
-              },
-              itemCount: cubit.city.length - 15),
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return topPlansItem(context, cubit.city[index]);
+            },
+            separatorBuilder: (context, _) {
+              return Space(height: 0.h, width: 0.w);
+            },
+            itemCount: 4,
+          ),
         ),
       ],
     );

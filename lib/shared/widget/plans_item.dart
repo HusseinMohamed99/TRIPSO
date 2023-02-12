@@ -22,8 +22,8 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
             Container(
               alignment: Alignment.bottomLeft,
               clipBehavior: Clip.antiAliasWithSaveLayer,
-              height: 250.h,
-              width: 200.w,
+              height: 200.h,
+              width: 250.w,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(
                     const Radius.circular(12).r,
@@ -36,8 +36,8 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
                   )),
             ),
             LayerImage(
-              height: 250.h,
-              width: 200.w,
+              height: 200.h,
+              width: 250.w,
             ),
             Padding(
               padding:

@@ -26,7 +26,6 @@ class MyPlansScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18).r,
                   image: const DecorationImage(
-                    fit: BoxFit.cover,
                     image: AssetImage(AssetPath.emptyImage),
                   ),
                 ),

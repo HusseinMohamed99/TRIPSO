@@ -52,7 +52,7 @@ class HomeLayout extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 20, vertical: 12)
                             .r,
-                    duration: const Duration(seconds: 1),
+                    duration: const Duration(microseconds: 200),
                     tabBackgroundColor: ThemeApp.primaryColor,
                     color: ThemeApp.blackPrimary,
                     tabs: [
