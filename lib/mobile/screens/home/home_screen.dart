@@ -41,7 +41,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
         (ConnectivityResult result) async {
           isDeviceConnected = await InternetConnectionChecker().hasConnection;
           if (!isDeviceConnected && isAlertSet == false) {
-            showDialogBox();
+            checkInternet();
             setState(() => isAlertSet = true);
           }
         },
@@ -204,7 +204,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
     );
   }
 
-  showDialogBox() {
+  checkInternet() {
     if (Platform.operatingSystem == 'android') {
       return showDialog<String>(
         context: context,
@@ -219,7 +219,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                 isDeviceConnected =
                     await InternetConnectionChecker().hasConnection;
                 if (!isDeviceConnected && isAlertSet == false) {
-                  showDialogBox();
+                  checkInternet();
                   setState(() => isAlertSet = true);
                 }
               },
@@ -242,7 +242,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
               isDeviceConnected =
                   await InternetConnectionChecker().hasConnection;
               if (!isDeviceConnected && isAlertSet == false) {
-                showDialogBox();
+                checkInternet();
                 setState(() => isAlertSet = true);
               }
             },
@@ -257,7 +257,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
     var cubit = TripsoCubit.get(context);
     return GridView.count(
       shrinkWrap: true,
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8).r,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 2,
       crossAxisSpacing: 2.0.w,
@@ -276,13 +276,13 @@ class _CitiesScreenState extends State<CitiesScreen> {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8).r,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 2,
-      crossAxisSpacing: 15.0.w,
-      mainAxisSpacing: 5.h,
-      childAspectRatio: 1 / 1.1.h,
+      crossAxisSpacing: 2.0.w,
+      mainAxisSpacing: 2.h,
+      childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
           cubit.cityEG.length,
           (index) => GridEGItem(
@@ -296,13 +296,13 @@ class _CitiesScreenState extends State<CitiesScreen> {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8).r,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 2,
-      crossAxisSpacing: 15.0.w,
-      mainAxisSpacing: 5.h,
-      childAspectRatio: 1 / 1.1.h,
+      crossAxisSpacing: 2.0.w,
+      mainAxisSpacing: 2.h,
+      childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
           cubit.cityIT.length,
           (index) => GridITItem(
@@ -316,13 +316,13 @@ class _CitiesScreenState extends State<CitiesScreen> {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8).r,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 2,
-      crossAxisSpacing: 15.0.w,
-      mainAxisSpacing: 5.h,
-      childAspectRatio: 1 / 1.1.h,
+      crossAxisSpacing: 2.0.w,
+      mainAxisSpacing: 2.h,
+      childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
           cubit.cityUAE.length,
           (index) => GridUAEItem(
@@ -336,13 +336,13 @@ class _CitiesScreenState extends State<CitiesScreen> {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8).r,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 2,
-      crossAxisSpacing: 15.0.w,
-      mainAxisSpacing: 5.h,
-      childAspectRatio: 1 / 1.1.h,
+      crossAxisSpacing: 2.0.w,
+      mainAxisSpacing: 2.h,
+      childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
           cubit.cityFR.length,
           (index) => GridFRItem(

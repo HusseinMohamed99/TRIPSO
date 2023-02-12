@@ -9,12 +9,12 @@ import 'package:tripso/shared/styles/colors.dart';
 
 Widget topPlansItem(BuildContext context, CityModel cityModel) {
   return InkWell(
-    borderRadius: BorderRadius.circular(20),
+    borderRadius: BorderRadius.circular(20).r,
     onTap: () {
       navigateTo(context, routeName: TopPlansScreen.routeName);
     },
     child: Padding(
-      padding: EdgeInsets.only(left: 16.r, right: 16.r),
+      padding: const EdgeInsets.only(left: 16, right: 16).r,
       child: Column(children: [
         Stack(
           alignment: Alignment.bottomLeft,
@@ -22,13 +22,13 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
             Container(
               alignment: Alignment.bottomLeft,
               clipBehavior: Clip.antiAliasWithSaveLayer,
-              height: 270.h,
-              width: 300.w,
-              decoration: const BoxDecoration(
+              height: 250.h,
+              width: 200.w,
+              decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    const Radius.circular(12).r,
                   ),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(
                         //  cityModel.image,
@@ -36,23 +36,29 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
                   )),
             ),
             LayerImage(
-              height: 270.h,
-              width: 300.w,
+              height: 250.h,
+              width: 200.w,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20.0.r, horizontal: 5.r),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 5).r,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.calendar_month_rounded,
-                            size: 27.sp,
-                            color: secondaryColor,
-                          )),
-                      Text('3 Days',
+                        onPressed: () {},
+                        padding: const EdgeInsets.all(20).r,
+                        icon: Icon(
+                          Icons.calendar_month_rounded,
+                          size: 30.sp,
+                          color: secondaryColor,
+                        ),
+                      ),
+                      Text('    3 Days',
+                          textAlign: TextAlign.center,
                           style: Theme.of(context)
                               .textTheme
                               .subtitle1
@@ -61,15 +67,19 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
                   ),
                   Space(height: 0.h, width: 10.w),
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       IconButton(
                           onPressed: () {},
+                          padding: const EdgeInsets.all(20).r,
                           icon: Icon(
                             Icons.remove_red_eye_outlined,
                             size: 27.sp,
                             color: secondaryColor,
                           )),
-                      Text('25 Sights',
+                      Text('    25 Sights',
+                          textAlign: TextAlign.center,
                           style: Theme.of(context)
                               .textTheme
                               .subtitle1

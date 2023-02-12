@@ -78,7 +78,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   icon: Icon(
                     Icons.close,
                     color: Colors.black,
-                    size: 30.sp,
+                    size: 25.sp,
                   ),
                   onPressed: () {
                     Navigator.pop(context);
@@ -168,18 +168,18 @@ class _SearchScreenState extends State<SearchScreen> {
             weather;
       },
       child: Container(
-        height: MediaQuery.of(context).size.height.h * 0.13.h,
-        margin: EdgeInsets.all(8.r),
+        height: 200.h,
+        margin: const EdgeInsets.all(8).r,
         decoration: BoxDecoration(
           border: Border.all(),
-          borderRadius: BorderRadius.circular(20.r),
+          borderRadius: BorderRadius.circular(20).r,
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(12.0.r),
+                padding: const EdgeInsets.all(12.0).r,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -203,12 +203,12 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             Container(
               clipBehavior: Clip.antiAliasWithSaveLayer,
-              width: MediaQuery.of(context).size.width.w * 0.4.w,
-              height: MediaQuery.of(context).size.height.h * 0.20.h,
+              width: 180.w,
+              height: 250.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(20.r),
-                  topRight: Radius.circular(20.r),
+                  bottomRight: const Radius.circular(20).r,
+                  topRight: const Radius.circular(20).r,
                 ),
               ),
               child: Image.network(

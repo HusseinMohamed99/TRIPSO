@@ -69,6 +69,7 @@ class SignUpScreen extends StatelessWidget {
         }
       }, builder: (context, state) {
         return Container(
+          alignment: Alignment.center,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(AssetPath.signUPImage),
@@ -85,39 +86,44 @@ class SignUpScreen extends StatelessWidget {
                   key: formKey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(
-                        onPressed: () {
-                          pop(context);
-                        },
-                        icon: Icon(
-                          Icons.arrow_back,
-                          size: 25.sp,
-                          color: secondaryColor,
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(
-                                top: 30.r,
-                                bottom: 28.r,
-                                right: 20.r,
-                                left: 20.r),
-                            child: Text(
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
+                        child: Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                pop(context);
+                              },
+                              icon: Icon(
+                                Icons.arrow_back,
+                                size: 25.sp,
+                                color: secondaryColor,
+                              ),
+                            ),
+                            Space(width: 20.w, height: 0.h),
+                            Text(
                               'Create Account',
                               style: TextStyle(
                                   fontSize: 30.sp,
                                   color: secondaryColor,
                                   fontWeight: FontWeight.bold),
                             ),
-                          ),
-                          Space(width: 0.w, height: 32.h),
+                          ],
+                        ),
+                      ),
+                      Space(width: 0.w, height: 20.h),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 50.r),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20).r,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
                                   'First Name',
@@ -229,7 +235,7 @@ class SignUpScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Space(width: 0.w, height: 70.h),
+                          Space(width: 0.w, height: 30.h),
                           defaultMaterialButton(
                             function: () {
                               if (formKey.currentState!.validate()) {

@@ -48,7 +48,7 @@ class GridItemSights extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(20).r,
       onTap: () {
         navigateTo(
           context,
@@ -68,10 +68,10 @@ class GridItemSights extends StatelessWidget {
         clipBehavior: Clip.antiAliasWithSaveLayer,
         children: [
           Card(
-            elevation: 6,
+            elevation: 2,
             color: secondaryColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.r),
+              borderRadius: BorderRadius.circular(12).r,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,22 +81,22 @@ class GridItemSights extends StatelessWidget {
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
+                      borderRadius: BorderRadius.circular(12).r,
                       child: Image(
                         image: NetworkImage(
                           placeModel.image,
                         ),
-                        height: 399.h,
+                        height: 400.h,
                         width: double.infinity.w,
                         fit: BoxFit.cover,
                       ),
                     ),
                     LayerImage(
-                      height: 399.h,
-                      width: double.infinity.w,
+                      height: 400.h,
+                      width: double.infinity,
                     ),
                     Padding(
-                      padding: EdgeInsets.all(10.0.r),
+                      padding: EdgeInsets.all(10.0).r,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -114,9 +114,10 @@ class GridItemSights extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              const Icon(
+                              Icon(
                                 Icons.location_on,
                                 color: secondaryColor,
+                                size: 25.sp,
                               ),
                               Space(height: 0.h, width: 10.w),
                               Text(
@@ -149,10 +150,11 @@ class GridItemSights extends StatelessWidget {
                 onPressed: () {
                   debugPrint('isFav');
                 },
-                icon: const ImageIcon(
+                icon: ImageIcon(
                   AssetImage(
                     AssetPath.wishlistImage,
                   ),
+                  size: 30.sp,
                   color: secondaryColor,
                 ),
               ),

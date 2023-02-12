@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class DefaultTextFormField extends StatelessWidget {
   const DefaultTextFormField(
@@ -51,7 +51,7 @@ class DefaultTextFormField extends StatelessWidget {
       textAlignVertical: TextAlignVertical.center,
       style: GoogleFonts.roboto(
         fontStyle: FontStyle.normal,
-        color: secondaryColor,
+        color: ThemeApp.secondaryColor,
         fontSize: 17.sp,
         fontWeight: FontWeight.w400,
       ),
@@ -68,58 +68,64 @@ class DefaultTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       autofocus: false,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.fromLTRB(20, 8, 8, 8),
+        contentPadding: const EdgeInsets.fromLTRB(20, 8, 8, 20).r,
         fillColor: color,
         filled: true,
-        prefixIcon: Icon(
-          prefix,
-          color: secondaryColor,
+        prefixIcon: Padding(
+          padding: const EdgeInsets.all(15.0).r,
+          child: Icon(
+            prefix,
+            color: ThemeApp.secondaryColor,
+            size: 24.sp,
+          ),
         ),
         suffixIcon: suffix != null
             ? IconButton(
+                padding: const EdgeInsets.all(15.0).r,
                 onPressed: () {
                   suffixPressed!();
                 },
                 icon: Icon(
                   suffix,
-                  color: secondaryColor,
+                  color: ThemeApp.secondaryColor,
+                  size: 24.sp,
                 ),
               )
             : null,
-        focusedBorder: const OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
+            const Radius.circular(12.0).r,
           ),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.black,
           ),
         ),
         hintText: hint,
         hintStyle: TextStyle(
-          color: secondaryColor.withOpacity(0.8),
+          color: ThemeApp.secondaryColor.withOpacity(0.8),
           height: 1.h,
         ),
-        enabledBorder: const OutlineInputBorder(
+        enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
+            const Radius.circular(12.0).r,
           ),
-          borderSide: BorderSide(
-            color: secondaryColor,
+          borderSide: const BorderSide(
+            color: ThemeApp.secondaryColor,
           ),
         ),
-        errorBorder: const OutlineInputBorder(
+        errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
+            const Radius.circular(12.0).r,
           ),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.red,
           ),
         ),
-        focusedErrorBorder: const OutlineInputBorder(
+        focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
+            const Radius.circular(12.0).r,
           ),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.red,
           ),
         ),

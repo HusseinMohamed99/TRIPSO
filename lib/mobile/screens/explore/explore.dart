@@ -12,7 +12,6 @@ import 'package:tripso/mobile/screens/sights/sights.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/weather_model.dart';
-import 'package:tripso/shared/components/custom_painter.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/shared/components/layer.dart';
@@ -42,51 +41,18 @@ class ExploreScreen extends StatelessWidget {
           child: Column(
             children: [
               CityDetails(screenArgs: screenArgs, weatherData: weatherData),
+              Space(height: 10.h, width: 0.w),
               RowWidget(screenArgs: screenArgs),
               PopularSightsWidget(
                   cityModel: screenArgs.cityModel,
                   placeModel: screenArgs.placeModel),
               Space(height: 20.h, width: 0.w),
               const TopPlansWidget(),
-              Space(height: 20.h, width: 0.w),
               const AllPlansButton(),
             ],
           ),
         );
       },
-    );
-  }
-}
-
-class AllPlansButton extends StatelessWidget {
-  const AllPlansButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 20.0.r,
-      ),
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
-          side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
-        ),
-        onPressed: () {
-          navigateTo(context, routeName: AllPlansScreen.routeName);
-        },
-        child: Container(
-            width: double.infinity,
-            alignment: Alignment.center,
-            child: Text(
-              'All Plans',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline5
-                  ?.copyWith(color: ThemeApp.blueColor),
-            )),
-      ),
     );
   }
 }
@@ -108,33 +74,27 @@ class CityDetails extends StatelessWidget {
       children: [
         Stack(
           children: [
-            ClipPath(
-              clipper: ImageCustomPainter(0),
-              child: Container(
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                height: 200.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20.r),
-                      bottomRight: Radius.circular(20.r),
+            Container(
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              height: 200.h,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: const Radius.circular(20).r,
+                    bottomRight: const Radius.circular(20).r,
+                  ),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                      screenArgs.cityModel.image,
                     ),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                        screenArgs.cityModel.image,
-                      ),
-                    )),
-              ),
+                  )),
             ),
-            ClipPath(
-              clipper: ImageCustomPainter(0),
-              child: LayerImage(
-                height: 200.h,
-                width: double.infinity,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20.r),
-                  bottomRight: Radius.circular(20.r),
-                ),
+            LayerImage(
+              height: 200.h,
+              width: double.infinity,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20.r),
+                bottomRight: Radius.circular(20.r),
               ),
             ),
           ],
@@ -220,6 +180,40 @@ class CityDetails extends StatelessWidget {
   }
 }
 
+class AllPlansButton extends StatelessWidget {
+  const AllPlansButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.0.r,
+      ),
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
+        ),
+        onPressed: () {
+          navigateTo(context, routeName: AllPlansScreen.routeName);
+        },
+        child: Container(
+            width: double.infinity,
+            height: 35.h,
+            alignment: Alignment.center,
+            child: Text(
+              'All Plans',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline5
+                  ?.copyWith(color: ThemeApp.blueColor),
+            )),
+      ),
+    );
+  }
+}
+
 class RowWidget extends StatelessWidget {
   const RowWidget({
     Key? key,
@@ -231,7 +225,7 @@ class RowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 20.r, top: 0.r),
+      padding: const EdgeInsets.only(bottom: 20, top: 0).r,
       child: Row(
         children: [
           Expanded(
@@ -252,14 +246,15 @@ class RowWidget extends StatelessWidget {
                       ),
                     );
                   },
-                  borderRadius: BorderRadius.circular(19.r),
+                  borderRadius: BorderRadius.circular(19).r,
                   child: Container(
                     alignment: Alignment.center,
                     width: 70.w,
                     height: 65.h,
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(216, 119, 119, 0.15),
-                      borderRadius: BorderRadius.all(Radius.circular(19.r)),
+                      borderRadius:
+                          BorderRadius.all(const Radius.circular(19).r),
                     ),
                     child: CircleAvatar(
                       radius: 22.r,
@@ -285,14 +280,15 @@ class RowWidget extends StatelessWidget {
                   onTap: () {
                     navigateTo(context, routeName: AllPlansScreen.routeName);
                   },
-                  borderRadius: BorderRadius.circular(19.r),
+                  borderRadius: BorderRadius.circular(19).r,
                   child: Container(
                     alignment: Alignment.center,
                     width: 70.w,
                     height: 65.h,
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(105, 155, 247, 0.15),
-                      borderRadius: BorderRadius.all(Radius.circular(19.r)),
+                      borderRadius:
+                          BorderRadius.all(const Radius.circular(19).r),
                     ),
                     child: CircleAvatar(
                       radius: 22.r,
@@ -329,14 +325,15 @@ class RowWidget extends StatelessWidget {
                       ),
                     );
                   },
-                  borderRadius: BorderRadius.circular(19.r),
+                  borderRadius: BorderRadius.circular(19).r,
                   child: Container(
                     alignment: Alignment.center,
                     width: 70.w,
                     height: 65.h,
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(133, 84, 150, 0.15),
-                      borderRadius: BorderRadius.all(Radius.circular(19.r)),
+                      borderRadius:
+                          BorderRadius.all(const Radius.circular(19).r),
                     ),
                     child: CircleAvatar(
                       radius: 22.r,
@@ -373,14 +370,12 @@ class PopularSightsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var cubit = TripsoCubit.get(context);
     return BlocConsumer<TripsoCubit, TripsoStates>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         return Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0.r, left: 16.r),
+              padding: const EdgeInsets.only(bottom: 8.0, left: 16).r,
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -404,10 +399,10 @@ class PopularSightsWidget extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.0.r,
-                vertical: 10.r,
-              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+                vertical: 10,
+              ).r,
               child: OutlinedButton(
                 style: OutlinedButton.styleFrom(
                   side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
@@ -425,6 +420,7 @@ class PopularSightsWidget extends StatelessWidget {
                 },
                 child: Container(
                     width: double.infinity,
+                    height: 35.h,
                     alignment: Alignment.center,
                     child: AutoSizeText(
                       'All Popular Sights',
@@ -453,7 +449,7 @@ class TopPlansWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.only(bottom: 8.0.r, left: 16.r, top: 5.r),
+          padding: const EdgeInsets.only(bottom: 8.0, left: 16, top: 5).r,
           child: Align(
             alignment: Alignment.centerLeft,
             child:

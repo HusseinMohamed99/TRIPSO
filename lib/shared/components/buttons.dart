@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 Widget defaultMaterialButton({
   required Function() function,
@@ -12,8 +13,8 @@ Widget defaultMaterialButton({
   Color? color,
   Function? onTap,
 }) => Container(
-      width: width?.w ?? 260.w,
-      height: height?.h ?? 43.h,
+      width: width?.w ?? 320.w,
+      height: height?.h ?? 50.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
           radius?.r ?? 10.r,
@@ -31,7 +32,7 @@ Widget defaultMaterialButton({
             isUpperCase ? text.toUpperCase() : text,
             style: GoogleFonts.roboto(
               fontSize: 19.sp,
-              color: const Color(0xffFFFFFF),
+              color: ThemeApp.secondaryColor,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -49,7 +50,7 @@ Widget defaultButton({
   Color? color,
   Function? onTap,
 }) => Container(
-      width: width?.w ?? 260.w,
+  width: width?.w ?? 310.w,
       height: height?.h ?? 43.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
