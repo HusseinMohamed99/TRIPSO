@@ -33,8 +33,6 @@ class SignUpScreen extends StatelessWidget {
       create: (BuildContext context) => SignUpCubit(),
       child:
       BlocConsumer<SignUpCubit, SignUpStates>(listener: (context, state) {
-        if (state is! SignUpLoadingState) {
-          MyDialog.showLoadingDialog(context, 'Loading...');
           if (state is UserCreateSuccessState) {
             MyDialog.showLoadingDialog(context, 'SignUp is successfully');
             CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
@@ -66,7 +64,6 @@ class SignUpScreen extends StatelessWidget {
                   Navigator.pop(context);
                 });
           }
-        }
       }, builder: (context, state) {
         return Container(
           alignment: Alignment.center,
