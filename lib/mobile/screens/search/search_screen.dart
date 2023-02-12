@@ -1,23 +1,222 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:tripso/layout/layout.dart';
+import 'package:tripso/model/arg_model.dart';
+import 'package:tripso/model/city_model.dart';
+import 'package:tripso/model/place_model.dart';
+import 'package:tripso/model/weather_model.dart';
+import 'package:tripso/shared/components/my_divider.dart';
+import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/provider/weather_provider.dart';
+import 'package:tripso/shared/service/weather_service.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
 
-class SearchScreen extends StatelessWidget {
+class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
   static const String routeName = 'SearchScreen';
 
   @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+  // This list holds the data for the list view
+  List<CityModel> foundCity = [];
+
+  @override
+  initState() {
+    // at the beginning, all users are shown
+    foundCity = TripsoCubit.get(context).city;
+    super.initState();
+  }
+
+  void runFilter(String enteredKeyword) {
+    List<CityModel> results = [];
+    if (enteredKeyword.trim().isEmpty) {
+      results = TripsoCubit.get(context).city;
+    } else {
+      results = TripsoCubit.get(context)
+          .city
+          .where((city) =>
+              city.name.toLowerCase().contains(enteredKeyword.toLowerCase()))
+          .toList();
+    }
+
+    setState(() {
+      foundCity = results;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Text(
-          'Search',
-          style: GoogleFonts.roboto(
-            fontSize: 40,
-            fontWeight: FontWeight.w500,
-            color: primaryColor,
-          ),
+    return BlocConsumer<TripsoCubit, TripsoStates>(
+        builder: (context, state) {
+          var cubit = TripsoCubit.get(context);
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: secondaryColor,
+              centerTitle: false,
+              elevation: 2,
+              leading: IconButton(
+                icon: const ImageIcon(
+                  color: Colors.black,
+                  AssetImage(
+                    AssetPath.searchImage,
+                  ),
+                ),
+                onPressed: () {},
+              ),
+              actions: [
+                IconButton(
+                  icon: Icon(
+                    Icons.close,
+                    color: Colors.black,
+                    size: 25.sp,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+              title: TextFormField(
+                maxLines: 1,
+                autofocus: true,
+                keyboardType: TextInputType.text,
+                enableInteractiveSelection: true,
+                style: GoogleFonts.libreBaskerville(),
+                enableSuggestions: true,
+                scrollPhysics: const BouncingScrollPhysics(),
+                decoration: InputDecoration(
+                  focusedBorder: InputBorder.none,
+                  disabledBorder: InputBorder.none,
+                  border: InputBorder.none,
+                  hintText: 'Search',
+                  hintStyle: GoogleFonts.roboto(
+                    fontSize: 20.sp,
+                  ),
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'The search can\'t be empty';
+                  }
+                  return null;
+                },
+                onFieldSubmitted: (value) {},
+                onChanged: (value) {
+                  runFilter(value.trim());
+                },
+              ),
+            ),
+            body: foundCity.isEmpty
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Icon(
+                        Icons.search,
+                        color: primaryColor,
+                        size: 120.sp,
+                      ),
+                      Text(
+                        "Not found !",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.roboto(
+                          fontSize: 25.sp,
+                        ),
+                      ),
+                    ],
+                  )
+                : ListView.separated(
+                    itemBuilder: (context, index) => singleUserBuilder(
+                        foundCity[index], context, cubit.placeModel!),
+                    separatorBuilder: (context, index) => Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8.0.r),
+                          child: const MyDivider(),
+                        ),
+                    itemCount: foundCity.length),
+          );
+        },
+        listener: (context, state) {});
+  }
+
+  Widget singleUserBuilder(
+      CityModel city, BuildContext context, PlaceModel placeModel) {
+    return InkWell(
+      onTap: () async {
+        TripsoCubit.get(context).getUserData();
+        TripsoCubit.get(context).getDataPlaces(city.cId);
+        TripsoCubit.get(context).getDataForCity(city.cId);
+        navigateTo(
+          context,
+          routeName: HomeLayout.routeName,
+          arguments: ScreenArgs(cityModel: city, placeModel: placeModel),
+        );
+
+        debugPrint('City ID = ${city.cId}');
+        WeatherService service = WeatherService();
+        WeatherModel? weather = await service.getWeather(cityName: city.name);
+        Provider.of<WeatherProvider>(context, listen: false).cityName =
+            city.name;
+        Provider.of<WeatherProvider>(context, listen: false).weatherData =
+            weather;
+      },
+      child: Container(
+        height: 200.h,
+        margin: const EdgeInsets.all(8).r,
+        decoration: BoxDecoration(
+          border: Border.all(),
+          borderRadius: BorderRadius.circular(20).r,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0).r,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      city.name,
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
+                    Space(height: 10.h, width: 0.w),
+                    Text(
+                      city.history,
+                      maxLines: 7,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context)
+                          .textTheme
+                          .subtitle1
+                          ?.copyWith(color: Colors.black54),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              width: 180.w,
+              height: 250.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomRight: const Radius.circular(20).r,
+                  topRight: const Radius.circular(20).r,
+                ),
+              ),
+              child: Image.network(
+                city.image,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
         ),
       ),
     );

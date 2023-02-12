@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({
@@ -34,44 +37,40 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 5,
+      elevation: 3,
       child: Container(
-        alignment: Alignment.center,
-        height: height ?? 45,
-        width: width ?? 294,
+        alignment: Alignment.bottomCenter,
+        height: height ?? 40.h,
+        width: width ?? 294.w,
         child: TextFormField(
           readOnly: readOnly!,
           style: TextStyle(color: styleColor ?? Colors.black),
           onTap: () => function(),
           decoration: InputDecoration(
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(color: styleColor ?? secondaryColor),
             ),
             filled: true,
             fillColor: secondaryColor,
             disabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(color: styleColor ?? secondaryColor),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(color: styleColor ?? secondaryColor),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(color: styleColor ?? secondaryColor),
             ),
             hintText: title ?? 'Search',
-            hintStyle: TextStyle(
-                fontSize: titleSize ?? 15,
-                color: titleColor ?? Colors.grey,
-                fontWeight: fontWeightTitle ?? FontWeight.w500),
             prefixIcon: iconData ??
-                Icon(
-                  Icons.search,
-                  color: iconColor ?? Colors.black,
-                  size: iconSize ?? 24,
+                ImageIcon(
+                  const AssetImage(AssetPath.searchImage),
+                  color: iconColor ?? ThemeApp.primaryColor,
+                  size: iconSize ?? 30.sp,
                 ),
           ),
         ),

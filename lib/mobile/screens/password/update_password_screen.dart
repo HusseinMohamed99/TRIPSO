@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
@@ -14,6 +15,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class UpdatePassword extends StatelessWidget {
   static const String routeName = 'update_password_screen';
@@ -31,6 +33,7 @@ class UpdatePassword extends StatelessWidget {
       if (state is ChangeUserPasswordLoadingState) {
         MyDialog.showLoadingDialog(context, 'Loading...');
       }
+
       if (state is ChangeUserPasswordSuccessState) {
         MyDialog.showLoadingDialog(context, 'Change password is successfully');
         MyDialog.hideDialog(context);
@@ -57,14 +60,15 @@ class UpdatePassword extends StatelessWidget {
     }, builder: (context, state) {
       return Scaffold(
         appBar: primaryAppBar(
-          title: 'New Password',
+          title: '',
           function: () {
             newPasswordController.clear();
             confirmationPasswordController.clear();
             pop(context);
           },
-          iconData: const Icon(
+          iconData: Icon(
             Icons.arrow_back,
+            size: 25.sp,
           ),
         ),
         body: Form(
@@ -83,7 +87,7 @@ class UpdatePassword extends StatelessWidget {
                           confirmationPasswordController:
                               confirmationPasswordController,
                           cubit: cubit),
-                      const Space(width: 0, height: 30),
+                      Space(width: 0.w, height: 30.h),
                       buildDefaultButton(
                           updatePasswordKey,
                           cubit,
@@ -111,8 +115,8 @@ class UpdatePassword extends StatelessWidget {
           'Change Password',
           textAlign: TextAlign.center,
           style: GoogleFonts.roboto(
-            fontSize: 19,
-            color: const Color(0xffFFFFFF),
+            fontSize: 19.sp,
+            color: ThemeApp.secondaryColor,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -134,15 +138,15 @@ class UpdatePassword extends StatelessWidget {
                 'Create New Password?',
                 style: GoogleFonts.roboto(
                     color: primaryColor,
-                    fontSize: 25,
+                    fontSize: 25.sp,
                     fontWeight: FontWeight.w500),
               ),
-              const Space(width: 0, height: 10),
+              Space(width: 0.w, height: 10.h),
               Text(
                 'Your new password must be different\n'
                 '         from previous used password',
                 style: GoogleFonts.roboto(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w500,
                   color: Colors.black.withOpacity(0.5),
                 ),
@@ -152,13 +156,11 @@ class UpdatePassword extends StatelessWidget {
         ),
       );
 
-  Widget assetImage() => const FadeAnimation(
+  Widget assetImage() => FadeAnimation(
         1.0,
         child: Image(
-          image: AssetImage(
-            AssetPath.changePasswordImage,
-          ),
-          height: 300,
+          image: const AssetImage(AssetPath.changePasswordImage),
+          height: 300.h,
         ),
       );
 }
@@ -178,7 +180,7 @@ class PasswordFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
       child: Column(
         children: [
           DefaultTextFormField(
@@ -204,7 +206,7 @@ class PasswordFormField extends StatelessWidget {
             },
             hint: 'Password',
           ),
-          const Space(width: 0, height: 30),
+          Space(width: 0.w, height: 20.h),
           DefaultTextFormField(
             color: Colors.grey.shade400,
             context: context,
@@ -233,25 +235,3 @@ class PasswordFormField extends StatelessWidget {
     );
   }
 }
-
-// import 'package:flutter/material.dart';
-//
-// import 'auth.dart';
-//
-// class UpdatePassword extends StatefulWidget {
-//   const UpdatePassword({
-//     Key? key,
-//   }) : super(key: key);
-//
-//   @override
-//   _UpdatePasswordState createState() => _UpdatePasswordState();
-// }
-//
-// class _UpdatePasswordState extends State<UpdatePassword> {
-//   final TextEditingController _passController = TextEditingController();
-//
-//   final TextEditingController _confirmPassController = TextEditingController();
-//
-//   Future<void> _submit(String newPassword) async {
-//     await AuthServices().changePassword(newPassword);
-//   }

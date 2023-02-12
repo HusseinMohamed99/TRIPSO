@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
@@ -9,11 +10,11 @@ import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class HomeLayout extends StatelessWidget {
   static const String routeName = 'home_layout';
-  static Color isColor = Colors.white;
+  static Color isColor = ThemeApp.secondaryColor;
 
   const HomeLayout({Key? key}) : super(key: key);
 
@@ -29,73 +30,89 @@ class HomeLayout extends StatelessWidget {
             appBar: thirdAppBar(),
             bottomNavigationBar: Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: ThemeApp.secondaryColor,
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 20,
-                    color: Colors.black.withOpacity(.1),
+                    blurRadius: 20.r,
+                    color: ThemeApp.blackPrimary.withOpacity(.1),
                   )
                 ],
               ),
               child: SafeArea(
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8)
+                          .r,
                   child: GNav(
-                    rippleColor: primaryColor,
-                    hoverColor: primaryColor,
-                    gap: 8,
-                    activeColor: secondaryColor,
-                    iconSize: 24,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 12),
-                    duration: const Duration(milliseconds: 400),
-                    tabBackgroundColor: primaryColor,
-                    color: Colors.black,
+                    rippleColor: ThemeApp.primaryColor,
+                    hoverColor: ThemeApp.primaryColor,
+                    gap: 8.sp,
+                    activeColor: ThemeApp.secondaryColor,
+                    iconSize: 24.sp,
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 12)
+                            .r,
+                    duration: const Duration(seconds: 1),
+                    tabBackgroundColor: ThemeApp.primaryColor,
+                    color: ThemeApp.blackPrimary,
                     tabs: [
                       GButton(
                         leading: ImageIcon(
                           color: tripsoCubit.currentIndex == 0
-                              ? secondaryColor
-                              : Colors.black,
+                              ? ThemeApp.secondaryColor
+                              : ThemeApp.blackPrimary,
                           const AssetImage(
                             AssetPath.homeImage,
                           ),
+                          size: 25.sp,
                         ),
                         icon: Icons.home,
+                        iconSize: 25.sp,
                         text: tripsoCubit.titles[tripsoCubit.currentIndex],
+                        textStyle: TextStyle(
+                            fontSize: 15.sp, color: ThemeApp.secondaryColor),
                       ),
                       GButton(
                         leading: ImageIcon(
                           color: tripsoCubit.currentIndex == 1
-                              ? secondaryColor
-                              : Colors.black,
+                              ? ThemeApp.secondaryColor
+                              : ThemeApp.blackPrimary,
                           const AssetImage(
                             AssetPath.wishlistImage,
                           ),
+                          size: 25.sp,
                         ),
                         icon: Icons.favorite_border,
+                        iconSize: 25.sp,
                         text: tripsoCubit.titles[tripsoCubit.currentIndex],
+                        textStyle: TextStyle(
+                            fontSize: 15.sp, color: ThemeApp.secondaryColor),
                       ),
                       GButton(
                         leading: ImageIcon(
                           color: tripsoCubit.currentIndex == 2
-                              ? secondaryColor
-                              : Colors.black,
+                              ? ThemeApp.secondaryColor
+                              : ThemeApp.blackPrimary,
                           const AssetImage(
                             AssetPath.planImage,
                           ),
+                          size: 25.sp,
                         ),
                         icon: Icons.map_outlined,
+                        iconSize: 25.sp,
                         text: tripsoCubit.titles[tripsoCubit.currentIndex],
+                        textStyle: TextStyle(
+                            fontSize: 15.sp, color: ThemeApp.secondaryColor),
                       ),
                       GButton(
                         icon: Icons.person,
                         leading: CircleAvatar(
-                          radius: 12,
+                          radius: 12.r,
                           backgroundImage: AssetImage(userModel.image),
                         ),
                         text: tripsoCubit.titles[tripsoCubit.currentIndex],
+                        textStyle: TextStyle(
+                            fontSize: 15.sp, color: ThemeApp.secondaryColor),
                       ),
                     ],
                     selectedIndex: tripsoCubit.currentIndex,

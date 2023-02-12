@@ -23,6 +23,7 @@ class AssetPath{
   static const String rainyImage = "assets/images/rainy.png";
   static const String snowImage = "assets/images/snow.png";
   static const String thunderstormImage = "assets/images/thunderstorm.png";
+  static const String emptyImage = 'assets/images/emptyImage.png';
 }
 
 

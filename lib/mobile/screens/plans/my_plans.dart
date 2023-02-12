@@ -5,9 +5,9 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 
-class WishListScreen extends StatelessWidget {
-  const WishListScreen({Key? key}) : super(key: key);
-  static const String routeName = 'WishList';
+class MyPlansScreen extends StatelessWidget {
+  const MyPlansScreen({Key? key}) : super(key: key);
+  static const String routeName = 'MyPlans';
 
   @override
   Widget build(BuildContext context) {

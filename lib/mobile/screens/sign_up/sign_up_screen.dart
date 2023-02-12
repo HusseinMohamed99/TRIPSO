@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/animation/fade_animation.dart';
@@ -31,7 +32,7 @@ class SignUpScreen extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context) => SignUpCubit(),
       child:
-          BlocConsumer<SignUpCubit, SignUpStates>(listener: (context, state) {
+      BlocConsumer<SignUpCubit, SignUpStates>(listener: (context, state) {
         if (state is! SignUpLoadingState) {
           MyDialog.showLoadingDialog(context, 'Loading...');
           if (state is UserCreateSuccessState) {
@@ -39,7 +40,7 @@ class SignUpScreen extends StatelessWidget {
             CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
               uId = state.uid;
               MyDialog.hideDialog(context);
-              navigateAndFinish(context, routeName: HomeScreen.routeName);
+              navigateAndFinish(context, routeName: CitiesScreen.routeName);
             });
           } else if (state is UserCreateErrorState) {
             MyDialog.showLoadingDialog(context, 'SignUp is Error');
@@ -68,6 +69,7 @@ class SignUpScreen extends StatelessWidget {
         }
       }, builder: (context, state) {
         return Container(
+          alignment: Alignment.center,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(AssetPath.signUPImage),
@@ -84,46 +86,54 @@ class SignUpScreen extends StatelessWidget {
                   key: formKey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(
-                        onPressed: () {
-                          pop(context);
-                        },
-                        icon: const Icon(
-                          Icons.arrow_back,
-                          size: 25,
-                          color: secondaryColor,
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.only(
-                                top: 30, bottom: 28, right: 20, left: 20),
-                            child: const Text(
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
+                        child: Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                pop(context);
+                              },
+                              icon: Icon(
+                                Icons.arrow_back,
+                                size: 25.sp,
+                                color: secondaryColor,
+                              ),
+                            ),
+                            Space(width: 20.w, height: 0.h),
+                            Text(
                               'Create Account',
                               style: TextStyle(
-                                  fontSize: 30,
+                                  fontSize: 30.sp,
                                   color: secondaryColor,
                                   fontWeight: FontWeight.bold),
                             ),
-                          ),
-                          const Space(width: 0, height: 32),
+                          ],
+                        ),
+                      ),
+                      Space(width: 0.w, height: 20.h),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 50),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20).r,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Text(
+                                Text(
                                   'First Name',
                                   style: TextStyle(
                                     color: secondaryColor,
-                                    fontSize: 14,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                const Space(width: 0, height: 8),
+                                Space(width: 0.w, height: 8.h),
                                 DefaultTextFormField(
                                   color: secondaryColor.withOpacity(0.3),
                                   context: context,
@@ -138,16 +148,16 @@ class SignUpScreen extends StatelessWidget {
                                   prefix: Icons.edit_outlined,
                                   hint: 'First Name',
                                 ),
-                                const Space(width: 0, height: 20),
-                                const Text(
+                                Space(width: 0.w, height: 20.h),
+                                Text(
                                   'Last Name',
                                   style: TextStyle(
                                     color: secondaryColor,
-                                    fontSize: 14,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                const Space(width: 0, height: 8),
+                                Space(width: 0.w, height: 8.h),
                                 DefaultTextFormField(
                                   color: secondaryColor.withOpacity(0.3),
                                   context: context,
@@ -162,16 +172,16 @@ class SignUpScreen extends StatelessWidget {
                                   prefix: Icons.edit_outlined,
                                   hint: 'Last Name',
                                 ),
-                                const Space(width: 0, height: 20),
-                                const Text(
+                                Space(width: 0.w, height: 20.h),
+                                Text(
                                   'Email Address',
                                   style: TextStyle(
                                     color: secondaryColor,
-                                    fontSize: 14,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                const Space(width: 0, height: 8),
+                                Space(width: 0.w, height: 8.h),
                                 DefaultTextFormField(
                                   color: secondaryColor.withOpacity(0.3),
                                   context: context,
@@ -189,16 +199,16 @@ class SignUpScreen extends StatelessWidget {
                                   prefix: Icons.alternate_email,
                                   hint: 'Email Address',
                                 ),
-                                const Space(width: 0, height: 20),
-                                const Text(
+                                Space(width: 0.w, height: 20.h),
+                                Text(
                                   'Password',
                                   style: TextStyle(
                                     color: secondaryColor,
-                                    fontSize: 14,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                const Space(width: 0, height: 8),
+                                Space(width: 0.w, height: 8.h),
                                 DefaultTextFormField(
                                   color: secondaryColor.withOpacity(0.3),
                                   context: context,
@@ -225,7 +235,7 @@ class SignUpScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          const Space(width: 0, height: 70),
+                          Space(width: 0.w, height: 30.h),
                           defaultMaterialButton(
                             function: () {
                               if (formKey.currentState!.validate()) {

@@ -1,10 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/mobile/screens/explore/explore.dart';
-import 'package:tripso/mobile/screens/my_plan/my_plans.dart';
+import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
+import 'package:tripso/mobile/screens/plans/my_plans.dart';
 import 'package:tripso/mobile/screens/profile/my_profile.dart';
+import 'package:tripso/model/country_model.dart';
+import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/mobile/screens/wishlist/wishlist.dart';
 import 'package:tripso/model/city_model.dart';
@@ -12,7 +17,6 @@ import 'package:tripso/model/user_model.dart';
 import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-
 import '../../../model/place_model.dart';
 
 class TripsoCubit extends Cubit<TripsoStates> {
@@ -23,7 +27,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   ///START : ChangeBottomNavBar
   int currentIndex = 0;
   List<Widget> screens = [
-     const ExploreScreen(),
+    const ExploreScreen(),
     const WishListScreen(),
     const MyPlansScreen(),
     const MyProfileScreen(),
@@ -34,16 +38,18 @@ class TripsoCubit extends Cubit<TripsoStates> {
     'My Plans',
     'Profile',
   ];
+
   void changeIndex(int index) {
     currentIndex = index;
-    if (index == 0)
-    {
+    if (index == 0) {
+      getUserData();
       getCityData();
       WeatherProvider();
-
+      getDataPlaces(cityModel!.cId);
+      getDataForCity(cityModel!.cId);
     }
-    if (index == 1) getUserData();
-    if (index == 2) getUserData();
+    if (index == 1) {}
+    if (index == 2) {}
     if (index == 3) getUserData();
     emit(ChangeBottomNavBarState());
   }
@@ -52,6 +58,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   ///START : GetUserData
   UserModel? userModel;
+
   void getUserData() {
     emit(GetUserDataLoadingState());
     FirebaseFirestore.instance.collection('users').doc(uId).get().then((value) {
@@ -90,6 +97,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   ///START : Show Password
   IconData suffix = Icons.visibility_outlined;
   bool isPassword = true;
+
   void showPassword() {
     isPassword = !isPassword;
     suffix =
@@ -102,16 +110,19 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   ///START : GetCityData
   CityModel? cityModel;
-  void getData() {
+
+  void getDataForCity(String? cId) async {
     emit(GetCityDataLoadingState());
-    FirebaseFirestore.instance
+    await FirebaseFirestore.instance
         .collection('cities')
-        .doc('Aswan')
+        .doc(cId)
         .get()
         .then((value) {
       cityModel = CityModel.fromFireStore(value.data()!);
       emit(GetCityDataSuccessState());
-      //print(value.data());
+      if (kDebugMode) {
+        print(value.data());
+      }
     }).catchError((error) {
       debugPrint(error.toString());
       emit(GetCityDataErrorState(error.toString()));
@@ -124,41 +135,175 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   getCityData() async {
     FirebaseFirestore.instance.collection('cities').get().then((value) {
-      value.docs.forEach((element) {
+      city = [];
+      for (var element in value.docs) {
         city.add(CityModel.fromFireStore(element.data()));
         cId.add(element.id);
         // print(element.data());
         //  print('====================================');
-      });
+      }
     });
   }
+
+  CountryModel? countryModel;
+  List<CountryModel> country = [];
+  List<String> counId = [];
+
+  getCountryData() async {
+    FirebaseFirestore.instance.collection('country').get().then((value) {
+      country = [];
+      for (var element in value.docs) {
+        country.add(CountryModel.fromFireStore(element.data()));
+        counId.add(element.id);
+        // print(element.data());
+        //  print('====================================');
+      }
+    });
+  }
+
+  List<CityModel> cityEG = [];
+  List<String> cIdEG = [];
+
+  getEGData() async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where("country", isEqualTo: 'Egypt')
+        .get()
+        .then((value) {
+      cityEG = [];
+      for (var element in value.docs) {
+        cityEG.add(CityModel.fromFireStore(element.data()));
+        cIdEG.add(element.id);
+        // print(element.data());
+        //  print('====================================');
+      }
+    });
+  }
+
+  List<CityModel> cityIT = [];
+  List<String> cIdIT = [];
+
+  getITData() async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where("country", isEqualTo: "Italy")
+        .get()
+        .then((value) {
+      cityIT = [];
+      for (var element in value.docs) {
+        cityIT.add(CityModel.fromFireStore(element.data()));
+        cIdIT.add(element.id);
+        // print(element.data());
+        //  print('====================================');
+      }
+    });
+  }
+
+  List<CityModel> cityFR = [];
+  List<String> cIdFR = [];
+
+  getFRData() async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where("country", isEqualTo: "France")
+        .get()
+        .then((value) {
+      cityFR = [];
+      for (var element in value.docs) {
+        cityFR.add(CityModel.fromFireStore(element.data()));
+        cIdFR.add(element.id);
+        // print(element.data());
+        //  print('====================================');
+      }
+    });
+  }
+
+  List<CityModel> cityUAE = [];
+  List<String> cIdUAE = [];
+
+  getUAEData() async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where("country", isEqualTo: "UAE")
+        .get()
+        .then((value) {
+      cityUAE = [];
+      for (var element in value.docs) {
+        cityUAE.add(CityModel.fromFireStore(element.data()));
+        cIdUAE.add(element.id);
+        // print(element.data());
+        //  print('====================================');
+      }
+    });
+  }
+
   ///START : GetPlaceData
   PlaceModel? placeModel;
-  void getPlaceData() {
+
+  void getDataForPlace() {
     emit(GetPlaceDataLoadingState());
     FirebaseFirestore.instance
-        .collection('city')
-        .doc('Florence')
+        .collection('cities')
+        .doc('Abu Dhabi')
+        .collection('places')
+        .doc('Emirates National Auto Museum')
         .get()
         .then((value) {
       placeModel = PlaceModel.fromFireStore(value.data()!);
       emit(GetPlaceDataSuccessState());
-      print(value.data());
+      if (kDebugMode) {
+        print(value.data());
+      }
+      // print('value.id ======== ${value.id}');
+      // print(
+      //     '==============================================================================');
     }).catchError((error) {
       debugPrint(error.toString());
       emit(GetPlaceDataErrorState(error.toString()));
     });
   }
+
   ///END : Place Data
   List<PlaceModel> place = [];
   List<String> pId = [];
 
-  getDataPlaces() async {
-    FirebaseFirestore.instance.collectionGroup('places').get().then((value) {
+  getDataPlaces(String? cId) async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .doc(cId ?? 'Aswan')
+        .collection('places')
+        .get()
+        .then((value) {
+      place = [];
       for (var element in value.docs) {
         place.add(PlaceModel.fromFireStore(element.data()));
         pId.add(element.id);
+        if (kDebugMode) {
+          print(element.data());
+        }
+        debugPrint('================================================');
       }
     });
+  }
+
+  void deleteAccount(context) async {
+    await FirebaseAuth.instance.currentUser!.delete().then((value) async {
+      await FirebaseFirestore.instance.collection('users').doc(uId).delete();
+      CacheHelper.removeData(key: 'uId');
+      navigateAndFinish(context, routeName: OnBoard.routeName);
+    });
+  }
+
+  List<CityModel> searchList = [];
+  Map<String, dynamic>? search;
+
+  searchCity(String searchText) {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where('name', isEqualTo: searchText)
+        .get()
+        .then((value) {
+      search = value.docs[0].data();
+    }).catchError((error) {});
   }
 }

@@ -1,69 +1,71 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 Widget defaultMaterialButton({
   required Function() function,
   required String text,
-  double width = 290,
-  double height = 43.0,
-  double radius = 10.0,
+  double? width,
+  double? height,
+  double? radius,
   bool isUpperCase = false,
   Color? color,
   Function? onTap,
 }) => Container(
-  width: width,
-  height: height,
-  decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(
-      radius,
-    ),
-    color: color,
-  ),
-  child: MaterialButton(
-    clipBehavior : Clip.antiAliasWithSaveLayer,
-    height: 22,
-    minWidth: 59,
-    onPressed: function,
-    child: FittedBox(
-      child: Text(
-        textAlign : TextAlign.center,
-        isUpperCase ? text.toUpperCase() : text,
-        style: GoogleFonts.roboto(
-          fontSize: 19,
-          color: const Color(0xffFFFFFF),
-          fontWeight: FontWeight.w500,
+      width: width?.w ?? 320.w,
+      height: height?.h ?? 50.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          radius?.r ?? 10.r,
+        ),
+        color: color,
+      ),
+      child: MaterialButton(
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        height: 22.h,
+        minWidth: 59.w,
+        onPressed: function,
+        child: FittedBox(
+          child: Text(
+            textAlign: TextAlign.center,
+            isUpperCase ? text.toUpperCase() : text,
+            style: GoogleFonts.roboto(
+              fontSize: 19.sp,
+              color: ThemeApp.secondaryColor,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         ),
       ),
-    ),
-  ),
-);
+    );
 
 Widget defaultButton({
   required Function() function,
-  required  Widget widget,
-  double width = 290,
-  double height = 43.0,
-  double radius = 10.0,
+  required Widget widget,
+  double? width,
+  double? height,
+  double? radius,
   bool isUpperCase = false,
   Color? color,
   Function? onTap,
 }) => Container(
-  width: width,
-  height: height,
-  decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(
-      radius,
-    ),
-    color: color,
-  ),
-  child: MaterialButton(
-    clipBehavior : Clip.antiAliasWithSaveLayer,
-    height: 22,
-    minWidth: 59,
-    onPressed: function,
-    child: FittedBox(
-      child: widget,
+  width: width?.w ?? 310.w,
+      height: height?.h ?? 43.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          radius?.r ?? 10.r,
+        ),
+        color: color,
       ),
-    ),
-);
+      child: MaterialButton(
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        height: 22.h,
+        minWidth: 59.w,
+        onPressed: function,
+        child: FittedBox(
+          child: widget,
+        ),
+      ),
+    );
 
