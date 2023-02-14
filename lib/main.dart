@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:tripso/desktop/desktop_screen.dart';
 import 'package:tripso/firebase_options.dart';
 import 'package:tripso/layout/layout.dart';
 import 'package:tripso/mobile/screens/historical_city/historical_city.dart';
@@ -108,7 +107,6 @@ class MyApp extends StatelessWidget {
                       SightsScreen.routeName: (_) => const SightsScreen(),
                       PopularSightsScreen.routeName: (_) =>
                           const PopularSightsScreen(),
-                      DesktopScreen.routeName: (_) => const DesktopScreen(),
                     },
                     initialRoute: SplashScreen.routeName,
                   );

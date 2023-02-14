@@ -14,7 +14,7 @@ Widget defaultMaterialButton({
   Function? onTap,
 }) => Container(
       width: width?.w ?? 320.w,
-      height: height?.h ?? 50.h,
+      height: height?.h ?? 40.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
           radius?.r ?? 10.r,
