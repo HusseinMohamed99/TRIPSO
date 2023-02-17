@@ -73,3 +73,37 @@ class GetPlaceDataErrorState extends TripsoStates {
 ///END : GetPlaceData
 
 //------------------------------------------------------------//
+///START : GetProfileImage
+class GetProfileImagePickedSuccessState extends TripsoStates {}
+
+class GetProfileImagePickedErrorState extends TripsoStates {}
+
+///END : GetProfileImage
+// ----------------------------------------------------------//
+///START : GetCoverImage
+class GetCoverImagePickedSuccessState extends TripsoStates {}
+
+class GetCoverImagePickedErrorState extends TripsoStates {}
+
+///END : GetCoverImage
+// ----------------------------------------------------------//
+///START : UploadProfileImage
+class UploadProfileImageSuccessState extends TripsoStates {}
+
+class UploadProfileImageErrorState extends TripsoStates {}
+
+///END : UploadProfileImage
+// ----------------------------------------------------------//
+///START : UploadCoverImage
+class UploadCoverImageSuccessState extends TripsoStates {}
+
+class UploadCoverImageErrorState extends TripsoStates {}
+
+///END : UploadCoverImage
+// ----------------------------------------------------------//
+///START : UpdateUserData
+class UpdateUserLoadingState extends TripsoStates {}
+
+class UpdateUserErrorState extends TripsoStates {}
+
+///END : UpdateUserData

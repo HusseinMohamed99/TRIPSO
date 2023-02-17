@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/colors.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class SearchBar extends StatelessWidget {
@@ -49,21 +48,25 @@ class SearchBar extends StatelessWidget {
           decoration: InputDecoration(
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(color: styleColor ?? secondaryColor),
+              borderSide:
+                  BorderSide(color: styleColor ?? ThemeApp.secondaryColor),
             ),
             filled: true,
-            fillColor: secondaryColor,
+            fillColor: ThemeApp.secondaryColor,
             disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(color: styleColor ?? secondaryColor),
+              borderSide:
+                  BorderSide(color: styleColor ?? ThemeApp.secondaryColor),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(color: styleColor ?? secondaryColor),
+              borderSide:
+                  BorderSide(color: styleColor ?? ThemeApp.secondaryColor),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(color: styleColor ?? secondaryColor),
+              borderSide:
+                  BorderSide(color: styleColor ?? ThemeApp.secondaryColor),
             ),
             hintText: title ?? 'Search',
             prefixIcon: iconData ??

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class MyDialog {
   static void showLoadingDialog(
@@ -24,8 +25,8 @@ class MyDialog {
                 Text(
                   message,
                   style: GoogleFonts.roboto(
-                    textStyle: TextStyle(
-                      color: Colors.black,
+                    textStyle: GoogleFonts.roboto(
+                      color: ThemeApp.blackPrimary,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),
@@ -44,8 +45,8 @@ class MyDialog {
               Text(
                 message,
                 style: GoogleFonts.roboto(
-                  textStyle: TextStyle(
-                    color: Colors.black,
+                  textStyle: GoogleFonts.roboto(
+                    color: ThemeApp.blackPrimary,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w700,
                   ),
@@ -55,7 +56,7 @@ class MyDialog {
           ),
         );
       },
-      barrierDismissible: isDismissible,
+      barrierDismissible: false,
     );
   }
 
@@ -64,7 +65,7 @@ class MyDialog {
     String message, {
     bool isDismissible = true,
     String? posActionTitle,
-    VoidCallback? posAction,
+    Function? posAction,
     String? negActionTitle,
     VoidCallback? negAction,
   }) {
@@ -72,28 +73,34 @@ class MyDialog {
     if (posActionTitle != null) {
       actions.add(TextButton(
           onPressed: () {
-            Navigator.pop(context);
             if (posAction != null) {
               posAction();
+            }
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
             }
           },
           child: Text(
             posActionTitle,
-            style: TextStyle(fontSize: 15.sp),
+            style: GoogleFonts.roboto(fontSize: 15.sp),
           )));
     }
     if (negActionTitle != null) {
       actions.add(TextButton(
           onPressed: () {
-            Navigator.pop(context);
             if (negAction != null) {
               negAction();
+            }
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
             }
           },
           child: Text(
             negActionTitle,
-            style: TextStyle(fontSize: 15.sp),
-          )));
+            style: GoogleFonts.roboto(fontSize: 15.sp),
+          ),
+        ),
+      );
     }
     showDialog(
       context: context,
@@ -103,8 +110,8 @@ class MyDialog {
             content: Text(
               message,
               style: GoogleFonts.roboto(
-                textStyle: TextStyle(
-                  color: Colors.black,
+                textStyle: GoogleFonts.roboto(
+                  color: ThemeApp.blackPrimary,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
                 ),
@@ -118,8 +125,8 @@ class MyDialog {
           content: Text(
             message,
             style: GoogleFonts.roboto(
-              textStyle: TextStyle(
-                color: Colors.black,
+              textStyle: GoogleFonts.roboto(
+                color: ThemeApp.blackPrimary,
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
               ),

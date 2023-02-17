@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/mobile/screens/password/update_password_screen.dart';
+import 'package:tripso/mobile/screens/profile/edit_profile.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/components/log_out.dart';
 import 'package:tripso/shared/components/navigator.dart';
@@ -33,9 +34,13 @@ class MyProfileScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CircleAvatar(
-                        maxRadius: 70.r,
-                        minRadius: 70.r,
-                        backgroundImage: AssetImage(tripsoCubit!.image),
+                        maxRadius: 73.r,
+                        minRadius: 73.r,
+                        child: CircleAvatar(
+                          maxRadius: 70.r,
+                          minRadius: 70.r,
+                          backgroundImage: NetworkImage(tripsoCubit!.image),
+                        ),
                       ),
                       Space(height: 15.h, width: 0.w),
                       Column(
@@ -68,7 +73,7 @@ class MyProfileScreen extends StatelessWidget {
                   ),
                 ),
                 Space(
-                  height: 35.h,
+                  height: 20.h,
                   width: 0.w,
                 ),
                 Card(
@@ -77,9 +82,11 @@ class MyProfileScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15).r),
                   elevation: 10,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      navigateTo(context, routeName: EditProfile.routeName);
+                    },
                     child: Container(
-                      padding: const EdgeInsets.all(20).r,
+                      padding: const EdgeInsets.all(10).r,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -124,7 +131,7 @@ class MyProfileScreen extends StatelessWidget {
                       navigateTo(context, routeName: UpdatePassword.routeName);
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(20).r,
+                      padding: const EdgeInsets.all(10).r,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -183,7 +190,7 @@ class MyProfileScreen extends StatelessWidget {
                       );
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(20).r,
+                      padding: const EdgeInsets.all(10).r,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -241,7 +248,7 @@ class MyProfileScreen extends StatelessWidget {
                       );
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(20).r,
+                      padding: const EdgeInsets.all(10).r,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -286,7 +293,7 @@ class MyProfileScreen extends StatelessWidget {
                 ),
                 Space(
                   width: 0.w,
-                  height: 20.h,
+                  height: 10.h,
                 ),
               ],
             ),

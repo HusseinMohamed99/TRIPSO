@@ -9,13 +9,17 @@ class DefaultTextFormField extends StatelessWidget {
       required this.controller,
       required this.keyboardType,
       required this.validate,
-      required this.hint,
+      this.hint,
+      this.label,
       this.onTap,
       this.onChanged,
       this.onFieldSubmitted,
       this.obscuringCharacter,
       this.style,
       this.color,
+      this.borderSideColor,
+      this.prefixColor,
+      this.styleColor,
       this.focusNode,
       this.isClickable,
       this.isPassword,
@@ -23,15 +27,20 @@ class DefaultTextFormField extends StatelessWidget {
       this.suffix,
       this.suffixPressed,
       this.prefix,
+      this.maxLength,
       Key? key})
       : super(key: key);
   final BuildContext context;
   final FocusNode? focusNode;
   final Color? color;
+  final Color? borderSideColor;
+  final Color? styleColor;
+  final Color? prefixColor;
   final TextEditingController controller;
   final TextInputType keyboardType;
   final String? Function(String?) validate;
   final String? hint;
+  final String? label;
   final dynamic onTap;
   final dynamic onChanged;
   final Function(String)? onFieldSubmitted;
@@ -43,15 +52,17 @@ class DefaultTextFormField extends StatelessWidget {
   final Function? suffixPressed;
   final TextStyle? style;
   final String? obscuringCharacter;
+  final int? maxLength;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLength: maxLength,
       focusNode: focusNode,
       textAlignVertical: TextAlignVertical.center,
       style: GoogleFonts.roboto(
         fontStyle: FontStyle.normal,
-        color: ThemeApp.secondaryColor,
+        color: styleColor ?? ThemeApp.secondaryColor,
         fontSize: 17.sp,
         fontWeight: FontWeight.w400,
       ),
@@ -75,7 +86,7 @@ class DefaultTextFormField extends StatelessWidget {
           padding: const EdgeInsets.all(15.0).r,
           child: Icon(
             prefix,
-            color: ThemeApp.secondaryColor,
+            color: prefixColor ?? ThemeApp.secondaryColor,
             size: 24.sp,
           ),
         ),
@@ -105,12 +116,17 @@ class DefaultTextFormField extends StatelessWidget {
           color: ThemeApp.secondaryColor.withOpacity(0.8),
           height: 1.h,
         ),
+        labelText: label,
+        labelStyle: TextStyle(
+          color: ThemeApp.primaryColor,
+          height: 1.h,
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
             const Radius.circular(12.0).r,
           ),
-          borderSide: const BorderSide(
-            color: ThemeApp.secondaryColor,
+          borderSide: BorderSide(
+            color: borderSideColor ?? ThemeApp.secondaryColor,
           ),
         ),
         errorBorder: OutlineInputBorder(

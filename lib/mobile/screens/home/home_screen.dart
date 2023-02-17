@@ -1,13 +1,12 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
 import 'package:tripso/model/place_model.dart';
+import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
@@ -17,7 +16,7 @@ import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/grid_city_items.dart';
 
 class CitiesScreen extends StatefulWidget {
@@ -84,12 +83,13 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                       Container(
                                         clipBehavior:
                                             Clip.antiAliasWithSaveLayer,
-                                        height: 270.h,
+                                        height: 250.h,
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(20.r),
+                                              bottomLeft:
+                                                  const Radius.circular(20).r,
                                               bottomRight:
-                                                  Radius.circular(20.r),
+                                                  const Radius.circular(20).r,
                                             ),
                                             image: const DecorationImage(
                                               fit: BoxFit.cover,
@@ -99,23 +99,25 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                             )),
                                       ),
                                       LayerImage(
-                                        height: 270.h,
+                                        height: 250.h,
                                         width: double.infinity,
                                         borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(20.r),
-                                          bottomRight: Radius.circular(20.r),
+                                          bottomLeft:
+                                              const Radius.circular(20).r,
+                                          bottomRight:
+                                              const Radius.circular(20).r,
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            left: 15.r, bottom: 50.r),
+                                            left: 15.w, bottom: 50.h),
                                         child: Text(
                                           'Where do you\nwant to go ?',
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline1
                                               ?.copyWith(
-                                                color: secondaryColor,
+                                                color: ThemeApp.secondaryColor,
                                               ),
                                         ),
                                       ),
@@ -135,7 +137,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                               ],
                             ),
                             Positioned(
-                              top: 250.h,
+                              top: 225.h,
                               right: 10.w,
                               left: 10.w,
                               child: Row(
@@ -158,7 +160,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                       child: DropdownButton(
                                         iconSize: 20.sp,
                                         underline: const Divider(
-                                          color: Colors.white,
+                                          color: ThemeApp.secondaryColor,
                                         ),
                                         icon: const Icon(
                                             Icons.keyboard_arrow_down),
@@ -205,51 +207,19 @@ class _CitiesScreenState extends State<CitiesScreen> {
   }
 
   checkInternet() {
-    if (Platform.operatingSystem == 'android') {
-      return showDialog<String>(
-        context: context,
-        builder: (BuildContext context) => AlertDialog(
-          title: const Text('No Connection'),
-          content: const Text('Please check your internet connectivity'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () async {
-                Navigator.pop(context, 'Cancel');
-                setState(() => isAlertSet = false);
-                isDeviceConnected =
-                    await InternetConnectionChecker().hasConnection;
-                if (!isDeviceConnected && isAlertSet == false) {
-                  checkInternet();
-                  setState(() => isAlertSet = true);
-                }
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        ),
-      );
-    }
-    return showCupertinoDialog<String>(
-      context: context,
-      builder: (BuildContext context) => CupertinoAlertDialog(
-        title: const Text('No Connection'),
-        content: const Text('Please check your internet connectivity'),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () async {
-              Navigator.pop(context, 'Cancel');
-              setState(() => isAlertSet = false);
-              isDeviceConnected =
-                  await InternetConnectionChecker().hasConnection;
-              if (!isDeviceConnected && isAlertSet == false) {
-                checkInternet();
-                setState(() => isAlertSet = true);
-              }
-            },
-            child: const Text('OK'),
-          ),
-        ],
-      ),
+    MyDialog.showMessage(
+      context,
+      'Please check your internet connectivity',
+      posActionTitle: 'OK',
+      posAction: () async {
+        Navigator.pop(context, 'Cancel');
+        setState(() => isAlertSet = false);
+        isDeviceConnected = await InternetConnectionChecker().hasConnection;
+        if (!isDeviceConnected && isAlertSet == false) {
+          checkInternet();
+          setState(() => isAlertSet = true);
+        }
+      },
     );
   }
 

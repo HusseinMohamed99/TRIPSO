@@ -1,8 +1,11 @@
+import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:tripso/mobile/screens/explore/explore.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/mobile/screens/plans/my_plans.dart';
@@ -18,6 +21,7 @@ import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import '../../../model/place_model.dart';
+import 'package:image_cropper/image_cropper.dart';
 
 class TripsoCubit extends Cubit<TripsoStates> {
   TripsoCubit() : super(TripsoInitialState());
@@ -306,4 +310,92 @@ class TripsoCubit extends Cubit<TripsoStates> {
       search = value.docs[0].data();
     }).catchError((error) {});
   }
+
+  ///START : GetProfileImage
+  var picker = ImagePicker();
+  File? profileImage;
+
+  Future<void> getProfileImage(ImageSource source) async {
+    final pickedFile = await picker.pickImage(source: source);
+    if (pickedFile != null) {
+      profileImage = File(pickedFile.path);
+      profileImage = await cropImage(imageFile: profileImage!);
+      emit(GetProfileImagePickedSuccessState());
+    } else {
+      debugPrint('No image selected');
+      emit(GetProfileImagePickedErrorState());
+    }
+  }
+
+  Future<File?> cropImage({required File imageFile}) async {
+    CroppedFile? croppedImage =
+        await ImageCropper().cropImage(sourcePath: imageFile.path);
+    if (croppedImage == null) return null;
+    return File(croppedImage.path);
+  }
+
+  ///END : GetProfileImage
+  // ----------------------------------------------------------//
+
+  ///START : UploadProfileImage
+  void uploadProfileImage({
+    required String email,
+    required String firstName,
+    required String lastName,
+    required String phone,
+  }) {
+    emit(UpdateUserLoadingState());
+    firebase_storage.FirebaseStorage.instance
+        .ref()
+        .child(
+            'userProfileImage/${Uri.file(profileImage!.path).pathSegments.last}')
+        .putFile(profileImage!)
+        .then((value) {
+      value.ref.getDownloadURL().then((value) {
+        updateUserData(
+          email: email,
+          phone: phone,
+          firstName: firstName,
+          lastName: lastName,
+          image: value,
+        );
+      }).catchError((error) {
+        emit(UploadProfileImageErrorState());
+      });
+    }).catchError((error) {
+      emit(UploadProfileImageErrorState());
+    });
+  }
+
+  ///END : UploadProfileImage
+
+  ///START : UpdateUserData
+  void updateUserData({
+    required String email,
+    required String firstName,
+    required String lastName,
+    required String phone,
+    String? image,
+  }) {
+    emit(UpdateUserLoadingState());
+    UserModel model = UserModel(
+      email: email,
+      phone: phone,
+      image: image ?? userModel!.image,
+      uId: userModel!.uId,
+      firstName: firstName,
+      lastName: lastName,
+    );
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(userModel!.uId)
+        .update(model.toFireStore())
+        .then((value) {
+      getUserData();
+    }).catchError((error) {
+      emit(UpdateUserErrorState());
+    });
+  }
+
+  ///END : UpdateUserData
 }

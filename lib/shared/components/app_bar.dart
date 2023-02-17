@@ -52,11 +52,9 @@ PreferredSizeWidget primaryAppBar({
       title: Text(
         title,
         style: GoogleFonts.roboto(
-          textStyle: TextStyle(
             color: titleColor ?? Colors.black,
             fontSize: fontSizeTitle ?? 20.sp,
             fontWeight: fontWeightTitle ?? FontWeight.w700,
-          ),
         ),
       ),
       actions: actions,

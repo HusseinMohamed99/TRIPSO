@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:tripso/mobile/screens/historical_city/historical_city.dart';
 import 'package:tripso/mobile/screens/plans/all_plans.dart';
@@ -12,6 +14,8 @@ import 'package:tripso/mobile/screens/sights/sights.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/weather_model.dart';
+import 'package:tripso/shared/adaptive/indicator.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/shared/components/layer.dart';
@@ -82,11 +86,21 @@ class CityDetails extends StatelessWidget {
                   bottomLeft: const Radius.circular(20).r,
                   bottomRight: const Radius.circular(20).r,
                 ),
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                    screenArgs.cityModel.image,
+              ),
+              child: CachedNetworkImage(
+                imageUrl: screenArgs.cityModel.image,
+                fit: BoxFit.cover,
+                height: 400.h,
+                width: double.infinity,
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    Center(
+                  child: AdaptiveIndicator(
+                    os: getOs(),
                   ),
+                ),
+                errorWidget: (context, url, error) => Icon(
+                  FontAwesomeIcons.info,
+                  size: 24.sp,
                 ),
               ),
             ),
@@ -302,7 +316,8 @@ class RowWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text('Plans', style: Theme.of(context).textTheme.headline6),
+                Text('Customize Plans',
+                    style: Theme.of(context).textTheme.headline6),
               ],
             ),
           ),

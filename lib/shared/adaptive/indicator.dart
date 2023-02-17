@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class AdaptiveIndicator extends StatelessWidget {
   final String os;
@@ -11,7 +11,7 @@ class AdaptiveIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     if (os == 'android') {
       return const CircularProgressIndicator(
-        color: primaryColor,
+        color: ThemeApp.primaryColor,
       );
     }
 
