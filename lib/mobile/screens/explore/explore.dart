@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +51,7 @@ class ExploreScreen extends StatelessWidget {
                   placeModel: screenArgs.placeModel),
               Space(height: 20.h, width: 0.w),
               const TopPlansWidget(),
-              const AllPlansButton(),
+             // const AllPlansButton(),
             ],
           ),
         );
@@ -195,39 +194,39 @@ class CityDetails extends StatelessWidget {
   }
 }
 
-class AllPlansButton extends StatelessWidget {
-  const AllPlansButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 20.0.r,
-      ),
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
-          side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
-        ),
-        onPressed: () {
-          navigateTo(context, routeName: AllPlansScreen.routeName);
-        },
-        child: Container(
-            width: double.infinity,
-            height: 35.h,
-            alignment: Alignment.center,
-            child: Text(
-              'All Plans',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline5
-                  ?.copyWith(color: ThemeApp.blueColor),
-            )),
-      ),
-    );
-  }
-}
+// class AllPlansButton extends StatelessWidget {
+//   const AllPlansButton({
+//     Key? key,
+//   }) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: EdgeInsets.symmetric(
+//         horizontal: 20.0.r,
+//       ),
+//       child: OutlinedButton(
+//         style: OutlinedButton.styleFrom(
+//           side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
+//         ),
+//         onPressed: () {
+//           navigateTo(context, routeName: AllPlansScreen.routeName);
+//         },
+//         child: Container(
+//             width: double.infinity,
+//             height: 35.h,
+//             alignment: Alignment.center,
+//             child: Text(
+//               'All Plans',
+//               style: Theme.of(context)
+//                   .textTheme
+//                   .headline5
+//                   ?.copyWith(color: ThemeApp.blueColor),
+//             )),
+//       ),
+//     );
+//   }
+// }
 
 class RowWidget extends StatelessWidget {
   const RowWidget({
@@ -390,13 +389,37 @@ class PopularSightsWidget extends StatelessWidget {
       builder: (context, state) {
         return Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8.0, left: 16).r,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Popular Sights',
-                  style: Theme.of(context).textTheme.headline2,
+            InkWell(
+              onTap: () async {
+                TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+                TripsoCubit.get(context).getDataForCity(cityModel.cId);
+                navigateTo(
+                  context,
+                  routeName: PopularSightsScreen.routeName,
+                  arguments:
+                      ScreenArgs(cityModel: cityModel, placeModel: placeModel),
+                );
+                debugPrint('City ID = ${cityModel.cId}');
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 8.0, left: 16).r,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Row(
+                    children: [
+                      Text(
+                        'Popular Sights',
+                        style: Theme.of(context).textTheme.headline3?.copyWith(
+                              color: ThemeApp.primaryColor,
+                            ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        size: 24.sp,
+                        color: ThemeApp.primaryColor,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -414,39 +437,39 @@ class PopularSightsWidget extends StatelessWidget {
                 autoPlayCurve: Curves.fastOutSlowIn,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20.0,
-                vertical: 10,
-              ).r,
-              child: OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
-                ),
-                onPressed: () async {
-                  TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-                  TripsoCubit.get(context).getDataForCity(cityModel.cId);
-                  navigateTo(
-                    context,
-                    routeName: PopularSightsScreen.routeName,
-                    arguments: ScreenArgs(
-                        cityModel: cityModel, placeModel: placeModel),
-                  );
-                  debugPrint('City ID = ${cityModel.cId}');
-                },
-                child: Container(
-                    width: double.infinity,
-                    height: 35.h,
-                    alignment: Alignment.center,
-                    child: AutoSizeText(
-                      'All Popular Sights',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline5
-                          ?.copyWith(color: ThemeApp.blueColor),
-                    )),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(
+            //     horizontal: 20.0,
+            //     vertical: 10,
+            //   ).r,
+            //   child: OutlinedButton(
+            //     style: OutlinedButton.styleFrom(
+            //       side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
+            //     ),
+            //     onPressed: () async {
+            //       TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+            //       TripsoCubit.get(context).getDataForCity(cityModel.cId);
+            //       navigateTo(
+            //         context,
+            //         routeName: PopularSightsScreen.routeName,
+            //         arguments: ScreenArgs(
+            //             cityModel: cityModel, placeModel: placeModel),
+            //       );
+            //       debugPrint('City ID = ${cityModel.cId}');
+            //     },
+            //     child: Container(
+            //         width: double.infinity,
+            //         height: 35.h,
+            //         alignment: Alignment.center,
+            //         child: AutoSizeText(
+            //           'All Popular Sights',
+            //           style: Theme.of(context)
+            //               .textTheme
+            //               .headline5
+            //               ?.copyWith(color: ThemeApp.blueColor),
+            //         )),
+            //   ),
+            // ),
           ],
         );
       },
@@ -464,12 +487,31 @@ class TopPlansWidget extends StatelessWidget {
     var cubit = TripsoCubit.get(context);
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0, left: 16, top: 5).r,
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child:
-                Text('Top Plans', style: Theme.of(context).textTheme.headline2),
+        InkWell(
+          onTap: () {
+            navigateTo(context, routeName: AllPlansScreen.routeName);
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 8.0, left: 16, top: 5).r,
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Row(
+                children: [
+                  Text(
+                    'Top Plans',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline3
+                        ?.copyWith(color: ThemeApp.primaryColor),
+                  ),
+                  Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    size: 24.sp,
+                    color: ThemeApp.primaryColor,
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
         SizedBox(
@@ -489,5 +531,3 @@ class TopPlansWidget extends StatelessWidget {
     );
   }
 }
-
-
