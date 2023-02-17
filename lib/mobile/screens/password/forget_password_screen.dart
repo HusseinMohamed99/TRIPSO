@@ -14,7 +14,6 @@ import 'package:tripso/shared/components/text_form_field.dart';
 import 'package:tripso/shared/cubit/restPasswordCubit/rest_password_cubit.dart';
 import 'package:tripso/shared/cubit/restPasswordCubit/rest_password_state.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/colors.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 enum AuthMode { forgot, verify }
@@ -65,7 +64,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             Text(
                               'Forgot Your Password?',
                               style: GoogleFonts.roboto(
-                                  color: primaryColor,
+                                  color: ThemeApp.primaryColor,
                                   fontSize: 25.sp,
                                   fontWeight: FontWeight.w500),
                             ),

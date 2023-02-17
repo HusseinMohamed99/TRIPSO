@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/model/user_model.dart';
 import 'package:tripso/shared/cubit/SignUpCubit/sign_up_state.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
-
 
 class SignUpCubit extends Cubit<SignUpStates> {
   SignUpCubit() : super(SignUpInitialState());
@@ -17,6 +15,7 @@ class SignUpCubit extends Cubit<SignUpStates> {
     required String password,
     required String firstName,
     required String lastName,
+    required String phone,
   }) async {
     emit(SignUpLoadingState());
     FirebaseAuth.instance
@@ -26,6 +25,7 @@ class SignUpCubit extends Cubit<SignUpStates> {
     )
         .then((value) {
       userCreate(
+          phone: phone,
           email: email,
           firstName: firstName,
           lastName: lastName,
@@ -40,13 +40,16 @@ class SignUpCubit extends Cubit<SignUpStates> {
     required String firstName,
     required String lastName,
     required String uId,
+    required String phone,
   }) async {
     UserModel model = UserModel(
       email: email,
       firstName: firstName,
       lastName: lastName,
       uId: uId,
-      image: AssetPath.profileImage,
+      image:
+          'https://cdn-icons-png.flaticon.com/512/214/214070.png?w=740&t=st=1676604521~exp=1676605121~hmac=cbd7577a96e66bf8093132e5b5da0c2a649f4f7c7cdfb6019708db0b417ddc8c',
+      phone: phone,
     );
     FirebaseFirestore.instance
         .collection('users')
@@ -70,4 +73,3 @@ class SignUpCubit extends Cubit<SignUpStates> {
     emit(ChangePasswordSignUpState());
   }
 }
-

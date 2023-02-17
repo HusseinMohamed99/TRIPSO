@@ -2,8 +2,6 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
@@ -11,7 +9,8 @@ import 'package:tripso/shared/components/size_config.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -22,7 +21,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: secondaryColor,
+      backgroundColor: ThemeApp.secondaryColor,
       body: SplashScreenBody(),
     );
   }
@@ -35,11 +34,7 @@ class SplashScreenBody extends StatefulWidget {
   State<SplashScreenBody> createState() => _SplashScreenBodyState();
 }
 
-class _SplashScreenBodyState extends State<SplashScreenBody>
-    with SingleTickerProviderStateMixin {
-  AnimationController? animationController;
-  Animation<double>? fadingAnimation;
-
+class _SplashScreenBodyState extends State<SplashScreenBody> {
   late StreamSubscription subscription;
   bool isDeviceConnected = false;
   bool isAlertSet = false;
@@ -59,25 +54,19 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
   void initState() {
     getConnectivity();
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    fadingAnimation =
-        Tween<double>(begin: 0.1, end: 1).animate(animationController!);
-    animationController?.repeat(reverse: true);
     Timer(const Duration(seconds: 3), () {
       uId = CacheHelper.getData(key: 'uId');
-      if (uId != null) {
-        Navigator.pushReplacementNamed(context, CitiesScreen.routeName);
-      } else {
-        Navigator.pushReplacementNamed(context, OnBoard.routeName);
-      }
+      // if (uId != null) {
+      //   Navigator.pushReplacementNamed(context, CitiesScreen.routeName);
+      // } else {
+      //   Navigator.pushReplacementNamed(context, OnBoard.routeName);
+      // }
     });
   }
 
   @override
   void dispose() {
     subscription.cancel();
-    animationController?.dispose();
     super.dispose();
   }
 
@@ -85,6 +74,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Container(
+      alignment: Alignment.center,
       constraints: const BoxConstraints.expand(),
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -93,42 +83,17 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
         ),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
-        //appBar: primaryAppBar(),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FadeTransition(
-              opacity: fadingAnimation!,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'TRI',
-                    style: GoogleFonts.pacifico(
-                      textStyle: TextStyle(
-                        color: ThemeApp.primaryColor,
-                        fontSize: 45.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'PSO',
-                    style: GoogleFonts.pacifico(
-                      textStyle: TextStyle(
-                        color: ThemeApp.secondaryColor,
-                        fontSize: 45.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+          backgroundColor: Colors.transparent,
+          //appBar: primaryAppBar(),
+          body: AnimatedSplashScreen(
+              splashIconSize: 200,
+              backgroundColor: Colors.transparent,
+              pageTransitionType: PageTransitionType.rightToLeft,
+              splashTransition: SplashTransition.scaleTransition,
+              splash: AssetPath.logoImage,
+              nextScreen: uId != null ? const CitiesScreen() : const OnBoard(),
+              duration: 2000,
+              animationDuration: const Duration(seconds: 2))),
     );
   }
 

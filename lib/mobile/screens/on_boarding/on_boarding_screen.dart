@@ -43,6 +43,7 @@ class OnBoard extends StatelessWidget {
                     child: welcomeText(),
                   ),
                   button(context),
+                  Space(height: 50.h, width: 0.w),
                 ],
               ),
             ),

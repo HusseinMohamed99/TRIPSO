@@ -15,7 +15,7 @@ class CityModel {
 
   CityModel.fromFireStore(Map<String, dynamic> data)
       : this(
-    name: data['name'],
+          name: data['name'],
           image: data['image'],
           cId: data['cId'],
           history: data['history'],

@@ -41,16 +41,16 @@ class HomeLayout extends StatelessWidget {
               child: SafeArea(
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8)
+                      const EdgeInsets.symmetric(horizontal: 6.0, vertical: 6)
                           .r,
                   child: GNav(
                     rippleColor: ThemeApp.primaryColor,
                     hoverColor: ThemeApp.primaryColor,
-                    gap: 8.sp,
+                    gap: 10.sp,
                     activeColor: ThemeApp.secondaryColor,
                     iconSize: 24.sp,
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 20, vertical: 12)
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 8)
                             .r,
                     duration: const Duration(microseconds: 200),
                     tabBackgroundColor: ThemeApp.primaryColor,
@@ -107,8 +107,8 @@ class HomeLayout extends StatelessWidget {
                       GButton(
                         icon: Icons.person,
                         leading: CircleAvatar(
-                          radius: 12.r,
-                          backgroundImage: AssetImage(userModel.image),
+                          radius: 15.r,
+                          backgroundImage: NetworkImage(userModel.image),
                         ),
                         text: tripsoCubit.titles[tripsoCubit.currentIndex],
                         textStyle: TextStyle(

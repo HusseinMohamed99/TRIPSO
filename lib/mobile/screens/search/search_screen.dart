@@ -16,7 +16,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/shared/service/weather_service.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -61,7 +61,7 @@ class _SearchScreenState extends State<SearchScreen> {
           var cubit = TripsoCubit.get(context);
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: secondaryColor,
+              backgroundColor: ThemeApp.secondaryColor,
               centerTitle: false,
               elevation: 2,
               leading: IconButton(
@@ -121,11 +121,11 @@ class _SearchScreenState extends State<SearchScreen> {
                     children: [
                       Icon(
                         Icons.search,
-                        color: primaryColor,
+                        color: ThemeApp.primaryColor,
                         size: 120.sp,
                       ),
                       Text(
-                        "Not found !",
+                        "Not found !".toUpperCase(),
                         textAlign: TextAlign.center,
                         style: GoogleFonts.roboto(
                           fontSize: 25.sp,
@@ -137,7 +137,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     itemBuilder: (context, index) => singleUserBuilder(
                         foundCity[index], context, cubit.placeModel!),
                     separatorBuilder: (context, index) => Padding(
-                          padding: EdgeInsets.symmetric(vertical: 8.0.r),
+                      padding: const EdgeInsets.symmetric(vertical: 8.0).r,
                           child: const MyDivider(),
                         ),
                     itemCount: foundCity.length),
@@ -168,7 +168,7 @@ class _SearchScreenState extends State<SearchScreen> {
             weather;
       },
       child: Container(
-        height: 200.h,
+        height: 150.h,
         margin: const EdgeInsets.all(8).r,
         decoration: BoxDecoration(
           border: Border.all(),
@@ -204,7 +204,7 @@ class _SearchScreenState extends State<SearchScreen> {
             Container(
               clipBehavior: Clip.antiAliasWithSaveLayer,
               width: 180.w,
-              height: 250.h,
+              height: 150.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomRight: const Radius.circular(20).r,

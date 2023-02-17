@@ -1,4 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tripso/model/city_model.dart';
+import 'package:tripso/shared/components/layer.dart';
+import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/components/speak.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class HistoricalCity extends StatelessWidget {
   const HistoricalCity({Key? key}) : super(key: key);
@@ -6,11 +16,166 @@ class HistoricalCity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const Center(
-        child: Text('HistoricalCity'),
-      ),
+    CityModel cityModel =
+        (ModalRoute.of(context)?.settings.arguments) as CityModel;
+    return BlocConsumer<TripsoCubit, TripsoStates>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        return SafeArea(
+          child: Stack(
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    height: 500.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: const Radius.circular(20).r,
+                          bottomRight: const Radius.circular(20).r,
+                        ),
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: NetworkImage(
+                            cityModel.image,
+                          ),
+                        )),
+                    child: LayerImage(
+                      height: 540.h,
+                      width: double.infinity,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: const Radius.circular(20).r,
+                        bottomRight: const Radius.circular(20).r,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 280.h,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            cityModel.name,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                ?.copyWith(color: ThemeApp.secondaryColor),
+                          ),
+                          Space(height: 10.h, width: 0.w),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.location_on,
+                                color: ThemeApp.primaryColor,
+                                size: 30.sp,
+                              ),
+                              Text(
+                                cityModel.country.trim(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline3
+                                    ?.copyWith(color: ThemeApp.secondaryColor),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Scaffold(
+                    backgroundColor: Colors.transparent,
+                    bottomNavigationBar: Container(
+                      padding: EdgeInsets.only(
+                        top: 5.h,
+                        left: 20.w,
+                        right: 20.w,
+                      ),
+                      height: 300.h,
+                      decoration: BoxDecoration(
+                          color: ThemeApp.secondaryColor,
+                          borderRadius: BorderRadius.only(
+                            topLeft: const Radius.circular(40).r,
+                            topRight: const Radius.circular(40).r,
+                          )),
+                      child: ListView(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Space(height: 10.h, width: 0.w),
+                              Text(
+                                'Description',
+                                style: Theme.of(context).textTheme.headline1,
+                              ),
+                              Space(height: 10.h, width: 0.w),
+                              Text(
+                                cityModel.history.trim(),
+                                style: Theme.of(context).textTheme.headline5,
+                              ),
+                              Space(height: 30.h, width: 0.w),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Positioned(
+                  top: 10.h,
+                  left: 10.w,
+                  child: Card(
+                    elevation: 2,
+                    color: ThemeApp.blackPrimary.withOpacity(0.5),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    shape: const StadiumBorder(
+                      side: BorderSide(color: ThemeApp.secondaryColor),
+                    ),
+                    child: IconButton(
+                      onPressed: () async {
+                        if (Navigator.canPop(context)) {
+                          pop(context);
+                        }
+                        await flutterTts.pause();
+                      },
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: ThemeApp.secondaryColor,
+                        size: 24.sp,
+                      ),
+                    ),
+                  )),
+              Positioned(
+                right: 10.h,
+                top: 330.h,
+                child: Card(
+                  elevation: 2,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  shape: const StadiumBorder(
+                    side: BorderSide(
+                      color: ThemeApp.secondaryColor,
+                    ),
+                  ),
+                  child: CircleAvatar(
+                      radius: 30.r,
+                      backgroundColor: ThemeApp.secondaryColor,
+                      child: IconButton(
+                          onPressed: () {
+                            speak(cityModel.history);
+                          },
+                          icon: Icon(
+                            Icons.record_voice_over,
+                            color: ThemeApp.primaryColor,
+                            size: 30.sp,
+                          ))),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

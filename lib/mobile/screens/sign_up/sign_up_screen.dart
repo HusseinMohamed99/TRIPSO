@@ -15,7 +15,7 @@ import 'package:tripso/shared/cubit/SignUpCubit/sign_up_state.dart';
 import 'package:tripso/shared/cubit/signUpCubit/sign_up_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class SignUpScreen extends StatelessWidget {
   static const String routeName = 'sign_up_screen';
@@ -29,41 +29,39 @@ class SignUpScreen extends StatelessWidget {
     var lastnameController = TextEditingController();
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
+    var phoneController = TextEditingController();
     return BlocProvider(
       create: (BuildContext context) => SignUpCubit(),
       child:
-      BlocConsumer<SignUpCubit, SignUpStates>(listener: (context, state) {
-          if (state is UserCreateSuccessState) {
-            MyDialog.showLoadingDialog(context, 'SignUp is successfully');
-            CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
-              uId = state.uid;
-              MyDialog.hideDialog(context);
-              navigateAndFinish(context, routeName: CitiesScreen.routeName);
-            });
-          } else if (state is UserCreateErrorState) {
-            MyDialog.showLoadingDialog(context, 'SignUp is Error');
-            MyDialog.hideDialog(context);
-            MyDialog.showMessage(context, 'SignUp is Error',
-                posActionTitle: 'Try Again',
-                posAction: () {
-                  if (formKey.currentState!.validate()) {
-                    SignUpCubit.get(context).userSignUp(
-                      email: emailController.text,
-                      password: passwordController.text,
-                      firstName: firstnameController.text,
-                      lastName: lastnameController.text,
-                    );
-                    emailController.clear();
-                    passwordController.clear();
-                    firstnameController.clear();
-                    lastnameController.clear();
-                  }
-                },
-                negActionTitle: 'Cancel',
-                negAction: () {
-                  Navigator.pop(context);
-                });
-          }
+          BlocConsumer<SignUpCubit, SignUpStates>(listener: (context, state) {
+        if (state is UserCreateSuccessState) {
+          MyDialog.showLoadingDialog(context, 'SignUp is successfully');
+          CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
+            uId = state.uid;
+            // MyDialog.hideDialog(context);
+            navigateAndFinish(context, routeName: CitiesScreen.routeName);
+          });
+        } else if (state is SignUpErrorState) {
+          MyDialog.showLoadingDialog(context, 'SignUp is Error');
+          MyDialog.hideDialog(context);
+          MyDialog.showMessage(context, 'SignUp is Error',
+              posActionTitle: 'Try Again',
+              posAction: () {
+                if (formKey.currentState!.validate()) {
+                  SignUpCubit.get(context).userSignUp(
+                    phone: phoneController.text,
+                    email: emailController.text,
+                    password: passwordController.text,
+                    firstName: firstnameController.text,
+                    lastName: lastnameController.text,
+                  );
+                }
+              },
+              negActionTitle: 'Cancel',
+              negAction: () {
+                Navigator.pop(context);
+              });
+        }
       }, builder: (context, state) {
         return Container(
           alignment: Alignment.center,
@@ -96,7 +94,7 @@ class SignUpScreen extends StatelessWidget {
                               icon: Icon(
                                 Icons.arrow_back,
                                 size: 25.sp,
-                                color: secondaryColor,
+                                color: ThemeApp.secondaryColor,
                               ),
                             ),
                             Space(width: 20.w, height: 0.h),
@@ -104,7 +102,7 @@ class SignUpScreen extends StatelessWidget {
                               'Create Account',
                               style: TextStyle(
                                   fontSize: 30.sp,
-                                  color: secondaryColor,
+                                  color: ThemeApp.secondaryColor,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -125,14 +123,15 @@ class SignUpScreen extends StatelessWidget {
                                 Text(
                                   'First Name',
                                   style: TextStyle(
-                                    color: secondaryColor,
+                                    color: ThemeApp.secondaryColor,
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
                                 Space(width: 0.w, height: 8.h),
                                 DefaultTextFormField(
-                                  color: secondaryColor.withOpacity(0.3),
+                                  color:
+                                      ThemeApp.secondaryColor.withOpacity(0.3),
                                   context: context,
                                   controller: firstnameController,
                                   keyboardType: TextInputType.name,
@@ -149,14 +148,15 @@ class SignUpScreen extends StatelessWidget {
                                 Text(
                                   'Last Name',
                                   style: TextStyle(
-                                    color: secondaryColor,
+                                    color: ThemeApp.secondaryColor,
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
                                 Space(width: 0.w, height: 8.h),
                                 DefaultTextFormField(
-                                  color: secondaryColor.withOpacity(0.3),
+                                  color:
+                                      ThemeApp.secondaryColor.withOpacity(0.3),
                                   context: context,
                                   controller: lastnameController,
                                   keyboardType: TextInputType.name,
@@ -173,14 +173,15 @@ class SignUpScreen extends StatelessWidget {
                                 Text(
                                   'Email Address',
                                   style: TextStyle(
-                                    color: secondaryColor,
+                                    color: ThemeApp.secondaryColor,
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
                                 Space(width: 0.w, height: 8.h),
                                 DefaultTextFormField(
-                                  color: secondaryColor.withOpacity(0.3),
+                                  color:
+                                      ThemeApp.secondaryColor.withOpacity(0.3),
                                   context: context,
                                   controller: emailController,
                                   keyboardType: TextInputType.emailAddress,
@@ -198,16 +199,45 @@ class SignUpScreen extends StatelessWidget {
                                 ),
                                 Space(width: 0.w, height: 20.h),
                                 Text(
-                                  'Password',
+                                  'Mobile Numbers',
                                   style: TextStyle(
-                                    color: secondaryColor,
+                                    color: ThemeApp.secondaryColor,
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
                                 Space(width: 0.w, height: 8.h),
                                 DefaultTextFormField(
-                                  color: secondaryColor.withOpacity(0.3),
+                                  color:
+                                      ThemeApp.secondaryColor.withOpacity(0.3),
+                                  context: context,
+                                  controller: phoneController,
+                                  keyboardType: TextInputType.phone,
+                                  validate: (String? value) {
+                                    if (value!.isEmpty) {
+                                      return 'Phone is Required';
+                                    } else if (value.length != 11) {
+                                      return 'Sorry, your phone must be\n 11 numbers long.';
+                                    } else {
+                                      return null;
+                                    }
+                                  },
+                                  prefix: Icons.phone_android,
+                                  hint: 'Mobile Numbers',
+                                ),
+                                Space(width: 0.w, height: 20.h),
+                                Text(
+                                  'Password',
+                                  style: TextStyle(
+                                    color: ThemeApp.secondaryColor,
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                Space(width: 0.w, height: 8.h),
+                                DefaultTextFormField(
+                                  color:
+                                      ThemeApp.secondaryColor.withOpacity(0.3),
                                   context: context,
                                   obscuringCharacter: '*',
                                   controller: passwordController,
@@ -238,6 +268,7 @@ class SignUpScreen extends StatelessWidget {
                               if (formKey.currentState!.validate()) {
                                 SignUpCubit.get(context).userSignUp(
                                   email: emailController.text,
+                                  phone: phoneController.text,
                                   password: passwordController.text,
                                   firstName: firstnameController.text,
                                   lastName: lastnameController.text,
@@ -249,7 +280,7 @@ class SignUpScreen extends StatelessWidget {
                               }
                             },
                             text: 'Sign up',
-                            color: primaryColor,
+                            color: ThemeApp.primaryColor,
                           ),
                         ],
                       ),

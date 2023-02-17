@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tripso/mobile/screens/plans/top_plans.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 Widget topPlansItem(BuildContext context, CityModel cityModel) {
   return InkWell(
@@ -44,6 +45,7 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
                   const EdgeInsets.symmetric(vertical: 20.0, horizontal: 5).r,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,38 +54,42 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
                         onPressed: () {},
                         padding: const EdgeInsets.all(20).r,
                         icon: Icon(
-                          Icons.calendar_month_rounded,
+                          FontAwesomeIcons.solidCalendarDays,
                           size: 30.sp,
-                          color: secondaryColor,
+                          color: ThemeApp.secondaryColor,
                         ),
                       ),
-                      Text('    3 Days',
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context)
-                              .textTheme
-                              .subtitle1
-                              ?.copyWith(color: secondaryColor)),
+                      Text(
+                        '3 Days',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context)
+                            .textTheme
+                            .subtitle1
+                            ?.copyWith(color: ThemeApp.secondaryColor),
+                      ),
                     ],
                   ),
                   Space(height: 0.h, width: 10.w),
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       IconButton(
-                          onPressed: () {},
-                          padding: const EdgeInsets.all(20).r,
-                          icon: Icon(
-                            Icons.remove_red_eye_outlined,
-                            size: 27.sp,
-                            color: secondaryColor,
-                          )),
-                      Text('    25 Sights',
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context)
-                              .textTheme
-                              .subtitle1
-                              ?.copyWith(color: secondaryColor)),
+                        onPressed: () {},
+                        padding: const EdgeInsets.all(20).r,
+                        icon: Icon(
+                          FontAwesomeIcons.eye,
+                          size: 30.sp,
+                          color: ThemeApp.secondaryColor,
+                        ),
+                      ),
+                      Text(
+                        '25 Sights',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context)
+                            .textTheme
+                            .subtitle1
+                            ?.copyWith(color: ThemeApp.secondaryColor),
+                      ),
                     ],
                   ),
                 ],
