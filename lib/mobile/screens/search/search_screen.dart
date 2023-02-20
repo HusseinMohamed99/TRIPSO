@@ -168,7 +168,7 @@ class _SearchScreenState extends State<SearchScreen> {
             weather;
       },
       child: Container(
-        height: 150.h,
+        height: 170.h,
         margin: const EdgeInsets.all(8).r,
         decoration: BoxDecoration(
           border: Border.all(),
@@ -204,7 +204,7 @@ class _SearchScreenState extends State<SearchScreen> {
             Container(
               clipBehavior: Clip.antiAliasWithSaveLayer,
               width: 180.w,
-              height: 150.h,
+              height: 170.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomRight: const Radius.circular(20).r,
