@@ -396,22 +396,54 @@ class PopularSightsWidget extends StatelessWidget {
                 ),
               ),
             ),
-            CarouselSlider(
-              items: List.generate(
-                4,
-                // cubit.popularPlace.length,
-                (index) =>
-                    GridItemSights(placeModel: cubit.popularPlace[index]),
+            if (cubit.popularPlace.length == 2)
+              CarouselSlider(
+                items: List.generate(
+                  2,
+                  (index) =>
+                      GridItemSights(placeModel: cubit.popularPlace[index]),
+                ),
+                options: CarouselOptions(
+                  height: 408.h,
+                  enlargeCenterPage: true,
+                  disableCenter: true,
+                  viewportFraction: .8,
+                  autoPlay: true,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                ),
               ),
-              options: CarouselOptions(
-                height: 408.h,
-                enlargeCenterPage: true,
-                disableCenter: true,
-                viewportFraction: .8,
-                autoPlay: true,
-                autoPlayCurve: Curves.fastOutSlowIn,
+            if (cubit.popularPlace.length >= 4)
+              CarouselSlider(
+                items: List.generate(
+                  4,
+                  (index) =>
+                      GridItemSights(placeModel: cubit.popularPlace[index]),
+                ),
+                options: CarouselOptions(
+                  height: 408.h,
+                  enlargeCenterPage: true,
+                  disableCenter: true,
+                  viewportFraction: .8,
+                  autoPlay: true,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                ),
               ),
-            ),
+            if (cubit.popularPlace.length == 1)
+              CarouselSlider(
+                items: List.generate(
+                  1,
+                  (index) =>
+                      GridItemSights(placeModel: cubit.popularPlace[index]),
+                ),
+                options: CarouselOptions(
+                  height: 408.h,
+                  enlargeCenterPage: true,
+                  disableCenter: true,
+                  viewportFraction: .8,
+                  autoPlay: true,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                ),
+              ),
           ],
         );
       },
