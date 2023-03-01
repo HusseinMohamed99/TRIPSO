@@ -2,22 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 PreferredSizeWidget secondaryAppBar() => AppBar(
-      backgroundColor: Colors.transparent,
+  backgroundColor: Colors.transparent,
       systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarBrightness: Brightness.light,
-          statusBarIconBrightness: Brightness.light),
+        statusBarColor: ThemeApp.secondaryColor,
+        systemNavigationBarColor: ThemeApp.secondaryColor,
+        systemNavigationBarDividerColor: ThemeApp.secondaryColor,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light,
+      ),
       elevation: 0,
       scrolledUnderElevation: 0,
       toolbarHeight: 0,
     );
 
 PreferredSizeWidget thirdAppBar() => AppBar(
-      backgroundColor: Colors.transparent,
+  backgroundColor: Colors.transparent,
       systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarBrightness: Brightness.light,
-          statusBarIconBrightness: Brightness.light),
+        statusBarColor: ThemeApp.secondaryColor,
+        systemNavigationBarColor: ThemeApp.secondaryColor,
+        systemNavigationBarDividerColor: ThemeApp.secondaryColor,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light,
+      ),
       elevation: 0,
       scrolledUnderElevation: 0,
       toolbarHeight: 0,
@@ -34,11 +43,14 @@ PreferredSizeWidget primaryAppBar({
   List<Widget>? actions,
 }) =>
     AppBar(
-      backgroundColor: Colors.transparent,
       systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarBrightness: Brightness.dark,
-          statusBarColor: Colors.transparent,
-          statusBarIconBrightness: Brightness.dark),
+        statusBarColor: ThemeApp.blackPrimary,
+        systemNavigationBarColor: ThemeApp.blackPrimary,
+        systemNavigationBarDividerColor: ThemeApp.blackPrimary,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light,
+      ),
+      backgroundColor: Colors.transparent,
       elevation: 0,
       titleSpacing: 1,
       centerTitle: false,

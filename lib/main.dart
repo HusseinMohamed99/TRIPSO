@@ -10,6 +10,7 @@ import 'package:tripso/mobile/screens/historical_city/historical_city.dart';
 import 'package:tripso/mobile/screens/explore/explore.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
 import 'package:tripso/mobile/screens/plans/all_plans.dart';
+import 'package:tripso/mobile/screens/plans/bakr.dart';
 import 'package:tripso/mobile/screens/plans/my_plans.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/mobile/screens/password/forget_password_screen.dart';
@@ -18,7 +19,8 @@ import 'package:tripso/mobile/screens/profile/edit_profile.dart';
 import 'package:tripso/mobile/screens/sights/popular_sights.dart';
 import 'package:tripso/mobile/screens/profile/my_profile.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
-import 'package:tripso/mobile/screens/sights/sights.dart';
+import 'package:tripso/mobile/screens/sights/sight_details_screen.dart';
+import 'package:tripso/mobile/screens/sights/sights_screen.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/mobile/screens/sign_up/sign_up_screen.dart';
 import 'package:tripso/mobile/screens/plans/top_plans.dart';
@@ -47,6 +49,7 @@ void main() async {
 
   uId = CacheHelper.getData(key: 'uId');
 
+  print(uId);
   runApp(
     ChangeNotifierProvider(
       create: (context) {
@@ -66,15 +69,17 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => TripsoCubit()
-              ..getUserData()
-              ..getCityData()
-              ..getCountryData()
-              ..getDataForPlace()
-              ..getITData()
-              ..getEGData()
-              ..getFRData()
-              ..getUAEData()),
+          create: (context) => TripsoCubit()
+            ..getUserData()
+            ..getCityData()
+            ..getCountryData()
+            ..getDataForPlace()
+            ..getITData()
+            ..getEGData()
+            ..getFRData()
+            ..getUAEData()
+            ..getPopularData(),
+        ),
       ],
       child: BlocConsumer<TripsoCubit, TripsoStates>(
           listener: (context, state) {},
@@ -109,6 +114,9 @@ class MyApp extends StatelessWidget {
                       AllPlansScreen.routeName: (_) => const AllPlansScreen(),
                       HistoricalCity.routeName: (_) => const HistoricalCity(),
                       SightsScreen.routeName: (_) => const SightsScreen(),
+                      SightDetailsScreen.routeName: (_) =>
+                          const SightDetailsScreen(),
+                      Screen2.routeName: (_) => const Screen2(),
                       PopularSightsScreen.routeName: (_) =>
                           const PopularSightsScreen(),
                       EditProfile.routeName: (_) => EditProfile(),

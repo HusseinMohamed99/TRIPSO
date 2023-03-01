@@ -143,8 +143,8 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         city.add(CityModel.fromFireStore(element.data()));
         cId.add(element.id);
-        // print(element.data());
-        //  print('====================================');
+        print(element.data());
+        print('====================================');
       }
     });
   }
@@ -222,6 +222,25 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
+  List<CityModel> cityPopular = [];
+  List<String> cIdPopular = [];
+
+  getPopularData() async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where("isPopular", isEqualTo: true)
+        .get()
+        .then((value) {
+      cityPopular = [];
+      for (var element in value.docs) {
+        cityPopular.add(CityModel.fromFireStore(element.data()));
+        cIdPopular.add(element.id);
+        // print(element.data());
+        //  print('====================================');
+      }
+    });
+  }
+
   List<CityModel> cityUAE = [];
   List<String> cIdUAE = [];
 
@@ -290,6 +309,30 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
+  ///END : popularPlace Data
+  List<PlaceModel> popularPlace = [];
+  List<String> popularPlaceId = [];
+
+  getPopularPlace(String? cId) async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .doc(cId ?? 'Aswan')
+        .collection('places')
+        .where('isPopular', isEqualTo: true)
+        .get()
+        .then((value) {
+      popularPlace = [];
+      for (var element in value.docs) {
+        popularPlace.add(PlaceModel.fromFireStore(element.data()));
+        popularPlaceId.add(element.id);
+        if (kDebugMode) {
+          print(element.data());
+        }
+        debugPrint('================================================');
+      }
+    });
+  }
+
   void deleteAccount(context) async {
     await FirebaseAuth.instance.currentUser!.delete().then((value) async {
       await FirebaseFirestore.instance.collection('users').doc(uId).delete();
@@ -343,6 +386,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     required String firstName,
     required String lastName,
     required String phone,
+    String? address,
   }) {
     emit(UpdateUserLoadingState());
     firebase_storage.FirebaseStorage.instance
@@ -358,6 +402,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
           firstName: firstName,
           lastName: lastName,
           image: value,
+          address: address ?? '',
         );
       }).catchError((error) {
         emit(UploadProfileImageErrorState());
@@ -376,6 +421,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     required String lastName,
     required String phone,
     String? image,
+    String? address,
   }) {
     emit(UpdateUserLoadingState());
     UserModel model = UserModel(
@@ -385,6 +431,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
       uId: userModel!.uId,
       firstName: firstName,
       lastName: lastName,
+      address: address ?? '',
     );
     FirebaseFirestore.instance
         .collection('users')

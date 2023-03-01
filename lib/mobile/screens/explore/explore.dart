@@ -9,7 +9,7 @@ import 'package:tripso/mobile/screens/historical_city/historical_city.dart';
 import 'package:tripso/mobile/screens/plans/all_plans.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
 import 'package:tripso/mobile/screens/sights/popular_sights.dart';
-import 'package:tripso/mobile/screens/sights/sights.dart';
+import 'package:tripso/mobile/screens/sights/sights_screen.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/weather_model.dart';
@@ -45,13 +45,17 @@ class ExploreScreen extends StatelessWidget {
             children: [
               CityDetails(screenArgs: screenArgs, weatherData: weatherData),
               Space(height: 10.h, width: 0.w),
-              RowWidget(screenArgs: screenArgs),
+              RowWidget(
+                screenArgs: screenArgs,
+                cityModel: screenArgs.cityModel,
+                placeModel: screenArgs.placeModel,
+              ),
               PopularSightsWidget(
                   cityModel: screenArgs.cityModel,
                   placeModel: screenArgs.placeModel),
               Space(height: 20.h, width: 0.w),
               const TopPlansWidget(),
-             // const AllPlansButton(),
+              // const AllPlansButton(),
             ],
           ),
         );
@@ -194,47 +198,18 @@ class CityDetails extends StatelessWidget {
   }
 }
 
-// class AllPlansButton extends StatelessWidget {
-//   const AllPlansButton({
-//     Key? key,
-//   }) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: EdgeInsets.symmetric(
-//         horizontal: 20.0.r,
-//       ),
-//       child: OutlinedButton(
-//         style: OutlinedButton.styleFrom(
-//           side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
-//         ),
-//         onPressed: () {
-//           navigateTo(context, routeName: AllPlansScreen.routeName);
-//         },
-//         child: Container(
-//             width: double.infinity,
-//             height: 35.h,
-//             alignment: Alignment.center,
-//             child: Text(
-//               'All Plans',
-//               style: Theme.of(context)
-//                   .textTheme
-//                   .headline5
-//                   ?.copyWith(color: ThemeApp.blueColor),
-//             )),
-//       ),
-//     );
-//   }
-// }
-
 class RowWidget extends StatelessWidget {
   const RowWidget({
     Key? key,
     required this.screenArgs,
+    required this.cityModel,
+    required this.placeModel,
   }) : super(key: key);
 
   final ScreenArgs screenArgs;
+
+  final CityModel cityModel;
+  final PlaceModel placeModel;
 
   @override
   Widget build(BuildContext context) {
@@ -257,6 +232,7 @@ class RowWidget extends StatelessWidget {
                         cId: screenArgs.cityModel.cId,
                         country: screenArgs.cityModel.country,
                         image: screenArgs.cityModel.image,
+                        isPopular: screenArgs.cityModel.isPopular,
                       ),
                     );
                   },
@@ -325,20 +301,16 @@ class RowWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 InkWell(
-                  onTap: () {
+                  onTap: () async {
+                    TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+                    TripsoCubit.get(context).getDataForCity(cityModel.cId);
                     navigateTo(
                       context,
                       routeName: SightsScreen.routeName,
-                      arguments: PlaceModel(
-                        name: screenArgs.placeModel.name,
-                        history: screenArgs.placeModel.history,
-                        hours: screenArgs.placeModel.hours,
-                        image: screenArgs.placeModel.image,
-                        location: screenArgs.placeModel.location,
-                        tickets: screenArgs.placeModel.tickets,
-                        pId: screenArgs.placeModel.pId,
-                      ),
+                      arguments: ScreenArgs(
+                          cityModel: cityModel, placeModel: placeModel),
                     );
+                    debugPrint('City ID = ${cityModel.cId}');
                   },
                   borderRadius: BorderRadius.circular(19).r,
                   child: Container(
@@ -391,6 +363,7 @@ class PopularSightsWidget extends StatelessWidget {
           children: [
             InkWell(
               onTap: () async {
+                TripsoCubit.get(context).getPopularPlace(cityModel.cId);
                 TripsoCubit.get(context).getDataPlaces(cityModel.cId);
                 TripsoCubit.get(context).getDataForCity(cityModel.cId);
                 navigateTo(
@@ -425,8 +398,10 @@ class PopularSightsWidget extends StatelessWidget {
             ),
             CarouselSlider(
               items: List.generate(
-                cubit.place.length,
-                (index) => GridItemSights(placeModel: cubit.place[index]),
+                4,
+                // cubit.popularPlace.length,
+                (index) =>
+                    GridItemSights(placeModel: cubit.popularPlace[index]),
               ),
               options: CarouselOptions(
                 height: 408.h,
@@ -437,39 +412,6 @@ class PopularSightsWidget extends StatelessWidget {
                 autoPlayCurve: Curves.fastOutSlowIn,
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(
-            //     horizontal: 20.0,
-            //     vertical: 10,
-            //   ).r,
-            //   child: OutlinedButton(
-            //     style: OutlinedButton.styleFrom(
-            //       side: BorderSide(width: 2.0.w, color: ThemeApp.primaryColor),
-            //     ),
-            //     onPressed: () async {
-            //       TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-            //       TripsoCubit.get(context).getDataForCity(cityModel.cId);
-            //       navigateTo(
-            //         context,
-            //         routeName: PopularSightsScreen.routeName,
-            //         arguments: ScreenArgs(
-            //             cityModel: cityModel, placeModel: placeModel),
-            //       );
-            //       debugPrint('City ID = ${cityModel.cId}');
-            //     },
-            //     child: Container(
-            //         width: double.infinity,
-            //         height: 35.h,
-            //         alignment: Alignment.center,
-            //         child: AutoSizeText(
-            //           'All Popular Sights',
-            //           style: Theme.of(context)
-            //               .textTheme
-            //               .headline5
-            //               ?.copyWith(color: ThemeApp.blueColor),
-            //         )),
-            //   ),
-            // ),
           ],
         );
       },

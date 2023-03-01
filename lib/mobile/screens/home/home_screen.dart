@@ -134,6 +134,8 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                   gridFRItem(context, cubit.placeModel!),
                                 if (dropdownValue == 'UAE')
                                   gridUAEItem(context, cubit.placeModel!),
+                                if (dropdownValue == 'Popular')
+                                  gridPopularItem(context, cubit.placeModel!),
                               ],
                             ),
                             Positioned(
@@ -170,6 +172,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                           'Italy',
                                           'France',
                                           'UAE',
+                                          'Popular',
                                         ].map((e) {
                                           return DropdownMenuItem(
                                             value: e,
@@ -187,6 +190,15 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                           setState(() {
                                             dropdownValue = newValue;
                                           });
+                                        },
+                                        onTap: () {
+                                          cubit.getCityData();
+                                          cubit.getITData();
+                                          cubit.getEGData();
+                                          cubit.getFRData();
+                                          cubit.getITData();
+                                          cubit.getUAEData();
+                                          cubit.getPopularData();
                                         },
                                         value: dropdownValue,
                                       ),
@@ -318,6 +330,26 @@ class _CitiesScreenState extends State<CitiesScreen> {
           (index) => GridFRItem(
                 placeModel,
                 cityModel: cubit.cityFR[index],
+              )),
+    );
+  }
+
+  Widget gridPopularItem(BuildContext context, PlaceModel placeModel) {
+    var cubit = TripsoCubit.get(context);
+
+    return GridView.count(
+      padding: const EdgeInsets.symmetric(horizontal: 8).r,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,
+      crossAxisSpacing: 2.0.w,
+      mainAxisSpacing: 2.h,
+      childAspectRatio: 1.h / 1.2.h,
+      children: List.generate(
+          cubit.cityPopular.length,
+          (index) => GridPopularItem(
+                placeModel,
+                cityModel: cubit.cityPopular[index],
               )),
     );
   }

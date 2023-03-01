@@ -13,12 +13,12 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
-class PopularSightsScreen extends StatelessWidget {
-  const PopularSightsScreen({
+class SightsScreen extends StatelessWidget {
+  const SightsScreen({
     Key? key,
   }) : super(key: key);
 
-  static const String routeName = 'PopularSightsScreen';
+  static const String routeName = 'SightsScreen';
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class PopularSightsScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 5.0.r),
               child: Column(
                 children: [
-                  PopularSightsWidget(
+                  SightsWidget(
                       cityModel: screenArgs.cityModel,
                       placeModel: screenArgs.placeModel)
                 ],
@@ -46,8 +46,8 @@ class PopularSightsScreen extends StatelessWidget {
   }
 }
 
-class PopularSightsWidget extends StatelessWidget {
-  const PopularSightsWidget({
+class SightsWidget extends StatelessWidget {
+  const SightsWidget({
     Key? key,
     required this.cityModel,
     required this.placeModel,
@@ -82,12 +82,12 @@ class ListViewWidget extends StatelessWidget {
       children: [
         ListView.separated(
           itemBuilder: (context, index) {
-            return GridSights(placeModel: cubit.popularPlace[index]);
+            return GridSights(placeModel: cubit.place[index]);
           },
           separatorBuilder: (context, index) {
             return Space(height: 10.h, width: 0.w);
           },
-          itemCount: cubit.popularPlace.length,
+          itemCount: cubit.place.length,
         ),
         Positioned(
             top: 10.sp,
@@ -193,7 +193,7 @@ class GridSights extends StatelessWidget {
                         children: [
                           Text(
                             placeModel.history.trim(),
-                            maxLines: 5,
+                            maxLines: 4,
                             overflow: TextOverflow.fade,
                             style: Theme.of(context)
                                 .textTheme

@@ -5,6 +5,7 @@ class UserModel {
   String uId;
   String image;
   String phone;
+  String address;
 
   UserModel({
     this.uId = '',
@@ -13,6 +14,7 @@ class UserModel {
     required this.email,
     required this.image,
     required this.phone,
+    this.address = '',
   });
 
   UserModel.fromFireStore(Map<String, dynamic> data)
@@ -23,6 +25,7 @@ class UserModel {
           lastName: data['lastName'],
           image: data['image'],
           phone: data['phone'],
+          address: data['address'],
         );
 
   Map<String, dynamic> toFireStore() {
@@ -33,6 +36,7 @@ class UserModel {
       'uId': uId,
       'image': image,
       'phone': phone,
+      'address': address,
     };
   }
 }

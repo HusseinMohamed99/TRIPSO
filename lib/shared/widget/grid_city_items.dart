@@ -34,6 +34,7 @@ class GridCitiesItem extends StatelessWidget {
       onTap: () async {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
         navigateTo(
           context,
@@ -431,7 +432,91 @@ class GridFRItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headline2?.copyWith(
-                color: ThemeApp.secondaryColor,
+                    color: ThemeApp.secondaryColor,
+                  ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class GridPopularItem extends StatelessWidget {
+  const GridPopularItem(
+    this.placeModel, {
+    Key? key,
+    required this.cityModel,
+  }) : super(key: key);
+
+  final CityModel cityModel;
+  final PlaceModel placeModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(10),
+      onTap: () async {
+        TripsoCubit.get(context).getUserData();
+        TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+        TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        navigateTo(
+          context,
+          routeName: HomeLayout.routeName,
+          arguments: ScreenArgs(cityModel: cityModel, placeModel: placeModel),
+        );
+
+        debugPrint('City ID = ${cityModel.cId}');
+        WeatherService service = WeatherService();
+        WeatherModel? weather =
+            await service.getWeather(cityName: cityModel.name);
+        Provider.of<WeatherProvider>(context, listen: false).cityName =
+            cityModel.name;
+        Provider.of<WeatherProvider>(context, listen: false).weatherData =
+            weather;
+      },
+      child: Card(
+        clipBehavior: Clip.none,
+        elevation: 1,
+        color: ThemeApp.secondaryColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20).r,
+        ),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Container(
+              width: 200.w,
+              height: 210.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(20),
+                ).r,
+                child: CachedNetworkImage(
+                  imageUrl: cityModel.image,
+                  fit: BoxFit.fill,
+                  height: 200.h,
+                  width: double.infinity,
+                  progressIndicatorBuilder: (context, url, downloadProgress) =>
+                      Center(child: AdaptiveIndicator(os: getOs())),
+                  errorWidget: (context, url, error) => Icon(
+                    FontAwesomeIcons.info,
+                    size: 30.sp,
+                  ),
+                ),
+              ),
+            ),
+            LayerImage(
+              width: 200.w,
+              height: 210.h,
+            ),
+            Text(
+              cityModel.name,
+              style: Theme.of(context).textTheme.headline2?.copyWith(
+                    color: ThemeApp.secondaryColor,
                   ),
             ),
           ],

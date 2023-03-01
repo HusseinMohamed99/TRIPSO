@@ -12,9 +12,9 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
-class SightsScreen extends StatelessWidget {
-  const SightsScreen({Key? key}) : super(key: key);
-  static const String routeName = 'SightsScreen';
+class SightDetailsScreen extends StatelessWidget {
+  const SightDetailsScreen({Key? key}) : super(key: key);
+  static const String routeName = 'SightDetailsScreen';
 
   @override
   Widget build(BuildContext context) {
@@ -154,12 +154,13 @@ class SightsScreen extends StatelessWidget {
                                     speak(placeModel.history);
                                   },
                                   icon: CircleAvatar(
-                                      backgroundColor: ThemeApp.primaryColor,
-                                      child: Icon(
-                                        FontAwesomeIcons.circlePlay,
-                                        size: 24.sp,
-                                        color: ThemeApp.secondaryColor,
-                                      )),
+                                    backgroundColor: ThemeApp.primaryColor,
+                                    child: Icon(
+                                      FontAwesomeIcons.circlePlay,
+                                      size: 24.sp,
+                                      color: ThemeApp.secondaryColor,
+                                    ),
+                                  ),
                                   label: Text(
                                     '',
                                     style:
@@ -171,12 +172,13 @@ class SightsScreen extends StatelessWidget {
                                     // Google Maps
                                   },
                                   icon: CircleAvatar(
-                                      backgroundColor: ThemeApp.primaryColor,
-                                      child: Icon(
-                                        FontAwesomeIcons.locationArrow,
-                                        size: 24.sp,
-                                        color: ThemeApp.secondaryColor,
-                                      )),
+                                    backgroundColor: ThemeApp.primaryColor,
+                                    child: Icon(
+                                      FontAwesomeIcons.locationArrow,
+                                      size: 24.sp,
+                                      color: ThemeApp.secondaryColor,
+                                    ),
+                                  ),
                                   label: Text(
                                     '',
                                     style:
@@ -222,39 +224,31 @@ class SightsScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            InkWell(
-                              onTap: () {
-                                // Google Maps
-                              },
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 8.0)
-                                        .r,
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      FontAwesomeIcons.earthAmericas,
-                                      size: 24.sp,
-                                      color: ThemeApp.primaryColor,
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0).r,
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    FontAwesomeIcons.earthAmericas,
+                                    size: 24.sp,
+                                    color: ThemeApp.primaryColor,
+                                  ),
+                                  Space(height: 0.h, width: 20.w),
+                                  Expanded(
+                                    child: Text(
+                                      placeModel.address.trim(),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline6
+                                          ?.copyWith(
+                                              color: ThemeApp.blackPrimary),
                                     ),
-                                    Space(height: 0.h, width: 20.w),
-                                    Expanded(
-                                      child: Text(
-                                        placeModel.location.trim(),
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline6
-                                            ?.copyWith(
-                                                color: ThemeApp.primaryColor),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
-                            Space(height: 10.h, width: 0.w),
+                            //  Space(height: 10.h, width: 0.w),
                             ExpansionTile(
                               tilePadding:
                                   const EdgeInsets.symmetric(horizontal: 8.0).r,
@@ -274,16 +268,16 @@ class SightsScreen extends StatelessWidget {
                                 ListTile(
                                   title: Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Text(
-                                        'Tuesday',
+                                        'Saturday',
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
                                       ),
                                       Text(
-                                        '08:00 AM - 05:00 PM',
+                                        placeModel.timeOfDay[0],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -294,16 +288,16 @@ class SightsScreen extends StatelessWidget {
                                 ListTile(
                                   title: Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Text(
-                                        'Tuesday',
+                                        'Sunday',
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
                                       ),
                                       Text(
-                                        '08:00 AM - 05:00 PM',
+                                        placeModel.timeOfDay[1],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -314,16 +308,16 @@ class SightsScreen extends StatelessWidget {
                                 ListTile(
                                   title: Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Text(
-                                        'Tuesday',
+                                        'Monday',
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
                                       ),
                                       Text(
-                                        '08:00 AM - 05:00 PM',
+                                        placeModel.timeOfDay[2],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -334,7 +328,7 @@ class SightsScreen extends StatelessWidget {
                                 ListTile(
                                   title: Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Text(
                                         'Tuesday',
@@ -343,7 +337,7 @@ class SightsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        '08:00 AM - 05:00 PM',
+                                        placeModel.timeOfDay[3],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -354,16 +348,16 @@ class SightsScreen extends StatelessWidget {
                                 ListTile(
                                   title: Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Text(
-                                        'Tuesday',
+                                        'Wednesday',
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
                                       ),
                                       Text(
-                                        '08:00 AM - 05:00 PM',
+                                        placeModel.timeOfDay[4],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -374,16 +368,16 @@ class SightsScreen extends StatelessWidget {
                                 ListTile(
                                   title: Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Text(
-                                        'Tuesday',
+                                        'Thursday',
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
                                       ),
                                       Text(
-                                        '08:00 AM - 05:00 PM',
+                                        placeModel.timeOfDay[5],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -394,16 +388,16 @@ class SightsScreen extends StatelessWidget {
                                 ListTile(
                                   title: Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Text(
-                                        'Tuesday',
+                                        'Friday',
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
                                       ),
                                       Text(
-                                        '08:00 AM - 05:00 PM',
+                                        placeModel.timeOfDay[6],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,

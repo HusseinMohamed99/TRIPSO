@@ -23,7 +23,7 @@ class HomeLayout extends StatelessWidget {
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        var userModel = TripsoCubit.get(context).userModel!;
+        var userModel = TripsoCubit.get(context).userModel;
         var tripsoCubit = TripsoCubit.get(context);
         return SafeArea(
           child: Scaffold(
@@ -108,7 +108,7 @@ class HomeLayout extends StatelessWidget {
                         icon: Icons.person,
                         leading: CircleAvatar(
                           radius: 15.r,
-                          backgroundImage: NetworkImage(userModel.image),
+                          backgroundImage: NetworkImage(userModel!.image),
                         ),
                         text: tripsoCubit.titles[tripsoCubit.currentIndex],
                         textStyle: TextStyle(

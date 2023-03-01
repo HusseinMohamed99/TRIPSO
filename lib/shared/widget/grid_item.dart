@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tripso/mobile/screens/sights/sights.dart';
+import 'package:tripso/mobile/screens/sights/sight_details_screen.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
@@ -83,15 +83,17 @@ class GridItemSights extends StatelessWidget {
       onTap: () {
         navigateTo(
           context,
-          routeName: SightsScreen.routeName,
+          routeName: SightDetailsScreen.routeName,
           arguments: PlaceModel(
             history: placeModel.history,
             image: placeModel.image,
             name: placeModel.name,
-            hours: placeModel.hours,
+            timeOfDay: placeModel.timeOfDay,
             tickets: placeModel.tickets,
             location: placeModel.location,
             pId: placeModel.pId,
+            isPopular: placeModel.isPopular,
+            address: placeModel.address,
           ),
         );
       },
@@ -149,9 +151,10 @@ class GridItemSights extends StatelessWidget {
                                       color: ThemeApp.secondaryColor,
                                     ),
                           ),
-                          Row(
-                            children: iconStar,
-                          ),
+                          if (placeModel.isPopular == true)
+                            Row(
+                              children: icon5Star,
+                            ),
                           Row(
                             children: [
                               Icon(

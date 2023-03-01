@@ -4,6 +4,7 @@ class CityModel {
   String name;
   String history;
   String country;
+  bool isPopular;
 
   CityModel({
     required this.name,
@@ -11,15 +12,17 @@ class CityModel {
     required this.image,
     required this.history,
     required this.country,
+    required this.isPopular,
   });
 
   CityModel.fromFireStore(Map<String, dynamic> data)
       : this(
-          name: data['name'],
+    name: data['name'],
           image: data['image'],
           cId: data['cId'],
           history: data['history'],
           country: data['country'],
+          isPopular: data['isPopular'],
         );
 
   Map<String, dynamic> toFireStore() {
@@ -29,6 +32,7 @@ class CityModel {
       'cId': cId,
       'history': history,
       'country': country,
+      'isPopular': isPopular,
     };
   }
 }
