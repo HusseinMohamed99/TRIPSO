@@ -32,38 +32,33 @@ class SignInScreen extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context) => SignInCubit(),
       child:
-      BlocConsumer<SignInCubit, SignInStates>(listener: (context, state) {
+          BlocConsumer<SignInCubit, SignInStates>(listener: (context, state) {
         if (state is SignInLoadingState) {
           MyDialog.showLoadingDialog(context, 'Loading...');
         }
         if (state is SignInSuccessState) {
           MyDialog.showLoadingDialog(context, 'Login is successfully');
-          CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
-            uId = state.uid;
-            MyDialog.hideDialog(context);
+          CacheHelper.saveData(value: state.uid, key: 'uId').then(
+            (value) {
+              uId = state.uid;
+              MyDialog.hideDialog(context);
 
-            TripsoCubit.get(context).getUserData();
-            navigateAndFinish(context, routeName: CitiesScreen.routeName);
-          });
+              TripsoCubit.get(context).getUserData();
+              navigateAndFinish(context, routeName: CitiesScreen.routeName);
+            },
+          );
         } else if (state is SignInErrorState) {
-          MyDialog.showLoadingDialog(context, 'Login is Error');
+              MyDialog.showLoadingDialog(context, 'Login is Error');
           MyDialog.hideDialog(context);
-          MyDialog.showMessage(context, 'Login is Error',
-              posActionTitle: 'Try Again',
-              posAction: () {
-                if (formKey.currentState!.validate()) {
-                  SignInCubit.get(context).userSignIn(
-                    email: emailController.text,
-                    password: passwordController.text,
-                  );
-                  emailController.clear();
-                  passwordController.clear();
-                }
-              },
-              negActionTitle: 'Cancel',
-              negAction: () {
-                Navigator.pop(context);
-              });
+          MyDialog.showMessage(
+            context,
+            state.error,
+            posActionTitle: 'Try Again',
+            negActionTitle: 'Cancel',
+            negAction: () {
+              Navigator.pop(context);
+            },
+          );
         }
       }, builder: (context, state) {
         return Container(

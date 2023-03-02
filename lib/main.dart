@@ -81,48 +81,50 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: BlocConsumer<TripsoCubit, TripsoStates>(
-          listener: (context, state) {},
-          builder: (context, state) {
-            SystemChrome.setPreferredOrientations([
-              DeviceOrientation.portraitUp,
-              DeviceOrientation.portraitDown,
-            ]);
-            return ScreenUtilInit(
-                designSize: const Size(360, 690),
-                minTextAdapt: true,
-                splitScreenMode: true,
-                builder: (context, child) {
-                  return MaterialApp(
-                    debugShowCheckedModeBanner: false,
-                    theme: ThemeApp.lightTheme,
-                    routes: {
-                      OnBoard.routeName: (_) => const OnBoard(),
-                      SplashScreen.routeName: (_) => const SplashScreen(),
-                      CitiesScreen.routeName: (_) => const CitiesScreen(),
-                      HomeLayout.routeName: (_) => const HomeLayout(),
-                      SignInScreen.routeName: (_) => const SignInScreen(),
-                      SignUpScreen.routeName: (_) => const SignUpScreen(),
-                      ForgotPassword.routeName: (_) => const ForgotPassword(),
-                      UpdatePassword.routeName: (_) => const UpdatePassword(),
-                      SearchScreen.routeName: (_) => const SearchScreen(),
-                      MyProfileScreen.routeName: (_) => const MyProfileScreen(),
-                      WishListScreen.routeName: (_) => const WishListScreen(),
-                      ExploreScreen.routeName: (_) => const ExploreScreen(),
-                      MyPlansScreen.routeName: (_) => const MyPlansScreen(),
-                      TopPlansScreen.routeName: (_) => const TopPlansScreen(),
-                      AllPlansScreen.routeName: (_) => const AllPlansScreen(),
-                      HistoricalCity.routeName: (_) => const HistoricalCity(),
-                      SightsScreen.routeName: (_) => const SightsScreen(),
-                      SightDetailsScreen.routeName: (_) =>
-                          const SightDetailsScreen(),
-                      PopularSightsScreen.routeName: (_) =>
-                          const PopularSightsScreen(),
-                      EditProfile.routeName: (_) => EditProfile(),
-                    },
-                    initialRoute: SplashScreen.routeName,
-                  );
-                });
-          }),
+        listener: (context, state) {},
+        builder: (context, state) {
+          SystemChrome.setPreferredOrientations([
+            DeviceOrientation.portraitUp,
+            DeviceOrientation.portraitDown,
+          ]);
+          return ScreenUtilInit(
+            designSize: const Size(360, 690),
+            minTextAdapt: true,
+            splitScreenMode: true,
+            builder: (context, child) {
+              return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                theme: ThemeApp.lightTheme,
+                routes: {
+                  OnBoard.routeName: (_) => const OnBoard(),
+                  SplashScreen.routeName: (_) => const SplashScreen(),
+                  CitiesScreen.routeName: (_) => const CitiesScreen(),
+                  HomeLayout.routeName: (_) => const HomeLayout(),
+                  SignInScreen.routeName: (_) => const SignInScreen(),
+                  SignUpScreen.routeName: (_) => const SignUpScreen(),
+                  ForgotPassword.routeName: (_) => const ForgotPassword(),
+                  UpdatePassword.routeName: (_) => const UpdatePassword(),
+                  SearchScreen.routeName: (_) => const SearchScreen(),
+                  MyProfileScreen.routeName: (_) => const MyProfileScreen(),
+                  WishListScreen.routeName: (_) => const WishListScreen(),
+                  ExploreScreen.routeName: (_) => const ExploreScreen(),
+                  MyPlansScreen.routeName: (_) => const MyPlansScreen(),
+                  TopPlansScreen.routeName: (_) => const TopPlansScreen(),
+                  AllPlansScreen.routeName: (_) => const AllPlansScreen(),
+                  HistoricalCity.routeName: (_) => const HistoricalCity(),
+                  SightsScreen.routeName: (_) => const SightsScreen(),
+                  SightDetailsScreen.routeName: (_) =>
+                      const SightDetailsScreen(),
+                  PopularSightsScreen.routeName: (_) =>
+                      const PopularSightsScreen(),
+                  EditProfile.routeName: (_) => EditProfile(),
+                },
+                initialRoute: SplashScreen.routeName,
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

@@ -36,31 +36,23 @@ class SignUpScreen extends StatelessWidget {
           BlocConsumer<SignUpCubit, SignUpStates>(listener: (context, state) {
         if (state is UserCreateSuccessState) {
           MyDialog.showLoadingDialog(context, 'SignUp is successfully');
-          CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
-            uId = state.uid;
-            // MyDialog.hideDialog(context);
-            navigateAndFinish(context, routeName: CitiesScreen.routeName);
-          });
+          CacheHelper.saveData(value: state.uid, key: 'uId').then(
+            (value) {
+              uId = state.uid;
+              navigateAndFinish(context, routeName: CitiesScreen.routeName);
+            },
+          );
         } else if (state is SignUpErrorState) {
           MyDialog.showLoadingDialog(context, 'SignUp is Error');
           MyDialog.hideDialog(context);
-          MyDialog.showMessage(context, 'SignUp is Error',
-              posActionTitle: 'Try Again',
-              posAction: () {
-                if (formKey.currentState!.validate()) {
-                  SignUpCubit.get(context).userSignUp(
-                    phone: phoneController.text,
-                    email: emailController.text,
-                    password: passwordController.text,
-                    firstName: firstnameController.text,
-                    lastName: lastnameController.text,
-                  );
-                }
-              },
-              negActionTitle: 'Cancel',
-              negAction: () {
-                Navigator.pop(context);
-              });
+          MyDialog.showMessage(
+            context,
+            state.error,
+            negActionTitle: 'Cancel',
+            negAction: () {
+              Navigator.pop(context);
+            },
+          );
         }
       }, builder: (context, state) {
         return Container(

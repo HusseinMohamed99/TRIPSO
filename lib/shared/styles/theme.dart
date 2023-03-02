@@ -14,8 +14,8 @@ class ThemeApp {
     primaryColor: primaryColor,
     scaffoldBackgroundColor: secondaryColor,
     cardColor: secondaryColor,
-    appBarTheme: AppBarTheme(
-      systemOverlayStyle: const SystemUiOverlayStyle(
+    appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: secondaryColor,
         systemNavigationBarColor: secondaryColor,
         systemNavigationBarDividerColor: secondaryColor,
@@ -69,8 +69,8 @@ class ThemeApp {
     primaryColor: primaryColor,
     scaffoldBackgroundColor: secondaryColor,
     cardColor: secondaryColor,
-    appBarTheme: AppBarTheme(
-      systemOverlayStyle: const SystemUiOverlayStyle(
+    appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: secondaryColor,
         systemNavigationBarColor: secondaryColor,
         systemNavigationBarDividerColor: secondaryColor,
