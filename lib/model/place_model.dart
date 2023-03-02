@@ -7,6 +7,7 @@ class PlaceModel {
   String tickets;
   String pId;
   String address;
+  String popular;
   bool isPopular;
 
   PlaceModel({
@@ -19,6 +20,7 @@ class PlaceModel {
     required this.pId,
     required this.isPopular,
     required this.address,
+    required this.popular,
   });
 
   PlaceModel.fromFireStore(Map<String, dynamic> data)
@@ -35,6 +37,7 @@ class PlaceModel {
           pId: data['pId'],
           isPopular: data['isPopular'],
           address: data['address'],
+          popular: data['popular'],
         );
 
   Map<String, dynamic> toFireStore() {
@@ -48,6 +51,7 @@ class PlaceModel {
       'pId': pId,
       'isPopular ': isPopular,
       'address ': address,
+      'popular ': popular,
     };
   }
 }

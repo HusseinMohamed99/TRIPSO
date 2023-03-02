@@ -235,8 +235,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         cityPopular.add(CityModel.fromFireStore(element.data()));
         cIdPopular.add(element.id);
-        // print(element.data());
-        //  print('====================================');
       }
     });
   }
@@ -328,7 +326,8 @@ class TripsoCubit extends Cubit<TripsoStates> {
         if (kDebugMode) {
           print(element.data());
         }
-        debugPrint('================================================');
+        debugPrint(
+            '=====================DONEWWWWWWWW===========================');
       }
     });
   }

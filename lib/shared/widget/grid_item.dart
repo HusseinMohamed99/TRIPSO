@@ -94,6 +94,7 @@ class GridItemSights extends StatelessWidget {
             pId: placeModel.pId,
             isPopular: placeModel.isPopular,
             address: placeModel.address,
+            popular: placeModel.popular,
           ),
         );
       },

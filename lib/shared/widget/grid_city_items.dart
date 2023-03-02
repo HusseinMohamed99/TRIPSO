@@ -96,7 +96,7 @@ class GridCitiesItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headline2?.copyWith(
-                color: ThemeApp.secondaryColor,
+                    color: ThemeApp.secondaryColor,
                   ),
             ),
           ],
@@ -123,6 +123,7 @@ class GridEGItem extends StatelessWidget {
       onTap: () async {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
         navigateTo(
           context,
@@ -207,6 +208,7 @@ class GridITItem extends StatelessWidget {
       onTap: () async {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
         navigateTo(
           context,
@@ -291,6 +293,7 @@ class GridUAEItem extends StatelessWidget {
       onTap: () async {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
         navigateTo(
           context,
@@ -375,6 +378,7 @@ class GridFRItem extends StatelessWidget {
       onTap: () async {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
         navigateTo(
           context,
@@ -459,6 +463,7 @@ class GridPopularItem extends StatelessWidget {
       onTap: () async {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
         navigateTo(
           context,

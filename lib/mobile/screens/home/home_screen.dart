@@ -148,9 +148,10 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                     child: SearchBar(
                                         readOnly: true,
                                         function: () {
-                                          navigateTo(context,
-                                              routeName:
-                                                  SearchScreen.routeName);
+                                          navigateTo(
+                                            context,
+                                            routeName: SearchScreen.routeName,
+                                          );
                                         }),
                                   ),
                                   Card(
@@ -190,15 +191,6 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                           setState(() {
                                             dropdownValue = newValue;
                                           });
-                                        },
-                                        onTap: () {
-                                          cubit.getCityData();
-                                          cubit.getITData();
-                                          cubit.getEGData();
-                                          cubit.getFRData();
-                                          cubit.getITData();
-                                          cubit.getUAEData();
-                                          cubit.getPopularData();
                                         },
                                         value: dropdownValue,
                                       ),
