@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class SearchBar extends StatelessWidget {
@@ -70,8 +69,8 @@ class SearchBar extends StatelessWidget {
             ),
             hintText: title ?? 'Search',
             prefixIcon: iconData ??
-                ImageIcon(
-                  const AssetImage(AssetPath.searchImage),
+                Icon(
+                  Icons.search,
                   color: iconColor ?? ThemeApp.primaryColor,
                   size: iconSize ?? 30.sp,
                 ),

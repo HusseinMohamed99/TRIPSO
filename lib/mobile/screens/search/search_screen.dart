@@ -138,7 +138,9 @@ class _SearchScreenState extends State<SearchScreen> {
                         foundCity[index], context, cubit.placeModel!),
                     separatorBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0).r,
-                          child: const MyDivider(),
+                          child: MyDivider(
+                            color: Colors.grey.shade300,
+                          ),
                         ),
                     itemCount: foundCity.length),
           );
@@ -168,10 +170,10 @@ class _SearchScreenState extends State<SearchScreen> {
             weather;
       },
       child: Container(
-        height: 170.h,
+        height: 140.h,
         margin: const EdgeInsets.all(8).r,
         decoration: BoxDecoration(
-          border: Border.all(),
+          border: Border.all(color: Colors.grey.shade500),
           borderRadius: BorderRadius.circular(20).r,
         ),
         child: Row(

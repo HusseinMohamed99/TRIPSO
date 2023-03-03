@@ -444,4 +444,5 @@ class TripsoCubit extends Cubit<TripsoStates> {
   }
 
   ///END : UpdateUserData
+
 }

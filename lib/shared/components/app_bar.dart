@@ -7,11 +7,11 @@ import 'package:tripso/shared/styles/theme.dart';
 PreferredSizeWidget secondaryAppBar() => AppBar(
   backgroundColor: Colors.transparent,
       systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarColor: ThemeApp.secondaryColor,
-        systemNavigationBarColor: ThemeApp.secondaryColor,
+        statusBarColor: ThemeApp.blackPrimary,
+        systemNavigationBarColor: ThemeApp.blackPrimary,
         systemNavigationBarDividerColor: ThemeApp.secondaryColor,
         statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
       ),
       elevation: 0,
       scrolledUnderElevation: 0,

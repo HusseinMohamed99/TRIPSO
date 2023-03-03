@@ -413,7 +413,7 @@ class GridItemSights extends StatelessWidget {
               backgroundColor: const Color.fromRGBO(0, 0, 0, 0.6),
               child: IconButton(
                 onPressed: () {
-                  debugPrint('isFav');
+                 //TripsoCubit.get(context).isDone(placeModel);
                 },
                 icon: Icon(
                   FontAwesomeIcons.solidHeart,
