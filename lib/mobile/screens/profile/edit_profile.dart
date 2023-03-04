@@ -1,9 +1,12 @@
 import 'dart:io';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/adaptive/indicator.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/widget/select_photo_options.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
@@ -68,11 +71,38 @@ class EditProfile extends StatelessWidget {
                                 backgroundColor: ThemeApp.secondaryColor,
                                 radius: 65.r,
                                 child: CircleAvatar(
-                                  backgroundImage: profileImage == null
-                                      ? NetworkImage(tripsoCubit.image)
-                                      : FileImage(profileImage)
-                                          as ImageProvider,
                                   radius: 65.r,
+                                  child: profileImage == null
+                                      ? ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(65).r,
+                                          child: CachedNetworkImage(
+                                            imageUrl: tripsoCubit.image,
+                                            fit: BoxFit.fill,
+                                            height: 200.h,
+                                            width: double.infinity,
+                                            progressIndicatorBuilder: (context,
+                                                    url, downloadProgress) =>
+                                                Center(
+                                              child: AdaptiveIndicator(
+                                                os: getOs(),
+                                              ),
+                                            ),
+                                            errorWidget:
+                                                (context, url, error) => Center(
+                                              child: AdaptiveIndicator(
+                                                os: getOs(),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(65).r,
+                                          child: Image(
+                                            image: FileImage(profileImage),
+                                          ),
+                                        ),
                                 ),
                               ),
                             ),
@@ -201,7 +231,7 @@ class EditProfile extends StatelessWidget {
                           label: 'Email Address',
                         ),
                         Space(
-                          height: 40.h,
+                          height: 30.h,
                           width: 0.w,
                         ),
                         defaultButton(
@@ -260,21 +290,22 @@ class EditProfile extends StatelessWidget {
       context: context,
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: const Radius.circular(25.0).r,
-        ),
+        borderRadius: const BorderRadius.vertical(
+          top: Radius.circular(25.0),
+        ).r,
       ),
       builder: (context) => DraggableScrollableSheet(
-          initialChildSize: 0.28,
-          maxChildSize: 0.3.spMax,
-          minChildSize: 0.28.spMin,
-          expand: false,
-          builder: (context, scrollController) {
-            return SingleChildScrollView(
-              controller: scrollController,
-              child: const SelectPhotoOptions(),
-            );
-          }),
+        initialChildSize: 0.28,
+        maxChildSize: 0.3.spMax,
+        minChildSize: 0.28.spMin,
+        expand: false,
+        builder: (context, scrollController) {
+          return SingleChildScrollView(
+            controller: scrollController,
+            child: const SelectPhotoOptions(),
+          );
+        },
+      ),
     );
   }
 }
