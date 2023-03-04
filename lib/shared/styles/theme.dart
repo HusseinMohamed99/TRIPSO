@@ -15,14 +15,14 @@ class ThemeApp {
     scaffoldBackgroundColor: secondaryColor,
     cardColor: secondaryColor,
     appBarTheme: const AppBarTheme(
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: secondaryColor,
-        systemNavigationBarColor: secondaryColor,
-        systemNavigationBarDividerColor: secondaryColor,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.light,
-      ),
-    ),
+        // systemOverlayStyle: SystemUiOverlayStyle(
+        //   statusBarColor: secondaryColor,
+        //   systemNavigationBarColor: secondaryColor,
+        //   systemNavigationBarDividerColor: secondaryColor,
+        //   statusBarIconBrightness: Brightness.light,
+        //   statusBarBrightness: Brightness.light,
+        // ),
+        ),
     textTheme: TextTheme(
       headline1: GoogleFonts.roboto(
         fontSize: 36.sp,
@@ -70,14 +70,14 @@ class ThemeApp {
     scaffoldBackgroundColor: secondaryColor,
     cardColor: secondaryColor,
     appBarTheme: const AppBarTheme(
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: secondaryColor,
-        systemNavigationBarColor: secondaryColor,
-        systemNavigationBarDividerColor: secondaryColor,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.light,
-      ),
-    ),
+        // systemOverlayStyle: SystemUiOverlayStyle(
+        //   statusBarColor: secondaryColor,
+        //   systemNavigationBarColor: secondaryColor,
+        //   systemNavigationBarDividerColor: secondaryColor,
+        //   statusBarIconBrightness: Brightness.light,
+        //   statusBarBrightness: Brightness.light,
+        // ),
+        ),
     textTheme: TextTheme(
       headline1: GoogleFonts.roboto(
         fontSize: 36.sp,

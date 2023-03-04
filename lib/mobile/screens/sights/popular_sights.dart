@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,10 +6,12 @@ import 'package:tripso/mobile/screens/sights/sight_details_screen.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
+import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/speak.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
@@ -97,7 +100,10 @@ class ListViewWidget extends StatelessWidget {
               color: Colors.black.withOpacity(0.5),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               shape: const StadiumBorder(
-                  side: BorderSide(color: ThemeApp.secondaryColor)),
+                side: BorderSide(
+                  color: ThemeApp.secondaryColor,
+                ),
+              ),
               child: IconButton(
                 onPressed: () async {
                   if (Navigator.canPop(context)) {
@@ -163,14 +169,32 @@ class GridSights extends StatelessWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(20.r),
-                      child: Image(
-                        image: NetworkImage(
-                          placeModel.image,
-                        ),
+                      child: CachedNetworkImage(
+                        imageUrl: placeModel.image,
+                        fit: BoxFit.fill,
                         height: 225.h,
                         width: double.infinity,
-                        fit: BoxFit.cover,
+                        progressIndicatorBuilder:
+                            (context, url, downloadProgress) => Center(
+                          child: AdaptiveIndicator(
+                            os: getOs(),
+                          ),
+                        ),
+                        errorWidget: (context, url, error) => Center(
+                          child: AdaptiveIndicator(
+                            os: getOs(),
+                          ),
+                        ),
                       ),
+
+                      // Image(
+                      //   image: NetworkImage(
+                      //     placeModel.image,
+                      //   ),
+                      //   height: 225.h,
+                      //   width: double.infinity,
+                      //   fit: BoxFit.cover,
+                      // ),
                     ),
                     LayerImage(
                       height: 225.h,

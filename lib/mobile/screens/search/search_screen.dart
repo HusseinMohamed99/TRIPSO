@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,9 +9,11 @@ import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/weather_model.dart';
+import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/my_divider.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
@@ -44,8 +47,11 @@ class _SearchScreenState extends State<SearchScreen> {
     } else {
       results = TripsoCubit.get(context)
           .city
-          .where((city) =>
-              city.name.toLowerCase().contains(enteredKeyword.toLowerCase()))
+          .where(
+            (city) => city.name.toLowerCase().contains(
+                  enteredKeyword.toLowerCase(),
+                ),
+          )
           .toList();
     }
 
@@ -138,11 +144,12 @@ class _SearchScreenState extends State<SearchScreen> {
                         foundCity[index], context, cubit.placeModel!),
                     separatorBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0).r,
-                          child: MyDivider(
-                            color: Colors.grey.shade300,
-                          ),
-                        ),
-                    itemCount: foundCity.length),
+                      child: MyDivider(
+                        color: Colors.grey.shade300,
+                      ),
+                    ),
+                    itemCount: foundCity.length,
+                  ),
           );
         },
         listener: (context, state) {});
@@ -194,10 +201,9 @@ class _SearchScreenState extends State<SearchScreen> {
                       city.history,
                       maxLines: 7,
                       overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context)
-                          .textTheme
-                          .subtitle1
-                          ?.copyWith(color: Colors.black54),
+                      style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                            color: Colors.black54,
+                          ),
                     ),
                   ],
                 ),
@@ -205,7 +211,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             Container(
               clipBehavior: Clip.antiAliasWithSaveLayer,
-              width: 180.w,
+              width: 170.w,
               height: 170.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -213,10 +219,28 @@ class _SearchScreenState extends State<SearchScreen> {
                   topRight: const Radius.circular(20).r,
                 ),
               ),
-              child: Image.network(
-                city.image,
-                fit: BoxFit.cover,
+              child: CachedNetworkImage(
+                imageUrl: city.image,
+                fit: BoxFit.fill,
+                height: 225.h,
+                width: double.infinity,
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    Center(
+                  child: AdaptiveIndicator(
+                    os: getOs(),
+                  ),
+                ),
+                errorWidget: (context, url, error) => Center(
+                  child: AdaptiveIndicator(
+                    os: getOs(),
+                  ),
+                ),
               ),
+
+              // Image.network(
+              //   city.image,
+              //   fit: BoxFit.cover,
+              // ),
             ),
           ],
         ),

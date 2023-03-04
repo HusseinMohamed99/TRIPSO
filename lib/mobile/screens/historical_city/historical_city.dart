@@ -1,11 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripso/model/city_model.dart';
+import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/speak.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
@@ -30,23 +33,45 @@ class HistoricalCity extends StatelessWidget {
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     height: 500.h,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: const Radius.circular(20).r,
-                          bottomRight: const Radius.circular(20).r,
-                        ),
-                        image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: NetworkImage(
-                            cityModel.image,
-                          ),
-                        )),
-                    child: LayerImage(
-                      height: 540.h,
-                      width: double.infinity,
                       borderRadius: BorderRadius.only(
                         bottomLeft: const Radius.circular(20).r,
                         bottomRight: const Radius.circular(20).r,
                       ),
+                      // image: DecorationImage(
+                      //   fit: BoxFit.fill,
+                      //   image: NetworkImage(
+                      //     cityModel.image,
+                      //   ),
+                      // ),
+                    ),
+                    child: Stack(
+                      children: [
+                        CachedNetworkImage(
+                          imageUrl: cityModel.image,
+                          fit: BoxFit.fill,
+                          height: 400.h,
+                          width: double.infinity,
+                          progressIndicatorBuilder:
+                              (context, url, downloadProgress) => Center(
+                            child: AdaptiveIndicator(
+                              os: getOs(),
+                            ),
+                          ),
+                          errorWidget: (context, url, error) => Center(
+                            child: AdaptiveIndicator(
+                              os: getOs(),
+                            ),
+                          ),
+                        ),
+                        LayerImage(
+                          height: 400.h,
+                          width: double.infinity,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: const Radius.circular(20).r,
+                            bottomRight: const Radius.circular(20).r,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Positioned(

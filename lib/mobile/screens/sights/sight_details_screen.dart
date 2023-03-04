@@ -1,13 +1,16 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tripso/model/place_model.dart';
+import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/my_divider.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/speak.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
@@ -45,12 +48,30 @@ class SightDetailsScreen extends StatelessWidget {
                               height: 200.h,
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                  image: DecorationImage(
+                                  //     image: DecorationImage(
+                                  //   fit: BoxFit.fill,
+                                  //   image: NetworkImage(
+                                  //     placeModel.image,
+                                  //   ),
+                                  // ),
+                                  ),
+                              child: CachedNetworkImage(
+                                imageUrl: placeModel.image,
                                 fit: BoxFit.fill,
-                                image: NetworkImage(
-                                  placeModel.image,
+                                height: 200.h,
+                                width: double.infinity,
+                                progressIndicatorBuilder:
+                                    (context, url, downloadProgress) => Center(
+                                  child: AdaptiveIndicator(
+                                    os: getOs(),
+                                  ),
                                 ),
-                              )),
+                                errorWidget: (context, url, error) => Center(
+                                  child: AdaptiveIndicator(
+                                    os: getOs(),
+                                  ),
+                                ),
+                              ),
                             ),
                             LayerImage(
                               height: 200.h,
@@ -92,10 +113,10 @@ class SightDetailsScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0).r,
                           child: Text(
                             placeModel.name,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline2
-                                ?.copyWith(color: ThemeApp.secondaryColor),
+                            style:
+                                Theme.of(context).textTheme.headline2?.copyWith(
+                                      color: ThemeApp.secondaryColor,
+                                    ),
                           ),
                         ),
                       ],
@@ -114,8 +135,9 @@ class SightDetailsScreen extends StatelessWidget {
                                   child: Container(
                                     alignment: Alignment.center,
                                     padding: const EdgeInsets.symmetric(
-                                            horizontal: 15, vertical: 8)
-                                        .r,
+                                      horizontal: 15,
+                                      vertical: 8,
+                                    ).r,
                                     margin: const EdgeInsets.all(8).r,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20).r,
@@ -136,14 +158,16 @@ class SightDetailsScreen extends StatelessWidget {
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
-                                        Text(placeModel.tickets,
-                                            textAlign: TextAlign.center,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .headline6
-                                                ?.copyWith(
-                                                    color: ThemeApp
-                                                        .secondaryColor)),
+                                        Text(
+                                          placeModel.tickets,
+                                          textAlign: TextAlign.center,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline6
+                                              ?.copyWith(
+                                                color: ThemeApp.secondaryColor,
+                                              ),
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -419,11 +443,29 @@ class SightDetailsScreen extends StatelessWidget {
                           child: Card(
                             margin: EdgeInsets.zero,
                             elevation: 2,
-                            color: Colors.red,
-                            child: Image.network(
-                              'https://img.freepik.com/premium-vector/map-with-gps-destination-point_34645-903.jpg?w=996',
+                            // color: Colors.red,
+                            child: CachedNetworkImage(
+                              imageUrl:
+                                  'https://img.freepik.com/premium-vector/map-with-gps-destination-point_34645-903.jpg?w=996',
+                              fit: BoxFit.fill,
+                              height: 200.h,
                               width: double.infinity,
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => Center(
+                                child: AdaptiveIndicator(
+                                  os: getOs(),
+                                ),
+                              ),
+                              errorWidget: (context, url, error) => Center(
+                                child: AdaptiveIndicator(
+                                  os: getOs(),
+                                ),
+                              ),
                             ),
+                            // Image.network(
+                            //   'https://img.freepik.com/premium-vector/map-with-gps-destination-point_34645-903.jpg?w=996',
+                            //   width: double.infinity,
+                            // ),
                           ),
                         ),
                       ),
@@ -452,86 +494,86 @@ class SightDetailsScreen extends StatelessWidget {
       ),
       builder: (context) => DraggableScrollableSheet(
         initialChildSize: 0.3.sp,
-        minChildSize: 0.2.spMin,
-        maxChildSize: 0.62.spMax,
-        expand: false,
-        builder: (context, scrollController) {
-          return SingleChildScrollView(
-            controller: scrollController,
-            child: Container(
-              decoration: BoxDecoration(
-                color: ThemeApp.secondaryColor,
+            minChildSize: 0.2.spMin,
+            maxChildSize: 0.62.spMax,
+            expand: false,
+            builder: (context, scrollController) {
+              return SingleChildScrollView(
+                controller: scrollController,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: ThemeApp.secondaryColor,
                 borderRadius:
                     BorderRadius.vertical(top: const Radius.circular(20).r),
               ),
-              padding: const EdgeInsets.symmetric(horizontal: 8).r,
-              child: Stack(
-                alignment: AlignmentDirectional.topCenter,
-                clipBehavior: Clip.none,
-                children: [
-                  Positioned(
-                    top: -20.h,
-                    child: Container(
-                      width: 50.w,
-                      height: 6.h,
-                      margin: const EdgeInsets.only(bottom: 20).r,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(2.5).r,
-                        color: ThemeApp.primaryColor,
+                  padding: const EdgeInsets.symmetric(horizontal: 8).r,
+                  child: Stack(
+                    alignment: AlignmentDirectional.topCenter,
+                    clipBehavior: Clip.none,
+                    children: [
+                      Positioned(
+                        top: -20.h,
+                        child: Container(
+                          width: 50.w,
+                          height: 6.h,
+                          margin: const EdgeInsets.only(bottom: 20).r,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(2.5).r,
+                            color: ThemeApp.primaryColor,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  Space(height: 20.h, width: 0.w),
-                  Column(children: [
-                    Row(
-                      children: [
-                        IconButton(
-                            onPressed: () async {
-                              pop(context);
-                              await flutterTts.pause();
-                            },
-                            icon: Icon(
-                              Icons.clear,
-                              size: 24.sp,
-                            )),
+                      Space(height: 20.h, width: 0.w),
+                      Column(children: [
+                        Row(
+                          children: [
+                            IconButton(
+                                onPressed: () async {
+                                  pop(context);
+                                  await flutterTts.pause();
+                                },
+                                icon: Icon(
+                                  Icons.clear,
+                                  size: 24.sp,
+                                )),
+                            Text(
+                              placeModel.name.trim(),
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.headline4,
+                            )
+                          ],
+                        ),
+                        const MyDivider(),
+                        Space(height: 15.h, width: 0.w),
                         Text(
-                          placeModel.name.trim(),
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.headline4,
-                        )
-                      ],
-                    ),
-                    const MyDivider(),
-                    Space(height: 15.h, width: 0.w),
-                    Text(
-                      placeModel.history.trim(),
+                          placeModel.history.trim(),
                       style: Theme.of(context).textTheme.headline6?.copyWith(
                             color: ThemeApp.blackPrimary.withOpacity(
                               0.54,
                             ),
                           ),
                     ),
-                    Space(height: 20.h, width: 0.w),
-                    TextButton(
-                      onPressed: () {
-                        speak(placeModel.history);
-                      },
-                      child: CircleAvatar(
-                          radius: 24.r,
-                          backgroundColor: ThemeApp.primaryColor,
-                          child: Icon(
-                            FontAwesomeIcons.play,
-                            color: ThemeApp.secondaryColor,
-                            size: 24.sp,
-                          )),
-                    ),
-                  ]),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
+                        Space(height: 20.h, width: 0.w),
+                        TextButton(
+                          onPressed: () {
+                            speak(placeModel.history);
+                          },
+                          child: CircleAvatar(
+                              radius: 24.r,
+                              backgroundColor: ThemeApp.primaryColor,
+                              child: Icon(
+                                FontAwesomeIcons.play,
+                                color: ThemeApp.secondaryColor,
+                                size: 24.sp,
+                              )),
+                        ),
+                      ]),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
     );
   }
 }

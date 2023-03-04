@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,9 +6,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/mobile/screens/password/update_password_screen.dart';
 import 'package:tripso/mobile/screens/profile/edit_profile.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
+import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/log_out.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
@@ -39,7 +42,27 @@ class MyProfileScreen extends StatelessWidget {
                         child: CircleAvatar(
                           maxRadius: 70.r,
                           minRadius: 70.r,
-                          backgroundImage: NetworkImage(tripsoCubit!.image),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(75).r,
+                            child: CachedNetworkImage(
+                              imageUrl: tripsoCubit!.image,
+                              fit: BoxFit.fill,
+                              height: 200.h,
+                              width: double.infinity,
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => Center(
+                                child: AdaptiveIndicator(
+                                  os: getOs(),
+                                ),
+                              ),
+                              errorWidget: (context, url, error) => Center(
+                                child: AdaptiveIndicator(
+                                  os: getOs(),
+                                ),
+                              ),
+                            ),
+                          ),
+                          // backgroundImage: NetworkImage(tripsoCubit!.image),
                         ),
                       ),
                       Space(height: 15.h, width: 0.w),

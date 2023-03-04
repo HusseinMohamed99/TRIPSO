@@ -1,11 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tripso/mobile/screens/plans/top_plans.dart';
 import 'package:tripso/model/city_model.dart';
+import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 Widget topPlansItem(BuildContext context, CityModel cityModel) {
@@ -26,15 +29,34 @@ Widget topPlansItem(BuildContext context, CityModel cityModel) {
               height: 200.h,
               width: 250.w,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    const Radius.circular(12).r,
+                borderRadius: BorderRadius.all(
+                  const Radius.circular(12).r,
+                ),
+                // image: const DecorationImage(
+                //   fit: BoxFit.cover,
+                //   image: NetworkImage(
+                //       //  cityModel.image,
+                //       'https://img.freepik.com/free-photo/flag-palestine_1401-194.jpg?w=996&t=st=1675691524~exp=1675692124~hmac=5198490804e8153abeb25917a4d16695d84e1904eb6eec723b9b92d13fd363b4'),
+                // ),
+              ),
+              child: CachedNetworkImage(
+                imageUrl:
+                    'https://img.freepik.com/free-photo/flag-palestine_1401-194.jpg?w=996&t=st=1675691524~exp=1675692124~hmac=5198490804e8153abeb25917a4d16695d84e1904eb6eec723b9b92d13fd363b4',
+                fit: BoxFit.fill,
+                height: 200.h,
+                width: double.infinity,
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    Center(
+                  child: AdaptiveIndicator(
+                    os: getOs(),
                   ),
-                  image: const DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                        //  cityModel.image,
-                        'https://img.freepik.com/free-photo/flag-palestine_1401-194.jpg?w=996&t=st=1675691524~exp=1675692124~hmac=5198490804e8153abeb25917a4d16695d84e1904eb6eec723b9b92d13fd363b4'),
-                  )),
+                ),
+                errorWidget: (context, url, error) => Center(
+                  child: AdaptiveIndicator(
+                    os: getOs(),
+                  ),
+                ),
+              ),
             ),
             LayerImage(
               height: 200.h,

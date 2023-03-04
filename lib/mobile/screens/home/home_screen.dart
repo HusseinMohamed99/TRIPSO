@@ -67,7 +67,11 @@ class _CitiesScreenState extends State<CitiesScreen> {
         return SafeArea(
           child: Scaffold(
             body: cubit.city.isEmpty
-                ? Center(child: AdaptiveIndicator(os: getOs()))
+                ? Center(
+                    child: AdaptiveIndicator(
+                      os: getOs(),
+                    ),
+                  )
                 : SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,7 +170,8 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                           color: ThemeApp.secondaryColor,
                                         ),
                                         icon: const Icon(
-                                            Icons.keyboard_arrow_down),
+                                          Icons.keyboard_arrow_down,
+                                        ),
                                         items: [
                                           'All Cities',
                                           'Egypt',

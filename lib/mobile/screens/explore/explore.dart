@@ -125,7 +125,10 @@ class CityDetails extends StatelessWidget {
             color: Colors.black.withOpacity(0.5),
             clipBehavior: Clip.antiAliasWithSaveLayer,
             shape: const StadiumBorder(
-                side: BorderSide(color: ThemeApp.secondaryColor)),
+              side: BorderSide(
+                color: ThemeApp.secondaryColor,
+              ),
+            ),
             child: IconButton(
               onPressed: () {
                 if (Navigator.canPop(context)) {
@@ -147,10 +150,16 @@ class CityDetails extends StatelessWidget {
               color: Colors.black.withOpacity(0.5),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               shape: const StadiumBorder(
-                  side: BorderSide(color: ThemeApp.secondaryColor)),
+                side: BorderSide(
+                  color: ThemeApp.secondaryColor,
+                ),
+              ),
               child: IconButton(
                 onPressed: () {
-                  navigateTo(context, routeName: SearchScreen.routeName);
+                  navigateTo(
+                    context,
+                    routeName: SearchScreen.routeName,
+                  );
                 },
                 icon: const ImageIcon(
                   AssetImage(
@@ -165,15 +174,16 @@ class CityDetails extends StatelessWidget {
             CircleAvatar(
               radius: 25.r,
               backgroundColor: Colors.transparent,
-              child: Image.asset(weatherData.getImage()),
+              child: Image.asset(
+                weatherData.getImage(),
+              ),
             ),
             Space(height: 10.h, width: 0.w),
             Text(
               screenArgs.cityModel.name,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline1
-                  ?.copyWith(color: ThemeApp.secondaryColor),
+              style: Theme.of(context).textTheme.headline1?.copyWith(
+                    color: ThemeApp.secondaryColor,
+                  ),
             ),
             Text(
               weatherData.weatherStateName,
@@ -186,10 +196,9 @@ class CityDetails extends StatelessWidget {
             Space(height: 10.h, width: 0.w),
             Text(
               '${weatherData.temp.toInt().toString()}°',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline1
-                  ?.copyWith(color: ThemeApp.secondaryColor),
+              style: Theme.of(context).textTheme.headline1?.copyWith(
+                    color: ThemeApp.secondaryColor,
+                  ),
             ),
           ],
         ),
@@ -257,8 +266,10 @@ class RowWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text('Historical',
-                    style: Theme.of(context).textTheme.headline6),
+                Text(
+                  'Historical',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
               ],
             ),
           ),
@@ -268,7 +279,10 @@ class RowWidget extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    navigateTo(context, routeName: AllPlansScreen.routeName);
+                    navigateTo(
+                      context,
+                      routeName: AllPlansScreen.routeName,
+                    );
                   },
                   borderRadius: BorderRadius.circular(19).r,
                   child: Container(
@@ -291,8 +305,10 @@ class RowWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text('Customize Plans',
-                    style: Theme.of(context).textTheme.headline6),
+                Text(
+                  'Customize Plans',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
               ],
             ),
           ),
@@ -308,7 +324,9 @@ class RowWidget extends StatelessWidget {
                       context,
                       routeName: SightsScreen.routeName,
                       arguments: ScreenArgs(
-                          cityModel: cityModel, placeModel: placeModel),
+                        cityModel: cityModel,
+                        placeModel: placeModel,
+                      ),
                     );
                     debugPrint('City ID = ${cityModel.cId}');
                   },
@@ -333,7 +351,10 @@ class RowWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text('Sights', style: Theme.of(context).textTheme.headline6),
+                Text(
+                  'Sights',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
               ],
             ),
           ),
@@ -369,8 +390,10 @@ class PopularSightsWidget extends StatelessWidget {
                 navigateTo(
                   context,
                   routeName: PopularSightsScreen.routeName,
-                  arguments:
-                      ScreenArgs(cityModel: cityModel, placeModel: placeModel),
+                  arguments: ScreenArgs(
+                    cityModel: cityModel,
+                    placeModel: placeModel,
+                  ),
                 );
                 debugPrint('City ID = ${cityModel.cId}');
               },
