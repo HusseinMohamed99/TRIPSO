@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,8 +42,8 @@ class HomeLayout extends StatelessWidget {
               child: SafeArea(
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 6.0, vertical: 6)
-                          .r,
+                  const EdgeInsets.symmetric(horizontal: 6.0, vertical: 6)
+                      .r,
                   child: GNav(
                     rippleColor: ThemeApp.primaryColor,
                     hoverColor: ThemeApp.primaryColor,
@@ -50,8 +51,8 @@ class HomeLayout extends StatelessWidget {
                     activeColor: ThemeApp.secondaryColor,
                     iconSize: 24.sp,
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 8)
-                            .r,
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8)
+                        .r,
                     duration: const Duration(microseconds: 200),
                     tabBackgroundColor: ThemeApp.primaryColor,
                     color: ThemeApp.blackPrimary,
@@ -106,9 +107,31 @@ class HomeLayout extends StatelessWidget {
                       ),
                       GButton(
                         icon: Icons.person,
-                        leading: CircleAvatar(
-                          radius: 15.r,
-                          backgroundImage: NetworkImage(userModel!.image),
+                        leading: ClipRRect(
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(20),
+                          ).r,
+                          child: CircleAvatar(
+                            radius: 15.r,
+                            child: CachedNetworkImage(
+                              imageUrl: userModel!.image,
+                              fit: BoxFit.fill,
+                              height: 200.h,
+                              width: double.infinity,
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => Center(
+                                child: AdaptiveIndicator(
+                                  os: getOs(),
+                                ),
+                              ),
+                              errorWidget: (context, url, error) => Center(
+                                child: AdaptiveIndicator(
+                                  os: getOs(),
+                                ),
+                              ),
+                            ),
+                            // backgroundImage: NetworkImage(userModel!.image),
+                          ),
                         ),
                         text: tripsoCubit.titles[tripsoCubit.currentIndex],
                         textStyle: TextStyle(
@@ -124,9 +147,11 @@ class HomeLayout extends StatelessWidget {
               ),
             ),
             body: Provider.of<WeatherProvider>(context).weatherData == null ||
-                    tripsoCubit.city.isEmpty
+                tripsoCubit.city.isEmpty
                 ? Center(
-                    child: AdaptiveIndicator(os: getOs()),
+              child: AdaptiveIndicator(
+                      os: getOs(),
+                    ),
                   )
                 : tripsoCubit.screens[tripsoCubit.currentIndex],
           ),
