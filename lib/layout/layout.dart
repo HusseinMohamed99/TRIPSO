@@ -42,8 +42,8 @@ class HomeLayout extends StatelessWidget {
               child: SafeArea(
                 child: Padding(
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 6.0, vertical: 6)
-                      .r,
+                      const EdgeInsets.symmetric(horizontal: 6.0, vertical: 6)
+                          .r,
                   child: GNav(
                     rippleColor: ThemeApp.primaryColor,
                     hoverColor: ThemeApp.primaryColor,
@@ -51,8 +51,8 @@ class HomeLayout extends StatelessWidget {
                     activeColor: ThemeApp.secondaryColor,
                     iconSize: 24.sp,
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8)
-                        .r,
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 8)
+                            .r,
                     duration: const Duration(microseconds: 200),
                     tabBackgroundColor: ThemeApp.primaryColor,
                     color: ThemeApp.blackPrimary,
