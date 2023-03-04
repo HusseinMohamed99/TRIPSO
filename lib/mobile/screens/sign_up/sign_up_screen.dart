@@ -34,8 +34,10 @@ class SignUpScreen extends StatelessWidget {
       create: (BuildContext context) => SignUpCubit(),
       child:
           BlocConsumer<SignUpCubit, SignUpStates>(listener: (context, state) {
-        if (state is UserCreateSuccessState) {
+        if (state is SignUpSuccessState) {
           MyDialog.showLoadingDialog(context, 'SignUp is successfully');
+        }
+        if (state is UserCreateSuccessState) {
           CacheHelper.saveData(value: state.uid, key: 'uId').then(
             (value) {
               uId = state.uid;
@@ -46,14 +48,14 @@ class SignUpScreen extends StatelessWidget {
           MyDialog.showLoadingDialog(context, 'SignUp is Error');
           MyDialog.hideDialog(context);
           MyDialog.showMessage(
-            context,
-            state.error,
-            negActionTitle: 'Cancel',
-            negAction: () {
-              Navigator.pop(context);
-            },
-          );
-        }
+                context,
+                state.error,
+                negActionTitle: 'Cancel',
+                negAction: () {
+                  Navigator.pop(context);
+                },
+              );
+            }
       }, builder: (context, state) {
         return Container(
           alignment: Alignment.center,
@@ -269,6 +271,7 @@ class SignUpScreen extends StatelessWidget {
                                 passwordController.clear();
                                 firstnameController.clear();
                                 lastnameController.clear();
+                                phoneController.clear();
                               }
                             },
                             text: 'Sign up',
