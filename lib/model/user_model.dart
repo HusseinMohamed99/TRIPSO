@@ -3,7 +3,7 @@ class UserModel {
   String firstName;
   String lastName;
   String uId;
-  String image;
+  String? image;
   String phone;
   String address;
 
@@ -12,7 +12,7 @@ class UserModel {
     required this.firstName,
     required this.lastName,
     required this.email,
-    required this.image,
+    this.image,
     required this.phone,
     this.address = '',
   });

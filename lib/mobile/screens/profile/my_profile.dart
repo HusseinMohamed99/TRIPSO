@@ -45,7 +45,7 @@ class MyProfileScreen extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(75).r,
                             child: CachedNetworkImage(
-                              imageUrl: tripsoCubit!.image,
+                              imageUrl: tripsoCubit!.image!,
                               fit: BoxFit.fill,
                               height: 200.h,
                               width: double.infinity,

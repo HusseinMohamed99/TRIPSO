@@ -47,14 +47,14 @@ class SightDetailsScreen extends StatelessWidget {
                               clipBehavior: Clip.antiAliasWithSaveLayer,
                               height: 200.h,
                               width: double.infinity,
-                              decoration: BoxDecoration(
-                                  //     image: DecorationImage(
-                                  //   fit: BoxFit.fill,
-                                  //   image: NetworkImage(
-                                  //     placeModel.image,
-                                  //   ),
-                                  // ),
-                                  ),
+                              // decoration: BoxDecoration(
+                              //     //     image: DecorationImage(
+                              //     //   fit: BoxFit.fill,
+                              //     //   image: NetworkImage(
+                              //     //     placeModel.image,
+                              //     //   ),
+                              //     // ),
+                              //     ),
                               child: CachedNetworkImage(
                                 imageUrl: placeModel.image,
                                 fit: BoxFit.fill,

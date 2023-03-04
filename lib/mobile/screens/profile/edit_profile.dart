@@ -77,7 +77,7 @@ class EditProfile extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(65).r,
                                           child: CachedNetworkImage(
-                                            imageUrl: tripsoCubit.image,
+                                            imageUrl: tripsoCubit.image!,
                                             fit: BoxFit.fill,
                                             height: 200.h,
                                             width: double.infinity,

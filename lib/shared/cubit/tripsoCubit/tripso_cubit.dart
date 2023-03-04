@@ -143,8 +143,8 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         city.add(CityModel.fromFireStore(element.data()));
         cId.add(element.id);
-        print(element.data());
-        print('====================================');
+        // print(element.data());
+        // print('====================================');
       }
     });
   }

@@ -70,7 +70,7 @@ class WishListScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 elevation: 8,
-                child: Container(
+                child: SizedBox(
                   width: 400,
                   height: 170,
                   child: Row(
