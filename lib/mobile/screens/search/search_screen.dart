@@ -161,6 +161,7 @@ class _SearchScreenState extends State<SearchScreen> {
       onTap: () async {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(city.cId);
+        TripsoCubit.get(context).getPopularPlace(city.cId);
         TripsoCubit.get(context).getDataForCity(city.cId);
         navigateTo(
           context,
