@@ -43,8 +43,7 @@ class SightDetailsScreen extends StatelessWidget {
                       children: [
                         Stack(
                           children: [
-                            Container(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                            SizedBox(
                               height: 200.h,
                               width: double.infinity,
                               // decoration: BoxDecoration(

@@ -13,6 +13,7 @@ import 'package:tripso/shared/components/text_form_field.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/SignUpCubit/sign_up_state.dart';
 import 'package:tripso/shared/cubit/signUpCubit/sign_up_cubit.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
@@ -42,6 +43,7 @@ class SignUpScreen extends StatelessWidget {
             (value) {
               uId = state.uid;
               navigateAndFinish(context, routeName: CitiesScreen.routeName);
+              TripsoCubit.get(context).getUserData();
             },
           );
         } else if (state is SignUpErrorState) {
