@@ -101,7 +101,9 @@ class HistoricalCity extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline3
-                                    ?.copyWith(color: ThemeApp.secondaryColor),
+                                    ?.copyWith(
+                                      color: ThemeApp.secondaryColor,
+                                    ),
                               ),
                             ],
                           ),
@@ -184,17 +186,19 @@ class HistoricalCity extends StatelessWidget {
                     ),
                   ),
                   child: CircleAvatar(
-                      radius: 30.r,
-                      backgroundColor: ThemeApp.secondaryColor,
-                      child: IconButton(
-                          onPressed: () {
-                            speak(cityModel.history);
-                          },
-                          icon: Icon(
-                            Icons.record_voice_over,
-                            color: ThemeApp.primaryColor,
-                            size: 30.sp,
-                          ))),
+                    radius: 30.r,
+                    backgroundColor: ThemeApp.secondaryColor,
+                    child: IconButton(
+                      onPressed: () {
+                        speak(cityModel.history);
+                      },
+                      icon: Icon(
+                        Icons.record_voice_over,
+                        color: ThemeApp.primaryColor,
+                        size: 30.sp,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
