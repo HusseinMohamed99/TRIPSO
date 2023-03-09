@@ -42,19 +42,17 @@ class SignInScreen extends StatelessWidget {
             (value) {
               uId = state.uid;
               MyDialog.hideDialog(context);
-
               TripsoCubit.get(context).getUserData();
               navigateAndFinish(context, routeName: CitiesScreen.routeName);
             },
           );
         } else if (state is SignInErrorState) {
-              MyDialog.showLoadingDialog(context, 'Login is Error');
+          MyDialog.showLoadingDialog(context, 'Login is Error');
           MyDialog.hideDialog(context);
           MyDialog.showMessage(
             context,
             state.error,
-            posActionTitle: 'Try Again',
-            negActionTitle: 'Cancel',
+            negActionTitle: 'Try Again',
             negAction: () {
               Navigator.pop(context);
             },
