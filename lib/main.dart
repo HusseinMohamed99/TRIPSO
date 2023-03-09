@@ -75,7 +75,6 @@ class MyApp extends StatelessWidget {
           create: (context) => TripsoCubit()
             ..getUserData()
             ..getCityData()
-            ..getCountryData()
             ..getDataForPlace()
             ..getITData()
             ..getEGData()

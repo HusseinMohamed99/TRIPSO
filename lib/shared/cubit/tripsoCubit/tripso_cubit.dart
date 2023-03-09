@@ -10,7 +10,6 @@ import 'package:tripso/mobile/screens/explore/explore.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/mobile/screens/plans/my_plans.dart';
 import 'package:tripso/mobile/screens/profile/my_profile.dart';
-import 'package:tripso/model/country_model.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
@@ -149,21 +148,21 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  CountryModel? countryModel;
-  List<CountryModel> country = [];
-  List<String> counId = [];
-
-  getCountryData() async {
-    FirebaseFirestore.instance.collection('country').get().then((value) {
-      country = [];
-      for (var element in value.docs) {
-        country.add(CountryModel.fromFireStore(element.data()));
-        counId.add(element.id);
-        // print(element.data());
-        //  print('====================================');
-      }
-    });
-  }
+  // CountryModel? countryModel;
+  // List<CountryModel> country = [];
+  // List<String> counId = [];
+  //
+  // getCountryData() async {
+  //   FirebaseFirestore.instance.collection('country').get().then((value) {
+  //     country = [];
+  //     for (var element in value.docs) {
+  //       country.add(CountryModel.fromFireStore(element.data()));
+  //       counId.add(element.id);
+  //       // print(element.data());
+  //       //  print('====================================');
+  //     }
+  //   });
+  // }
 
   List<CityModel> cityEG = [];
   List<String> cIdEG = [];
