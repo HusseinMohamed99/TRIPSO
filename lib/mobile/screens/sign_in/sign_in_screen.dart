@@ -104,7 +104,7 @@ class SignInScreen extends StatelessWidget {
                                       controller: emailController,
                                       keyboardType: TextInputType.emailAddress,
                                       validate: (String? value) {
-                                        if (value!.isEmpty) {
+                                        if (value!.trim().isEmpty) {
                                           return 'Email Address is Required';
                                         }
                                         return null;
@@ -131,7 +131,7 @@ class SignInScreen extends StatelessWidget {
                                       keyboardType:
                                           TextInputType.visiblePassword,
                                       validate: (String? value) {
-                                        if (value!.isEmpty) {
+                                        if (value!.trim().isEmpty) {
                                           return 'Password is Required';
                                         }
                                         return null;

@@ -109,7 +109,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ),
                 validator: (value) {
-                  if (value!.isEmpty) {
+                  if (value!.trim().isEmpty) {
                     return 'The search can\'t be empty';
                   }
                   return null;
@@ -237,11 +237,6 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ),
               ),
-
-              // Image.network(
-              //   city.image,
-              //   fit: BoxFit.cover,
-              // ),
             ),
           ],
         ),

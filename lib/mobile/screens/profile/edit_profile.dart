@@ -136,7 +136,7 @@ class EditProfile extends StatelessWidget {
                           controller: firstnameController,
                           keyboardType: TextInputType.name,
                           validate: (String? value) {
-                            if (value!.isEmpty) {
+                            if (value!.trim().isEmpty) {
                               return 'Firstname must not be empty !';
                             }
                             return null;
@@ -156,7 +156,7 @@ class EditProfile extends StatelessWidget {
                           controller: lastnameController,
                           keyboardType: TextInputType.name,
                           validate: (String? value) {
-                            if (value!.isEmpty) {
+                            if (value!.trim().isEmpty) {
                               return 'Lastname must not be empty !';
                             }
                             return null;
@@ -176,7 +176,7 @@ class EditProfile extends StatelessWidget {
                           controller: addressController,
                           keyboardType: TextInputType.streetAddress,
                           validate: (String? value) {
-                            if (value!.isEmpty) {
+                            if (value!.trim().isEmpty) {
                               return 'streetAddress must not be empty !';
                             }
                             return null;
@@ -196,7 +196,7 @@ class EditProfile extends StatelessWidget {
                           controller: phoneController,
                           keyboardType: TextInputType.phone,
                           validate: (String? value) {
-                            if (value!.isEmpty) {
+                            if (value!.trim().isEmpty) {
                               return 'phone must not be empty !';
                             } else if (value.length != 11) {
                               return 'Sorry, your phone must be\n 11 numbers long.';
@@ -219,7 +219,7 @@ class EditProfile extends StatelessWidget {
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           validate: (String? value) {
-                            if (value!.isEmpty) {
+                            if (value!.trim().isEmpty) {
                               return 'Email is Required';
                             } else if (value.length < 16) {
                               return 'Sorry, your mail must be\n between 16 and 30 characters long.';
