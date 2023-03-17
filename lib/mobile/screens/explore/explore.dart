@@ -172,13 +172,12 @@ class CityDetails extends StatelessWidget {
         Column(
           children: [
             CircleAvatar(
-              radius: 25.r,
+              radius: 30.r,
               backgroundColor: Colors.transparent,
               child: Image.asset(
                 weatherData.getImage(),
               ),
             ),
-            Space(height: 10.h, width: 0.w),
             Text(
               screenArgs.cityModel.name,
               style: Theme.of(context).textTheme.headline1?.copyWith(
@@ -195,8 +194,14 @@ class CityDetails extends StatelessWidget {
             ),
             Space(height: 10.h, width: 0.w),
             Text(
-              '${weatherData.temp.toInt().toString()}°',
+              '${weatherData.temp.toInt().toString()}°C',
               style: Theme.of(context).textTheme.headline1?.copyWith(
+                    color: ThemeApp.secondaryColor,
+                  ),
+            ),
+            Text(
+              '${weatherData.minTemp.toInt().toString()}°C / ${weatherData.maxTemp.toInt().toString()}°C',
+              style: Theme.of(context).textTheme.subtitle1?.copyWith(
                     color: ThemeApp.secondaryColor,
                   ),
             ),
@@ -222,143 +227,159 @@ class RowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20, top: 0).r,
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: () {
-                    navigateTo(
-                      context,
-                      routeName: HistoricalCity.routeName,
-                      arguments: CityModel(
-                        history: screenArgs.cityModel.history,
-                        name: screenArgs.cityModel.name,
-                        cId: screenArgs.cityModel.cId,
-                        country: screenArgs.cityModel.country,
-                        image: screenArgs.cityModel.image,
-                        isPopular: screenArgs.cityModel.isPopular,
+    return Card(
+      color: Colors.grey.shade200,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20).r,
+      ),
+      elevation: 2,
+      margin: const EdgeInsets.all(10).r,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: Container(
+        alignment: Alignment.center,
+        height: 122.h,
+        width: double.infinity,
+        padding: const EdgeInsets.all(10).r,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20).r,
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      navigateTo(
+                        context,
+                        routeName: HistoricalCity.routeName,
+                        arguments: CityModel(
+                          history: screenArgs.cityModel.history,
+                          name: screenArgs.cityModel.name,
+                          cId: screenArgs.cityModel.cId,
+                          country: screenArgs.cityModel.country,
+                          image: screenArgs.cityModel.image,
+                          isPopular: screenArgs.cityModel.isPopular,
+                        ),
+                      );
+                    },
+                    borderRadius: BorderRadius.circular(19).r,
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 70.w,
+                      height: 60.h,
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(216, 119, 119, 0.15),
+                        borderRadius:
+                            BorderRadius.all(const Radius.circular(19).r),
                       ),
-                    );
-                  },
-                  borderRadius: BorderRadius.circular(19).r,
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 70.w,
-                    height: 60.h,
-                    decoration: BoxDecoration(
-                      color: const Color.fromRGBO(216, 119, 119, 0.15),
-                      borderRadius:
-                          BorderRadius.all(const Radius.circular(19).r),
-                    ),
-                    child: CircleAvatar(
-                      radius: 22.r,
-                      backgroundColor: Colors.transparent,
-                      child: Icon(
-                        Icons.camera_alt_outlined,
-                        size: 28.sp,
-                        color: const Color.fromARGB(255, 216, 119, 119),
-                      ),
-                    ),
-                  ),
-                ),
-                Text(
-                  'Historical',
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: () {
-                    navigateTo(
-                      context,
-                      routeName: AllPlansScreen.routeName,
-                    );
-                  },
-                  borderRadius: BorderRadius.circular(19).r,
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 70.w,
-                    height: 60.h,
-                    decoration: BoxDecoration(
-                      color: const Color.fromRGBO(105, 155, 247, 0.15),
-                      borderRadius:
-                          BorderRadius.all(const Radius.circular(19).r),
-                    ),
-                    child: CircleAvatar(
-                      radius: 22.r,
-                      backgroundColor: Colors.transparent,
-                      child: Icon(
-                        Icons.flag,
-                        size: 28.sp,
-                        color: const Color.fromARGB(255, 105, 155, 247),
+                      child: CircleAvatar(
+                        radius: 22.r,
+                        backgroundColor: Colors.transparent,
+                        child: Icon(
+                          Icons.camera_alt_outlined,
+                          size: 28.sp,
+                          color: const Color.fromARGB(255, 216, 119, 119),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Text(
-                  'Customize Plans',
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-              ],
+                  Text(
+                    'Historical',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: () async {
-                    TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-                    TripsoCubit.get(context).getDataForCity(cityModel.cId);
-                    navigateTo(
-                      context,
-                      routeName: SightsScreen.routeName,
-                      arguments: ScreenArgs(
-                        cityModel: cityModel,
-                        placeModel: placeModel,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      navigateTo(
+                        context,
+                        routeName: AllPlansScreen.routeName,
+                      );
+                    },
+                    borderRadius: BorderRadius.circular(19).r,
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 70.w,
+                      height: 60.h,
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(105, 155, 247, 0.15),
+                        borderRadius:
+                            BorderRadius.all(const Radius.circular(19).r),
                       ),
-                    );
-                    debugPrint('City ID = ${cityModel.cId}');
-                  },
-                  borderRadius: BorderRadius.circular(19).r,
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 70.w,
-                    height: 60.h,
-                    decoration: BoxDecoration(
-                      color: const Color.fromRGBO(133, 84, 150, 0.15),
-                      borderRadius:
-                          BorderRadius.all(const Radius.circular(19).r),
-                    ),
-                    child: CircleAvatar(
-                      radius: 22.r,
-                      backgroundColor: Colors.transparent,
-                      child: Icon(
-                        Icons.remove_red_eye_outlined,
-                        size: 28.sp,
-                        color: const Color.fromARGB(255, 133, 84, 150),
+                      child: CircleAvatar(
+                        radius: 22.r,
+                        backgroundColor: Colors.transparent,
+                        child: Icon(
+                          Icons.flag,
+                          size: 28.sp,
+                          color: const Color.fromARGB(255, 105, 155, 247),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Text(
-                  'Sights',
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-              ],
+                  Text(
+                    'Customize Plans',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () async {
+                      TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+                      TripsoCubit.get(context).getDataForCity(cityModel.cId);
+                      navigateTo(
+                        context,
+                        routeName: SightsScreen.routeName,
+                        arguments: ScreenArgs(
+                          cityModel: cityModel,
+                          placeModel: placeModel,
+                        ),
+                      );
+                      debugPrint('City ID = ${cityModel.cId}');
+                    },
+                    borderRadius: BorderRadius.circular(19).r,
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 70.w,
+                      height: 60.h,
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(133, 84, 150, 0.15),
+                        borderRadius:
+                            BorderRadius.all(const Radius.circular(19).r),
+                      ),
+                      child: CircleAvatar(
+                        radius: 22.r,
+                        backgroundColor: Colors.transparent,
+                        child: Icon(
+                          Icons.remove_red_eye_outlined,
+                          size: 28.sp,
+                          color: const Color.fromARGB(255, 133, 84, 150),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'Sights',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
