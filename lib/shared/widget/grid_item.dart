@@ -12,249 +12,275 @@ import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
-List<Icon> icon5Star = [
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-];
-List<Icon> icon4halfStar = [
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_half_outlined,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-];
-List<Icon> icon4Star = [
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-];
-List<Icon> icon3halfStar = [
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_half_outlined,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-];
-List<Icon> icon3Star = [
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-];
-List<Icon> icon2halfStar = [
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_half_outlined,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-];
-List<Icon> icon2Star = [
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-];
-List<Icon> icon1halfStar = [
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_half_outlined,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-];
-List<Icon> iconStar = [
-  Icon(
-    Icons.star,
-    color: ThemeApp.yellowColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-  Icon(
-    Icons.star_border,
-    color: ThemeApp.secondaryColor,
-    size: 20.sp,
-  ),
-];
+List<Icon> icon5Star({Color? color}) {
+  return [
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+  ];
+}
+
+List<Icon> icon4halfStar({Color? color}) {
+  return [
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_half_outlined,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+  ];
+}
+
+List<Icon> icon4Star({Color? color}) {
+  return [
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+  ];
+}
+
+List<Icon> icon3halfStar({Color? color}) {
+  return [
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_half_outlined,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+  ];
+}
+
+List<Icon> icon3Star({Color? color}) {
+  return [
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+  ];
+}
+
+List<Icon> icon2halfStar({Color? color}) {
+  return [
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_half_outlined,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+  ];
+}
+
+List<Icon> icon2Star({Color? color}) {
+  return [
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+  ];
+}
+
+List<Icon> icon1halfStar({Color? color}) {
+  return [
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_half_outlined,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+  ];
+}
+
+List<Icon> iconStar({Color? color}) {
+  return [
+    Icon(
+      Icons.star,
+      color: color ?? ThemeApp.yellowColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+    Icon(
+      Icons.star_border,
+      color: color ?? ThemeApp.secondaryColor,
+      size: 20.sp,
+    ),
+  ];
+}
 
 class GridItemSights extends StatelessWidget {
   const GridItemSights({
@@ -342,39 +368,39 @@ class GridItemSights extends StatelessWidget {
                           ),
                           if (placeModel.popular == '5')
                             Row(
-                              children: icon5Star,
+                              children: icon5Star(),
                             ),
                           if (placeModel.popular == '4.5')
                             Row(
-                              children: icon4halfStar,
+                              children: icon4halfStar(),
                             ),
                           if (placeModel.popular == '4')
                             Row(
-                              children: icon4Star,
+                              children: icon4Star(),
                             ),
                           if (placeModel.popular == '3.5')
                             Row(
-                              children: icon3halfStar,
+                              children: icon3halfStar(),
                             ),
                           if (placeModel.popular == '3')
                             Row(
-                              children: icon3Star,
+                              children: icon3Star(),
                             ),
                           if (placeModel.popular == '2.5')
                             Row(
-                              children: icon2halfStar,
+                              children: icon2halfStar(),
                             ),
                           if (placeModel.popular == '2')
                             Row(
-                              children: icon2Star,
+                              children: icon2Star(),
                             ),
                           if (placeModel.popular == '1.5')
                             Row(
-                              children: icon1halfStar,
+                              children: icon1halfStar(),
                             ),
                           if (placeModel.popular == '1')
                             Row(
-                              children: iconStar,
+                              children: iconStar(),
                             ),
                           Row(
                             children: [
@@ -413,7 +439,7 @@ class GridItemSights extends StatelessWidget {
               backgroundColor: const Color.fromRGBO(0, 0, 0, 0.6),
               child: IconButton(
                 onPressed: () {
-                 //TripsoCubit.get(context).isDone(placeModel);
+                  //TripsoCubit.get(context).isDone(placeModel);
                 },
                 icon: Icon(
                   FontAwesomeIcons.solidHeart,

@@ -26,301 +26,334 @@ class MyProfileScreen extends StatelessWidget {
       builder: (context, state) {
         var tripsoCubit = TripsoCubit.get(context).userModel;
         var cubit = TripsoCubit.get(context);
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20).r,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(top: 20).r,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CircleAvatar(
-                        maxRadius: 73.r,
-                        minRadius: 73.r,
-                        child: CircleAvatar(
-                          maxRadius: 70.r,
-                          minRadius: 70.r,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(75).r,
-                            child: CachedNetworkImage(
-                              imageUrl: tripsoCubit!.image!,
-                              fit: BoxFit.fill,
-                              height: 200.h,
-                              width: double.infinity,
-                              progressIndicatorBuilder:
-                                  (context, url, downloadProgress) => Center(
-                                child: AdaptiveIndicator(
-                                  os: getOs(),
+        return Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20).r,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(top: 20).r,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CircleAvatar(
+                            maxRadius: 73.r,
+                            minRadius: 73.r,
+                            child: CircleAvatar(
+                              maxRadius: 70.r,
+                              minRadius: 70.r,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(75).r,
+                                child: CachedNetworkImage(
+                                  imageUrl: tripsoCubit!.image!,
+                                  fit: BoxFit.fill,
+                                  height: 200.h,
+                                  width: double.infinity,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                    child: AdaptiveIndicator(
+                                      os: getOs(),
+                                    ),
+                                  ),
+                                  errorWidget: (context, url, error) => Center(
+                                    child: AdaptiveIndicator(
+                                      os: getOs(),
+                                    ),
+                                  ),
                                 ),
                               ),
-                              errorWidget: (context, url, error) => Center(
-                                child: AdaptiveIndicator(
-                                  os: getOs(),
-                                ),
-                              ),
+                              // backgroundImage: NetworkImage(tripsoCubit!.image),
                             ),
                           ),
-                          // backgroundImage: NetworkImage(tripsoCubit!.image),
+                          Space(height: 15.h, width: 0.w),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                tripsoCubit.firstName + tripsoCubit.lastName,
+                                style: GoogleFonts.roboto(
+                                  fontSize: 20.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: ThemeApp.blackPrimary,
+                                ),
+                              ),
+                              Space(
+                                height: 5.h,
+                                width: 0.w,
+                              ),
+                              Text(
+                                tripsoCubit.email,
+                                style: GoogleFonts.roboto(
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.normal,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Space(
+                      height: 20.h,
+                      width: 0.w,
+                    ),
+                    Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15).r),
+                      elevation: 10,
+                      child: InkWell(
+                        onTap: () {
+                          navigateTo(context, routeName: EditProfile.routeName);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(10).r,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              CircleAvatar(
+                                radius: 22.r,
+                                backgroundColor:
+                                    const Color.fromRGBO(105, 155, 247, 0.15),
+                                child: Icon(
+                                  Icons.edit_outlined,
+                                  size: 26.sp,
+                                  color: const Color(0xff699BF7),
+                                ),
+                              ),
+                              Space(
+                                width: 35.w,
+                                height: 0.h,
+                              ),
+                              Text(
+                                'Custom Profile',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.sp,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      Space(height: 15.h, width: 0.w),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            tripsoCubit.firstName + tripsoCubit.lastName,
-                            style: GoogleFonts.roboto(
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w500,
-                              color: ThemeApp.blackPrimary,
-                            ),
-                          ),
-                          Space(
-                            height: 5.h,
-                            width: 0.w,
-                          ),
-                          Text(
-                            tripsoCubit.email,
-                            style: GoogleFonts.roboto(
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.normal,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Space(
-                  height: 20.h,
-                  width: 0.w,
-                ),
-                Card(
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15).r),
-                  elevation: 10,
-                  child: InkWell(
-                    onTap: () {
-                      navigateTo(context, routeName: EditProfile.routeName);
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(10).r,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          CircleAvatar(
-                            radius: 22.r,
-                            backgroundColor:
-                                const Color.fromRGBO(105, 155, 247, 0.15),
-                            child: Icon(
-                              Icons.edit_outlined,
-                              size: 26.sp,
-                              color: const Color(0xff699BF7),
-                            ),
-                          ),
-                          Space(
-                            width: 35.w,
-                            height: 0.h,
-                          ),
-                          Text(
-                            'Custom Profile',
-                            style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 18.sp,
-                              color: Colors.black54,
-                            ),
-                          ),
-                        ],
-                      ),
                     ),
-                  ),
-                ),
-                Space(
-                  width: 0.w,
-                  height: 20.h,
-                ),
-                Card(
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15).r),
-                  elevation: 10,
-                  child: InkWell(
-                    onTap: () {
-                      navigateTo(context, routeName: UpdatePassword.routeName);
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(10).r,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          CircleAvatar(
-                            radius: 22.r,
-                            backgroundColor:
-                                const Color.fromRGBO(255, 153, 0, 0.1),
-                            child: Icon(
-                              Icons.vpn_key_outlined,
-                              size: 26.sp,
-                              color: Colors.amber,
-                            ),
-                          ),
-                          Space(
-                            width: 35.w,
-                            height: 0.h,
-                          ),
-                          Text(
-                            'Change Password',
-                            style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 18.sp,
-                              color: Colors.black54,
-                            ),
-                          ),
-                        ],
-                      ),
+                    Space(
+                      width: 0.w,
+                      height: 20.h,
                     ),
-                  ),
-                ),
-                Space(
-                  width: 0.w,
-                  height: 20.h,
-                ),
-                Card(
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15).r),
-                  elevation: 10,
-                  child: InkWell(
-                    onTap: () {
-                      MyDialog.showMessage(
-                        context,
-                        'Are you sure Delete account?',
-                        posActionTitle: 'Yes',
-                        posAction: () {
-                          {
-                            MyDialog.showLoadingDialog(context, 'Loading');
-                            cubit.deleteAccount(context);
-                            MyDialog.showLoadingDialog(context, 'Loading');
-                            MyDialog.hideDialog(context);
-                          }
-                          MyDialog.hideDialog(context);
+                    Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15).r),
+                      elevation: 10,
+                      child: InkWell(
+                        onTap: () {
+                          navigateTo(context,
+                              routeName: UpdatePassword.routeName);
                         },
-                        negActionTitle: 'Cancel',
-                      );
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(10).r,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          CircleAvatar(
-                            radius: 22.r,
-                            backgroundColor: const Color.fromRGBO(0, 0, 0, 0.1),
-                            child: Icon(
-                              Icons.delete_forever,
-                              size: 26.sp,
-                              color: ThemeApp.blackPrimary,
-                            ),
+                        child: Container(
+                          padding: const EdgeInsets.all(10).r,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              CircleAvatar(
+                                radius: 22.r,
+                                backgroundColor:
+                                    const Color.fromRGBO(255, 153, 0, 0.1),
+                                child: Icon(
+                                  Icons.vpn_key_outlined,
+                                  size: 26.sp,
+                                  color: Colors.amber,
+                                ),
+                              ),
+                              Space(
+                                width: 35.w,
+                                height: 0.h,
+                              ),
+                              Text(
+                                'Change Password',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.sp,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                            ],
                           ),
-                          Space(
-                            width: 35.w,
-                            height: 0.h,
-                          ),
-                          Text(
-                            'Delete account',
-                            style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 18.sp,
-                              color: Colors.black45,
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                Space(
-                  width: 0.w,
-                  height: 20.h,
-                ),
-                Card(
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15).r),
-                  elevation: 10,
-                  child: InkWell(
-                    onTap: () {
-                      MyDialog.showMessage(
-                        context,
-                        'Are you sure logOut?',
-                        posActionTitle: 'Yes',
-                        posAction: () {
-                          {
-                            MyDialog.showLoadingDialog(context, 'Loading');
-                            logOut(context);
-                            MyDialog.showLoadingDialog(context, 'Loading');
-                            MyDialog.hideDialog(context);
-                          }
-                          MyDialog.hideDialog(context);
+                    Space(
+                      width: 0.w,
+                      height: 20.h,
+                    ),
+                    Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15).r),
+                      elevation: 10,
+                      child: InkWell(
+                        onTap: () {
+                          MyDialog.showMessage(
+                            context,
+                            'Are you sure Delete account?',
+                            posActionTitle: 'Yes',
+                            posAction: () {
+                              {
+                                MyDialog.showLoadingDialog(context, 'Loading');
+                                cubit.deleteAccount(context);
+                                MyDialog.showLoadingDialog(context, 'Loading');
+                                MyDialog.hideDialog(context);
+                              }
+                              MyDialog.hideDialog(context);
+                            },
+                            negActionTitle: 'Cancel',
+                          );
                         },
-                        negActionTitle: 'Cancel',
-                      );
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(10).r,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          CircleAvatar(
-                            radius: 22.r,
-                            backgroundColor:
-                                const Color.fromRGBO(247, 21, 21, 0.1),
-                            child: Icon(
-                              Icons.logout,
-                              size: 26.sp,
-                              color: Colors.red,
-                            ),
+                        child: Container(
+                          padding: const EdgeInsets.all(10).r,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              CircleAvatar(
+                                radius: 22.r,
+                                backgroundColor:
+                                    const Color.fromRGBO(0, 0, 0, 0.1),
+                                child: Icon(
+                                  Icons.delete_forever,
+                                  size: 26.sp,
+                                  color: ThemeApp.blackPrimary,
+                                ),
+                              ),
+                              Space(
+                                width: 35.w,
+                                height: 0.h,
+                              ),
+                              Text(
+                                'Delete account',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.sp,
+                                  color: Colors.black45,
+                                ),
+                              ),
+                            ],
                           ),
-                          Space(
-                            width: 35.w,
-                            height: 0.h,
-                          ),
-                          Text(
-                            'Log out',
-                            style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18.sp,
-                              color: Colors.red,
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
-                  ),
+                    Space(
+                      width: 0.w,
+                      height: 20.h,
+                    ),
+                    Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15).r),
+                      elevation: 10,
+                      child: InkWell(
+                        onTap: () {
+                          MyDialog.showMessage(
+                            context,
+                            'Are you sure logOut?',
+                            posActionTitle: 'Yes',
+                            posAction: () {
+                              {
+                                MyDialog.showLoadingDialog(context, 'Loading');
+                                logOut(context);
+                                MyDialog.showLoadingDialog(context, 'Loading');
+                                MyDialog.hideDialog(context);
+                              }
+                              MyDialog.hideDialog(context);
+                            },
+                            negActionTitle: 'Cancel',
+                          );
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(10).r,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              CircleAvatar(
+                                radius: 22.r,
+                                backgroundColor:
+                                    const Color.fromRGBO(247, 21, 21, 0.1),
+                                child: Icon(
+                                  Icons.logout,
+                                  size: 26.sp,
+                                  color: Colors.red,
+                                ),
+                              ),
+                              Space(
+                                width: 35.w,
+                                height: 0.h,
+                              ),
+                              Text(
+                                'Log out',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18.sp,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Space(
+                      width: 0.w,
+                      height: 20.h,
+                    ),
+                    Text(
+                      'Created by TEAM ①',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 18.sp,
+                        color: Colors.black45,
+                      ),
+                    ),
+                    Space(
+                      width: 0.w,
+                      height: 10.h,
+                    ),
+                  ],
                 ),
-                Space(
-                  width: 0.w,
-                  height: 20.h,
-                ),
-                Text(
-                  'Created by TEAM ①',
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 18.sp,
-                    color: Colors.black45,
-                  ),
-                ),
-                Space(
-                  width: 0.w,
-                  height: 10.h,
-                ),
-              ],
+              ),
             ),
-          ),
+            Positioned(
+              top: 10.sp,
+              left: 10.sp,
+              child: Card(
+                elevation: 2,
+                color: Colors.black.withOpacity(0.5),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                shape: const StadiumBorder(
+                  side: BorderSide(
+                    color: ThemeApp.secondaryColor,
+                  ),
+                ),
+                child: IconButton(
+                  onPressed: () {
+                    if (Navigator.canPop(context)) {
+                      pop(context);
+                      cubit.currentIndex = 0;
+                    }
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: ThemeApp.secondaryColor,
+                  ),
+                ),
+              ),
+            ),
+          ],
         );
       },
     );

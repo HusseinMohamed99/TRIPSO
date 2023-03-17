@@ -1,12 +1,19 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/model/place_model.dart';
+import 'package:tripso/shared/adaptive/indicator.dart';
+import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
+import 'package:tripso/shared/widget/grid_item.dart';
 
 class WishListScreen extends StatelessWidget {
   const WishListScreen({Key? key}) : super(key: key);
@@ -15,162 +22,264 @@ class WishListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var tripsoCubit = TripsoCubit.get(context).cityModel;
+    var cubit = TripsoCubit.get(context);
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        if (uId != 'ljOzmH9KNgYMkczD3XBJCRFWUM22') {
+          return Stack(
             children: [
-              Container(
-                width: 200.w,
-                height: 220.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18).r,
-                  image: const DecorationImage(
-                    image: AssetImage(AssetPath.emptyImage),
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 200.w,
+                      height: 220.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(18).r,
+                        image: const DecorationImage(
+                          image: AssetImage(AssetPath.emptyImage),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30.h,
+                    ),
+                    Text(
+                      'Your ${tripsoCubit!.name} is Empty',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                top: 10.sp,
+                left: 10.sp,
+                child: Card(
+                  elevation: 2,
+                  color: Colors.black.withOpacity(0.5),
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  shape: const StadiumBorder(
+                    side: BorderSide(
+                      color: ThemeApp.secondaryColor,
+                    ),
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      if (Navigator.canPop(context)) {
+                        pop(context);
+                      }
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: ThemeApp.secondaryColor,
+                    ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 30.h,
-              ),
-              Text(
-                'Your ${tripsoCubit!.name} is Empty',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 17.sp,
-                  fontWeight: FontWeight.w500,
+            ],
+          );
+        }
+        return Stack(
+          children: [
+            ListView.separated(
+              itemBuilder: (context, index) {
+                return wishList(context, cubit.place[index]);
+              },
+              separatorBuilder: (context, index) {
+                return Space(
+                  height: 10.h,
+                  width: 0,
+                );
+              },
+              itemCount: cubit.place.length,
+            ),
+            Positioned(
+              top: 10.sp,
+              left: 10.sp,
+              child: Card(
+                elevation: 2,
+                color: Colors.black.withOpacity(0.5),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                shape: const StadiumBorder(
+                  side: BorderSide(
+                    color: ThemeApp.secondaryColor,
+                  ),
+                ),
+                child: IconButton(
+                  onPressed: () {
+                    if (Navigator.canPop(context)) {
+                      pop(context);
+                      cubit.currentIndex = 0;
+                    }
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: ThemeApp.secondaryColor,
+                  ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         );
       },
     );
   }
 
-  Widget wishList() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-      child: ListView.separated(
-        separatorBuilder: (context, index) {
-          return const Space(
-            height: 30,
-            width: 0,
-          );
-        },
-        itemCount: 8,
-        itemBuilder: (context, index) {
-          return Column(
-            children: [
-              Card(
-                clipBehavior: Clip.antiAlias,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                elevation: 8,
-                child: SizedBox(
-                  width: 400,
-                  height: 170,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: const Image(
-                          width: 150,
-                          height: 170,
-                          image: NetworkImage(
-                              'https://cdn.britannica.com/06/122506-050-C8E03A8A/Pyramid-of-Khafre-Giza-Egypt.jpg'),
-                          fit: BoxFit.cover,
+  Widget wishList(context, PlaceModel placeModel) {
+    return Column(
+      children: [
+        Card(
+          margin: const EdgeInsets.all(8).r,
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10).r,
+          ),
+          elevation: 8,
+          child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10).r,
+                border: Border.all(
+                  color: ThemeApp.blackPrimary,
+                )),
+            width: double.infinity,
+            height: 150.h,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(9),
+                    topLeft: Radius.circular(9),
+                  ).r,
+                  child: SizedBox(
+                    width: 150.w,
+                    height: 150.h,
+                    child: CachedNetworkImage(
+                      imageUrl: placeModel.image,
+                      fit: BoxFit.cover,
+                      height: 400.h,
+                      width: double.infinity,
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) => Center(
+                        child: AdaptiveIndicator(
+                          os: getOs(),
                         ),
                       ),
-                      const Space(
-                        height: 0,
-                        width: 10,
+                      errorWidget: (context, url, error) => Icon(
+                        FontAwesomeIcons.info,
+                        size: 24.sp,
                       ),
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0).r,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
                           children: [
-                            Align(
-                              alignment: AlignmentDirectional.topEnd,
-                              child: IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    Icons.favorite,
-                                    color: ThemeApp.primaryColor,
-                                  )),
-                            ),
-                            Text(
-                              'The Great Pyramids',
-                              style: GoogleFonts.roboto(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
+                            Expanded(
+                              flex: 8,
+                              child: Text(
+                                placeModel.name,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: GoogleFonts.roboto(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 19.sp,
+                                ),
                               ),
                             ),
-                            const Space(
-                              width: 0,
-                              height: 5,
-                            ),
-                            Row(
-                              children: const [
-                                Icon(
-                                  Icons.star,
-                                  size: 18,
+                            Expanded(
+                              child: IconButton(
+                                splashRadius: 20.r,
+                                padding: const EdgeInsets.only(right: 30).r,
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.favorite,
                                   color: ThemeApp.primaryColor,
+                                  size: 24.sp,
                                 ),
-                                Icon(
-                                  Icons.star,
-                                  size: 18,
-                                  color: ThemeApp.primaryColor,
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  size: 18,
-                                  color: ThemeApp.primaryColor,
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  size: 18,
-                                  color: ThemeApp.primaryColor,
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  size: 18,
-                                  color: ThemeApp.primaryColor,
-                                ),
-                              ],
-                            ),
-                            const Space(
-                              width: 0,
-                              height: 5,
-                            ),
-                            Text(
-                              'one of the seven wonders of the world, enter a 4,575 year old pyramid',
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.roboto(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12,
-                                color: Colors.black87,
                               ),
                             ),
                           ],
                         ),
-                      ),
-                    ],
+                        if (placeModel.popular == '5')
+                          Row(
+                            children: icon5Star(color: ThemeApp.primaryColor),
+                          ),
+                        if (placeModel.popular == '4.5')
+                          Row(
+                            children:
+                                icon4halfStar(color: ThemeApp.primaryColor),
+                          ),
+                        if (placeModel.popular == '4')
+                          Row(
+                            children: icon4Star(color: ThemeApp.primaryColor),
+                          ),
+                        if (placeModel.popular == '3.5')
+                          Row(
+                            children:
+                                icon3halfStar(color: ThemeApp.primaryColor),
+                          ),
+                        if (placeModel.popular == '3')
+                          Row(
+                            children: icon3Star(color: ThemeApp.primaryColor),
+                          ),
+                        if (placeModel.popular == '2.5')
+                          Row(
+                            children:
+                                icon2halfStar(color: ThemeApp.primaryColor),
+                          ),
+                        if (placeModel.popular == '2')
+                          Row(
+                            children: icon2Star(color: ThemeApp.primaryColor),
+                          ),
+                        if (placeModel.popular == '1.5')
+                          Row(
+                            children:
+                                icon1halfStar(color: ThemeApp.primaryColor),
+                          ),
+                        if (placeModel.popular == '1')
+                          Row(
+                            children: iconStar(color: ThemeApp.primaryColor),
+                          ),
+                        Space(
+                          width: 0,
+                          height: 5.h,
+                        ),
+                        Text(
+                          placeModel.history,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.normal,
+                            fontSize: 13.sp,
+                            color: Colors.black87,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
-          );
-        },
-      ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

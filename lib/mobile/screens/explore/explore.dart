@@ -76,6 +76,7 @@ class CityDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cubit = TripsoCubit.get(context);
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -97,10 +98,10 @@ class CityDetails extends StatelessWidget {
                 width: double.infinity,
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
                     Center(
-                  child: AdaptiveIndicator(
-                    os: getOs(),
-                  ),
-                ),
+                      child: AdaptiveIndicator(
+                        os: getOs(),
+                      ),
+                    ),
                 errorWidget: (context, url, error) => Icon(
                   FontAwesomeIcons.info,
                   size: 24.sp,
@@ -133,6 +134,7 @@ class CityDetails extends StatelessWidget {
               onPressed: () {
                 if (Navigator.canPop(context)) {
                   pop(context);
+                  cubit.currentIndex = 0;
                 }
               },
               icon: const Icon(
@@ -181,8 +183,8 @@ class CityDetails extends StatelessWidget {
             Text(
               screenArgs.cityModel.name,
               style: Theme.of(context).textTheme.headline1?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
             Text(
               weatherData.weatherStateName,
@@ -196,14 +198,14 @@ class CityDetails extends StatelessWidget {
             Text(
               '${weatherData.temp.toInt().toString()}°C',
               style: Theme.of(context).textTheme.headline1?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
             Text(
               '${weatherData.minTemp.toInt().toString()}°C / ${weatherData.maxTemp.toInt().toString()}°C',
               style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
           ],
         ),
