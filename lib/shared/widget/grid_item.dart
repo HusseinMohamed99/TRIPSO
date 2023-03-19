@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tripso/mobile/screens/sights/sight_details_screen.dart';
+import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
@@ -282,175 +283,369 @@ List<Icon> iconStar({Color? color}) {
   ];
 }
 
-class GridItemSights extends StatelessWidget {
-  const GridItemSights({
-    Key? key,
-    required this.placeModel,
-  }) : super(key: key);
+// class GridItemSights extends StatelessWidget {
+//   const GridItemSights(
+//     this.index,
+//     this.cityModel, {
+//     Key? key,
+//     required this.placeModel,
+//   }) : super(key: key);
+//
+//   final PlaceModel placeModel;
+//   final CityModel cityModel;
+//   final int index;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return InkWell(
+//       borderRadius: BorderRadius.circular(20).r,
+//       onTap: () {
+//         navigateTo(
+//           context,
+//           routeName: SightDetailsScreen.routeName,
+//           arguments: PlaceModel(
+//             history: placeModel.history,
+//             image: placeModel.image,
+//             name: placeModel.name,
+//             timeOfDay: placeModel.timeOfDay,
+//             tickets: placeModel.tickets,
+//             location: placeModel.location,
+//             pId: placeModel.pId,
+//             isPopular: placeModel.isPopular,
+//             address: placeModel.address,
+//             popular: placeModel.popular,
+//           ),
+//         );
+//       },
+//       child: Stack(
+//         clipBehavior: Clip.antiAliasWithSaveLayer,
+//         children: [
+//           Card(
+//             elevation: 2,
+//             color: ThemeApp.secondaryColor,
+//             shape: RoundedRectangleBorder(
+//               borderRadius: BorderRadius.circular(12).r,
+//             ),
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Stack(
+//                   alignment: Alignment.bottomLeft,
+//                   clipBehavior: Clip.antiAliasWithSaveLayer,
+//                   children: [
+//                     ClipRRect(
+//                       borderRadius: BorderRadius.circular(12).r,
+//                       child: CachedNetworkImage(
+//                         imageUrl: placeModel.image,
+//                         fit: BoxFit.cover,
+//                         height: 400.h,
+//                         width: double.infinity,
+//                         progressIndicatorBuilder:
+//                             (context, url, downloadProgress) => Center(
+//                           child: AdaptiveIndicator(
+//                             os: getOs(),
+//                           ),
+//                         ),
+//                         errorWidget: (context, url, error) => Icon(
+//                           FontAwesomeIcons.info,
+//                           size: 24.sp,
+//                         ),
+//                       ),
+//                     ),
+//                     LayerImage(
+//                       height: 400.h,
+//                       width: double.infinity,
+//                       borderRadius: BorderRadius.circular(12).r,
+//                     ),
+//                     Padding(
+//                       padding: const EdgeInsets.all(10.0).r,
+//                       child: Column(
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: [
+//                           Text(
+//                             placeModel.name.trim(),
+//                             maxLines: 2,
+//                             overflow: TextOverflow.ellipsis,
+//                             style:
+//                             Theme.of(context).textTheme.headline3?.copyWith(
+//                               color: ThemeApp.secondaryColor,
+//                             ),
+//                           ),
+//                           if (placeModel.popular == '5')
+//                             Row(
+//                               children: icon5Star(),
+//                             ),
+//                           if (placeModel.popular == '4.5')
+//                             Row(
+//                               children: icon4halfStar(),
+//                             ),
+//                           if (placeModel.popular == '4')
+//                             Row(
+//                               children: icon4Star(),
+//                             ),
+//                           if (placeModel.popular == '3.5')
+//                             Row(
+//                               children: icon3halfStar(),
+//                             ),
+//                           if (placeModel.popular == '3')
+//                             Row(
+//                               children: icon3Star(),
+//                             ),
+//                           if (placeModel.popular == '2.5')
+//                             Row(
+//                               children: icon2halfStar(),
+//                             ),
+//                           if (placeModel.popular == '2')
+//                             Row(
+//                               children: icon2Star(),
+//                             ),
+//                           if (placeModel.popular == '1.5')
+//                             Row(
+//                               children: icon1halfStar(),
+//                             ),
+//                           if (placeModel.popular == '1')
+//                             Row(
+//                               children: iconStar(),
+//                             ),
+//                           Row(
+//                             children: [
+//                               Icon(
+//                                 FontAwesomeIcons.locationDot,
+//                                 color: ThemeApp.primaryColor,
+//                                 size: 25.sp,
+//                               ),
+//                               Space(height: 0.h, width: 10.w),
+//                               Text(
+//                                 TripsoCubit.get(context).cityModel!.country,
+//                                 maxLines: 4,
+//                                 overflow: TextOverflow.ellipsis,
+//                                 style: Theme.of(context)
+//                                     .textTheme
+//                                     .headline5
+//                                     ?.copyWith(
+//                                   color: ThemeApp.secondaryColor,
+//                                 ),
+//                               ),
+//                             ],
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ),
+//           Positioned(
+//             top: 15.h,
+//             right: 20.w,
+//             child: CircleAvatar(
+//               radius: 20.r,
+//               backgroundColor: const Color.fromRGBO(0, 0, 0, 0.6),
+//               child: IconButton(
+//                 onPressed: () {
+//                   if (TripsoCubit.get(context).likedByMe[index] == true) {
+//                     TripsoCubit.get(context).unWishList(
+//                         TripsoCubit.get(context).pId[index], cityModel.cId);
+//                     TripsoCubit.get(context).likedByMe[index] = false;
+//                     // TripsoCubit.get(context).likes[index]--;
+//                   } else {
+//                     TripsoCubit.get(context).wishList(
+//                         TripsoCubit.get(context).pId[index], cityModel.cId);
+//                     TripsoCubit.get(context).likedByMe[index] = true;
+//                     // TripsoCubit.get(context).likes[index]++;
+//                   }
+//                   print(placeModel.pId);
+//                 },
+//                 icon: Icon(
+//                   FontAwesomeIcons.solidHeart,
+//                   size: 24.sp,
+//                   color: TripsoCubit.get(context).likedByMe[index] == true
+//                       ? Colors.red
+//                       : ThemeApp.secondaryColor,
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
-  final PlaceModel placeModel;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(20).r,
-      onTap: () {
-        navigateTo(
-          context,
-          routeName: SightDetailsScreen.routeName,
-          arguments: PlaceModel(
-            history: placeModel.history,
-            image: placeModel.image,
-            name: placeModel.name,
-            timeOfDay: placeModel.timeOfDay,
-            tickets: placeModel.tickets,
-            location: placeModel.location,
-            pId: placeModel.pId,
-            isPopular: placeModel.isPopular,
-            address: placeModel.address,
-            popular: placeModel.popular,
+Widget gridItemSights(
+    context, PlaceModel placeModel, index, CityModel cityModel) {
+  return InkWell(
+    borderRadius: BorderRadius.circular(20).r,
+    onTap: () {
+      navigateTo(
+        context,
+        routeName: SightDetailsScreen.routeName,
+        arguments: PlaceModel(
+          history: placeModel.history,
+          image: placeModel.image,
+          name: placeModel.name,
+          timeOfDay: placeModel.timeOfDay,
+          tickets: placeModel.tickets,
+          location: placeModel.location,
+          pId: placeModel.pId,
+          isPopular: placeModel.isPopular,
+          address: placeModel.address,
+          popular: placeModel.popular,
+        ),
+      );
+    },
+    child: Stack(
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      children: [
+        Card(
+          elevation: 2,
+          color: ThemeApp.secondaryColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12).r,
           ),
-        );
-      },
-      child: Stack(
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        children: [
-          Card(
-            elevation: 2,
-            color: ThemeApp.secondaryColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12).r,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Stack(
-                  alignment: Alignment.bottomLeft,
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(12).r,
-                      child: CachedNetworkImage(
-                        imageUrl: placeModel.image,
-                        fit: BoxFit.cover,
-                        height: 400.h,
-                        width: double.infinity,
-                        progressIndicatorBuilder:
-                            (context, url, downloadProgress) => Center(
-                          child: AdaptiveIndicator(
-                            os: getOs(),
-                          ),
-                        ),
-                        errorWidget: (context, url, error) => Icon(
-                          FontAwesomeIcons.info,
-                          size: 24.sp,
-                        ),
-                      ),
-                    ),
-                    LayerImage(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                alignment: Alignment.bottomLeft,
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(12).r,
+                    child: CachedNetworkImage(
+                      imageUrl: placeModel.image,
+                      fit: BoxFit.cover,
                       height: 400.h,
                       width: double.infinity,
-                      borderRadius: BorderRadius.circular(12).r,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0).r,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            placeModel.name.trim(),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style:
-                                Theme.of(context).textTheme.headline3?.copyWith(
-                                      color: ThemeApp.secondaryColor,
-                                    ),
-                          ),
-                          if (placeModel.popular == '5')
-                            Row(
-                              children: icon5Star(),
-                            ),
-                          if (placeModel.popular == '4.5')
-                            Row(
-                              children: icon4halfStar(),
-                            ),
-                          if (placeModel.popular == '4')
-                            Row(
-                              children: icon4Star(),
-                            ),
-                          if (placeModel.popular == '3.5')
-                            Row(
-                              children: icon3halfStar(),
-                            ),
-                          if (placeModel.popular == '3')
-                            Row(
-                              children: icon3Star(),
-                            ),
-                          if (placeModel.popular == '2.5')
-                            Row(
-                              children: icon2halfStar(),
-                            ),
-                          if (placeModel.popular == '2')
-                            Row(
-                              children: icon2Star(),
-                            ),
-                          if (placeModel.popular == '1.5')
-                            Row(
-                              children: icon1halfStar(),
-                            ),
-                          if (placeModel.popular == '1')
-                            Row(
-                              children: iconStar(),
-                            ),
-                          Row(
-                            children: [
-                              Icon(
-                                FontAwesomeIcons.locationDot,
-                                color: ThemeApp.primaryColor,
-                                size: 25.sp,
-                              ),
-                              Space(height: 0.h, width: 10.w),
-                              Text(
-                                TripsoCubit.get(context).cityModel!.country,
-                                maxLines: 4,
-                                overflow: TextOverflow.ellipsis,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline5
-                                    ?.copyWith(
-                                  color: ThemeApp.secondaryColor,
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ],
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) => Center(
+                        child: AdaptiveIndicator(
+                          os: getOs(),
+                        ),
+                      ),
+                      errorWidget: (context, url, error) => Icon(
+                        FontAwesomeIcons.info,
+                        size: 24.sp,
                       ),
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  LayerImage(
+                    height: 400.h,
+                    width: double.infinity,
+                    borderRadius: BorderRadius.circular(12).r,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0).r,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          placeModel.name.trim(),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style:
+                              Theme.of(context).textTheme.headline3?.copyWith(
+                                    color: ThemeApp.secondaryColor,
+                                  ),
+                        ),
+                        if (placeModel.popular == '5')
+                          Row(
+                            children: icon5Star(),
+                          ),
+                        if (placeModel.popular == '4.5')
+                          Row(
+                            children: icon4halfStar(),
+                          ),
+                        if (placeModel.popular == '4')
+                          Row(
+                            children: icon4Star(),
+                          ),
+                        if (placeModel.popular == '3.5')
+                          Row(
+                            children: icon3halfStar(),
+                          ),
+                        if (placeModel.popular == '3')
+                          Row(
+                            children: icon3Star(),
+                          ),
+                        if (placeModel.popular == '2.5')
+                          Row(
+                            children: icon2halfStar(),
+                          ),
+                        if (placeModel.popular == '2')
+                          Row(
+                            children: icon2Star(),
+                          ),
+                        if (placeModel.popular == '1.5')
+                          Row(
+                            children: icon1halfStar(),
+                          ),
+                        if (placeModel.popular == '1')
+                          Row(
+                            children: iconStar(),
+                          ),
+                        Row(
+                          children: [
+                            Icon(
+                              FontAwesomeIcons.locationDot,
+                              color: ThemeApp.primaryColor,
+                              size: 25.sp,
+                            ),
+                            Space(height: 0.h, width: 10.w),
+                            Text(
+                              TripsoCubit.get(context).cityModel!.country,
+                              maxLines: 4,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  ?.copyWith(
+                                    color: ThemeApp.secondaryColor,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
-          Positioned(
-            top: 15.h,
-            right: 20.w,
-            child: CircleAvatar(
-              radius: 20.r,
-              backgroundColor: const Color.fromRGBO(0, 0, 0, 0.6),
-              child: IconButton(
-                onPressed: () {
-                  //TripsoCubit.get(context).isDone(placeModel);
-                },
-                icon: Icon(
-                  FontAwesomeIcons.solidHeart,
-                  size: 24.sp,
-                  color: ThemeApp.secondaryColor,
-                ),
+        ),
+        Positioned(
+          top: 15.h,
+          right: 20.w,
+          child: CircleAvatar(
+            radius: 20.r,
+            backgroundColor: const Color.fromRGBO(0, 0, 0, 0.6),
+            child: IconButton(
+              onPressed: () {
+                if (TripsoCubit.get(context).likedByMe[index] == true) {
+                  TripsoCubit.get(context).unWishList(
+                      TripsoCubit.get(context).pId[index], cityModel.cId);
+                  TripsoCubit.get(context).likedByMe[index] = false;
+                  //TripsoCubit.get(context).likes[index]--;
+                } else {
+                  TripsoCubit.get(context).wishList(
+                      TripsoCubit.get(context).pId[index], cityModel.cId);
+                  TripsoCubit.get(context).likedByMe[index] = true;
+                  //TripsoCubit.get(context).likes[index]++;
+                }
+                print(placeModel.pId);
+              },
+              icon: Icon(
+                FontAwesomeIcons.solidHeart,
+                size: 24.sp,
+                color: TripsoCubit.get(context).likedByMe[index] == true
+                    ? Colors.red
+                    : ThemeApp.secondaryColor,
               ),
             ),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }

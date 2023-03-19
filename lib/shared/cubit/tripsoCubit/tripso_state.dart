@@ -111,3 +111,30 @@ class UpdateUserLoadingState extends TripsoStates {}
 class UpdateUserErrorState extends TripsoStates {}
 
 ///END : UpdateUserData
+class AddtoFavoriteLoadingState extends TripsoStates {}
+
+class AddtoFavoriteSuccessState extends TripsoStates {}
+
+class GetLikedUsersSuccessState extends TripsoStates {}
+
+class AddtoFavoriteErrorState extends TripsoStates {
+  final String error;
+
+  AddtoFavoriteErrorState(this.error);
+}
+
+class disFavoriteSuccessState extends TripsoStates {}
+
+class disFavoriteErrorState extends TripsoStates {
+  final String error;
+
+  disFavoriteErrorState(this.error);
+}
+
+class GetPlacesSuccessState extends TripsoStates {}
+
+class GetPlacesErrorState extends TripsoStates {
+  final String error;
+
+  GetPlacesErrorState(this.error);
+}

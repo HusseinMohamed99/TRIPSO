@@ -13,6 +13,7 @@ import 'package:tripso/mobile/screens/sights/sights_screen.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/weather_model.dart';
+import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
@@ -401,7 +402,12 @@ class PopularSightsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var cubit = TripsoCubit.get(context);
     return BlocConsumer<TripsoCubit, TripsoStates>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is AddtoFavoriteSuccessState) {
+          MyDialog.showLoadingDialog(context, 'FavoriteSuccess');
+          MyDialog.hideDialog(context);
+        }
+      },
       builder: (context, state) {
         return Column(
           children: [
@@ -442,54 +448,69 @@ class PopularSightsWidget extends StatelessWidget {
                 ),
               ),
             ),
-            if (cubit.popularPlace.length == 2)
-              CarouselSlider(
-                items: List.generate(
-                  2,
-                  (index) =>
-                      GridItemSights(placeModel: cubit.popularPlace[index]),
-                ),
-                options: CarouselOptions(
-                  height: 408.h,
-                  enlargeCenterPage: true,
-                  disableCenter: true,
-                  viewportFraction: .8,
-                  autoPlay: true,
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                ),
+            // if (cubit.popularPlace.length == 2)
+            //   CarouselSlider(
+            //     items: List.generate(
+            //       2,
+            //       (index) =>
+            //       GridItemSights(index, cityModel, placeModel: cubit.popularPlace[index]),
+            //     ),
+            //     options: CarouselOptions(
+            //       height: 408.h,
+            //       enlargeCenterPage: true,
+            //       disableCenter: true,
+            //       viewportFraction: .8,
+            //       autoPlay: true,
+            //       autoPlayCurve: Curves.fastOutSlowIn,
+            //     ),
+            //   ),
+            // if (cubit.popularPlace.length >= 4)
+            //   CarouselSlider(
+            //     items: List.generate(
+            //       4,
+            //       (index) =>
+            //            GridItemSights(index, cityModel, placeModel: cubit.popularPlace[index]),
+            //     ),
+            //     options: CarouselOptions(
+            //       height: 408.h,
+            //       enlargeCenterPage: true,
+            //       disableCenter: true,
+            //       viewportFraction: .8,
+            //       autoPlay: true,
+            //       autoPlayCurve: Curves.fastOutSlowIn,
+            //     ),
+            //   ),
+            // if (cubit.popularPlace.length == 1)
+            //   CarouselSlider(
+            //     items: List.generate(
+            //       1,
+            //       (index) =>
+            //          GridItemSights(index, cityModel, placeModel: cubit.popularPlace[index]),
+            //     ),
+            //     options: CarouselOptions(
+            //       height: 408.h,
+            //       enlargeCenterPage: true,
+            //       disableCenter: true,
+            //       viewportFraction: .8,
+            //       autoPlay: true,
+            //       autoPlayCurve: Curves.fastOutSlowIn,
+            //     ),
+            //   ),
+            CarouselSlider(
+              items: List.generate(
+                cubit.popularPlace.length,
+                (index) => gridItemSights(
+                    context, cubit.popularPlace[index], index, cityModel),
               ),
-            if (cubit.popularPlace.length >= 4)
-              CarouselSlider(
-                items: List.generate(
-                  4,
-                  (index) =>
-                      GridItemSights(placeModel: cubit.popularPlace[index]),
-                ),
-                options: CarouselOptions(
-                  height: 408.h,
-                  enlargeCenterPage: true,
-                  disableCenter: true,
-                  viewportFraction: .8,
-                  autoPlay: true,
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                ),
+              options: CarouselOptions(
+                height: 408.h,
+                enlargeCenterPage: true,
+                disableCenter: true,
+                viewportFraction: .8,
+                autoPlay: true,
+                autoPlayCurve: Curves.fastOutSlowIn,
               ),
-            if (cubit.popularPlace.length == 1)
-              CarouselSlider(
-                items: List.generate(
-                  1,
-                  (index) =>
-                      GridItemSights(placeModel: cubit.popularPlace[index]),
-                ),
-                options: CarouselOptions(
-                  height: 408.h,
-                  enlargeCenterPage: true,
-                  disableCenter: true,
-                  viewportFraction: .8,
-                  autoPlay: true,
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                ),
-              ),
+            ),
           ],
         );
       },
