@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/navigator.dart';
@@ -99,7 +100,7 @@ class WishListScreen extends StatelessWidget {
           children: [
             ListView.separated(
               itemBuilder: (context, index) {
-                return wishList(context, cubit.wishList[index]);
+                return wishList(context, cubit.wishList[index], tripsoCubit!);
               },
               separatorBuilder: (context, index) {
                 return Space(
@@ -141,7 +142,7 @@ class WishListScreen extends StatelessWidget {
     );
   }
 
-  Widget wishList(context, PlaceModel placeModel) {
+  Widget wishList(context, PlaceModel placeModel, CityModel cityModel) {
     return Column(
       children: [
         Card(
@@ -219,7 +220,8 @@ class WishListScreen extends StatelessWidget {
                                 onPressed: () {
                                   TripsoCubit.get(context)
                                       .deleteWishList(placeModel.pId);
-                                  TripsoCubit.get(context).getWishListData();
+                                  TripsoCubit.get(context)
+                                      .getWishListData(cityModel.cId);
                                 },
                                 icon: Icon(
                                   Icons.delete,

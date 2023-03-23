@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tripso/mobile/screens/sights/sight_details_screen.dart';
+import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
@@ -304,18 +305,7 @@ class GridItemSights extends StatelessWidget {
         navigateTo(
           context,
           routeName: SightDetailsScreen.routeName,
-          arguments: PlaceModel(
-            history: placeModel.history,
-            image: placeModel.image,
-            name: placeModel.name,
-            timeOfDay: placeModel.timeOfDay,
-            tickets: placeModel.tickets,
-            location: placeModel.location,
-            pId: placeModel.pId,
-            isPopular: placeModel.isPopular,
-            address: placeModel.address,
-            popular: placeModel.popular,
-          ),
+          arguments: ScreenArgs(placeModel: placeModel, cityModel: cityModel),
         );
       },
       child: Stack(

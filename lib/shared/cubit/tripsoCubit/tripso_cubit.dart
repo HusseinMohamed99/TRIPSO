@@ -53,7 +53,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     if (index == 1) {
       getDataPlaces(cityModel!.cId);
       getDataForCity(cityModel!.cId);
-      getWishListData();
+      getWishListData(cityModel!.cId);
     }
     if (index == 2) {}
     if (index == 3) getUserData();
@@ -533,6 +533,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   Map<dynamic, dynamic> favorites = {};
 
   addWishListData({
+    required String cityId,
     required String wishListId,
     required String wishListName,
     required String wishListHistory,
@@ -545,11 +546,12 @@ class TripsoCubit extends Cubit<TripsoStates> {
     required bool wishListIsPopular,
   }) {
     FirebaseFirestore.instance
-        .collection("WishList")
+        .collection("wishList")
         .doc(uId)
         .collection("YourWishList")
         .doc(wishListId)
         .set({
+      "cityId": cityId,
       "wishListId": wishListId,
       "wishListName": wishListName,
       "wishListImage": wishListImage,
@@ -571,12 +573,13 @@ class TripsoCubit extends Cubit<TripsoStates> {
 ///// Get WishList Data ///////
   List<PlaceModel> wishList = [];
 
-  getWishListData() async {
+  getWishListData(String? cId) async {
     List<PlaceModel> newList = [];
     QuerySnapshot value = await FirebaseFirestore.instance
-        .collection("WishList")
+        .collection("wishList")
         .doc(uId)
         .collection("YourWishList")
+        .where('cityId', isEqualTo: cId)
         .get();
     value.docs.forEach(
       (element) {
@@ -605,7 +608,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
 ////////// Delete WishList /////
   deleteWishList(wishListId) {
     FirebaseFirestore.instance
-        .collection("WishList")
+        .collection("wishList")
         .doc(uId)
         .collection("YourWishList")
         .doc(wishListId)

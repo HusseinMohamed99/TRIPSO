@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
@@ -24,8 +25,8 @@ class SightDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PlaceModel placeModel =
-        (ModalRoute.of(context)?.settings.arguments) as PlaceModel;
+    ScreenArgs screenArgs =
+        (ModalRoute.of(context)?.settings.arguments) as ScreenArgs;
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {
         if (state is AddToFavoriteSuccessState) {
@@ -56,7 +57,7 @@ class SightDetailsScreen extends StatelessWidget {
                               height: 300.h,
                               width: double.infinity,
                               child: CachedNetworkImage(
-                                imageUrl: placeModel.image,
+                                imageUrl: screenArgs.placeModel.image,
                                 fit: BoxFit.fill,
                                 height: 200.h,
                                 width: double.infinity,
@@ -118,16 +119,24 @@ class SightDetailsScreen extends StatelessWidget {
                             child: IconButton(
                               onPressed: () {
                                 TripsoCubit.get(context).addWishListData(
-                                  wishListId: placeModel.pId,
-                                  wishListName: placeModel.name,
-                                  wishListImage: placeModel.image,
-                                  wishListPopular: placeModel.popular,
-                                  wishListHistory: placeModel.history,
-                                  wishListLocation: placeModel.location,
-                                  wishListTimeOfDay: placeModel.timeOfDay!,
-                                  wishListTickets: placeModel.tickets,
-                                  wishListAddress: placeModel.address,
-                                  wishListIsPopular: placeModel.isPopular,
+                                  cityId: screenArgs.cityModel.cId,
+                                  wishListId: screenArgs.placeModel.pId,
+                                  wishListName: screenArgs.placeModel.name,
+                                  wishListImage: screenArgs.placeModel.image,
+                                  wishListPopular:
+                                      screenArgs.placeModel.popular,
+                                  wishListHistory:
+                                      screenArgs.placeModel.history,
+                                  wishListLocation:
+                                      screenArgs.placeModel.location,
+                                  wishListTimeOfDay:
+                                      screenArgs.placeModel.timeOfDay!,
+                                  wishListTickets:
+                                      screenArgs.placeModel.tickets,
+                                  wishListAddress:
+                                      screenArgs.placeModel.address,
+                                  wishListIsPopular:
+                                      screenArgs.placeModel.isPopular,
                                 );
                               },
                               icon: Icon(
@@ -141,7 +150,7 @@ class SightDetailsScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0).r,
                           child: Text(
-                            placeModel.name,
+                            screenArgs.placeModel.name,
                             style:
                                 Theme.of(context).textTheme.headline2?.copyWith(
                                       color: ThemeApp.secondaryColor,
@@ -188,7 +197,7 @@ class SightDetailsScreen extends StatelessWidget {
                                               ),
                                         ),
                                         Text(
-                                          placeModel.tickets,
+                                          screenArgs.placeModel.tickets,
                                           textAlign: TextAlign.center,
                                           style: Theme.of(context)
                                               .textTheme
@@ -204,7 +213,7 @@ class SightDetailsScreen extends StatelessWidget {
                                 Space(height: 0.h, width: 20.w),
                                 TextButton.icon(
                                   onPressed: () {
-                                    speak(placeModel.history);
+                                    speak(screenArgs.placeModel.history);
                                   },
                                   icon: CircleAvatar(
                                     backgroundColor: ThemeApp.primaryColor,
@@ -222,8 +231,8 @@ class SightDetailsScreen extends StatelessWidget {
                                 ),
                                 TextButton.icon(
                                   onPressed: () {
-                                    MapUtils.urlLauncher(
-                                        Uri.parse(placeModel.location));
+                                    MapUtils.urlLauncher(Uri.parse(
+                                        screenArgs.placeModel.location));
                                   },
                                   icon: CircleAvatar(
                                     backgroundColor: ThemeApp.primaryColor,
@@ -249,7 +258,7 @@ class SightDetailsScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  placeModel.history.trim(),
+                                  screenArgs.placeModel.history.trim(),
                                   maxLines: 5,
                                   overflow: TextOverflow.ellipsis,
                                   style: Theme.of(context)
@@ -291,7 +300,7 @@ class SightDetailsScreen extends StatelessWidget {
                                   Space(height: 0.h, width: 20.w),
                                   Expanded(
                                     child: Text(
-                                      placeModel.address.trim(),
+                                      screenArgs.placeModel.address.trim(),
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline6
@@ -331,7 +340,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay![0],
+                                        screenArgs.placeModel.timeOfDay![0],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -351,7 +360,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay![1],
+                                        screenArgs.placeModel.timeOfDay![1],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -371,7 +380,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay![2],
+                                        screenArgs.placeModel.timeOfDay![2],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -391,7 +400,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay![3],
+                                        screenArgs.placeModel.timeOfDay![3],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -411,7 +420,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay![4],
+                                        screenArgs.placeModel.timeOfDay![4],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -431,7 +440,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay![5],
+                                        screenArgs.placeModel.timeOfDay![5],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -451,7 +460,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay![6],
+                                        screenArgs.placeModel.timeOfDay![6],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
