@@ -287,111 +287,36 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  // ///END : Place Data
-  // List<PlaceModel> place = [];
-  // List<String> pId = [];
-  // getDataPlaces(String? cId)  {
-  //   FirebaseFirestore.instance
-  //       .collection('cities')
-  //       .doc(cId ?? 'Aswan')
-  //       .collection('places')
-  //       .snapshots()
-  //       .listen((value) async{
-  //     place = [];
-  //     for (var element in value.docs) {
-  //       place.add(PlaceModel.fromFireStore(element.data()));
-  //       var likes = await element.reference.collection('likes').get();
-  //       pId.add(element.id);
-  //       await FirebaseFirestore.instance.collection('posts').doc(element.id)
-  //           .update({
-  //         'likes' : likes.docs.length,
-  //         'postId' : element.id,
-  //       });
-  //       if (kDebugMode) {
-  //         print(element.data());
-  //       }
-  //       debugPrint('================================================');
-  //     }
-  //   });
-  //
-  // }
-
+  ///END : Place Data
   List<PlaceModel> place = [];
   List<String> pId = [];
-  List<int> likes = [];
-  List<bool> likedByMe = [];
-  int counter = 0;
 
-  void getDataPlaces(String? cId) {
+  getDataPlaces(String? cId) {
     FirebaseFirestore.instance
         .collection('cities')
         .doc(cId ?? 'Aswan')
         .collection('places')
         .snapshots()
-        .listen((value) {
+        .listen((value) async {
       place = [];
-      likes = [];
-      likedByMe = [];
-      pId = [];
-      counter = 0;
       for (var element in value.docs) {
         place.add(PlaceModel.fromFireStore(element.data()));
+        var likes = await element.reference.collection('likes').get();
         pId.add(element.id);
+        await FirebaseFirestore.instance
+            .collection('posts')
+            .doc(element.id)
+            .update({
+          'likes': likes.docs.length,
+          'postId': element.id,
+        });
         if (kDebugMode) {
           print(element.data());
         }
         debugPrint('================================================');
-        element.reference.collection('likes').get().then((value) {
-          likes.add(value.docs.length);
-          for (var element in value.docs) {
-            if (element.id == userModel!.uId) {
-              counter++;
-            }
-          }
-          if (counter > 0) {
-            likedByMe.add(true);
-          } else {
-            likedByMe.add(false);
-          }
-          counter = 0;
-        }).catchError((error) {
-          emit(GetPlacesErrorState(error.toString()));
-        });
-        emit(GetPlacesSuccessState());
       }
     });
   }
-
-  // void wishList(String pId, String cId) {
-  //   FirebaseFirestore.instance
-  //       .collection('cities')
-  //       .doc(cId)
-  //       .collection('places')
-  //       .doc(pId)
-  //       .collection('likes')
-  //       .doc(userModel!.uId)
-  //       .set({'like': true}).then((value) {
-  //     emit(AddtoFavoriteSuccessState());
-  //   }).catchError((error) {
-  //     emit(AddtoFavoriteErrorState(error.toString()));
-  //   });
-  // }
-  //
-  // void unWishList(String pId, String cId) {
-  //   FirebaseFirestore.instance
-  //       .collection('cities')
-  //       .doc(cId)
-  //       .collection('places')
-  //       .doc(pId)
-  //       .collection('likes')
-  //       .doc(userModel!.uId)
-  //       .delete()
-  //       .then((value) {
-  //     emit(disFavoriteSuccessState());
-  //   }).catchError((error) {
-  //     emit(disFavoriteErrorState(error.toString()));
-  //   });
-  // }
 
   ///END : popularPlace Data
   List<PlaceModel> popularPlace = [];
@@ -530,8 +455,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   }
 
   ///END : UpdateUserData
-  Map<dynamic, dynamic> favorites = {};
-
+  
   addWishListData({
     required String cityId,
     required String wishListId,

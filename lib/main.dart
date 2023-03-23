@@ -113,7 +113,7 @@ class MyApp extends StatelessWidget {
                   ExploreScreen.routeName: (_) => const ExploreScreen(),
                   MyPlansScreen.routeName: (_) => const MyPlansScreen(),
                   TopPlansScreen.routeName: (_) => const TopPlansScreen(),
-                  AllPlansScreen.routeName: (_) => AllPlansScreen(),
+                  AllPlansScreen.routeName: (_) => const AllPlansScreen(),
                   HistoricalCity.routeName: (_) => const HistoricalCity(),
                   SightsScreen.routeName: (_) => const SightsScreen(),
                   SightDetailsScreen.routeName: (_) =>
