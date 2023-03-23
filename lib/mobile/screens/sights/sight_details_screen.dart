@@ -6,13 +6,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
+import 'package:tripso/shared/components/maps_utils.dart';
 import 'package:tripso/shared/components/my_divider.dart';
 import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/speak.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+
 import 'package:tripso/shared/styles/theme.dart';
 
 class SightDetailsScreen extends StatelessWidget {
@@ -23,9 +26,15 @@ class SightDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     PlaceModel placeModel =
         (ModalRoute.of(context)?.settings.arguments) as PlaceModel;
-
     return BlocConsumer<TripsoCubit, TripsoStates>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is AddToFavoriteSuccessState) {
+          showToast(
+            text: 'Add To Favorite Successfully',
+            state: ToastStates.success,
+          );
+        }
+      },
       builder: (context, state) {
         return SafeArea(
           child: Scaffold(
@@ -44,16 +53,8 @@ class SightDetailsScreen extends StatelessWidget {
                         Stack(
                           children: [
                             SizedBox(
-                              height: 200.h,
+                              height: 300.h,
                               width: double.infinity,
-                              // decoration: BoxDecoration(
-                              //     //     image: DecorationImage(
-                              //     //   fit: BoxFit.fill,
-                              //     //   image: NetworkImage(
-                              //     //     placeModel.image,
-                              //     //   ),
-                              //     // ),
-                              //     ),
                               child: CachedNetworkImage(
                                 imageUrl: placeModel.image,
                                 fit: BoxFit.fill,
@@ -73,7 +74,7 @@ class SightDetailsScreen extends StatelessWidget {
                               ),
                             ),
                             LayerImage(
-                              height: 200.h,
+                              height: 300.h,
                               width: double.infinity,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: const Radius.circular(0).r,
@@ -81,8 +82,8 @@ class SightDetailsScreen extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                                top: 20.h,
-                                left: 10.w,
+                                top: 15.h,
+                                left: 20.w,
                                 child: Card(
                                   elevation: 2,
                                   color: ThemeApp.blackPrimary.withOpacity(0.5),
@@ -107,6 +108,35 @@ class SightDetailsScreen extends StatelessWidget {
                                   ),
                                 )),
                           ],
+                        ),
+                        Positioned(
+                          top: 15.h,
+                          right: 20.w,
+                          child: CircleAvatar(
+                            radius: 20.r,
+                            backgroundColor: const Color.fromRGBO(0, 0, 0, 0.6),
+                            child: IconButton(
+                              onPressed: () {
+                                TripsoCubit.get(context).addWishListData(
+                                  wishListId: placeModel.pId,
+                                  wishListName: placeModel.name,
+                                  wishListImage: placeModel.image,
+                                  wishListPopular: placeModel.popular,
+                                  wishListHistory: placeModel.history,
+                                  wishListLocation: placeModel.location,
+                                  wishListTimeOfDay: placeModel.timeOfDay!,
+                                  wishListTickets: placeModel.tickets,
+                                  wishListAddress: placeModel.address,
+                                  wishListIsPopular: placeModel.isPopular,
+                                );
+                              },
+                              icon: Icon(
+                                FontAwesomeIcons.solidHeart,
+                                size: 24.sp,
+                                color: ThemeApp.secondaryColor,
+                              ),
+                            ),
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0).r,
@@ -192,7 +222,8 @@ class SightDetailsScreen extends StatelessWidget {
                                 ),
                                 TextButton.icon(
                                   onPressed: () {
-                                    // Google Maps
+                                    MapUtils.urlLauncher(
+                                        Uri.parse(placeModel.location));
                                   },
                                   icon: CircleAvatar(
                                     backgroundColor: ThemeApp.primaryColor,
@@ -300,7 +331,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay[0],
+                                        placeModel.timeOfDay![0],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -320,7 +351,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay[1],
+                                        placeModel.timeOfDay![1],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -340,7 +371,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay[2],
+                                        placeModel.timeOfDay![2],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -360,7 +391,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay[3],
+                                        placeModel.timeOfDay![3],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -380,7 +411,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay[4],
+                                        placeModel.timeOfDay![4],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -400,7 +431,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay[5],
+                                        placeModel.timeOfDay![5],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -420,7 +451,7 @@ class SightDetailsScreen extends StatelessWidget {
                                             .headline6,
                                       ),
                                       Text(
-                                        placeModel.timeOfDay[6],
+                                        placeModel.timeOfDay![6],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline6,
@@ -431,41 +462,6 @@ class SightDetailsScreen extends StatelessWidget {
                               ],
                             ),
                           ],
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          // Google Maps
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20).r,
-                          child: Card(
-                            margin: EdgeInsets.zero,
-                            elevation: 2,
-                            // color: Colors.red,
-                            child: CachedNetworkImage(
-                              imageUrl:
-                                  'https://img.freepik.com/premium-vector/map-with-gps-destination-point_34645-903.jpg?w=996',
-                              fit: BoxFit.fill,
-                              height: 200.h,
-                              width: double.infinity,
-                              progressIndicatorBuilder:
-                                  (context, url, downloadProgress) => Center(
-                                child: AdaptiveIndicator(
-                                  os: getOs(),
-                                ),
-                              ),
-                              errorWidget: (context, url, error) => Center(
-                                child: AdaptiveIndicator(
-                                  os: getOs(),
-                                ),
-                              ),
-                            ),
-                            // Image.network(
-                            //   'https://img.freepik.com/premium-vector/map-with-gps-destination-point_34645-903.jpg?w=996',
-                            //   width: double.infinity,
-                            // ),
-                          ),
                         ),
                       ),
                     ],
@@ -493,40 +489,40 @@ class SightDetailsScreen extends StatelessWidget {
       ),
       builder: (context) => DraggableScrollableSheet(
         initialChildSize: 0.3.sp,
-            minChildSize: 0.2.spMin,
-            maxChildSize: 0.62.spMax,
-            expand: false,
-            builder: (context, scrollController) {
-              return SingleChildScrollView(
-                controller: scrollController,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: ThemeApp.secondaryColor,
+        minChildSize: 0.2.spMin,
+        maxChildSize: 0.62.spMax,
+        expand: false,
+        builder: (context, scrollController) {
+          return SingleChildScrollView(
+            controller: scrollController,
+            child: Container(
+              decoration: BoxDecoration(
+                color: ThemeApp.secondaryColor,
                 borderRadius:
                     BorderRadius.vertical(top: const Radius.circular(20).r),
               ),
-                  padding: const EdgeInsets.symmetric(horizontal: 8).r,
-                  child: Stack(
-                    alignment: AlignmentDirectional.topCenter,
-                    clipBehavior: Clip.none,
-                    children: [
-                      Positioned(
-                        top: -20.h,
-                        child: Container(
-                          width: 50.w,
-                          height: 6.h,
-                          margin: const EdgeInsets.only(bottom: 20).r,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(2.5).r,
-                            color: ThemeApp.primaryColor,
-                          ),
-                        ),
+              padding: const EdgeInsets.symmetric(horizontal: 8).r,
+              child: Stack(
+                alignment: AlignmentDirectional.topCenter,
+                clipBehavior: Clip.none,
+                children: [
+                  Positioned(
+                    top: -20.h,
+                    child: Container(
+                      width: 50.w,
+                      height: 6.h,
+                      margin: const EdgeInsets.only(bottom: 20).r,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2.5).r,
+                        color: ThemeApp.primaryColor,
                       ),
-                      Space(height: 20.h, width: 0.w),
-                      Column(children: [
-                        Row(
-                          children: [
-                            IconButton(
+                    ),
+                  ),
+                  Space(height: 20.h, width: 0.w),
+                  Column(children: [
+                    Row(
+                      children: [
+                        IconButton(
                                 onPressed: () async {
                                   pop(context);
                                   await flutterTts.pause();
@@ -536,37 +532,37 @@ class SightDetailsScreen extends StatelessWidget {
                                   size: 24.sp,
                                 )),
                             Text(
-                              placeModel.name.trim(),
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.headline4,
-                            )
-                          ],
+                          placeModel.name.trim(),
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.headline4,
+                        )
+                      ],
                         ),
-                        const MyDivider(),
-                        Space(height: 15.h, width: 0.w),
-                        Text(
-                          placeModel.history.trim(),
+                    const MyDivider(),
+                    Space(height: 15.h, width: 0.w),
+                    Text(
+                      placeModel.history.trim(),
                       style: Theme.of(context).textTheme.headline6?.copyWith(
                             color: ThemeApp.blackPrimary.withOpacity(
                               0.54,
                             ),
                           ),
                     ),
-                        Space(height: 20.h, width: 0.w),
-                        TextButton(
-                          onPressed: () {
-                            speak(placeModel.history);
-                          },
-                          child: CircleAvatar(
-                              radius: 24.r,
-                              backgroundColor: ThemeApp.primaryColor,
-                              child: Icon(
-                                FontAwesomeIcons.play,
-                                color: ThemeApp.secondaryColor,
-                                size: 24.sp,
-                              )),
-                        ),
-                      ]),
+                    Space(height: 20.h, width: 0.w),
+                    TextButton(
+                      onPressed: () {
+                        speak(placeModel.history);
+                      },
+                      child: CircleAvatar(
+                          radius: 24.r,
+                          backgroundColor: ThemeApp.primaryColor,
+                          child: Icon(
+                            FontAwesomeIcons.play,
+                            color: ThemeApp.secondaryColor,
+                            size: 24.sp,
+                          )),
+                    ),
+                  ]),
                     ],
                   ),
                 ),
@@ -575,4 +571,5 @@ class SightDetailsScreen extends StatelessWidget {
           ),
     );
   }
+
 }

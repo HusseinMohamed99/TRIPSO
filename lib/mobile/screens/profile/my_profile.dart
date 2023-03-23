@@ -210,6 +210,7 @@ class MyProfileScreen extends StatelessWidget {
                                 cubit.deleteAccount(context);
                                 MyDialog.showLoadingDialog(context, 'Loading');
                                 MyDialog.hideDialog(context);
+                                cubit.currentIndex = 0;
                               }
                               MyDialog.hideDialog(context);
                             },
@@ -269,6 +270,7 @@ class MyProfileScreen extends StatelessWidget {
                                 logOut(context);
                                 MyDialog.showLoadingDialog(context, 'Loading');
                                 MyDialog.hideDialog(context);
+                                cubit.currentIndex = 0;
                               }
                               MyDialog.hideDialog(context);
                             },

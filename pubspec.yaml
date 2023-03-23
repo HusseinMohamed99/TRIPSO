@@ -34,11 +34,9 @@ dependencies:
   responsive_framework: ^0.2.0
   simple_animations: ^4.2.0
   supercharged: ^2.1.1
-  lottie: ^2.0.0
   google_nav_bar: ^5.0.6
   http: ^0.13.5
   provider: ^6.0.5
-  auto_size_text: ^3.0.0
   url_launcher: ^6.1.7
   cached_network_image: ^3.2.3
   image_picker: ^0.8.6+1
@@ -53,7 +51,6 @@ dependencies:
   firebase_auth: ^4.1.0
   cloud_firestore: ^4.0.3
   firebase_storage: ^11.0.3
-  firebase_messaging: ^14.0.3
   flutter_tts: ^3.6.2
   flutter_screenutil: ^5.6.1
   wakelock: ^0.6.2

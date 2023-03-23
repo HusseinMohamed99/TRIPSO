@@ -43,7 +43,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
   ];
 
   void changeIndex(int index) {
-    currentIndex = index;
     if (index == 0) {
       getUserData();
       getCityData();
@@ -52,12 +51,14 @@ class TripsoCubit extends Cubit<TripsoStates> {
       getDataForCity(cityModel!.cId);
     }
     if (index == 1) {
-       getDataPlaces(cityModel!.cId);
+      getDataPlaces(cityModel!.cId);
       getDataForCity(cityModel!.cId);
+      getWishListData();
     }
     if (index == 2) {}
     if (index == 3) getUserData();
     emit(ChangeBottomNavBarState());
+    currentIndex = index;
   }
 
   ///END : ChangeBottomNavBar
@@ -361,36 +362,36 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  void wishList(String pId, String cId) {
-    FirebaseFirestore.instance
-        .collection('cities')
-        .doc(cId)
-        .collection('places')
-        .doc(pId)
-        .collection('likes')
-        .doc(userModel!.uId)
-        .set({'like': true}).then((value) {
-      emit(AddtoFavoriteSuccessState());
-    }).catchError((error) {
-      emit(AddtoFavoriteErrorState(error.toString()));
-    });
-  }
-
-  void unWishList(String pId, String cId) {
-    FirebaseFirestore.instance
-        .collection('cities')
-        .doc(cId)
-        .collection('places')
-        .doc(pId)
-        .collection('likes')
-        .doc(userModel!.uId)
-        .delete()
-        .then((value) {
-      emit(disFavoriteSuccessState());
-    }).catchError((error) {
-      emit(disFavoriteErrorState(error.toString()));
-    });
-  }
+  // void wishList(String pId, String cId) {
+  //   FirebaseFirestore.instance
+  //       .collection('cities')
+  //       .doc(cId)
+  //       .collection('places')
+  //       .doc(pId)
+  //       .collection('likes')
+  //       .doc(userModel!.uId)
+  //       .set({'like': true}).then((value) {
+  //     emit(AddtoFavoriteSuccessState());
+  //   }).catchError((error) {
+  //     emit(AddtoFavoriteErrorState(error.toString()));
+  //   });
+  // }
+  //
+  // void unWishList(String pId, String cId) {
+  //   FirebaseFirestore.instance
+  //       .collection('cities')
+  //       .doc(cId)
+  //       .collection('places')
+  //       .doc(pId)
+  //       .collection('likes')
+  //       .doc(userModel!.uId)
+  //       .delete()
+  //       .then((value) {
+  //     emit(disFavoriteSuccessState());
+  //   }).catchError((error) {
+  //     emit(disFavoriteErrorState(error.toString()));
+  //   });
+  // }
 
   ///END : popularPlace Data
   List<PlaceModel> popularPlace = [];
@@ -529,5 +530,88 @@ class TripsoCubit extends Cubit<TripsoStates> {
   }
 
   ///END : UpdateUserData
+  Map<dynamic, dynamic> favorites = {};
 
+  addWishListData({
+    required String wishListId,
+    required String wishListName,
+    required String wishListHistory,
+    required String wishListImage,
+    required String wishListPopular,
+    required String wishListLocation,
+    required List<String> wishListTimeOfDay,
+    required String wishListTickets,
+    required String wishListAddress,
+    required bool wishListIsPopular,
+  }) {
+    FirebaseFirestore.instance
+        .collection("WishList")
+        .doc(uId)
+        .collection("YourWishList")
+        .doc(wishListId)
+        .set({
+      "wishListId": wishListId,
+      "wishListName": wishListName,
+      "wishListImage": wishListImage,
+      "wishListHistory": wishListHistory,
+      "wishListPopular": wishListPopular,
+      "wishListLocation": wishListLocation,
+      "wishListTimeOfDay": wishListTimeOfDay,
+      "wishListTickets": wishListTickets,
+      "wishListAddress": wishListAddress,
+      "wishListIsPopular": wishListIsPopular,
+      "wishList": true,
+    }).then((value) {
+      emit(AddToFavoriteSuccessState());
+    }).catchError((error) {
+      emit(AddToFavoriteErrorState(error.toString()));
+    });
+  }
+
+///// Get WishList Data ///////
+  List<PlaceModel> wishList = [];
+
+  getWishListData() async {
+    List<PlaceModel> newList = [];
+    QuerySnapshot value = await FirebaseFirestore.instance
+        .collection("WishList")
+        .doc(uId)
+        .collection("YourWishList")
+        .get();
+    value.docs.forEach(
+      (element) {
+        PlaceModel placeModel = PlaceModel(
+          name: element.get("wishListName"),
+          history: element.get("wishListHistory"),
+          image: element.get("wishListImage"),
+          location: element.get("wishListLocation"),
+          tickets: element.get("wishListTickets"),
+          pId: element.get("wishListId"),
+          isPopular: element.get("wishListIsPopular"),
+          address: element.get("wishListAddress"),
+          popular: element.get("wishListPopular"),
+        );
+        newList.add(placeModel);
+      },
+    );
+    wishList = newList;
+    // notifyListeners();
+  }
+
+  List<PlaceModel> get getWishList {
+    return wishList;
+  }
+
+////////// Delete WishList /////
+  deleteWishList(wishListId) {
+    FirebaseFirestore.instance
+        .collection("WishList")
+        .doc(uId)
+        .collection("YourWishList")
+        .doc(wishListId)
+        .delete()
+        .then((value) {
+      emit(UnFavoriteSuccessState());
+    });
+  }
 }

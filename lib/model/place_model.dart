@@ -3,7 +3,7 @@ class PlaceModel {
   String image;
   String history;
   String location;
-  List<String> timeOfDay;
+  List<String>? timeOfDay;
   String tickets;
   String pId;
   String address;
@@ -13,7 +13,7 @@ class PlaceModel {
   PlaceModel({
     required this.name,
     required this.history,
-    required this.timeOfDay,
+    this.timeOfDay,
     required this.image,
     required this.location,
     required this.tickets,

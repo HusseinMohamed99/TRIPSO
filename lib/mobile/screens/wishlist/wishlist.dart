@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
@@ -24,9 +25,16 @@ class WishListScreen extends StatelessWidget {
     var tripsoCubit = TripsoCubit.get(context).cityModel;
     var cubit = TripsoCubit.get(context);
     return BlocConsumer<TripsoCubit, TripsoStates>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is UnFavoriteSuccessState) {
+          showToast(
+            text: 'UnFavorite Successfully',
+            state: ToastStates.success,
+          );
+        }
+      },
       builder: (context, state) {
-        if (uId != 'ljOzmH9KNgYMkczD3XBJCRFWUM22') {
+        if (cubit.wishList.isEmpty) {
           return Stack(
             children: [
               Center(
@@ -74,6 +82,7 @@ class WishListScreen extends StatelessWidget {
                     onPressed: () {
                       if (Navigator.canPop(context)) {
                         pop(context);
+                        cubit.currentIndex = 0;
                       }
                     },
                     icon: const Icon(
@@ -90,7 +99,7 @@ class WishListScreen extends StatelessWidget {
           children: [
             ListView.separated(
               itemBuilder: (context, index) {
-                return wishList(context, cubit.place[index]);
+                return wishList(context, cubit.wishList[index]);
               },
               separatorBuilder: (context, index) {
                 return Space(
@@ -98,7 +107,7 @@ class WishListScreen extends StatelessWidget {
                   width: 0,
                 );
               },
-              itemCount: cubit.place.length,
+              itemCount: cubit.wishList.length,
             ),
             Positioned(
               top: 10.sp,
@@ -207,9 +216,13 @@ class WishListScreen extends StatelessWidget {
                               child: IconButton(
                                 splashRadius: 20.r,
                                 padding: const EdgeInsets.only(right: 30).r,
-                                onPressed: () {},
+                                onPressed: () {
+                                  TripsoCubit.get(context)
+                                      .deleteWishList(placeModel.pId);
+                                  TripsoCubit.get(context).getWishListData();
+                                },
                                 icon: Icon(
-                                  Icons.favorite,
+                                  Icons.delete,
                                   color: ThemeApp.primaryColor,
                                   size: 24.sp,
                                 ),
