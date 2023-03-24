@@ -448,10 +448,10 @@ class PopularSightsWidget extends StatelessWidget {
                   (index) => GridItemSights(index, cityModel,
                       placeModel: cubit.popularPlace[index])),
               options: CarouselOptions(
-                height: 260.h,
+                height: 270.h,
                 enlargeCenterPage: true,
                 disableCenter: true,
-                viewportFraction: .8,
+                viewportFraction: .7,
                 autoPlay: true,
                 autoPlayCurve: Curves.fastOutSlowIn,
               ),
