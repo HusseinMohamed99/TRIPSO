@@ -445,7 +445,7 @@ class PopularSightsWidget extends StatelessWidget {
             CarouselSlider(
               items: List.generate(
                   cubit.popularPlace.length,
-                  (index) => GridItemSights(index, cityModel,
+                  (index) => GridItemSights(cityModel,
                       placeModel: cubit.popularPlace[index])),
               options: CarouselOptions(
                 height: 270.h,

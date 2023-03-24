@@ -286,7 +286,6 @@ List<Icon> iconStar({Color? color}) {
 
 class GridItemSights extends StatelessWidget {
   const GridItemSights(
-    this.index,
     this.cityModel, {
     Key? key,
     required this.placeModel,
@@ -294,8 +293,6 @@ class GridItemSights extends StatelessWidget {
 
   final PlaceModel placeModel;
   final CityModel cityModel;
-  final int index;
-  final bool wishListBool = false;
 
   @override
   Widget build(BuildContext context) {

@@ -152,22 +152,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  // CountryModel? countryModel;
-  // List<CountryModel> country = [];
-  // List<String> counId = [];
-  //
-  // getCountryData() async {
-  //   FirebaseFirestore.instance.collection('country').get().then((value) {
-  //     country = [];
-  //     for (var element in value.docs) {
-  //       country.add(CountryModel.fromFireStore(element.data()));
-  //       counId.add(element.id);
-  //       // print(element.data());
-  //       //  print('====================================');
-  //     }
-  //   });
-  // }
-
   List<CityModel> cityEG = [];
   List<String> cIdEG = [];
 
@@ -301,15 +285,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
       place = [];
       for (var element in value.docs) {
         place.add(PlaceModel.fromFireStore(element.data()));
-        var likes = await element.reference.collection('likes').get();
         pId.add(element.id);
-        await FirebaseFirestore.instance
-            .collection('posts')
-            .doc(element.id)
-            .update({
-          'likes': likes.docs.length,
-          'postId': element.id,
-        });
         if (kDebugMode) {
           print(element.data());
         }
@@ -337,8 +313,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
         if (kDebugMode) {
           print(element.data());
         }
-        debugPrint(
-            '=====================DONEWWWWWWWW===========================');
+        debugPrint('=====================DONE===========================');
       }
     });
   }
@@ -455,8 +430,8 @@ class TripsoCubit extends Cubit<TripsoStates> {
   }
 
   ///END : UpdateUserData
-  
-  addWishListData({
+
+  void addWishListData({
     required String cityId,
     required String wishListId,
     required String wishListName,
@@ -497,7 +472,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
 ///// Get WishList Data ///////
   List<PlaceModel> wishList = [];
 
-  getWishListData(String? cId) async {
+  void getWishListData(String? cId) async {
     List<PlaceModel> newList = [];
     QuerySnapshot value = await FirebaseFirestore.instance
         .collection("wishList")
@@ -505,24 +480,21 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .collection("YourWishList")
         .where('cityId', isEqualTo: cId)
         .get();
-    value.docs.forEach(
-      (element) {
-        PlaceModel placeModel = PlaceModel(
-          name: element.get("wishListName"),
-          history: element.get("wishListHistory"),
-          image: element.get("wishListImage"),
-          location: element.get("wishListLocation"),
-          tickets: element.get("wishListTickets"),
-          pId: element.get("wishListId"),
-          isPopular: element.get("wishListIsPopular"),
-          address: element.get("wishListAddress"),
-          popular: element.get("wishListPopular"),
-        );
+    for (var element in value.docs) {
+      PlaceModel placeModel = PlaceModel(
+        name: element.get("wishListName"),
+        history: element.get("wishListHistory"),
+        image: element.get("wishListImage"),
+        location: element.get("wishListLocation"),
+        tickets: element.get("wishListTickets"),
+        pId: element.get("wishListId"),
+        isPopular: element.get("wishListIsPopular"),
+        address: element.get("wishListAddress"),
+        popular: element.get("wishListPopular"),
+      );
         newList.add(placeModel);
-      },
-    );
+    }
     wishList = newList;
-    // notifyListeners();
   }
 
   List<PlaceModel> get getWishList {
