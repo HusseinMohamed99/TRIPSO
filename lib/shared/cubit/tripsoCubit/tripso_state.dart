@@ -2,8 +2,6 @@ abstract class TripsoStates {}
 
 class TripsoInitialState extends TripsoStates {}
 
-// ----------------------------------------------------------//
-///START : GetUserData
 class GetUserDataLoadingState extends TripsoStates {}
 
 class GetUserDataSuccessState extends TripsoStates {}
@@ -14,10 +12,6 @@ class GetUserDataErrorState extends TripsoStates {
   GetUserDataErrorState(this.error);
 }
 
-///END : GetUserData
-//------------------------------------------------------------//
-
-///START : ChangeUserPassword
 class ChangeUserPasswordLoadingState extends TripsoStates {}
 
 class ChangeUserPasswordSuccessState extends TripsoStates {}
@@ -28,25 +22,9 @@ class ChangeUserPasswordErrorState extends TripsoStates {
   ChangeUserPasswordErrorState(this.error);
 }
 
-///END : ChangeUserPassword
-
-//------------------------------------------------------------//
-
-/// START : ShowPassword
 class ShowPasswordState extends TripsoStates {}
 
-///END : ShowPassword
-
-//------------------------------------------------------------//
-
-/// START : ChangeUserPassword
 class ChangeBottomNavBarState extends TripsoStates {}
-
-/// END : ChangeUserPassword
-
-//------------------------------------------------------------//
-
-///START : GetCityData
 
 class GetCityDataLoadingState extends TripsoStates {}
 
@@ -58,12 +36,6 @@ class GetCityDataErrorState extends TripsoStates {
   GetCityDataErrorState(this.error);
 }
 
-///END : GetCityData
-
-//------------------------------------------------------------//
-
-//START : GetPlaceData
-
 class GetPlaceDataLoadingState extends TripsoStates {}
 
 class GetPlaceDataSuccessState extends TripsoStates {}
@@ -74,44 +46,25 @@ class GetPlaceDataErrorState extends TripsoStates {
   GetPlaceDataErrorState(this.error);
 }
 
-///END : GetPlaceData
-
-//------------------------------------------------------------//
-///START : GetProfileImage
 class GetProfileImagePickedSuccessState extends TripsoStates {}
 
 class GetProfileImagePickedErrorState extends TripsoStates {}
 
-///END : GetProfileImage
-// ----------------------------------------------------------//
-///START : GetCoverImage
 class GetCoverImagePickedSuccessState extends TripsoStates {}
 
 class GetCoverImagePickedErrorState extends TripsoStates {}
 
-///END : GetCoverImage
-// ----------------------------------------------------------//
-///START : UploadProfileImage
 class UploadProfileImageSuccessState extends TripsoStates {}
 
 class UploadProfileImageErrorState extends TripsoStates {}
 
-///END : UploadProfileImage
-// ----------------------------------------------------------//
-///START : UploadCoverImage
 class UploadCoverImageSuccessState extends TripsoStates {}
 
 class UploadCoverImageErrorState extends TripsoStates {}
 
-///END : UploadCoverImage
-// ----------------------------------------------------------//
-///START : UpdateUserData
 class UpdateUserLoadingState extends TripsoStates {}
 
 class UpdateUserErrorState extends TripsoStates {}
-
-///END : UpdateUserData
-class AddToFavoriteLoadingState extends TripsoStates {}
 
 class AddToFavoriteSuccessState extends TripsoStates {}
 

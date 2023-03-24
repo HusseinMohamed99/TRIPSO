@@ -27,7 +27,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   static TripsoCubit get(context) => BlocProvider.of(context);
 
-  ///START : ChangeBottomNavBar
   int currentIndex = 0;
   List<Widget> screens = [
     const ExploreScreen(),
@@ -61,9 +60,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     currentIndex = index;
   }
 
-  ///END : ChangeBottomNavBar
-
-  ///START : GetUserData
   UserModel? userModel;
 
   void getUserData() {
@@ -77,7 +73,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  ///START : ChangeUserPassword
   void changeUserPassword({
     required String password,
   }) {
@@ -99,9 +94,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  ///END : ChangeUserPassword
-
-  ///START : Show Password
   IconData suffix = Icons.visibility_outlined;
   bool isPassword = true;
 
@@ -113,9 +105,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     emit(ShowPasswordState());
   }
 
-  ///END : Show Password
-
-  ///START : GetCityData
   CityModel? cityModel;
 
   void getDataForCity(String? cId) async {
@@ -146,8 +135,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         city.add(CityModel.fromFireStore(element.data()));
         cId.add(element.id);
-        // print(element.data());
-        // print('====================================');
       }
     });
   }
@@ -165,8 +152,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         cityEG.add(CityModel.fromFireStore(element.data()));
         cIdEG.add(element.id);
-        // print(element.data());
-        //  print('====================================');
       }
     });
   }
@@ -184,8 +169,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         cityIT.add(CityModel.fromFireStore(element.data()));
         cIdIT.add(element.id);
-        // print(element.data());
-        //  print('====================================');
       }
     });
   }
@@ -203,8 +186,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         cityFR.add(CityModel.fromFireStore(element.data()));
         cIdFR.add(element.id);
-        // print(element.data());
-        //  print('====================================');
       }
     });
   }
@@ -239,8 +220,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         cityUAE.add(CityModel.fromFireStore(element.data()));
         cIdUAE.add(element.id);
-        // print(element.data());
-        //  print('====================================');
       }
     });
   }
@@ -262,16 +241,12 @@ class TripsoCubit extends Cubit<TripsoStates> {
       if (kDebugMode) {
         print(value.data());
       }
-      // print('value.id ======== ${value.id}');
-      // print(
-      //     '==============================================================================');
     }).catchError((error) {
       debugPrint(error.toString());
       emit(GetPlaceDataErrorState(error.toString()));
     });
   }
 
-  ///END : Place Data
   List<PlaceModel> place = [];
   List<String> pId = [];
 
@@ -286,15 +261,10 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         place.add(PlaceModel.fromFireStore(element.data()));
         pId.add(element.id);
-        if (kDebugMode) {
-          print(element.data());
-        }
-        debugPrint('================================================');
       }
     });
   }
 
-  ///END : popularPlace Data
   List<PlaceModel> popularPlace = [];
   List<String> popularPlaceId = [];
 
@@ -310,10 +280,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         popularPlace.add(PlaceModel.fromFireStore(element.data()));
         popularPlaceId.add(element.id);
-        if (kDebugMode) {
-          print(element.data());
-        }
-        debugPrint('=====================DONE===========================');
       }
     });
   }
@@ -339,7 +305,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     }).catchError((error) {});
   }
 
-  ///START : GetProfileImage
   var picker = ImagePicker();
   File? profileImage;
 
@@ -362,10 +327,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     return File(croppedImage.path);
   }
 
-  ///END : GetProfileImage
-  // ----------------------------------------------------------//
-
-  ///START : UploadProfileImage
   void uploadProfileImage({
     required String email,
     required String firstName,
@@ -397,9 +358,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  ///END : UploadProfileImage
-
-  ///START : UpdateUserData
   void updateUserData({
     required String email,
     required String firstName,
@@ -428,8 +386,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       emit(UpdateUserErrorState());
     });
   }
-
-  ///END : UpdateUserData
 
   void addWishListData({
     required String cityId,
@@ -469,7 +425,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-///// Get WishList Data ///////
   List<PlaceModel> wishList = [];
 
   void getWishListData(String? cId) async {
@@ -492,7 +447,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
         address: element.get("wishListAddress"),
         popular: element.get("wishListPopular"),
       );
-        newList.add(placeModel);
+      newList.add(placeModel);
     }
     wishList = newList;
   }
@@ -501,7 +456,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     return wishList;
   }
 
-////////// Delete WishList /////
   deleteWishList(wishListId) {
     FirebaseFirestore.instance
         .collection("wishList")

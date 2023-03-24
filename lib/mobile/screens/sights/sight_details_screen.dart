@@ -532,21 +532,21 @@ class SightDetailsScreen extends StatelessWidget {
                     Row(
                       children: [
                         IconButton(
-                                onPressed: () async {
-                                  pop(context);
-                                  await flutterTts.pause();
-                                },
-                                icon: Icon(
-                                  Icons.clear,
-                                  size: 24.sp,
-                                )),
-                            Text(
+                            onPressed: () async {
+                              pop(context);
+                              await flutterTts.pause();
+                            },
+                            icon: Icon(
+                              Icons.clear,
+                              size: 24.sp,
+                            )),
+                        Text(
                           placeModel.name.trim(),
                           textAlign: TextAlign.center,
                           style: Theme.of(context).textTheme.headline4,
                         )
                       ],
-                        ),
+                    ),
                     const MyDivider(),
                     Space(height: 15.h, width: 0.w),
                     Text(
@@ -572,13 +572,12 @@ class SightDetailsScreen extends StatelessWidget {
                           )),
                     ),
                   ]),
-                    ],
-                  ),
-                ),
-              );
-            },
-          ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
-
 }
