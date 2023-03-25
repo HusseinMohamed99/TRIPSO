@@ -140,7 +140,7 @@ class SightDetailsScreen extends StatelessWidget {
                                 );
                               },
                               icon: Icon(
-                                FontAwesomeIcons.solidHeart,
+                               FontAwesomeIcons.heart,
                                 size: 24.sp,
                                 color: ThemeApp.secondaryColor,
                               ),
