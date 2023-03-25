@@ -387,7 +387,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  void addWishListData({
+   addWishListData({
     required String cityId,
     required String wishListId,
     required String wishListName,

@@ -23,22 +23,19 @@ class PlaceModel {
     required this.popular,
   });
 
-  PlaceModel.fromFireStore(Map<String, dynamic> data)
-      : this(
-    name: data['name'],
-          image: data['image'],
-          history: data['history'],
-          location: data['location'],
-          timeOfDay: List.from(
-            data['timeOfDay'],
-          ),
-          // timeOfDay: data['timeOfDay'],
-          tickets: data['tickets'],
-          pId: data['pId'],
-          isPopular: data['isPopular'],
-          address: data['address'],
-          popular: data['popular'],
-        );
+  PlaceModel.fromFireStore(Map data)
+      : name = data['name'],
+        image = data['image'],
+        history = data['history'],
+        location = data['location'],
+        timeOfDay = List.from(
+          data['timeOfDay'],
+        ),
+        tickets = data['tickets'],
+        pId = data['pId'],
+        isPopular = data['isPopular'],
+        address = data['address'],
+        popular = data['popular'];
 
   Map<String, dynamic> toFireStore() {
     return {

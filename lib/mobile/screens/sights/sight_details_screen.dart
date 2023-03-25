@@ -16,17 +16,24 @@ import 'package:tripso/shared/components/speak.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-
 import 'package:tripso/shared/styles/theme.dart';
 
-class SightDetailsScreen extends StatelessWidget {
+class SightDetailsScreen extends StatefulWidget {
   const SightDetailsScreen({Key? key}) : super(key: key);
   static const String routeName = 'SightDetailsScreen';
+
+  @override
+  State<SightDetailsScreen> createState() => _SightDetailsScreenState();
+}
+
+class _SightDetailsScreenState extends State<SightDetailsScreen> {
+  bool added = false;
 
   @override
   Widget build(BuildContext context) {
     ScreenArgs screenArgs =
         (ModalRoute.of(context)?.settings.arguments) as ScreenArgs;
+
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {
         if (state is AddToFavoriteSuccessState) {
@@ -118,31 +125,41 @@ class SightDetailsScreen extends StatelessWidget {
                             backgroundColor: const Color.fromRGBO(0, 0, 0, 0.6),
                             child: IconButton(
                               onPressed: () {
-                                TripsoCubit.get(context).addWishListData(
-                                  cityId: screenArgs.cityModel.cId,
-                                  wishListId: screenArgs.placeModel.pId,
-                                  wishListName: screenArgs.placeModel.name,
-                                  wishListImage: screenArgs.placeModel.image,
-                                  wishListPopular:
-                                      screenArgs.placeModel.popular,
-                                  wishListHistory:
-                                      screenArgs.placeModel.history,
-                                  wishListLocation:
-                                      screenArgs.placeModel.location,
-                                  wishListTimeOfDay:
-                                      screenArgs.placeModel.timeOfDay!,
-                                  wishListTickets:
-                                      screenArgs.placeModel.tickets,
-                                  wishListAddress:
-                                      screenArgs.placeModel.address,
-                                  wishListIsPopular:
-                                      screenArgs.placeModel.isPopular,
-                                );
+                                if (!added) {
+                                  TripsoCubit.get(context).addWishListData(
+                                    cityId: screenArgs.cityModel.cId,
+                                    wishListId: screenArgs.placeModel.pId,
+                                    wishListName: screenArgs.placeModel.name,
+                                    wishListImage: screenArgs.placeModel.image,
+                                    wishListPopular:
+                                        screenArgs.placeModel.popular,
+                                    wishListHistory:
+                                        screenArgs.placeModel.history,
+                                    wishListLocation:
+                                        screenArgs.placeModel.location,
+                                    wishListTimeOfDay:
+                                        screenArgs.placeModel.timeOfDay!,
+                                    wishListTickets:
+                                        screenArgs.placeModel.tickets,
+                                    wishListAddress:
+                                        screenArgs.placeModel.address,
+                                    wishListIsPopular:
+                                        screenArgs.placeModel.isPopular,
+                                  );
+                                  setState(() {
+                                    added = true;
+                                  });
+                                } else {}
                               },
                               icon: Icon(
-                               FontAwesomeIcons.heart,
+                                added
+                                    ? FontAwesomeIcons.solidHeart
+                                    : FontAwesomeIcons.heart,
                                 size: 24.sp,
-                                color: ThemeApp.secondaryColor,
+                                color: added
+                                    ? Colors.red
+                                    : ThemeApp.secondaryColor,
+                                // color: ThemeApp.secondaryColor,
                               ),
                             ),
                           ),

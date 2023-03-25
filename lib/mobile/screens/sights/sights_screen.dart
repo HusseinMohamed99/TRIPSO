@@ -85,7 +85,7 @@ class ListViewWidget extends StatelessWidget {
       children: [
         ListView.separated(
           itemBuilder: (context, index) {
-            return GridSights(placeModel: cubit.place[index]);
+            return GridSights(placeModel: cubit.place[index], cubit.cityModel!);
           },
           separatorBuilder: (context, index) {
             return Space(height: 10.h, width: 0.w);
@@ -120,12 +120,14 @@ class ListViewWidget extends StatelessWidget {
 }
 
 class GridSights extends StatelessWidget {
-  const GridSights({
+  const GridSights(
+    this.cityModel, {
     Key? key,
     required this.placeModel,
   }) : super(key: key);
 
   final PlaceModel placeModel;
+  final CityModel cityModel;
 
   @override
   Widget build(BuildContext context) {
@@ -135,18 +137,7 @@ class GridSights extends StatelessWidget {
         navigateTo(
           context,
           routeName: SightDetailsScreen.routeName,
-          arguments: PlaceModel(
-            isPopular: placeModel.isPopular,
-            history: placeModel.history,
-            image: placeModel.image,
-            name: placeModel.name,
-            address: placeModel.address,
-            tickets: placeModel.tickets,
-            location: placeModel.location,
-            timeOfDay: placeModel.timeOfDay,
-            pId: placeModel.pId,
-            popular: placeModel.popular,
-          ),
+          arguments: ScreenArgs(placeModel: placeModel, cityModel: cityModel),
         );
       },
       child: Stack(
@@ -183,15 +174,6 @@ class GridSights extends StatelessWidget {
                           ),
                         ),
                       ),
-
-                      // Image(
-                      //   image: NetworkImage(
-                      //     placeModel.image,
-                      //   ),
-                      //   height: 225.h,
-                      //   width: double.infinity,
-                      //   fit: BoxFit.cover,
-                      // ),
                     ),
                     LayerImage(
                       height: 225.h,
