@@ -5,9 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/model/city_model.dart';
-import 'package:tripso/model/place_model.dart';
+import 'package:tripso/model/wishlist_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
-import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
@@ -67,82 +66,26 @@ class WishListScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Positioned(
-                top: 10.sp,
-                left: 10.sp,
-                child: Card(
-                  elevation: 2,
-                  color: Colors.black.withOpacity(0.5),
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  shape: const StadiumBorder(
-                    side: BorderSide(
-                      color: ThemeApp.secondaryColor,
-                    ),
-                  ),
-                  child: IconButton(
-                    onPressed: () {
-                      if (Navigator.canPop(context)) {
-                        pop(context);
-                        cubit.currentIndex = 0;
-                      }
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      color: ThemeApp.secondaryColor,
-                    ),
-                  ),
-                ),
-              ),
             ],
           );
         }
-        return Stack(
-          children: [
-            ListView.separated(
-              itemBuilder: (context, index) {
-                return wishList(context, cubit.wishList[index], tripsoCubit!);
-              },
-              separatorBuilder: (context, index) {
-                return Space(
-                  height: 10.h,
-                  width: 0,
-                );
-              },
-              itemCount: cubit.wishList.length,
-            ),
-            Positioned(
-              top: 10.sp,
-              left: 10.sp,
-              child: Card(
-                elevation: 2,
-                color: Colors.black.withOpacity(0.5),
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                shape: const StadiumBorder(
-                  side: BorderSide(
-                    color: ThemeApp.secondaryColor,
-                  ),
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    if (Navigator.canPop(context)) {
-                      pop(context);
-                      cubit.currentIndex = 0;
-                    }
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    color: ThemeApp.secondaryColor,
-                  ),
-                ),
-              ),
-            ),
-          ],
+        return ListView.separated(
+          itemBuilder: (context, index) {
+            return wishList(context, cubit.wishList[index], tripsoCubit!);
+          },
+          separatorBuilder: (context, index) {
+            return Space(
+              height: 10.h,
+              width: 0,
+            );
+          },
+          itemCount: cubit.wishList.length,
         );
       },
     );
   }
 
-  Widget wishList(context, PlaceModel placeModel, CityModel cityModel) {
+  Widget wishList(context, WishListModel wishListModel, CityModel cityModel) {
     return Column(
       children: [
         Card(
@@ -174,7 +117,7 @@ class WishListScreen extends StatelessWidget {
                     width: 150.w,
                     height: 150.h,
                     child: CachedNetworkImage(
-                      imageUrl: placeModel.image,
+                      imageUrl: wishListModel.wishListImage,
                       fit: BoxFit.cover,
                       height: 400.h,
                       width: double.infinity,
@@ -203,7 +146,7 @@ class WishListScreen extends StatelessWidget {
                             Expanded(
                               flex: 8,
                               child: Text(
-                                placeModel.name,
+                                wishListModel.wishListName,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.roboto(
@@ -219,12 +162,15 @@ class WishListScreen extends StatelessWidget {
                                 padding: const EdgeInsets.only(right: 30).r,
                                 onPressed: () {
                                   TripsoCubit.get(context)
-                                      .deleteWishList(placeModel.pId);
-                                  TripsoCubit.get(context)
-                                      .getWishListData(cityModel.cId);
+                                      .deleteWishList(wishListModel.wishListId);
+                                  TripsoCubit.get(context).getWishListData(
+                                      cityModel.cId,
+                                      TripsoCubit.get(context).userModel!.uId);
                                 },
                                 icon: Icon(
-                                  Icons.delete,
+                                  wishListModel.isWishList
+                                      ? Icons.delete
+                                      : Icons.add,
                                   color: ThemeApp.primaryColor,
                                   size: 24.sp,
                                 ),
@@ -232,43 +178,43 @@ class WishListScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        if (placeModel.popular == '5')
+                        if (wishListModel.wishListRate == '5')
                           Row(
                             children: icon5Star(color: ThemeApp.primaryColor),
                           ),
-                        if (placeModel.popular == '4.5')
+                        if (wishListModel.wishListRate == '4.5')
                           Row(
                             children:
                                 icon4halfStar(color: ThemeApp.primaryColor),
                           ),
-                        if (placeModel.popular == '4')
+                        if (wishListModel.wishListRate == '4')
                           Row(
                             children: icon4Star(color: ThemeApp.primaryColor),
                           ),
-                        if (placeModel.popular == '3.5')
+                        if (wishListModel.wishListRate == '3.5')
                           Row(
                             children:
                                 icon3halfStar(color: ThemeApp.primaryColor),
                           ),
-                        if (placeModel.popular == '3')
+                        if (wishListModel.wishListRate == '3')
                           Row(
                             children: icon3Star(color: ThemeApp.primaryColor),
                           ),
-                        if (placeModel.popular == '2.5')
+                        if (wishListModel.wishListRate == '2.5')
                           Row(
                             children:
                                 icon2halfStar(color: ThemeApp.primaryColor),
                           ),
-                        if (placeModel.popular == '2')
+                        if (wishListModel.wishListRate == '2')
                           Row(
                             children: icon2Star(color: ThemeApp.primaryColor),
                           ),
-                        if (placeModel.popular == '1.5')
+                        if (wishListModel.wishListRate == '1.5')
                           Row(
                             children:
                                 icon1halfStar(color: ThemeApp.primaryColor),
                           ),
-                        if (placeModel.popular == '1')
+                        if (wishListModel.wishListRate == '1')
                           Row(
                             children: iconStar(color: ThemeApp.primaryColor),
                           ),
@@ -277,7 +223,7 @@ class WishListScreen extends StatelessWidget {
                           height: 5.h,
                         ),
                         Text(
-                          placeModel.history,
+                          wishListModel.wishListHistory,
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           style: GoogleFonts.roboto(

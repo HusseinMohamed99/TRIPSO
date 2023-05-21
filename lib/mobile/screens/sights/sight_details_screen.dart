@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tripso/model/arg_model.dart';
-import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/maps_utils.dart';
@@ -18,16 +17,9 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
-class SightDetailsScreen extends StatefulWidget {
+class SightDetailsScreen extends StatelessWidget {
   const SightDetailsScreen({Key? key}) : super(key: key);
   static const String routeName = 'SightDetailsScreen';
-
-  @override
-  State<SightDetailsScreen> createState() => _SightDetailsScreenState();
-}
-
-class _SightDetailsScreenState extends State<SightDetailsScreen> {
-  bool added = false;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +36,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
         }
       },
       builder: (context, state) {
+        var tripso = TripsoCubit.get(context);
         return SafeArea(
           child: Scaffold(
             body: SingleChildScrollView(
@@ -70,14 +63,10 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                 width: double.infinity,
                                 progressIndicatorBuilder:
                                     (context, url, downloadProgress) => Center(
-                                  child: AdaptiveIndicator(
-                                    os: getOs(),
-                                  ),
+                                  child: AdaptiveIndicator(os: getOs()),
                                 ),
                                 errorWidget: (context, url, error) => Center(
-                                  child: AdaptiveIndicator(
-                                    os: getOs(),
-                                  ),
+                                  child: AdaptiveIndicator(os: getOs()),
                                 ),
                               ),
                             ),
@@ -90,31 +79,32 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                               ),
                             ),
                             Positioned(
-                                top: 15.h,
-                                left: 20.w,
-                                child: Card(
-                                  elevation: 2,
-                                  color: ThemeApp.blackPrimary.withOpacity(0.5),
-                                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                                  shape: const StadiumBorder(
-                                    side: BorderSide(
-                                      color: ThemeApp.secondaryColor,
-                                    ),
+                              top: 15.h,
+                              left: 20.w,
+                              child: Card(
+                                elevation: 2,
+                                color: ThemeApp.blackPrimary.withOpacity(0.5),
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                shape: const StadiumBorder(
+                                  side: BorderSide(
+                                    color: ThemeApp.secondaryColor,
                                   ),
-                                  child: IconButton(
-                                    onPressed: () async {
-                                      if (Navigator.canPop(context)) {
-                                        pop(context);
-                                      }
-                                      await flutterTts.pause();
-                                    },
-                                    icon: Icon(
-                                      Icons.arrow_back,
-                                      size: 24.sp,
-                                      color: ThemeApp.secondaryColor,
-                                    ),
+                                ),
+                                child: IconButton(
+                                  onPressed: () async {
+                                    if (Navigator.canPop(context)) {
+                                      pop(context);
+                                    }
+                                    await flutterTts.pause();
+                                  },
+                                  icon: Icon(
+                                    Icons.arrow_back,
+                                    size: 24.sp,
+                                    color: ThemeApp.secondaryColor,
                                   ),
-                                )),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                         Positioned(
@@ -125,40 +115,30 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                             backgroundColor: const Color.fromRGBO(0, 0, 0, 0.6),
                             child: IconButton(
                               onPressed: () {
-                                if (!added) {
-                                  TripsoCubit.get(context).addWishListData(
-                                    cityId: screenArgs.cityModel.cId,
-                                    wishListId: screenArgs.placeModel.pId,
-                                    wishListName: screenArgs.placeModel.name,
-                                    wishListImage: screenArgs.placeModel.image,
-                                    wishListPopular:
-                                        screenArgs.placeModel.popular,
-                                    wishListHistory:
-                                        screenArgs.placeModel.history,
-                                    wishListLocation:
-                                        screenArgs.placeModel.location,
-                                    wishListTimeOfDay:
-                                        screenArgs.placeModel.timeOfDay!,
-                                    wishListTickets:
-                                        screenArgs.placeModel.tickets,
-                                    wishListAddress:
-                                        screenArgs.placeModel.address,
-                                    wishListIsPopular:
-                                        screenArgs.placeModel.isPopular,
-                                  );
-                                  setState(() {
-                                    added = true;
-                                  });
-                                } else {}
+                                tripso.addWishList(
+                                  wishListCityID: screenArgs.cityModel.cId,
+                                  wishListName: screenArgs.placeModel.name,
+                                  wishListImage: screenArgs.placeModel.image,
+                                  wishListHistory:
+                                      screenArgs.placeModel.history,
+                                  wishListLocation:
+                                      screenArgs.placeModel.location,
+                                  wishListTimeOfDay:
+                                      screenArgs.placeModel.timeOfDay,
+                                  wishListTickets:
+                                      screenArgs.placeModel.tickets,
+                                  wishListId: screenArgs.placeModel.pId,
+                                  wishListAddress:
+                                      screenArgs.placeModel.address,
+                                  wishListRate: screenArgs.placeModel.rate,
+                                  wishListIsPopular:
+                                      screenArgs.placeModel.isPopular,
+                                );
                               },
                               icon: Icon(
-                                added
-                                    ? FontAwesomeIcons.solidHeart
-                                    : FontAwesomeIcons.heart,
+                                FontAwesomeIcons.heart,
                                 size: 24.sp,
-                                color: added
-                                    ? Colors.red
-                                    : ThemeApp.secondaryColor,
+                                color: ThemeApp.secondaryColor,
                                 // color: ThemeApp.secondaryColor,
                               ),
                             ),
@@ -168,10 +148,12 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                           padding: const EdgeInsets.all(8.0).r,
                           child: Text(
                             screenArgs.placeModel.name,
-                            style:
-                                Theme.of(context).textTheme.headline2?.copyWith(
-                                      color: ThemeApp.secondaryColor,
-                                    ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .displayMedium
+                                ?.copyWith(
+                                  color: ThemeApp.secondaryColor,
+                                ),
                           ),
                         ),
                       ],
@@ -208,7 +190,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                           textAlign: TextAlign.center,
                                           style: Theme.of(context)
                                               .textTheme
-                                              .headline6
+                                              .titleLarge
                                               ?.copyWith(
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -218,7 +200,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                           textAlign: TextAlign.center,
                                           style: Theme.of(context)
                                               .textTheme
-                                              .headline6
+                                              .titleLarge
                                               ?.copyWith(
                                                 color: ThemeApp.secondaryColor,
                                               ),
@@ -240,16 +222,15 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                       color: ThemeApp.secondaryColor,
                                     ),
                                   ),
-                                  label: Text(
-                                    '',
-                                    style:
-                                        Theme.of(context).textTheme.subtitle1,
-                                  ),
+                                  label: const Text(''),
                                 ),
                                 TextButton.icon(
                                   onPressed: () {
-                                    MapUtils.urlLauncher(Uri.parse(
-                                        screenArgs.placeModel.location));
+                                    MapUtils.urlLauncher(
+                                      Uri.parse(
+                                        screenArgs.placeModel.location.trim(),
+                                      ),
+                                    );
                                   },
                                   icon: CircleAvatar(
                                     backgroundColor: ThemeApp.primaryColor,
@@ -259,11 +240,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                       color: ThemeApp.secondaryColor,
                                     ),
                                   ),
-                                  label: Text(
-                                    '',
-                                    style:
-                                        Theme.of(context).textTheme.subtitle1,
-                                  ),
+                                  label: const Text(''),
                                 ),
                               ],
                             ),
@@ -280,7 +257,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                   overflow: TextOverflow.ellipsis,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline6
+                                      .titleLarge
                                       ?.copyWith(
                                         color:
                                             ThemeApp.blackPrimary.withOpacity(
@@ -296,7 +273,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                     'Read more',
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline6
+                                        .titleLarge
                                         ?.copyWith(
                                             color: const Color.fromARGB(
                                                 255, 80, 159, 175)),
@@ -320,7 +297,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                       screenArgs.placeModel.address.trim(),
                                       style: Theme.of(context)
                                           .textTheme
-                                          .headline6
+                                          .titleLarge
                                           ?.copyWith(
                                               color: ThemeApp.blackPrimary),
                                     ),
@@ -328,7 +305,6 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                 ],
                               ),
                             ),
-                            //  Space(height: 10.h, width: 0.w),
                             ExpansionTile(
                               tilePadding:
                                   const EdgeInsets.symmetric(horizontal: 8.0).r,
@@ -341,7 +317,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                 'Open',
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline6
+                                    .titleLarge
                                     ?.copyWith(color: ThemeApp.blackPrimary),
                               ),
                               children: [
@@ -354,13 +330,13 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                         'Saturday',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                       Text(
-                                        screenArgs.placeModel.timeOfDay![0],
+                                        screenArgs.placeModel.timeOfDay[0],
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                     ],
                                   ),
@@ -374,13 +350,13 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                         'Sunday',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                       Text(
-                                        screenArgs.placeModel.timeOfDay![1],
+                                        screenArgs.placeModel.timeOfDay[1],
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                     ],
                                   ),
@@ -394,13 +370,13 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                         'Monday',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                       Text(
-                                        screenArgs.placeModel.timeOfDay![2],
+                                        screenArgs.placeModel.timeOfDay[2],
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                     ],
                                   ),
@@ -414,13 +390,13 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                         'Tuesday',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                       Text(
-                                        screenArgs.placeModel.timeOfDay![3],
+                                        screenArgs.placeModel.timeOfDay[3],
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                     ],
                                   ),
@@ -434,13 +410,13 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                         'Wednesday',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                       Text(
-                                        screenArgs.placeModel.timeOfDay![4],
+                                        screenArgs.placeModel.timeOfDay[4],
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                     ],
                                   ),
@@ -454,13 +430,13 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                         'Thursday',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                       Text(
-                                        screenArgs.placeModel.timeOfDay![5],
+                                        screenArgs.placeModel.timeOfDay[5],
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                     ],
                                   ),
@@ -474,13 +450,13 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                         'Friday',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                       Text(
-                                        screenArgs.placeModel.timeOfDay![6],
+                                        screenArgs.placeModel.timeOfDay[6],
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline6,
+                                            .titleLarge,
                                       ),
                                     ],
                                   ),
@@ -502,8 +478,8 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
   }
 
   void showBottomSheet(BuildContext context) {
-    PlaceModel placeModel =
-        (ModalRoute.of(context)?.settings.arguments) as PlaceModel;
+    ScreenArgs screenArgs =
+        (ModalRoute.of(context)?.settings.arguments) as ScreenArgs;
     showModalBottomSheet(
       isScrollControlled: true,
       backgroundColor: ThemeApp.secondaryColor,
@@ -527,7 +503,8 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                 borderRadius:
                     BorderRadius.vertical(top: const Radius.circular(20).r),
               ),
-              padding: const EdgeInsets.symmetric(horizontal: 8).r,
+              padding: const EdgeInsets.symmetric(horizontal: 10).r,
+              margin: const EdgeInsets.symmetric(horizontal: 10).r,
               child: Stack(
                 alignment: AlignmentDirectional.topCenter,
                 clipBehavior: Clip.none,
@@ -558,17 +535,17 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                               size: 24.sp,
                             )),
                         Text(
-                          placeModel.name.trim(),
+                          screenArgs.placeModel.name.trim(),
                           textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.headline4,
+                          style: Theme.of(context).textTheme.titleLarge,
                         )
                       ],
                     ),
                     const MyDivider(),
                     Space(height: 15.h, width: 0.w),
                     Text(
-                      placeModel.history.trim(),
-                      style: Theme.of(context).textTheme.headline6?.copyWith(
+                      screenArgs.placeModel.history.trim(),
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
                             color: ThemeApp.blackPrimary.withOpacity(
                               0.54,
                             ),
@@ -577,7 +554,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                     Space(height: 20.h, width: 0.w),
                     TextButton(
                       onPressed: () {
-                        speak(placeModel.history);
+                        speak(screenArgs.placeModel.history);
                       },
                       child: CircleAvatar(
                           radius: 24.r,

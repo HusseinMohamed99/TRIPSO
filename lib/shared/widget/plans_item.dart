@@ -1,125 +1,89 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tripso/mobile/screens/plans/top_plans.dart';
+import 'package:tripso/model/arg_model.dart';
+import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
-import 'package:tripso/shared/adaptive/indicator.dart';
+import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/constants/constants.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
-Widget topPlansItem(BuildContext context, CityModel cityModel) {
-  return InkWell(
-    borderRadius: BorderRadius.circular(20).r,
-    onTap: () {
-      navigateTo(context, routeName: TopPlansScreen.routeName);
-    },
-    child: Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16).r,
-      child: Column(children: [
-        Stack(
-          alignment: Alignment.bottomLeft,
-          children: [
-            Container(
-              alignment: Alignment.bottomLeft,
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              height: 200.h,
-              width: 250.w,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  const Radius.circular(12).r,
-                ),
-                // image: const DecorationImage(
-                //   fit: BoxFit.cover,
-                //   image: NetworkImage(
-                //       //  cityModel.image,
-                //       'https://img.freepik.com/free-photo/flag-palestine_1401-194.jpg?w=996&t=st=1675691524~exp=1675692124~hmac=5198490804e8153abeb25917a4d16695d84e1904eb6eec723b9b92d13fd363b4'),
-                // ),
+class TopPlanItem extends StatelessWidget {
+  const TopPlanItem({
+    Key? key,
+    required this.bestPLanModel,
+    required this.cityModel,
+    required this.placeModel,
+  }) : super(key: key);
+
+  final CityModel cityModel;
+  final PlaceModel placeModel;
+  final BestPLanModel bestPLanModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<TripsoCubit, TripsoStates>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        return InkWell(
+          borderRadius: BorderRadius.circular(20).r,
+          onTap: () async {
+            TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
+            navigateTo(
+              context,
+              routeName: TopPlansScreen.routeName,
+              arguments: ScreenArgs(
+                cityModel: cityModel,
+                placeModel: placeModel,
+                bestPLanModel: bestPLanModel,
               ),
-              child: CachedNetworkImage(
-                imageUrl:
-                    'https://img.freepik.com/free-photo/flag-palestine_1401-194.jpg?w=996&t=st=1675691524~exp=1675692124~hmac=5198490804e8153abeb25917a4d16695d84e1904eb6eec723b9b92d13fd363b4',
-                fit: BoxFit.fill,
-                height: 200.h,
-                width: double.infinity,
-                progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    Center(
-                  child: AdaptiveIndicator(
-                    os: getOs(),
+            );
+            if (kDebugMode) {
+              print(bestPLanModel.pId);
+            }
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16, right: 16).r,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  alignment: Alignment.bottomLeft,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  height: 200.h,
+                  width: 220.w,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      const Radius.circular(20).r,
+                    ),
+                    image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage('assets/images/2021884.jpg'),
+                    ),
                   ),
                 ),
-                errorWidget: (context, url, error) => Center(
-                  child: AdaptiveIndicator(
-                    os: getOs(),
-                  ),
+                LayerImage(
+                  height: 200.h,
+                  width: 220.w,
                 ),
-              ),
+                Text(
+                  bestPLanModel.name,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall
+                      ?.copyWith(color: ThemeApp.blackPrimary),
+                ),
+              ],
             ),
-            LayerImage(
-              height: 200.h,
-              width: 250.w,
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 5).r,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        padding: const EdgeInsets.all(20).r,
-                        icon: Icon(
-                          FontAwesomeIcons.solidCalendarDays,
-                          size: 30.sp,
-                          color: ThemeApp.secondaryColor,
-                        ),
-                      ),
-                      Text(
-                        '3 Days',
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context)
-                            .textTheme
-                            .subtitle1
-                            ?.copyWith(color: ThemeApp.secondaryColor),
-                      ),
-                    ],
-                  ),
-                  Space(height: 0.h, width: 10.w),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        padding: const EdgeInsets.all(20).r,
-                        icon: Icon(
-                          FontAwesomeIcons.eye,
-                          size: 30.sp,
-                          color: ThemeApp.secondaryColor,
-                        ),
-                      ),
-                      Text(
-                        '25 Sights',
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context)
-                            .textTheme
-                            .subtitle1
-                            ?.copyWith(color: ThemeApp.secondaryColor),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ]),
-    ),
-  );
+          ),
+        );
+      },
+    );
+  }
 }

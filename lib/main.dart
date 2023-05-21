@@ -7,31 +7,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:tripso/firebase_options.dart';
 import 'package:tripso/layout/layout.dart';
-import 'package:tripso/mobile/screens/historical_city/historical_city.dart';
 import 'package:tripso/mobile/screens/explore/explore.dart';
+import 'package:tripso/mobile/screens/historical_city/historical_city.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
-import 'package:tripso/mobile/screens/plans/all_plans.dart';
-import 'package:tripso/mobile/screens/plans/my_plans.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/mobile/screens/password/forget_password_screen.dart';
 import 'package:tripso/mobile/screens/password/update_password_screen.dart';
+import 'package:tripso/mobile/screens/plans/create_customize_plan.dart';
+import 'package:tripso/mobile/screens/plans/my_plans.dart';
+import 'package:tripso/mobile/screens/plans/pick_plan.dart';
+import 'package:tripso/mobile/screens/plans/select_date_screen.dart';
+import 'package:tripso/mobile/screens/plans/top_plans.dart';
 import 'package:tripso/mobile/screens/profile/edit_profile.dart';
-import 'package:tripso/mobile/screens/sights/popular_sights.dart';
 import 'package:tripso/mobile/screens/profile/my_profile.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
+import 'package:tripso/mobile/screens/sights/popular_sights.dart';
 import 'package:tripso/mobile/screens/sights/sight_details_screen.dart';
 import 'package:tripso/mobile/screens/sights/sights_screen.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/mobile/screens/sign_up/sign_up_screen.dart';
-import 'package:tripso/mobile/screens/plans/top_plans.dart';
 import 'package:tripso/mobile/screens/splash/splash_screen.dart';
-import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/mobile/screens/wishlist/wishlist.dart';
 import 'package:tripso/shared/bloc_observer.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
+import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/shared/styles/theme.dart';
 import 'package:wakelock/wakelock.dart';
 
@@ -72,16 +74,16 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => TripsoCubit()
-            ..getUserData()
-            ..getCityData()
-            ..getDataForPlace()
-            ..getITData()
-            ..getEGData()
-            ..getFRData()
-            ..getUAEData()
-            ..getPopularData(),
-        ),
+            create: (context) => TripsoCubit()
+              ..getUserData()
+              ..getCityData()
+              ..getDataForPlace()
+              ..getITData()
+              ..getEGData()
+              ..getFRData()
+              ..getUAEData()
+              ..getPopularData()
+              ..getBestPlan()),
       ],
       child: BlocConsumer<TripsoCubit, TripsoStates>(
         listener: (context, state) {},
@@ -113,7 +115,6 @@ class MyApp extends StatelessWidget {
                   ExploreScreen.routeName: (_) => const ExploreScreen(),
                   MyPlansScreen.routeName: (_) => const MyPlansScreen(),
                   TopPlansScreen.routeName: (_) => const TopPlansScreen(),
-                  AllPlansScreen.routeName: (_) => const AllPlansScreen(),
                   HistoricalCity.routeName: (_) => const HistoricalCity(),
                   SightsScreen.routeName: (_) => const SightsScreen(),
                   SightDetailsScreen.routeName: (_) =>
@@ -121,6 +122,10 @@ class MyApp extends StatelessWidget {
                   PopularSightsScreen.routeName: (_) =>
                       const PopularSightsScreen(),
                   EditProfile.routeName: (_) => EditProfile(),
+                  PickPlans.routeName: (_) => const PickPlans(),
+                  CreateCustomizePlan.routeName: (_) =>
+                      const CreateCustomizePlan(),
+                  SelectDateScreen.routeName: (_) => const SelectDateScreen(),
                 },
                 initialRoute: SplashScreen.routeName,
               );

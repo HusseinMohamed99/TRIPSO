@@ -3,24 +3,24 @@ class PlaceModel {
   String image;
   String history;
   String location;
-  List<String>? timeOfDay;
+  List<String> timeOfDay;
   String tickets;
   String pId;
   String address;
-  String popular;
+  String rate;
   bool isPopular;
 
   PlaceModel({
     required this.name,
     required this.history,
-    this.timeOfDay,
+    required this.timeOfDay,
     required this.image,
     required this.location,
     required this.tickets,
     required this.pId,
     required this.isPopular,
     required this.address,
-    required this.popular,
+    required this.rate,
   });
 
   PlaceModel.fromFireStore(Map data)
@@ -35,7 +35,7 @@ class PlaceModel {
         pId = data['pId'],
         isPopular = data['isPopular'],
         address = data['address'],
-        popular = data['popular'];
+        rate = data['rate'];
 
   Map<String, dynamic> toFireStore() {
     return {
@@ -46,9 +46,9 @@ class PlaceModel {
       'tickets': tickets,
       'timeOfDay': timeOfDay,
       'pId': pId,
-      'isPopular ': isPopular,
-      'address ': address,
-      'popular ': popular,
+      'isPopular': isPopular,
+      'address': address,
+      'rate': rate,
     };
   }
 }

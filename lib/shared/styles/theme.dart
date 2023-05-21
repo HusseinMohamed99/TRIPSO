@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,43 +15,50 @@ class ThemeApp {
     scaffoldBackgroundColor: secondaryColor,
     cardColor: secondaryColor,
     appBarTheme: const AppBarTheme(
-        ),
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: ThemeApp.blackPrimary,
+        systemNavigationBarColor: ThemeApp.blackPrimary,
+        systemNavigationBarDividerColor: ThemeApp.secondaryColor,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+      ),
+    ),
     textTheme: TextTheme(
-      headline1: GoogleFonts.roboto(
+      displayLarge: GoogleFonts.roboto(
         fontSize: 36.sp,
         fontWeight: FontWeight.bold,
         color: blackPrimary,
       ),
-      headline2: GoogleFonts.roboto(
+      displayMedium: GoogleFonts.roboto(
         fontSize: 30.sp,
         color: blackPrimary,
         fontWeight: FontWeight.bold,
       ),
-      headline3: GoogleFonts.roboto(
+      bodyLarge: GoogleFonts.roboto(
         fontSize: 25.sp,
         color: blackPrimary,
         fontWeight: FontWeight.bold,
       ),
-      headline4: GoogleFonts.roboto(
+      bodyMedium: GoogleFonts.roboto(
         fontSize: 22.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
       ),
-      headline5: GoogleFonts.roboto(
+      bodySmall: GoogleFonts.roboto(
         fontSize: 20.sp,
         fontWeight: FontWeight.w500,
       ),
-      headline6: GoogleFonts.roboto(
+      displaySmall: GoogleFonts.roboto(
         fontSize: 17.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
       ),
-      subtitle1: GoogleFonts.roboto(
+      titleMedium: GoogleFonts.roboto(
         fontSize: 14.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
       ),
-      subtitle2: GoogleFonts.roboto(
+      titleSmall: GoogleFonts.roboto(
         fontSize: 12.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
@@ -64,41 +72,41 @@ class ThemeApp {
     appBarTheme: const AppBarTheme(
         ),
     textTheme: TextTheme(
-      headline1: GoogleFonts.roboto(
+      displayLarge: GoogleFonts.roboto(
         fontSize: 36.sp,
         fontWeight: FontWeight.bold,
         color: blackPrimary,
       ),
-      headline2: GoogleFonts.roboto(
+      displayMedium: GoogleFonts.roboto(
         fontSize: 30.sp,
         color: blackPrimary,
         fontWeight: FontWeight.bold,
       ),
-      headline3: GoogleFonts.roboto(
+      bodyLarge: GoogleFonts.roboto(
         fontSize: 25.sp,
         color: blackPrimary,
         fontWeight: FontWeight.bold,
       ),
-      headline4: GoogleFonts.roboto(
+      bodyMedium: GoogleFonts.roboto(
         fontSize: 22.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
       ),
-      headline5: GoogleFonts.roboto(
+      bodySmall: GoogleFonts.roboto(
         fontSize: 20.sp,
         fontWeight: FontWeight.w500,
       ),
-      headline6: GoogleFonts.roboto(
+      displaySmall: GoogleFonts.roboto(
         fontSize: 17.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
       ),
-      subtitle1: GoogleFonts.roboto(
+      titleMedium: GoogleFonts.roboto(
         fontSize: 14.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
       ),
-      subtitle2: GoogleFonts.roboto(
+      titleSmall: GoogleFonts.roboto(
         fontSize: 12.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,

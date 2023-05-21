@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -86,7 +87,8 @@ class MyDialog {
           )));
     }
     if (negActionTitle != null) {
-      actions.add(TextButton(
+      actions.add(
+        TextButton(
           onPressed: () {
             if (negAction != null) {
               negAction();
@@ -141,5 +143,67 @@ class MyDialog {
 
   static void hideDialog(context) {
     pop(context);
+  }
+
+  static void showAlertDialog(
+    BuildContext context,
+    Widget widget, {
+    bool isDismissible = true,
+    String? posActionTitle,
+    Function? posAction,
+    String? negActionTitle,
+    VoidCallback? negAction,
+  }) {
+    List<Widget> actions = [];
+    if (posActionTitle != null) {
+      actions.add(TextButton(
+          onPressed: () {
+            if (posAction != null) {
+              posAction();
+            }
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            }
+          },
+          child: Text(
+            posActionTitle,
+            style: GoogleFonts.roboto(fontSize: 15.sp),
+          )));
+    }
+    if (negActionTitle != null) {
+      actions.add(
+        TextButton(
+          onPressed: () {
+            if (negAction != null) {
+              negAction();
+            }
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            }
+          },
+          child: Text(
+            negActionTitle,
+            style: GoogleFonts.roboto(fontSize: 15.sp),
+          ),
+        ),
+      );
+    }
+    showDialog(
+      context: context,
+      builder: (context) {
+        if (Platform.operatingSystem == 'android') {
+          return AlertDialog(
+            content: widget,
+            actions: actions,
+          );
+        }
+
+        return CupertinoAlertDialog(
+          content: widget,
+          actions: actions,
+        );
+      },
+      barrierDismissible: false,
+    );
   }
 }

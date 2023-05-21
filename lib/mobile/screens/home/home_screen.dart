@@ -1,13 +1,17 @@
 import 'dart:async';
+
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
+import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
+import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/search_bar.dart';
@@ -58,158 +62,168 @@ class _CitiesScreenState extends State<CitiesScreen> {
     super.dispose();
   }
 
+  List<Widget> widgetImages = [
+    Image.asset(AssetPath.gizaImage),
+    Image.asset(AssetPath.dubaiImage),
+    Image.asset(AssetPath.tripsoImage),
+    Image.asset(AssetPath.ancient1),
+    Image.asset(AssetPath.ancient2),
+    Image.asset(AssetPath.ancient3),
+    Image.asset(AssetPath.ancient4),
+    Image.asset(AssetPath.ancient5),
+    Image.asset(AssetPath.ancient6),
+  ];
+
   @override
   Widget build(BuildContext context) {
     var cubit = TripsoCubit.get(context);
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        return SafeArea(
-          child: Scaffold(
-            body: cubit.city.isEmpty
-                ? Center(
-                    child: AdaptiveIndicator(
-                      os: getOs(),
-                    ),
-                  )
-                : SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Stack(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Stack(
-                                    alignment: AlignmentDirectional.bottomStart,
-                                    children: [
-                                      Container(
-                                        clipBehavior:
-                                            Clip.antiAliasWithSaveLayer,
+        return Scaffold(
+          appBar: thirdAppBar(),
+          body: cubit.city.isEmpty
+              ? Center(
+                  child: AdaptiveIndicator(
+                    os: getOs(),
+                  ),
+                )
+              : SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Stack(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Stack(
+                                  alignment: AlignmentDirectional.bottomStart,
+                                  children: [
+                                    CarouselSlider(
+                                      items: List.generate(widgetImages.length,
+                                          (index) => widgetImages[index]),
+                                      options: CarouselOptions(
                                         height: 250.h,
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                              bottomLeft:
-                                                  const Radius.circular(20).r,
-                                              bottomRight:
-                                                  const Radius.circular(20).r,
-                                            ),
-                                            image: const DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                AssetPath.dubaiImage,
-                                              ),
-                                            )),
-                                      ),
-                                      LayerImage(
-                                        height: 250.h,
-                                        width: double.infinity,
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft:
-                                              const Radius.circular(20).r,
-                                          bottomRight:
-                                              const Radius.circular(20).r,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            left: 15.w, bottom: 50.h),
-                                        child: Text(
-                                          'Where do you\nwant to go ?',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .headline1
-                                              ?.copyWith(
-                                                color: ThemeApp.secondaryColor,
-                                              ),
-                                        ),
-                                      ),
-                                    ]),
-                                Space(height: 30.h, width: 0.w),
-                                Space(height: 5.h, width: 0.w),
-                                if (dropdownValue == 'All Cities')
-                                  gridCitiesItem(context, cubit.placeModel!),
-                                if (dropdownValue == 'Egypt')
-                                  gridEGItem(context, cubit.placeModel!),
-                                if (dropdownValue == 'Italy')
-                                  gridITItem(context, cubit.placeModel!),
-                                if (dropdownValue == 'France')
-                                  gridFRItem(context, cubit.placeModel!),
-                                if (dropdownValue == 'UAE')
-                                  gridUAEItem(context, cubit.placeModel!),
-                                if (dropdownValue == 'Popular')
-                                  gridPopularItem(context, cubit.placeModel!),
-                              ],
-                            ),
-                            Positioned(
-                              top: 225.h,
-                              right: 10.w,
-                              left: 10.w,
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: SearchBar(
-                                        readOnly: true,
-                                        function: () {
-                                          navigateTo(
-                                            context,
-                                            routeName: SearchScreen.routeName,
-                                          );
-                                        }),
-                                  ),
-                                  Card(
-                                    elevation: 3,
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      height: 40.h,
-                                      width: 100.w,
-                                      child: DropdownButton(
-                                        iconSize: 20.sp,
-                                        underline: const Divider(
-                                          color: ThemeApp.secondaryColor,
-                                        ),
-                                        icon: const Icon(
-                                          Icons.keyboard_arrow_down,
-                                        ),
-                                        items: [
-                                          'All Cities',
-                                          'Egypt',
-                                          'Italy',
-                                          'France',
-                                          'UAE',
-                                          'Popular',
-                                        ].map((e) {
-                                          return DropdownMenuItem(
-                                            value: e,
-                                            child: Center(
-                                              child: Text(
-                                                e,
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .headline6,
-                                              ),
-                                            ),
-                                          );
-                                        }).toList(),
-                                        onChanged: (newValue) {
-                                          setState(() {
-                                            dropdownValue = newValue;
-                                          });
-                                        },
-                                        value: dropdownValue,
+                                        enlargeCenterPage: false,
+                                        disableCenter: false,
+                                        viewportFraction: 2,
+                                        autoPlay: true,
+                                        autoPlayCurve: Curves.decelerate,
                                       ),
                                     ),
+                                    LayerImage(
+                                      height: 250.h,
+                                      width: double.infinity,
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: const Radius.circular(20).r,
+                                        bottomRight:
+                                            const Radius.circular(20).r,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 15.w, bottom: 50.h),
+                                      child: Text(
+                                        'Where do you\nwant to go ?',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displayLarge
+                                            ?.copyWith(
+                                              color: ThemeApp.secondaryColor,
+                                            ),
+                                      ),
+                                    ),
+                                  ]),
+                              Space(height: 30.h, width: 0.w),
+                              Space(height: 5.h, width: 0.w),
+                              if (dropdownValue == 'All Cities')
+                                gridCitiesItem(context, cubit.placeModel!,
+                                    cubit.bestPLanModel!),
+                              if (dropdownValue == 'Egypt')
+                                gridEGItem(context, cubit.placeModel!,
+                                    cubit.bestPLanModel!),
+                              if (dropdownValue == 'Italy')
+                                gridITItem(context, cubit.placeModel!,
+                                    cubit.bestPLanModel!),
+                              if (dropdownValue == 'France')
+                                gridFRItem(context, cubit.placeModel!,
+                                    cubit.bestPLanModel!),
+                              if (dropdownValue == 'UAE')
+                                gridUAEItem(context, cubit.placeModel!,
+                                    cubit.bestPLanModel!),
+                              if (dropdownValue == 'Popular')
+                                gridPopularItem(context, cubit.placeModel!,
+                                    cubit.bestPLanModel!),
+                            ],
+                          ),
+                          Positioned(
+                            top: 225.h,
+                            right: 10.w,
+                            left: 10.w,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: SearchBar(
+                                      readOnly: true,
+                                      function: () {
+                                        navigateTo(
+                                          context,
+                                          routeName: SearchScreen.routeName,
+                                        );
+                                      }),
+                                ),
+                                Card(
+                                  elevation: 3,
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    height: 40.h,
+                                    width: 100.w,
+                                    child: DropdownButton(
+                                      iconSize: 20.sp,
+                                      underline: const Divider(
+                                        color: ThemeApp.secondaryColor,
+                                      ),
+                                      icon: const Icon(
+                                        Icons.keyboard_arrow_down,
+                                      ),
+                                      items: [
+                                        'All Cities',
+                                        'Egypt',
+                                        'Italy',
+                                        'France',
+                                        'UAE',
+                                        'Popular',
+                                      ].map((e) {
+                                        return DropdownMenuItem(
+                                          value: e,
+                                          child: Center(
+                                            child: Text(
+                                              e,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .displaySmall,
+                                            ),
+                                          ),
+                                        );
+                                      }).toList(),
+                                      onChanged: (newValue) {
+                                        setState(() {
+                                          dropdownValue = newValue;
+                                        });
+                                      },
+                                      value: dropdownValue,
+                                    ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-          ),
+                ),
         );
       },
     );
@@ -232,7 +246,8 @@ class _CitiesScreenState extends State<CitiesScreen> {
     );
   }
 
-  Widget gridCitiesItem(BuildContext context, PlaceModel placeModel) {
+  Widget gridCitiesItem(BuildContext context, PlaceModel placeModel,
+      BestPLanModel bestPLanModel) {
     var cubit = TripsoCubit.get(context);
     return GridView.count(
       shrinkWrap: true,
@@ -246,12 +261,14 @@ class _CitiesScreenState extends State<CitiesScreen> {
           cubit.city.length,
           (index) => GridCitiesItem(
                 placeModel,
+                bestPLanModel,
                 cityModel: cubit.city[index],
               )),
     );
   }
 
-  Widget gridEGItem(BuildContext context, PlaceModel placeModel) {
+  Widget gridEGItem(BuildContext context, PlaceModel placeModel,
+      BestPLanModel bestPLanModel) {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
@@ -266,12 +283,14 @@ class _CitiesScreenState extends State<CitiesScreen> {
           cubit.cityEG.length,
           (index) => GridEGItem(
                 placeModel,
+                bestPLanModel,
                 cityModel: cubit.cityEG[index],
               )),
     );
   }
 
-  Widget gridITItem(BuildContext context, PlaceModel placeModel) {
+  Widget gridITItem(BuildContext context, PlaceModel placeModel,
+      BestPLanModel bestPLanModel) {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
@@ -286,12 +305,14 @@ class _CitiesScreenState extends State<CitiesScreen> {
           cubit.cityIT.length,
           (index) => GridITItem(
                 placeModel,
+                bestPLanModel,
                 cityModel: cubit.cityIT[index],
               )),
     );
   }
 
-  Widget gridUAEItem(BuildContext context, PlaceModel placeModel) {
+  Widget gridUAEItem(BuildContext context, PlaceModel placeModel,
+      BestPLanModel bestPLanModel) {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
@@ -306,12 +327,14 @@ class _CitiesScreenState extends State<CitiesScreen> {
           cubit.cityUAE.length,
           (index) => GridUAEItem(
                 placeModel,
+                bestPLanModel,
                 cityModel: cubit.cityUAE[index],
               )),
     );
   }
 
-  Widget gridFRItem(BuildContext context, PlaceModel placeModel) {
+  Widget gridFRItem(BuildContext context, PlaceModel placeModel,
+      BestPLanModel bestPLanModel) {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
@@ -326,12 +349,14 @@ class _CitiesScreenState extends State<CitiesScreen> {
           cubit.cityFR.length,
           (index) => GridFRItem(
                 placeModel,
+                bestPLanModel,
                 cityModel: cubit.cityFR[index],
               )),
     );
   }
 
-  Widget gridPopularItem(BuildContext context, PlaceModel placeModel) {
+  Widget gridPopularItem(BuildContext context, PlaceModel placeModel,
+      BestPLanModel bestPLanModel) {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
@@ -346,6 +371,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
           cubit.cityPopular.length,
           (index) => GridPopularItem(
                 placeModel,
+                bestPLanModel,
                 cityModel: cubit.cityPopular[index],
               )),
     );

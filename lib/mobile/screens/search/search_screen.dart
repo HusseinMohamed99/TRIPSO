@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:tripso/layout/layout.dart';
 import 'package:tripso/model/arg_model.dart';
+import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/weather_model.dart';
@@ -141,7 +142,10 @@ class _SearchScreenState extends State<SearchScreen> {
                   )
                 : ListView.separated(
                     itemBuilder: (context, index) => singleUserBuilder(
-                        foundCity[index], context, cubit.placeModel!),
+                        foundCity[index],
+                        context,
+                        cubit.placeModel!,
+                        cubit.bestPLanModel!),
                     separatorBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0).r,
                       child: MyDivider(
@@ -155,18 +159,22 @@ class _SearchScreenState extends State<SearchScreen> {
         listener: (context, state) {});
   }
 
-  Widget singleUserBuilder(
-      CityModel city, BuildContext context, PlaceModel placeModel) {
+  Widget singleUserBuilder(CityModel city, BuildContext context,
+      PlaceModel placeModel, BestPLanModel bestPLanModel) {
     return InkWell(
       onTap: () async {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(city.cId);
         TripsoCubit.get(context).getPopularPlace(city.cId);
         TripsoCubit.get(context).getDataForCity(city.cId);
+        TripsoCubit.get(context).getAllBestPlan(city.cId);
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
-          arguments: ScreenArgs(cityModel: city, placeModel: placeModel),
+          arguments: ScreenArgs(
+              cityModel: city,
+              placeModel: placeModel,
+              bestPLanModel: bestPLanModel),
         );
 
         debugPrint('City ID = ${city.cId}');
@@ -195,16 +203,19 @@ class _SearchScreenState extends State<SearchScreen> {
                   children: [
                     Text(
                       city.name,
-                      style: Theme.of(context).textTheme.headline3,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                     Space(height: 10.h, width: 0.w),
-                    Text(
-                      city.history,
-                      maxLines: 7,
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                            color: Colors.black54,
-                          ),
+                    Expanded(
+                      child: Text(
+                        city.history,
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        style:
+                            Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  color: Colors.black54,
+                                ),
+                      ),
                     ),
                   ],
                 ),

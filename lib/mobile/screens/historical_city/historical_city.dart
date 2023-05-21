@@ -85,7 +85,7 @@ class HistoricalCity extends StatelessWidget {
                             cityModel.name,
                             style: Theme.of(context)
                                 .textTheme
-                                .headline1
+                                .displayMedium
                                 ?.copyWith(color: ThemeApp.secondaryColor),
                           ),
                           Space(height: 10.h, width: 0.w),
@@ -100,7 +100,7 @@ class HistoricalCity extends StatelessWidget {
                                 cityModel.country.trim(),
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline3
+                                    .titleLarge
                                     ?.copyWith(
                                       color: ThemeApp.secondaryColor,
                                     ),
@@ -134,12 +134,14 @@ class HistoricalCity extends StatelessWidget {
                               Space(height: 10.h, width: 0.w),
                               Text(
                                 'Description',
-                                style: Theme.of(context).textTheme.headline1,
+                                style:
+                                    Theme.of(context).textTheme.displayMedium,
                               ),
                               Space(height: 10.h, width: 0.w),
                               Text(
                                 cityModel.history.trim(),
-                                style: Theme.of(context).textTheme.headline5,
+                                style:
+                                    Theme.of(context).textTheme.headlineSmall,
                               ),
                               Space(height: 30.h, width: 0.w),
                             ],

@@ -46,6 +46,16 @@ class GetPlaceDataErrorState extends TripsoStates {
   GetPlaceDataErrorState(this.error);
 }
 
+class GetBestPlanLoadingState extends TripsoStates {}
+
+class GetBestPlanSuccessState extends TripsoStates {}
+
+class GetBestPlanErrorState extends TripsoStates {
+  final String error;
+
+  GetBestPlanErrorState(this.error);
+}
+
 class GetProfileImagePickedSuccessState extends TripsoStates {}
 
 class GetProfileImagePickedErrorState extends TripsoStates {}
@@ -89,3 +99,13 @@ class GetPlacesErrorState extends TripsoStates {
 
   GetPlacesErrorState(this.error);
 }
+
+class AddPlanSuccessState extends TripsoStates {}
+
+class AddPlanErrorState extends TripsoStates {
+  final String error;
+
+  AddPlanErrorState(this.error);
+}
+
+class DeleteMyPlanSuccessState extends TripsoStates {}

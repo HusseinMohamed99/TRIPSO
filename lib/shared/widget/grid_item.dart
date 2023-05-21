@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tripso/mobile/screens/sights/sight_details_screen.dart';
 import 'package:tripso/model/arg_model.dart';
+import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
@@ -286,13 +288,16 @@ List<Icon> iconStar({Color? color}) {
 
 class GridItemSights extends StatelessWidget {
   const GridItemSights(
-    this.cityModel, {
+    this.cityModel,
+    this.bestPLanModel, {
     Key? key,
     required this.placeModel,
   }) : super(key: key);
 
   final PlaceModel placeModel;
   final CityModel cityModel;
+
+  final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
@@ -302,8 +307,14 @@ class GridItemSights extends StatelessWidget {
         navigateTo(
           context,
           routeName: SightDetailsScreen.routeName,
-          arguments: ScreenArgs(placeModel: placeModel, cityModel: cityModel),
+          arguments: ScreenArgs(
+              placeModel: placeModel,
+              cityModel: cityModel,
+              bestPLanModel: bestPLanModel),
         );
+        if (kDebugMode) {
+          print(placeModel.pId);
+        }
       },
       child: Stack(
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -326,7 +337,7 @@ class GridItemSights extends StatelessWidget {
                       child: CachedNetworkImage(
                         imageUrl: placeModel.image,
                         fit: BoxFit.cover,
-                        height: 263.h,
+                        height: 220.h,
                         width: double.infinity,
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) => Center(
@@ -341,7 +352,7 @@ class GridItemSights extends StatelessWidget {
                       ),
                     ),
                     LayerImage(
-                      height: 263.h,
+                      height: 220.h,
                       width: double.infinity,
                       borderRadius: BorderRadius.circular(12).r,
                     ),
@@ -355,43 +366,43 @@ class GridItemSights extends StatelessWidget {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style:
-                                Theme.of(context).textTheme.headline3?.copyWith(
+                                Theme.of(context).textTheme.bodySmall?.copyWith(
                                       color: ThemeApp.secondaryColor,
                                     ),
                           ),
-                          if (placeModel.popular == '5')
+                          if (placeModel.rate == '5')
                             Row(
                               children: icon5Star(),
                             ),
-                          if (placeModel.popular == '4.5')
+                          if (placeModel.rate == '4.5')
                             Row(
                               children: icon4halfStar(),
                             ),
-                          if (placeModel.popular == '4')
+                          if (placeModel.rate == '4')
                             Row(
                               children: icon4Star(),
                             ),
-                          if (placeModel.popular == '3.5')
+                          if (placeModel.rate == '3.5')
                             Row(
                               children: icon3halfStar(),
                             ),
-                          if (placeModel.popular == '3')
+                          if (placeModel.rate == '3')
                             Row(
                               children: icon3Star(),
                             ),
-                          if (placeModel.popular == '2.5')
+                          if (placeModel.rate == '2.5')
                             Row(
                               children: icon2halfStar(),
                             ),
-                          if (placeModel.popular == '2')
+                          if (placeModel.rate == '2')
                             Row(
                               children: icon2Star(),
                             ),
-                          if (placeModel.popular == '1.5')
+                          if (placeModel.rate == '1.5')
                             Row(
                               children: icon1halfStar(),
                             ),
-                          if (placeModel.popular == '1')
+                          if (placeModel.rate == '1')
                             Row(
                               children: iconStar(),
                             ),
@@ -402,7 +413,7 @@ class GridItemSights extends StatelessWidget {
                                 TripsoCubit.get(context).cityModel!.country,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline5
+                                    .headlineSmall
                                     ?.copyWith(
                                       color: ThemeApp.secondaryColor,
                                     ),

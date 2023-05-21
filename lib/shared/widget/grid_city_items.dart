@@ -5,27 +5,30 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:tripso/layout/layout.dart';
 import 'package:tripso/model/arg_model.dart';
+import 'package:tripso/model/best_plan_model.dart';
+import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/weather_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
+import 'package:tripso/shared/components/layer.dart';
+import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/shared/service/weather_service.dart';
-import 'package:tripso/model/city_model.dart';
-import 'package:tripso/shared/components/layer.dart';
-import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class GridCitiesItem extends StatelessWidget {
   const GridCitiesItem(
-    this.placeModel, {
+    this.placeModel,
+    this.bestPLanModel, {
     Key? key,
     required this.cityModel,
   }) : super(key: key);
 
   final CityModel cityModel;
   final PlaceModel placeModel;
+  final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +39,14 @@ class GridCitiesItem extends StatelessWidget {
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
-          arguments: ScreenArgs(cityModel: cityModel, placeModel: placeModel),
+          arguments: ScreenArgs(
+              cityModel: cityModel,
+              placeModel: placeModel,
+              bestPLanModel: bestPLanModel),
         );
 
         debugPrint('City ID = ${cityModel.cId}');
@@ -95,7 +102,7 @@ class GridCitiesItem extends StatelessWidget {
             ),
             Text(
               cityModel.name,
-              style: Theme.of(context).textTheme.headline2?.copyWith(
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                     color: ThemeApp.secondaryColor,
                   ),
             ),
@@ -108,13 +115,15 @@ class GridCitiesItem extends StatelessWidget {
 
 class GridEGItem extends StatelessWidget {
   const GridEGItem(
-    this.placeModel, {
+    this.placeModel,
+    this.bestPLanModel, {
     Key? key,
     required this.cityModel,
   }) : super(key: key);
 
   final CityModel cityModel;
   final PlaceModel placeModel;
+  final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
@@ -125,10 +134,14 @@ class GridEGItem extends StatelessWidget {
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
-          arguments: ScreenArgs(cityModel: cityModel, placeModel: placeModel),
+          arguments: ScreenArgs(
+              cityModel: cityModel,
+              placeModel: placeModel,
+              bestPLanModel: bestPLanModel),
         );
 
         debugPrint('City ID = ${cityModel.cId}');
@@ -180,8 +193,8 @@ class GridEGItem extends StatelessWidget {
             ),
             Text(
               cityModel.name,
-              style: Theme.of(context).textTheme.headline2?.copyWith(
-                color: ThemeApp.secondaryColor,
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    color: ThemeApp.secondaryColor,
                   ),
             ),
           ],
@@ -193,13 +206,15 @@ class GridEGItem extends StatelessWidget {
 
 class GridITItem extends StatelessWidget {
   const GridITItem(
-    this.placeModel, {
+    this.placeModel,
+    this.bestPLanModel, {
     Key? key,
     required this.cityModel,
   }) : super(key: key);
 
   final CityModel cityModel;
   final PlaceModel placeModel;
+  final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
@@ -210,10 +225,14 @@ class GridITItem extends StatelessWidget {
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
-          arguments: ScreenArgs(cityModel: cityModel, placeModel: placeModel),
+          arguments: ScreenArgs(
+              cityModel: cityModel,
+              placeModel: placeModel,
+              bestPLanModel: bestPLanModel),
         );
 
         debugPrint('City ID = ${cityModel.cId}');
@@ -265,8 +284,8 @@ class GridITItem extends StatelessWidget {
             ),
             Text(
               cityModel.name,
-              style: Theme.of(context).textTheme.headline2?.copyWith(
-                color: ThemeApp.secondaryColor,
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    color: ThemeApp.secondaryColor,
                   ),
             ),
           ],
@@ -278,13 +297,15 @@ class GridITItem extends StatelessWidget {
 
 class GridUAEItem extends StatelessWidget {
   const GridUAEItem(
-    this.placeModel, {
+    this.placeModel,
+    this.bestPLanModel, {
     Key? key,
     required this.cityModel,
   }) : super(key: key);
 
   final CityModel cityModel;
   final PlaceModel placeModel;
+  final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
@@ -295,10 +316,14 @@ class GridUAEItem extends StatelessWidget {
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
-          arguments: ScreenArgs(cityModel: cityModel, placeModel: placeModel),
+          arguments: ScreenArgs(
+              cityModel: cityModel,
+              placeModel: placeModel,
+              bestPLanModel: bestPLanModel),
         );
 
         debugPrint('City ID = ${cityModel.cId}');
@@ -350,8 +375,8 @@ class GridUAEItem extends StatelessWidget {
             ),
             Text(
               cityModel.name,
-              style: Theme.of(context).textTheme.headline2?.copyWith(
-                color: ThemeApp.secondaryColor,
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    color: ThemeApp.secondaryColor,
                   ),
             ),
           ],
@@ -363,13 +388,15 @@ class GridUAEItem extends StatelessWidget {
 
 class GridFRItem extends StatelessWidget {
   const GridFRItem(
-    this.placeModel, {
+    this.placeModel,
+    this.bestPLanModel, {
     Key? key,
     required this.cityModel,
   }) : super(key: key);
 
   final CityModel cityModel;
   final PlaceModel placeModel;
+  final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
@@ -380,10 +407,14 @@ class GridFRItem extends StatelessWidget {
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
-          arguments: ScreenArgs(cityModel: cityModel, placeModel: placeModel),
+          arguments: ScreenArgs(
+              cityModel: cityModel,
+              placeModel: placeModel,
+              bestPLanModel: bestPLanModel),
         );
 
         debugPrint('City ID = ${cityModel.cId}');
@@ -435,7 +466,7 @@ class GridFRItem extends StatelessWidget {
             ),
             Text(
               cityModel.name,
-              style: Theme.of(context).textTheme.headline2?.copyWith(
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                     color: ThemeApp.secondaryColor,
                   ),
             ),
@@ -448,13 +479,15 @@ class GridFRItem extends StatelessWidget {
 
 class GridPopularItem extends StatelessWidget {
   const GridPopularItem(
-    this.placeModel, {
+    this.placeModel,
+    this.bestPLanModel, {
     Key? key,
     required this.cityModel,
   }) : super(key: key);
 
   final CityModel cityModel;
   final PlaceModel placeModel;
+  final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
@@ -465,12 +498,15 @@ class GridPopularItem extends StatelessWidget {
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
-          arguments: ScreenArgs(cityModel: cityModel, placeModel: placeModel),
+          arguments: ScreenArgs(
+              cityModel: cityModel,
+              placeModel: placeModel,
+              bestPLanModel: bestPLanModel),
         );
-
         debugPrint('City ID = ${cityModel.cId}');
         WeatherService service = WeatherService();
         WeatherModel? weather =
@@ -520,7 +556,7 @@ class GridPopularItem extends StatelessWidget {
             ),
             Text(
               cityModel.name,
-              style: Theme.of(context).textTheme.headline2?.copyWith(
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                     color: ThemeApp.secondaryColor,
                   ),
             ),

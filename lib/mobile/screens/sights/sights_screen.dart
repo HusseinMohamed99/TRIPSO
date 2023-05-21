@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripso/mobile/screens/sights/sight_details_screen.dart';
 import 'package:tripso/model/arg_model.dart';
+import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
@@ -85,7 +86,10 @@ class ListViewWidget extends StatelessWidget {
       children: [
         ListView.separated(
           itemBuilder: (context, index) {
-            return GridSights(placeModel: cubit.place[index], cubit.cityModel!);
+            return GridSights(
+                placeModel: cubit.place[index],
+                cubit.cityModel!,
+                cubit.bestPLanModel!);
           },
           separatorBuilder: (context, index) {
             return Space(height: 10.h, width: 0.w);
@@ -121,13 +125,15 @@ class ListViewWidget extends StatelessWidget {
 
 class GridSights extends StatelessWidget {
   const GridSights(
-    this.cityModel, {
+    this.cityModel,
+    this.bestPLanModel, {
     Key? key,
     required this.placeModel,
   }) : super(key: key);
 
   final PlaceModel placeModel;
   final CityModel cityModel;
+  final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
@@ -137,7 +143,10 @@ class GridSights extends StatelessWidget {
         navigateTo(
           context,
           routeName: SightDetailsScreen.routeName,
-          arguments: ScreenArgs(placeModel: placeModel, cityModel: cityModel),
+          arguments: ScreenArgs(
+              placeModel: placeModel,
+              cityModel: cityModel,
+              bestPLanModel: bestPLanModel),
         );
       },
       child: Stack(
@@ -160,23 +169,19 @@ class GridSights extends StatelessWidget {
                       child: CachedNetworkImage(
                         imageUrl: placeModel.image,
                         fit: BoxFit.fill,
-                        height: 225.h,
+                        height: 180.h,
                         width: double.infinity,
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) => Center(
-                          child: AdaptiveIndicator(
-                            os: getOs(),
-                          ),
+                          child: AdaptiveIndicator(os: getOs()),
                         ),
                         errorWidget: (context, url, error) => Center(
-                          child: AdaptiveIndicator(
-                            os: getOs(),
-                          ),
+                          child: AdaptiveIndicator(os: getOs()),
                         ),
                       ),
                     ),
                     LayerImage(
-                      height: 225.h,
+                      height: 180.h,
                       width: double.infinity,
                     ),
                   ],
@@ -190,7 +195,7 @@ class GridSights extends StatelessWidget {
                         placeModel.name.trim(),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.headline3,
+                        style: Theme.of(context).textTheme.headlineSmall,
                       ),
                       Space(height: 8.h, width: 0.w),
                       Column(
@@ -200,10 +205,12 @@ class GridSights extends StatelessWidget {
                             placeModel.history.trim(),
                             maxLines: 4,
                             overflow: TextOverflow.fade,
-                            style:
-                                Theme.of(context).textTheme.headline6?.copyWith(
-                                      color: Colors.black54,
-                                    ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.copyWith(
+                                  color: Colors.black54,
+                                ),
                           ),
                         ],
                       ),

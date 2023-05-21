@@ -1,26 +1,30 @@
 import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tripso/mobile/screens/explore/explore.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/mobile/screens/plans/my_plans.dart';
 import 'package:tripso/mobile/screens/profile/my_profile.dart';
-import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/network/cache_helper.dart';
-import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/mobile/screens/wishlist/wishlist.dart';
+import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
+import 'package:tripso/model/place_model.dart';
+import 'package:tripso/model/plan_model.dart';
 import 'package:tripso/model/user_model.dart';
+import 'package:tripso/model/wishlist_model.dart';
+import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import '../../../model/place_model.dart';
-import 'package:image_cropper/image_cropper.dart';
+import 'package:tripso/shared/network/cache_helper.dart';
+import 'package:tripso/shared/provider/weather_provider.dart';
 
 class TripsoCubit extends Cubit<TripsoStates> {
   TripsoCubit() : super(TripsoInitialState());
@@ -34,6 +38,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     const MyPlansScreen(),
     const MyProfileScreen(),
   ];
+
   List<String> titles = [
     'Explore',
     'Wishlist',
@@ -48,13 +53,20 @@ class TripsoCubit extends Cubit<TripsoStates> {
       WeatherProvider();
       getDataPlaces(cityModel!.cId);
       getDataForCity(cityModel!.cId);
+      getAllBestPlan(cityModel!.cId);
     }
     if (index == 1) {
       getDataPlaces(cityModel!.cId);
       getDataForCity(cityModel!.cId);
-      getWishListData(cityModel!.cId);
+      getAllBestPlan(cityModel!.cId);
+      getWishListData(cityModel!.cId, userModel!.uId);
     }
-    if (index == 2) {}
+    if (index == 2) {
+      getDataPlaces(cityModel!.cId);
+      getDataForCity(cityModel!.cId);
+      getAllBestPlan(cityModel!.cId);
+      getMyAllPlan(cityModel!.cId, userModel!.uId, 1);
+    }
     if (index == 3) getUserData();
     emit(ChangeBottomNavBarState());
     currentIndex = index;
@@ -125,7 +137,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  ///END : City Data
   List<CityModel> city = [];
   List<String> cId = [];
 
@@ -135,6 +146,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         city.add(CityModel.fromFireStore(element.data()));
         cId.add(element.id);
+        //print("City Model = ${element.data()}");
       }
     });
   }
@@ -224,7 +236,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-  ///START : GetPlaceData
   PlaceModel? placeModel;
 
   void getDataForPlace() {
@@ -234,6 +245,23 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc('Abu Dhabi')
         .collection('places')
         .doc('Emirates National Auto Museum')
+        .get()
+        .then((value) {
+      placeModel = PlaceModel.fromFireStore(value.data()!);
+      emit(GetPlaceDataSuccessState());
+    }).catchError((error) {
+      debugPrint(error.toString());
+      emit(GetPlaceDataErrorState(error.toString()));
+    });
+  }
+
+  void getDataPlace(String? cId, String? pId) {
+    emit(GetPlaceDataLoadingState());
+    FirebaseFirestore.instance
+        .collection('cities')
+        .doc(cId)
+        .collection('places')
+        .doc(pId)
         .get()
         .then((value) {
       placeModel = PlaceModel.fromFireStore(value.data()!);
@@ -387,84 +415,242 @@ class TripsoCubit extends Cubit<TripsoStates> {
     });
   }
 
-   addWishListData({
-    required String cityId,
-    required String wishListId,
+  void addWishList({
+    required String wishListCityID,
     required String wishListName,
-    required String wishListHistory,
     required String wishListImage,
-    required String wishListPopular,
+    required String wishListHistory,
     required String wishListLocation,
     required List<String> wishListTimeOfDay,
     required String wishListTickets,
+    required String wishListId,
     required String wishListAddress,
+    required String wishListRate,
     required bool wishListIsPopular,
   }) {
+    WishListModel model = WishListModel(
+      wishListCityID: wishListCityID,
+      wishListName: wishListName,
+      wishListHistory: wishListHistory,
+      wishListTimeOfDay: wishListTimeOfDay,
+      wishListImage: wishListImage,
+      wishListLocation: wishListLocation,
+      wishListTickets: wishListTickets,
+      wishListId: wishListId,
+      wishListIsPopular: wishListIsPopular,
+      wishListAddress: wishListAddress,
+      wishListRate: wishListRate,
+      uId: userModel!.uId,
+    );
     FirebaseFirestore.instance
-        .collection("wishList")
+        .collection('wishList')
         .doc(uId)
-        .collection("YourWishList")
+        .collection('yourWishList')
         .doc(wishListId)
-        .set({
-      "cityId": cityId,
-      "wishListId": wishListId,
-      "wishListName": wishListName,
-      "wishListImage": wishListImage,
-      "wishListHistory": wishListHistory,
-      "wishListPopular": wishListPopular,
-      "wishListLocation": wishListLocation,
-      "wishListTimeOfDay": wishListTimeOfDay,
-      "wishListTickets": wishListTickets,
-      "wishListAddress": wishListAddress,
-      "wishListIsPopular": wishListIsPopular,
-      "wishList": true,
-    }).then((value) {
+        .set(model.toFireStore())
+        .then((value) {
       emit(AddToFavoriteSuccessState());
     }).catchError((error) {
       emit(AddToFavoriteErrorState(error.toString()));
     });
   }
 
-  List<PlaceModel> wishList = [];
+  List<WishListModel> wishList = [];
+  WishListModel? wishListModel;
 
-  void getWishListData(String? cId) async {
-    List<PlaceModel> newList = [];
-    QuerySnapshot value = await FirebaseFirestore.instance
+  void getWishListData(
+    String? cId,
+    String? userID,
+  ) async {
+    FirebaseFirestore.instance
         .collection("wishList")
         .doc(uId)
-        .collection("YourWishList")
-        .where('cityId', isEqualTo: cId)
-        .get();
-    for (var element in value.docs) {
-      PlaceModel placeModel = PlaceModel(
-        name: element.get("wishListName"),
-        history: element.get("wishListHistory"),
-        image: element.get("wishListImage"),
-        location: element.get("wishListLocation"),
-        tickets: element.get("wishListTickets"),
-        pId: element.get("wishListId"),
-        isPopular: element.get("wishListIsPopular"),
-        address: element.get("wishListAddress"),
-        popular: element.get("wishListPopular"),
-      );
-      newList.add(placeModel);
-    }
-    wishList = newList;
-  }
-
-  List<PlaceModel> get getWishList {
-    return wishList;
+        .collection("yourWishList")
+        .where("wishListCityID", isEqualTo: cId)
+        .snapshots()
+        .listen((event) {
+      wishList = [];
+      for (var element in event.docs) {
+        if (element.data()['uId'] == userID) {
+          wishList.add(WishListModel.fromFireStore(element.data()));
+        }
+      }
+    });
   }
 
   deleteWishList(wishListId) {
     FirebaseFirestore.instance
         .collection("wishList")
         .doc(uId)
-        .collection("YourWishList")
+        .collection("yourWishList")
         .doc(wishListId)
         .delete()
         .then((value) {
       emit(UnFavoriteSuccessState());
     });
   }
+
+  void addMyPlan({
+    required int index,
+    required String planCityID,
+    required String planName,
+    required String planImage,
+    required String planHistory,
+    required String planLocation,
+    required List<String> planTimeOfDay,
+    required String planTickets,
+    required String planId,
+    required String planAddress,
+    required String planRate,
+    required bool planIsPopular,
+    required int indexOfDay,
+    required DateTime dateTime,
+  }) {
+    PlanModel planModel = PlanModel(
+      planName: planName,
+      planHistory: planHistory,
+      planTimeOfDay: planTimeOfDay,
+      planImage: planImage,
+      planLocation: planLocation,
+      planTickets: planTickets,
+      planId: planId,
+      planIsPopular: planIsPopular,
+      planAddress: planAddress,
+      planRate: planRate,
+      planCityID: planCityID,
+      uId: userModel!.uId,
+      indexOfDays: indexOfDay,
+      dateTime: dateTime,
+    );
+    FirebaseFirestore.instance
+        .collection("customizePlan")
+        .doc(uId)
+        .collection('Day$index')
+        .doc(planId)
+        .set(planModel.toFireStore())
+        .then((value) {
+      emit(AddPlanSuccessState());
+    }).catchError((error) {
+      emit(AddPlanErrorState(error));
+    });
+  }
+
+  List<PlanModel> allPlan = [];
+  PlanModel? allPlanModel;
+
+  void getMyAllPlan(
+    String? cId,
+    String? userID,
+    int indexOfMyPlan,
+  ) async {
+    FirebaseFirestore.instance
+        .collection("customizePlan")
+        .doc(uId)
+        .collection("Day$indexOfMyPlan")
+        .where('planCityID', isEqualTo: cId)
+        .snapshots()
+        .listen((event) {
+      allPlan = [];
+      for (var element in event.docs) {
+        if (element.data()['uId'] == userID) {
+          allPlan.add(PlanModel.fromFireStore(element.data()));
+        }
+      }
+    });
+  }
+
+  deleteMyPlan(myPlanId, int indexOfMyPlan) {
+    FirebaseFirestore.instance
+        .collection("customizePlan")
+        .doc(uId)
+        .collection("Day$indexOfMyPlan")
+        .doc(myPlanId)
+        .delete()
+        .then((value) {
+      emit(DeleteMyPlanSuccessState());
+    });
+  }
+
+  List<BestPLanModel> bestPlan = [];
+  List<String> bestPlanId = [];
+
+  getAllBestPlan(String? cId) {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .doc(cId ?? 'Aswan')
+        .collection('bestplan')
+        .snapshots()
+        .listen((value) async {
+      bestPlan = [];
+      for (var element in value.docs) {
+        bestPlan.add(BestPLanModel.fromFireStore(element.data()));
+        bestPlanId.add(element.id);
+      }
+    });
+  }
+
+  BestPLanModel? bestPLanModel;
+
+  void getBestPlan() {
+    emit(GetBestPlanLoadingState());
+    FirebaseFirestore.instance
+        .collection('cities')
+        .doc('Abu Dhabi')
+        .collection('bestplan')
+        .doc('Abu Dhabi Fast Visit')
+        .get()
+        .then((value) {
+      bestPLanModel = BestPLanModel.fromFireStore(value.data()!);
+      emit(GetBestPlanSuccessState());
+      if (kDebugMode) {
+        //  print(value.data());
+      }
+    }).catchError((error) {
+      debugPrint(error.toString());
+      emit(GetBestPlanErrorState(error.toString()));
+    });
+  }
+
+  Best? best;
+
+  void getDataPlaceForBestPlan(String cId, String pId) {
+    emit(GetPlaceDataLoadingState());
+    FirebaseFirestore.instance
+        .collection('cities')
+        .doc(cId)
+        .collection('places')
+        .doc(pId)
+        .get()
+        .then((value) {
+      best = Best.fromFireStore(value.data()!);
+      emit(GetPlaceDataSuccessState());
+      if (kDebugMode) {
+        print(value.data());
+      }
+    }).catchError((error) {
+      debugPrint(error.toString());
+      emit(GetPlaceDataErrorState(error.toString()));
+    });
+  }
+
+// void getMyPlan(
+//   String? cId,
+//   int indexOfMyPlan,
+// ) async {
+//   FirebaseFirestore.instance
+//       .collection("cities")
+//       .doc(cId)
+//       .collection('bestplan')
+//       .doc('Abu Dhabi Best Plan')
+//       .collection('Day$indexOfMyPlan')
+//       .where('planCityID', isEqualTo: cId)
+//       .snapshots()
+//       .listen((event) {
+//     allPlan = [];
+//     for (var element in event.docs) {
+//       allPlan.add(PlanModel.fromFireStore(element.data()));
+//       print(element.data());
+//     }
+//   });
+// }
 }

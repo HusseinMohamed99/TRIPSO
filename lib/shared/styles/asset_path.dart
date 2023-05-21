@@ -1,5 +1,4 @@
-class AssetPath{
-
+class AssetPath {
   static const String splashImage = "assets/images/splash.png";
   static const String profileImage = "assets/images/profile.png";
   static const String onBoardImage = "assets/images/onBoard.png";
@@ -25,9 +24,12 @@ class AssetPath{
   static const String thunderstormImage = "assets/images/thunderstorm.png";
   static const String emptyImage = 'assets/images/emptyImage.png';
   static const String logoImage = 'assets/images/logo1.png';
+  static const String imagesGroup92 = 'assets/images/Group 92.png';
+  static const String ancient1 = 'assets/images/ancient/ancient1.jpg';
+  static const String ancient2 = 'assets/images/ancient/ancient4.jpg';
+  static const String ancient3 = 'assets/images/ancient/ancient 6.jpg';
+  static const String ancient4 = 'assets/images/ancient/ancient 8.jpg';
+  static const String ancient5 = 'assets/images/ancient/ancient 9.jpg';
+  static const String ancient6 = 'assets/images/ancient/ancient 11.jpg';
+  static const String plan = 'assets/images/plan.jpg';
 }
-
-
-
-
-

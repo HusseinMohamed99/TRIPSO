@@ -50,14 +50,14 @@ class SignUpScreen extends StatelessWidget {
           MyDialog.showLoadingDialog(context, 'SignUp is Error');
           MyDialog.hideDialog(context);
           MyDialog.showMessage(
-                context,
-                state.error,
-                negActionTitle: 'Cancel',
-                negAction: () {
-                  Navigator.pop(context);
-                },
-              );
-            }
+            context,
+            state.error,
+            negActionTitle: 'Cancel',
+            negAction: () {
+              Navigator.pop(context);
+            },
+          );
+        }
       }, builder: (context, state) {
         return Container(
           alignment: Alignment.center,
@@ -132,7 +132,8 @@ class SignUpScreen extends StatelessWidget {
                                   controller: firstnameController,
                                   keyboardType: TextInputType.name,
                                   validate: (String? value) {
-                                    if (value!.trim().isEmpty) {
+                                    if (value!.trim().isEmpty ||
+                                        value.length < 3) {
                                       return 'First Name is Required';
                                     }
                                     return null;
@@ -157,7 +158,8 @@ class SignUpScreen extends StatelessWidget {
                                   controller: lastnameController,
                                   keyboardType: TextInputType.name,
                                   validate: (String? value) {
-                                    if (value!.trim().isEmpty) {
+                                    if (value!.trim().isEmpty ||
+                                        value.length < 3) {
                                       return 'Last Name is Required';
                                     }
                                     return null;
@@ -182,13 +184,11 @@ class SignUpScreen extends StatelessWidget {
                                   controller: emailController,
                                   keyboardType: TextInputType.emailAddress,
                                   validate: (String? value) {
-                                    if (value!.trim().isEmpty) {
-                                      return 'Email is Required';
-                                    } else if (value.length < 16) {
+                                    if (value!.trim().isEmpty ||
+                                        value.length < 16) {
                                       return 'Sorry, your mail must be\n between 16 and 30 characters long.';
-                                    } else {
-                                      return null;
                                     }
+                                    return null;
                                   },
                                   prefix: Icons.alternate_email,
                                   hint: 'Email Address',
@@ -210,13 +210,12 @@ class SignUpScreen extends StatelessWidget {
                                   controller: phoneController,
                                   keyboardType: TextInputType.phone,
                                   validate: (String? value) {
-                                    if (value!.trim().isEmpty) {
-                                      return 'Phone is Required';
-                                    } else if (value.length != 11) {
-                                      return 'Sorry, your phone must be\n 11 numbers long.';
-                                    } else {
-                                      return null;
+                                    if (value!.trim().isEmpty ||
+                                        value.length < 11 ||
+                                        value.length > 11) {
+                                      return 'An Egyptian phone number consisting of 11 digits';
                                     }
+                                    return null;
                                   },
                                   prefix: Icons.phone_android,
                                   hint: 'Mobile Numbers',
@@ -239,9 +238,8 @@ class SignUpScreen extends StatelessWidget {
                                   controller: passwordController,
                                   keyboardType: TextInputType.visiblePassword,
                                   validate: (String? value) {
-                                    if (value!.trim().isEmpty) {
-                                      return "Password is Required";
-                                    } else if (value.length < 8) {
+                                    if (value!.trim().isEmpty ||
+                                        value.length < 8) {
                                       return "Use, 8 characters or more for your password";
                                     }
                                     return null;
