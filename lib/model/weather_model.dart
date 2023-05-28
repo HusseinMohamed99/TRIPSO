@@ -54,7 +54,7 @@ class WeatherModel {
     } else if (weatherStateName == 'Patchy rain possible' ||
         weatherStateName == 'Heavy Rain' ||
         weatherStateName == 'Showers	') {
-      return 'assets/images/rainy.png';
+      return image;
     } else if (weatherStateName == 'Thundery outbreaks possible' ||
         weatherStateName == 'Moderate or heavy snow with thunder' ||
         weatherStateName == 'Patchy light snow with thunder' ||

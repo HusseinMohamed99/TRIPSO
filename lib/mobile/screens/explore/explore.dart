@@ -180,6 +180,7 @@ class CityDetails extends StatelessWidget {
               backgroundColor: Colors.transparent,
               child: Image(
                 image: NetworkImage('https:${weatherData.image}'),
+                fit: BoxFit.fill,
               ),
             ),
             Text(

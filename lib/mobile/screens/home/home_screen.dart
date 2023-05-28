@@ -1,10 +1,12 @@
 import 'dart:async';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:tripso/mobile/screens/search/search_screen.dart';
 import 'package:tripso/model/best_plan_model.dart';
@@ -13,6 +15,7 @@ import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/layer.dart';
+import 'package:tripso/shared/components/log_out.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/search_bar.dart';
 import 'package:tripso/shared/components/sized_box.dart';
@@ -80,6 +83,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
+        var tripsoCubit = TripsoCubit.get(context).userModel;
         return Scaffold(
           appBar: thirdAppBar(),
           body: cubit.city.isEmpty
@@ -134,6 +138,75 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                             ),
                                       ),
                                     ),
+                                    Positioned(
+                                      top: 10.h,
+                                      left: 10.w,
+                                      child: CircleAvatar(
+                                        maxRadius: 23.r,
+                                        minRadius: 23.r,
+                                        child: CircleAvatar(
+                                          maxRadius: 20.r,
+                                          minRadius: 20.r,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(75).r,
+                                            child: CachedNetworkImage(
+                                              imageUrl: tripsoCubit!.image!,
+                                              fit: BoxFit.fill,
+                                              height: 200.h,
+                                              width: double.infinity,
+                                              progressIndicatorBuilder:
+                                                  (context, url,
+                                                          downloadProgress) =>
+                                                      Center(
+                                                child: AdaptiveIndicator(
+                                                  os: getOs(),
+                                                ),
+                                              ),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Center(
+                                                child: AdaptiveIndicator(
+                                                  os: getOs(),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          // backgroundImage: NetworkImage(tripsoCubit!.image),
+                                        ),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      top: 15.h,
+                                      right: 10.w,
+                                      child: InkWell(
+                                        onTap: () {
+                                          logOut(context);
+                                        },
+                                        child: Container(
+                                          alignment: Alignment.center,
+                                          width: 60.w,
+                                          height: 20.h,
+                                          padding: EdgeInsets.zero,
+                                          margin: EdgeInsets.zero,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              10.r,
+                                            ),
+                                            color: ThemeApp.primaryColor,
+                                          ),
+                                          child: Text(
+                                            textAlign: TextAlign.center,
+                                            'Log Out',
+                                            style: GoogleFonts.roboto(
+                                              fontSize: 14.sp,
+                                              color: ThemeApp.secondaryColor,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    )
                                   ]),
                               Space(height: 30.h, width: 0.w),
                               Space(height: 5.h, width: 0.w),
