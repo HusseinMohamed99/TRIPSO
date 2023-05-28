@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +82,6 @@ class _CitiesScreenState extends State<CitiesScreen> {
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        var tripsoCubit = TripsoCubit.get(context).userModel;
         return Scaffold(
           appBar: thirdAppBar(),
           body: cubit.city.isEmpty
@@ -136,44 +134,6 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                             ?.copyWith(
                                               color: ThemeApp.secondaryColor,
                                             ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      top: 10.h,
-                                      left: 10.w,
-                                      child: CircleAvatar(
-                                        maxRadius: 23.r,
-                                        minRadius: 23.r,
-                                        child: CircleAvatar(
-                                          maxRadius: 20.r,
-                                          minRadius: 20.r,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(75).r,
-                                            child: CachedNetworkImage(
-                                              imageUrl: tripsoCubit!.image!,
-                                              fit: BoxFit.fill,
-                                              height: 200.h,
-                                              width: double.infinity,
-                                              progressIndicatorBuilder:
-                                                  (context, url,
-                                                          downloadProgress) =>
-                                                      Center(
-                                                child: AdaptiveIndicator(
-                                                  os: getOs(),
-                                                ),
-                                              ),
-                                              errorWidget:
-                                                  (context, url, error) =>
-                                                      Center(
-                                                child: AdaptiveIndicator(
-                                                  os: getOs(),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          // backgroundImage: NetworkImage(tripsoCubit!.image),
-                                        ),
                                       ),
                                     ),
                                     Positioned(
