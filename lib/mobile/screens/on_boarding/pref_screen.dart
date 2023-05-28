@@ -62,17 +62,17 @@ class _PrefScreenState extends State<PrefScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return FadeAnimation(
-      1.0,
-      child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 10.h,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
-        body: Column(
-          children: [
-            Padding(
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 10.h,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      body: Column(
+        children: [
+          FadeAnimation(
+            1.0,
+            child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0).r,
               child: Align(
                 alignment: Alignment.bottomRight,
@@ -95,33 +95,36 @@ class _PrefScreenState extends State<PrefScreen> {
                 ),
               ),
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                      child: PageView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        onPageChanged: (int index) {
-                          if (index == boarding.length - 1) {
-                            setState(() {
-                              isLast = true;
-                            });
-                          } else {
-                            setState(() {
-                              isLast = false;
-                            });
-                          }
-                        },
-                        controller: pageController,
-                        itemBuilder: (context, index) =>
-                            buildBoardingItem(boarding[index]),
-                        itemCount: boarding.length,
-                      ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: PageView.builder(
+                      physics: const BouncingScrollPhysics(),
+                      onPageChanged: (int index) {
+                        if (index == boarding.length - 1) {
+                          setState(() {
+                            isLast = true;
+                          });
+                        } else {
+                          setState(() {
+                            isLast = false;
+                          });
+                        }
+                      },
+                      controller: pageController,
+                      itemBuilder: (context, index) =>
+                          buildBoardingItem(boarding[index]),
+                      itemCount: boarding.length,
                     ),
-                    Column(
+                  ),
+                  FadeAnimation(
+                    3.5,
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         InkWell(
@@ -183,12 +186,12 @@ class _PrefScreenState extends State<PrefScreen> {
                         Space(height: 48.h, width: 0),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -196,15 +199,18 @@ class _PrefScreenState extends State<PrefScreen> {
   Widget buildBoardingItem(BoardingModel model) => SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(model.image),
+            FadeAnimation(2.0, child: Image.asset(model.image)),
             Space(height: 20.h, width: 0),
-            Text(
-              model.title,
-              textAlign: TextAlign.start,
-              style: GoogleFonts.poppins(
-                fontSize: 22.sp,
-                color: ThemeApp.primaryColor,
-                fontWeight: FontWeight.w500,
+            FadeAnimation(
+              3.0,
+              child: Text(
+                model.title,
+                textAlign: TextAlign.start,
+                style: GoogleFonts.poppins(
+                  fontSize: 22.sp,
+                  color: ThemeApp.primaryColor,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ],
