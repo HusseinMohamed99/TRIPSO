@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
@@ -23,28 +24,29 @@ class _PrefScreenState extends State<PrefScreen> {
 
   List<BoardingModel> boarding = [
     BoardingModel(
-      image: 'assets/images/tourist.jpg',
+      image: 'assets/images/Vector1.svg',
       title:
           '"We know that the plans can change as you go and that your personal travel guide should be easily adjustable in order to help you modify your plans when that happens."',
     ),
     BoardingModel(
-      image: 'assets/images/tourist.jpg',
+      image: 'assets/images/Victor2.svg',
       title:
-          '"The fun of a trip starts before you even set off on your adventure; it begins when you start planning where you\'ll go, how you\'ll get there; what you\'ll see."',
+          '"Starting with one of the adjustable itineraries is the easiest way to decide where to spend your time and how to get there."',
     ),
     BoardingModel(
-      image: 'assets/images/tourist.jpg',
-      title: '"Simplify your finances with our smart and secure e-wallet."',
+      image: 'assets/images/Victor3.svg',
+      title:
+          '"Access it online while you travel, anywhere, anytime. Your Plans are always there, accessible from any mobile phone, tablet Learn From Other Travelers."',
     ),
     BoardingModel(
-      image: 'assets/images/tourist.jpg',
+      image: 'assets/images/Victor4.svg',
       title:
-          '"Pay with ease and security using our smart card for online and in-store purchases."',
+          '"Tripso is the only app that tells you the real popularity of all. No biased opinions or fake reviews, only real plans by real travelers."',
     ),
     BoardingModel(
-      image: 'assets/images/tourist.jpg',
+      image: 'assets/images/Victor5.svg',
       title:
-          '"Teach your kids financial responsibility with our smart kids\' card and parental controls."',
+          '"Tripso is all about the fun of planning the details of your trip. We believe that your own personal trip requires you to have your own personal travel guide."',
     ),
   ];
   bool isLast = false;
@@ -199,13 +201,18 @@ class _PrefScreenState extends State<PrefScreen> {
   Widget buildBoardingItem(BoardingModel model) => SingleChildScrollView(
         child: Column(
           children: [
-            FadeAnimation(2.0, child: Image.asset(model.image)),
-            Space(height: 20.h, width: 0),
+            FadeAnimation(2.0,
+                child: SvgPicture.asset(
+                  model.image,
+                  fit: BoxFit.fill,
+                  height: 300,
+                )),
+            Space(height: 10.h, width: 0),
             FadeAnimation(
               3.0,
               child: Text(
                 model.title,
-                textAlign: TextAlign.start,
+                textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   fontSize: 22.sp,
                   color: ThemeApp.primaryColor,
