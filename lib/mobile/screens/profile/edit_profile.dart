@@ -240,22 +240,24 @@ class EditProfile extends StatelessWidget {
                         defaultButton(
                           color: ThemeApp.primaryColor,
                           function: () {
-                            if (cubit.profileImage != null) {
-                              cubit.uploadProfileImage(
-                                firstName: firstnameController.text,
-                                phone: phoneController.text,
-                                lastName: lastnameController.text,
-                                email: emailController.text,
-                                // address: addressController.text,
-                              );
-                            } else {
-                              cubit.updateUserData(
-                                firstName: firstnameController.text,
-                                lastName: lastnameController.text,
-                                email: emailController.text,
-                                phone: phoneController.text,
-                                address: addressController.text,
-                              );
+                            if (formKey.currentState!.validate()) {
+                              if (cubit.profileImage != null) {
+                                cubit.uploadProfileImage(
+                                  firstName: firstnameController.text,
+                                  phone: phoneController.text,
+                                  lastName: lastnameController.text,
+                                  email: emailController.text,
+                                  // address: addressController.text,
+                                );
+                              } else {
+                                cubit.updateUserData(
+                                  firstName: firstnameController.text,
+                                  lastName: lastnameController.text,
+                                  email: emailController.text,
+                                  phone: phoneController.text,
+                                  address: addressController.text,
+                                );
+                              }
                             }
                           },
                           widget: Text(

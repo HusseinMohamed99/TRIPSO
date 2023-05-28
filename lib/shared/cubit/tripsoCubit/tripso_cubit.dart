@@ -409,6 +409,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(userModel!.uId)
         .update(model.toFireStore())
         .then((value) {
+      emit(UpdateUserSuccessState());
       getUserData();
     }).catchError((error) {
       emit(UpdateUserErrorState());
