@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
@@ -13,92 +14,83 @@ import 'package:tripso/shared/components/text_form_field.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class UpdatePassword extends StatelessWidget {
   static const String routeName = 'update_password_screen';
 
-  const UpdatePassword({super.key});
+  const UpdatePassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var newPasswordController = TextEditingController();
-    var confirmationPasswordController = TextEditingController();
-    var updatePasswordKey = GlobalKey<FormState>();
-    var cubit = TripsoCubit.get(context);
+    return BlocProvider(
+      create: (context) => TripsoCubit(),
+      child:
+          BlocConsumer<TripsoCubit, TripsoStates>(listener: (context, state) {
+        if (state is ChangeUserPasswordLoadingState) {
+          MyDialog.showLoadingDialog(context, 'Loading...');
+        }
 
-    return BlocConsumer<TripsoCubit, TripsoStates>(listener: (context, state) {
-      if (state is ChangeUserPasswordLoadingState) {
-        MyDialog.showLoadingDialog(context, 'Loading...');
-      }
-
-      if (state is ChangeUserPasswordSuccessState) {
-        MyDialog.showLoadingDialog(context, 'Change password is successfully');
-        MyDialog.hideDialog(context);
-        navigateAndFinish(context, routeName: SignInScreen.routeName);
-      } else if (state is ChangeUserPasswordErrorState) {
-        MyDialog.showLoadingDialog(context, 'Change password is Error');
-        MyDialog.hideDialog(context);
-        MyDialog.showMessage(context, 'Change password is Error',
-            posActionTitle: 'Try Again',
-            posAction: () {
-              if (updatePasswordKey.currentState!.validate()) {
-                cubit.changeUserPassword(
-                  password: newPasswordController.text,
-                );
-                MyDialog.hideDialog(context);
-              }
-              MyDialog.hideDialog(context);
+        if (state is ChangeUserPasswordSuccessState) {
+          MyDialog.showLoadingDialog(
+              context, 'Change password is successfully');
+          MyDialog.hideDialog(context);
+          navigateAndFinish(context, routeName: SignInScreen.routeName);
+        } else if (state is ChangeUserPasswordErrorState) {
+          MyDialog.showLoadingDialog(context, 'Change password is Error');
+          MyDialog.hideDialog(context);
+          MyDialog.showMessage(context, 'Change password is Error',
+              negActionTitle: 'Cancel', negAction: () {
+            Navigator.pop(context);
+          });
+        }
+      }, builder: (context, state) {
+        var newPasswordController = TextEditingController();
+        var confirmationPasswordController = TextEditingController();
+        var updatePasswordKey = GlobalKey<FormState>();
+        var cubit = TripsoCubit.get(context);
+        return Scaffold(
+          appBar: primaryAppBar(
+            title: '',
+            function: () {
+              newPasswordController.clear();
+              confirmationPasswordController.clear();
+              pop(context);
             },
-            negActionTitle: 'Cancel',
-            negAction: () {
-              Navigator.pop(context);
-            });
-      }
-    }, builder: (context, state) {
-      return Scaffold(
-        appBar: primaryAppBar(
-          title: 'New Password',
-          function: () {
-            newPasswordController.clear();
-            confirmationPasswordController.clear();
-            pop(context);
-          },
-          iconData: const Icon(
-            Icons.arrow_back,
+            iconData: Icon(
+              Icons.arrow_back,
+              size: 25.sp,
+            ),
           ),
-        ),
-        body: Form(
-          key: updatePasswordKey,
-          child: CustomScrollableForm(
-            child: Column(
-              children: [
-                title(),
-                assetImage(),
-                Expanded(
-                  flex: 2,
-                  child: Column(
+          body: Form(
+            key: updatePasswordKey,
+            child: CustomScrollableForm(
+              child: Column(
+                children: [
+                  title(),
+                  assetImage(),
+                  Column(
                     children: [
                       PasswordFormField(
                           newPasswordController: newPasswordController,
                           confirmationPasswordController:
                               confirmationPasswordController,
                           cubit: cubit),
-                      const Space(width: 0, height: 30),
+                      Space(width: 0.w, height: 30.h),
                       buildDefaultButton(
                           updatePasswordKey,
                           cubit,
                           newPasswordController,
                           confirmationPasswordController),
                     ],
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           ),
-        ),
-      );
-    });
+        );
+      }),
+    );
   }
 
   Widget buildDefaultButton(
@@ -107,13 +99,13 @@ class UpdatePassword extends StatelessWidget {
           TextEditingController newPasswordController,
           TextEditingController confirmationPasswordController) =>
       defaultButton(
-        color: primaryColor,
+        color: ThemeApp.primaryColor,
         widget: Text(
           'Change Password',
           textAlign: TextAlign.center,
           style: GoogleFonts.roboto(
-            fontSize: 19,
-            color: const Color(0xffFFFFFF),
+            fontSize: 19.sp,
+            color: ThemeApp.secondaryColor,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -127,35 +119,35 @@ class UpdatePassword extends StatelessWidget {
       );
 
   Widget title() => FittedBox(
-        child: Expanded(
-          flex: 3,
-          child: Column(
-            children: [
-              Text(
-                'Create New Password?',
-                style: GoogleFonts.roboto(
-                    color: primaryColor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500),
+        child: Column(
+          children: [
+            Text(
+              'Create New Password?',
+              style: GoogleFonts.roboto(
+                  color: ThemeApp.primaryColor,
+                  fontSize: 25.sp,
+                  fontWeight: FontWeight.w500),
+            ),
+            Space(width: 0.w, height: 10.h),
+            Text(
+              'Your new password must be different\n'
+              '         from previous used password',
+              style: GoogleFonts.roboto(
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w500,
+                color: Colors.black.withOpacity(0.5),
               ),
-              const Space(width: 0, height: 10),
-              Text(
-                'Your new password must be different\n'
-                '         from previous used password',
-                style: GoogleFonts.roboto(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black.withOpacity(0.5),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       );
 
-  Widget assetImage() => const FadeAnimation(
-    1.0,
-        child: Image(image: AssetImage(AssetPath.changePasswordImage)),
+  Widget assetImage() => FadeAnimation(
+        1.0,
+        child: Image(
+          image: const AssetImage(AssetPath.changePasswordImage),
+          height: 300.h,
+        ),
       );
 }
 
@@ -174,7 +166,7 @@ class PasswordFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
       child: Column(
         children: [
           DefaultTextFormField(
@@ -200,7 +192,7 @@ class PasswordFormField extends StatelessWidget {
             },
             hint: 'Password',
           ),
-          const Space(width: 0, height: 30),
+          Space(width: 0.w, height: 20.h),
           DefaultTextFormField(
             color: Colors.grey.shade400,
             context: context,
@@ -229,25 +221,3 @@ class PasswordFormField extends StatelessWidget {
     );
   }
 }
-
-// import 'package:flutter/material.dart';
-//
-// import 'auth.dart';
-//
-// class UpdatePassword extends StatefulWidget {
-//   const UpdatePassword({
-//     Key? key,
-//   }) : super(key: key);
-//
-//   @override
-//   _UpdatePasswordState createState() => _UpdatePasswordState();
-// }
-//
-// class _UpdatePasswordState extends State<UpdatePassword> {
-//   final TextEditingController _passController = TextEditingController();
-//
-//   final TextEditingController _confirmPassController = TextEditingController();
-//
-//   Future<void> _submit(String newPassword) async {
-//     await AuthServices().changePassword(newPassword);
-//   }

@@ -2,9 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class MyDialog {
   static void showLoadingDialog(
@@ -20,13 +22,13 @@ class MyDialog {
             content: Row(
               children: [
                 const CircularProgressIndicator(),
-                const Space(width: 15, height: 0),
+                Space(width: 15.w, height: 0.h),
                 Text(
                   message,
                   style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
+                    textStyle: GoogleFonts.roboto(
+                      color: ThemeApp.blackPrimary,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -40,13 +42,13 @@ class MyDialog {
           content: Row(
             children: [
               const CupertinoActivityIndicator(),
-              const Space(width: 15, height: 0),
+              Space(width: 15.w, height: 0.h),
               Text(
                 message,
                 style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
+                  textStyle: GoogleFonts.roboto(
+                    color: ThemeApp.blackPrimary,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -55,7 +57,7 @@ class MyDialog {
           ),
         );
       },
-      barrierDismissible: isDismissible,
+      barrierDismissible: false,
     );
   }
 
@@ -64,7 +66,7 @@ class MyDialog {
     String message, {
     bool isDismissible = true,
     String? posActionTitle,
-    VoidCallback? posAction,
+    Function? posAction,
     String? negActionTitle,
     VoidCallback? negAction,
   }) {
@@ -72,26 +74,35 @@ class MyDialog {
     if (posActionTitle != null) {
       actions.add(TextButton(
           onPressed: () {
-            Navigator.pop(context);
             if (posAction != null) {
               posAction();
+            }
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
             }
           },
           child: Text(
             posActionTitle,
+            style: GoogleFonts.roboto(fontSize: 15.sp),
           )));
     }
     if (negActionTitle != null) {
-      actions.add(TextButton(
+      actions.add(
+        TextButton(
           onPressed: () {
-            Navigator.pop(context);
             if (negAction != null) {
               negAction();
+            }
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
             }
           },
           child: Text(
             negActionTitle,
-          )));
+            style: GoogleFonts.roboto(fontSize: 15.sp),
+          ),
+        ),
+      );
     }
     showDialog(
       context: context,
@@ -101,9 +112,9 @@ class MyDialog {
             content: Text(
               message,
               style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
+                textStyle: GoogleFonts.roboto(
+                  color: ThemeApp.blackPrimary,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -116,9 +127,9 @@ class MyDialog {
           content: Text(
             message,
             style: GoogleFonts.roboto(
-              textStyle: const TextStyle(
-                color: Colors.black,
-                fontSize: 20,
+              textStyle: GoogleFonts.roboto(
+                color: ThemeApp.blackPrimary,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -132,5 +143,67 @@ class MyDialog {
 
   static void hideDialog(context) {
     pop(context);
+  }
+
+  static void showAlertDialog(
+    BuildContext context,
+    Widget widget, {
+    bool isDismissible = true,
+    String? posActionTitle,
+    Function? posAction,
+    String? negActionTitle,
+    VoidCallback? negAction,
+  }) {
+    List<Widget> actions = [];
+    if (posActionTitle != null) {
+      actions.add(TextButton(
+          onPressed: () {
+            if (posAction != null) {
+              posAction();
+            }
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            }
+          },
+          child: Text(
+            posActionTitle,
+            style: GoogleFonts.roboto(fontSize: 15.sp),
+          )));
+    }
+    if (negActionTitle != null) {
+      actions.add(
+        TextButton(
+          onPressed: () {
+            if (negAction != null) {
+              negAction();
+            }
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            }
+          },
+          child: Text(
+            negActionTitle,
+            style: GoogleFonts.roboto(fontSize: 15.sp),
+          ),
+        ),
+      );
+    }
+    showDialog(
+      context: context,
+      builder: (context) {
+        if (Platform.operatingSystem == 'android') {
+          return AlertDialog(
+            content: widget,
+            actions: actions,
+          );
+        }
+
+        return CupertinoAlertDialog(
+          content: widget,
+          actions: actions,
+        );
+      },
+      barrierDismissible: false,
+    );
   }
 }

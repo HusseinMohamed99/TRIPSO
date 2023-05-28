@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class DefaultTextFormField extends StatelessWidget {
   const DefaultTextFormField(
@@ -8,13 +9,17 @@ class DefaultTextFormField extends StatelessWidget {
       required this.controller,
       required this.keyboardType,
       required this.validate,
-      required this.hint,
+      this.hint,
+      this.label,
       this.onTap,
       this.onChanged,
       this.onFieldSubmitted,
       this.obscuringCharacter,
       this.style,
       this.color,
+      this.borderSideColor,
+      this.prefixColor,
+      this.styleColor,
       this.focusNode,
       this.isClickable,
       this.isPassword,
@@ -22,15 +27,20 @@ class DefaultTextFormField extends StatelessWidget {
       this.suffix,
       this.suffixPressed,
       this.prefix,
+      this.maxLength,
       Key? key})
       : super(key: key);
   final BuildContext context;
   final FocusNode? focusNode;
   final Color? color;
+  final Color? borderSideColor;
+  final Color? styleColor;
+  final Color? prefixColor;
   final TextEditingController controller;
   final TextInputType keyboardType;
   final String? Function(String?) validate;
   final String? hint;
+  final String? label;
   final dynamic onTap;
   final dynamic onChanged;
   final Function(String)? onFieldSubmitted;
@@ -42,16 +52,18 @@ class DefaultTextFormField extends StatelessWidget {
   final Function? suffixPressed;
   final TextStyle? style;
   final String? obscuringCharacter;
+  final int? maxLength;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLength: maxLength,
       focusNode: focusNode,
       textAlignVertical: TextAlignVertical.center,
       style: GoogleFonts.roboto(
         fontStyle: FontStyle.normal,
-        color: secondaryColor,
-        fontSize: 17,
+        color: styleColor ?? ThemeApp.secondaryColor,
+        fontSize: 17.sp,
         fontWeight: FontWeight.w400,
       ),
       maxLines: 1,
@@ -67,165 +79,74 @@ class DefaultTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       autofocus: false,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.fromLTRB(20, 8, 8, 8),
+        contentPadding: const EdgeInsets.fromLTRB(20, 8, 8, 20).r,
         fillColor: color,
         filled: true,
-        prefixIcon: Icon(
-          prefix,
-          color: secondaryColor,
+        prefixIcon: Padding(
+          padding: const EdgeInsets.all(15.0).r,
+          child: Icon(
+            prefix,
+            color: prefixColor ?? ThemeApp.secondaryColor,
+            size: 24.sp,
+          ),
         ),
         suffixIcon: suffix != null
             ? IconButton(
+                padding: const EdgeInsets.all(15.0).r,
                 onPressed: () {
                   suffixPressed!();
                 },
                 icon: Icon(
                   suffix,
-                  color: secondaryColor,
+                  color: ThemeApp.secondaryColor,
+                  size: 24.sp,
                 ),
               )
             : null,
-        focusedBorder: const OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
+            const Radius.circular(12.0).r,
           ),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.black,
           ),
         ),
         hintText: hint,
         hintStyle: TextStyle(
-          color: secondaryColor.withOpacity(0.8),
-          height: 1,
+          color: ThemeApp.secondaryColor.withOpacity(0.8),
+          height: 1.h,
         ),
-        enabledBorder: const OutlineInputBorder(
+        labelText: label,
+        labelStyle: TextStyle(
+          color: ThemeApp.primaryColor,
+          height: 1.h,
+        ),
+        enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
+            const Radius.circular(12.0).r,
           ),
           borderSide: BorderSide(
-            color: secondaryColor,
+            color: borderSideColor ?? ThemeApp.secondaryColor,
           ),
         ),
-        errorBorder: const OutlineInputBorder(
+        errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
+            const Radius.circular(12.0).r,
           ),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.red,
           ),
         ),
-        focusedErrorBorder: const OutlineInputBorder(
+        focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
+            const Radius.circular(12.0).r,
           ),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.red,
           ),
         ),
-        errorStyle: const TextStyle(color: Colors.red, fontSize: 16),
+        errorStyle: TextStyle(color: Colors.red, fontSize: 12.sp),
       ),
     );
   }
 }
-
-// Widget defaultTextFormField({
-//   FocusNode? focusNode,
-//   Color? color,
-//   required BuildContext context,
-//   required TextEditingController controller,
-//   required TextInputType keyboardType,
-//   required String? Function(String?) validate,
-//   required String? hint,
-//   onTap,
-//   onChanged,
-//   Function(String)? onFieldSubmitted,
-//   bool isPassword = false,
-//   bool isClickable = true,
-//   InputDecoration? decoration,
-//   IconData? suffix,
-//   IconData? prefix,
-//   Function? suffixPressed,
-//   TextStyle? style,
-//   String obscuringCharacter = '•',
-// }) {
-//   return TextFormField(
-//     focusNode: focusNode,
-//     textAlignVertical: TextAlignVertical.center,
-//     style: GoogleFonts.roboto(
-//       fontStyle: FontStyle.normal,
-//       color: secondaryColor,
-//       fontSize: 17,
-//       fontWeight: FontWeight.w400,
-//     ),
-//     maxLines: 1,
-//     minLines: 1,
-//     obscuringCharacter: obscuringCharacter,
-//     controller: controller,
-//     validator: validate,
-//     enabled: isClickable,
-//     onTap: onTap,
-//     onFieldSubmitted: onFieldSubmitted,
-//     onChanged: onChanged,
-//     obscureText: isPassword,
-//     keyboardType: keyboardType,
-//     autofocus: false,
-//     decoration: InputDecoration(
-//       contentPadding: const EdgeInsets.fromLTRB(20, 8, 8, 8),
-//       fillColor: color,
-//       filled: true,
-//       prefixIcon: Icon(
-//         prefix,
-//         color: secondaryColor,
-//       ),
-//       suffixIcon: suffix != null
-//           ? IconButton(
-//               onPressed: () {
-//                 suffixPressed!();
-//               },
-//               icon: Icon(
-//                 suffix,
-//                 color: secondaryColor,
-//               ),
-//             )
-//           : null,
-//       focusedBorder: const OutlineInputBorder(
-//         borderRadius: BorderRadius.all(
-//           Radius.circular(12.0),
-//         ),
-//         borderSide: BorderSide(
-//           color: Colors.black,
-//         ),
-//       ),
-//       hintText: hint,
-//       hintStyle: TextStyle(
-//         color: secondaryColor.withOpacity(0.8),
-//         height: 1,
-//       ),
-//       enabledBorder: const OutlineInputBorder(
-//         borderRadius: BorderRadius.all(
-//           Radius.circular(12.0),
-//         ),
-//         borderSide: BorderSide(
-//           color: secondaryColor,
-//         ),
-//       ),
-//       errorBorder: const OutlineInputBorder(
-//         borderRadius: BorderRadius.all(
-//           Radius.circular(12.0),
-//         ),
-//         borderSide: BorderSide(
-//           color: Colors.red,
-//         ),
-//       ),
-//       focusedErrorBorder: const OutlineInputBorder(
-//         borderRadius: BorderRadius.all(
-//           Radius.circular(12.0),
-//         ),
-//         borderSide: BorderSide(
-//           color: Colors.red,
-//         ),
-//       ),
-//       errorStyle: const TextStyle(color: Colors.red, fontSize: 16),
-//     ),
-//   );
-// }

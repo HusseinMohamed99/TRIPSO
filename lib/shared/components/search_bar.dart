@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:tripso/shared/styles/colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({
     required this.function,
     this.width,
+    this.height,
     this.title,
     this.iconSize,
     this.iconColor,
@@ -14,7 +16,6 @@ class SearchBar extends StatelessWidget {
     this.fontWeightTitle,
     this.iconData,
     this.readOnly,
-    this.height,
     Key? key,
   }) : super(key: key);
 
@@ -34,44 +35,44 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 10,
+      elevation: 3,
       child: Container(
-        alignment: Alignment.center,
-        height: height ?? 40,
-        width: width ?? 294,
+        alignment: Alignment.bottomCenter,
+        height: height ?? 40.h,
+        width: width ?? 294.w,
         child: TextFormField(
-          readOnly: readOnly == false,
+          readOnly: readOnly!,
           style: TextStyle(color: styleColor ?? Colors.black),
           onTap: () => function(),
           decoration: InputDecoration(
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: styleColor ?? secondaryColor),
+              borderRadius: BorderRadius.circular(16),
+              borderSide:
+                  BorderSide(color: styleColor ?? ThemeApp.secondaryColor),
             ),
             filled: true,
-            fillColor: secondaryColor,
+            fillColor: ThemeApp.secondaryColor,
             disabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: styleColor ?? secondaryColor),
+              borderRadius: BorderRadius.circular(16),
+              borderSide:
+                  BorderSide(color: styleColor ?? ThemeApp.secondaryColor),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: styleColor ?? secondaryColor),
+              borderRadius: BorderRadius.circular(16),
+              borderSide:
+                  BorderSide(color: styleColor ?? ThemeApp.secondaryColor),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: styleColor ?? secondaryColor),
+              borderRadius: BorderRadius.circular(16),
+              borderSide:
+                  BorderSide(color: styleColor ?? ThemeApp.secondaryColor),
             ),
             hintText: title ?? 'Search',
-            hintStyle: TextStyle(
-                fontSize: titleSize ?? 15,
-                color: titleColor ?? Colors.grey,
-                fontWeight: fontWeightTitle ?? FontWeight.w500),
             prefixIcon: iconData ??
                 Icon(
                   Icons.search,
-                  color: iconColor ?? Colors.black,
-                  size: iconSize ?? 24,
+                  color: iconColor ?? ThemeApp.primaryColor,
+                  size: iconSize ?? 30.sp,
                 ),
           ),
         ),
@@ -79,64 +80,3 @@ class SearchBar extends StatelessWidget {
     );
   }
 }
-
-// Widget searchBar({
-//   required context,
-//   bool? readOnly = true,
-//   double? height = 40,
-//   double? width = 294,
-//   String? title,
-//   Icon? iconData,
-//   Color? titleColor,
-//   Color? iconColor,
-//   Color? styleColor,
-//   double? iconSize,
-//   double? titleSize,
-//   FontWeight? fontWeightTitle,
-//   required Function() function,
-// }) {
-//   return Card(
-//     elevation: 10,
-//     child: Container(
-//       alignment: Alignment.center,
-//       height: height ?? 40,
-//       width: width ?? 294,
-//       child: TextFormField(
-//         readOnly: readOnly!,
-//         style: TextStyle(color: styleColor ?? Colors.black),
-//         onTap: () => function(),
-//         decoration: InputDecoration(
-//           border: OutlineInputBorder(
-//             borderRadius: BorderRadius.circular(12),
-//             borderSide: BorderSide(color: styleColor ?? secondaryColor),
-//           ),
-//           filled: true,
-//           fillColor: secondaryColor,
-//           disabledBorder: OutlineInputBorder(
-//             borderRadius: BorderRadius.circular(12),
-//             borderSide: BorderSide(color: styleColor ?? secondaryColor),
-//           ),
-//           focusedBorder: OutlineInputBorder(
-//             borderRadius: BorderRadius.circular(12),
-//             borderSide: BorderSide(color: styleColor ?? secondaryColor),
-//           ),
-//           enabledBorder: OutlineInputBorder(
-//             borderRadius: BorderRadius.circular(12),
-//             borderSide: BorderSide(color: styleColor ?? secondaryColor),
-//           ),
-//           hintText: title ?? 'Search',
-//           hintStyle: TextStyle(
-//               fontSize: titleSize ?? 15,
-//               color: titleColor ?? Colors.grey,
-//               fontWeight: fontWeightTitle ?? FontWeight.w500),
-//           prefixIcon: iconData ??
-//               Icon(
-//                 Icons.search,
-//                 color: iconColor ?? Colors.black,
-//                 size: iconSize ?? 24,
-//               ),
-//         ),
-//       ),
-//     ),
-//   );
-// }

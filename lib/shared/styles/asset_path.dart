@@ -1,17 +1,29 @@
-class AssetPath{
-
-  static  const String splashImage = "assets/images/splash.png";
-  static  const String profileImage = "assets/images/profile.png";
-  static  const String  onBoardImage = "assets/images/onBoard.png";
-  static  const String  signINImage = "assets/images/signIN.png";
-  static  const String  signUPImage = "assets/images/signUP.png";
-  static  const String  resetPasswordImage = "assets/images/reset_password.png";
-  static  const String  checkImage = "assets/images/check.png";
-  static  const String  warningImage = "assets/images/warning.png";
-  static  const String  changePasswordImage = "assets/images/change_password.png";
+class AssetPath {
+  static const String splashImage = "assets/images/splash.png";
+  static const String onBoardImage = "assets/images/onBoard.png";
+  static const String signINImage = "assets/images/signIN.png";
+  static const String signUPImage = "assets/images/signUP.png";
+  static const String resetPasswordImage = "assets/images/reset_password.png";
+  static const String checkImage = "assets/images/check.png";
+  static const String warningImage = "assets/images/warning.png";
+  static const String changePasswordImage = "assets/images/change_password.png";
+  static const String gizaImage = "assets/images/giza.jpg";
+  static const String dubaiImage = "assets/images/dubai.jpg";
+  static const String romeImage = "assets/images/rome.jpg";
+  static const String tripsoImage = "assets/images/tripso.jpg";
+  static const String homeImage = "assets/images/home.png";
+  static const String planImage = "assets/images/plan.png";
+  static const String searchImage = "assets/images/search.png";
+  static const String userImage = "assets/images/user.png";
+  static const String wishlistImage = "assets/images/wishlist.png";
+  static const String emptyImage = 'assets/images/emptyImage.png';
+  static const String logoImage = 'assets/images/logo1.png';
+  static const String imagesGroup92 = 'assets/images/Group 92.png';
+  static const String ancient1 = 'assets/images/ancient/ancient1.jpg';
+  static const String ancient2 = 'assets/images/ancient/ancient4.jpg';
+  static const String ancient3 = 'assets/images/ancient/ancient 6.jpg';
+  static const String ancient4 = 'assets/images/ancient/ancient 8.jpg';
+  static const String ancient5 = 'assets/images/ancient/ancient 9.jpg';
+  static const String ancient6 = 'assets/images/ancient/ancient 11.jpg';
+  static const String plan = 'assets/images/plan.jpg';
 }
-
-
-
-
-
