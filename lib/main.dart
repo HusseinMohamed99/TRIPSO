@@ -100,6 +100,7 @@ class MyApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 theme: ThemeApp.lightTheme,
                 routes: {
+                  PrefScreen.routeName: (_) => const PrefScreen(),
                   OnBoard.routeName: (_) => const OnBoard(),
                   SplashScreen.routeName: (_) => const SplashScreen(),
                   CitiesScreen.routeName: (_) => const CitiesScreen(),
@@ -125,7 +126,6 @@ class MyApp extends StatelessWidget {
                   CreateCustomizePlan.routeName: (_) =>
                       const CreateCustomizePlan(),
                   SelectDateScreen.routeName: (_) => const SelectDateScreen(),
-                  PrefScreen.routeName: (_) => const PrefScreen(),
                 },
                 initialRoute: SplashScreen.routeName,
               );
