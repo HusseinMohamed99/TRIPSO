@@ -178,7 +178,9 @@ class CityDetails extends StatelessWidget {
             CircleAvatar(
               radius: 30.r,
               backgroundColor: Colors.transparent,
-              child: Image.asset(weatherData.getImage()),
+              child: Image(
+                image: NetworkImage('https:${weatherData.image}'),
+              ),
             ),
             Text(
               screenArgs.cityModel.name,
@@ -282,7 +284,7 @@ class RowWidget extends StatelessWidget {
                         radius: 22.r,
                         backgroundColor: Colors.transparent,
                         child: Icon(
-                          Icons.camera_alt_outlined,
+                          Icons.book_outlined,
                           size: 28.sp,
                           color: const Color.fromARGB(255, 216, 119, 119),
                         ),
@@ -321,7 +323,7 @@ class RowWidget extends StatelessWidget {
                         radius: 22.r,
                         backgroundColor: Colors.transparent,
                         child: Icon(
-                          Icons.flag,
+                          Icons.dashboard_customize_outlined,
                           size: 28.sp,
                           color: const Color.fromARGB(255, 105, 155, 247),
                         ),

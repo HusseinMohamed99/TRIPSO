@@ -1,16 +1,17 @@
 import 'dart:async';
+
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
-import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
+import 'package:tripso/mobile/screens/on_boarding/pref_screen.dart';
 import 'package:tripso/shared/components/size_config.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -56,11 +57,6 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       uId = CacheHelper.getData(key: 'uId');
-      // if (uId != null) {
-      //   Navigator.pushReplacementNamed(context, CitiesScreen.routeName);
-      // } else {
-      //   Navigator.pushReplacementNamed(context, OnBoard.routeName);
-      // }
     });
   }
 
@@ -91,7 +87,8 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
               pageTransitionType: PageTransitionType.rightToLeft,
               splashTransition: SplashTransition.scaleTransition,
               splash: AssetPath.logoImage,
-              nextScreen: uId != null ? const CitiesScreen() : const OnBoard(),
+              nextScreen:
+                  uId != null ? const CitiesScreen() : const PrefScreen(),
               duration: 2000,
               animationDuration: const Duration(seconds: 2))),
     );

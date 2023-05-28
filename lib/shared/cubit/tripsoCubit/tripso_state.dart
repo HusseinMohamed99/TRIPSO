@@ -74,6 +74,8 @@ class UploadCoverImageErrorState extends TripsoStates {}
 
 class UpdateUserLoadingState extends TripsoStates {}
 
+class UpdateUserSuccessState extends TripsoStates {}
+
 class UpdateUserErrorState extends TripsoStates {}
 
 class AddToFavoriteSuccessState extends TripsoStates {}

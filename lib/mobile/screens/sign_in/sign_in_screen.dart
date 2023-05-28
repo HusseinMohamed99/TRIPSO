@@ -9,6 +9,7 @@ import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
 import 'package:tripso/shared/constants/constants.dart';
@@ -37,6 +38,7 @@ class SignInScreen extends StatelessWidget {
           MyDialog.showLoadingDialog(context, 'Loading...');
         }
         if (state is SignInSuccessState) {
+          showToast(text: 'Login is Successfully', state: ToastStates.success);
           MyDialog.showLoadingDialog(context, 'Login is successfully');
           CacheHelper.saveData(value: state.uid, key: 'uId').then(
             (value) {
@@ -186,8 +188,6 @@ class SignInScreen extends StatelessWidget {
                                       email: emailController.text,
                                       password: passwordController.text,
                                     );
-                                    emailController.clear();
-                                    passwordController.clear();
                                   }
                                 },
                                 text: 'Sign in',

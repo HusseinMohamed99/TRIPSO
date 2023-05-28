@@ -33,7 +33,7 @@ class CitiesScreen extends StatefulWidget {
 }
 
 class _CitiesScreenState extends State<CitiesScreen> {
-  dynamic dropdownValue = 'All Cities';
+  dynamic dropdownValue = 'All Countries';
 
   late StreamSubscription subscription;
   bool isDeviceConnected = false;
@@ -137,7 +137,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                   ]),
                               Space(height: 30.h, width: 0.w),
                               Space(height: 5.h, width: 0.w),
-                              if (dropdownValue == 'All Cities')
+                              if (dropdownValue == 'All Countries')
                                 gridCitiesItem(context, cubit.placeModel!,
                                     cubit.bestPLanModel!),
                               if (dropdownValue == 'Egypt')
@@ -178,7 +178,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                   child: Container(
                                     alignment: Alignment.center,
                                     height: 40.h,
-                                    width: 100.w,
+                                    width: 120.w,
                                     child: DropdownButton(
                                       iconSize: 20.sp,
                                       underline: const Divider(
@@ -188,7 +188,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                         Icons.keyboard_arrow_down,
                                       ),
                                       items: [
-                                        'All Cities',
+                                        'All Countries',
                                         'Egypt',
                                         'Italy',
                                         'France',

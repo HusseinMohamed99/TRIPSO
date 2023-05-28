@@ -145,7 +145,7 @@ class DefaultTextFormField extends StatelessWidget {
             color: Colors.red,
           ),
         ),
-        errorStyle: TextStyle(color: Colors.red, fontSize: 16.sp),
+        errorStyle: TextStyle(color: Colors.red, fontSize: 12.sp),
       ),
     );
   }

@@ -37,7 +37,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   initState() {
     // at the beginning, all users are shown
-    foundCity = TripsoCubit.get(context).city;
+    foundCity = [];
     super.initState();
   }
 
@@ -55,7 +55,6 @@ class _SearchScreenState extends State<SearchScreen> {
           )
           .toList();
     }
-
     setState(() {
       foundCity = results;
     });

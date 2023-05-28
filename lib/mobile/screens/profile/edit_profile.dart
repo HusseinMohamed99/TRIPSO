@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,16 +7,17 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
-import 'package:tripso/shared/constants/constants.dart';
-import 'package:tripso/shared/widget/select_photo_options.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
+import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
+import 'package:tripso/shared/widget/select_photo_options.dart';
 
 class EditProfile extends StatelessWidget {
   EditProfile({Key? key}) : super(key: key);
@@ -36,7 +38,12 @@ class EditProfile extends StatelessWidget {
     addressController.text = tripsoCubit.address;
     var formKey = GlobalKey<FormState>();
     return BlocConsumer<TripsoCubit, TripsoStates>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is UpdateUserSuccessState) {
+          showToast(
+              text: 'Update Data Successfully', state: ToastStates.success);
+        }
+      },
       builder: (context, state) {
         var cubit = TripsoCubit.get(context);
         File? profileImage = TripsoCubit.get(context).profileImage;
@@ -136,12 +143,12 @@ class EditProfile extends StatelessWidget {
                           controller: firstnameController,
                           keyboardType: TextInputType.name,
                           validate: (String? value) {
-                            if (value!.trim().isEmpty) {
-                              return 'Firstname must not be empty !';
+                            if (value!.trim().isEmpty || value.length < 3) {
+                              return 'First name must not be empty !';
                             }
                             return null;
                           },
-                          label: 'Firstname',
+                          label: 'First name',
                           prefix: Icons.account_circle_outlined,
                         ),
                         Space(
@@ -156,12 +163,12 @@ class EditProfile extends StatelessWidget {
                           controller: lastnameController,
                           keyboardType: TextInputType.name,
                           validate: (String? value) {
-                            if (value!.trim().isEmpty) {
-                              return 'Lastname must not be empty !';
+                            if (value!.trim().isEmpty || value.length < 3) {
+                              return 'Last name must not be empty !';
                             }
                             return null;
                           },
-                          label: 'Lastname',
+                          label: 'Last name',
                           prefix: Icons.account_circle_outlined,
                         ),
                         Space(
@@ -176,8 +183,8 @@ class EditProfile extends StatelessWidget {
                           controller: addressController,
                           keyboardType: TextInputType.streetAddress,
                           validate: (String? value) {
-                            if (value!.trim().isEmpty) {
-                              return 'streetAddress must not be empty !';
+                            if (value!.trim().isEmpty || value.length < 3) {
+                              return 'Street Address must not be empty !';
                             }
                             return null;
                           },
@@ -196,13 +203,12 @@ class EditProfile extends StatelessWidget {
                           controller: phoneController,
                           keyboardType: TextInputType.phone,
                           validate: (String? value) {
-                            if (value!.trim().isEmpty) {
-                              return 'phone must not be empty !';
-                            } else if (value.length != 11) {
-                              return 'Sorry, your phone must be\n 11 numbers long.';
-                            } else {
-                              return null;
+                            if (value!.trim().isEmpty ||
+                                value.length < 11 ||
+                                value.length > 11) {
+                              return 'An Egyptian phone number consisting of 11 digits';
                             }
+                            return null;
                           },
                           label: 'phone number',
                           prefix: Icons.phone,
@@ -219,13 +225,10 @@ class EditProfile extends StatelessWidget {
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           validate: (String? value) {
-                            if (value!.trim().isEmpty) {
-                              return 'Email is Required';
-                            } else if (value.length < 16) {
+                            if (value!.trim().isEmpty || value.length < 16) {
                               return 'Sorry, your mail must be\n between 16 and 30 characters long.';
-                            } else {
-                              return null;
                             }
+                            return null;
                           },
                           prefix: Icons.alternate_email,
                           label: 'Email Address',

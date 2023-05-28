@@ -10,6 +10,7 @@ import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/scrollable_form.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
+import 'package:tripso/shared/components/toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/SignUpCubit/sign_up_state.dart';
 import 'package:tripso/shared/cubit/signUpCubit/sign_up_cubit.dart';
@@ -39,6 +40,8 @@ class SignUpScreen extends StatelessWidget {
           MyDialog.showLoadingDialog(context, 'SignUp is successfully');
         }
         if (state is UserCreateSuccessState) {
+          showToast(text: 'Login Up Successfully', state: ToastStates.success);
+          MyDialog.showLoadingDialog(context, 'SignUp is successfully');
           CacheHelper.saveData(value: state.uid, key: 'uId').then(
             (value) {
               uId = state.uid;
@@ -218,7 +221,7 @@ class SignUpScreen extends StatelessWidget {
                                     return null;
                                   },
                                   prefix: Icons.phone_android,
-                                  hint: 'Mobile Numbers',
+                                  hint: 'Mobile Number',
                                 ),
                                 Space(width: 0.w, height: 20.h),
                                 Text(
@@ -238,9 +241,12 @@ class SignUpScreen extends StatelessWidget {
                                   controller: passwordController,
                                   keyboardType: TextInputType.visiblePassword,
                                   validate: (String? value) {
+                                    RegExp regex = RegExp(
+                                        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#+/%^=_$&*~]).{8,}$');
                                     if (value!.trim().isEmpty ||
-                                        value.length < 8) {
-                                      return "Use, 8 characters or more for your password";
+                                        value.trim().length < 8 ||
+                                        !regex.hasMatch(value)) {
+                                      return 'Uppercase and lowercase letters, numbers and signs, and not less than 8 letters';
                                     }
                                     return null;
                                   },
@@ -267,11 +273,6 @@ class SignUpScreen extends StatelessWidget {
                                   firstName: firstnameController.text,
                                   lastName: lastnameController.text,
                                 );
-                                emailController.clear();
-                                passwordController.clear();
-                                firstnameController.clear();
-                                lastnameController.clear();
-                                phoneController.clear();
                               }
                             },
                             text: 'Sign up',

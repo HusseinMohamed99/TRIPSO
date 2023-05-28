@@ -11,6 +11,7 @@ import 'package:tripso/mobile/screens/explore/explore.dart';
 import 'package:tripso/mobile/screens/historical_city/historical_city.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
+import 'package:tripso/mobile/screens/on_boarding/pref_screen.dart';
 import 'package:tripso/mobile/screens/password/forget_password_screen.dart';
 import 'package:tripso/mobile/screens/password/update_password_screen.dart';
 import 'package:tripso/mobile/screens/plans/create_customize_plan.dart';
@@ -55,14 +56,12 @@ void main() async {
     print(uId);
   }
 
-  runApp(
-    ChangeNotifierProvider(
-      create: (context) {
-        return WeatherProvider();
-      },
-      child: const MyApp(),
-    ),
-  );
+  runApp(ChangeNotifierProvider(
+    create: (context) {
+      return WeatherProvider();
+    },
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -126,6 +125,7 @@ class MyApp extends StatelessWidget {
                   CreateCustomizePlan.routeName: (_) =>
                       const CreateCustomizePlan(),
                   SelectDateScreen.routeName: (_) => const SelectDateScreen(),
+                  PrefScreen.routeName: (_) => const PrefScreen(),
                 },
                 initialRoute: SplashScreen.routeName,
               );

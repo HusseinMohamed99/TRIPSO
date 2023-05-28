@@ -56,7 +56,7 @@ class WishListScreen extends StatelessWidget {
                       height: 30.h,
                     ),
                     Text(
-                      'Your ${tripsoCubit!.name} is Empty',
+                      'Your ${tripsoCubit!.name} WishList is Empty',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 17.sp,

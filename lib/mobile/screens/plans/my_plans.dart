@@ -267,7 +267,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                               ),
                             ),
                             Text(
-                              'Your ${tripsoCubit!.name} is Empty',
+                              'Your ${tripsoCubit!.name} Plan is Empty',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 17.sp,
