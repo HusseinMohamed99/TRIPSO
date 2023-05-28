@@ -73,9 +73,10 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/
     - assets/images/
-    - assets/lottie/
     - assets/images/2.0x/
     - assets/images/3.0x/
     - assets/images/ancient/
-    - assets/
+    - assets/lottie/
+
