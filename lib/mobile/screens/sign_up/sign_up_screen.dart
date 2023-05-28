@@ -40,11 +40,11 @@ class SignUpScreen extends StatelessWidget {
           MyDialog.showLoadingDialog(context, 'SignUp is successfully');
         }
         if (state is UserCreateSuccessState) {
-          TripsoCubit.get(context).getUserData();
           showToast(text: 'Login Up Successfully', state: ToastStates.success);
           MyDialog.showLoadingDialog(context, 'SignUp is successfully');
           CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
             uId = state.uid;
+            TripsoCubit.get(context).getUserData();
             navigateAndFinish(context, routeName: CitiesScreen.routeName);
           });
         } else if (state is SignUpErrorState) {
