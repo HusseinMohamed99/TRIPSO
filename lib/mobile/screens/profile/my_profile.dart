@@ -263,6 +263,7 @@ class MyProfileScreen extends StatelessWidget {
                           {
                             MyDialog.showLoadingDialog(context, 'Loading');
                             logOut(context);
+                            cubit.currentIndex = 0;
                             MyDialog.showLoadingDialog(context, 'Loading');
                             MyDialog.hideDialog(context);
                             cubit.currentIndex = 0;

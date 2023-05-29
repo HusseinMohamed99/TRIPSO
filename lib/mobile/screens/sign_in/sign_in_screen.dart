@@ -38,13 +38,12 @@ class SignInScreen extends StatelessWidget {
           MyDialog.showLoadingDialog(context, 'Loading...');
         }
         if (state is SignInSuccessState) {
-          TripsoCubit.get(context).getUserData();
           showToast(text: 'Login is Successfully', state: ToastStates.success);
           MyDialog.showLoadingDialog(context, 'Login is successfully');
           CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
             uId = state.uid;
             MyDialog.hideDialog(context);
-
+            TripsoCubit.get(context).getUserData();
             navigateAndFinish(context, routeName: CitiesScreen.routeName);
           });
         } else if (state is SignInErrorState) {
