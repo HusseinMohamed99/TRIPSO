@@ -196,7 +196,7 @@ class SignUpScreen extends StatelessWidget {
                                 ),
                                 Space(width: 0.w, height: 20.h),
                                 Text(
-                                  'Mobile Numbers',
+                                  'Mobile Number',
                                   style: TextStyle(
                                     color: ThemeApp.secondaryColor,
                                     fontSize: 14.sp,
@@ -244,7 +244,7 @@ class SignUpScreen extends StatelessWidget {
                                     if (value!.trim().isEmpty ||
                                         value.trim().length < 8 ||
                                         !regex.hasMatch(value)) {
-                                      return 'Uppercase and lowercase letters, numbers and signs, and not less than 8 letters';
+                                      return 'Uppercase and lowercase letters,\nnumbers and signs, and not less than 8 letters';
                                     }
                                     return null;
                                   },
