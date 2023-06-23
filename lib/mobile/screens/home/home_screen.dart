@@ -197,7 +197,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                             child: Row(
                               children: [
                                 Expanded(
-                                  child: SearchBar(
+                                  child: SearchBarItem(
                                       readOnly: true,
                                       function: () {
                                         navigateTo(
