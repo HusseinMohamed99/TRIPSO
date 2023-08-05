@@ -1,16 +1,3 @@
 # tripso
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+TRIPSO, the ultimate travel companion, just got even better! We've added new features to enhance your travel experience, including • Up-to-date attraction information, so you can plan your itinerary with confidence  • Opening hours, so you can make the most of your time in the city • 
