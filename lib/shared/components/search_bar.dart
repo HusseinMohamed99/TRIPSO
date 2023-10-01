@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
-class SearchBar extends StatelessWidget {
-  const SearchBar({
+class SearchBarWidget extends StatelessWidget {
+  const SearchBarWidget({
     required this.function,
     this.width,
     this.height,
