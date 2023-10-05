@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/mobile/screens/sign_up/sign_up_screen.dart';
-import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/navigator.dart';
@@ -26,26 +25,23 @@ class OnBoard extends StatelessWidget {
           fit: BoxFit.fill,
         ),
       ),
-      child: FadeAnimation(
-        1.3,
-        child: Scaffold(
-          appBar: secondaryAppBar(),
-          backgroundColor: Colors.transparent,
-          body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50.0.r),
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(
-                    child: welcomeText(),
-                  ),
-                  button(context),
-                  Space(height: 50.h, width: 0.w),
-                ],
-              ),
+      child: Scaffold(
+        appBar: secondaryAppBar(),
+        backgroundColor: Colors.transparent,
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 50.0.r),
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: welcomeText(),
+                ),
+                button(context),
+                Space(height: 50.h, width: 0.w),
+              ],
             ),
           ),
         ),

@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/model/on_board_model.dart';
-import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
@@ -72,28 +71,25 @@ class _PrefScreenState extends State<PrefScreen> {
       ),
       body: Column(
         children: [
-          FadeAnimation(
-            1.0,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0).r,
-              child: Align(
-                alignment: Alignment.bottomRight,
-                child: TextButton(
-                  onPressed: () {
-                    submit();
-                  },
-                  child: Text(
-                    isLast ? '' : 'skip',
-                    style: GoogleFonts.poppins(
-                      color: ThemeApp.primaryColor,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w400,
-                    ),
-
-                    // style: TextStyle(
-
-                    // ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0).r,
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: TextButton(
+                onPressed: () {
+                  submit();
+                },
+                child: Text(
+                  isLast ? '' : 'skip',
+                  style: GoogleFonts.poppins(
+                    color: ThemeApp.primaryColor,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
                   ),
+
+                  // style: TextStyle(
+
+                  // ),
                 ),
               ),
             ),
@@ -124,70 +120,67 @@ class _PrefScreenState extends State<PrefScreen> {
                       itemCount: boarding.length,
                     ),
                   ),
-                  FadeAnimation(
-                    3.5,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            if (isLast) {
-                              submit();
-                            } else {
-                              pageController.nextPage(
-                                duration: const Duration(
-                                  milliseconds: 780,
-                                ),
-                                curve: Curves.ease,
-                              );
-                            }
-                          },
-                          child: Align(
-                            alignment: Alignment.bottomRight,
-                            child: Container(
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.symmetric(
-                                      horizontal: 35, vertical: 12)
-                                  .r,
-                              width: 163,
-                              height: 48,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(
-                                    const Radius.circular(15).r),
-                                color: ThemeApp.primaryColor,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          if (isLast) {
+                            submit();
+                          } else {
+                            pageController.nextPage(
+                              duration: const Duration(
+                                milliseconds: 780,
                               ),
-                              child: FittedBox(
-                                child: Text(
-                                  isLast ? "Get Started" : 'Next',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.poppins(
-                                    color: Colors.white,
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                              curve: Curves.ease,
+                            );
+                          }
+                        },
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Container(
+                            alignment: Alignment.center,
+                            padding: const EdgeInsets.symmetric(
+                                    horizontal: 35, vertical: 12)
+                                .r,
+                            width: 163,
+                            height: 48,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(const Radius.circular(15).r),
+                              color: ThemeApp.primaryColor,
+                            ),
+                            child: FittedBox(
+                              child: Text(
+                                isLast ? "Get Started" : 'Next',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.poppins(
+                                  color: Colors.white,
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
                           ),
                         ),
-                        Space(height: 40.h, width: 0),
-                        SmoothPageIndicator(
-                          textDirection: TextDirection.ltr,
-                          controller: pageController,
-                          count: boarding.length,
-                          effect: const ExpandingDotsEffect(
-                            dotWidth: 12.0,
-                            dotHeight: 12.0,
-                            dotColor: Colors.grey,
-                            activeDotColor: ThemeApp.primaryColor,
-                            radius: 20.0,
-                            spacing: 17,
-                            expansionFactor: 1.01,
-                          ),
+                      ),
+                      Space(height: 40.h, width: 0),
+                      SmoothPageIndicator(
+                        textDirection: TextDirection.ltr,
+                        controller: pageController,
+                        count: boarding.length,
+                        effect: const ExpandingDotsEffect(
+                          dotWidth: 12.0,
+                          dotHeight: 12.0,
+                          dotColor: Colors.grey,
+                          activeDotColor: ThemeApp.primaryColor,
+                          radius: 20.0,
+                          spacing: 17,
+                          expansionFactor: 1.01,
                         ),
-                        Space(height: 48.h, width: 0),
-                      ],
-                    ),
+                      ),
+                      Space(height: 48.h, width: 0),
+                    ],
                   ),
                 ],
               ),
@@ -201,23 +194,19 @@ class _PrefScreenState extends State<PrefScreen> {
   Widget buildBoardingItem(BoardingModel model) => SingleChildScrollView(
         child: Column(
           children: [
-            FadeAnimation(2.0,
-                child: SvgPicture.asset(
-                  model.image,
-                  fit: BoxFit.fill,
-                  height: 300,
-                )),
+            SvgPicture.asset(
+              model.image,
+              fit: BoxFit.fill,
+              height: 300,
+            ),
             Space(height: 10.h, width: 0),
-            FadeAnimation(
-              3.0,
-              child: Text(
-                model.title,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
-                  fontSize: 22.sp,
-                  color: ThemeApp.primaryColor,
-                  fontWeight: FontWeight.w500,
-                ),
+            Text(
+              model.title,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.poppins(
+                fontSize: 22.sp,
+                color: ThemeApp.primaryColor,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ],

@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
-import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/navigator.dart';
@@ -142,12 +141,9 @@ class UpdatePassword extends StatelessWidget {
         ),
       );
 
-  Widget assetImage() => FadeAnimation(
-        1.0,
-        child: Image(
-          image: const AssetImage(AssetPath.changePasswordImage),
-          height: 300.h,
-        ),
+  Widget assetImage() => Image(
+        image: const AssetImage(AssetPath.changePasswordImage),
+        height: 300.h,
       );
 }
 
