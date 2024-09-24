@@ -13,7 +13,7 @@ import 'package:tripso/shared/styles/theme.dart';
 class OnBoard extends StatelessWidget {
   static const String routeName = 'onBoard_screen';
 
-  const OnBoard({Key? key}) : super(key: key);
+  const OnBoard({super.key});
 
   @override
   Widget build(BuildContext context) {

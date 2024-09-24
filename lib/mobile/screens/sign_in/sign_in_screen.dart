@@ -22,7 +22,7 @@ import 'package:tripso/shared/styles/theme.dart';
 class SignInScreen extends StatelessWidget {
   static const String routeName = 'sign_in_screen';
 
-  const SignInScreen({Key? key}) : super(key: key);
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +37,9 @@ class SignInScreen extends StatelessWidget {
           MyDialog.showLoadingDialog(context, 'Loading...');
         }
         if (state is SignInSuccessState) {
-          showToast(text: 'Login is Successfully', state: ToastStates.success);
-          MyDialog.showLoadingDialog(context, 'Login is successfully');
+          showToast(
+              text: 'Sign In is Successfully', state: ToastStates.success);
+          MyDialog.showLoadingDialog(context, 'Sign In is successfully');
           CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
             uId = state.uid;
             MyDialog.hideDialog(context);
@@ -46,7 +47,7 @@ class SignInScreen extends StatelessWidget {
             navigateAndFinish(context, routeName: CitiesScreen.routeName);
           });
         } else if (state is SignInErrorState) {
-          MyDialog.showLoadingDialog(context, 'Login is Error');
+          MyDialog.showLoadingDialog(context, 'Sign In is Error');
           MyDialog.hideDialog(context);
           MyDialog.showMessage(
             context,

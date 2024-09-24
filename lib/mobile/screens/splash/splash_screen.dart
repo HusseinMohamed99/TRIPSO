@@ -17,7 +17,7 @@ import 'package:tripso/shared/styles/theme.dart';
 class SplashScreen extends StatelessWidget {
   static const String routeName = 'splash_screen';
 
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class SplashScreen extends StatelessWidget {
 }
 
 class SplashScreenBody extends StatefulWidget {
-  const SplashScreenBody({Key? key}) : super(key: key);
+  const SplashScreenBody({super.key});
 
   @override
   State<SplashScreenBody> createState() => _SplashScreenBodyState();
@@ -42,14 +42,15 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
 
   getConnectivity() =>
       subscription = Connectivity().onConnectivityChanged.listen(
-        (ConnectivityResult result) async {
-          isDeviceConnected = await InternetConnectionChecker().hasConnection;
-          if (!isDeviceConnected && isAlertSet == false) {
-            showDialogBox();
-            setState(() => isAlertSet = true);
-          }
-        },
-      );
+            (ConnectivityResult result) async {
+              isDeviceConnected =
+                  await InternetConnectionChecker().hasConnection;
+              if (!isDeviceConnected && isAlertSet == false) {
+                showDialogBox();
+                setState(() => isAlertSet = true);
+              }
+            } as void Function(List<ConnectivityResult> event)?,
+          );
 
   @override
   void initState() {

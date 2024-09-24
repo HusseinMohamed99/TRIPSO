@@ -21,7 +21,7 @@ import 'package:tripso/shared/styles/theme.dart';
 class SignUpScreen extends StatelessWidget {
   static const String routeName = 'sign_up_screen';
 
-  const SignUpScreen({Key? key}) : super(key: key);
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class SignUpScreen extends StatelessWidget {
           MyDialog.showLoadingDialog(context, 'SignUp is successfully');
         }
         if (state is UserCreateSuccessState) {
-          showToast(text: 'Login Up Successfully', state: ToastStates.success);
+          showToast(text: 'Sign Up Successfully', state: ToastStates.success);
           MyDialog.showLoadingDialog(context, 'SignUp is successfully');
           CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
             uId = state.uid;

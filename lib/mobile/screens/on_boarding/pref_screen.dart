@@ -11,7 +11,7 @@ import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class PrefScreen extends StatefulWidget {
-  const PrefScreen({Key? key}) : super(key: key);
+  const PrefScreen({super.key});
   static const String routeName = 'PrefScreen';
 
   @override

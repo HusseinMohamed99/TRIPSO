@@ -290,9 +290,9 @@ class GridItemSights extends StatelessWidget {
   const GridItemSights(
     this.cityModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.placeModel,
-  }) : super(key: key);
+  });
 
   final PlaceModel placeModel;
   final CityModel cityModel;

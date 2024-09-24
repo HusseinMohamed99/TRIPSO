@@ -20,7 +20,7 @@ enum AuthMode { forgot, verify }
 class ForgotPassword extends StatefulWidget {
   static const String routeName = 'forget_password_screen';
 
-  const ForgotPassword({Key? key}) : super(key: key);
+  const ForgotPassword({super.key});
 
   @override
   State<ForgotPassword> createState() => _ForgotPasswordState();
