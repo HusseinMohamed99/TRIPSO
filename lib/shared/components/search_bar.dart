@@ -4,7 +4,7 @@ import 'package:tripso/shared/styles/theme.dart';
 
 <<<<<<< HEAD
 class SearchBarItem extends StatelessWidget {
-  const SearchBarItem({
+  const SearchBarItem({super.key, 
 =======
 class SearchBarWidget extends StatelessWidget {
   const SearchBarWidget({
