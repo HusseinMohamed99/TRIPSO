@@ -28,8 +28,7 @@ class DefaultTextFormField extends StatelessWidget {
       this.suffixPressed,
       this.prefix,
       this.maxLength,
-      Key? key})
-      : super(key: key);
+      super.key});
   final BuildContext context;
   final FocusNode? focusNode;
   final Color? color;

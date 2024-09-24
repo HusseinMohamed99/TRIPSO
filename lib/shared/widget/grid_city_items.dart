@@ -22,9 +22,9 @@ class GridCitiesItem extends StatelessWidget {
   const GridCitiesItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -117,9 +117,9 @@ class GridEGItem extends StatelessWidget {
   const GridEGItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -208,9 +208,9 @@ class GridITItem extends StatelessWidget {
   const GridITItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -299,9 +299,9 @@ class GridUAEItem extends StatelessWidget {
   const GridUAEItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -390,9 +390,9 @@ class GridFRItem extends StatelessWidget {
   const GridFRItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -481,9 +481,9 @@ class GridPopularItem extends StatelessWidget {
   const GridPopularItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;

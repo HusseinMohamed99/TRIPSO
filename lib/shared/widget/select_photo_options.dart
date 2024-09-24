@@ -9,8 +9,8 @@ import 'package:tripso/shared/styles/theme.dart';
 
 class SelectPhotoOptions extends StatelessWidget {
   const SelectPhotoOptions({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

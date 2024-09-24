@@ -15,11 +15,11 @@ import 'package:tripso/shared/styles/theme.dart';
 
 class TopPlanItem extends StatelessWidget {
   const TopPlanItem({
-    Key? key,
+    super.key,
     required this.bestPLanModel,
     required this.cityModel,
     required this.placeModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;

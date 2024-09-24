@@ -14,7 +14,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class HistoricalCity extends StatelessWidget {
-  const HistoricalCity({Key? key}) : super(key: key);
+  const HistoricalCity({super.key});
   static const String routeName = 'HistoricalCity';
 
   @override

@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/mobile/screens/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
-import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/navigator.dart';
@@ -21,7 +20,7 @@ enum AuthMode { forgot, verify }
 class ForgotPassword extends StatefulWidget {
   static const String routeName = 'forget_password_screen';
 
-  const ForgotPassword({Key? key}) : super(key: key);
+  const ForgotPassword({super.key});
 
   @override
   State<ForgotPassword> createState() => _ForgotPasswordState();
@@ -30,8 +29,6 @@ class ForgotPassword extends StatefulWidget {
 class _ForgotPasswordState extends State<ForgotPassword> {
   var emailController = TextEditingController();
   var forgetFormKey = GlobalKey<FormState>();
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -96,11 +93,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         text: 'Verify Email',
                       ),
                     ],
+                  ),
+                ),
               ),
-            ),
-          ),
-        );
-      }),
+            );
+          }),
     );
   }
 
@@ -128,10 +125,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         ),
       );
 
-  Widget assetImage() => const FadeAnimation(
-        1.0,
-        child: Image(image: AssetImage(AssetPath.resetPasswordImage)),
-      );
+  Widget assetImage() =>
+      const Image(image: AssetImage(AssetPath.resetPasswordImage));
 
   Widget formField() => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0).r,

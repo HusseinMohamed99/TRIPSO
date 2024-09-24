@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
+<<<<<<< HEAD
 class SearchBarItem extends StatelessWidget {
   const SearchBarItem({
+=======
+class SearchBarWidget extends StatelessWidget {
+  const SearchBarWidget({
+>>>>>>> 9ba9d52b02061d4766995a2ed3e1898c0bede29d
     required this.function,
     this.width,
     this.height,
@@ -16,8 +21,8 @@ class SearchBarItem extends StatelessWidget {
     this.fontWeightTitle,
     this.iconData,
     this.readOnly,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final bool? readOnly;
   final Function function;

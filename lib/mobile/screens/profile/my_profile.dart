@@ -16,7 +16,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class MyProfileScreen extends StatelessWidget {
-  const MyProfileScreen({Key? key}) : super(key: key);
+  const MyProfileScreen({super.key});
   static const String routeName = 'MyProfile';
 
   @override

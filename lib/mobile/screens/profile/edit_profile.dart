@@ -20,10 +20,10 @@ import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/select_photo_options.dart';
 
 class EditProfile extends StatelessWidget {
-  EditProfile({Key? key}) : super(key: key);
+  EditProfile({super.key});
   static const String routeName = 'EditProfile';
-  final firstnameController = TextEditingController();
-  final lastnameController = TextEditingController();
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
   final phoneController = TextEditingController();
   final emailController = TextEditingController();
   final addressController = TextEditingController();
@@ -31,8 +31,8 @@ class EditProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var tripsoCubit = TripsoCubit.get(context).userModel;
-    firstnameController.text = tripsoCubit!.firstName;
-    lastnameController.text = tripsoCubit.lastName;
+    firstNameController.text = tripsoCubit!.firstName;
+    lastNameController.text = tripsoCubit.lastName;
     phoneController.text = tripsoCubit.phone;
     emailController.text = tripsoCubit.email;
     addressController.text = tripsoCubit.address;
@@ -140,7 +140,7 @@ class EditProfile extends StatelessWidget {
                           styleColor: ThemeApp.blackPrimary,
                           prefixColor: ThemeApp.blackPrimary,
                           context: context,
-                          controller: firstnameController,
+                          controller: firstNameController,
                           keyboardType: TextInputType.name,
                           validate: (String? value) {
                             if (value!.trim().isEmpty || value.length < 3) {
@@ -160,7 +160,7 @@ class EditProfile extends StatelessWidget {
                           styleColor: ThemeApp.blackPrimary,
                           prefixColor: ThemeApp.blackPrimary,
                           context: context,
-                          controller: lastnameController,
+                          controller: lastNameController,
                           keyboardType: TextInputType.name,
                           validate: (String? value) {
                             if (value!.trim().isEmpty || value.length < 3) {
@@ -243,16 +243,16 @@ class EditProfile extends StatelessWidget {
                             if (formKey.currentState!.validate()) {
                               if (cubit.profileImage != null) {
                                 cubit.uploadProfileImage(
-                                  firstName: firstnameController.text,
+                                  firstName: firstNameController.text,
                                   phone: phoneController.text,
-                                  lastName: lastnameController.text,
+                                  lastName: lastNameController.text,
                                   email: emailController.text,
                                   // address: addressController.text,
                                 );
                               } else {
                                 cubit.updateUserData(
-                                  firstName: firstnameController.text,
-                                  lastName: lastnameController.text,
+                                  firstName: firstNameController.text,
+                                  lastName: lastNameController.text,
                                   email: emailController.text,
                                   phone: phoneController.text,
                                   address: addressController.text,

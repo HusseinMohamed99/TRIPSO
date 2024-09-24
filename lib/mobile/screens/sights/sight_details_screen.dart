@@ -18,7 +18,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class SightDetailsScreen extends StatelessWidget {
-  const SightDetailsScreen({Key? key}) : super(key: key);
+  const SightDetailsScreen({super.key});
   static const String routeName = 'SightDetailsScreen';
 
   @override

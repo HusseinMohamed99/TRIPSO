@@ -3,8 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LayerImage extends StatelessWidget {
   const LayerImage(
-      {this.child, this.borderRadius, this.width, this.height, Key? key})
-      : super(key: key);
+      {this.child, this.borderRadius, this.width, this.height, super.key});
   final double? width;
   final double? height;
   final BorderRadius? borderRadius;

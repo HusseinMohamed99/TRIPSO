@@ -3,12 +3,24 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+<<<<<<< HEAD
         connectivity_plus
         file_selector_windows
         firebase_core
         flutter_tts
         url_launcher_windows
         )
+=======
+  cloud_firestore
+  connectivity_plus
+  file_selector_windows
+  firebase_auth
+  firebase_core
+  firebase_storage
+  flutter_tts
+  url_launcher_windows
+)
+>>>>>>> 9ba9d52b02061d4766995a2ed3e1898c0bede29d
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
 )

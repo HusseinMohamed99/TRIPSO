@@ -17,7 +17,7 @@ import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 
 class WishListScreen extends StatelessWidget {
-  const WishListScreen({Key? key}) : super(key: key);
+  const WishListScreen({super.key});
   static const String routeName = 'WishList';
 
   @override
