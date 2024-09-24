@@ -24,12 +24,17 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 
-class PickPlans extends StatelessWidget {
+class PickPlans extends StatefulWidget {
   const PickPlans({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   static const String routeName = 'PickPlans';
 
+  @override
+  State<PickPlans> createState() => _PickPlansState();
+}
+
+class _PickPlansState extends State<PickPlans> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<TripsoCubit, TripsoStates>(
@@ -85,8 +90,8 @@ class PickPlans extends StatelessWidget {
 
 class PickPlansWidget extends StatelessWidget {
   const PickPlansWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -107,9 +112,9 @@ class PickPlansWidget extends StatelessWidget {
 
 class ListViewWidget extends StatelessWidget {
   const ListViewWidget({
-    Key? key,
+    super.key,
     required this.cubit,
-  }) : super(key: key);
+  });
 
   final TripsoCubit cubit;
 
@@ -140,9 +145,9 @@ class GridPlans extends StatelessWidget {
   const GridPlans(
     this.cityModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.placeModel,
-  }) : super(key: key);
+  });
 
   final PlaceModel placeModel;
   final CityModel cityModel;

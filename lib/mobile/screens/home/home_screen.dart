@@ -28,7 +28,7 @@ import 'package:tripso/shared/widget/grid_city_items.dart';
 class CitiesScreen extends StatefulWidget {
   static const String routeName = 'CitiesScreen';
 
-  const CitiesScreen({Key? key}) : super(key: key);
+  const CitiesScreen({super.key});
 
   @override
   State<CitiesScreen> createState() => _CitiesScreenState();
@@ -43,14 +43,15 @@ class _CitiesScreenState extends State<CitiesScreen> {
 
   getConnectivity() =>
       subscription = Connectivity().onConnectivityChanged.listen(
-        (ConnectivityResult result) async {
-          isDeviceConnected = await InternetConnectionChecker().hasConnection;
-          if (!isDeviceConnected && isAlertSet == false) {
-            checkInternet();
-            setState(() => isAlertSet = true);
-          }
-        },
-      );
+            (ConnectivityResult result) async {
+              isDeviceConnected =
+                  await InternetConnectionChecker().hasConnection;
+              if (!isDeviceConnected && isAlertSet == false) {
+                checkInternet();
+                setState(() => isAlertSet = true);
+              }
+            } as void Function(List<ConnectivityResult> event)?,
+          );
 
   @override
   void initState() {
@@ -197,7 +198,11 @@ class _CitiesScreenState extends State<CitiesScreen> {
                             child: Row(
                               children: [
                                 Expanded(
+<<<<<<< HEAD
                                   child: SearchBarItem(
+=======
+                                  child: SearchBarWidget(
+>>>>>>> 9ba9d52b02061d4766995a2ed3e1898c0bede29d
                                       readOnly: true,
                                       function: () {
                                         navigateTo(

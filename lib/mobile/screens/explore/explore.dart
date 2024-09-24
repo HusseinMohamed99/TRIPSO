@@ -30,7 +30,7 @@ import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
 
 class ExploreScreen extends StatelessWidget {
-  const ExploreScreen({Key? key}) : super(key: key);
+  const ExploreScreen({super.key});
   static const String routeName = 'ExploreScreen';
 
   @override
@@ -69,10 +69,10 @@ class ExploreScreen extends StatelessWidget {
 
 class CityDetails extends StatelessWidget {
   const CityDetails({
-    Key? key,
+    super.key,
     required this.screenArgs,
     required this.weatherData,
-  }) : super(key: key);
+  });
 
   final ScreenArgs screenArgs;
   final WeatherModel weatherData;
@@ -219,12 +219,12 @@ class CityDetails extends StatelessWidget {
 
 class RowWidget extends StatelessWidget {
   const RowWidget({
-    Key? key,
+    super.key,
     required this.screenArgs,
     required this.cityModel,
     required this.placeModel,
     required this.bestPLanModel,
-  }) : super(key: key);
+  });
 
   final ScreenArgs screenArgs;
 
@@ -395,11 +395,11 @@ class RowWidget extends StatelessWidget {
 
 class PopularSightsWidget extends StatelessWidget {
   const PopularSightsWidget({
-    Key? key,
+    super.key,
     required this.cityModel,
     required this.placeModel,
     required this.bestPLanModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -488,8 +488,8 @@ class PopularSightsWidget extends StatelessWidget {
 
 class TopPlansWidget extends StatelessWidget {
   const TopPlansWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -14,8 +14,8 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class BestPlanDetailsScreen extends StatelessWidget {
-  const BestPlanDetailsScreen({Key? key, required this.pId, required this.cId})
-      : super(key: key);
+  const BestPlanDetailsScreen(
+      {super.key, required this.pId, required this.cId});
 
   final String pId;
   final String cId;
@@ -401,7 +401,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
 }
 
 class ExpandableText extends StatefulWidget {
-  const ExpandableText({Key? key, required this.text}) : super(key: key);
+  const ExpandableText({super.key, required this.text});
 
   final String text;
 

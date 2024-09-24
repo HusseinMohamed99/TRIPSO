@@ -7,7 +7,7 @@ import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class CreateCustomizePlan extends StatelessWidget {
-  const CreateCustomizePlan({Key? key}) : super(key: key);
+  const CreateCustomizePlan({super.key});
   static const String routeName = 'CreatePlan';
 
   @override
