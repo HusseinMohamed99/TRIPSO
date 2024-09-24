@@ -16,8 +16,8 @@ class SearchBarWidget extends StatelessWidget {
     this.fontWeightTitle,
     this.iconData,
     this.readOnly,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final bool? readOnly;
   final Function function;

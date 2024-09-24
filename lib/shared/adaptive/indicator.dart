@@ -5,7 +5,7 @@ import 'package:tripso/shared/styles/theme.dart';
 class AdaptiveIndicator extends StatelessWidget {
   final String os;
 
-  const AdaptiveIndicator({required this.os, Key? key}) : super(key: key);
+  const AdaptiveIndicator({required this.os, super.key});
 
   @override
   Widget build(BuildContext context) {

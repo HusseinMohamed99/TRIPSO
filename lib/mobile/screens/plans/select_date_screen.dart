@@ -15,7 +15,7 @@ class SelectDateScreen extends StatefulWidget {
   static const String routeName = 'SelectDateScreen';
 
   @override
-  _SelectDateScreenState createState() => _SelectDateScreenState();
+  State<SelectDateScreen> createState() => _SelectDateScreenState();
 }
 
 class _SelectDateScreenState extends State<SelectDateScreen> {

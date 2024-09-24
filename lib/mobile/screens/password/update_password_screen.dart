@@ -18,7 +18,7 @@ import 'package:tripso/shared/styles/theme.dart';
 class UpdatePassword extends StatelessWidget {
   static const String routeName = 'update_password_screen';
 
-  const UpdatePassword({Key? key}) : super(key: key);
+  const UpdatePassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -149,11 +149,11 @@ class UpdatePassword extends StatelessWidget {
 
 class PasswordFormField extends StatelessWidget {
   const PasswordFormField({
-    Key? key,
+    super.key,
     required this.newPasswordController,
     required this.confirmationPasswordController,
     required this.cubit,
-  }) : super(key: key);
+  });
 
   final TextEditingController newPasswordController;
   final TextEditingController confirmationPasswordController;

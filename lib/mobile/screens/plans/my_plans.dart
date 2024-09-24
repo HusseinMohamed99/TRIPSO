@@ -19,7 +19,7 @@ import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class MyPlansScreen extends StatefulWidget {
-  const MyPlansScreen({Key? key}) : super(key: key);
+  const MyPlansScreen({super.key});
   static const String routeName = 'MyPlans';
 
   @override
@@ -289,11 +289,10 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
 
 class DaysOfItems extends StatelessWidget {
   const DaysOfItems(
-      {Key? key,
+      {super.key,
       required this.planModel,
       required this.cityModel,
-      required this.current})
-      : super(key: key);
+      required this.current});
   final int current;
   final PlanModel planModel;
   final CityModel cityModel;

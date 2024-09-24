@@ -12,7 +12,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class TopPlansScreen extends StatelessWidget {
-  const TopPlansScreen({Key? key}) : super(key: key);
+  const TopPlansScreen({super.key});
   static const String routeName = 'TopPlansScreen';
 
   @override
@@ -63,11 +63,11 @@ class TopPlansScreen extends StatelessWidget {
 
 class ListOfPlace extends StatelessWidget {
   const ListOfPlace({
-    Key? key,
+    super.key,
     required this.bestPLanModel,
     required this.placeModel,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final BestPLanModel bestPLanModel;
   final PlaceModel placeModel;

@@ -19,8 +19,8 @@ import 'package:tripso/shared/styles/theme.dart';
 
 class SightsScreen extends StatelessWidget {
   const SightsScreen({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static const String routeName = 'SightsScreen';
 
@@ -52,10 +52,10 @@ class SightsScreen extends StatelessWidget {
 
 class SightsWidget extends StatelessWidget {
   const SightsWidget({
-    Key? key,
+    super.key,
     required this.cityModel,
     required this.placeModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -74,9 +74,9 @@ class SightsWidget extends StatelessWidget {
 
 class ListViewWidget extends StatelessWidget {
   const ListViewWidget({
-    Key? key,
+    super.key,
     required this.cubit,
-  }) : super(key: key);
+  });
 
   final TripsoCubit cubit;
 
@@ -127,9 +127,9 @@ class GridSights extends StatelessWidget {
   const GridSights(
     this.cityModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.placeModel,
-  }) : super(key: key);
+  });
 
   final PlaceModel placeModel;
   final CityModel cityModel;

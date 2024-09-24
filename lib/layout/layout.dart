@@ -17,7 +17,8 @@ class HomeLayout extends StatelessWidget {
   static const String routeName = 'home_layout';
   static Color isColor = ThemeApp.secondaryColor;
 
-  const HomeLayout({Key? key}) : super(key: key);
+  const HomeLayout({super.key});
+  
 
   @override
   Widget build(BuildContext context) {

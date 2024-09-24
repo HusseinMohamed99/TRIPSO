@@ -22,7 +22,7 @@ import 'package:tripso/shared/styles/theme.dart';
 class SignInScreen extends StatelessWidget {
   static const String routeName = 'sign_in_screen';
 
-  const SignInScreen({Key? key}) : super(key: key);
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
