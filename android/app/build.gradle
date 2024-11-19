@@ -1,9 +1,11 @@
 plugins {
     id "com.android.application"
     id "kotlin-android"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
-    id 'com.google.gms.google-services'
 }
 android {
     compileSdkVersion = flutter.compileSdkVersion
@@ -12,12 +14,12 @@ android {
 
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_18
+        targetCompatibility JavaVersion.VERSION_18
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_18
     }
 
     sourceSets {
@@ -47,12 +49,4 @@ android {
 
 flutter {
     source '../..'
-}
-
-dependencies {
-    //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-   // implementation 'com.google.android.gms:play-services-auth:20.3.0'
-   // implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
-   // implementation platform('com.google.firebase:firebase-bom:31.0.2')
-   // implementation 'com.google.firebase:firebase-analytics'
 }

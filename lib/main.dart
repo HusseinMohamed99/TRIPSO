@@ -56,12 +56,14 @@ void main() async {
     print(uId);
   }
 
-  runApp(ChangeNotifierProvider(
-    create: (context) {
-      return WeatherProvider();
-    },
-    child: const MyApp(),
-  ));
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) {
+        return WeatherProvider();
+      },
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -73,24 +75,27 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => TripsoCubit()
-              ..getUserData()
-              ..getCityData()
-              ..getDataForPlace()
-              ..getITData()
-              ..getEGData()
-              ..getFRData()
-              ..getUAEData()
-              ..getPopularData()
-              ..getBestPlan()),
+          create: (context) => TripsoCubit()
+            ..getUserData()
+            ..getCityData()
+            ..getDataForPlace()
+            ..getITData()
+            ..getEGData()
+            ..getFRData()
+            ..getUAEData()
+            ..getPopularData()
+            ..getBestPlan(),
+        ),
       ],
       child: BlocConsumer<TripsoCubit, TripsoStates>(
         listener: (context, state) {},
         builder: (context, state) {
-          SystemChrome.setPreferredOrientations([
-            DeviceOrientation.portraitUp,
-            DeviceOrientation.portraitDown,
-          ]);
+          SystemChrome.setPreferredOrientations(
+            [
+              DeviceOrientation.portraitUp,
+              DeviceOrientation.portraitDown,
+            ],
+          );
           return ScreenUtilInit(
             designSize: const Size(360, 690),
             minTextAdapt: true,
