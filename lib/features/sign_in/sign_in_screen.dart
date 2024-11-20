@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tripso/core/styles/asset_path.dart';
+import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/home/home_screen.dart';
 import 'package:tripso/features/password/forget_password_screen.dart';
 import 'package:tripso/features/sign_up/sign_up_screen.dart';
@@ -16,8 +18,6 @@ import 'package:tripso/shared/cubit/SignInCubit/sign_in_state.dart';
 import 'package:tripso/shared/cubit/signInCubit/sign_in_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/theme.dart';
 
 class SignInScreen extends StatelessWidget {
   static const String routeName = 'sign_in_screen';

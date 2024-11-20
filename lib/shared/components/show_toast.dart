@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:tripso/shared/styles/theme.dart';
+import 'package:tripso/core/styles/theme.dart';
 
 void showToast({
   required String text,
-  required ToastStates state,}) {
+  required ToastStates state,
+}) {
   Fluttertoast.showToast(
     msg: text,
     toastLength: Toast.LENGTH_LONG,
@@ -19,6 +20,7 @@ void showToast({
 
 // enum  كذا اختيار من حاجة
 enum ToastStates { success, error, waring }
+
 Color chooseToastColor(ToastStates state) {
   Color color;
   switch (state) {

@@ -6,6 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:tripso/core/styles/asset_path.dart';
+import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/historical_city/historical_city.dart';
 import 'package:tripso/features/plans/create_customize_plan.dart';
 import 'package:tripso/features/search/search_screen.dart';
@@ -24,8 +26,6 @@ import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
 

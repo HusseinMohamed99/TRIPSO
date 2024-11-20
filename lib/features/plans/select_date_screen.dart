@@ -2,12 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/core/styles/asset_path.dart';
+import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/plans/pick_plan.dart';
 import 'package:tripso/shared/components/date_time.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/theme.dart';
 
 class SelectDateScreen extends StatefulWidget {
   const SelectDateScreen({super.key});

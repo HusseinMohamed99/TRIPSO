@@ -7,6 +7,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:tripso/core/styles/asset_path.dart';
+import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/search/search_screen.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/place_model.dart';
@@ -21,8 +23,6 @@ import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/grid_city_items.dart';
 
 class CitiesScreen extends StatefulWidget {

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/core/styles/asset_path.dart';
+import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/components/app_bar.dart';
@@ -12,8 +14,6 @@ import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
 import 'package:tripso/shared/cubit/restPasswordCubit/rest_password_cubit.dart';
 import 'package:tripso/shared/cubit/restPasswordCubit/rest_password_state.dart';
-import 'package:tripso/shared/styles/asset_path.dart';
-import 'package:tripso/shared/styles/theme.dart';
 
 enum AuthMode { forgot, verify }
 

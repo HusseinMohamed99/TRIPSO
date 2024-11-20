@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tripso/shared/styles/theme.dart';
+import 'package:tripso/core/styles/theme.dart';
 
 class AdaptiveIndicator extends StatelessWidget {
   final String os;

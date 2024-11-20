@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/explore/explore.dart';
 import 'package:tripso/features/historical_city/historical_city.dart';
 import 'package:tripso/features/home/home_screen.dart';
@@ -33,7 +34,6 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
-import 'package:tripso/shared/styles/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -92,11 +92,16 @@ class MyApp extends StatelessWidget {
             designSize: const Size(360, 690),
             minTextAdapt: true,
             builder: (context, child) {
-              return MaterialApp(
-                debugShowCheckedModeBanner: false,
-                theme: ThemeApp.lightTheme,
-                routes: routing(),
-                initialRoute: SplashScreen.routeName,
+              return MediaQuery(
+                data: MediaQuery.of(context).copyWith(
+                  textScaler: const TextScaler.linear(1.0),
+                ),
+                child: MaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  theme: ThemeApp.lightTheme,
+                  routes: routing(),
+                  initialRoute: SplashScreen.routeName,
+                ),
               );
             },
           );
