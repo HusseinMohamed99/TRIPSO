@@ -64,6 +64,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -97,6 +99,8 @@ class MyApp extends StatelessWidget {
                   textScaler: const TextScaler.linear(1.0),
                 ),
                 child: MaterialApp(
+                  // Using "navigatorKey.currentState?.pushNamed(route, arguments: arguments);"
+                  navigatorKey: navigatorKey,
                   debugShowCheckedModeBanner: false,
                   theme: ThemeApp.lightTheme,
                   routes: routing(),
