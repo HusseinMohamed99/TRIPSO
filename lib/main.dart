@@ -103,6 +103,8 @@ class MyApp extends StatelessWidget {
                   navigatorKey: navigatorKey,
                   debugShowCheckedModeBanner: false,
                   theme: ThemeApp.lightTheme,
+                  darkTheme: ThemeApp.lightTheme,
+                  themeMode: ThemeMode.light,
                   routes: routing(),
                   initialRoute: SplashScreen.routeName,
                 ),
