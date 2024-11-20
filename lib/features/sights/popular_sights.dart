@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tripso/mobile/sights/sight_details_screen.dart';
+import 'package:tripso/features/sights/sight_details_screen.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
@@ -11,18 +11,17 @@ import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/components/speak.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
-class SightsScreen extends StatelessWidget {
-  const SightsScreen({
+class PopularSightsScreen extends StatelessWidget {
+  const PopularSightsScreen({
     super.key,
   });
 
-  static const String routeName = 'SightsScreen';
+  static const String routeName = 'PopularSightsScreen';
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,7 @@ class SightsScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 5.0.r),
               child: Column(
                 children: [
-                  SightsWidget(
+                  PopularSightsWidget(
                       cityModel: screenArgs.cityModel,
                       placeModel: screenArgs.placeModel)
                 ],
@@ -50,8 +49,8 @@ class SightsScreen extends StatelessWidget {
   }
 }
 
-class SightsWidget extends StatelessWidget {
-  const SightsWidget({
+class PopularSightsWidget extends StatelessWidget {
+  const PopularSightsWidget({
     super.key,
     required this.cityModel,
     required this.placeModel,
@@ -87,14 +86,14 @@ class ListViewWidget extends StatelessWidget {
         ListView.separated(
           itemBuilder: (context, index) {
             return GridSights(
-                placeModel: cubit.place[index],
+                placeModel: cubit.popularPlace[index],
                 cubit.cityModel!,
                 cubit.bestPLanModel!);
           },
           separatorBuilder: (context, index) {
             return Space(height: 10.h, width: 0.w);
           },
-          itemCount: cubit.place.length,
+          itemCount: cubit.popularPlace.length,
         ),
         Positioned(
             top: 10.sp,
@@ -104,17 +103,20 @@ class ListViewWidget extends StatelessWidget {
               color: Colors.black.withOpacity(0.5),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               shape: const StadiumBorder(
-                  side: BorderSide(color: ThemeApp.secondaryColor)),
+                side: BorderSide(
+                  color: ThemeApp.secondaryColor,
+                ),
+              ),
               child: IconButton(
-                onPressed: () async {
+                onPressed: () {
                   if (Navigator.canPop(context)) {
                     pop(context);
                   }
-                  await flutterTts.pause();
                 },
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back,
                   color: ThemeApp.secondaryColor,
+                  size: 24.sp,
                 ),
               ),
             )),
@@ -195,7 +197,7 @@ class GridSights extends StatelessWidget {
                         placeModel.name.trim(),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.headlineSmall,
+                        style: Theme.of(context).textTheme.titleLarge,
                       ),
                       Space(height: 8.h, width: 0.w),
                       Column(
@@ -203,14 +205,12 @@ class GridSights extends StatelessWidget {
                         children: [
                           Text(
                             placeModel.history.trim(),
-                            maxLines: 4,
+                            maxLines: 5,
                             overflow: TextOverflow.fade,
                             style: Theme.of(context)
                                 .textTheme
-                                .titleLarge
-                                ?.copyWith(
-                                  color: Colors.black54,
-                                ),
+                                .displaySmall
+                                ?.copyWith(color: Colors.black54),
                           ),
                         ],
                       ),

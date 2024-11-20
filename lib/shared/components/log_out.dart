@@ -1,4 +1,4 @@
-import 'package:tripso/mobile/on_boarding/on_boarding_screen.dart';
+import 'package:tripso/features/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 

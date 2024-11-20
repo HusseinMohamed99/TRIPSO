@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:tripso/mobile/search/search_screen.dart';
+import 'package:tripso/features/search/search_screen.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
