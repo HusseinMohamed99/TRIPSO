@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
-import 'package:tripso/mobile/screens/on_boarding/pref_screen.dart';
+import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/shared/components/size_config.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
@@ -36,35 +36,55 @@ class SplashScreenBody extends StatefulWidget {
 }
 
 class _SplashScreenBodyState extends State<SplashScreenBody> {
-  late StreamSubscription subscription;
+  late StreamSubscription<ConnectivityResult> subscription;
   bool isDeviceConnected = false;
   bool isAlertSet = false;
 
-  getConnectivity() =>
-      subscription = Connectivity().onConnectivityChanged.listen(
-            (ConnectivityResult result) async {
-              isDeviceConnected =
-                  await InternetConnectionChecker().hasConnection;
-              if (!isDeviceConnected && isAlertSet == false) {
-                showDialogBox();
-                setState(() => isAlertSet = true);
-              }
-            } as void Function(List<ConnectivityResult> event)?,
-          );
-
   @override
   void initState() {
-    getConnectivity();
     super.initState();
-    Timer(const Duration(seconds: 3), () {
-      uId = CacheHelper.getData(key: 'uId');
-    });
+    _initializeConnectivity();
+    _navigateToNextScreen();
   }
 
   @override
   void dispose() {
-    subscription.cancel();
+    _subscription!.cancel();
     super.dispose();
+  }
+
+  StreamSubscription<List<ConnectivityResult>>? _subscription;
+
+  void _initializeConnectivity() {
+    _subscription = Connectivity().onConnectivityChanged.listen(
+      (List<ConnectivityResult> result) {
+        _handleConnectivityChange(result.first);
+      },
+    );
+  }
+
+  Future<void> _handleConnectivityChange(ConnectivityResult result) async {
+    bool isDeviceConnected = await InternetConnectionChecker().hasConnection;
+
+    if (!isDeviceConnected && !isAlertSet) {
+      _showNoConnectionDialog();
+      setState(() => isAlertSet = true);
+    } else if (isDeviceConnected && isAlertSet) {
+      Navigator.pop(context); // Close dialog when connected
+      setState(() => isAlertSet = false);
+    }
+  }
+
+  void _navigateToNextScreen() {
+    Timer(const Duration(seconds: 3), () {
+      uId = CacheHelper.getData(key: 'uId');
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => uId != null ? const CitiesScreen() : const OnBoard(),
+        ),
+      );
+    });
   }
 
   @override
@@ -80,41 +100,44 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
         ),
       ),
       child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: AnimatedSplashScreen(
+          splashIconSize: 200,
           backgroundColor: Colors.transparent,
-          //appBar: primaryAppBar(),
-          body: AnimatedSplashScreen(
-              splashIconSize: 200,
-              backgroundColor: Colors.transparent,
-              pageTransitionType: PageTransitionType.rightToLeft,
-              splashTransition: SplashTransition.scaleTransition,
-              splash: AssetPath.logoImage,
-              nextScreen:
-                  uId != null ? const CitiesScreen() : const PrefScreen(),
-              duration: 2000,
-              animationDuration: const Duration(seconds: 2))),
+          pageTransitionType: PageTransitionType.rightToLeft,
+          splashTransition: SplashTransition.scaleTransition,
+          splash: AssetPath.logoImage,
+          nextScreen:
+              const SizedBox(), // Placeholder; actual navigation handled in Timer
+          duration: 2000,
+          animationDuration: const Duration(seconds: 2),
+        ),
+      ),
     );
   }
 
-  showDialogBox() => showCupertinoDialog<String>(
-        context: context,
-        builder: (BuildContext context) => CupertinoAlertDialog(
-          title: const Text('No Connection'),
-          content: const Text('Please check your internet connectivity'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () async {
-                Navigator.pop(context, 'Cancel');
-                setState(() => isAlertSet = false);
-                isDeviceConnected =
-                    await InternetConnectionChecker().hasConnection;
-                if (!isDeviceConnected && isAlertSet == false) {
-                  showDialogBox();
-                  setState(() => isAlertSet = true);
-                }
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        ),
-      );
+  void _showNoConnectionDialog() {
+    showCupertinoDialog<String>(
+      context: context,
+      builder: (BuildContext context) => CupertinoAlertDialog(
+        title: const Text('No Connection'),
+        content: const Text('Please check your internet connectivity'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () async {
+              Navigator.pop(context, 'Cancel');
+              setState(() => isAlertSet = false);
+              isDeviceConnected =
+                  await InternetConnectionChecker().hasConnection;
+              if (!isDeviceConnected && !isAlertSet) {
+                _showNoConnectionDialog();
+                setState(() => isAlertSet = true);
+              }
+            },
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
 }

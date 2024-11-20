@@ -11,7 +11,6 @@ import 'package:tripso/mobile/screens/explore/explore.dart';
 import 'package:tripso/mobile/screens/historical_city/historical_city.dart';
 import 'package:tripso/mobile/screens/home/home_screen.dart';
 import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
-import 'package:tripso/mobile/screens/on_boarding/pref_screen.dart';
 import 'package:tripso/mobile/screens/password/forget_password_screen.dart';
 import 'package:tripso/mobile/screens/password/update_password_screen.dart';
 import 'package:tripso/mobile/screens/plans/create_customize_plan.dart';
@@ -103,7 +102,6 @@ class MyApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 theme: ThemeApp.lightTheme,
                 routes: {
-                  PrefScreen.routeName: (_) => const PrefScreen(),
                   OnBoard.routeName: (_) => const OnBoard(),
                   SplashScreen.routeName: (_) => const SplashScreen(),
                   CitiesScreen.routeName: (_) => const CitiesScreen(),
