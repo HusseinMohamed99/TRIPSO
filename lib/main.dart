@@ -1,5 +1,4 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,10 +48,6 @@ void main() async {
 
   uId = CacheHelper.getData(key: 'uId');
 
-  if (kDebugMode) {
-    print(uId);
-  }
-
   runApp(
     ChangeNotifierProvider(
       create: (context) {
@@ -96,38 +91,11 @@ class MyApp extends StatelessWidget {
           return ScreenUtilInit(
             designSize: const Size(360, 690),
             minTextAdapt: true,
-            splitScreenMode: true,
             builder: (context, child) {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 theme: ThemeApp.lightTheme,
-                routes: {
-                  OnBoard.routeName: (_) => const OnBoard(),
-                  SplashScreen.routeName: (_) => const SplashScreen(),
-                  CitiesScreen.routeName: (_) => const CitiesScreen(),
-                  HomeLayout.routeName: (_) => const HomeLayout(),
-                  SignInScreen.routeName: (_) => const SignInScreen(),
-                  SignUpScreen.routeName: (_) => const SignUpScreen(),
-                  ForgotPassword.routeName: (_) => const ForgotPassword(),
-                  UpdatePassword.routeName: (_) => const UpdatePassword(),
-                  SearchScreen.routeName: (_) => const SearchScreen(),
-                  MyProfileScreen.routeName: (_) => const MyProfileScreen(),
-                  WishListScreen.routeName: (_) => const WishListScreen(),
-                  ExploreScreen.routeName: (_) => const ExploreScreen(),
-                  MyPlansScreen.routeName: (_) => const MyPlansScreen(),
-                  TopPlansScreen.routeName: (_) => const TopPlansScreen(),
-                  HistoricalCity.routeName: (_) => const HistoricalCity(),
-                  SightsScreen.routeName: (_) => const SightsScreen(),
-                  SightDetailsScreen.routeName: (_) =>
-                      const SightDetailsScreen(),
-                  PopularSightsScreen.routeName: (_) =>
-                      const PopularSightsScreen(),
-                  EditProfile.routeName: (_) => EditProfile(),
-                  PickPlans.routeName: (_) => const PickPlans(),
-                  CreateCustomizePlan.routeName: (_) =>
-                      const CreateCustomizePlan(),
-                  SelectDateScreen.routeName: (_) => const SelectDateScreen(),
-                },
+                routes: routing(),
                 initialRoute: SplashScreen.routeName,
               );
             },
@@ -136,4 +104,31 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+Map<String, Widget Function(BuildContext)> routing() {
+  return {
+    OnBoard.routeName: (_) => const OnBoard(),
+    SplashScreen.routeName: (_) => const SplashScreen(),
+    CitiesScreen.routeName: (_) => const CitiesScreen(),
+    HomeLayout.routeName: (_) => const HomeLayout(),
+    SignInScreen.routeName: (_) => const SignInScreen(),
+    SignUpScreen.routeName: (_) => const SignUpScreen(),
+    ForgotPassword.routeName: (_) => const ForgotPassword(),
+    UpdatePassword.routeName: (_) => const UpdatePassword(),
+    SearchScreen.routeName: (_) => const SearchScreen(),
+    MyProfileScreen.routeName: (_) => const MyProfileScreen(),
+    WishListScreen.routeName: (_) => const WishListScreen(),
+    ExploreScreen.routeName: (_) => const ExploreScreen(),
+    MyPlansScreen.routeName: (_) => const MyPlansScreen(),
+    TopPlansScreen.routeName: (_) => const TopPlansScreen(),
+    HistoricalCity.routeName: (_) => const HistoricalCity(),
+    SightsScreen.routeName: (_) => const SightsScreen(),
+    SightDetailsScreen.routeName: (_) => const SightDetailsScreen(),
+    PopularSightsScreen.routeName: (_) => const PopularSightsScreen(),
+    EditProfile.routeName: (_) => EditProfile(),
+    PickPlans.routeName: (_) => const PickPlans(),
+    CreateCustomizePlan.routeName: (_) => const CreateCustomizePlan(),
+    SelectDateScreen.routeName: (_) => const SelectDateScreen(),
+  };
 }
