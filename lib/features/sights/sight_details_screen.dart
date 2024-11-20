@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
@@ -83,11 +83,12 @@ class SightDetailsScreen extends StatelessWidget {
                               left: 20.w,
                               child: Card(
                                 elevation: 2,
-                                color: ThemeApp.blackPrimary.withOpacity(0.5),
+                                color:
+                                    ColorsManager.blackPrimary.withOpacity(0.5),
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
                                 shape: const StadiumBorder(
                                   side: BorderSide(
-                                    color: ThemeApp.secondaryColor,
+                                    color: ColorsManager.secondaryColor,
                                   ),
                                 ),
                                 child: IconButton(
@@ -100,7 +101,7 @@ class SightDetailsScreen extends StatelessWidget {
                                   icon: Icon(
                                     Icons.arrow_back,
                                     size: 24.sp,
-                                    color: ThemeApp.secondaryColor,
+                                    color: ColorsManager.secondaryColor,
                                   ),
                                 ),
                               ),
@@ -138,7 +139,7 @@ class SightDetailsScreen extends StatelessWidget {
                               icon: Icon(
                                 FontAwesomeIcons.heart,
                                 size: 24.sp,
-                                color: ThemeApp.secondaryColor,
+                                color: ColorsManager.secondaryColor,
                                 // color: ThemeApp.secondaryColor,
                               ),
                             ),
@@ -152,7 +153,7 @@ class SightDetailsScreen extends StatelessWidget {
                                 .textTheme
                                 .displayMedium
                                 ?.copyWith(
-                                  color: ThemeApp.secondaryColor,
+                                  color: ColorsManager.secondaryColor,
                                 ),
                           ),
                         ),
@@ -202,7 +203,8 @@ class SightDetailsScreen extends StatelessWidget {
                                               .textTheme
                                               .titleLarge
                                               ?.copyWith(
-                                                color: ThemeApp.secondaryColor,
+                                                color: ColorsManager
+                                                    .secondaryColor,
                                               ),
                                         ),
                                       ],
@@ -215,11 +217,11 @@ class SightDetailsScreen extends StatelessWidget {
                                     speak(screenArgs.placeModel.history);
                                   },
                                   icon: CircleAvatar(
-                                    backgroundColor: ThemeApp.primaryColor,
+                                    backgroundColor: ColorsManager.primaryColor,
                                     child: Icon(
                                       FontAwesomeIcons.circlePlay,
                                       size: 24.sp,
-                                      color: ThemeApp.secondaryColor,
+                                      color: ColorsManager.secondaryColor,
                                     ),
                                   ),
                                   label: const Text(''),
@@ -233,11 +235,11 @@ class SightDetailsScreen extends StatelessWidget {
                                     );
                                   },
                                   icon: CircleAvatar(
-                                    backgroundColor: ThemeApp.primaryColor,
+                                    backgroundColor: ColorsManager.primaryColor,
                                     child: Icon(
                                       FontAwesomeIcons.locationArrow,
                                       size: 24.sp,
-                                      color: ThemeApp.secondaryColor,
+                                      color: ColorsManager.secondaryColor,
                                     ),
                                   ),
                                   label: const Text(''),
@@ -259,8 +261,8 @@ class SightDetailsScreen extends StatelessWidget {
                                       .textTheme
                                       .titleLarge
                                       ?.copyWith(
-                                        color:
-                                            ThemeApp.blackPrimary.withOpacity(
+                                        color: ColorsManager.blackPrimary
+                                            .withOpacity(
                                           0.54,
                                         ),
                                       ),
@@ -289,7 +291,7 @@ class SightDetailsScreen extends StatelessWidget {
                                   Icon(
                                     FontAwesomeIcons.earthAmericas,
                                     size: 24.sp,
-                                    color: ThemeApp.primaryColor,
+                                    color: ColorsManager.primaryColor,
                                   ),
                                   Space(height: 0.h, width: 20.w),
                                   Expanded(
@@ -299,7 +301,8 @@ class SightDetailsScreen extends StatelessWidget {
                                           .textTheme
                                           .titleLarge
                                           ?.copyWith(
-                                              color: ThemeApp.blackPrimary),
+                                              color:
+                                                  ColorsManager.blackPrimary),
                                     ),
                                   ),
                                 ],
@@ -310,7 +313,7 @@ class SightDetailsScreen extends StatelessWidget {
                                   const EdgeInsets.symmetric(horizontal: 8.0).r,
                               leading: Icon(
                                 FontAwesomeIcons.clock,
-                                color: ThemeApp.primaryColor,
+                                color: ColorsManager.primaryColor,
                                 size: 24.sp,
                               ),
                               title: Text(
@@ -318,7 +321,8 @@ class SightDetailsScreen extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleLarge
-                                    ?.copyWith(color: ThemeApp.blackPrimary),
+                                    ?.copyWith(
+                                        color: ColorsManager.blackPrimary),
                               ),
                               children: [
                                 ListTile(
@@ -482,7 +486,7 @@ class SightDetailsScreen extends StatelessWidget {
         (ModalRoute.of(context)?.settings.arguments) as ScreenArgs;
     showModalBottomSheet(
       isScrollControlled: true,
-      backgroundColor: ThemeApp.secondaryColor,
+      backgroundColor: ColorsManager.secondaryColor,
       context: context,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
@@ -499,7 +503,7 @@ class SightDetailsScreen extends StatelessWidget {
             controller: scrollController,
             child: Container(
               decoration: BoxDecoration(
-                color: ThemeApp.secondaryColor,
+                color: ColorsManager.secondaryColor,
                 borderRadius:
                     BorderRadius.vertical(top: const Radius.circular(20).r),
               ),
@@ -517,7 +521,7 @@ class SightDetailsScreen extends StatelessWidget {
                       margin: const EdgeInsets.only(bottom: 20).r,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(2.5).r,
-                        color: ThemeApp.primaryColor,
+                        color: ColorsManager.primaryColor,
                       ),
                     ),
                   ),
@@ -546,7 +550,7 @@ class SightDetailsScreen extends StatelessWidget {
                     Text(
                       screenArgs.placeModel.history.trim(),
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            color: ThemeApp.blackPrimary.withOpacity(
+                            color: ColorsManager.blackPrimary.withOpacity(
                               0.54,
                             ),
                           ),
@@ -558,10 +562,10 @@ class SightDetailsScreen extends StatelessWidget {
                       },
                       child: CircleAvatar(
                           radius: 24.r,
-                          backgroundColor: ThemeApp.primaryColor,
+                          backgroundColor: ColorsManager.primaryColor,
                           child: Icon(
                             FontAwesomeIcons.play,
-                            color: ThemeApp.secondaryColor,
+                            color: ColorsManager.secondaryColor,
                             size: 24.sp,
                           )),
                     ),

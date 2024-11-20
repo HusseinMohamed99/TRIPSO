@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 
@@ -27,7 +27,7 @@ class MyDialog {
                   message,
                   style: GoogleFonts.roboto(
                     textStyle: GoogleFonts.roboto(
-                      color: ThemeApp.blackPrimary,
+                      color: ColorsManager.blackPrimary,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),
@@ -47,7 +47,7 @@ class MyDialog {
                 message,
                 style: GoogleFonts.roboto(
                   textStyle: GoogleFonts.roboto(
-                    color: ThemeApp.blackPrimary,
+                    color: ColorsManager.blackPrimary,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w700,
                   ),
@@ -113,7 +113,7 @@ class MyDialog {
               message,
               style: GoogleFonts.roboto(
                 textStyle: GoogleFonts.roboto(
-                  color: ThemeApp.blackPrimary,
+                  color: ColorsManager.blackPrimary,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
                 ),
@@ -128,7 +128,7 @@ class MyDialog {
             message,
             style: GoogleFonts.roboto(
               textStyle: GoogleFonts.roboto(
-                color: ThemeApp.blackPrimary,
+                color: ColorsManager.blackPrimary,
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
               ),

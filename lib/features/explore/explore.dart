@@ -6,8 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/historical_city/historical_city.dart';
 import 'package:tripso/features/plans/create_customize_plan.dart';
 import 'package:tripso/features/search/search_screen.dart';
@@ -128,7 +128,7 @@ class CityDetails extends StatelessWidget {
             clipBehavior: Clip.antiAliasWithSaveLayer,
             shape: const StadiumBorder(
               side: BorderSide(
-                color: ThemeApp.secondaryColor,
+                color: ColorsManager.secondaryColor,
               ),
             ),
             child: IconButton(
@@ -140,7 +140,7 @@ class CityDetails extends StatelessWidget {
               },
               icon: Icon(
                 Icons.arrow_back,
-                color: ThemeApp.secondaryColor,
+                color: ColorsManager.secondaryColor,
                 size: 24.sp,
               ),
             ),
@@ -155,7 +155,7 @@ class CityDetails extends StatelessWidget {
               clipBehavior: Clip.antiAliasWithSaveLayer,
               shape: const StadiumBorder(
                 side: BorderSide(
-                  color: ThemeApp.secondaryColor,
+                  color: ColorsManager.secondaryColor,
                 ),
               ),
               child: IconButton(
@@ -169,7 +169,7 @@ class CityDetails extends StatelessWidget {
                   AssetImage(
                     AssetPath.searchImage,
                   ),
-                  color: ThemeApp.secondaryColor,
+                  color: ColorsManager.secondaryColor,
                 ),
               ),
             )),
@@ -186,13 +186,13 @@ class CityDetails extends StatelessWidget {
             Text(
               screenArgs.cityModel.name,
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
+                    color: ColorsManager.secondaryColor,
                   ),
             ),
             Text(
               weatherData.weatherStateName,
               style: TextStyle(
-                color: ThemeApp.secondaryColor,
+                color: ColorsManager.secondaryColor,
                 fontSize: 20.sp,
                 // fontWeight: FontWeight.bold,
               ),
@@ -201,13 +201,13 @@ class CityDetails extends StatelessWidget {
             Text(
               '${weatherData.temp.toInt().toString()}°C',
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
+                    color: ColorsManager.secondaryColor,
                   ),
             ),
             Text(
               '${weatherData.minTemp.toInt().toString()}°C / ${weatherData.maxTemp.toInt().toString()}°C',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
+                    color: ColorsManager.secondaryColor,
                   ),
             ),
           ],
@@ -422,7 +422,7 @@ class PopularSightsWidget extends StatelessWidget {
                     'Popular Sights',
                     style: GoogleFonts.roboto(
                       fontSize: 19.sp,
-                      color: ThemeApp.primaryColor,
+                      color: ColorsManager.primaryColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -450,13 +450,13 @@ class PopularSightsWidget extends StatelessWidget {
                           const Text(
                             'See More',
                             style: TextStyle(
-                              color: ThemeApp.primaryColor,
+                              color: ColorsManager.primaryColor,
                             ),
                           ),
                           Icon(
                             Icons.arrow_forward_ios,
                             size: 16.0.sp,
-                            color: ThemeApp.primaryColor,
+                            color: ColorsManager.primaryColor,
                           )
                         ],
                       ),
@@ -508,7 +508,7 @@ class TopPlansWidget extends StatelessWidget {
                     'Top Plans',
                     style: GoogleFonts.roboto(
                       fontSize: 19.sp,
-                      color: ThemeApp.primaryColor,
+                      color: ColorsManager.primaryColor,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.5,
                     ),
@@ -520,13 +520,13 @@ class TopPlansWidget extends StatelessWidget {
                         const Text(
                           'See More',
                           style: TextStyle(
-                            color: ThemeApp.primaryColor,
+                            color: ColorsManager.primaryColor,
                           ),
                         ),
                         Icon(
                           Icons.arrow_forward_ios,
                           size: 16.0.sp,
-                          color: ThemeApp.primaryColor,
+                          color: ColorsManager.primaryColor,
                         )
                       ],
                     ),

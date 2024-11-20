@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 
 Widget defaultMaterialButton({
   required Function() function,
@@ -33,7 +33,7 @@ Widget defaultMaterialButton({
             isUpperCase ? text.toUpperCase() : text,
             style: GoogleFonts.roboto(
               fontSize: 19.sp,
-              color: ThemeApp.secondaryColor,
+              color: ColorsManager.secondaryColor,
               fontWeight: FontWeight.w500,
             ),
           ),

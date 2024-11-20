@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/features/plans/best_plan_details.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
@@ -42,7 +42,7 @@ class TopPlansScreen extends StatelessWidget {
               title: Text(
                 screenArgs.bestPLanModel.name,
                 style: GoogleFonts.roboto(
-                  color: ThemeApp.secondaryColor,
+                  color: ColorsManager.secondaryColor,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.bold,
                 ),
@@ -130,12 +130,12 @@ class ListOfPlace extends StatelessWidget {
                                   padding: const EdgeInsets.all(8),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30),
-                                    color: ThemeApp.primaryColor,
+                                    color: ColorsManager.primaryColor,
                                   ),
                                   child: Text(
                                     'Details',
                                     style: GoogleFonts.roboto(
-                                      color: ThemeApp.secondaryColor,
+                                      color: ColorsManager.secondaryColor,
                                       fontSize: 15.sp,
                                       fontWeight: FontWeight.bold,
                                     ),

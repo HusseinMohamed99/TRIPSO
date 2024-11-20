@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/shared/components/re_usable_select_photo_button.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
@@ -28,7 +28,7 @@ class SelectPhotoOptions extends StatelessWidget {
               margin: const EdgeInsets.only(bottom: 20).r,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(2.5).r,
-                color: ThemeApp.secondaryColor,
+                color: ColorsManager.secondaryColor,
               ),
             ),
           ),

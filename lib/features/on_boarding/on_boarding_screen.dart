@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/sign_in/sign_in_screen.dart';
 import 'package:tripso/features/sign_up/sign_up_screen.dart';
 import 'package:tripso/shared/components/app_bar.dart';
@@ -60,7 +60,7 @@ class OnBoard extends StatelessWidget {
               style: GoogleFonts.roboto(
                 textStyle: TextStyle(
                   height: 1.h,
-                  color: ThemeApp.secondaryColor,
+                  color: ColorsManager.secondaryColor,
                   fontSize: 45.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -75,7 +75,7 @@ class OnBoard extends StatelessWidget {
                   style: GoogleFonts.roboto(
                     textStyle: TextStyle(
                       height: 1.h,
-                      color: ThemeApp.secondaryColor,
+                      color: ColorsManager.secondaryColor,
                       fontSize: 45.sp,
                       fontWeight: FontWeight.w600,
                     ),
@@ -88,7 +88,7 @@ class OnBoard extends StatelessWidget {
                   style: GoogleFonts.roboto(
                     textStyle: TextStyle(
                       height: 1.h,
-                      color: ThemeApp.primaryColor,
+                      color: ColorsManager.primaryColor,
                       fontSize: 45.sp,
                       fontWeight: FontWeight.w600,
                     ),
@@ -103,7 +103,7 @@ class OnBoard extends StatelessWidget {
               style: GoogleFonts.roboto(
                 height: 1.h,
                 textStyle: TextStyle(
-                  color: ThemeApp.primaryColor,
+                  color: ColorsManager.primaryColor,
                   fontSize: 45.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -116,7 +116,7 @@ class OnBoard extends StatelessWidget {
               style: GoogleFonts.roboto(
                 height: 1.h,
                 textStyle: TextStyle(
-                  color: ThemeApp.secondaryColor,
+                  color: ColorsManager.secondaryColor,
                   fontSize: 45.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -133,7 +133,7 @@ class OnBoard extends StatelessWidget {
               navigateAndFinish(context, routeName: SignInScreen.routeName);
             },
             text: 'Sign in',
-            color: ThemeApp.primaryColor,
+            color: ColorsManager.primaryColor,
           ),
           Space(width: 0.w, height: 26.h),
           defaultMaterialButton(
@@ -141,7 +141,7 @@ class OnBoard extends StatelessWidget {
               navigateTo(context, routeName: SignUpScreen.routeName);
             },
             text: 'Sign up',
-            color: ThemeApp.primaryColor.withOpacity(0.30),
+            color: ColorsManager.primaryColor.withOpacity(0.30),
           ),
           //  space(0, 50),
         ],

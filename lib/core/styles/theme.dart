@@ -1,68 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 
-class ThemeApp {
-  static const primaryColor = Color.fromARGB(255, 87, 199, 223);
-  static const secondaryColor = Color.fromARGB(255, 255, 255, 255);
-  static const blackPrimary = Color.fromARGB(255, 0, 0, 0);
-  static const yellowColor = Color.fromARGB(255, 255, 255, 0);
-  static const blueColor = Color.fromARGB(255, 68, 138, 255);
+ThemeData buildLightTheme(BuildContext context) {
+  return ThemeData(
+    primaryColor: ColorsManager.primaryColor,
+    scaffoldBackgroundColor: ColorsManager.secondaryColor,
+    cardColor: ColorsManager.secondaryColor,
+    appBarTheme: _buildAppBarTheme(context),
+    textTheme: _buildTextTheme(context),
+  );
+}
 
-  static final ThemeData lightTheme = ThemeData(
-    primaryColor: primaryColor,
-    scaffoldBackgroundColor: secondaryColor,
-    cardColor: secondaryColor,
-    appBarTheme: const AppBarTheme(
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: ThemeApp.blackPrimary,
-        systemNavigationBarColor: ThemeApp.blackPrimary,
-        systemNavigationBarDividerColor: ThemeApp.secondaryColor,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.dark,
-      ),
-    ),
-    textTheme: TextTheme(
-      displayLarge: GoogleFonts.roboto(
-        fontSize: 36.sp,
-        fontWeight: FontWeight.bold,
-        color: blackPrimary,
-      ),
-      displayMedium: GoogleFonts.roboto(
-        fontSize: 30.sp,
-        color: blackPrimary,
-        fontWeight: FontWeight.bold,
-      ),
-      bodyLarge: GoogleFonts.roboto(
-        fontSize: 25.sp,
-        color: blackPrimary,
-        fontWeight: FontWeight.bold,
-      ),
-      bodyMedium: GoogleFonts.roboto(
-        fontSize: 22.sp,
-        color: blackPrimary,
-        fontWeight: FontWeight.w500,
-      ),
-      bodySmall: GoogleFonts.roboto(
-        fontSize: 20.sp,
-        fontWeight: FontWeight.w500,
-      ),
-      displaySmall: GoogleFonts.roboto(
-        fontSize: 17.sp,
-        color: blackPrimary,
-        fontWeight: FontWeight.w500,
-      ),
-      titleMedium: GoogleFonts.roboto(
-        fontSize: 14.sp,
-        color: blackPrimary,
-        fontWeight: FontWeight.w500,
-      ),
-      titleSmall: GoogleFonts.roboto(
-        fontSize: 12.sp,
-        color: blackPrimary,
-        fontWeight: FontWeight.w500,
-      ),
+TextTheme _buildTextTheme(BuildContext context) {
+  return TextTheme(
+    displayLarge: StyleManager.headlineLarge(context),
+    displayMedium: StyleManager.headlineMedium(context),
+    bodyLarge: StyleManager.bodyLarge(context),
+    displaySmall: StyleManager.headlineSmall(context),
+    titleLarge: StyleManager.titleLarge(context),
+    titleMedium: StyleManager.titleMedium(context),
+    titleSmall: StyleManager.titleSmall(context),
+  );
+}
+
+AppBarTheme _buildAppBarTheme(BuildContext context) {
+  return AppBarTheme(
+    systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarColor: ColorsManager.primaryColor,
+      systemNavigationBarColor: ColorsManager.blackPrimary,
+      systemNavigationBarDividerColor: ColorsManager.secondaryColor,
+      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.dark,
     ),
   );
 }

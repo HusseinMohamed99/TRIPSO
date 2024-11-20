@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/components/app_bar.dart';
@@ -98,13 +98,13 @@ class UpdatePassword extends StatelessWidget {
           TextEditingController newPasswordController,
           TextEditingController confirmationPasswordController) =>
       defaultButton(
-        color: ThemeApp.primaryColor,
+        color: ColorsManager.primaryColor,
         widget: Text(
           'Change Password',
           textAlign: TextAlign.center,
           style: GoogleFonts.roboto(
             fontSize: 19.sp,
-            color: ThemeApp.secondaryColor,
+            color: ColorsManager.secondaryColor,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -123,7 +123,7 @@ class UpdatePassword extends StatelessWidget {
             Text(
               'Create New Password?',
               style: GoogleFonts.roboto(
-                  color: ThemeApp.primaryColor,
+                  color: ColorsManager.primaryColor,
                   fontSize: 25.sp,
                   fontWeight: FontWeight.w500),
             ),

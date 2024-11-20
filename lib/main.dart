@@ -102,8 +102,8 @@ class MyApp extends StatelessWidget {
                   // Using "navigatorKey.currentState?.pushNamed(route, arguments: arguments);"
                   navigatorKey: navigatorKey,
                   debugShowCheckedModeBanner: false,
-                  theme: ThemeApp.lightTheme,
-                  darkTheme: ThemeApp.lightTheme,
+                  theme: buildLightTheme(context),
+                  darkTheme: buildLightTheme(context),
                   themeMode: ThemeMode.light,
                   routes: routing(),
                   initialRoute: SplashScreen.routeName,

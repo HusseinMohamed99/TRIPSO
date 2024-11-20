@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/features/password/update_password_screen.dart';
 import 'package:tripso/features/profile/edit_profile.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
@@ -75,7 +75,7 @@ class MyProfileScreen extends StatelessWidget {
                             style: GoogleFonts.roboto(
                               fontSize: 20.sp,
                               fontWeight: FontWeight.w500,
-                              color: ThemeApp.blackPrimary,
+                              color: ColorsManager.blackPrimary,
                             ),
                           ),
                           Space(
@@ -224,7 +224,7 @@ class MyProfileScreen extends StatelessWidget {
                             child: Icon(
                               Icons.delete_forever,
                               size: 26.sp,
-                              color: ThemeApp.blackPrimary,
+                              color: ColorsManager.blackPrimary,
                             ),
                           ),
                           Space(

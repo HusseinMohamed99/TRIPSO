@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/layout/layout.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
@@ -67,7 +67,7 @@ class _SearchScreenState extends State<SearchScreen> {
           var cubit = TripsoCubit.get(context);
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: ThemeApp.secondaryColor,
+              backgroundColor: ColorsManager.secondaryColor,
               centerTitle: false,
               elevation: 2,
               leading: IconButton(
@@ -127,7 +127,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     children: [
                       Icon(
                         Icons.search,
-                        color: ThemeApp.primaryColor,
+                        color: ColorsManager.primaryColor,
                         size: 120.sp,
                       ),
                       Text(

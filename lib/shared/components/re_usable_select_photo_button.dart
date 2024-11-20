@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 
 class SelectPhoto extends StatelessWidget {
@@ -36,14 +36,14 @@ class SelectPhoto extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: ThemeApp.blackPrimary,
+              color: ColorsManager.blackPrimary,
             ),
             Space(height: 0.h, width: 14.w),
             Text(
               textLabel,
               style: GoogleFonts.roboto(
                 fontSize: 18.sp,
-                color: ThemeApp.blackPrimary,
+                color: ColorsManager.blackPrimary,
               ),
             )
           ],

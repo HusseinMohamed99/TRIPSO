@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/plans/select_date_screen.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 
@@ -15,7 +15,7 @@ class CreateCustomizePlan extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: ThemeApp.primaryColor,
+          backgroundColor: ColorsManager.primaryColor,
           title: Text(
             'Customize Plan',
             style: GoogleFonts.roboto(
@@ -30,7 +30,7 @@ class CreateCustomizePlan extends StatelessWidget {
             Expanded(child: Image.asset(AssetPath.plan)),
             Card(
               elevation: 6,
-              color: ThemeApp.secondaryColor,
+              color: ColorsManager.secondaryColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20).r,
               ),
@@ -67,7 +67,7 @@ class CreateCustomizePlan extends StatelessWidget {
                           ),
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: ThemeApp.primaryColor,
+                                backgroundColor: ColorsManager.primaryColor,
                               ),
                               onPressed: () {
                                 Navigator.pushNamed(

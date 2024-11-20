@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
@@ -86,14 +86,14 @@ class HistoricalCity extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .displayMedium
-                                ?.copyWith(color: ThemeApp.secondaryColor),
+                                ?.copyWith(color: ColorsManager.secondaryColor),
                           ),
                           Space(height: 10.h, width: 0.w),
                           Row(
                             children: [
                               Icon(
                                 Icons.location_on,
-                                color: ThemeApp.primaryColor,
+                                color: ColorsManager.primaryColor,
                                 size: 30.sp,
                               ),
                               Text(
@@ -102,7 +102,7 @@ class HistoricalCity extends StatelessWidget {
                                     .textTheme
                                     .titleLarge
                                     ?.copyWith(
-                                      color: ThemeApp.secondaryColor,
+                                      color: ColorsManager.secondaryColor,
                                     ),
                               ),
                             ],
@@ -121,7 +121,7 @@ class HistoricalCity extends StatelessWidget {
                       ),
                       height: 300.h,
                       decoration: BoxDecoration(
-                          color: ThemeApp.secondaryColor,
+                          color: ColorsManager.secondaryColor,
                           borderRadius: BorderRadius.only(
                             topLeft: const Radius.circular(40).r,
                             topRight: const Radius.circular(40).r,
@@ -157,10 +157,10 @@ class HistoricalCity extends StatelessWidget {
                   left: 10.w,
                   child: Card(
                     elevation: 2,
-                    color: ThemeApp.blackPrimary.withOpacity(0.5),
+                    color: ColorsManager.blackPrimary.withOpacity(0.5),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     shape: const StadiumBorder(
-                      side: BorderSide(color: ThemeApp.secondaryColor),
+                      side: BorderSide(color: ColorsManager.secondaryColor),
                     ),
                     child: IconButton(
                       onPressed: () async {
@@ -171,7 +171,7 @@ class HistoricalCity extends StatelessWidget {
                       },
                       icon: Icon(
                         Icons.arrow_back,
-                        color: ThemeApp.secondaryColor,
+                        color: ColorsManager.secondaryColor,
                         size: 24.sp,
                       ),
                     ),
@@ -184,19 +184,19 @@ class HistoricalCity extends StatelessWidget {
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   shape: const StadiumBorder(
                     side: BorderSide(
-                      color: ThemeApp.secondaryColor,
+                      color: ColorsManager.secondaryColor,
                     ),
                   ),
                   child: CircleAvatar(
                     radius: 30.r,
-                    backgroundColor: ThemeApp.secondaryColor,
+                    backgroundColor: ColorsManager.secondaryColor,
                     child: IconButton(
                       onPressed: () {
                         speak(cityModel.history);
                       },
                       icon: Icon(
                         Icons.record_voice_over,
-                        color: ThemeApp.primaryColor,
+                        color: ColorsManager.primaryColor,
                         size: 30.sp,
                       ),
                     ),

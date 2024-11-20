@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
@@ -73,9 +73,9 @@ class EditProfile extends StatelessWidget {
                           children: [
                             CircleAvatar(
                               radius: 67.r,
-                              backgroundColor: ThemeApp.primaryColor,
+                              backgroundColor: ColorsManager.primaryColor,
                               child: CircleAvatar(
-                                backgroundColor: ThemeApp.secondaryColor,
+                                backgroundColor: ColorsManager.secondaryColor,
                                 radius: 65.r,
                                 child: CircleAvatar(
                                   radius: 65.r,
@@ -118,7 +118,7 @@ class EditProfile extends StatelessWidget {
                               left: 90.w,
                               child: CircleAvatar(
                                 radius: 22.r,
-                                backgroundColor: ThemeApp.primaryColor,
+                                backgroundColor: ColorsManager.primaryColor,
                                 child: IconButton(
                                   splashRadius: 1,
                                   onPressed: () {
@@ -126,7 +126,7 @@ class EditProfile extends StatelessWidget {
                                   },
                                   icon: Icon(
                                     IconlyLight.image,
-                                    color: ThemeApp.secondaryColor,
+                                    color: ColorsManager.secondaryColor,
                                     size: 30.sp,
                                   ),
                                 ),
@@ -136,9 +136,9 @@ class EditProfile extends StatelessWidget {
                         ),
                         Space(height: 40.h, width: 0.w),
                         DefaultTextFormField(
-                          borderSideColor: ThemeApp.blackPrimary,
-                          styleColor: ThemeApp.blackPrimary,
-                          prefixColor: ThemeApp.blackPrimary,
+                          borderSideColor: ColorsManager.blackPrimary,
+                          styleColor: ColorsManager.blackPrimary,
+                          prefixColor: ColorsManager.blackPrimary,
                           context: context,
                           controller: firstNameController,
                           keyboardType: TextInputType.name,
@@ -156,9 +156,9 @@ class EditProfile extends StatelessWidget {
                           width: 0,
                         ),
                         DefaultTextFormField(
-                          borderSideColor: ThemeApp.blackPrimary,
-                          styleColor: ThemeApp.blackPrimary,
-                          prefixColor: ThemeApp.blackPrimary,
+                          borderSideColor: ColorsManager.blackPrimary,
+                          styleColor: ColorsManager.blackPrimary,
+                          prefixColor: ColorsManager.blackPrimary,
                           context: context,
                           controller: lastNameController,
                           keyboardType: TextInputType.name,
@@ -176,9 +176,9 @@ class EditProfile extends StatelessWidget {
                           width: 0,
                         ),
                         DefaultTextFormField(
-                          borderSideColor: ThemeApp.blackPrimary,
-                          styleColor: ThemeApp.blackPrimary,
-                          prefixColor: ThemeApp.blackPrimary,
+                          borderSideColor: ColorsManager.blackPrimary,
+                          styleColor: ColorsManager.blackPrimary,
+                          prefixColor: ColorsManager.blackPrimary,
                           context: context,
                           controller: addressController,
                           keyboardType: TextInputType.streetAddress,
@@ -196,9 +196,9 @@ class EditProfile extends StatelessWidget {
                           width: 0,
                         ),
                         DefaultTextFormField(
-                          borderSideColor: ThemeApp.blackPrimary,
-                          styleColor: ThemeApp.blackPrimary,
-                          prefixColor: ThemeApp.blackPrimary,
+                          borderSideColor: ColorsManager.blackPrimary,
+                          styleColor: ColorsManager.blackPrimary,
+                          prefixColor: ColorsManager.blackPrimary,
                           context: context,
                           controller: phoneController,
                           keyboardType: TextInputType.phone,
@@ -218,9 +218,9 @@ class EditProfile extends StatelessWidget {
                           width: 0,
                         ),
                         DefaultTextFormField(
-                          borderSideColor: ThemeApp.blackPrimary,
-                          styleColor: ThemeApp.blackPrimary,
-                          prefixColor: ThemeApp.blackPrimary,
+                          borderSideColor: ColorsManager.blackPrimary,
+                          styleColor: ColorsManager.blackPrimary,
+                          prefixColor: ColorsManager.blackPrimary,
                           context: context,
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
@@ -238,7 +238,7 @@ class EditProfile extends StatelessWidget {
                           width: 0.w,
                         ),
                         defaultButton(
-                          color: ThemeApp.primaryColor,
+                          color: ColorsManager.primaryColor,
                           function: () {
                             if (formKey.currentState!.validate()) {
                               if (cubit.profileImage != null) {
@@ -265,7 +265,7 @@ class EditProfile extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.roboto(
                               fontSize: 19.sp,
-                              color: ThemeApp.secondaryColor,
+                              color: ColorsManager.secondaryColor,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -276,7 +276,7 @@ class EditProfile extends StatelessWidget {
                         ),
                         if (state is UpdateUserLoadingState)
                           const LinearProgressIndicator(
-                            color: ThemeApp.primaryColor,
+                            color: ColorsManager.primaryColor,
                           ),
                       ],
                     ),

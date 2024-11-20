@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/layout/layout.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
@@ -61,7 +61,7 @@ class GridCitiesItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ThemeApp.secondaryColor,
+        color: ColorsManager.secondaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -103,7 +103,7 @@ class GridCitiesItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
+                    color: ColorsManager.secondaryColor,
                   ),
             ),
           ],
@@ -156,7 +156,7 @@ class GridEGItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ThemeApp.secondaryColor,
+        color: ColorsManager.secondaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -194,7 +194,7 @@ class GridEGItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
+                    color: ColorsManager.secondaryColor,
                   ),
             ),
           ],
@@ -247,7 +247,7 @@ class GridITItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ThemeApp.secondaryColor,
+        color: ColorsManager.secondaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -285,7 +285,7 @@ class GridITItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
+                    color: ColorsManager.secondaryColor,
                   ),
             ),
           ],
@@ -338,7 +338,7 @@ class GridUAEItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ThemeApp.secondaryColor,
+        color: ColorsManager.secondaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -376,7 +376,7 @@ class GridUAEItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
+                    color: ColorsManager.secondaryColor,
                   ),
             ),
           ],
@@ -429,7 +429,7 @@ class GridFRItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ThemeApp.secondaryColor,
+        color: ColorsManager.secondaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -467,7 +467,7 @@ class GridFRItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
+                    color: ColorsManager.secondaryColor,
                   ),
             ),
           ],
@@ -519,7 +519,7 @@ class GridPopularItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ThemeApp.secondaryColor,
+        color: ColorsManager.secondaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -557,7 +557,7 @@ class GridPopularItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
+                    color: ColorsManager.secondaryColor,
                   ),
             ),
           ],

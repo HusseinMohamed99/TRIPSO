@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/my_divider.dart';
@@ -74,11 +74,12 @@ class BestPlanDetailsScreen extends StatelessWidget {
                               left: 20.w,
                               child: Card(
                                 elevation: 2,
-                                color: ThemeApp.blackPrimary.withOpacity(0.5),
+                                color:
+                                    ColorsManager.blackPrimary.withOpacity(0.5),
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
                                 shape: const StadiumBorder(
                                   side: BorderSide(
-                                    color: ThemeApp.secondaryColor,
+                                    color: ColorsManager.secondaryColor,
                                   ),
                                 ),
                                 child: IconButton(
@@ -91,7 +92,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                   icon: Icon(
                                     Icons.arrow_back,
                                     size: 24.sp,
-                                    color: ThemeApp.secondaryColor,
+                                    color: ColorsManager.secondaryColor,
                                   ),
                                 ),
                               ),
@@ -106,7 +107,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                 .textTheme
                                 .displayMedium
                                 ?.copyWith(
-                                  color: ThemeApp.secondaryColor,
+                                  color: ColorsManager.secondaryColor,
                                 ),
                           ),
                         ),
@@ -156,7 +157,8 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                               .textTheme
                                               .titleLarge
                                               ?.copyWith(
-                                                color: ThemeApp.secondaryColor,
+                                                color: ColorsManager
+                                                    .secondaryColor,
                                               ),
                                         ),
                                       ],
@@ -211,7 +213,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                   Icon(
                                     FontAwesomeIcons.earthAmericas,
                                     size: 24.sp,
-                                    color: ThemeApp.primaryColor,
+                                    color: ColorsManager.primaryColor,
                                   ),
                                   Space(height: 0.h, width: 20.w),
                                   Expanded(
@@ -221,7 +223,8 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                           .textTheme
                                           .titleLarge
                                           ?.copyWith(
-                                              color: ThemeApp.blackPrimary),
+                                              color:
+                                                  ColorsManager.blackPrimary),
                                     ),
                                   ),
                                 ],
@@ -232,7 +235,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                   const EdgeInsets.symmetric(horizontal: 8.0).r,
                               leading: Icon(
                                 FontAwesomeIcons.clock,
-                                color: ThemeApp.primaryColor,
+                                color: ColorsManager.primaryColor,
                                 size: 24.sp,
                               ),
                               title: Text(
@@ -240,7 +243,8 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleLarge
-                                    ?.copyWith(color: ThemeApp.blackPrimary),
+                                    ?.copyWith(
+                                        color: ColorsManager.blackPrimary),
                               ),
                               children: [
                                 ListTile(

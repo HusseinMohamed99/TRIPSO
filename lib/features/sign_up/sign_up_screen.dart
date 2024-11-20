@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/home/home_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/components/app_bar.dart';
@@ -26,8 +26,8 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var formKey = GlobalKey<FormState>();
-    var firstnameController = TextEditingController();
-    var lastnameController = TextEditingController();
+    var userFirstNameController = TextEditingController();
+    var userLastNameController = TextEditingController();
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
     var phoneController = TextEditingController();
@@ -88,7 +88,7 @@ class SignUpScreen extends StatelessWidget {
                             icon: Icon(
                               Icons.arrow_back,
                               size: 25.sp,
-                              color: ThemeApp.secondaryColor,
+                              color: ColorsManager.secondaryColor,
                             ),
                           ),
                           Space(width: 20.w, height: 0.h),
@@ -96,7 +96,7 @@ class SignUpScreen extends StatelessWidget {
                             'Create Account',
                             style: TextStyle(
                                 fontSize: 30.sp,
-                                color: ThemeApp.secondaryColor,
+                                color: ColorsManager.secondaryColor,
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -116,16 +116,17 @@ class SignUpScreen extends StatelessWidget {
                               Text(
                                 'First Name',
                                 style: TextStyle(
-                                  color: ThemeApp.secondaryColor,
+                                  color: ColorsManager.secondaryColor,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Space(width: 0.w, height: 8.h),
                               DefaultTextFormField(
-                                color: ThemeApp.secondaryColor.withOpacity(0.3),
+                                color: ColorsManager.secondaryColor
+                                    .withOpacity(0.3),
                                 context: context,
-                                controller: firstnameController,
+                                controller: userFirstNameController,
                                 keyboardType: TextInputType.name,
                                 validate: (String? value) {
                                   if (value!.trim().isEmpty ||
@@ -141,16 +142,17 @@ class SignUpScreen extends StatelessWidget {
                               Text(
                                 'Last Name',
                                 style: TextStyle(
-                                  color: ThemeApp.secondaryColor,
+                                  color: ColorsManager.secondaryColor,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Space(width: 0.w, height: 8.h),
                               DefaultTextFormField(
-                                color: ThemeApp.secondaryColor.withOpacity(0.3),
+                                color: ColorsManager.secondaryColor
+                                    .withOpacity(0.3),
                                 context: context,
-                                controller: lastnameController,
+                                controller: userLastNameController,
                                 keyboardType: TextInputType.name,
                                 validate: (String? value) {
                                   if (value!.trim().isEmpty ||
@@ -166,14 +168,15 @@ class SignUpScreen extends StatelessWidget {
                               Text(
                                 'Email Address',
                                 style: TextStyle(
-                                  color: ThemeApp.secondaryColor,
+                                  color: ColorsManager.secondaryColor,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Space(width: 0.w, height: 8.h),
                               DefaultTextFormField(
-                                color: ThemeApp.secondaryColor.withOpacity(0.3),
+                                color: ColorsManager.secondaryColor
+                                    .withOpacity(0.3),
                                 context: context,
                                 controller: emailController,
                                 keyboardType: TextInputType.emailAddress,
@@ -191,14 +194,15 @@ class SignUpScreen extends StatelessWidget {
                               Text(
                                 'Mobile Number',
                                 style: TextStyle(
-                                  color: ThemeApp.secondaryColor,
+                                  color: ColorsManager.secondaryColor,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Space(width: 0.w, height: 8.h),
                               DefaultTextFormField(
-                                color: ThemeApp.secondaryColor.withOpacity(0.3),
+                                color: ColorsManager.secondaryColor
+                                    .withOpacity(0.3),
                                 context: context,
                                 controller: phoneController,
                                 keyboardType: TextInputType.phone,
@@ -217,14 +221,15 @@ class SignUpScreen extends StatelessWidget {
                               Text(
                                 'Password',
                                 style: TextStyle(
-                                  color: ThemeApp.secondaryColor,
+                                  color: ColorsManager.secondaryColor,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Space(width: 0.w, height: 8.h),
                               DefaultTextFormField(
-                                color: ThemeApp.secondaryColor.withOpacity(0.3),
+                                color: ColorsManager.secondaryColor
+                                    .withOpacity(0.3),
                                 context: context,
                                 obscuringCharacter: '*',
                                 controller: passwordController,
@@ -258,13 +263,13 @@ class SignUpScreen extends StatelessWidget {
                                 email: emailController.text,
                                 phone: phoneController.text,
                                 password: passwordController.text,
-                                firstName: firstnameController.text,
-                                lastName: lastnameController.text,
+                                firstName: userFirstNameController.text,
+                                lastName: userLastNameController.text,
                               );
                             }
                           },
                           text: 'Sign up',
-                          color: ThemeApp.primaryColor,
+                          color: ColorsManager.primaryColor,
                         ),
                       ],
                     ),

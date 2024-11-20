@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/plans/select_date_screen.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/plan_model.dart';
@@ -48,7 +48,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
         var tripsoCubit = TripsoCubit.get(context).cityModel;
         return Scaffold(
           floatingActionButton: FloatingActionButton(
-            backgroundColor: ThemeApp.primaryColor,
+            backgroundColor: ColorsManager.primaryColor,
             onPressed: () {
               Navigator.pushNamed(context, SelectDateScreen.routeName);
             },
@@ -101,14 +101,14 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                               height: 20.h,
                               decoration: BoxDecoration(
                                   color: current == index
-                                      ? ThemeApp.primaryColor
-                                      : ThemeApp.secondaryColor,
+                                      ? ColorsManager.primaryColor
+                                      : ColorsManager.secondaryColor,
                                   borderRadius: current == index
                                       ? BorderRadius.circular(22).r
                                       : BorderRadius.circular(22).r,
                                   border: current == index
                                       ? Border.all(
-                                          color: ThemeApp.primaryColor,
+                                          color: ColorsManager.primaryColor,
                                           width: 4.w,
                                         )
                                       : null),
@@ -156,7 +156,8 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                             width: 5.w,
                                             height: 5.h,
                                             decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
+                                              color:
+                                                  ColorsManager.secondaryColor,
                                               borderRadius:
                                                   BorderRadius.circular(5).r,
                                             ),
@@ -168,7 +169,8 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                             width: 5.w,
                                             height: 5.h,
                                             decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
+                                              color:
+                                                  ColorsManager.secondaryColor,
                                               borderRadius:
                                                   BorderRadius.circular(5).r,
                                             ),
@@ -180,7 +182,8 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                             width: 5.w,
                                             height: 5.h,
                                             decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
+                                              color:
+                                                  ColorsManager.secondaryColor,
                                               borderRadius:
                                                   BorderRadius.circular(5).r,
                                             ),
@@ -198,7 +201,8 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                             width: 5.w,
                                             height: 5.h,
                                             decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
+                                              color:
+                                                  ColorsManager.secondaryColor,
                                               borderRadius:
                                                   BorderRadius.circular(5).r,
                                             ),
@@ -211,7 +215,8 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                             width: 5.w,
                                             height: 5.h,
                                             decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
+                                              color:
+                                                  ColorsManager.secondaryColor,
                                               borderRadius:
                                                   BorderRadius.circular(5).r,
                                             ),
@@ -224,7 +229,8 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                             width: 5.w,
                                             height: 5.h,
                                             decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
+                                              color:
+                                                  ColorsManager.secondaryColor,
                                               borderRadius:
                                                   BorderRadius.circular(5).r,
                                             ),
@@ -421,7 +427,7 @@ class DaysOfItems extends StatelessWidget {
                             planModel.planTickets,
                             style: GoogleFonts.roboto(
                               fontWeight: FontWeight.w600,
-                              color: ThemeApp.blueColor,
+                              color: ColorsManager.blueColor,
                               fontSize: 22.sp,
                             ),
                           )

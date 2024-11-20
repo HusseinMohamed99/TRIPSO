@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/features/sights/sight_details_screen.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
@@ -104,7 +104,7 @@ class ListViewWidget extends StatelessWidget {
               clipBehavior: Clip.antiAliasWithSaveLayer,
               shape: const StadiumBorder(
                 side: BorderSide(
-                  color: ThemeApp.secondaryColor,
+                  color: ColorsManager.secondaryColor,
                 ),
               ),
               child: IconButton(
@@ -115,7 +115,7 @@ class ListViewWidget extends StatelessWidget {
                 },
                 icon: Icon(
                   Icons.arrow_back,
-                  color: ThemeApp.secondaryColor,
+                  color: ColorsManager.secondaryColor,
                   size: 24.sp,
                 ),
               ),
@@ -156,7 +156,7 @@ class GridSights extends StatelessWidget {
         children: [
           Card(
             elevation: 6,
-            color: ThemeApp.secondaryColor,
+            color: ColorsManager.secondaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.r),
             ),

@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/features/plans/select_date_screen.dart';
 import 'package:tripso/features/sights/sight_details_screen.dart';
 import 'package:tripso/model/arg_model.dart';
@@ -61,7 +61,7 @@ class _PickPlansState extends State<PickPlans> {
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     shape: const StadiumBorder(
                       side: BorderSide(
-                        color: ThemeApp.secondaryColor,
+                        color: ColorsManager.secondaryColor,
                       ),
                     ),
                     child: IconButton(
@@ -73,7 +73,7 @@ class _PickPlansState extends State<PickPlans> {
                       },
                       icon: Icon(
                         Icons.arrow_back,
-                        color: ThemeApp.secondaryColor,
+                        color: ColorsManager.secondaryColor,
                         size: 24.sp,
                       ),
                     ),
@@ -200,7 +200,7 @@ class GridPlans extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0).r,
                   child: CircleAvatar(
                     radius: 20.r,
-                    backgroundColor: ThemeApp.primaryColor,
+                    backgroundColor: ColorsManager.primaryColor,
                     child: IconButton(
                       onPressed: () {
                         TripsoCubit.get(context).addMyPlan(
@@ -266,39 +266,43 @@ class GridPlans extends StatelessWidget {
                   ),
                   if (placeModel.rate == '5')
                     Row(
-                      children: icon5Star(color: ThemeApp.primaryColor),
+                      children: icon5Star(color: ColorsManager.primaryColor),
                     ),
                   if (placeModel.rate == '4.5')
                     Row(
-                      children: icon4halfStar(color: ThemeApp.primaryColor),
+                      children:
+                          icon4halfStar(color: ColorsManager.primaryColor),
                     ),
                   if (placeModel.rate == '4')
                     Row(
-                      children: icon4Star(color: ThemeApp.primaryColor),
+                      children: icon4Star(color: ColorsManager.primaryColor),
                     ),
                   if (placeModel.rate == '3.5')
                     Row(
-                      children: icon3halfStar(color: ThemeApp.primaryColor),
+                      children:
+                          icon3halfStar(color: ColorsManager.primaryColor),
                     ),
                   if (placeModel.rate == '3')
                     Row(
-                      children: icon3Star(color: ThemeApp.primaryColor),
+                      children: icon3Star(color: ColorsManager.primaryColor),
                     ),
                   if (placeModel.rate == '2.5')
                     Row(
-                      children: icon2halfStar(color: ThemeApp.primaryColor),
+                      children:
+                          icon2halfStar(color: ColorsManager.primaryColor),
                     ),
                   if (placeModel.rate == '2')
                     Row(
-                      children: icon2Star(color: ThemeApp.primaryColor),
+                      children: icon2Star(color: ColorsManager.primaryColor),
                     ),
                   if (placeModel.rate == '1.5')
                     Row(
-                      children: icon1halfStar(color: ThemeApp.primaryColor),
+                      children:
+                          icon1halfStar(color: ColorsManager.primaryColor),
                     ),
                   if (placeModel.rate == '1')
                     Row(
-                      children: iconStar(color: ThemeApp.primaryColor),
+                      children: iconStar(color: ColorsManager.primaryColor),
                     ),
                   const Space(
                     height: 6,

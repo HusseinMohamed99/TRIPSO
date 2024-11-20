@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/wishlist_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
@@ -99,7 +99,7 @@ class WishListScreen extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10).r,
                 border: Border.all(
-                  color: ThemeApp.blackPrimary,
+                  color: ColorsManager.blackPrimary,
                 )),
             width: double.infinity,
             height: 150.h,
@@ -171,7 +171,7 @@ class WishListScreen extends StatelessWidget {
                                   wishListModel.isWishList
                                       ? Icons.delete
                                       : Icons.add,
-                                  color: ThemeApp.primaryColor,
+                                  color: ColorsManager.primaryColor,
                                   size: 24.sp,
                                 ),
                               ),
@@ -180,43 +180,48 @@ class WishListScreen extends StatelessWidget {
                         ),
                         if (wishListModel.wishListRate == '5')
                           Row(
-                            children: icon5Star(color: ThemeApp.primaryColor),
+                            children:
+                                icon5Star(color: ColorsManager.primaryColor),
                           ),
                         if (wishListModel.wishListRate == '4.5')
                           Row(
-                            children:
-                                icon4halfStar(color: ThemeApp.primaryColor),
+                            children: icon4halfStar(
+                                color: ColorsManager.primaryColor),
                           ),
                         if (wishListModel.wishListRate == '4')
                           Row(
-                            children: icon4Star(color: ThemeApp.primaryColor),
+                            children:
+                                icon4Star(color: ColorsManager.primaryColor),
                           ),
                         if (wishListModel.wishListRate == '3.5')
                           Row(
-                            children:
-                                icon3halfStar(color: ThemeApp.primaryColor),
+                            children: icon3halfStar(
+                                color: ColorsManager.primaryColor),
                           ),
                         if (wishListModel.wishListRate == '3')
                           Row(
-                            children: icon3Star(color: ThemeApp.primaryColor),
+                            children:
+                                icon3Star(color: ColorsManager.primaryColor),
                           ),
                         if (wishListModel.wishListRate == '2.5')
                           Row(
-                            children:
-                                icon2halfStar(color: ThemeApp.primaryColor),
+                            children: icon2halfStar(
+                                color: ColorsManager.primaryColor),
                           ),
                         if (wishListModel.wishListRate == '2')
                           Row(
-                            children: icon2Star(color: ThemeApp.primaryColor),
+                            children:
+                                icon2Star(color: ColorsManager.primaryColor),
                           ),
                         if (wishListModel.wishListRate == '1.5')
                           Row(
-                            children:
-                                icon1halfStar(color: ThemeApp.primaryColor),
+                            children: icon1halfStar(
+                                color: ColorsManager.primaryColor),
                           ),
                         if (wishListModel.wishListRate == '1')
                           Row(
-                            children: iconStar(color: ThemeApp.primaryColor),
+                            children:
+                                iconStar(color: ColorsManager.primaryColor),
                           ),
                         Space(
                           width: 0,

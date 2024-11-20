@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/home/home_screen.dart';
 import 'package:tripso/features/password/forget_password_screen.dart';
 import 'package:tripso/features/sign_up/sign_up_screen.dart';
@@ -88,14 +88,14 @@ class SignInScreen extends StatelessWidget {
                                   Text(
                                     'Email Address',
                                     style: TextStyle(
-                                      color: ThemeApp.secondaryColor,
+                                      color: ColorsManager.secondaryColor,
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                   Space(width: 0.w, height: 8.h),
                                   DefaultTextFormField(
-                                    color: ThemeApp.secondaryColor
+                                    color: ColorsManager.secondaryColor
                                         .withOpacity(0.3),
                                     context: context,
                                     controller: emailController,
@@ -113,14 +113,14 @@ class SignInScreen extends StatelessWidget {
                                   Text(
                                     'Password',
                                     style: TextStyle(
-                                      color: ThemeApp.secondaryColor,
+                                      color: ColorsManager.secondaryColor,
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                   Space(width: 0.w, height: 8.h),
                                   DefaultTextFormField(
-                                    color: ThemeApp.secondaryColor
+                                    color: ColorsManager.secondaryColor
                                         .withOpacity(0.3),
                                     context: context,
                                     controller: passwordController,
@@ -158,7 +158,7 @@ class SignInScreen extends StatelessWidget {
                                     child: Text(
                                       'Forgot Password ?',
                                       style: TextStyle(
-                                          color: ThemeApp.primaryColor,
+                                          color: ColorsManager.primaryColor,
                                           fontSize: 15.sp),
                                     ),
                                   ),
@@ -183,7 +183,7 @@ class SignInScreen extends StatelessWidget {
                                 }
                               },
                               text: 'Sign in',
-                              color: ThemeApp.primaryColor,
+                              color: ColorsManager.primaryColor,
                             ),
                           ),
                           Space(width: 0.w, height: 10.h),
@@ -196,7 +196,7 @@ class SignInScreen extends StatelessWidget {
                                 Text(
                                   'Don\'t have an account?',
                                   style: TextStyle(
-                                      color: ThemeApp.secondaryColor,
+                                      color: ColorsManager.secondaryColor,
                                       fontSize: 15.sp),
                                 ),
                                 TextButton(
@@ -207,7 +207,7 @@ class SignInScreen extends StatelessWidget {
                                   child: Text(
                                     'SignUp Now!',
                                     style: TextStyle(
-                                        color: ThemeApp.primaryColor,
+                                        color: ColorsManager.primaryColor,
                                         fontSize: 15.sp),
                                   ),
                                 ),

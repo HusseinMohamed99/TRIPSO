@@ -7,8 +7,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/search/search_screen.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/place_model.dart';
@@ -133,7 +133,8 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                             .textTheme
                                             .displayLarge
                                             ?.copyWith(
-                                              color: ThemeApp.secondaryColor,
+                                              color:
+                                                  ColorsManager.secondaryColor,
                                             ),
                                       ),
                                     ),
@@ -154,14 +155,15 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                             borderRadius: BorderRadius.circular(
                                               10.r,
                                             ),
-                                            color: ThemeApp.primaryColor,
+                                            color: ColorsManager.primaryColor,
                                           ),
                                           child: Text(
                                             textAlign: TextAlign.center,
                                             'Log Out',
                                             style: GoogleFonts.roboto(
                                               fontSize: 14.sp,
-                                              color: ThemeApp.secondaryColor,
+                                              color:
+                                                  ColorsManager.secondaryColor,
                                               fontWeight: FontWeight.w500,
                                             ),
                                           ),
@@ -216,7 +218,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                     child: DropdownButton(
                                       iconSize: 20.sp,
                                       underline: const Divider(
-                                        color: ThemeApp.secondaryColor,
+                                        color: ColorsManager.secondaryColor,
                                       ),
                                       icon: const Icon(
                                         Icons.keyboard_arrow_down,

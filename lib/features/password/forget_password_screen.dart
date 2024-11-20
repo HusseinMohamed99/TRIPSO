@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/components/app_bar.dart';
@@ -61,7 +61,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             Text(
                               'Forgot Your Password?',
                               style: GoogleFonts.roboto(
-                                  color: ThemeApp.primaryColor,
+                                  color: ColorsManager.primaryColor,
                                   fontSize: 25.sp,
                                   fontWeight: FontWeight.w500),
                             ),
@@ -89,7 +89,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             });
                           }
                         },
-                        color: ThemeApp.primaryColor,
+                        color: ColorsManager.primaryColor,
                         text: 'Verify Email',
                       ),
                     ],

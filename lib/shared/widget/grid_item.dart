@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/features/sights/sight_details_screen.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
@@ -20,27 +20,27 @@ List<Icon> icon5Star({Color? color}) {
   return [
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
   ];
@@ -50,27 +50,27 @@ List<Icon> icon4halfStar({Color? color}) {
   return [
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_half_outlined,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
   ];
@@ -80,27 +80,27 @@ List<Icon> icon4Star({Color? color}) {
   return [
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
   ];
@@ -110,27 +110,27 @@ List<Icon> icon3halfStar({Color? color}) {
   return [
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_half_outlined,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
   ];
@@ -140,27 +140,27 @@ List<Icon> icon3Star({Color? color}) {
   return [
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
   ];
@@ -170,27 +170,27 @@ List<Icon> icon2halfStar({Color? color}) {
   return [
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_half_outlined,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
   ];
@@ -200,27 +200,27 @@ List<Icon> icon2Star({Color? color}) {
   return [
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
   ];
@@ -230,27 +230,27 @@ List<Icon> icon1halfStar({Color? color}) {
   return [
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_half_outlined,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
   ];
@@ -260,27 +260,27 @@ List<Icon> iconStar({Color? color}) {
   return [
     Icon(
       Icons.star,
-      color: color ?? ThemeApp.yellowColor,
+      color: color ?? ColorsManager.yellowColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ThemeApp.secondaryColor,
+      color: color ?? ColorsManager.secondaryColor,
       size: 20.sp,
     ),
   ];
@@ -321,7 +321,7 @@ class GridItemSights extends StatelessWidget {
         children: [
           Card(
             elevation: 2,
-            color: ThemeApp.secondaryColor,
+            color: ColorsManager.secondaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12).r,
             ),
@@ -367,7 +367,7 @@ class GridItemSights extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             style:
                                 Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: ThemeApp.secondaryColor,
+                                      color: ColorsManager.secondaryColor,
                                     ),
                           ),
                           if (placeModel.rate == '5')
@@ -415,13 +415,13 @@ class GridItemSights extends StatelessWidget {
                                     .textTheme
                                     .headlineSmall
                                     ?.copyWith(
-                                      color: ThemeApp.secondaryColor,
+                                      color: ColorsManager.secondaryColor,
                                     ),
                               ),
                               Space(height: 0.h, width: 10.w),
                               Icon(
                                 FontAwesomeIcons.locationDot,
-                                color: ThemeApp.primaryColor,
+                                color: ColorsManager.primaryColor,
                                 size: 25.sp,
                               ),
                             ],

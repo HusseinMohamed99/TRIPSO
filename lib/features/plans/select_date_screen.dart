@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/plans/pick_plan.dart';
 import 'package:tripso/shared/components/date_time.dart';
 import 'package:tripso/shared/components/navigator.dart';
@@ -79,18 +79,18 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
             icon: Icon(
               Icons.arrow_back,
               size: 28.sp,
-              color: ThemeApp.blackPrimary,
+              color: ColorsManager.blackPrimary,
             ),
           ),
           elevation: 0,
           centerTitle: true,
-          backgroundColor: ThemeApp.secondaryColor,
+          backgroundColor: ColorsManager.secondaryColor,
           title: Text(
             'Customize',
             style: GoogleFonts.roboto(
               fontSize: 20.sp,
               fontWeight: FontWeight.bold,
-              color: ThemeApp.blackPrimary,
+              color: ColorsManager.blackPrimary,
             ),
           ),
         ),

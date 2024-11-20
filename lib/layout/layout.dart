@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/constants/constants.dart';
@@ -15,7 +15,7 @@ import 'package:tripso/shared/provider/weather_provider.dart';
 
 class HomeLayout extends StatelessWidget {
   static const String routeName = 'home_layout';
-  static Color isColor = ThemeApp.secondaryColor;
+  static Color isColor = ColorsManager.secondaryColor;
 
   const HomeLayout({super.key});
 
@@ -30,11 +30,11 @@ class HomeLayout extends StatelessWidget {
           appBar: thirdAppBar(),
           bottomNavigationBar: Container(
             decoration: BoxDecoration(
-              color: ThemeApp.secondaryColor,
+              color: ColorsManager.secondaryColor,
               boxShadow: [
                 BoxShadow(
                   blurRadius: 20.r,
-                  color: ThemeApp.blackPrimary.withOpacity(.1),
+                  color: ColorsManager.blackPrimary.withOpacity(.1),
                 )
               ],
             ),
@@ -43,22 +43,22 @@ class HomeLayout extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 6.0, vertical: 6).r,
                 child: GNav(
-                  rippleColor: ThemeApp.primaryColor,
-                  hoverColor: ThemeApp.primaryColor,
+                  rippleColor: ColorsManager.primaryColor,
+                  hoverColor: ColorsManager.primaryColor,
                   gap: 10.sp,
-                  activeColor: ThemeApp.secondaryColor,
+                  activeColor: ColorsManager.secondaryColor,
                   iconSize: 24.sp,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 8).r,
                   duration: const Duration(microseconds: 200),
-                  tabBackgroundColor: ThemeApp.primaryColor,
-                  color: ThemeApp.blackPrimary,
+                  tabBackgroundColor: ColorsManager.primaryColor,
+                  color: ColorsManager.blackPrimary,
                   tabs: [
                     GButton(
                       leading: ImageIcon(
                         color: tripsoCubit.currentIndex == 0
-                            ? ThemeApp.secondaryColor
-                            : ThemeApp.blackPrimary,
+                            ? ColorsManager.secondaryColor
+                            : ColorsManager.blackPrimary,
                         const AssetImage(
                           AssetPath.homeImage,
                         ),
@@ -68,13 +68,13 @@ class HomeLayout extends StatelessWidget {
                       iconSize: 25.sp,
                       text: tripsoCubit.titles[tripsoCubit.currentIndex],
                       textStyle: TextStyle(
-                          fontSize: 15.sp, color: ThemeApp.secondaryColor),
+                          fontSize: 15.sp, color: ColorsManager.secondaryColor),
                     ),
                     GButton(
                       leading: ImageIcon(
                         color: tripsoCubit.currentIndex == 1
-                            ? ThemeApp.secondaryColor
-                            : ThemeApp.blackPrimary,
+                            ? ColorsManager.secondaryColor
+                            : ColorsManager.blackPrimary,
                         const AssetImage(
                           AssetPath.wishlistImage,
                         ),
@@ -84,13 +84,13 @@ class HomeLayout extends StatelessWidget {
                       iconSize: 25.sp,
                       text: tripsoCubit.titles[tripsoCubit.currentIndex],
                       textStyle: TextStyle(
-                          fontSize: 15.sp, color: ThemeApp.secondaryColor),
+                          fontSize: 15.sp, color: ColorsManager.secondaryColor),
                     ),
                     GButton(
                       leading: ImageIcon(
                         color: tripsoCubit.currentIndex == 2
-                            ? ThemeApp.secondaryColor
-                            : ThemeApp.blackPrimary,
+                            ? ColorsManager.secondaryColor
+                            : ColorsManager.blackPrimary,
                         const AssetImage(
                           AssetPath.planImage,
                         ),
@@ -100,7 +100,7 @@ class HomeLayout extends StatelessWidget {
                       iconSize: 25.sp,
                       text: tripsoCubit.titles[tripsoCubit.currentIndex],
                       textStyle: TextStyle(
-                          fontSize: 15.sp, color: ThemeApp.secondaryColor),
+                          fontSize: 15.sp, color: ColorsManager.secondaryColor),
                     ),
                     GButton(
                       icon: Icons.person,
@@ -132,7 +132,7 @@ class HomeLayout extends StatelessWidget {
                       ),
                       text: tripsoCubit.titles[tripsoCubit.currentIndex],
                       textStyle: TextStyle(
-                          fontSize: 15.sp, color: ThemeApp.secondaryColor),
+                          fontSize: 15.sp, color: ColorsManager.secondaryColor),
                     ),
                   ],
                   selectedIndex: tripsoCubit.currentIndex,

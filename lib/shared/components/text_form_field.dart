@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 
 class DefaultTextFormField extends StatelessWidget {
   const DefaultTextFormField(
@@ -61,7 +61,7 @@ class DefaultTextFormField extends StatelessWidget {
       textAlignVertical: TextAlignVertical.center,
       style: GoogleFonts.roboto(
         fontStyle: FontStyle.normal,
-        color: styleColor ?? ThemeApp.secondaryColor,
+        color: styleColor ?? ColorsManager.secondaryColor,
         fontSize: 17.sp,
         fontWeight: FontWeight.w400,
       ),
@@ -85,7 +85,7 @@ class DefaultTextFormField extends StatelessWidget {
           padding: const EdgeInsets.all(15.0).r,
           child: Icon(
             prefix,
-            color: prefixColor ?? ThemeApp.secondaryColor,
+            color: prefixColor ?? ColorsManager.secondaryColor,
             size: 24.sp,
           ),
         ),
@@ -97,7 +97,7 @@ class DefaultTextFormField extends StatelessWidget {
                 },
                 icon: Icon(
                   suffix,
-                  color: ThemeApp.secondaryColor,
+                  color: ColorsManager.secondaryColor,
                   size: 24.sp,
                 ),
               )
@@ -112,12 +112,12 @@ class DefaultTextFormField extends StatelessWidget {
         ),
         hintText: hint,
         hintStyle: TextStyle(
-          color: ThemeApp.secondaryColor.withOpacity(0.8),
+          color: ColorsManager.secondaryColor.withOpacity(0.8),
           height: 1.h,
         ),
         labelText: label,
         labelStyle: TextStyle(
-          color: ThemeApp.primaryColor,
+          color: ColorsManager.primaryColor,
           height: 1.h,
         ),
         enabledBorder: OutlineInputBorder(
@@ -125,7 +125,7 @@ class DefaultTextFormField extends StatelessWidget {
             const Radius.circular(12.0).r,
           ),
           borderSide: BorderSide(
-            color: borderSideColor ?? ThemeApp.secondaryColor,
+            color: borderSideColor ?? ColorsManager.secondaryColor,
           ),
         ),
         errorBorder: OutlineInputBorder(

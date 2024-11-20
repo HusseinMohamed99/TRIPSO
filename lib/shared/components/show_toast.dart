@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:tripso/core/styles/theme.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 
 void showToast({
   required String text,
@@ -13,12 +13,11 @@ void showToast({
     gravity: ToastGravity.BOTTOM,
     timeInSecForIosWeb: 10,
     backgroundColor: chooseToastColor(state),
-    textColor: ThemeApp.secondaryColor,
+    textColor: ColorsManager.secondaryColor,
     fontSize: 16.0.sp,
   );
 }
 
-// enum  كذا اختيار من حاجة
 enum ToastStates { success, error, waring }
 
 Color chooseToastColor(ToastStates state) {
