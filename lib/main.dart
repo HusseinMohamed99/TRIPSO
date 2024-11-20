@@ -36,12 +36,10 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/shared/styles/theme.dart';
-import 'package:wakelock/wakelock.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   ScreenUtil.ensureScreenSize();
-  Wakelock.enable();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
