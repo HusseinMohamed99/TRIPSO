@@ -32,8 +32,9 @@ import 'package:tripso/shared/bloc_observer.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
-import 'package:tripso/shared/provider/weather_provider.dart';
+import 'package:tripso/shared/service/weather_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -79,6 +80,9 @@ class MyApp extends StatelessWidget {
             ..getUAEData()
             ..getPopularData()
             ..getBestPlan(),
+        ),
+        BlocProvider(
+          create: (context) => WeatherCubit(WeatherService()),
         ),
       ],
       child: BlocConsumer<TripsoCubit, TripsoStates>(

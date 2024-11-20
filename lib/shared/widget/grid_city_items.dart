@@ -15,7 +15,7 @@ import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
-import 'package:tripso/shared/provider/weather_provider.dart';
+import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/service/weather_service.dart';
 
 class GridCitiesItem extends StatelessWidget {

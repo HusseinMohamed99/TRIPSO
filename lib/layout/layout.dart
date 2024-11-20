@@ -11,7 +11,7 @@ import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/provider/weather_provider.dart';
+import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 
 class HomeLayout extends StatelessWidget {
   static const String routeName = 'home_layout';
