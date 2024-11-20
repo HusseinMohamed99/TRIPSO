@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tripso/mobile/screens/sights/sight_details_screen.dart';
+import 'package:tripso/mobile/sights/sight_details_screen.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';

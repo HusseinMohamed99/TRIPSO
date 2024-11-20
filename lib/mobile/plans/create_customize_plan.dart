@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/mobile/screens/plans/select_date_screen.dart';
+import 'package:tripso/mobile/plans/select_date_screen.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';

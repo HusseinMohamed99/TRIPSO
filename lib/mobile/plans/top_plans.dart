@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/mobile/screens/plans/best_plan_details.dart';
+import 'package:tripso/mobile/plans/best_plan_details.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
