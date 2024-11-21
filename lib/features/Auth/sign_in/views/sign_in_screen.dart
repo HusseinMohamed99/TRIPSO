@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/routing/routes.dart';
-import 'package:tripso/core/styles/asset_path.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
@@ -31,32 +30,24 @@ class SignInScreen extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AssetPath.signINImage),
-              fit: BoxFit.fill,
-            ),
-          ),
-          child: Scaffold(
-            backgroundColor: Colors.transparent,
-            body: Center(
-              child: SingleChildScrollView(
-                child: Form(
-                  key: signInCubit.formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      InputField(signInCubit: signInCubit),
-                      ForgetPasswordButton(),
-                      Space(width: 0, height: 20),
-                      SingInButton(signInCubit: signInCubit),
-                      Space(width: 0, height: 10),
-                      IfHaveAccount(),
-                    ],
-                  ).allPadding(hPadding: 20),
-                ),
+        return Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Center(
+            child: SingleChildScrollView(
+              child: Form(
+                key: signInCubit.formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    InputField(signInCubit: signInCubit),
+                    ForgetPasswordButton(),
+                    Space(width: 0, height: 20),
+                    SingInButton(signInCubit: signInCubit),
+                    Space(width: 0, height: 10),
+                    IfHaveAccount(),
+                  ],
+                ).allPadding(hPadding: 20),
               ),
             ),
           ),
