@@ -1,5 +1,10 @@
 part of '../../helpers/export_manager/export_manager.dart';
 
+const String prefsKeyTheme = "PREFS_KEY_THEME";
+const String prefsKeyOnBoardingScreenViewed =
+    "PREFS_KEY_ON_BOARDING_SCREEN_VIEWED";
+const String prefsKeyIsUserLoggedIn = "PREFS_KEY_IS_USER_LOGGED_IN";
+
 /// Utility class for managing SharedPreferences and FlutterSecureStorage operations.
 class SharedPrefHelper {
   // Private constructor to prevent instantiation.
@@ -117,27 +122,24 @@ class SharedPrefHelper {
   }
 
   //OnBoarding
-  // Future<void> setOnBoardingScreenViewed() async {
-  //   _sharedPreferences.setBool(PREFS_KEY_ON_BOARDING_SCREEN_VIEWED, true);
-  // }
-  //
-  // Future<bool> isOnBoardingScreenViewed() async {
-  //   return _sharedPreferences.getBool(PREFS_KEY_ON_BOARDING_SCREEN_VIEWED) ?? false;
-  // }
+  Future<void> setOnBoardingScreenViewed() async {
+    _sharedPreferences.setBool(prefsKeyOnBoardingScreenViewed, true);
+  }
+
+  Future<bool> isOnBoardingScreenViewed() async {
+    return _sharedPreferences.getBool(prefsKeyOnBoardingScreenViewed) ?? false;
+  }
 
   //Login
-  // Future<void> setUserLogged() async {
-  //   _sharedPreferences.setBool(PREFS_KEY_IS_USER_LOGGED_IN, true);
-  // }
-  //
-  // Future<bool> isUserLogged() async {
-  //   return _sharedPreferences.getBool(PREFS_KEY_IS_USER_LOGGED_IN) ?? false;
-  // }
+  Future<void> setUserLogged() async {
+    _sharedPreferences.setBool(prefsKeyIsUserLoggedIn, true);
+  }
 
-  //register
-  //
-  //
-  // Future<void> logout() async {
-  //   _sharedPreferences.remove(PREFS_KEY_IS_USER_LOGGED_IN);
-  // }
+  Future<bool> isUserLogged() async {
+    return _sharedPreferences.getBool(prefsKeyIsUserLoggedIn) ?? false;
+  }
+
+  Future<void> logout() async {
+    _sharedPreferences.remove(prefsKeyIsUserLoggedIn);
+  }
 }
