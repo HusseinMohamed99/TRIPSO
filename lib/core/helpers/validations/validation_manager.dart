@@ -47,18 +47,35 @@ class ValidationManager {
 
   static String? passwordValidator(String? value) {
     if (value == null || value.isEmpty || value.trim().isEmpty) {
-      return ValidationMessage.passwordValid;
+      return ValidationMessage.passwordValid; // "Password cannot be empty"
     }
-    if (value.length < 8) {
-      return ValidationMessage.passwordError2;
+
+    if (!hasMinLength(value)) {
+      return ValidationMessage
+          .passwordError2; // "Password must be at least 8 characters long"
     }
-    RegExp regex = RegExp(
-        r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#^~`+])[A-Za-z\d@$!%*?&#^~`+]{8,}$");
-    var passNonNullValue = value;
-    if (!regex.hasMatch(passNonNullValue)) {
-      return ValidationMessage.passwordError1;
+
+    if (!hasLowerCase(value)) {
+      return ValidationMessage
+          .passwordMissingLowerCase; // "Password must include at least one lowercase letter"
     }
-    return null;
+
+    if (!hasUpperCase(value)) {
+      return ValidationMessage
+          .passwordMissingUpperCase; // "Password must include at least one uppercase letter"
+    }
+
+    if (!hasNumber(value)) {
+      return ValidationMessage
+          .passwordMissingNumber; // "Password must include at least one numeric digit"
+    }
+
+    if (!hasSpecialCharacter(value)) {
+      return ValidationMessage
+          .passwordMissingSpecial; // "Password must include at least one special character"
+    }
+
+    return null; // Password is valid
   }
 
   static bool isEmailValid(String email) {

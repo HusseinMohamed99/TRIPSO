@@ -182,10 +182,7 @@ class InputField extends StatelessWidget {
           controller: signInCubit.emailController,
           keyboardType: TextInputType.emailAddress,
           validate: (String? value) {
-            if (value!.trim().isEmpty) {
-              return 'Email Address is Required';
-            }
-            return null;
+            return ValidationManager.emailValidator(value);
           },
           hint: 'Email Address',
           prefix: Icons.alternate_email,
@@ -203,10 +200,7 @@ class InputField extends StatelessWidget {
           obscuringCharacter: '*',
           keyboardType: TextInputType.visiblePassword,
           validate: (String? value) {
-            if (value!.trim().isEmpty) {
-              return 'Password is Required';
-            }
-            return null;
+            return ValidationManager.passwordValidator(value);
           },
           prefix: Icons.lock_outline_sharp,
           suffix: signInCubit.suffix,

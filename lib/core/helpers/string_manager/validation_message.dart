@@ -1,19 +1,24 @@
 class ValidationMessage {
-  //Email Validate
+  // Email Validation
   static const String emailValid = 'Please enter a valid email';
   static const String verifyEmailValid =
-      'Please enter the 4 digit code sent to ';
+      'Please enter the 4-digit code sent to your email';
 
-  //Password Validate
-  static const String passwordValid = 'Please enter a valid password';
-  static const String passwordNoMatch =
-      'The password field confirmation does not match';
-  static const String passwordError1 =
-      'Password should contain upper,lower,digit and Special character';
+  // Password Validation
+  static const String passwordNoMatch = 'Passwords do not match';
+  static const String passwordValid = 'Password cannot be empty';
   static const String passwordError2 =
-      'Your password should contain at least 8 characters';
+      'Password must be at least 8 characters long';
+  static const String passwordMissingLowerCase =
+      'Include at least one lowercase letter';
+  static const String passwordMissingUpperCase =
+      'Include at least one uppercase letter';
+  static const String passwordMissingNumber =
+      'Include at least one numeric digit';
+  static const String passwordMissingSpecial =
+      'Include at least one special character';
   static const String updatePasswordSuccessfully =
-      'Your Password has been successfully updated!';
+      'Password updated successfully!';
   static const String passwordRequirements = 'Password Requirements:';
   static const String passwordRequirements1 = 'Use lowercase letters';
   static const String passwordRequirements2 = 'Use uppercase letters';
@@ -22,25 +27,24 @@ class ValidationMessage {
   static const String passwordRequirements4 = 'Add at least one number';
   static const String passwordRequirements5 = 'Minimum 8 characters';
 
-  //Otp Validate
+  // OTP Validation
   static const String otpValid = 'Please enter a valid OTP';
-  static const String otpError1 = 'OTP should contain 4 digit number';
+  static const String otpError1 = 'OTP should be a 4-digit number';
 
-  //Name Validate
+  // Name Validation
   static const String nameValid = 'Please enter a valid name';
-  static const String nameError1 =
-      'Name should contain only alphabets and space';
+  static const String nameError1 = 'Name can only contain alphabets and spaces';
 
-  // DateBirth Validate
+  // Date of Birth Validation
   static const String dateOfBirthValid = 'Please enter a valid date of birth';
   static const String dateOfBirthError1 = 'You must be 18 years old or above';
-  static const String dateOfBirthYearValidate = 'Please Enter a Valid Year';
-  static const String dateOfBirthMonthValidate = 'Please Enter a Valid Month';
-  static const String dateOfBirthDayValidate = 'Please Enter a Valid Day';
+  static const String dateOfBirthYearValidate = 'Enter a valid year';
+  static const String dateOfBirthMonthValidate = 'Enter a valid month';
+  static const String dateOfBirthDayValidate = 'Enter a valid day';
 
-  //Message Validate
-  static const String messageValid = "Please Enter a Valid Message";
+  // Message Validation
+  static const String messageValid = 'Please enter a valid message';
 
-  //PhoneNumber Validate
-  static const String phoneValid = "Please Enter a Valid Phone Number";
+  // Phone Number Validation
+  static const String phoneValid = 'Please enter a valid phone number';
 }
