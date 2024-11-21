@@ -7,9 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
+import 'package:tripso/core/routing/routes.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/home/home_screen.dart';
-import 'package:tripso/features/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/shared/components/size_config.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
@@ -76,12 +75,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
   void _navigateToNextScreen() {
     Timer(const Duration(seconds: 3), () {
       uId = CacheHelper.getData(key: 'uId');
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (_) => uId != null ? const CitiesScreen() : const OnBoard(),
-        ),
-      );
+      context.pushReplacementNamed(Routes.onBoardingView);
     });
   }
 

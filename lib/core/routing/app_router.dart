@@ -1,6 +1,9 @@
 part of './../helpers/export_manager/export_manager.dart';
 
 class AppRouters {
+  final SharedPrefHelper sharedPrefHelper;
+
+  AppRouters(this.sharedPrefHelper);
   Route? generateRoute(RouteSettings settings) {
     // This arguments to be passed in any screen like this ( arguments as ClassName )
     final arguments = settings.arguments;
@@ -12,7 +15,9 @@ class AppRouters {
         );
       case Routes.onBoardingView:
         return MaterialPageRoute(
-          builder: (_) => const OnBoard(),
+          builder: (_) => OnBoard(
+            sharedPrefHelper: sharedPrefHelper,
+          ),
         );
     }
     return null;

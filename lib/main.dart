@@ -11,40 +11,48 @@ import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await _initServices();
-  await _initializeFirebase();
 
+  // Initialize services and dependencies
+  await _initServices();
+  final sharedPreferences = await SharedPreferences.getInstance();
+  final sharedPrefHelper = SharedPrefHelper(sharedPreferences);
+
+  // Initialize Firebase
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // Initialize cache helper
   await CacheHelper.init();
 
+  // Retrieve user ID from cache
   uId = CacheHelper.getData(key: 'uId');
 
+  // Check if onboarding screen was viewed
+  final isOnBoardingViewed = await sharedPrefHelper.isOnBoardingScreenViewed();
+
+  // Run the app
   runApp(
-    ChangeNotifierProvider(
-      create: (context) {
-        return WeatherProvider();
-      },
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => WeatherProvider()),
+      ],
       child: TripsoApp(
-        appRouter: AppRouters(),
+        appRouter: AppRouters(sharedPrefHelper),
+        isOnBoardingViewed: isOnBoardingViewed,
+        sharedPrefHelper: sharedPrefHelper,
       ),
     ),
   );
 }
 
-Future<FirebaseApp> _initializeFirebase() {
-  return Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-}
-
+/// Initializes services like `ScreenUtil` and Bloc observer.
 Future<void> _initServices() async {
-  // To fix texts being hidden bug in flutter_screenutil in release MODE.
+  // Fix texts being hidden in release mode with `flutter_screenutil`
   await ScreenUtil.ensureScreenSize();
+
+  // Set up global Bloc observer for debugging
   Bloc.observer = MyBlocObserver();
-  final SharedPreferences sharedPreferences =
-      await SharedPreferences.getInstance();
-  final sharedPrefHelper = SharedPrefHelper(sharedPreferences);
-  await sharedPrefHelper.isOnBoardingScreenViewed();
-  await sharedPrefHelper.isUserLogged();
 }

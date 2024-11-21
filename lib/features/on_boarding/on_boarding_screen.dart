@@ -1,147 +1,89 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/sign_in/sign_in_screen.dart';
-import 'package:tripso/features/sign_up/sign_up_screen.dart';
-import 'package:tripso/shared/components/app_bar.dart';
-import 'package:tripso/shared/components/buttons.dart';
-import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/components/sized_box.dart';
+part of './../../core/helpers/export_manager/export_manager.dart';
 
 class OnBoard extends StatelessWidget {
-  const OnBoard({super.key});
+  const OnBoard({super.key, required this.sharedPrefHelper});
+
+  final SharedPrefHelper sharedPrefHelper;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(AssetPath.onBoardImage),
-          fit: BoxFit.fill,
+    return Scaffold(
+      appBar: secondaryAppBar(),
+      backgroundColor: Colors.transparent,
+      body: Container(
+        alignment: Alignment.center,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AssetPath.onBoardImage),
+            fit: BoxFit.fill,
+          ),
         ),
-      ),
-      child: Scaffold(
-        appBar: secondaryAppBar(),
-        backgroundColor: Colors.transparent,
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 50.0.r),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
-                  child: welcomeText(),
-                ),
-                button(context),
-                Space(height: 50.h, width: 0.w),
-              ],
-            ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w), // Responsive padding
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(child: _buildWelcomeText()),
+              _buildActionButtons(context),
+              Space(height: 20, width: 0), // Adjusted for better spacing
+            ],
           ),
         ),
       ),
     );
   }
 
-  Widget welcomeText() => Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
+  Widget _buildWelcomeText() => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          FittedBox(
-            child: Text(
-              'BE\nREADY',
-              style: GoogleFonts.roboto(
-                textStyle: TextStyle(
-                  height: 1.h,
-                  color: ColorsManager.secondaryColor,
-                  fontSize: 45.sp,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ),
+          _buildStyledText('BE\nREADY', ColorsManager.secondaryColor),
           Row(
             children: [
-              FittedBox(
-                child: Text(
-                  'TO',
-                  style: GoogleFonts.roboto(
-                    textStyle: TextStyle(
-                      height: 1.h,
-                      color: ColorsManager.secondaryColor,
-                      fontSize: 45.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
-              FittedBox(
-                child: Text(
-                  'UR',
-                  style: GoogleFonts.roboto(
-                    textStyle: TextStyle(
-                      height: 1.h,
-                      color: ColorsManager.primaryColor,
-                      fontSize: 45.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
+              _buildStyledText('TO', ColorsManager.secondaryColor),
+              _buildStyledText('UR', ColorsManager.primaryColor),
             ],
           ),
-          FittedBox(
-            child: Text(
-              'NEXT',
-              style: GoogleFonts.roboto(
-                height: 1.h,
-                textStyle: TextStyle(
-                  color: ColorsManager.primaryColor,
-                  fontSize: 45.sp,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
+          _buildStyledText('NEXT', ColorsManager.primaryColor),
+          _buildStyledText('ADVENTURE', ColorsManager.secondaryColor),
+        ],
+      );
+
+  Widget _buildStyledText(String text, Color color) => Text(
+        text,
+        style: GoogleFonts.roboto(
+          textStyle: TextStyle(
+            color: color,
+            fontSize: 40.sp, // Adjusted for better readability
+            fontWeight: FontWeight.w600,
           ),
-          FittedBox(
-            child: Text(
-              'ADVENTURE',
-              style: GoogleFonts.roboto(
-                height: 1.h,
-                textStyle: TextStyle(
-                  color: ColorsManager.secondaryColor,
-                  fontSize: 45.sp,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
+        ),
+      );
+
+  Widget _buildActionButtons(BuildContext context) => Column(
+        children: [
+          defaultMaterialButton(
+            function: () => _navigateTo(context, Routes.signInScreen),
+            text: 'Sign in',
+            color: ColorsManager.primaryColor,
+          ),
+          Space(height: 20, width: 0), // Adjusted for better spacing
+          defaultMaterialButton(
+            function: () => _navigateTo(context, Routes.signUpScreen),
+            text: 'Sign up',
+            color: ColorsManager.primaryColor.withOpacity(0.30),
           ),
         ],
       );
 
-  Widget button(context) => Column(
-        children: [
-          defaultMaterialButton(
-            function: () {
-              navigateAndFinish(context, routeName: SignInScreen.routeName);
-            },
-            text: 'Sign in',
-            color: ColorsManager.primaryColor,
-          ),
-          Space(width: 0.w, height: 26.h),
-          defaultMaterialButton(
-            function: () {
-              navigateTo(context, routeName: SignUpScreen.routeName);
-            },
-            text: 'Sign up',
-            color: ColorsManager.primaryColor.withOpacity(0.30),
-          ),
-          //  space(0, 50),
-        ],
-      );
+  void _navigateTo(BuildContext context, String route) {
+    try {
+      sharedPrefHelper.setOnBoardingScreenViewed();
+      context.pushReplacementNamed(route);
+    } catch (error) {
+      debugPrint('Error navigating to $route: $error');
+      // Optionally, show a Snackbar or Error Dialog here
+    }
+  }
 }

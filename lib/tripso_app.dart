@@ -1,9 +1,15 @@
 part of './core/helpers/export_manager/export_manager.dart';
 
 class TripsoApp extends StatelessWidget {
-  const TripsoApp({super.key, required this.appRouter});
+  const TripsoApp({
+    super.key,
+    required this.appRouter,
+    required this.isOnBoardingViewed,
+    required this.sharedPrefHelper,
+  });
   final AppRouters appRouter;
-
+  final bool isOnBoardingViewed;
+  final SharedPrefHelper sharedPrefHelper;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -51,8 +57,10 @@ class TripsoApp extends StatelessWidget {
                   theme: buildLightTheme(context),
                   darkTheme: buildLightTheme(context),
                   themeMode: ThemeMode.light,
-                  initialRoute: Routes.splashScreen,
-                  onGenerateRoute: appRouter.generateRoute,
+                  initialRoute: isOnBoardingViewed
+                      ? Routes.signInScreen
+                      : Routes.onBoardingView,
+                  onGenerateRoute: AppRouters(sharedPrefHelper).generateRoute,
                 ),
               );
             },
