@@ -27,7 +27,6 @@ import 'package:tripso/features/sights/sight_details_screen.dart';
 import 'package:tripso/features/sights/sights_screen.dart';
 import 'package:tripso/features/sign_in/sign_in_screen.dart';
 import 'package:tripso/features/sign_up/sign_up_screen.dart';
-import 'package:tripso/features/splash/splash_screen.dart';
 import 'package:tripso/features/wishlist/wishlist.dart';
 import 'package:tripso/layout/layout.dart';
 import 'package:tripso/shared/components/buttons.dart';
@@ -38,7 +37,11 @@ import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/service/weather_service.dart';
 
 part '../../networking/cache_helper/shared_pref_helper.dart';
+part './../../../features/on_boarding/controllers/navigation.dart';
 part './../../../features/on_boarding/on_boarding_screen.dart';
+part './../../../features/on_boarding/widgets/build_action_buttons.dart';
+part './../../../features/on_boarding/widgets/build_styled_text.dart';
+part './../../../features/on_boarding/widgets/build_welcome_text.dart';
 part './../../../tripso_app.dart';
 part './../../routing/app_router.dart';
 part './../../styles/colors.dart';
@@ -59,8 +62,3 @@ part './../validations/validation_manager.dart';
 part './../value_manager/margin_helper.dart';
 part './../value_manager/padding_helper.dart';
 part './../value_manager/size_helper.dart';
-
-part './../../../features/on_boarding/controllers/navigation.dart';
-part './../../../features/on_boarding/widgets/build_action_buttons.dart';
-part './../../../features/on_boarding/widgets/build_styled_text.dart';
-part './../../../features/on_boarding/widgets/build_welcome_text.dart';

@@ -23,7 +23,6 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   // Initialize cache helper
   await CacheHelper.init();
 
@@ -32,6 +31,8 @@ Future<void> main() async {
 
   // Check if onboarding screen was viewed
   final isOnBoardingViewed = await sharedPrefHelper.isOnBoardingScreenViewed();
+
+  final isUserLogged = await sharedPrefHelper.isUserLogged();
 
   // Run the app
   runApp(
@@ -42,6 +43,7 @@ Future<void> main() async {
       child: TripsoApp(
         appRouter: AppRouters(sharedPrefHelper),
         isOnBoardingViewed: isOnBoardingViewed,
+        isUserLogged: isUserLogged,
         sharedPrefHelper: sharedPrefHelper,
       ),
     ),

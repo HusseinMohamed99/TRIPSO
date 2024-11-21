@@ -20,9 +20,8 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 
 class SignInScreen extends StatelessWidget {
-  static const String routeName = 'sign_in_screen';
-
-  const SignInScreen({super.key});
+  const SignInScreen({super.key, required this.sharedPrefHelper});
+  final SharedPrefHelper sharedPrefHelper;
 
   @override
   Widget build(BuildContext context) {

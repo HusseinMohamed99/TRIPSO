@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
@@ -34,7 +33,7 @@ class UpdatePassword extends StatelessWidget {
           MyDialog.showLoadingDialog(
               context, 'Change password is successfully');
           MyDialog.hideDialog(context);
-          navigateAndFinish(context, routeName: SignInScreen.routeName);
+          // navigateAndFinish(context, routeName: SignInScreen.routeName);
         } else if (state is ChangeUserPasswordErrorState) {
           MyDialog.showLoadingDialog(context, 'Change password is Error');
           MyDialog.hideDialog(context);

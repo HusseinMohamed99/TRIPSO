@@ -24,6 +24,7 @@ void main() {
         appRouter: mockAppRouters,
         isOnBoardingViewed: true,
         sharedPrefHelper: mockSharedPrefHelper,
+        isUserLogged: false,
       ),
     );
 

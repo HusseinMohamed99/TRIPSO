@@ -6,10 +6,14 @@ class TripsoApp extends StatelessWidget {
     required this.appRouter,
     required this.isOnBoardingViewed,
     required this.sharedPrefHelper,
+    required this.isUserLogged,
   });
   final AppRouters appRouter;
   final bool isOnBoardingViewed;
+  final bool isUserLogged;
+
   final SharedPrefHelper sharedPrefHelper;
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -76,7 +80,6 @@ Map<String, Widget Function(BuildContext)> routing() {
   return {
     CitiesScreen.routeName: (_) => const CitiesScreen(),
     HomeLayout.routeName: (_) => const HomeLayout(),
-    SignInScreen.routeName: (_) => const SignInScreen(),
     SignUpScreen.routeName: (_) => const SignUpScreen(),
     ForgotPassword.routeName: (_) => const ForgotPassword(),
     UpdatePassword.routeName: (_) => const UpdatePassword(),

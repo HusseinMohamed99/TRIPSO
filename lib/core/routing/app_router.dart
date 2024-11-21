@@ -9,10 +9,10 @@ class AppRouters {
     // final arguments = settings.arguments;
 
     switch (settings.name) {
-      case Routes.splashScreen:
-        return MaterialPageRoute(
-          builder: (_) => const SplashScreen(),
-        );
+      // case Routes.splashScreen:
+      //   return MaterialPageRoute(
+      //     builder: (_) => const SplashScreen(),
+      //   );
       case Routes.onBoardingView:
         return MaterialPageRoute(
           builder: (_) => OnBoard(
@@ -21,7 +21,9 @@ class AppRouters {
         );
       case Routes.signInScreen:
         return MaterialPageRoute(
-          builder: (_) => SignInScreen(),
+          builder: (_) => SignInScreen(
+            sharedPrefHelper: sharedPrefHelper,
+          ),
         );
       case Routes.signUpScreen:
         return MaterialPageRoute(

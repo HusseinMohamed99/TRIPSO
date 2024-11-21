@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/sign_in/sign_in_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
@@ -84,8 +83,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             MyDialog.hideDialog(context);
                             MyDialog.showMessage(context, 'Check your mail',
                                 posActionTitle: 'OK', posAction: () {
-                              navigateAndFinish(context,
-                                  routeName: SignInScreen.routeName);
+                              // navigateAndFinish(context,
+                              //     routeName: SignInScreen.routeName);
                               emailController.clear();
                             });
                           }
