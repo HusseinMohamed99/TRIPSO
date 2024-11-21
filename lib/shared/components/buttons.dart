@@ -29,8 +29,8 @@ class DefaultMaterialButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width ?? 320.w,
-      height: height ?? 40.h,
+      width: width ?? context.width * .9,
+      height: height ?? 45.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius ?? 10.r),
         color: color ?? ColorsManager.primaryColor,
