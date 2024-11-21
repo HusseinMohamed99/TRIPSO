@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
+import 'package:tripso/core/styles/font_family.dart';
 
 ThemeData buildLightTheme(BuildContext context) {
   return ThemeData(
@@ -9,6 +10,7 @@ ThemeData buildLightTheme(BuildContext context) {
     cardColor: ColorsManager.whiteColor,
     appBarTheme: _buildAppBarTheme(context),
     textTheme: _buildTextTheme(context),
+    fontFamily: FontFamilyHelper.standardFont,
   );
 }
 

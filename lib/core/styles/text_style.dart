@@ -1,18 +1,13 @@
 part of './../helpers/export_manager/export_manager.dart';
 
 abstract class StyleManager {
-  Color get primaryColor => ColorsManager.primaryColor;
-  Color get secondaryColor => ColorsManager.whiteColor;
-  Color get blackPrimary => ColorsManager.blackPrimary;
-  Color get blueColor => ColorsManager.blueColor;
-  Color get yellowColor => ColorsManager.yellowColor;
-
   static TextStyle headlineLarge(context) {
     return TextStyle(
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s32),
       height: 1.125.h,
+      color: ColorsManager.primaryColor,
     );
   }
 
@@ -22,6 +17,7 @@ abstract class StyleManager {
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       height: 1.13.h,
+      color: ColorsManager.primaryColor,
     );
   }
 
@@ -31,6 +27,7 @@ abstract class StyleManager {
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       height: 1.14.h,
+      color: ColorsManager.primaryColor,
     );
   }
 
@@ -40,6 +37,7 @@ abstract class StyleManager {
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       height: 1.17.h,
+      color: ColorsManager.primaryColor,
     );
   }
 
@@ -49,6 +47,7 @@ abstract class StyleManager {
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       height: 1.2.h,
+      color: ColorsManager.primaryColor,
     );
   }
 
@@ -58,6 +57,7 @@ abstract class StyleManager {
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       height: 1.22.h,
+      color: ColorsManager.primaryColor,
     );
   }
 
@@ -67,6 +67,7 @@ abstract class StyleManager {
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       height: 1.25.h,
+      color: ColorsManager.primaryColor,
     );
   }
 
@@ -76,6 +77,7 @@ abstract class StyleManager {
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       height: 1.28.h,
+      color: ColorsManager.primaryColor,
     );
   }
 
@@ -85,6 +87,7 @@ abstract class StyleManager {
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       height: 1.33.h,
+      color: ColorsManager.primaryColor,
     );
   }
 
@@ -94,6 +97,7 @@ abstract class StyleManager {
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       height: 1.4.h,
+      color: ColorsManager.primaryColor,
     );
   }
 }

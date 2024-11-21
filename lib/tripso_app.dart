@@ -54,6 +54,7 @@ class TripsoApp extends StatelessWidget {
                   // Using "navigatorKey.currentState?.pushNamed(route, arguments: arguments);"
                   navigatorKey: navigatorKey,
                   debugShowCheckedModeBanner: false,
+
                   theme: buildLightTheme(context),
                   darkTheme: buildLightTheme(context),
                   themeMode: ThemeMode.light,

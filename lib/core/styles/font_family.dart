@@ -1,3 +1,3 @@
 class FontFamilyHelper {
-  static const String standardFont = "Acumin";
+  static const String standardFont = "OpenSans";
 }
