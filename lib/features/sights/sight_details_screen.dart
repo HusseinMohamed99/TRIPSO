@@ -88,7 +88,7 @@ class SightDetailsScreen extends StatelessWidget {
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
                                 shape: const StadiumBorder(
                                   side: BorderSide(
-                                    color: ColorsManager.secondaryColor,
+                                    color: ColorsManager.whiteColor,
                                   ),
                                 ),
                                 child: IconButton(
@@ -101,7 +101,7 @@ class SightDetailsScreen extends StatelessWidget {
                                   icon: Icon(
                                     Icons.arrow_back,
                                     size: 24.sp,
-                                    color: ColorsManager.secondaryColor,
+                                    color: ColorsManager.whiteColor,
                                   ),
                                 ),
                               ),
@@ -139,7 +139,7 @@ class SightDetailsScreen extends StatelessWidget {
                               icon: Icon(
                                 FontAwesomeIcons.heart,
                                 size: 24.sp,
-                                color: ColorsManager.secondaryColor,
+                                color: ColorsManager.whiteColor,
                                 // color: ThemeApp.secondaryColor,
                               ),
                             ),
@@ -153,7 +153,7 @@ class SightDetailsScreen extends StatelessWidget {
                                 .textTheme
                                 .displayMedium
                                 ?.copyWith(
-                                  color: ColorsManager.secondaryColor,
+                                  color: ColorsManager.whiteColor,
                                 ),
                           ),
                         ),
@@ -203,8 +203,7 @@ class SightDetailsScreen extends StatelessWidget {
                                               .textTheme
                                               .titleLarge
                                               ?.copyWith(
-                                                color: ColorsManager
-                                                    .secondaryColor,
+                                                color: ColorsManager.whiteColor,
                                               ),
                                         ),
                                       ],
@@ -221,7 +220,7 @@ class SightDetailsScreen extends StatelessWidget {
                                     child: Icon(
                                       FontAwesomeIcons.circlePlay,
                                       size: 24.sp,
-                                      color: ColorsManager.secondaryColor,
+                                      color: ColorsManager.whiteColor,
                                     ),
                                   ),
                                   label: const Text(''),
@@ -239,7 +238,7 @@ class SightDetailsScreen extends StatelessWidget {
                                     child: Icon(
                                       FontAwesomeIcons.locationArrow,
                                       size: 24.sp,
-                                      color: ColorsManager.secondaryColor,
+                                      color: ColorsManager.whiteColor,
                                     ),
                                   ),
                                   label: const Text(''),
@@ -486,7 +485,7 @@ class SightDetailsScreen extends StatelessWidget {
         (ModalRoute.of(context)?.settings.arguments) as ScreenArgs;
     showModalBottomSheet(
       isScrollControlled: true,
-      backgroundColor: ColorsManager.secondaryColor,
+      backgroundColor: ColorsManager.whiteColor,
       context: context,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
@@ -503,7 +502,7 @@ class SightDetailsScreen extends StatelessWidget {
             controller: scrollController,
             child: Container(
               decoration: BoxDecoration(
-                color: ColorsManager.secondaryColor,
+                color: ColorsManager.whiteColor,
                 borderRadius:
                     BorderRadius.vertical(top: const Radius.circular(20).r),
               ),
@@ -565,7 +564,7 @@ class SightDetailsScreen extends StatelessWidget {
                           backgroundColor: ColorsManager.primaryColor,
                           child: Icon(
                             FontAwesomeIcons.play,
-                            color: ColorsManager.secondaryColor,
+                            color: ColorsManager.whiteColor,
                             size: 24.sp,
                           )),
                     ),

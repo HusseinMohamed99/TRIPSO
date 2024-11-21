@@ -30,7 +30,7 @@ class CreateCustomizePlan extends StatelessWidget {
             Expanded(child: Image.asset(AssetPath.plan)),
             Card(
               elevation: 6,
-              color: ColorsManager.secondaryColor,
+              color: ColorsManager.whiteColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20).r,
               ),

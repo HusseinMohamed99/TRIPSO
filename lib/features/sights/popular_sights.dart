@@ -104,7 +104,7 @@ class ListViewWidget extends StatelessWidget {
               clipBehavior: Clip.antiAliasWithSaveLayer,
               shape: const StadiumBorder(
                 side: BorderSide(
-                  color: ColorsManager.secondaryColor,
+                  color: ColorsManager.whiteColor,
                 ),
               ),
               child: IconButton(
@@ -115,7 +115,7 @@ class ListViewWidget extends StatelessWidget {
                 },
                 icon: Icon(
                   Icons.arrow_back,
-                  color: ColorsManager.secondaryColor,
+                  color: ColorsManager.whiteColor,
                   size: 24.sp,
                 ),
               ),
@@ -156,7 +156,7 @@ class GridSights extends StatelessWidget {
         children: [
           Card(
             elevation: 6,
-            color: ColorsManager.secondaryColor,
+            color: ColorsManager.whiteColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.r),
             ),

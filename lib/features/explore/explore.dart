@@ -128,7 +128,7 @@ class CityDetails extends StatelessWidget {
             clipBehavior: Clip.antiAliasWithSaveLayer,
             shape: const StadiumBorder(
               side: BorderSide(
-                color: ColorsManager.secondaryColor,
+                color: ColorsManager.whiteColor,
               ),
             ),
             child: IconButton(
@@ -140,7 +140,7 @@ class CityDetails extends StatelessWidget {
               },
               icon: Icon(
                 Icons.arrow_back,
-                color: ColorsManager.secondaryColor,
+                color: ColorsManager.whiteColor,
                 size: 24.sp,
               ),
             ),
@@ -155,7 +155,7 @@ class CityDetails extends StatelessWidget {
               clipBehavior: Clip.antiAliasWithSaveLayer,
               shape: const StadiumBorder(
                 side: BorderSide(
-                  color: ColorsManager.secondaryColor,
+                  color: ColorsManager.whiteColor,
                 ),
               ),
               child: IconButton(
@@ -169,7 +169,7 @@ class CityDetails extends StatelessWidget {
                   AssetImage(
                     AssetPath.searchImage,
                   ),
-                  color: ColorsManager.secondaryColor,
+                  color: ColorsManager.whiteColor,
                 ),
               ),
             )),
@@ -186,13 +186,13 @@ class CityDetails extends StatelessWidget {
             Text(
               screenArgs.cityModel.name,
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: ColorsManager.secondaryColor,
+                    color: ColorsManager.whiteColor,
                   ),
             ),
             Text(
               weatherData.weatherStateName,
               style: TextStyle(
-                color: ColorsManager.secondaryColor,
+                color: ColorsManager.whiteColor,
                 fontSize: 20.sp,
                 // fontWeight: FontWeight.bold,
               ),
@@ -201,13 +201,13 @@ class CityDetails extends StatelessWidget {
             Text(
               '${weatherData.temp.toInt().toString()}°C',
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: ColorsManager.secondaryColor,
+                    color: ColorsManager.whiteColor,
                   ),
             ),
             Text(
               '${weatherData.minTemp.toInt().toString()}°C / ${weatherData.maxTemp.toInt().toString()}°C',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: ColorsManager.secondaryColor,
+                    color: ColorsManager.whiteColor,
                   ),
             ),
           ],

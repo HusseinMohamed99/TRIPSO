@@ -61,7 +61,7 @@ class _PickPlansState extends State<PickPlans> {
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     shape: const StadiumBorder(
                       side: BorderSide(
-                        color: ColorsManager.secondaryColor,
+                        color: ColorsManager.whiteColor,
                       ),
                     ),
                     child: IconButton(
@@ -73,7 +73,7 @@ class _PickPlansState extends State<PickPlans> {
                       },
                       icon: Icon(
                         Icons.arrow_back,
-                        color: ColorsManager.secondaryColor,
+                        color: ColorsManager.whiteColor,
                         size: 24.sp,
                       ),
                     ),

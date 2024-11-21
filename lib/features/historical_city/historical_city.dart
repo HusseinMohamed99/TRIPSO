@@ -86,7 +86,7 @@ class HistoricalCity extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .displayMedium
-                                ?.copyWith(color: ColorsManager.secondaryColor),
+                                ?.copyWith(color: ColorsManager.whiteColor),
                           ),
                           Space(height: 10.h, width: 0.w),
                           Row(
@@ -102,7 +102,7 @@ class HistoricalCity extends StatelessWidget {
                                     .textTheme
                                     .titleLarge
                                     ?.copyWith(
-                                      color: ColorsManager.secondaryColor,
+                                      color: ColorsManager.whiteColor,
                                     ),
                               ),
                             ],
@@ -121,7 +121,7 @@ class HistoricalCity extends StatelessWidget {
                       ),
                       height: 300.h,
                       decoration: BoxDecoration(
-                          color: ColorsManager.secondaryColor,
+                          color: ColorsManager.whiteColor,
                           borderRadius: BorderRadius.only(
                             topLeft: const Radius.circular(40).r,
                             topRight: const Radius.circular(40).r,
@@ -160,7 +160,7 @@ class HistoricalCity extends StatelessWidget {
                     color: ColorsManager.blackPrimary.withOpacity(0.5),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     shape: const StadiumBorder(
-                      side: BorderSide(color: ColorsManager.secondaryColor),
+                      side: BorderSide(color: ColorsManager.whiteColor),
                     ),
                     child: IconButton(
                       onPressed: () async {
@@ -171,7 +171,7 @@ class HistoricalCity extends StatelessWidget {
                       },
                       icon: Icon(
                         Icons.arrow_back,
-                        color: ColorsManager.secondaryColor,
+                        color: ColorsManager.whiteColor,
                         size: 24.sp,
                       ),
                     ),
@@ -184,12 +184,12 @@ class HistoricalCity extends StatelessWidget {
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   shape: const StadiumBorder(
                     side: BorderSide(
-                      color: ColorsManager.secondaryColor,
+                      color: ColorsManager.whiteColor,
                     ),
                   ),
                   child: CircleAvatar(
                     radius: 30.r,
-                    backgroundColor: ColorsManager.secondaryColor,
+                    backgroundColor: ColorsManager.whiteColor,
                     child: IconButton(
                       onPressed: () {
                         speak(cityModel.history);

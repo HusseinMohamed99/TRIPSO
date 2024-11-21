@@ -1,6 +1,12 @@
 part of './../helpers/export_manager/export_manager.dart';
 
 abstract class StyleManager {
+  Color get primaryColor => ColorsManager.primaryColor;
+  Color get secondaryColor => ColorsManager.whiteColor;
+  Color get blackPrimary => ColorsManager.blackPrimary;
+  Color get blueColor => ColorsManager.blueColor;
+  Color get yellowColor => ColorsManager.yellowColor;
+
   static TextStyle headlineLarge(context) {
     return TextStyle(
       fontWeight: FontWeightHelper.regular,
@@ -64,7 +70,7 @@ abstract class StyleManager {
     );
   }
 
-  static TextStyle labeMedium(context) {
+  static TextStyle labelMedium(context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s14),
       fontWeight: FontWeightHelper.regular,

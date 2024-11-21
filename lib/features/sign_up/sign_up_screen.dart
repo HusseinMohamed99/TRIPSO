@@ -88,7 +88,7 @@ class SignUpScreen extends StatelessWidget {
                             icon: Icon(
                               Icons.arrow_back,
                               size: 25.sp,
-                              color: ColorsManager.secondaryColor,
+                              color: ColorsManager.whiteColor,
                             ),
                           ),
                           Space(width: 20.w, height: 0.h),
@@ -96,7 +96,7 @@ class SignUpScreen extends StatelessWidget {
                             'Create Account',
                             style: TextStyle(
                                 fontSize: 30.sp,
-                                color: ColorsManager.secondaryColor,
+                                color: ColorsManager.whiteColor,
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -116,15 +116,15 @@ class SignUpScreen extends StatelessWidget {
                               Text(
                                 'First Name',
                                 style: TextStyle(
-                                  color: ColorsManager.secondaryColor,
+                                  color: ColorsManager.whiteColor,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Space(width: 0.w, height: 8.h),
                               DefaultTextFormField(
-                                color: ColorsManager.secondaryColor
-                                    .withOpacity(0.3),
+                                color:
+                                    ColorsManager.whiteColor.withOpacity(0.3),
                                 context: context,
                                 controller: userFirstNameController,
                                 keyboardType: TextInputType.name,
@@ -142,15 +142,15 @@ class SignUpScreen extends StatelessWidget {
                               Text(
                                 'Last Name',
                                 style: TextStyle(
-                                  color: ColorsManager.secondaryColor,
+                                  color: ColorsManager.whiteColor,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Space(width: 0.w, height: 8.h),
                               DefaultTextFormField(
-                                color: ColorsManager.secondaryColor
-                                    .withOpacity(0.3),
+                                color:
+                                    ColorsManager.whiteColor.withOpacity(0.3),
                                 context: context,
                                 controller: userLastNameController,
                                 keyboardType: TextInputType.name,
@@ -168,15 +168,15 @@ class SignUpScreen extends StatelessWidget {
                               Text(
                                 'Email Address',
                                 style: TextStyle(
-                                  color: ColorsManager.secondaryColor,
+                                  color: ColorsManager.whiteColor,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Space(width: 0.w, height: 8.h),
                               DefaultTextFormField(
-                                color: ColorsManager.secondaryColor
-                                    .withOpacity(0.3),
+                                color:
+                                    ColorsManager.whiteColor.withOpacity(0.3),
                                 context: context,
                                 controller: emailController,
                                 keyboardType: TextInputType.emailAddress,
@@ -194,15 +194,15 @@ class SignUpScreen extends StatelessWidget {
                               Text(
                                 'Mobile Number',
                                 style: TextStyle(
-                                  color: ColorsManager.secondaryColor,
+                                  color: ColorsManager.whiteColor,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Space(width: 0.w, height: 8.h),
                               DefaultTextFormField(
-                                color: ColorsManager.secondaryColor
-                                    .withOpacity(0.3),
+                                color:
+                                    ColorsManager.whiteColor.withOpacity(0.3),
                                 context: context,
                                 controller: phoneController,
                                 keyboardType: TextInputType.phone,
@@ -221,15 +221,15 @@ class SignUpScreen extends StatelessWidget {
                               Text(
                                 'Password',
                                 style: TextStyle(
-                                  color: ColorsManager.secondaryColor,
+                                  color: ColorsManager.whiteColor,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Space(width: 0.w, height: 8.h),
                               DefaultTextFormField(
-                                color: ColorsManager.secondaryColor
-                                    .withOpacity(0.3),
+                                color:
+                                    ColorsManager.whiteColor.withOpacity(0.3),
                                 context: context,
                                 obscuringCharacter: '*',
                                 controller: passwordController,

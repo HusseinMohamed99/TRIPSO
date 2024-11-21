@@ -104,7 +104,7 @@ class UpdatePassword extends StatelessWidget {
           textAlign: TextAlign.center,
           style: GoogleFonts.roboto(
             fontSize: 19.sp,
-            color: ColorsManager.secondaryColor,
+            color: ColorsManager.whiteColor,
             fontWeight: FontWeight.w500,
           ),
         ),

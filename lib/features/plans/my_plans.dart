@@ -101,7 +101,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                               decoration: BoxDecoration(
                                   color: current == index
                                       ? ColorsManager.primaryColor
-                                      : ColorsManager.secondaryColor,
+                                      : ColorsManager.whiteColor,
                                   borderRadius: current == index
                                       ? BorderRadius.circular(22).r
                                       : BorderRadius.circular(22).r,
@@ -153,7 +153,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                         width: 5.w,
                                         height: 5.h,
                                         decoration: BoxDecoration(
-                                          color: ColorsManager.secondaryColor,
+                                          color: ColorsManager.whiteColor,
                                           borderRadius:
                                               BorderRadius.circular(5).r,
                                         ),
@@ -165,7 +165,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                         width: 5.w,
                                         height: 5.h,
                                         decoration: BoxDecoration(
-                                          color: ColorsManager.secondaryColor,
+                                          color: ColorsManager.whiteColor,
                                           borderRadius:
                                               BorderRadius.circular(5).r,
                                         ),
@@ -177,7 +177,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                         width: 5.w,
                                         height: 5.h,
                                         decoration: BoxDecoration(
-                                          color: ColorsManager.secondaryColor,
+                                          color: ColorsManager.whiteColor,
                                           borderRadius:
                                               BorderRadius.circular(5).r,
                                         ),
@@ -195,7 +195,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                         width: 5.w,
                                         height: 5.h,
                                         decoration: BoxDecoration(
-                                          color: ColorsManager.secondaryColor,
+                                          color: ColorsManager.whiteColor,
                                           borderRadius:
                                               BorderRadius.circular(5).r,
                                         ),
@@ -208,7 +208,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                         width: 5.w,
                                         height: 5.h,
                                         decoration: BoxDecoration(
-                                          color: ColorsManager.secondaryColor,
+                                          color: ColorsManager.whiteColor,
                                           borderRadius:
                                               BorderRadius.circular(5).r,
                                         ),
@@ -221,7 +221,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                         width: 5.w,
                                         height: 5.h,
                                         decoration: BoxDecoration(
-                                          color: ColorsManager.secondaryColor,
+                                          color: ColorsManager.whiteColor,
                                           borderRadius:
                                               BorderRadius.circular(5).r,
                                         ),

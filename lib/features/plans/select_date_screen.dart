@@ -84,7 +84,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
           ),
           elevation: 0,
           centerTitle: true,
-          backgroundColor: ColorsManager.secondaryColor,
+          backgroundColor: ColorsManager.whiteColor,
           title: Text(
             'Customize',
             style: GoogleFonts.roboto(

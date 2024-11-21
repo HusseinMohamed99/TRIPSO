@@ -28,7 +28,7 @@ class SelectPhotoOptions extends StatelessWidget {
               margin: const EdgeInsets.only(bottom: 20).r,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(2.5).r,
-                color: ColorsManager.secondaryColor,
+                color: ColorsManager.whiteColor,
               ),
             ),
           ),

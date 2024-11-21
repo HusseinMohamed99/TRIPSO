@@ -70,7 +70,7 @@ List<Icon> icon4halfStar({Color? color}) {
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
   ];
@@ -95,12 +95,12 @@ List<Icon> icon4Star({Color? color}) {
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
   ];
@@ -125,12 +125,12 @@ List<Icon> icon3halfStar({Color? color}) {
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
   ];
@@ -155,12 +155,12 @@ List<Icon> icon3Star({Color? color}) {
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
   ];
@@ -185,12 +185,12 @@ List<Icon> icon2halfStar({Color? color}) {
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
   ];
@@ -210,17 +210,17 @@ List<Icon> icon2Star({Color? color}) {
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
   ];
@@ -240,17 +240,17 @@ List<Icon> icon1halfStar({Color? color}) {
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
   ];
@@ -265,22 +265,22 @@ List<Icon> iconStar({Color? color}) {
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
     Icon(
       Icons.star_border,
-      color: color ?? ColorsManager.secondaryColor,
+      color: color ?? ColorsManager.whiteColor,
       size: 20.sp,
     ),
   ];
@@ -321,7 +321,7 @@ class GridItemSights extends StatelessWidget {
         children: [
           Card(
             elevation: 2,
-            color: ColorsManager.secondaryColor,
+            color: ColorsManager.whiteColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12).r,
             ),
@@ -367,7 +367,7 @@ class GridItemSights extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             style:
                                 Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: ColorsManager.secondaryColor,
+                                      color: ColorsManager.whiteColor,
                                     ),
                           ),
                           if (placeModel.rate == '5')
@@ -415,7 +415,7 @@ class GridItemSights extends StatelessWidget {
                                     .textTheme
                                     .headlineSmall
                                     ?.copyWith(
-                                      color: ColorsManager.secondaryColor,
+                                      color: ColorsManager.whiteColor,
                                     ),
                               ),
                               Space(height: 0.h, width: 10.w),

@@ -67,7 +67,7 @@ class _SearchScreenState extends State<SearchScreen> {
           var cubit = TripsoCubit.get(context);
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: ColorsManager.secondaryColor,
+              backgroundColor: ColorsManager.whiteColor,
               centerTitle: false,
               elevation: 2,
               leading: IconButton(

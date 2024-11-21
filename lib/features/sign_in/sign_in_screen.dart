@@ -88,14 +88,14 @@ class SignInScreen extends StatelessWidget {
                                   Text(
                                     'Email Address',
                                     style: TextStyle(
-                                      color: ColorsManager.secondaryColor,
+                                      color: ColorsManager.whiteColor,
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                   Space(width: 0.w, height: 8.h),
                                   DefaultTextFormField(
-                                    color: ColorsManager.secondaryColor
+                                    color: ColorsManager.whiteColor
                                         .withOpacity(0.3),
                                     context: context,
                                     controller: emailController,
@@ -113,14 +113,14 @@ class SignInScreen extends StatelessWidget {
                                   Text(
                                     'Password',
                                     style: TextStyle(
-                                      color: ColorsManager.secondaryColor,
+                                      color: ColorsManager.whiteColor,
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                   Space(width: 0.w, height: 8.h),
                                   DefaultTextFormField(
-                                    color: ColorsManager.secondaryColor
+                                    color: ColorsManager.whiteColor
                                         .withOpacity(0.3),
                                     context: context,
                                     controller: passwordController,
@@ -196,7 +196,7 @@ class SignInScreen extends StatelessWidget {
                                 Text(
                                   'Don\'t have an account?',
                                   style: TextStyle(
-                                      color: ColorsManager.secondaryColor,
+                                      color: ColorsManager.whiteColor,
                                       fontSize: 15.sp),
                                 ),
                                 TextButton(

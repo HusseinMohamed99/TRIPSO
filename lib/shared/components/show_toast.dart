@@ -13,7 +13,7 @@ void showToast({
     gravity: ToastGravity.BOTTOM,
     timeInSecForIosWeb: 10,
     backgroundColor: chooseToastColor(state),
-    textColor: ColorsManager.secondaryColor,
+    textColor: ColorsManager.whiteColor,
     fontSize: 16.0.sp,
   );
 }

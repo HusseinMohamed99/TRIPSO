@@ -15,7 +15,7 @@ import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 
 class HomeLayout extends StatelessWidget {
   static const String routeName = 'home_layout';
-  static Color isColor = ColorsManager.secondaryColor;
+  static Color isColor = ColorsManager.whiteColor;
 
   const HomeLayout({super.key});
 
@@ -30,7 +30,7 @@ class HomeLayout extends StatelessWidget {
           appBar: thirdAppBar(),
           bottomNavigationBar: Container(
             decoration: BoxDecoration(
-              color: ColorsManager.secondaryColor,
+              color: ColorsManager.whiteColor,
               boxShadow: [
                 BoxShadow(
                   blurRadius: 20.r,
@@ -46,7 +46,7 @@ class HomeLayout extends StatelessWidget {
                   rippleColor: ColorsManager.primaryColor,
                   hoverColor: ColorsManager.primaryColor,
                   gap: 10.sp,
-                  activeColor: ColorsManager.secondaryColor,
+                  activeColor: ColorsManager.whiteColor,
                   iconSize: 24.sp,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 8).r,
@@ -57,7 +57,7 @@ class HomeLayout extends StatelessWidget {
                     GButton(
                       leading: ImageIcon(
                         color: tripsoCubit.currentIndex == 0
-                            ? ColorsManager.secondaryColor
+                            ? ColorsManager.whiteColor
                             : ColorsManager.blackPrimary,
                         const AssetImage(
                           AssetPath.homeImage,
@@ -68,12 +68,12 @@ class HomeLayout extends StatelessWidget {
                       iconSize: 25.sp,
                       text: tripsoCubit.titles[tripsoCubit.currentIndex],
                       textStyle: TextStyle(
-                          fontSize: 15.sp, color: ColorsManager.secondaryColor),
+                          fontSize: 15.sp, color: ColorsManager.whiteColor),
                     ),
                     GButton(
                       leading: ImageIcon(
                         color: tripsoCubit.currentIndex == 1
-                            ? ColorsManager.secondaryColor
+                            ? ColorsManager.whiteColor
                             : ColorsManager.blackPrimary,
                         const AssetImage(
                           AssetPath.wishlistImage,
@@ -84,12 +84,12 @@ class HomeLayout extends StatelessWidget {
                       iconSize: 25.sp,
                       text: tripsoCubit.titles[tripsoCubit.currentIndex],
                       textStyle: TextStyle(
-                          fontSize: 15.sp, color: ColorsManager.secondaryColor),
+                          fontSize: 15.sp, color: ColorsManager.whiteColor),
                     ),
                     GButton(
                       leading: ImageIcon(
                         color: tripsoCubit.currentIndex == 2
-                            ? ColorsManager.secondaryColor
+                            ? ColorsManager.whiteColor
                             : ColorsManager.blackPrimary,
                         const AssetImage(
                           AssetPath.planImage,
@@ -100,7 +100,7 @@ class HomeLayout extends StatelessWidget {
                       iconSize: 25.sp,
                       text: tripsoCubit.titles[tripsoCubit.currentIndex],
                       textStyle: TextStyle(
-                          fontSize: 15.sp, color: ColorsManager.secondaryColor),
+                          fontSize: 15.sp, color: ColorsManager.whiteColor),
                     ),
                     GButton(
                       icon: Icons.person,
@@ -132,7 +132,7 @@ class HomeLayout extends StatelessWidget {
                       ),
                       text: tripsoCubit.titles[tripsoCubit.currentIndex],
                       textStyle: TextStyle(
-                          fontSize: 15.sp, color: ColorsManager.secondaryColor),
+                          fontSize: 15.sp, color: ColorsManager.whiteColor),
                     ),
                   ],
                   selectedIndex: tripsoCubit.currentIndex,

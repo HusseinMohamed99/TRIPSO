@@ -61,7 +61,7 @@ class DefaultTextFormField extends StatelessWidget {
       textAlignVertical: TextAlignVertical.center,
       style: GoogleFonts.roboto(
         fontStyle: FontStyle.normal,
-        color: styleColor ?? ColorsManager.secondaryColor,
+        color: styleColor ?? ColorsManager.whiteColor,
         fontSize: 17.sp,
         fontWeight: FontWeight.w400,
       ),
@@ -85,7 +85,7 @@ class DefaultTextFormField extends StatelessWidget {
           padding: const EdgeInsets.all(15.0).r,
           child: Icon(
             prefix,
-            color: prefixColor ?? ColorsManager.secondaryColor,
+            color: prefixColor ?? ColorsManager.whiteColor,
             size: 24.sp,
           ),
         ),
@@ -97,7 +97,7 @@ class DefaultTextFormField extends StatelessWidget {
                 },
                 icon: Icon(
                   suffix,
-                  color: ColorsManager.secondaryColor,
+                  color: ColorsManager.whiteColor,
                   size: 24.sp,
                 ),
               )
@@ -112,7 +112,7 @@ class DefaultTextFormField extends StatelessWidget {
         ),
         hintText: hint,
         hintStyle: TextStyle(
-          color: ColorsManager.secondaryColor.withOpacity(0.8),
+          color: ColorsManager.whiteColor.withOpacity(0.8),
           height: 1.h,
         ),
         labelText: label,
@@ -125,7 +125,7 @@ class DefaultTextFormField extends StatelessWidget {
             const Radius.circular(12.0).r,
           ),
           borderSide: BorderSide(
-            color: borderSideColor ?? ColorsManager.secondaryColor,
+            color: borderSideColor ?? ColorsManager.whiteColor,
           ),
         ),
         errorBorder: OutlineInputBorder(

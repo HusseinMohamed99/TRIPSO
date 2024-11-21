@@ -75,7 +75,7 @@ class EditProfile extends StatelessWidget {
                               radius: 67.r,
                               backgroundColor: ColorsManager.primaryColor,
                               child: CircleAvatar(
-                                backgroundColor: ColorsManager.secondaryColor,
+                                backgroundColor: ColorsManager.whiteColor,
                                 radius: 65.r,
                                 child: CircleAvatar(
                                   radius: 65.r,
@@ -126,7 +126,7 @@ class EditProfile extends StatelessWidget {
                                   },
                                   icon: Icon(
                                     IconlyLight.image,
-                                    color: ColorsManager.secondaryColor,
+                                    color: ColorsManager.whiteColor,
                                     size: 30.sp,
                                   ),
                                 ),
@@ -265,7 +265,7 @@ class EditProfile extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.roboto(
                               fontSize: 19.sp,
-                              color: ColorsManager.secondaryColor,
+                              color: ColorsManager.whiteColor,
                               fontWeight: FontWeight.w500,
                             ),
                           ),

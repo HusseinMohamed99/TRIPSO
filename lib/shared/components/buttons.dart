@@ -33,7 +33,7 @@ Widget defaultMaterialButton({
             isUpperCase ? text.toUpperCase() : text,
             style: GoogleFonts.roboto(
               fontSize: 19.sp,
-              color: ColorsManager.secondaryColor,
+              color: ColorsManager.whiteColor,
               fontWeight: FontWeight.w500,
             ),
           ),

@@ -133,8 +133,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                             .textTheme
                                             .displayLarge
                                             ?.copyWith(
-                                              color:
-                                                  ColorsManager.secondaryColor,
+                                              color: ColorsManager.whiteColor,
                                             ),
                                       ),
                                     ),
@@ -162,8 +161,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                             'Log Out',
                                             style: GoogleFonts.roboto(
                                               fontSize: 14.sp,
-                                              color:
-                                                  ColorsManager.secondaryColor,
+                                              color: ColorsManager.whiteColor,
                                               fontWeight: FontWeight.w500,
                                             ),
                                           ),
@@ -218,7 +216,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                     child: DropdownButton(
                                       iconSize: 20.sp,
                                       underline: const Divider(
-                                        color: ColorsManager.secondaryColor,
+                                        color: ColorsManager.whiteColor,
                                       ),
                                       icon: const Icon(
                                         Icons.keyboard_arrow_down,

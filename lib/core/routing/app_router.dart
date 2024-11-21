@@ -6,7 +6,7 @@ class AppRouters {
   AppRouters(this.sharedPrefHelper);
   Route? generateRoute(RouteSettings settings) {
     // This arguments to be passed in any screen like this ( arguments as ClassName )
-    final arguments = settings.arguments;
+    // final arguments = settings.arguments;
 
     switch (settings.name) {
       case Routes.splashScreen:
@@ -18,6 +18,14 @@ class AppRouters {
           builder: (_) => OnBoard(
             sharedPrefHelper: sharedPrefHelper,
           ),
+        );
+      case Routes.signInScreen:
+        return MaterialPageRoute(
+          builder: (_) => SignInScreen(),
+        );
+      case Routes.signUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => SignUpScreen(),
         );
     }
     return null;

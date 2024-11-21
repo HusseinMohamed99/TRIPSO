@@ -79,7 +79,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
                                 shape: const StadiumBorder(
                                   side: BorderSide(
-                                    color: ColorsManager.secondaryColor,
+                                    color: ColorsManager.whiteColor,
                                   ),
                                 ),
                                 child: IconButton(
@@ -92,7 +92,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                   icon: Icon(
                                     Icons.arrow_back,
                                     size: 24.sp,
-                                    color: ColorsManager.secondaryColor,
+                                    color: ColorsManager.whiteColor,
                                   ),
                                 ),
                               ),
@@ -107,7 +107,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                 .textTheme
                                 .displayMedium
                                 ?.copyWith(
-                                  color: ColorsManager.secondaryColor,
+                                  color: ColorsManager.whiteColor,
                                 ),
                           ),
                         ),
@@ -157,8 +157,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                               .textTheme
                                               .titleLarge
                                               ?.copyWith(
-                                                color: ColorsManager
-                                                    .secondaryColor,
+                                                color: ColorsManager.whiteColor,
                                               ),
                                         ),
                                       ],

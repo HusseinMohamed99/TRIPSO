@@ -48,24 +48,24 @@ class SearchBarItem extends StatelessWidget {
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide:
-                  BorderSide(color: styleColor ?? ColorsManager.secondaryColor),
+                  BorderSide(color: styleColor ?? ColorsManager.whiteColor),
             ),
             filled: true,
-            fillColor: ColorsManager.secondaryColor,
+            fillColor: ColorsManager.whiteColor,
             disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide:
-                  BorderSide(color: styleColor ?? ColorsManager.secondaryColor),
+                  BorderSide(color: styleColor ?? ColorsManager.whiteColor),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide:
-                  BorderSide(color: styleColor ?? ColorsManager.secondaryColor),
+                  BorderSide(color: styleColor ?? ColorsManager.whiteColor),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide:
-                  BorderSide(color: styleColor ?? ColorsManager.secondaryColor),
+                  BorderSide(color: styleColor ?? ColorsManager.whiteColor),
             ),
             hintText: title ?? 'Search',
             prefixIcon: iconData ??

@@ -61,7 +61,7 @@ class GridCitiesItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ColorsManager.secondaryColor,
+        color: ColorsManager.whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -103,7 +103,7 @@ class GridCitiesItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ColorsManager.secondaryColor,
+                    color: ColorsManager.whiteColor,
                   ),
             ),
           ],
@@ -156,7 +156,7 @@ class GridEGItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ColorsManager.secondaryColor,
+        color: ColorsManager.whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -194,7 +194,7 @@ class GridEGItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ColorsManager.secondaryColor,
+                    color: ColorsManager.whiteColor,
                   ),
             ),
           ],
@@ -247,7 +247,7 @@ class GridITItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ColorsManager.secondaryColor,
+        color: ColorsManager.whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -285,7 +285,7 @@ class GridITItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ColorsManager.secondaryColor,
+                    color: ColorsManager.whiteColor,
                   ),
             ),
           ],
@@ -338,7 +338,7 @@ class GridUAEItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ColorsManager.secondaryColor,
+        color: ColorsManager.whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -376,7 +376,7 @@ class GridUAEItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ColorsManager.secondaryColor,
+                    color: ColorsManager.whiteColor,
                   ),
             ),
           ],
@@ -429,7 +429,7 @@ class GridFRItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ColorsManager.secondaryColor,
+        color: ColorsManager.whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -467,7 +467,7 @@ class GridFRItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ColorsManager.secondaryColor,
+                    color: ColorsManager.whiteColor,
                   ),
             ),
           ],
@@ -519,7 +519,7 @@ class GridPopularItem extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.none,
         elevation: 1,
-        color: ColorsManager.secondaryColor,
+        color: ColorsManager.whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20).r,
         ),
@@ -557,7 +557,7 @@ class GridPopularItem extends StatelessWidget {
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ColorsManager.secondaryColor,
+                    color: ColorsManager.whiteColor,
                   ),
             ),
           ],

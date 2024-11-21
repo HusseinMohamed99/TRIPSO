@@ -42,7 +42,7 @@ class TopPlansScreen extends StatelessWidget {
               title: Text(
                 screenArgs.bestPLanModel.name,
                 style: GoogleFonts.roboto(
-                  color: ColorsManager.secondaryColor,
+                  color: ColorsManager.whiteColor,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.bold,
                 ),
@@ -135,7 +135,7 @@ class ListOfPlace extends StatelessWidget {
                                   child: Text(
                                     'Details',
                                     style: GoogleFonts.roboto(
-                                      color: ColorsManager.secondaryColor,
+                                      color: ColorsManager.whiteColor,
                                       fontSize: 15.sp,
                                       fontWeight: FontWeight.bold,
                                     ),

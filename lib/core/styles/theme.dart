@@ -5,8 +5,8 @@ import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 ThemeData buildLightTheme(BuildContext context) {
   return ThemeData(
     primaryColor: ColorsManager.primaryColor,
-    scaffoldBackgroundColor: ColorsManager.secondaryColor,
-    cardColor: ColorsManager.secondaryColor,
+    scaffoldBackgroundColor: ColorsManager.whiteColor,
+    cardColor: ColorsManager.whiteColor,
     appBarTheme: _buildAppBarTheme(context),
     textTheme: _buildTextTheme(context),
   );
@@ -14,13 +14,16 @@ ThemeData buildLightTheme(BuildContext context) {
 
 TextTheme _buildTextTheme(BuildContext context) {
   return TextTheme(
-    displayLarge: StyleManager.headlineLarge(context),
-    displayMedium: StyleManager.headlineMedium(context),
-    bodyLarge: StyleManager.bodyLarge(context),
-    displaySmall: StyleManager.headlineSmall(context),
+    headlineLarge: StyleManager.headlineLarge(context),
+    headlineMedium: StyleManager.headlineMedium(context),
+    headlineSmall: StyleManager.headlineSmall(context),
     titleLarge: StyleManager.titleLarge(context),
     titleMedium: StyleManager.titleMedium(context),
     titleSmall: StyleManager.titleSmall(context),
+    labelLarge: StyleManager.labelLarge(context),
+    labelMedium: StyleManager.labelMedium(context),
+    labelSmall: StyleManager.labelSmall(context),
+    bodyLarge: StyleManager.bodyLarge(context),
   );
 }
 
@@ -29,7 +32,7 @@ AppBarTheme _buildAppBarTheme(BuildContext context) {
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: ColorsManager.primaryColor,
       systemNavigationBarColor: ColorsManager.blackPrimary,
-      systemNavigationBarDividerColor: ColorsManager.secondaryColor,
+      systemNavigationBarDividerColor: ColorsManager.whiteColor,
       statusBarIconBrightness: Brightness.light,
       statusBarBrightness: Brightness.dark,
     ),

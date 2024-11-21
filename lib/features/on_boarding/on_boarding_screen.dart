@@ -38,15 +38,15 @@ class OnBoard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          _buildStyledText('BE\nREADY', ColorsManager.secondaryColor),
+          _buildStyledText('BE\nREADY', ColorsManager.whiteColor),
           Row(
             children: [
-              _buildStyledText('TO', ColorsManager.secondaryColor),
+              _buildStyledText('TO', ColorsManager.whiteColor),
               _buildStyledText('UR', ColorsManager.primaryColor),
             ],
           ),
           _buildStyledText('NEXT', ColorsManager.primaryColor),
-          _buildStyledText('ADVENTURE', ColorsManager.secondaryColor),
+          _buildStyledText('ADVENTURE', ColorsManager.whiteColor),
         ],
       );
 
