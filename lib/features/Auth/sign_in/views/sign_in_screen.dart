@@ -3,16 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/routing/routes.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/home/home_screen.dart';
 import 'package:tripso/shared/components/buttons.dart';
-import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
-import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/SignInCubit/sign_in_state.dart';
 import 'package:tripso/shared/cubit/signInCubit/sign_in_cubit.dart';
-import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
-import 'package:tripso/shared/network/cache_helper.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key, required this.sharedPrefHelper});
@@ -27,13 +22,10 @@ class SignInScreen extends StatelessWidget {
         if (state is SignInLoadingState) {
           context.showSnackBar('Loading...', color: ColorsManager.primaryColor);
         } else if (state is SignInSuccessState) {
-          context.showSnackBar('Sign in Successfully',
-              color: ColorsManager.greenColor);
-          CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
-            uId = state.uid;
-            TripsoCubit.get(context).getUserData();
-            navigateAndFinish(context, routeName: CitiesScreen.routeName);
-          });
+          context.showSnackBar(
+            'Sign in Successfully',
+            color: ColorsManager.greenColor,
+          );
         } else if (state is SignInErrorState) {
           context.showSnackBar(state.error, color: ColorsManager.redColor);
         }
