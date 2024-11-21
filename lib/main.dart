@@ -1,40 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:tripso/core/styles/theme.dart';
-import 'package:tripso/features/explore/explore.dart';
-import 'package:tripso/features/historical_city/historical_city.dart';
-import 'package:tripso/features/home/home_screen.dart';
-import 'package:tripso/features/on_boarding/on_boarding_screen.dart';
-import 'package:tripso/features/password/forget_password_screen.dart';
-import 'package:tripso/features/password/update_password_screen.dart';
-import 'package:tripso/features/plans/create_customize_plan.dart';
-import 'package:tripso/features/plans/my_plans.dart';
-import 'package:tripso/features/plans/pick_plan.dart';
-import 'package:tripso/features/plans/select_date_screen.dart';
-import 'package:tripso/features/plans/top_plans.dart';
-import 'package:tripso/features/profile/edit_profile.dart';
-import 'package:tripso/features/profile/my_profile.dart';
-import 'package:tripso/features/search/search_screen.dart';
-import 'package:tripso/features/sights/popular_sights.dart';
-import 'package:tripso/features/sights/sight_details_screen.dart';
-import 'package:tripso/features/sights/sights_screen.dart';
-import 'package:tripso/features/sign_in/sign_in_screen.dart';
-import 'package:tripso/features/sign_up/sign_up_screen.dart';
-import 'package:tripso/features/splash/splash_screen.dart';
-import 'package:tripso/features/wishlist/wishlist.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/firebase_options.dart';
-import 'package:tripso/layout/layout.dart';
 import 'package:tripso/shared/bloc_observer.dart';
 import 'package:tripso/shared/constants/constants.dart';
-import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
-import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
-import 'package:tripso/shared/service/weather_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -54,96 +28,7 @@ void main() async {
       create: (context) {
         return WeatherProvider();
       },
-      child: const MyApp(),
+      child: const TripsoApp(),
     ),
   );
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => TripsoCubit()
-            ..getUserData()
-            ..getCityData()
-            ..getDataForPlace()
-            ..getITData()
-            ..getEGData()
-            ..getFRData()
-            ..getUAEData()
-            ..getPopularData()
-            ..getBestPlan(),
-        ),
-        BlocProvider(
-          create: (context) => WeatherCubit(WeatherService()),
-        ),
-      ],
-      child: BlocConsumer<TripsoCubit, TripsoStates>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          SystemChrome.setPreferredOrientations(
-            [
-              DeviceOrientation.portraitUp,
-              DeviceOrientation.portraitDown,
-            ],
-          );
-          return ScreenUtilInit(
-            designSize: const Size(360, 690),
-            minTextAdapt: true,
-            builder: (context, child) {
-              return MediaQuery(
-                data: MediaQuery.of(context).copyWith(
-                  textScaler: const TextScaler.linear(1.0),
-                ),
-                child: MaterialApp(
-                  // Using "navigatorKey.currentState?.pushNamed(route, arguments: arguments);"
-                  navigatorKey: navigatorKey,
-                  debugShowCheckedModeBanner: false,
-                  theme: buildLightTheme(context),
-                  darkTheme: buildLightTheme(context),
-                  themeMode: ThemeMode.light,
-                  routes: routing(),
-                  initialRoute: SplashScreen.routeName,
-                ),
-              );
-            },
-          );
-        },
-      ),
-    );
-  }
-}
-
-Map<String, Widget Function(BuildContext)> routing() {
-  return {
-    OnBoard.routeName: (_) => const OnBoard(),
-    SplashScreen.routeName: (_) => const SplashScreen(),
-    CitiesScreen.routeName: (_) => const CitiesScreen(),
-    HomeLayout.routeName: (_) => const HomeLayout(),
-    SignInScreen.routeName: (_) => const SignInScreen(),
-    SignUpScreen.routeName: (_) => const SignUpScreen(),
-    ForgotPassword.routeName: (_) => const ForgotPassword(),
-    UpdatePassword.routeName: (_) => const UpdatePassword(),
-    SearchScreen.routeName: (_) => const SearchScreen(),
-    MyProfileScreen.routeName: (_) => const MyProfileScreen(),
-    WishListScreen.routeName: (_) => const WishListScreen(),
-    ExploreScreen.routeName: (_) => const ExploreScreen(),
-    MyPlansScreen.routeName: (_) => const MyPlansScreen(),
-    TopPlansScreen.routeName: (_) => const TopPlansScreen(),
-    HistoricalCity.routeName: (_) => const HistoricalCity(),
-    SightsScreen.routeName: (_) => const SightsScreen(),
-    SightDetailsScreen.routeName: (_) => const SightDetailsScreen(),
-    PopularSightsScreen.routeName: (_) => const PopularSightsScreen(),
-    EditProfile.routeName: (_) => EditProfile(),
-    PickPlans.routeName: (_) => const PickPlans(),
-    CreateCustomizePlan.routeName: (_) => const CreateCustomizePlan(),
-    SelectDateScreen.routeName: (_) => const SelectDateScreen(),
-  };
 }
