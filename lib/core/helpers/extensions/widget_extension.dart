@@ -2,8 +2,10 @@ part of './../export_manager/export_manager.dart';
 
 extension WidgetExtension on Widget {
   // Padding
-  Widget allPadding(double padding) =>
-      Padding(padding: EdgeInsets.all(padding), child: this);
+  Widget allPadding({double hPadding = 0, double vPadding = 0}) => Padding(
+      padding:
+          EdgeInsets.symmetric(horizontal: hPadding.w, vertical: vPadding.h),
+      child: this);
   Widget vPadding(double padding) =>
       Padding(padding: EdgeInsets.symmetric(vertical: padding), child: this);
 

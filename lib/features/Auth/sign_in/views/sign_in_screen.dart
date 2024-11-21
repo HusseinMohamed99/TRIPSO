@@ -24,52 +24,55 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final signInCubit = context.read<SignInCubit>();
 
-    return BlocConsumer<SignInCubit, SignInStates>(listener: (context, state) {
-      if (state is SignInLoadingState) {
-        context.showSnackBar('Loading...', color: ColorsManager.primaryColor);
-      } else if (state is SignInSuccessState) {
-        context.showSnackBar('Sign in Successfully',
-            color: ColorsManager.greenColor);
-        CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
-          uId = state.uid;
-          TripsoCubit.get(context).getUserData();
-          navigateAndFinish(context, routeName: CitiesScreen.routeName);
-        });
-      } else if (state is SignInErrorState) {
-        context.showSnackBar(state.error, color: ColorsManager.redColor);
-      }
-    }, builder: (context, state) {
-      return Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(AssetPath.signINImage),
-            fit: BoxFit.fill,
+    return BlocConsumer<SignInCubit, SignInStates>(
+      listener: (context, state) {
+        if (state is SignInLoadingState) {
+          context.showSnackBar('Loading...', color: ColorsManager.primaryColor);
+        } else if (state is SignInSuccessState) {
+          context.showSnackBar('Sign in Successfully',
+              color: ColorsManager.greenColor);
+          CacheHelper.saveData(value: state.uid, key: 'uId').then((value) {
+            uId = state.uid;
+            TripsoCubit.get(context).getUserData();
+            navigateAndFinish(context, routeName: CitiesScreen.routeName);
+          });
+        } else if (state is SignInErrorState) {
+          context.showSnackBar(state.error, color: ColorsManager.redColor);
+        }
+      },
+      builder: (context, state) {
+        return Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(AssetPath.signINImage),
+              fit: BoxFit.fill,
+            ),
           ),
-        ),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: Center(
-            child: SingleChildScrollView(
-              child: Form(
-                key: signInCubit.formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    InputField(signInCubit: signInCubit),
-                    ForgetPasswordButton(),
-                    Space(width: 0, height: 20),
-                    SingInButton(signInCubit: signInCubit),
-                    Space(width: 0, height: 10),
-                    IfHaveAccount(),
-                  ],
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: Center(
+              child: SingleChildScrollView(
+                child: Form(
+                  key: signInCubit.formKey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      InputField(signInCubit: signInCubit),
+                      ForgetPasswordButton(),
+                      Space(width: 0, height: 20),
+                      SingInButton(signInCubit: signInCubit),
+                      Space(width: 0, height: 10),
+                      IfHaveAccount(),
+                    ],
+                  ).allPadding(hPadding: 20),
                 ),
               ),
             ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 }
 
@@ -164,66 +167,56 @@ class InputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20).r,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Email Address',
-            style: TextStyle(
-              color: ColorsManager.whiteColor,
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Email Address',
+          style: context.labelLarge!.copyWith(
+            color: ColorsManager.whiteColor,
           ),
-          Space(width: 0.w, height: 8.h),
-          DefaultTextFormField(
-            color: ColorsManager.whiteColor.withOpacity(0.3),
-            context: context,
-            controller: signInCubit.emailController,
-            keyboardType: TextInputType.emailAddress,
-            validate: (String? value) {
-              if (value!.trim().isEmpty) {
-                return 'Email Address is Required';
-              }
-              return null;
-            },
-            hint: 'Email Address',
-            prefix: Icons.alternate_email,
+        ).onlyPadding(bottomPadding: 8),
+        DefaultTextFormField(
+          color: ColorsManager.whiteColor.withOpacity(0.3),
+          context: context,
+          controller: signInCubit.emailController,
+          keyboardType: TextInputType.emailAddress,
+          validate: (String? value) {
+            if (value!.trim().isEmpty) {
+              return 'Email Address is Required';
+            }
+            return null;
+          },
+          hint: 'Email Address',
+          prefix: Icons.alternate_email,
+        ).onlyPadding(bottomPadding: 20),
+        Text(
+          'Password',
+          style: context.labelLarge!.copyWith(
+            color: ColorsManager.whiteColor,
           ),
-          Space(width: 0.w, height: 26.h),
-          Text(
-            'Password',
-            style: TextStyle(
-              color: ColorsManager.whiteColor,
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          Space(width: 0.w, height: 8.h),
-          DefaultTextFormField(
-            color: ColorsManager.whiteColor.withOpacity(0.3),
-            context: context,
-            controller: signInCubit.passwordController,
-            obscuringCharacter: '*',
-            keyboardType: TextInputType.visiblePassword,
-            validate: (String? value) {
-              if (value!.trim().isEmpty) {
-                return 'Password is Required';
-              }
-              return null;
-            },
-            prefix: Icons.lock_outline_sharp,
-            suffix: signInCubit.suffix,
-            isPassword: signInCubit.isPassword,
-            suffixPressed: () {
-              signInCubit.showPassword();
-            },
-            hint: 'Enter Password',
-          ),
-        ],
-      ),
+        ).onlyPadding(bottomPadding: 8),
+        DefaultTextFormField(
+          color: ColorsManager.whiteColor.withOpacity(0.3),
+          context: context,
+          controller: signInCubit.passwordController,
+          obscuringCharacter: '*',
+          keyboardType: TextInputType.visiblePassword,
+          validate: (String? value) {
+            if (value!.trim().isEmpty) {
+              return 'Password is Required';
+            }
+            return null;
+          },
+          prefix: Icons.lock_outline_sharp,
+          suffix: signInCubit.suffix,
+          isPassword: signInCubit.isPassword,
+          suffixPressed: () {
+            signInCubit.showPassword();
+          },
+          hint: 'Enter Password',
+        ).onlyPadding(bottomPadding: 20),
+      ],
     );
   }
 }

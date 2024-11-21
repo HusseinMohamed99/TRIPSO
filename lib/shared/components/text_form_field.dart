@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 
 class DefaultTextFormField extends StatelessWidget {
@@ -59,11 +58,8 @@ class DefaultTextFormField extends StatelessWidget {
       maxLength: maxLength,
       focusNode: focusNode,
       textAlignVertical: TextAlignVertical.center,
-      style: GoogleFonts.roboto(
-        fontStyle: FontStyle.normal,
-        color: styleColor ?? ColorsManager.whiteColor,
-        fontSize: 17.sp,
-        fontWeight: FontWeight.w400,
+      style: context.labelLarge!.copyWith(
+        color: ColorsManager.blackPrimary,
       ),
       maxLines: 1,
       minLines: 1,
@@ -77,21 +73,19 @@ class DefaultTextFormField extends StatelessWidget {
       obscureText: isPassword ?? false,
       keyboardType: keyboardType,
       autofocus: false,
+      cursorColor: ColorsManager.primaryColor,
+      cursorErrorColor: ColorsManager.redColor,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.fromLTRB(20, 8, 8, 20).r,
         fillColor: color,
         filled: true,
-        prefixIcon: Padding(
-          padding: const EdgeInsets.all(15.0).r,
-          child: Icon(
-            prefix,
-            color: prefixColor ?? ColorsManager.whiteColor,
-            size: 24.sp,
-          ),
-        ),
+        prefixIcon: Icon(
+          prefix,
+          color: prefixColor ?? ColorsManager.whiteColor,
+          size: 24.sp,
+        ).allPadding(vPadding: 6, hPadding: 10),
         suffixIcon: suffix != null
             ? IconButton(
-                padding: const EdgeInsets.all(15.0).r,
                 onPressed: () {
                   suffixPressed!();
                 },
@@ -100,25 +94,23 @@ class DefaultTextFormField extends StatelessWidget {
                   color: ColorsManager.whiteColor,
                   size: 24.sp,
                 ),
-              )
+              ).allPadding(vPadding: 6, hPadding: 10)
             : null,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
             const Radius.circular(12.0).r,
           ),
-          borderSide: const BorderSide(
-            color: Colors.black,
+          borderSide: BorderSide(
+            color: ColorsManager.blackPrimary,
           ),
         ),
         hintText: hint,
-        hintStyle: TextStyle(
-          color: ColorsManager.whiteColor.withOpacity(0.8),
-          height: 1.h,
+        hintStyle: context.labelLarge!.copyWith(
+          color: ColorsManager.whiteColor,
         ),
         labelText: label,
-        labelStyle: TextStyle(
-          color: ColorsManager.primaryColor,
-          height: 1.h,
+        labelStyle: context.labelLarge!.copyWith(
+          color: ColorsManager.whiteColor,
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
