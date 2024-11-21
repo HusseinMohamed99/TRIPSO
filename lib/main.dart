@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:tripso/core/helpers/constants/constants.dart';
+import 'package:tripso/core/helpers/constants/keys.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/firebase_options.dart';
 import 'package:tripso/shared/bloc_observer.dart';
@@ -12,9 +14,8 @@ import 'package:tripso/shared/network/cache_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await ScreenUtil.ensureScreenSize();
+  await _initServices();
   await _initializeFirebase();
-  Bloc.observer = MyBlocObserver();
 
   await CacheHelper.init();
 
@@ -36,4 +37,31 @@ Future<FirebaseApp> _initializeFirebase() {
   return Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+}
+
+Future<void> _initServices() async {
+  // To fix texts being hidden bug in flutter_screenutil in release MODE.
+  await ScreenUtil.ensureScreenSize();
+  Bloc.observer = MyBlocObserver();
+  await checkIfLoggedInUser();
+  await checkIfOnBoarding();
+}
+
+checkIfLoggedInUser() async {
+  String? userToken =
+      await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+  if (!userToken.isNullOrEmpty()) {
+    isLoggedInUser = true;
+  } else {
+    isLoggedInUser = false;
+  }
+}
+
+checkIfOnBoarding() async {
+  bool onBoarding = await SharedPrefHelper.getBool(SharedPrefKeys.onBoarding);
+  if (!onBoarding.isNullOrEmpty()) {
+    onBoardingView = true;
+  } else {
+    onBoardingView = false;
+  }
 }

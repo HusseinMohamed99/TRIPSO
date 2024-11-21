@@ -1,10 +1,5 @@
 part of '../../helpers/export_manager/export_manager.dart';
 
-const String prefsKeyTheme = "PREFS_KEY_THEME";
-const String prefsKeyOnBoardingScreenViewed =
-    "PREFS_KEY_ON_BOARDING_SCREEN_VIEWED";
-const String prefsKeyIsUserLoggedIn = "PREFS_KEY_IS_USER_LOGGED_IN";
-
 /// Utility class for managing SharedPreferences and FlutterSecureStorage operations.
 class SharedPrefHelper {
   // Private constructor to prevent instantiation.

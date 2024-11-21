@@ -1,8 +1,12 @@
-class Constants {
-  static const String baseUrl = "";
-  static const String key = "";
-  static const String empty = "";
-  static const int zero = 0;
-  static const String token = "SEND TOKEN HERE";
-  static const int apiTimeOut = 60000;
-}
+const String baseUrl = "";
+const String key = "";
+const String empty = "";
+const int zero = 0;
+const int apiTimeOut = 60000;
+late String appName;
+late String packageName;
+late String version;
+late String buildNumber;
+
+bool isLoggedInUser = false;
+bool onBoardingView = false;
