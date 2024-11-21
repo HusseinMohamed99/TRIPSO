@@ -1,4 +1,3 @@
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -129,161 +128,151 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                         }),
                   ),
                 ),
-                ConditionalBuilder(
-                    condition: cubit.allPlan.isNotEmpty,
-                    builder: (context) {
-                      return Expanded(
-                        child: SingleChildScrollView(
-                          child: Column(
-                            children: [
-                              ListView.separated(
-                                padding: const EdgeInsets.all(10).r,
-                                physics: const NeverScrollableScrollPhysics(),
-                                shrinkWrap: true,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return DaysOfItems(
-                                    planModel: cubit.allPlan[index],
-                                    cityModel: tripsoCubit!,
-                                    current: current + 1,
-                                  );
-                                },
-                                separatorBuilder: (context, index) {
-                                  return Row(
+                if (cubit.allPlan.isNotEmpty)
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          ListView.separated(
+                            padding: const EdgeInsets.all(10).r,
+                            physics: const NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemBuilder: (BuildContext context, int index) {
+                              return DaysOfItems(
+                                planModel: cubit.allPlan[index],
+                                cityModel: tripsoCubit!,
+                                current: current + 1,
+                              );
+                            },
+                            separatorBuilder: (context, index) {
+                              return Row(
+                                children: [
+                                  Column(
                                     children: [
-                                      Column(
-                                        children: [
-                                          Container(
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  ColorsManager.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                          Container(
-                                            margin: const EdgeInsets.symmetric(
-                                                    horizontal: 50, vertical: 2)
-                                                .r,
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  ColorsManager.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                          Container(
-                                            margin: const EdgeInsets.symmetric(
-                                                    horizontal: 50, vertical: 2)
-                                                .r,
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  ColorsManager.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                          Icon(
-                                            Icons.free_breakfast_outlined,
-                                            color: Colors.white,
-                                            size: 25.sp,
-                                          ),
-                                          Container(
-                                            margin: const EdgeInsets.symmetric(
-                                              horizontal: 50,
-                                              vertical: 2,
-                                            ).r,
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  ColorsManager.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                          Container(
-                                            margin: const EdgeInsets.symmetric(
-                                              horizontal: 50,
-                                              vertical: 2,
-                                            ).r,
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  ColorsManager.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                          Container(
-                                            margin: const EdgeInsets.symmetric(
-                                              horizontal: 50,
-                                              vertical: 2,
-                                            ).r,
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  ColorsManager.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                        ],
+                                      Container(
+                                        width: 5.w,
+                                        height: 5.h,
+                                        decoration: BoxDecoration(
+                                          color: ColorsManager.secondaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(5).r,
+                                        ),
                                       ),
-                                      Text(
-                                        '30 mins Break',
-                                        style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15.sp,
+                                      Container(
+                                        margin: const EdgeInsets.symmetric(
+                                                horizontal: 50, vertical: 2)
+                                            .r,
+                                        width: 5.w,
+                                        height: 5.h,
+                                        decoration: BoxDecoration(
+                                          color: ColorsManager.secondaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(5).r,
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: const EdgeInsets.symmetric(
+                                                horizontal: 50, vertical: 2)
+                                            .r,
+                                        width: 5.w,
+                                        height: 5.h,
+                                        decoration: BoxDecoration(
+                                          color: ColorsManager.secondaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(5).r,
+                                        ),
+                                      ),
+                                      Icon(
+                                        Icons.free_breakfast_outlined,
+                                        color: Colors.white,
+                                        size: 25.sp,
+                                      ),
+                                      Container(
+                                        margin: const EdgeInsets.symmetric(
+                                          horizontal: 50,
+                                          vertical: 2,
+                                        ).r,
+                                        width: 5.w,
+                                        height: 5.h,
+                                        decoration: BoxDecoration(
+                                          color: ColorsManager.secondaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(5).r,
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: const EdgeInsets.symmetric(
+                                          horizontal: 50,
+                                          vertical: 2,
+                                        ).r,
+                                        width: 5.w,
+                                        height: 5.h,
+                                        decoration: BoxDecoration(
+                                          color: ColorsManager.secondaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(5).r,
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: const EdgeInsets.symmetric(
+                                          horizontal: 50,
+                                          vertical: 2,
+                                        ).r,
+                                        width: 5.w,
+                                        height: 5.h,
+                                        decoration: BoxDecoration(
+                                          color: ColorsManager.secondaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(5).r,
                                         ),
                                       ),
                                     ],
-                                  );
-                                },
-                                itemCount: cubit.allPlan.length,
-                              )
-                            ],
+                                  ),
+                                  Text(
+                                    '30 mins Break',
+                                    style: GoogleFonts.roboto(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15.sp,
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                            itemCount: cubit.allPlan.length,
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                else
+                  Center(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 100.h,
+                        ),
+                        Container(
+                          width: double.infinity,
+                          height: 220.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18).r,
+                            image: const DecorationImage(
+                              image: AssetImage(AssetPath.emptyImage),
+                            ),
                           ),
                         ),
-                      );
-                    },
-                    fallback: (context) {
-                      return Center(
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 100.h,
-                            ),
-                            Container(
-                              width: double.infinity,
-                              height: 220.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(18).r,
-                                image: const DecorationImage(
-                                  image: AssetImage(AssetPath.emptyImage),
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'Your ${tripsoCubit!.name} Plan is Empty',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17.sp,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
+                        Text(
+                          'Your ${tripsoCubit!.name} Plan is Empty',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 17.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      );
-                    })
+                      ],
+                    ),
+                  ),
               ],
             ),
           ),
