@@ -6,7 +6,6 @@ import 'package:tripso/core/styles/asset_path.dart';
 import 'package:tripso/features/Auth/sign_up/sign_up_screen.dart';
 import 'package:tripso/features/home/home_screen.dart';
 import 'package:tripso/features/password/forget_password_screen.dart';
-import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
@@ -49,155 +48,20 @@ class SignInScreen extends StatelessWidget {
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: secondaryAppBar(),
           body: Center(
-            child: Form(
-              key: signInCubit.formKey,
-              child: SingleChildScrollView(
+            child: SingleChildScrollView(
+              child: Form(
+                key: signInCubit.formKey,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 20).r,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Email Address',
-                                  style: TextStyle(
-                                    color: ColorsManager.whiteColor,
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Space(width: 0.w, height: 8.h),
-                                DefaultTextFormField(
-                                  color:
-                                      ColorsManager.whiteColor.withOpacity(0.3),
-                                  context: context,
-                                  controller: signInCubit.emailController,
-                                  keyboardType: TextInputType.emailAddress,
-                                  validate: (String? value) {
-                                    if (value!.trim().isEmpty) {
-                                      return 'Email Address is Required';
-                                    }
-                                    return null;
-                                  },
-                                  hint: 'Email Address',
-                                  prefix: Icons.alternate_email,
-                                ),
-                                Space(width: 0.w, height: 26.h),
-                                Text(
-                                  'Password',
-                                  style: TextStyle(
-                                    color: ColorsManager.whiteColor,
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Space(width: 0.w, height: 8.h),
-                                DefaultTextFormField(
-                                  color:
-                                      ColorsManager.whiteColor.withOpacity(0.3),
-                                  context: context,
-                                  controller: signInCubit.passwordController,
-                                  obscuringCharacter: '*',
-                                  keyboardType: TextInputType.visiblePassword,
-                                  validate: (String? value) {
-                                    if (value!.trim().isEmpty) {
-                                      return 'Password is Required';
-                                    }
-                                    return null;
-                                  },
-                                  prefix: Icons.lock_outline_sharp,
-                                  suffix: signInCubit.suffix,
-                                  isPassword: signInCubit.isPassword,
-                                  suffixPressed: () {
-                                    signInCubit.showPassword();
-                                  },
-                                  hint: 'Enter Password',
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 20).r,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                TextButton(
-                                  onPressed: () {
-                                    navigateTo(context,
-                                        routeName: ForgotPassword.routeName);
-                                  },
-                                  child: Text(
-                                    'Forgot Password ?',
-                                    style: TextStyle(
-                                        color: ColorsManager.primaryColor,
-                                        fontSize: 15.sp),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Space(width: 0.w, height: 20.h),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: DefaultMaterialButton(
-                            context: context,
-                            function: () {
-                              if (signInCubit.formKey.currentState!
-                                  .validate()) {
-                                signInCubit.userSignIn(
-                                  email: signInCubit.emailController.text,
-                                  password: signInCubit.passwordController.text,
-                                );
-                              }
-                            },
-                            text: 'Sign in',
-                            color: ColorsManager.primaryColor,
-                          ),
-                        ),
-                        Space(width: 0.w, height: 10.h),
-                        Padding(
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 20.0).r,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Don\'t have an account?',
-                                style: TextStyle(
-                                    color: ColorsManager.whiteColor,
-                                    fontSize: 15.sp),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  navigateTo(context,
-                                      routeName: SignUpScreen.routeName);
-                                },
-                                child: Text(
-                                  'SignUp Now!',
-                                  style: TextStyle(
-                                      color: ColorsManager.primaryColor,
-                                      fontSize: 15.sp),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    InputField(signInCubit: signInCubit),
+                    ForgetPasswordButton(),
+                    Space(width: 0, height: 20),
+                    SingInButton(signInCubit: signInCubit),
+                    Space(width: 0, height: 10),
+                    IfHaveAccount(),
                   ],
                 ),
               ),
@@ -206,5 +70,160 @@ class SignInScreen extends StatelessWidget {
         ),
       );
     });
+  }
+}
+
+class SingInButton extends StatelessWidget {
+  const SingInButton({
+    super.key,
+    required this.signInCubit,
+  });
+
+  final SignInCubit signInCubit;
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultMaterialButton(
+      context: context,
+      function: () {
+        if (signInCubit.formKey.currentState!.validate()) {
+          signInCubit.userSignIn(
+            email: signInCubit.emailController.text,
+            password: signInCubit.passwordController.text,
+          );
+        }
+      },
+      text: 'Sign in',
+      color: ColorsManager.primaryColor,
+    );
+  }
+}
+
+class IfHaveAccount extends StatelessWidget {
+  const IfHaveAccount({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            'Don\'t have an account?',
+            style: TextStyle(color: ColorsManager.whiteColor, fontSize: 15.sp),
+          ),
+          TextButton(
+            onPressed: () {
+              navigateTo(context, routeName: SignUpScreen.routeName);
+            },
+            child: Text(
+              'SignUp Now!',
+              style:
+                  TextStyle(color: ColorsManager.primaryColor, fontSize: 15.sp),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ForgetPasswordButton extends StatelessWidget {
+  const ForgetPasswordButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      style: TextButton.styleFrom(
+        alignment: Alignment.centerRight,
+        padding: const EdgeInsets.symmetric(horizontal: 20).r,
+      ),
+      onPressed: () {
+        navigateTo(context, routeName: ForgotPassword.routeName);
+      },
+      child: Text(
+        'Forgot Password ?',
+        style: TextStyle(color: ColorsManager.primaryColor, fontSize: 15.sp),
+      ),
+    );
+  }
+}
+
+class InputField extends StatelessWidget {
+  const InputField({
+    super.key,
+    required this.signInCubit,
+  });
+
+  final SignInCubit signInCubit;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20).r,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Email Address',
+            style: TextStyle(
+              color: ColorsManager.whiteColor,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          Space(width: 0.w, height: 8.h),
+          DefaultTextFormField(
+            color: ColorsManager.whiteColor.withOpacity(0.3),
+            context: context,
+            controller: signInCubit.emailController,
+            keyboardType: TextInputType.emailAddress,
+            validate: (String? value) {
+              if (value!.trim().isEmpty) {
+                return 'Email Address is Required';
+              }
+              return null;
+            },
+            hint: 'Email Address',
+            prefix: Icons.alternate_email,
+          ),
+          Space(width: 0.w, height: 26.h),
+          Text(
+            'Password',
+            style: TextStyle(
+              color: ColorsManager.whiteColor,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          Space(width: 0.w, height: 8.h),
+          DefaultTextFormField(
+            color: ColorsManager.whiteColor.withOpacity(0.3),
+            context: context,
+            controller: signInCubit.passwordController,
+            obscuringCharacter: '*',
+            keyboardType: TextInputType.visiblePassword,
+            validate: (String? value) {
+              if (value!.trim().isEmpty) {
+                return 'Password is Required';
+              }
+              return null;
+            },
+            prefix: Icons.lock_outline_sharp,
+            suffix: signInCubit.suffix,
+            isPassword: signInCubit.isPassword,
+            suffixPressed: () {
+              signInCubit.showPassword();
+            },
+            hint: 'Enter Password',
+          ),
+        ],
+      ),
+    );
   }
 }
