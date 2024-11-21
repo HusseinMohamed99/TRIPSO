@@ -12,11 +12,8 @@ import 'package:tripso/shared/network/cache_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  ScreenUtil.ensureScreenSize();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
+  await ScreenUtil.ensureScreenSize();
+  await _initializeFirebase();
   Bloc.observer = MyBlocObserver();
 
   await CacheHelper.init();
@@ -30,5 +27,11 @@ void main() async {
       },
       child: const TripsoApp(),
     ),
+  );
+}
+
+Future<FirebaseApp> _initializeFirebase() {
+  return Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 }
