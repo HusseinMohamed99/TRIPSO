@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
+import 'package:tripso/core/routing/routes.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/Auth/sign_up/sign_up_screen.dart';
 import 'package:tripso/features/home/home_screen.dart';
-import 'package:tripso/features/password/forget_password_screen.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
@@ -109,27 +107,25 @@ class IfHaveAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            'Don\'t have an account?',
-            style: TextStyle(color: ColorsManager.whiteColor, fontSize: 15.sp),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(
+          'Don\'t have an account?',
+          style: context.labelLarge!.copyWith(
+            color: ColorsManager.whiteColor,
           ),
-          TextButton(
-            onPressed: () {
-              navigateTo(context, routeName: SignUpScreen.routeName);
-            },
-            child: Text(
-              'SignUp Now!',
-              style:
-                  TextStyle(color: ColorsManager.primaryColor, fontSize: 15.sp),
-            ),
+        ),
+        TextButton(
+          onPressed: () {
+            context.pushNamed(Routes.signUpScreen);
+          },
+          child: Text(
+            'SignUp Now !',
+            style: context.labelLarge,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -144,14 +140,14 @@ class ForgetPasswordButton extends StatelessWidget {
     return TextButton(
       style: TextButton.styleFrom(
         alignment: Alignment.centerRight,
-        padding: const EdgeInsets.symmetric(horizontal: 20).r,
+        padding: EdgeInsets.zero,
       ),
       onPressed: () {
-        navigateTo(context, routeName: ForgotPassword.routeName);
+        context.pushNamed(Routes.forgetPassword);
       },
       child: Text(
         'Forgot Password ?',
-        style: TextStyle(color: ColorsManager.primaryColor, fontSize: 15.sp),
+        style: context.labelLarge,
       ),
     );
   }
@@ -209,7 +205,7 @@ class InputField extends StatelessWidget {
             signInCubit.showPassword();
           },
           hint: 'Enter Password',
-        ).onlyPadding(bottomPadding: 20),
+        ),
       ],
     );
   }

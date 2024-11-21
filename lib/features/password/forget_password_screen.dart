@@ -17,8 +17,6 @@ import 'package:tripso/shared/cubit/restPasswordCubit/rest_password_state.dart';
 enum AuthMode { forgot, verify }
 
 class ForgotPassword extends StatefulWidget {
-  static const String routeName = 'forget_password_screen';
-
   const ForgotPassword({super.key});
 
   @override

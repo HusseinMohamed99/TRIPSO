@@ -32,6 +32,10 @@ class AppRouters {
         return MaterialPageRoute(
           builder: (_) => SignUpScreen(),
         );
+      case Routes.forgetPassword:
+        return MaterialPageRoute(
+          builder: (_) => ForgotPassword(),
+        );
     }
     return null;
   }

@@ -3,4 +3,5 @@ class Routes {
   static const onBoardingView = '/onBoardingView';
   static const signInScreen = '/sign In';
   static const signUpScreen = '/sign Up';
+  static const forgetPassword = '/forgetPassword';
 }

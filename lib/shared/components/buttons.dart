@@ -37,16 +37,12 @@ class DefaultMaterialButton extends StatelessWidget {
       ),
       child: MaterialButton(
         clipBehavior: Clip.antiAliasWithSaveLayer,
-        height: 22.h,
-        minWidth: 59.w,
         onPressed: function,
-        child: FittedBox(
-          child: Text(
-            textAlign: TextAlign.center,
-            isUpperCase ? text.toUpperCase() : text,
-            style: context.titleLarge!.copyWith(
-              color: ColorsManager.whiteColor,
-            ),
+        child: Text(
+          textAlign: TextAlign.center,
+          isUpperCase ? text.toUpperCase() : text,
+          style: context.titleMedium!.copyWith(
+            color: ColorsManager.whiteColor,
           ),
         ),
       ),
