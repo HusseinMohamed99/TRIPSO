@@ -6,7 +6,6 @@ abstract class StyleManager {
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s32),
-      height: 1.125.h,
       color: ColorsManager.primaryColor,
     );
   }
@@ -16,7 +15,6 @@ abstract class StyleManager {
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s30),
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
-      height: 1.13.h,
       color: ColorsManager.primaryColor,
     );
   }
@@ -26,7 +24,6 @@ abstract class StyleManager {
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s28),
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
-      height: 1.14.h,
       color: ColorsManager.primaryColor,
     );
   }
@@ -36,7 +33,6 @@ abstract class StyleManager {
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s24),
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
-      height: 1.17.h,
       color: ColorsManager.primaryColor,
     );
   }
@@ -46,7 +42,6 @@ abstract class StyleManager {
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s20),
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
-      height: 1.2.h,
       color: ColorsManager.primaryColor,
     );
   }
@@ -56,7 +51,6 @@ abstract class StyleManager {
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s18),
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
-      height: 1.22.h,
       color: ColorsManager.primaryColor,
     );
   }
@@ -66,7 +60,6 @@ abstract class StyleManager {
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s16),
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
-      height: 1.25.h,
       color: ColorsManager.primaryColor,
     );
   }
@@ -76,7 +69,6 @@ abstract class StyleManager {
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s14),
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
-      height: 1.28.h,
       color: ColorsManager.primaryColor,
     );
   }
@@ -86,7 +78,6 @@ abstract class StyleManager {
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s12),
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
-      height: 1.33.h,
       color: ColorsManager.primaryColor,
     );
   }
@@ -96,7 +87,6 @@ abstract class StyleManager {
       fontSize: getResponsiveFontSize(context, fontSize: FontSizeHelper.s10),
       fontWeight: FontWeightHelper.regular,
       fontFamily: FontFamilyHelper.standardFont,
-      height: 1.4.h,
       color: ColorsManager.primaryColor,
     );
   }

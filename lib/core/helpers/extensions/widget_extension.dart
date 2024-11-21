@@ -12,9 +12,9 @@ extension WidgetExtension on Widget {
 
   Widget onlyPadding({
     double topPadding = 0,
-    bottomPadding = 0,
-    leftPadding = 0,
-    rightPadding = 0,
+    double bottomPadding = 0,
+    double leftPadding = 0,
+    double rightPadding = 0,
   }) =>
       Padding(
         padding: EdgeInsets.only(
