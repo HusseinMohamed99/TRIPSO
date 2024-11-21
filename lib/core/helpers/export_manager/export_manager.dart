@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tripso/core/helpers/string_manager/validation_message.dart';
+import 'package:tripso/core/routing/routes.dart';
 import 'package:tripso/core/styles/font_family.dart';
 import 'package:tripso/core/styles/theme.dart';
 import 'package:tripso/features/explore/explore.dart';
@@ -36,6 +37,7 @@ import 'package:tripso/shared/service/weather_service.dart';
 
 part '../../networking/cache_helper/shared_pref_helper.dart';
 part './../../../tripso_app.dart';
+part './../../routing/app_router.dart';
 part './../../styles/colors.dart';
 part './../../styles/font_size.dart';
 part './../../styles/font_weight.dart';

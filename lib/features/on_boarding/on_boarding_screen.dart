@@ -11,8 +11,6 @@ import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 
 class OnBoard extends StatelessWidget {
-  static const String routeName = 'onBoard_screen';
-
   const OnBoard({super.key});
 
   @override

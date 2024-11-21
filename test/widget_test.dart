@@ -7,12 +7,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:tripso/main.dart';
+import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const TripsoApp());
+    await tester.pumpWidget(TripsoApp(
+      appRouter: AppRouters(),
+    ));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

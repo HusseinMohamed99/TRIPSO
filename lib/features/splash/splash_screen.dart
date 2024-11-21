@@ -15,8 +15,6 @@ import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 
 class SplashScreen extends StatelessWidget {
-  static const String routeName = 'splash_screen';
-
   const SplashScreen({super.key});
 
   @override

@@ -1,7 +1,8 @@
 part of './core/helpers/export_manager/export_manager.dart';
 
 class TripsoApp extends StatelessWidget {
-  const TripsoApp({super.key});
+  const TripsoApp({super.key, required this.appRouter});
+  final AppRouters appRouter;
 
   // This widget is the root of your application.
   @override
@@ -50,8 +51,8 @@ class TripsoApp extends StatelessWidget {
                   theme: buildLightTheme(context),
                   darkTheme: buildLightTheme(context),
                   themeMode: ThemeMode.light,
-                  routes: routing(),
-                  initialRoute: SplashScreen.routeName,
+                  initialRoute: Routes.splashScreen,
+                  onGenerateRoute: appRouter.generateRoute,
                 ),
               );
             },
@@ -64,8 +65,6 @@ class TripsoApp extends StatelessWidget {
 
 Map<String, Widget Function(BuildContext)> routing() {
   return {
-    OnBoard.routeName: (_) => const OnBoard(),
-    SplashScreen.routeName: (_) => const SplashScreen(),
     CitiesScreen.routeName: (_) => const CitiesScreen(),
     HomeLayout.routeName: (_) => const HomeLayout(),
     SignInScreen.routeName: (_) => const SignInScreen(),

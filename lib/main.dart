@@ -25,7 +25,9 @@ void main() async {
       create: (context) {
         return WeatherProvider();
       },
-      child: const TripsoApp(),
+      child: TripsoApp(
+        appRouter: AppRouters(),
+      ),
     ),
   );
 }

@@ -9,7 +9,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tripso/features/explore/explore.dart';
-import 'package:tripso/features/on_boarding/on_boarding_screen.dart';
 import 'package:tripso/features/plans/my_plans.dart';
 import 'package:tripso/features/profile/my_profile.dart';
 import 'package:tripso/features/wishlist/wishlist.dart';
@@ -19,7 +18,6 @@ import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/plan_model.dart';
 import 'package:tripso/model/user_model.dart';
 import 'package:tripso/model/wishlist_model.dart';
-import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
@@ -316,7 +314,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     await FirebaseAuth.instance.currentUser!.delete().then((value) async {
       await FirebaseFirestore.instance.collection('users').doc(uId).delete();
       CacheHelper.removeData(key: 'uId');
-      navigateAndFinish(context, routeName: OnBoard.routeName);
+      // navigateAndFinish(context, routeName: OnBoard.routeName);
     });
   }
 
