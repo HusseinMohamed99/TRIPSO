@@ -1,6 +1,6 @@
 class ValidationMessage {
   // Email Validation
-  static const String emailValid = 'Please enter a valid email';
+  static const String emailValid = 'Email cannot be empty';
   static const String verifyEmailValid =
       'Please enter the 4-digit code sent to your email';
 
@@ -19,13 +19,6 @@ class ValidationMessage {
       'Include at least one special character';
   static const String updatePasswordSuccessfully =
       'Password updated successfully!';
-  static const String passwordRequirements = 'Password Requirements:';
-  static const String passwordRequirements1 = 'Use lowercase letters';
-  static const String passwordRequirements2 = 'Use uppercase letters';
-  static const String passwordRequirements3 =
-      'Include a special character (&, %, etc.)';
-  static const String passwordRequirements4 = 'Add at least one number';
-  static const String passwordRequirements5 = 'Minimum 8 characters';
 
   // OTP Validation
   static const String otpValid = 'Please enter a valid OTP';
