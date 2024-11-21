@@ -1,10 +1,15 @@
 part of './../export_manager/export_manager.dart';
 
 extension SnackBarExtension on BuildContext {
-  void showSnackBar(String message) {
+  void showSnackBar(String message, {Color? color}) {
     ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
-        content: Text(message),
+        content: Text(
+          message,
+          style: labelLarge!.copyWith(
+            color: color,
+          ),
+        ),
       ),
     );
   }
@@ -16,8 +21,11 @@ onTap(BuildContext context) {
 
   // Instead Of
   ScaffoldMessenger.of(context).showSnackBar(
-    const SnackBar(
-      content: Text('Tapped'),
+    SnackBar(
+      content: Text(
+        'Tapped',
+        style: context.labelLarge,
+      ),
     ),
   );
 }

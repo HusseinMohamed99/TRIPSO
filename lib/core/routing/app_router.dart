@@ -21,8 +21,11 @@ class AppRouters {
         );
       case Routes.signInScreen:
         return MaterialPageRoute(
-          builder: (_) => SignInScreen(
-            sharedPrefHelper: sharedPrefHelper,
+          builder: (_) => BlocProvider(
+            create: (BuildContext context) => SignInCubit(),
+            child: SignInScreen(
+              sharedPrefHelper: sharedPrefHelper,
+            ),
           ),
         );
       case Routes.signUpScreen:
