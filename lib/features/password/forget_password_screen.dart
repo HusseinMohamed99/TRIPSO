@@ -73,7 +73,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       assetImage(),
                       formField(),
                       Space(width: 0, height: 20.h),
-                      defaultMaterialButton(
+                      DefaultMaterialButton(
+                        context: context,
                         function: () {
                           if (forgetFormKey.currentState!.validate()) {
                             ResetPasswordCubit.get(context).resetPassword(

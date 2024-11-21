@@ -1,26 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 
-Widget defaultMaterialButton({
-  required Function() function,
-  required String text,
-  double? width,
-  double? height,
-  double? radius,
-  bool isUpperCase = false,
-  Color? color,
-  Function? onTap,
-}) =>
-    Container(
-      width: width?.w ?? 320.w,
-      height: height?.h ?? 40.h,
+class DefaultMaterialButton extends StatelessWidget {
+  final Function() function;
+  final String text;
+  final BuildContext context;
+  final double? width;
+  final double? height;
+  final double? radius;
+  final bool isUpperCase;
+  final Color? color;
+  final Function? onTap;
+
+  const DefaultMaterialButton({
+    super.key,
+    required this.function,
+    required this.text,
+    required this.context,
+    this.width,
+    this.height,
+    this.radius,
+    this.isUpperCase = false,
+    this.color,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width ?? 320.w,
+      height: height ?? 40.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-          radius?.r ?? 10.r,
-        ),
-        color: color,
+        borderRadius: BorderRadius.circular(radius ?? 10.r),
+        color: color ?? ColorsManager.primaryColor,
       ),
       child: MaterialButton(
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -31,15 +44,15 @@ Widget defaultMaterialButton({
           child: Text(
             textAlign: TextAlign.center,
             isUpperCase ? text.toUpperCase() : text,
-            style: GoogleFonts.roboto(
-              fontSize: 19.sp,
+            style: context.titleLarge!.copyWith(
               color: ColorsManager.whiteColor,
-              fontWeight: FontWeight.w500,
             ),
           ),
         ),
       ),
     );
+  }
+}
 
 Widget defaultButton({
   required Function() function,

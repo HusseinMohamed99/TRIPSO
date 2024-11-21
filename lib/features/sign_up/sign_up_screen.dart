@@ -255,8 +255,9 @@ class SignUpScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Space(width: 0.w, height: 30.h),
-                        defaultMaterialButton(
+                        Space(width: 0.w, height: 30),
+                        DefaultMaterialButton(
+                          context: context,
                           function: () {
                             if (formKey.currentState!.validate()) {
                               SignUpCubit.get(context).userSignUp(

@@ -8,14 +8,16 @@ class BuildActionButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        defaultMaterialButton(
+        DefaultMaterialButton(
+          context: context,
           function: () =>
               _navigateTo(context, Routes.signInScreen, sharedPrefHelper),
           text: 'Sign in',
           color: ColorsManager.primaryColor,
         ),
         Space(height: 20, width: 0), // Adjusted for better spacing
-        defaultMaterialButton(
+        DefaultMaterialButton(
+          context: context,
           function: () =>
               _navigateTo(context, Routes.signUpScreen, sharedPrefHelper),
           text: 'Sign up',

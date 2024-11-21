@@ -173,7 +173,8 @@ class SignInScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Center(
-                            child: defaultMaterialButton(
+                            child: DefaultMaterialButton(
+                              context: context,
                               function: () {
                                 if (formKey.currentState!.validate()) {
                                   SignInCubit.get(context).userSignIn(
