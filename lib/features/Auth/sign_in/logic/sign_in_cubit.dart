@@ -17,8 +17,7 @@ class SignInCubit extends Cubit<SignInStates> {
     await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: password)
         .then((value) {
-      SharedPrefHelper.setSecuredString('uId', value.user!.uid);
-
+      SharedPrefHelper.getSecuredString('uId');
       emit(SignInSuccessState(value.user!.uid));
     }).catchError((error) {
       emit(SignInErrorState(error.toString()));

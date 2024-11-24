@@ -80,7 +80,6 @@ Map<String, Widget Function(BuildContext)> routing() {
   return {
     CitiesScreen.routeName: (_) => const CitiesScreen(),
     HomeLayout.routeName: (_) => const HomeLayout(),
-    SignUpScreen.routeName: (_) => const SignUpScreen(),
     UpdatePassword.routeName: (_) => const UpdatePassword(),
     SearchScreen.routeName: (_) => const SearchScreen(),
     MyProfileScreen.routeName: (_) => const MyProfileScreen(),

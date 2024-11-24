@@ -1,14 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tripso/model/user_model.dart';
-import 'package:tripso/shared/cubit/SignUpCubit/sign_up_state.dart';
+part of './../../../core/helpers/export_manager/export_manager.dart';
 
 class SignUpCubit extends Cubit<SignUpStates> {
   SignUpCubit() : super(SignUpInitialState());
 
   final formKey = GlobalKey<FormState>();
+  final navigateKey = GlobalKey<NavigatorState>();
   TextEditingController userFirstNameController = TextEditingController();
   TextEditingController userLastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -34,6 +30,13 @@ class SignUpCubit extends Cubit<SignUpStates> {
           firstName: firstName,
           lastName: lastName,
           uId: value.user!.uid);
+      SharedPrefHelper.setSecuredString(
+        'uId',
+        value.user!.uid,
+      );
+
+      navigateKey.currentState!.pushNamed(Routes.signInScreen);
+      emit(SignUpSuccessState());
     }).catchError((error) {
       emit(SignUpErrorState(error.toString()));
     });
