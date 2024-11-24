@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/Auth/sign_in/logic/sign_in_cubit.dart';
-import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/cubit/SignInCubit/sign_in_state.dart';
+part of './../../../../core/helpers/export_manager/export_manager.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key, required this.sharedPrefHelper});

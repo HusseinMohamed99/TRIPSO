@@ -1,8 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/shared/cubit/SignInCubit/sign_in_state.dart';
+part of './../../../../core/helpers/export_manager/export_manager.dart';
 
 class SignInCubit extends Cubit<SignInStates> {
   SignInCubit() : super(SignInInitialState());
@@ -39,7 +35,7 @@ class SignInCubit extends Cubit<SignInStates> {
     suffix =
         isPassword ? Icons.visibility_outlined : Icons.visibility_off_outlined;
 
-    emit(ShowPasswordState());
+    emit(TogglePasswordVisibilityState());
   }
 
   ///END : Show Password

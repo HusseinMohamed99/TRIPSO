@@ -57,4 +57,6 @@ Future<void> _initServices() async {
 
   // Set up global Bloc observer for debugging
   Bloc.observer = MyBlocObserver();
+
+  setupGetIt();
 }
