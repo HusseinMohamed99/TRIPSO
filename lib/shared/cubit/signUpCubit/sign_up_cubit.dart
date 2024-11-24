@@ -8,8 +8,12 @@ import 'package:tripso/shared/cubit/SignUpCubit/sign_up_state.dart';
 class SignUpCubit extends Cubit<SignUpStates> {
   SignUpCubit() : super(SignUpInitialState());
 
-  static SignUpCubit get(context) => BlocProvider.of(context);
-
+  final formKey = GlobalKey<FormState>();
+  TextEditingController userFirstNameController = TextEditingController();
+  TextEditingController userLastNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   void userSignUp({
     required String email,
     required String password,

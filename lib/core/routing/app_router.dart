@@ -30,7 +30,10 @@ class AppRouters {
         );
       case Routes.signUpScreen:
         return MaterialPageRoute(
-          builder: (_) => SignUpScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => SignUpCubit(),
+            child: SignUpScreen(),
+          ),
         );
       case Routes.forgetPassword:
         return MaterialPageRoute(

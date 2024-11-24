@@ -41,8 +41,9 @@ class SignInScreen extends StatelessWidget {
                   child: CustomScrollView(
                     slivers: [
                       SliverToBoxAdapter(
-                        child:
-                            Center(child: InputField(signInCubit: signInCubit)),
+                        child: Center(
+                          child: InputField(signInCubit: signInCubit),
+                        ),
                       ),
                       SliverToBoxAdapter(child: ForgetPasswordButton()),
                       SliverToBoxAdapter(child: Space(width: 0, height: 20)),

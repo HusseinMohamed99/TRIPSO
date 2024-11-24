@@ -15,13 +15,14 @@ class ValidationManager {
 
   static String? phoneValidator(String? phone) {
     if (phone == null || phone.isEmpty || phone.trim().isEmpty) {
-      return ValidationMessage.phoneValid;
+      return 'Please enter a valid phone number.';
     }
+    phone = phone.trim(); // Trim whitespace
     RegExp regex = RegExp(r'^(010|011|012|015)[0-9]{8}$');
     if (!regex.hasMatch(phone)) {
-      return 'ValidationMessage';
+      return 'Invalid phone number. Must be 11 digits starting with 010, 011, 012, or 015.';
     }
-    return null;
+    return null; // Valid phone number
   }
 
   static String? emailValidator(String? value) {
