@@ -31,13 +31,15 @@ import 'package:tripso/features/wishlist/wishlist.dart';
 import 'package:tripso/layout/layout.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/cubit/signInCubit/sign_in_cubit.dart';
+import 'package:tripso/shared/components/text_form_field.dart';
+import 'package:tripso/features/Auth/sign_in/logic/sign_in_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/service/weather_service.dart';
 
 part '../../networking/cache_helper/shared_pref_helper.dart';
+part './../../../features/Auth/sign_in/widgets/input_field.dart';
 part './../../../features/on_boarding/controllers/navigation.dart';
 part './../../../features/on_boarding/on_boarding_screen.dart';
 part './../../../features/on_boarding/widgets/build_action_buttons.dart';
@@ -63,3 +65,7 @@ part './../validations/validation_manager.dart';
 part './../value_manager/margin_helper.dart';
 part './../value_manager/padding_helper.dart';
 part './../value_manager/size_helper.dart';
+
+part './../../../features/Auth/sign_in/widgets/forget_password_button.dart';
+part './../../../features/Auth/sign_in/widgets/if_have_account.dart';
+part './../../../features/Auth/sign_in/widgets/sign_in_button.dart';
