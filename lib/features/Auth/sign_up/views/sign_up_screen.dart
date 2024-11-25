@@ -8,9 +8,16 @@ class SignUpScreen extends StatelessWidget {
     final signUpCubit = context.read<SignUpCubit>();
     return BlocConsumer<SignUpCubit, SignUpStates>(
       listener: (context, state) {
-        if (state is SignUpSuccessState) {
+        if (state is UserCreateSuccessState) {
           context.showSnackBar(
             'User Created Successfully',
+            color: ColorsManager.greenColor,
+          );
+        } else if (state is UserCreateErrorState) {
+          context.showSnackBar(state.error, color: ColorsManager.redColor);
+        } else if (state is SignUpSuccessState) {
+          context.showSnackBar(
+            'Sign Up Successfully',
             color: ColorsManager.greenColor,
           );
         } else if (state is SignUpErrorState) {

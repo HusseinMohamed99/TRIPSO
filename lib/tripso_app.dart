@@ -21,18 +21,17 @@ class TripsoApp extends StatelessWidget {
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => TripsoCubit()
-            ..getUserData()
-            ..getCityData()
-            ..getDataForPlace()
-            ..getITData()
-            ..getEGData()
-            ..getFRData()
-            ..getUAEData()
-            ..getPopularData()
-            ..getBestPlan(),
-        ),
+        BlocProvider(create: (context) => TripsoCubit()
+            // ..getUserData()
+            // ..getCityData()
+            // ..getDataForPlace()
+            // ..getITData()
+            // ..getEGData()
+            // ..getFRData()
+            // ..getUAEData()
+            // ..getPopularData()
+            // ..getBestPlan(),
+            ),
         BlocProvider(
           create: (context) => WeatherCubit(WeatherService()),
         ),

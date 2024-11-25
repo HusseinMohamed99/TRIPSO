@@ -23,6 +23,9 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // Activate Firebase App Check
+
   // Initialize cache helper
   await CacheHelper.init();
 
