@@ -1,6 +1,5 @@
-part of './../../../../core/helpers/export_manager/export_manager.dart';
+part of '../../../../core/helpers/export_manager/export_manager.dart';
 
-// Cubit class
 class SignUpCubit extends Cubit<SignUpStates> {
   SignUpCubit() : super(SignUpInitialState());
 
@@ -11,7 +10,6 @@ class SignUpCubit extends Cubit<SignUpStates> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
-
   void userSignUp({
     required String email,
     required String password,
@@ -27,34 +25,23 @@ class SignUpCubit extends Cubit<SignUpStates> {
     )
         .then((value) {
       userCreate(
-        phone: phone,
-        email: email,
-        firstName: firstName,
-        lastName: lastName,
-        uId: value.user?.uid ?? '',
+          phone: phone,
+          email: email,
+          firstName: firstName,
+          lastName: lastName,
+          uId: value.user!.uid);
+      SharedPrefHelper.setSecuredString(
+        'uId',
+        value.user!.uid,
       );
-      // SharedPrefHelper.setSecuredString(
-      //   'uId',
-      //   value.user!.uid,
-      // );
-      print('UID: ${value.user!.uid}');
+
       navigateKey.currentState!.pushNamed(Routes.signInScreen);
       emit(SignUpSuccessState());
     }).catchError((error) {
-      // Handle specific FirebaseAuth errors
-      // if (error is FirebaseAuthException) {
-      //   if (error.code == 'email-already-in-use') {
-      //     emit(SignUpErrorState('The email address is already in use.'));
-      //   } else if (error.code == 'weak-password') {
-      //     emit(SignUpErrorState('The password is too weak.'));
-      //   } else if (error.code == 'invalid-email') {
-      //     emit(SignUpErrorState('The email address is invalid.'));
-
       emit(SignUpErrorState(error.toString()));
     });
   }
 
-  // User creation method in Firestore
   void userCreate({
     required String email,
     required String firstName,
@@ -82,7 +69,6 @@ class SignUpCubit extends Cubit<SignUpStates> {
     });
   }
 
-  // Password visibility toggle
   IconData suffix = Icons.visibility_outlined;
   bool isPassword = true;
 
@@ -90,6 +76,7 @@ class SignUpCubit extends Cubit<SignUpStates> {
     isPassword = !isPassword;
     suffix =
         isPassword ? Icons.visibility_outlined : Icons.visibility_off_outlined;
+
     emit(ChangePasswordSignUpState());
   }
 }
