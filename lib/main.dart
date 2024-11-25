@@ -23,6 +23,13 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // Activate Firebase App Check
+  // await FirebaseAppCheck.instance.activate(
+  //   androidProvider: AndroidProvider.debug, // Use Play Integrity for Android
+  //   appleProvider: AppleProvider.debug, // Use DeviceCheck for iOS
+  // );
+  // await FirebaseAppCheck.instance.setTokenAutoRefreshEnabled(true);
+
   // Initialize cache helper
   await CacheHelper.init();
 

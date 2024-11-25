@@ -4,7 +4,6 @@ class SignUpCubit extends Cubit<SignUpStates> {
   SignUpCubit() : super(SignUpInitialState());
 
   final formKey = GlobalKey<FormState>();
-  final navigateKey = GlobalKey<NavigatorState>();
   TextEditingController userFirstNameController = TextEditingController();
   TextEditingController userLastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -35,7 +34,6 @@ class SignUpCubit extends Cubit<SignUpStates> {
         value.user!.uid,
       );
 
-      navigateKey.currentState!.pushNamed(Routes.signInScreen);
       emit(SignUpSuccessState());
     }).catchError((error) {
       emit(SignUpErrorState(error.toString()));

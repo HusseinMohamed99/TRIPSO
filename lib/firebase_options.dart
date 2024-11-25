@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCwTFt1yGvqAv-7pm6q8SyY0bCyiQQaB_A',
-    appId: '1:536479207520:android:347cc00c15d8219bf0b305',
+    appId: '1:536479207520:android:3c6ddd2ef8fe2ba2f0b305',
     messagingSenderId: '536479207520',
     projectId: 'tripso-ac883',
     storageBucket: 'tripso-ac883.appspot.com',
@@ -73,4 +73,5 @@ class DefaultFirebaseOptions {
     iosClientId: '536479207520-atp51lgm4hpnfcp2b4ce1gd28rpq5gfp.apps.googleusercontent.com',
     iosBundleId: 'com.example.tripso',
   );
+
 }
