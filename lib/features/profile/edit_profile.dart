@@ -31,7 +31,7 @@ class EditProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var tripsoCubit = TripsoCubit.get(context).userModel;
-    firstNameController.text = tripsoCubit!.firstName;
+    firstNameController.text = tripsoCubit.firstName;
     lastNameController.text = tripsoCubit.lastName;
     phoneController.text = tripsoCubit.phone;
     emailController.text = tripsoCubit.email;
@@ -242,13 +242,13 @@ class EditProfile extends StatelessWidget {
                           function: () {
                             if (formKey.currentState!.validate()) {
                               if (cubit.profileImage != null) {
-                                cubit.uploadProfileImage(
-                                  firstName: firstNameController.text,
-                                  phone: phoneController.text,
-                                  lastName: lastNameController.text,
-                                  email: emailController.text,
-                                  // address: addressController.text,
-                                );
+                                // cubit.uploadProfileImage(
+                                //   firstName: firstNameController.text,
+                                //   phone: phoneController.text,
+                                //   lastName: lastNameController.text,
+                                //   email: emailController.text,
+                                //   // address: addressController.text,
+                                // );
                               } else {
                                 cubit.updateUserData(
                                   firstName: firstNameController.text,

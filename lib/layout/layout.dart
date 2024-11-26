@@ -98,7 +98,7 @@ class HomeLayout extends StatelessWidget {
                         child: CircleAvatar(
                           radius: 15.r,
                           child: CachedNetworkImage(
-                            imageUrl: userModel!.image,
+                            imageUrl: userModel?.image ?? '',
                             fit: BoxFit.fill,
                             height: 200.h,
                             width: double.infinity,
@@ -114,7 +114,6 @@ class HomeLayout extends StatelessWidget {
                               ),
                             ),
                           ),
-                          // backgroundImage: NetworkImage(userModel!.image),
                         ),
                       ),
                       text: tripsoCubit.titles[tripsoCubit.currentIndex],
@@ -130,14 +129,7 @@ class HomeLayout extends StatelessWidget {
               ),
             ),
           ),
-          body: Provider.of<WeatherProvider>(context).weatherData == null ||
-                  tripsoCubit.city.isEmpty
-              ? Center(
-                  child: AdaptiveIndicator(
-                    os: '',
-                  ),
-                )
-              : tripsoCubit.screens[tripsoCubit.currentIndex],
+          body: tripsoCubit.screens[tripsoCubit.currentIndex],
         );
       },
     );

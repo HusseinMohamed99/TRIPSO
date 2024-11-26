@@ -43,10 +43,10 @@ class _SearchScreenState extends State<SearchScreen> {
   void runFilter(String enteredKeyword) {
     List<CityModel> results = [];
     if (enteredKeyword.trim().isEmpty) {
-      results = TripsoCubit.get(context).city;
+      results = TripsoCubit.get(context).cities;
     } else {
       results = TripsoCubit.get(context)
-          .city
+          .cities
           .where(
             (city) => city.name.toLowerCase().contains(
                   enteredKeyword.toLowerCase(),
@@ -164,7 +164,7 @@ class _SearchScreenState extends State<SearchScreen> {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(city.cId);
         TripsoCubit.get(context).getPopularPlace(city.cId);
-        TripsoCubit.get(context).getDataForCity(city.cId);
+        TripsoCubit.get(context).fetchCityData(city.cId);
         TripsoCubit.get(context).getAllBestPlan(city.cId);
         navigateTo(
           context,

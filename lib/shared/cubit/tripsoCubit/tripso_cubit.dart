@@ -18,11 +18,11 @@ import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/plan_model.dart';
 import 'package:tripso/model/user_model/user_model.dart';
 import 'package:tripso/model/wishlist_model.dart';
-import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
+
+import '../../../core/networking/exceptions/user_exceptions.dart';
 
 class TripsoCubit extends Cubit<TripsoStates> {
   TripsoCubit() : super(TripsoInitialState());
@@ -30,14 +30,15 @@ class TripsoCubit extends Cubit<TripsoStates> {
   static TripsoCubit get(context) => BlocProvider.of(context);
 
   int currentIndex = 0;
-  List<Widget> screens = [
+
+  final List<Widget> screens = [
     const ExploreScreen(),
     const WishListScreen(),
     const MyPlansScreen(),
     const MyProfileScreen(),
   ];
 
-  List<String> titles = [
+  final List<String> titles = [
     'Explore',
     'Wishlist',
     'My Plans',
@@ -45,108 +46,161 @@ class TripsoCubit extends Cubit<TripsoStates> {
   ];
 
   void changeIndex(int index) {
-    if (index == 0) {
-      getUserData();
-      getCityData();
-      WeatherProvider();
-      getDataPlaces(cityModel!.cId);
-      getDataForCity(cityModel!.cId);
-      getAllBestPlan(cityModel!.cId);
+    if (index < 0 || index >= screens.length) {
+      // Handle invalid index, if necessary
+      debugPrint('Invalid index: $index');
+      return;
     }
-    if (index == 1) {
-      getDataPlaces(cityModel!.cId);
-      getDataForCity(cityModel!.cId);
-      getAllBestPlan(cityModel!.cId);
-      getWishListData(cityModel!.cId, userModel!.uId);
-    }
-    if (index == 2) {
-      getDataPlaces(cityModel!.cId);
-      getDataForCity(cityModel!.cId);
-      getAllBestPlan(cityModel!.cId);
-      getMyAllPlan(cityModel!.cId, userModel!.uId, 1);
-    }
-    if (index == 3) getUserData();
-    emit(ChangeBottomNavBarState());
+
     currentIndex = index;
+
+    // Perform any specific actions based on the index
+    switch (index) {
+      case 0:
+        // Add logic for ExploreScreen if needed
+        break;
+      case 1:
+        // Add logic for WishListScreen if needed
+        break;
+      case 2:
+        // Add logic for MyPlansScreen if needed
+        break;
+      case 3:
+        // Add logic for MyProfileScreen if needed
+        break;
+      default:
+        // This should not be reached
+        debugPrint('Unhandled index: $index');
+    }
+
+    emit(ChangeBottomNavBarState());
   }
 
-  UserModel? userModel;
+  late UserModel userModel;
+  void getUserData() async {
+    try {
+      emit(GetUserDataLoadingState());
+      final userDoc =
+          await FirebaseFirestore.instance.collection('users').doc(uId).get();
 
-  void getUserData() {
-    emit(GetUserDataLoadingState());
-    FirebaseFirestore.instance.collection('users').doc(uId).get().then((value) {
-      // userModel = UserModel.fromFireStore(value.data()!);
-      emit(GetUserDataSuccessState());
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetUserDataErrorState(error.toString()));
-    });
+      if (userDoc.exists) {
+        userModel = UserModel.fromJson(
+            userDoc.data()!); // Deserialize JSON into the model
+        emit(GetUserDataSuccessState());
+      } else {
+        throw UserNotFoundException('User not found for ID: $uId');
+      }
+    } on FirebaseAuthException catch (e) {
+      // Firebase Authentication specific error handling
+      debugPrint('Auth Error: ${e.message}');
+      emit(GetUserDataErrorState('Authentication error: ${e.message}'));
+    } on FirebaseException catch (e) {
+      // Firebase Firestore specific error handling
+      debugPrint('Firestore Error: ${e.message}');
+      emit(GetUserDataErrorState('Firestore error: ${e.message}'));
+    } catch (e) {
+      // Catch any other general exceptions
+      debugPrint('General Error: $e');
+      emit(GetUserDataErrorState('Error: $e'));
+    }
   }
 
-  void changeUserPassword({
-    required String password,
-  }) {
+  void changeUserPassword({required String password}) {
     emit(ChangeUserPasswordLoadingState());
-    FirebaseAuth.instance.currentUser?.updatePassword(password).then((value) {
-      showToast(
-        state: ToastStates.success,
-        text: 'Change Successful',
-      );
+
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      final errorMessage = 'No user is currently signed in.';
+      debugPrint(errorMessage);
+      emit(ChangeUserPasswordErrorState(errorMessage));
+      return;
+    }
+    user.updatePassword(password).then((_) {
       emit(ChangeUserPasswordSuccessState());
+
+      // Optionally, refresh user data
       getUserData();
     }).catchError((error) {
-      showToast(
-        state: ToastStates.error,
-        text: 'process failed\nYou Should Re-login Before Change Password',
-      );
-      emit(ChangeUserPasswordErrorState(error.toString()));
-      debugPrint(error.toString());
+      final errorMessage = 'Failed to change password: ${error.toString()}';
+      emit(ChangeUserPasswordErrorState(errorMessage));
     });
   }
 
   IconData suffix = Icons.visibility_outlined;
-  bool isPassword = true;
+  bool isPasswordVisible = true;
 
-  void showPassword() {
-    isPassword = !isPassword;
-    suffix =
-        isPassword ? Icons.visibility_outlined : Icons.visibility_off_outlined;
+  void togglePasswordVisibility() {
+    isPasswordVisible = !isPasswordVisible;
+    suffix = isPasswordVisible
+        ? Icons.visibility_outlined
+        : Icons.visibility_off_outlined;
 
     emit(ShowPasswordState());
   }
 
   CityModel? cityModel;
+  List<CityModel> cities = [];
+  List<String> cityIds = [];
 
-  void getDataForCity(String? cId) async {
+  /// Fetches and sets data for a specific city by its ID.
+  Future<void> fetchCityData(String? cityId) async {
+    if (cityId == null) {
+      emit(GetCityDataErrorState("City ID cannot be null."));
+      return;
+    }
+
     emit(GetCityDataLoadingState());
-    await FirebaseFirestore.instance
-        .collection('cities')
-        .doc(cId)
-        .get()
-        .then((value) {
-      cityModel = CityModel.fromFireStore(value.data()!);
-      emit(GetCityDataSuccessState());
-      if (kDebugMode) {
-        print(value.data());
+
+    try {
+      final cityDoc = await FirebaseFirestore.instance
+          .collection('cities')
+          .doc(cityId)
+          .get();
+
+      if (!cityDoc.exists || cityDoc.data() == null) {
+        throw Exception("City with ID '$cityId' not found.");
       }
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetCityDataErrorState(error.toString()));
-    });
+
+      cityModel = CityModel.fromFireStore(cityDoc.data()!);
+      emit(GetCityDataSuccessState());
+
+      if (kDebugMode) {
+        debugPrint("Fetched city data: ${cityDoc.data()}");
+      }
+    } catch (error) {
+      final errorMessage = "Failed to fetch city data: ${error.toString()}";
+      debugPrint(errorMessage);
+      emit(GetCityDataErrorState(errorMessage));
+    }
   }
 
-  List<CityModel> city = [];
-  List<String> cId = [];
+  /// Fetches and sets data for all cities in the collection.
+  Future<void> fetchAllCities() async {
+    emit(GetCityDataLoadingState());
 
-  getCityData() async {
-    FirebaseFirestore.instance.collection('cities').get().then((value) {
-      city = [];
-      for (var element in value.docs) {
-        city.add(CityModel.fromFireStore(element.data()));
-        cId.add(element.id);
-        //print("City Model = ${element.data()}");
+    try {
+      final querySnapshot =
+          await FirebaseFirestore.instance.collection('cities').get();
+
+      if (querySnapshot.docs.isEmpty) {
+        debugPrint("No cities found.");
       }
-    });
+
+      cities = querySnapshot.docs
+          .map((doc) => CityModel.fromFireStore(doc.data()))
+          .toList();
+      cityIds = querySnapshot.docs.map((doc) => doc.id).toList();
+
+      emit(GetCityDataSuccessState());
+
+      if (kDebugMode) {
+        debugPrint("Fetched all cities: ${cities.length} cities loaded.");
+      }
+    } catch (error) {
+      final errorMessage = "Failed to fetch city data: ${error.toString()}";
+      debugPrint(errorMessage);
+      emit(GetCityDataErrorState(errorMessage));
+    }
   }
 
   List<CityModel> cityEG = [];
@@ -342,7 +396,9 @@ class TripsoCubit extends Cubit<TripsoStates> {
       emit(GetProfileImagePickedSuccessState());
     } else {
       debugPrint('No image selected');
-      emit(GetProfileImagePickedErrorState());
+      emit(GetProfileImagePickedErrorState(
+        'No image selected',
+      ));
     }
   }
 
@@ -354,34 +410,62 @@ class TripsoCubit extends Cubit<TripsoStates> {
   }
 
   void uploadProfileImage({
+    required File profileImage,
     required String email,
     required String firstName,
     required String lastName,
     required String phone,
     String? address,
-  }) {
-    emit(UpdateUserLoadingState());
-    firebase_storage.FirebaseStorage.instance
-        .ref()
-        .child(
-            'userProfileImage/${Uri.file(profileImage!.path).pathSegments.last}')
-        .putFile(profileImage!)
-        .then((value) {
-      value.ref.getDownloadURL().then((value) {
-        updateUserData(
-          email: email,
-          phone: phone,
-          firstName: firstName,
-          lastName: lastName,
-          image: value,
-          address: address ?? '',
-        );
-      }).catchError((error) {
-        emit(UploadProfileImageErrorState());
-      });
-    }).catchError((error) {
-      emit(UploadProfileImageErrorState());
-    });
+  }) async {
+    try {
+      emit(UploadProfileImageLoadingState());
+
+      // Validate image (file size, type, etc.)
+      final allowedExtensions = ['jpg', 'jpeg', 'png'];
+      final fileExtension = profileImage.path.split('.').last;
+
+      if (!allowedExtensions.contains(fileExtension)) {
+        emit(UploadProfileImageErrorState(
+            'Invalid file format. Allowed formats: jpg, jpeg, png'));
+        return;
+      }
+
+      final fileSize = await profileImage.length();
+      if (fileSize > 5 * 1024 * 1024) {
+        // 5MB limit
+        emit(UploadProfileImageErrorState('File size exceeds the 5MB limit'));
+        return;
+      }
+
+      // Proceed with the upload
+      final storageRef = firebase_storage.FirebaseStorage.instance.ref().child(
+          'userProfileImage/${Uri.file(profileImage.path).pathSegments.last}');
+
+      final uploadTask = storageRef.putFile(profileImage);
+      final snapshot = await uploadTask.whenComplete(() {});
+      final downloadUrl = await snapshot.ref.getDownloadURL();
+
+      updateUserData(
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        phone: phone,
+        image: downloadUrl,
+        address: address ?? '',
+      );
+
+      emit(UploadProfileImageSuccessState());
+    } catch (e) {
+      debugPrint('Error uploading profile image: $e');
+      emit(UploadProfileImageErrorState('Error uploading image: $e'));
+    }
+  }
+
+  bool isValidEmail(String email) {
+    // Simple email validation using regular expression
+    final emailRegExp =
+        RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+    return emailRegExp.hasMatch(email);
   }
 
   void updateUserData({
@@ -389,29 +473,32 @@ class TripsoCubit extends Cubit<TripsoStates> {
     required String firstName,
     required String lastName,
     required String phone,
-    String? image,
     String? address,
+    String? image,
   }) {
-    emit(UpdateUserLoadingState());
-    UserModel model = UserModel(
-      email: email,
-      phone: phone,
-      image: image ?? userModel!.image,
-      uId: userModel!.uId,
-      firstName: firstName,
-      lastName: lastName,
-      address: address ?? '',
-    );
-    // FirebaseFirestore.instance
-    //     .collection('users')
-    //     .doc(userModel!.uId)
-    //     .update(model.toFireStore())
-    //     .then((value) {
-    //   emit(UpdateUserSuccessState());
-    //   getUserData();
-    // }).catchError((error) {
-    //   emit(UpdateUserErrorState());
-    // });
+    if (!isValidEmail(email)) {
+      emit(UpdateUserErrorState('Invalid email format'));
+      return;
+    }
+
+    try {
+      emit(UpdateUserLoadingState());
+      FirebaseFirestore.instance.collection('users').doc(uId).update({
+        'email': email,
+        'firstName': firstName,
+        'lastName': lastName,
+        'phone': phone,
+        'image': image ?? userModel.image,
+        'address': address ?? '',
+      }).then((_) {
+        emit(UpdateUserSuccessState());
+      }).catchError((error) {
+        emit(UpdateUserErrorState('Error updating user data: $error'));
+      });
+    } catch (e) {
+      debugPrint('Error: $e');
+      emit(UpdateUserErrorState('Error: $e'));
+    }
   }
 
   void addWishList({
@@ -439,7 +526,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
       wishListIsPopular: wishListIsPopular,
       wishListAddress: wishListAddress,
       wishListRate: wishListRate,
-      uId: userModel!.uId,
+      uId: userModel.uId,
     );
     FirebaseFirestore.instance
         .collection('wishList')
@@ -517,7 +604,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
       planAddress: planAddress,
       planRate: planRate,
       planCityID: planCityID,
-      uId: userModel!.uId,
+      uId: userModel.uId,
       indexOfDays: indexOfDay,
       dateTime: dateTime,
     );
@@ -590,25 +677,25 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   BestPLanModel? bestPLanModel;
 
-  void getBestPlan() {
-    emit(GetBestPlanLoadingState());
-    FirebaseFirestore.instance
-        .collection('cities')
-        .doc('Abu Dhabi')
-        .collection('bestplan')
-        .doc('Abu Dhabi Fast Visit')
-        .get()
-        .then((value) {
-      bestPLanModel = BestPLanModel.fromFireStore(value.data()!);
-      emit(GetBestPlanSuccessState());
-      if (kDebugMode) {
-        //  print(value.data());
-      }
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetBestPlanErrorState(error.toString()));
-    });
-  }
+  // void getBestPlan() {
+  //   emit(GetBestPlanLoadingState());
+  //   FirebaseFirestore.instance
+  //       .collection('cities')
+  //       .doc('Abu Dhabi')
+  //       .collection('bestplan')
+  //       .doc('Abu Dhabi Fast Visit')
+  //       .get()
+  //       .then((value) {
+  //     bestPLanModel = BestPLanModel.fromFireStore(value.data()!);
+  //     emit(GetBestPlanSuccessState());
+  //     if (kDebugMode) {
+  //       //  print(value.data());
+  //     }
+  //   }).catchError((error) {
+  //     debugPrint(error.toString());
+  //     emit(GetBestPlanErrorState(error.toString()));
+  //   });
+  // }
 
   Best? best;
 

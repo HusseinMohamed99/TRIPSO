@@ -42,6 +42,14 @@ class AppRouters {
             child: ForgotPassword(),
           ),
         );
+      case Routes.citiesScreen:
+        return MaterialPageRoute(
+          builder: (_) => CitiesScreen(),
+        );
+      case Routes.homeLayout:
+        return MaterialPageRoute(
+          builder: (_) => HomeLayout(),
+        );
     }
     return null;
   }

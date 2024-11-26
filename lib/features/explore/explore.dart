@@ -346,7 +346,7 @@ class RowWidget extends StatelessWidget {
                   InkWell(
                     onTap: () async {
                       TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-                      TripsoCubit.get(context).getDataForCity(cityModel.cId);
+                      TripsoCubit.get(context).fetchCityData(cityModel.cId);
                       navigateTo(
                         context,
                         routeName: SightsScreen.routeName,
@@ -430,7 +430,7 @@ class PopularSightsWidget extends StatelessWidget {
                     onTap: () async {
                       TripsoCubit.get(context).getPopularPlace(cityModel.cId);
                       TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-                      TripsoCubit.get(context).getDataForCity(cityModel.cId);
+                      TripsoCubit.get(context).fetchCityData(cityModel.cId);
 
                       navigateTo(
                         context,

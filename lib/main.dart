@@ -3,13 +3,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/firebase_options.dart';
 import 'package:tripso/shared/bloc_observer.dart';
 import 'package:tripso/shared/constants/constants.dart';
-import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -46,16 +44,11 @@ Future<void> main() async {
 
   // Run the app
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => WeatherProvider()),
-      ],
-      child: TripsoApp(
-        appRouter: AppRouters(sharedPrefHelper),
-        isOnBoardingViewed: isOnBoardingViewed,
-        isUserLogged: isUserLogged,
-        sharedPrefHelper: sharedPrefHelper,
-      ),
+    TripsoApp(
+      appRouter: AppRouters(sharedPrefHelper),
+      isOnBoardingViewed: isOnBoardingViewed,
+      isUserLogged: isUserLogged,
+      sharedPrefHelper: sharedPrefHelper,
     ),
   );
 }

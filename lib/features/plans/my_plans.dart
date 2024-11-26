@@ -85,7 +85,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                 TripsoCubit.get(context)
                                     .getDataPlaces(tripsoCubit!.cId);
                                 TripsoCubit.get(context)
-                                    .getDataForCity(tripsoCubit.cId);
+                                    .fetchCityData(tripsoCubit.cId);
                                 TripsoCubit.get(context).getMyAllPlan(
                                     tripsoCubit.cId, uId, current + 1);
                                 if (kDebugMode) {

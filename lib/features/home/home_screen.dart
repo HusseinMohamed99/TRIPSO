@@ -1,26 +1,18 @@
-import 'dart:async';
-
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
 import 'package:tripso/features/search/search_screen.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/place_model.dart';
-import 'package:tripso/shared/adaptive/dialog.dart';
-import 'package:tripso/shared/adaptive/indicator.dart';
-import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/log_out.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/search_bar.dart';
 import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/widget/grid_city_items.dart';
@@ -35,247 +27,193 @@ class CitiesScreen extends StatefulWidget {
 }
 
 class _CitiesScreenState extends State<CitiesScreen> {
-  dynamic dropdownValue = 'All Countries';
-
-  late StreamSubscription subscription;
-  bool isDeviceConnected = false;
-  bool isAlertSet = false;
-
-  getConnectivity() =>
-      subscription = Connectivity().onConnectivityChanged.listen(
-            (ConnectivityResult result) async {
-              isDeviceConnected =
-                  await InternetConnectionChecker().hasConnection;
-              if (!isDeviceConnected && isAlertSet == false) {
-                checkInternet();
-                setState(() => isAlertSet = true);
-              }
-            } as void Function(List<ConnectivityResult> event)?,
-          );
-
-  @override
-  void initState() {
-    getConnectivity();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    subscription.cancel();
-    super.dispose();
-  }
-
-  List<Widget> widgetImages = [
-    Image.asset(AssetPath.gizaImage),
-    Image.asset(AssetPath.dubaiImage),
-    Image.asset(AssetPath.tripsoImage),
-    Image.asset(AssetPath.ancient1),
-    Image.asset(AssetPath.ancient2),
-    Image.asset(AssetPath.ancient3),
-    Image.asset(AssetPath.ancient4),
-    Image.asset(AssetPath.ancient5),
-    Image.asset(AssetPath.ancient6),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    dynamic dropdownValue = 'All Countries';
+
+    List<Widget> widgetImages = [
+      Image.asset(AssetPath.gizaImage),
+      Image.asset(AssetPath.dubaiImage),
+      Image.asset(AssetPath.tripsoImage),
+      Image.asset(AssetPath.ancient1),
+      Image.asset(AssetPath.ancient2),
+      Image.asset(AssetPath.ancient3),
+      Image.asset(AssetPath.ancient4),
+      Image.asset(AssetPath.ancient5),
+      Image.asset(AssetPath.ancient6),
+    ];
     var cubit = TripsoCubit.get(context);
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
-          appBar: secondaryAppBar(),
-          body: cubit.city.isEmpty
-              ? Center(
-                  child: AdaptiveIndicator(
-                    os: getOs(),
-                  ),
-                )
-              : SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Stack(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Stack(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Stack(
+                            alignment: AlignmentDirectional.bottomStart,
                             children: [
-                              Stack(
-                                  alignment: AlignmentDirectional.bottomStart,
-                                  children: [
-                                    CarouselSlider(
-                                      items: List.generate(widgetImages.length,
-                                          (index) => widgetImages[index]),
-                                      options: CarouselOptions(
-                                        height: 250.h,
-                                        enlargeCenterPage: false,
-                                        disableCenter: false,
-                                        viewportFraction: 2,
-                                        autoPlay: true,
-                                        autoPlayCurve: Curves.decelerate,
-                                      ),
-                                    ),
-                                    LayerImage(
-                                      height: 250.h,
-                                      width: double.infinity,
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: const Radius.circular(20).r,
-                                        bottomRight:
-                                            const Radius.circular(20).r,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 15.w, bottom: 50.h),
-                                      child: Text(
-                                        'Where do you\nwant to go ?',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displayLarge
-                                            ?.copyWith(
-                                              color: ColorsManager.whiteColor,
-                                            ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      top: 15.h,
-                                      right: 10.w,
-                                      child: InkWell(
-                                        onTap: () {
-                                          logOut(context);
-                                        },
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          width: 60.w,
-                                          height: 20.h,
-                                          padding: EdgeInsets.zero,
-                                          margin: EdgeInsets.zero,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                              10.r,
-                                            ),
-                                            color: ColorsManager.primaryColor,
-                                          ),
-                                          child: Text(
-                                            textAlign: TextAlign.center,
-                                            'Log Out',
-                                            style: GoogleFonts.roboto(
-                                              fontSize: 14.sp,
-                                              color: ColorsManager.whiteColor,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    )
-                                  ]),
-                              Space(height: 30.h, width: 0.w),
-                              Space(height: 5.h, width: 0.w),
-                              if (dropdownValue == 'All Countries')
-                                gridCitiesItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
-                              if (dropdownValue == 'Egypt')
-                                gridEGItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
-                              if (dropdownValue == 'Italy')
-                                gridITItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
-                              if (dropdownValue == 'France')
-                                gridFRItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
-                              if (dropdownValue == 'UAE')
-                                gridUAEItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
-                              if (dropdownValue == 'Popular')
-                                gridPopularItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
-                            ],
-                          ),
-                          Positioned(
-                            top: 225.h,
-                            right: 10.w,
-                            left: 10.w,
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: SearchBarItem(
-                                      readOnly: true,
-                                      function: () {
-                                        navigateTo(
-                                          context,
-                                          routeName: SearchScreen.routeName,
-                                        );
-                                      }),
+                              CarouselSlider(
+                                items: List.generate(widgetImages.length,
+                                    (index) => widgetImages[index]),
+                                options: CarouselOptions(
+                                  height: 250.h,
+                                  enlargeCenterPage: false,
+                                  disableCenter: false,
+                                  viewportFraction: 2,
+                                  autoPlay: true,
+                                  autoPlayCurve: Curves.decelerate,
                                 ),
-                                Card(
-                                  elevation: 3,
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    height: 40.h,
-                                    width: 120.w,
-                                    child: DropdownButton(
-                                      iconSize: 20.sp,
-                                      underline: const Divider(
+                              ),
+                              LayerImage(
+                                height: 250.h,
+                                width: double.infinity,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: const Radius.circular(20).r,
+                                  bottomRight: const Radius.circular(20).r,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(left: 15.w, bottom: 50.h),
+                                child: Text(
+                                  'Where do you\nwant to go ?',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .displayLarge
+                                      ?.copyWith(
                                         color: ColorsManager.whiteColor,
                                       ),
-                                      icon: const Icon(
-                                        Icons.keyboard_arrow_down,
+                                ),
+                              ),
+                              Positioned(
+                                top: 15.h,
+                                right: 10.w,
+                                child: InkWell(
+                                  onTap: () {
+                                    logOut(context);
+                                  },
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    width: 60.w,
+                                    height: 20.h,
+                                    padding: EdgeInsets.zero,
+                                    margin: EdgeInsets.zero,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                        10.r,
                                       ),
-                                      items: [
-                                        'All Countries',
-                                        'Egypt',
-                                        'Italy',
-                                        'France',
-                                        'UAE',
-                                        'Popular',
-                                      ].map((e) {
-                                        return DropdownMenuItem(
-                                          value: e,
-                                          child: Center(
-                                            child: Text(
-                                              e,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .displaySmall,
-                                            ),
-                                          ),
-                                        );
-                                      }).toList(),
-                                      onChanged: (newValue) {
-                                        setState(() {
-                                          dropdownValue = newValue;
-                                        });
-                                      },
-                                      value: dropdownValue,
+                                      color: ColorsManager.primaryColor,
+                                    ),
+                                    child: Text(
+                                      textAlign: TextAlign.center,
+                                      'Log Out',
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 14.sp,
+                                        color: ColorsManager.whiteColor,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ],
+                              )
+                            ]),
+                        Space(height: 30.h, width: 0.w),
+                        Space(height: 5.h, width: 0.w),
+                        if (dropdownValue == 'All Countries')
+                          gridCitiesItem(
+                              context, cubit.placeModel!, cubit.bestPLanModel!),
+                        if (dropdownValue == 'Egypt')
+                          gridEGItem(
+                              context, cubit.placeModel!, cubit.bestPLanModel!),
+                        if (dropdownValue == 'Italy')
+                          gridITItem(
+                              context, cubit.placeModel!, cubit.bestPLanModel!),
+                        if (dropdownValue == 'France')
+                          gridFRItem(
+                              context, cubit.placeModel!, cubit.bestPLanModel!),
+                        if (dropdownValue == 'UAE')
+                          gridUAEItem(
+                              context, cubit.placeModel!, cubit.bestPLanModel!),
+                        if (dropdownValue == 'Popular')
+                          gridPopularItem(
+                              context, cubit.placeModel!, cubit.bestPLanModel!),
+                      ],
+                    ),
+                    Positioned(
+                      top: 225.h,
+                      right: 10.w,
+                      left: 10.w,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: SearchBarItem(
+                                readOnly: true,
+                                function: () {
+                                  navigateTo(
+                                    context,
+                                    routeName: SearchScreen.routeName,
+                                  );
+                                }),
+                          ),
+                          Card(
+                            elevation: 3,
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 40.h,
+                              width: 120.w,
+                              child: DropdownButton(
+                                iconSize: 20.sp,
+                                underline: const Divider(
+                                  color: ColorsManager.whiteColor,
+                                ),
+                                icon: const Icon(
+                                  Icons.keyboard_arrow_down,
+                                ),
+                                items: [
+                                  'All Countries',
+                                  'Egypt',
+                                  'Italy',
+                                  'France',
+                                  'UAE',
+                                  'Popular',
+                                ].map((e) {
+                                  return DropdownMenuItem(
+                                    value: e,
+                                    child: Center(
+                                      child: Text(
+                                        e,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displaySmall,
+                                      ),
+                                    ),
+                                  );
+                                }).toList(),
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    dropdownValue = newValue;
+                                  });
+                                },
+                                value: dropdownValue,
+                              ),
                             ),
                           ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
+              ],
+            ),
+          ),
         );
-      },
-    );
-  }
-
-  checkInternet() {
-    MyDialog.showMessage(
-      context,
-      'Please check your internet connectivity',
-      posActionTitle: 'OK',
-      posAction: () async {
-        Navigator.pop(context, 'Cancel');
-        setState(() => isAlertSet = false);
-        isDeviceConnected = await InternetConnectionChecker().hasConnection;
-        if (!isDeviceConnected && isAlertSet == false) {
-          checkInternet();
-          setState(() => isAlertSet = true);
-        }
       },
     );
   }
@@ -292,11 +230,11 @@ class _CitiesScreenState extends State<CitiesScreen> {
       mainAxisSpacing: 2.h,
       childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
-          cubit.city.length,
+          3,
           (index) => GridCitiesItem(
                 placeModel,
                 bestPLanModel,
-                cityModel: cubit.city[index],
+                cityModel: cubit.cities[index],
               )),
     );
   }

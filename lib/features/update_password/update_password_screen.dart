@@ -181,9 +181,9 @@ class PasswordFormField extends StatelessWidget {
             },
             prefix: Icons.lock_outline_sharp,
             suffix: cubit.suffix,
-            isPassword: cubit.isPassword,
+            isPassword: cubit.isPasswordVisible,
             suffixPressed: () {
-              cubit.showPassword();
+              cubit.togglePasswordVisibility();
             },
             hint: 'Password',
           ),
@@ -205,9 +205,9 @@ class PasswordFormField extends StatelessWidget {
             },
             prefix: Icons.lock_outline_sharp,
             suffix: cubit.suffix,
-            isPassword: cubit.isPassword,
+            isPassword: cubit.isPasswordVisible,
             suffixPressed: () {
-              cubit.showPassword();
+              cubit.togglePasswordVisibility();
             },
             hint: 'Confirm Password',
           )

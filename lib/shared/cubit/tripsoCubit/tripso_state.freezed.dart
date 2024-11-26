@@ -1,0 +1,15209 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+part of 'tripso_state.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+/// @nodoc
+mixin _$TripsoStates {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TripsoStatesCopyWith<$Res> {
+  factory $TripsoStatesCopyWith(
+          TripsoStates value, $Res Function(TripsoStates) then) =
+      _$TripsoStatesCopyWithImpl<$Res, TripsoStates>;
+}
+
+/// @nodoc
+class _$TripsoStatesCopyWithImpl<$Res, $Val extends TripsoStates>
+    implements $TripsoStatesCopyWith<$Res> {
+  _$TripsoStatesCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$TripsoInitialStateImplCopyWith<$Res> {
+  factory _$$TripsoInitialStateImplCopyWith(_$TripsoInitialStateImpl value,
+          $Res Function(_$TripsoInitialStateImpl) then) =
+      __$$TripsoInitialStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$TripsoInitialStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$TripsoInitialStateImpl>
+    implements _$$TripsoInitialStateImplCopyWith<$Res> {
+  __$$TripsoInitialStateImplCopyWithImpl(_$TripsoInitialStateImpl _value,
+      $Res Function(_$TripsoInitialStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$TripsoInitialStateImpl implements TripsoInitialState {
+  const _$TripsoInitialStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.initial()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$TripsoInitialStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TripsoInitialState implements TripsoStates {
+  const factory TripsoInitialState() = _$TripsoInitialStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetUserDataLoadingStateImplCopyWith<$Res> {
+  factory _$$GetUserDataLoadingStateImplCopyWith(
+          _$GetUserDataLoadingStateImpl value,
+          $Res Function(_$GetUserDataLoadingStateImpl) then) =
+      __$$GetUserDataLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetUserDataLoadingStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetUserDataLoadingStateImpl>
+    implements _$$GetUserDataLoadingStateImplCopyWith<$Res> {
+  __$$GetUserDataLoadingStateImplCopyWithImpl(
+      _$GetUserDataLoadingStateImpl _value,
+      $Res Function(_$GetUserDataLoadingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetUserDataLoadingStateImpl implements GetUserDataLoadingState {
+  const _$GetUserDataLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getUserDataLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserDataLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getUserDataLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getUserDataLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getUserDataLoading != null) {
+      return getUserDataLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getUserDataLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getUserDataLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getUserDataLoading != null) {
+      return getUserDataLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserDataLoadingState implements TripsoStates {
+  const factory GetUserDataLoadingState() = _$GetUserDataLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetUserDataSuccessStateImplCopyWith<$Res> {
+  factory _$$GetUserDataSuccessStateImplCopyWith(
+          _$GetUserDataSuccessStateImpl value,
+          $Res Function(_$GetUserDataSuccessStateImpl) then) =
+      __$$GetUserDataSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetUserDataSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetUserDataSuccessStateImpl>
+    implements _$$GetUserDataSuccessStateImplCopyWith<$Res> {
+  __$$GetUserDataSuccessStateImplCopyWithImpl(
+      _$GetUserDataSuccessStateImpl _value,
+      $Res Function(_$GetUserDataSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetUserDataSuccessStateImpl implements GetUserDataSuccessState {
+  const _$GetUserDataSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getUserDataSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserDataSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getUserDataSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getUserDataSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getUserDataSuccess != null) {
+      return getUserDataSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getUserDataSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getUserDataSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getUserDataSuccess != null) {
+      return getUserDataSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserDataSuccessState implements TripsoStates {
+  const factory GetUserDataSuccessState() = _$GetUserDataSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetUserDataErrorStateImplCopyWith<$Res> {
+  factory _$$GetUserDataErrorStateImplCopyWith(
+          _$GetUserDataErrorStateImpl value,
+          $Res Function(_$GetUserDataErrorStateImpl) then) =
+      __$$GetUserDataErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetUserDataErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetUserDataErrorStateImpl>
+    implements _$$GetUserDataErrorStateImplCopyWith<$Res> {
+  __$$GetUserDataErrorStateImplCopyWithImpl(_$GetUserDataErrorStateImpl _value,
+      $Res Function(_$GetUserDataErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetUserDataErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetUserDataErrorStateImpl implements GetUserDataErrorState {
+  const _$GetUserDataErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.getUserDataError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserDataErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserDataErrorStateImplCopyWith<_$GetUserDataErrorStateImpl>
+      get copyWith => __$$GetUserDataErrorStateImplCopyWithImpl<
+          _$GetUserDataErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getUserDataError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getUserDataError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getUserDataError != null) {
+      return getUserDataError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getUserDataError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getUserDataError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getUserDataError != null) {
+      return getUserDataError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserDataErrorState implements TripsoStates {
+  const factory GetUserDataErrorState(final String error) =
+      _$GetUserDataErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetUserDataErrorStateImplCopyWith<_$GetUserDataErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeUserPasswordLoadingStateImplCopyWith<$Res> {
+  factory _$$ChangeUserPasswordLoadingStateImplCopyWith(
+          _$ChangeUserPasswordLoadingStateImpl value,
+          $Res Function(_$ChangeUserPasswordLoadingStateImpl) then) =
+      __$$ChangeUserPasswordLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChangeUserPasswordLoadingStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res,
+        _$ChangeUserPasswordLoadingStateImpl>
+    implements _$$ChangeUserPasswordLoadingStateImplCopyWith<$Res> {
+  __$$ChangeUserPasswordLoadingStateImplCopyWithImpl(
+      _$ChangeUserPasswordLoadingStateImpl _value,
+      $Res Function(_$ChangeUserPasswordLoadingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ChangeUserPasswordLoadingStateImpl
+    implements ChangeUserPasswordLoadingState {
+  const _$ChangeUserPasswordLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.changeUserPasswordLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeUserPasswordLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (changeUserPasswordLoading != null) {
+      return changeUserPasswordLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (changeUserPasswordLoading != null) {
+      return changeUserPasswordLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeUserPasswordLoadingState implements TripsoStates {
+  const factory ChangeUserPasswordLoadingState() =
+      _$ChangeUserPasswordLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeUserPasswordSuccessStateImplCopyWith<$Res> {
+  factory _$$ChangeUserPasswordSuccessStateImplCopyWith(
+          _$ChangeUserPasswordSuccessStateImpl value,
+          $Res Function(_$ChangeUserPasswordSuccessStateImpl) then) =
+      __$$ChangeUserPasswordSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChangeUserPasswordSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res,
+        _$ChangeUserPasswordSuccessStateImpl>
+    implements _$$ChangeUserPasswordSuccessStateImplCopyWith<$Res> {
+  __$$ChangeUserPasswordSuccessStateImplCopyWithImpl(
+      _$ChangeUserPasswordSuccessStateImpl _value,
+      $Res Function(_$ChangeUserPasswordSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ChangeUserPasswordSuccessStateImpl
+    implements ChangeUserPasswordSuccessState {
+  const _$ChangeUserPasswordSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.changeUserPasswordSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeUserPasswordSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (changeUserPasswordSuccess != null) {
+      return changeUserPasswordSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (changeUserPasswordSuccess != null) {
+      return changeUserPasswordSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeUserPasswordSuccessState implements TripsoStates {
+  const factory ChangeUserPasswordSuccessState() =
+      _$ChangeUserPasswordSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeUserPasswordErrorStateImplCopyWith<$Res> {
+  factory _$$ChangeUserPasswordErrorStateImplCopyWith(
+          _$ChangeUserPasswordErrorStateImpl value,
+          $Res Function(_$ChangeUserPasswordErrorStateImpl) then) =
+      __$$ChangeUserPasswordErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$ChangeUserPasswordErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$ChangeUserPasswordErrorStateImpl>
+    implements _$$ChangeUserPasswordErrorStateImplCopyWith<$Res> {
+  __$$ChangeUserPasswordErrorStateImplCopyWithImpl(
+      _$ChangeUserPasswordErrorStateImpl _value,
+      $Res Function(_$ChangeUserPasswordErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ChangeUserPasswordErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeUserPasswordErrorStateImpl
+    implements ChangeUserPasswordErrorState {
+  const _$ChangeUserPasswordErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.changeUserPasswordError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeUserPasswordErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeUserPasswordErrorStateImplCopyWith<
+          _$ChangeUserPasswordErrorStateImpl>
+      get copyWith => __$$ChangeUserPasswordErrorStateImplCopyWithImpl<
+          _$ChangeUserPasswordErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (changeUserPasswordError != null) {
+      return changeUserPasswordError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return changeUserPasswordError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (changeUserPasswordError != null) {
+      return changeUserPasswordError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeUserPasswordErrorState implements TripsoStates {
+  const factory ChangeUserPasswordErrorState(final String error) =
+      _$ChangeUserPasswordErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChangeUserPasswordErrorStateImplCopyWith<
+          _$ChangeUserPasswordErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ShowPasswordStateImplCopyWith<$Res> {
+  factory _$$ShowPasswordStateImplCopyWith(_$ShowPasswordStateImpl value,
+          $Res Function(_$ShowPasswordStateImpl) then) =
+      __$$ShowPasswordStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ShowPasswordStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$ShowPasswordStateImpl>
+    implements _$$ShowPasswordStateImplCopyWith<$Res> {
+  __$$ShowPasswordStateImplCopyWithImpl(_$ShowPasswordStateImpl _value,
+      $Res Function(_$ShowPasswordStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ShowPasswordStateImpl implements ShowPasswordState {
+  const _$ShowPasswordStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.showPassword()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ShowPasswordStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return showPassword();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return showPassword?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (showPassword != null) {
+      return showPassword();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return showPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return showPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (showPassword != null) {
+      return showPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowPasswordState implements TripsoStates {
+  const factory ShowPasswordState() = _$ShowPasswordStateImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeBottomNavBarStateImplCopyWith<$Res> {
+  factory _$$ChangeBottomNavBarStateImplCopyWith(
+          _$ChangeBottomNavBarStateImpl value,
+          $Res Function(_$ChangeBottomNavBarStateImpl) then) =
+      __$$ChangeBottomNavBarStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChangeBottomNavBarStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$ChangeBottomNavBarStateImpl>
+    implements _$$ChangeBottomNavBarStateImplCopyWith<$Res> {
+  __$$ChangeBottomNavBarStateImplCopyWithImpl(
+      _$ChangeBottomNavBarStateImpl _value,
+      $Res Function(_$ChangeBottomNavBarStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ChangeBottomNavBarStateImpl implements ChangeBottomNavBarState {
+  const _$ChangeBottomNavBarStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.changeBottomNavBar()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeBottomNavBarStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return changeBottomNavBar();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return changeBottomNavBar?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (changeBottomNavBar != null) {
+      return changeBottomNavBar();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return changeBottomNavBar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return changeBottomNavBar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (changeBottomNavBar != null) {
+      return changeBottomNavBar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeBottomNavBarState implements TripsoStates {
+  const factory ChangeBottomNavBarState() = _$ChangeBottomNavBarStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetCityDataLoadingStateImplCopyWith<$Res> {
+  factory _$$GetCityDataLoadingStateImplCopyWith(
+          _$GetCityDataLoadingStateImpl value,
+          $Res Function(_$GetCityDataLoadingStateImpl) then) =
+      __$$GetCityDataLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetCityDataLoadingStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetCityDataLoadingStateImpl>
+    implements _$$GetCityDataLoadingStateImplCopyWith<$Res> {
+  __$$GetCityDataLoadingStateImplCopyWithImpl(
+      _$GetCityDataLoadingStateImpl _value,
+      $Res Function(_$GetCityDataLoadingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetCityDataLoadingStateImpl implements GetCityDataLoadingState {
+  const _$GetCityDataLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getCityDataLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCityDataLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getCityDataLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getCityDataLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCityDataLoading != null) {
+      return getCityDataLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getCityDataLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getCityDataLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCityDataLoading != null) {
+      return getCityDataLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCityDataLoadingState implements TripsoStates {
+  const factory GetCityDataLoadingState() = _$GetCityDataLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetCityDataSuccessStateImplCopyWith<$Res> {
+  factory _$$GetCityDataSuccessStateImplCopyWith(
+          _$GetCityDataSuccessStateImpl value,
+          $Res Function(_$GetCityDataSuccessStateImpl) then) =
+      __$$GetCityDataSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetCityDataSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetCityDataSuccessStateImpl>
+    implements _$$GetCityDataSuccessStateImplCopyWith<$Res> {
+  __$$GetCityDataSuccessStateImplCopyWithImpl(
+      _$GetCityDataSuccessStateImpl _value,
+      $Res Function(_$GetCityDataSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetCityDataSuccessStateImpl implements GetCityDataSuccessState {
+  const _$GetCityDataSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getCityDataSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCityDataSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getCityDataSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getCityDataSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCityDataSuccess != null) {
+      return getCityDataSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getCityDataSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getCityDataSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCityDataSuccess != null) {
+      return getCityDataSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCityDataSuccessState implements TripsoStates {
+  const factory GetCityDataSuccessState() = _$GetCityDataSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetCityDataErrorStateImplCopyWith<$Res> {
+  factory _$$GetCityDataErrorStateImplCopyWith(
+          _$GetCityDataErrorStateImpl value,
+          $Res Function(_$GetCityDataErrorStateImpl) then) =
+      __$$GetCityDataErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetCityDataErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetCityDataErrorStateImpl>
+    implements _$$GetCityDataErrorStateImplCopyWith<$Res> {
+  __$$GetCityDataErrorStateImplCopyWithImpl(_$GetCityDataErrorStateImpl _value,
+      $Res Function(_$GetCityDataErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetCityDataErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCityDataErrorStateImpl implements GetCityDataErrorState {
+  const _$GetCityDataErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.getCityDataError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCityDataErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCityDataErrorStateImplCopyWith<_$GetCityDataErrorStateImpl>
+      get copyWith => __$$GetCityDataErrorStateImplCopyWithImpl<
+          _$GetCityDataErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getCityDataError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getCityDataError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCityDataError != null) {
+      return getCityDataError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getCityDataError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getCityDataError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCityDataError != null) {
+      return getCityDataError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCityDataErrorState implements TripsoStates {
+  const factory GetCityDataErrorState(final String error) =
+      _$GetCityDataErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetCityDataErrorStateImplCopyWith<_$GetCityDataErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetPlaceDataLoadingStateImplCopyWith<$Res> {
+  factory _$$GetPlaceDataLoadingStateImplCopyWith(
+          _$GetPlaceDataLoadingStateImpl value,
+          $Res Function(_$GetPlaceDataLoadingStateImpl) then) =
+      __$$GetPlaceDataLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetPlaceDataLoadingStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetPlaceDataLoadingStateImpl>
+    implements _$$GetPlaceDataLoadingStateImplCopyWith<$Res> {
+  __$$GetPlaceDataLoadingStateImplCopyWithImpl(
+      _$GetPlaceDataLoadingStateImpl _value,
+      $Res Function(_$GetPlaceDataLoadingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetPlaceDataLoadingStateImpl implements GetPlaceDataLoadingState {
+  const _$GetPlaceDataLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getPlaceDataLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPlaceDataLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getPlaceDataLoading != null) {
+      return getPlaceDataLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getPlaceDataLoading != null) {
+      return getPlaceDataLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPlaceDataLoadingState implements TripsoStates {
+  const factory GetPlaceDataLoadingState() = _$GetPlaceDataLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetPlaceDataSuccessStateImplCopyWith<$Res> {
+  factory _$$GetPlaceDataSuccessStateImplCopyWith(
+          _$GetPlaceDataSuccessStateImpl value,
+          $Res Function(_$GetPlaceDataSuccessStateImpl) then) =
+      __$$GetPlaceDataSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetPlaceDataSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetPlaceDataSuccessStateImpl>
+    implements _$$GetPlaceDataSuccessStateImplCopyWith<$Res> {
+  __$$GetPlaceDataSuccessStateImplCopyWithImpl(
+      _$GetPlaceDataSuccessStateImpl _value,
+      $Res Function(_$GetPlaceDataSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetPlaceDataSuccessStateImpl implements GetPlaceDataSuccessState {
+  const _$GetPlaceDataSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getPlaceDataSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPlaceDataSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getPlaceDataSuccess != null) {
+      return getPlaceDataSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getPlaceDataSuccess != null) {
+      return getPlaceDataSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPlaceDataSuccessState implements TripsoStates {
+  const factory GetPlaceDataSuccessState() = _$GetPlaceDataSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetPlaceDataErrorStateImplCopyWith<$Res> {
+  factory _$$GetPlaceDataErrorStateImplCopyWith(
+          _$GetPlaceDataErrorStateImpl value,
+          $Res Function(_$GetPlaceDataErrorStateImpl) then) =
+      __$$GetPlaceDataErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetPlaceDataErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetPlaceDataErrorStateImpl>
+    implements _$$GetPlaceDataErrorStateImplCopyWith<$Res> {
+  __$$GetPlaceDataErrorStateImplCopyWithImpl(
+      _$GetPlaceDataErrorStateImpl _value,
+      $Res Function(_$GetPlaceDataErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetPlaceDataErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetPlaceDataErrorStateImpl implements GetPlaceDataErrorState {
+  const _$GetPlaceDataErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.getPlaceDataError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPlaceDataErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPlaceDataErrorStateImplCopyWith<_$GetPlaceDataErrorStateImpl>
+      get copyWith => __$$GetPlaceDataErrorStateImplCopyWithImpl<
+          _$GetPlaceDataErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getPlaceDataError != null) {
+      return getPlaceDataError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getPlaceDataError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getPlaceDataError != null) {
+      return getPlaceDataError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPlaceDataErrorState implements TripsoStates {
+  const factory GetPlaceDataErrorState(final String error) =
+      _$GetPlaceDataErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetPlaceDataErrorStateImplCopyWith<_$GetPlaceDataErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetBestPlanLoadingStateImplCopyWith<$Res> {
+  factory _$$GetBestPlanLoadingStateImplCopyWith(
+          _$GetBestPlanLoadingStateImpl value,
+          $Res Function(_$GetBestPlanLoadingStateImpl) then) =
+      __$$GetBestPlanLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetBestPlanLoadingStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetBestPlanLoadingStateImpl>
+    implements _$$GetBestPlanLoadingStateImplCopyWith<$Res> {
+  __$$GetBestPlanLoadingStateImplCopyWithImpl(
+      _$GetBestPlanLoadingStateImpl _value,
+      $Res Function(_$GetBestPlanLoadingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetBestPlanLoadingStateImpl implements GetBestPlanLoadingState {
+  const _$GetBestPlanLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getBestPlanLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBestPlanLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getBestPlanLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getBestPlanLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getBestPlanLoading != null) {
+      return getBestPlanLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getBestPlanLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getBestPlanLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getBestPlanLoading != null) {
+      return getBestPlanLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBestPlanLoadingState implements TripsoStates {
+  const factory GetBestPlanLoadingState() = _$GetBestPlanLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetBestPlanSuccessStateImplCopyWith<$Res> {
+  factory _$$GetBestPlanSuccessStateImplCopyWith(
+          _$GetBestPlanSuccessStateImpl value,
+          $Res Function(_$GetBestPlanSuccessStateImpl) then) =
+      __$$GetBestPlanSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetBestPlanSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetBestPlanSuccessStateImpl>
+    implements _$$GetBestPlanSuccessStateImplCopyWith<$Res> {
+  __$$GetBestPlanSuccessStateImplCopyWithImpl(
+      _$GetBestPlanSuccessStateImpl _value,
+      $Res Function(_$GetBestPlanSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetBestPlanSuccessStateImpl implements GetBestPlanSuccessState {
+  const _$GetBestPlanSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getBestPlanSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBestPlanSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getBestPlanSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getBestPlanSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getBestPlanSuccess != null) {
+      return getBestPlanSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getBestPlanSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getBestPlanSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getBestPlanSuccess != null) {
+      return getBestPlanSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBestPlanSuccessState implements TripsoStates {
+  const factory GetBestPlanSuccessState() = _$GetBestPlanSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetBestPlanErrorStateImplCopyWith<$Res> {
+  factory _$$GetBestPlanErrorStateImplCopyWith(
+          _$GetBestPlanErrorStateImpl value,
+          $Res Function(_$GetBestPlanErrorStateImpl) then) =
+      __$$GetBestPlanErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetBestPlanErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetBestPlanErrorStateImpl>
+    implements _$$GetBestPlanErrorStateImplCopyWith<$Res> {
+  __$$GetBestPlanErrorStateImplCopyWithImpl(_$GetBestPlanErrorStateImpl _value,
+      $Res Function(_$GetBestPlanErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetBestPlanErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetBestPlanErrorStateImpl implements GetBestPlanErrorState {
+  const _$GetBestPlanErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.getBestPlanError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBestPlanErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetBestPlanErrorStateImplCopyWith<_$GetBestPlanErrorStateImpl>
+      get copyWith => __$$GetBestPlanErrorStateImplCopyWithImpl<
+          _$GetBestPlanErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getBestPlanError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getBestPlanError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getBestPlanError != null) {
+      return getBestPlanError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getBestPlanError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getBestPlanError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getBestPlanError != null) {
+      return getBestPlanError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBestPlanErrorState implements TripsoStates {
+  const factory GetBestPlanErrorState(final String error) =
+      _$GetBestPlanErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetBestPlanErrorStateImplCopyWith<_$GetBestPlanErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetProfileImagePickedSuccessStateImplCopyWith<$Res> {
+  factory _$$GetProfileImagePickedSuccessStateImplCopyWith(
+          _$GetProfileImagePickedSuccessStateImpl value,
+          $Res Function(_$GetProfileImagePickedSuccessStateImpl) then) =
+      __$$GetProfileImagePickedSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetProfileImagePickedSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res,
+        _$GetProfileImagePickedSuccessStateImpl>
+    implements _$$GetProfileImagePickedSuccessStateImplCopyWith<$Res> {
+  __$$GetProfileImagePickedSuccessStateImplCopyWithImpl(
+      _$GetProfileImagePickedSuccessStateImpl _value,
+      $Res Function(_$GetProfileImagePickedSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetProfileImagePickedSuccessStateImpl
+    implements GetProfileImagePickedSuccessState {
+  const _$GetProfileImagePickedSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getProfileImagePickedSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetProfileImagePickedSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getProfileImagePickedSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getProfileImagePickedSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getProfileImagePickedSuccess != null) {
+      return getProfileImagePickedSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getProfileImagePickedSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getProfileImagePickedSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getProfileImagePickedSuccess != null) {
+      return getProfileImagePickedSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetProfileImagePickedSuccessState implements TripsoStates {
+  const factory GetProfileImagePickedSuccessState() =
+      _$GetProfileImagePickedSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetProfileImagePickedErrorStateImplCopyWith<$Res> {
+  factory _$$GetProfileImagePickedErrorStateImplCopyWith(
+          _$GetProfileImagePickedErrorStateImpl value,
+          $Res Function(_$GetProfileImagePickedErrorStateImpl) then) =
+      __$$GetProfileImagePickedErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetProfileImagePickedErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res,
+        _$GetProfileImagePickedErrorStateImpl>
+    implements _$$GetProfileImagePickedErrorStateImplCopyWith<$Res> {
+  __$$GetProfileImagePickedErrorStateImplCopyWithImpl(
+      _$GetProfileImagePickedErrorStateImpl _value,
+      $Res Function(_$GetProfileImagePickedErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetProfileImagePickedErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetProfileImagePickedErrorStateImpl
+    implements GetProfileImagePickedErrorState {
+  const _$GetProfileImagePickedErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.getProfileImagePickedError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetProfileImagePickedErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetProfileImagePickedErrorStateImplCopyWith<
+          _$GetProfileImagePickedErrorStateImpl>
+      get copyWith => __$$GetProfileImagePickedErrorStateImplCopyWithImpl<
+          _$GetProfileImagePickedErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getProfileImagePickedError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getProfileImagePickedError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getProfileImagePickedError != null) {
+      return getProfileImagePickedError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getProfileImagePickedError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getProfileImagePickedError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getProfileImagePickedError != null) {
+      return getProfileImagePickedError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetProfileImagePickedErrorState implements TripsoStates {
+  const factory GetProfileImagePickedErrorState(final String error) =
+      _$GetProfileImagePickedErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetProfileImagePickedErrorStateImplCopyWith<
+          _$GetProfileImagePickedErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetCoverImagePickedSuccessStateImplCopyWith<$Res> {
+  factory _$$GetCoverImagePickedSuccessStateImplCopyWith(
+          _$GetCoverImagePickedSuccessStateImpl value,
+          $Res Function(_$GetCoverImagePickedSuccessStateImpl) then) =
+      __$$GetCoverImagePickedSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetCoverImagePickedSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res,
+        _$GetCoverImagePickedSuccessStateImpl>
+    implements _$$GetCoverImagePickedSuccessStateImplCopyWith<$Res> {
+  __$$GetCoverImagePickedSuccessStateImplCopyWithImpl(
+      _$GetCoverImagePickedSuccessStateImpl _value,
+      $Res Function(_$GetCoverImagePickedSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetCoverImagePickedSuccessStateImpl
+    implements GetCoverImagePickedSuccessState {
+  const _$GetCoverImagePickedSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getCoverImagePickedSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCoverImagePickedSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getCoverImagePickedSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getCoverImagePickedSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCoverImagePickedSuccess != null) {
+      return getCoverImagePickedSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getCoverImagePickedSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getCoverImagePickedSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCoverImagePickedSuccess != null) {
+      return getCoverImagePickedSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCoverImagePickedSuccessState implements TripsoStates {
+  const factory GetCoverImagePickedSuccessState() =
+      _$GetCoverImagePickedSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetCoverImagePickedErrorStateImplCopyWith<$Res> {
+  factory _$$GetCoverImagePickedErrorStateImplCopyWith(
+          _$GetCoverImagePickedErrorStateImpl value,
+          $Res Function(_$GetCoverImagePickedErrorStateImpl) then) =
+      __$$GetCoverImagePickedErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetCoverImagePickedErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res,
+        _$GetCoverImagePickedErrorStateImpl>
+    implements _$$GetCoverImagePickedErrorStateImplCopyWith<$Res> {
+  __$$GetCoverImagePickedErrorStateImplCopyWithImpl(
+      _$GetCoverImagePickedErrorStateImpl _value,
+      $Res Function(_$GetCoverImagePickedErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetCoverImagePickedErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCoverImagePickedErrorStateImpl
+    implements GetCoverImagePickedErrorState {
+  const _$GetCoverImagePickedErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.getCoverImagePickedError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCoverImagePickedErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCoverImagePickedErrorStateImplCopyWith<
+          _$GetCoverImagePickedErrorStateImpl>
+      get copyWith => __$$GetCoverImagePickedErrorStateImplCopyWithImpl<
+          _$GetCoverImagePickedErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getCoverImagePickedError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getCoverImagePickedError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCoverImagePickedError != null) {
+      return getCoverImagePickedError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getCoverImagePickedError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getCoverImagePickedError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCoverImagePickedError != null) {
+      return getCoverImagePickedError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCoverImagePickedErrorState implements TripsoStates {
+  const factory GetCoverImagePickedErrorState(final String error) =
+      _$GetCoverImagePickedErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetCoverImagePickedErrorStateImplCopyWith<
+          _$GetCoverImagePickedErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UploadProfileImageSuccessStateImplCopyWith<$Res> {
+  factory _$$UploadProfileImageSuccessStateImplCopyWith(
+          _$UploadProfileImageSuccessStateImpl value,
+          $Res Function(_$UploadProfileImageSuccessStateImpl) then) =
+      __$$UploadProfileImageSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UploadProfileImageSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res,
+        _$UploadProfileImageSuccessStateImpl>
+    implements _$$UploadProfileImageSuccessStateImplCopyWith<$Res> {
+  __$$UploadProfileImageSuccessStateImplCopyWithImpl(
+      _$UploadProfileImageSuccessStateImpl _value,
+      $Res Function(_$UploadProfileImageSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UploadProfileImageSuccessStateImpl
+    implements UploadProfileImageSuccessState {
+  const _$UploadProfileImageSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.uploadProfileImageSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadProfileImageSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (uploadProfileImageSuccess != null) {
+      return uploadProfileImageSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (uploadProfileImageSuccess != null) {
+      return uploadProfileImageSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadProfileImageSuccessState implements TripsoStates {
+  const factory UploadProfileImageSuccessState() =
+      _$UploadProfileImageSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$UploadProfileImageLoadingStateImplCopyWith<$Res> {
+  factory _$$UploadProfileImageLoadingStateImplCopyWith(
+          _$UploadProfileImageLoadingStateImpl value,
+          $Res Function(_$UploadProfileImageLoadingStateImpl) then) =
+      __$$UploadProfileImageLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UploadProfileImageLoadingStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res,
+        _$UploadProfileImageLoadingStateImpl>
+    implements _$$UploadProfileImageLoadingStateImplCopyWith<$Res> {
+  __$$UploadProfileImageLoadingStateImplCopyWithImpl(
+      _$UploadProfileImageLoadingStateImpl _value,
+      $Res Function(_$UploadProfileImageLoadingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UploadProfileImageLoadingStateImpl
+    implements UploadProfileImageLoadingState {
+  const _$UploadProfileImageLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.uploadProfileImageLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadProfileImageLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (uploadProfileImageLoading != null) {
+      return uploadProfileImageLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (uploadProfileImageLoading != null) {
+      return uploadProfileImageLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadProfileImageLoadingState implements TripsoStates {
+  const factory UploadProfileImageLoadingState() =
+      _$UploadProfileImageLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$UploadProfileImageErrorStateImplCopyWith<$Res> {
+  factory _$$UploadProfileImageErrorStateImplCopyWith(
+          _$UploadProfileImageErrorStateImpl value,
+          $Res Function(_$UploadProfileImageErrorStateImpl) then) =
+      __$$UploadProfileImageErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UploadProfileImageErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$UploadProfileImageErrorStateImpl>
+    implements _$$UploadProfileImageErrorStateImplCopyWith<$Res> {
+  __$$UploadProfileImageErrorStateImplCopyWithImpl(
+      _$UploadProfileImageErrorStateImpl _value,
+      $Res Function(_$UploadProfileImageErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UploadProfileImageErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UploadProfileImageErrorStateImpl
+    implements UploadProfileImageErrorState {
+  const _$UploadProfileImageErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.uploadProfileImageError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadProfileImageErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadProfileImageErrorStateImplCopyWith<
+          _$UploadProfileImageErrorStateImpl>
+      get copyWith => __$$UploadProfileImageErrorStateImplCopyWithImpl<
+          _$UploadProfileImageErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (uploadProfileImageError != null) {
+      return uploadProfileImageError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return uploadProfileImageError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (uploadProfileImageError != null) {
+      return uploadProfileImageError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadProfileImageErrorState implements TripsoStates {
+  const factory UploadProfileImageErrorState(final String error) =
+      _$UploadProfileImageErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UploadProfileImageErrorStateImplCopyWith<
+          _$UploadProfileImageErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UploadCoverImageSuccessStateImplCopyWith<$Res> {
+  factory _$$UploadCoverImageSuccessStateImplCopyWith(
+          _$UploadCoverImageSuccessStateImpl value,
+          $Res Function(_$UploadCoverImageSuccessStateImpl) then) =
+      __$$UploadCoverImageSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UploadCoverImageSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$UploadCoverImageSuccessStateImpl>
+    implements _$$UploadCoverImageSuccessStateImplCopyWith<$Res> {
+  __$$UploadCoverImageSuccessStateImplCopyWithImpl(
+      _$UploadCoverImageSuccessStateImpl _value,
+      $Res Function(_$UploadCoverImageSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UploadCoverImageSuccessStateImpl
+    implements UploadCoverImageSuccessState {
+  const _$UploadCoverImageSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.uploadCoverImageSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadCoverImageSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return uploadCoverImageSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return uploadCoverImageSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (uploadCoverImageSuccess != null) {
+      return uploadCoverImageSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return uploadCoverImageSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return uploadCoverImageSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (uploadCoverImageSuccess != null) {
+      return uploadCoverImageSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadCoverImageSuccessState implements TripsoStates {
+  const factory UploadCoverImageSuccessState() =
+      _$UploadCoverImageSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$UploadCoverImageErrorStateImplCopyWith<$Res> {
+  factory _$$UploadCoverImageErrorStateImplCopyWith(
+          _$UploadCoverImageErrorStateImpl value,
+          $Res Function(_$UploadCoverImageErrorStateImpl) then) =
+      __$$UploadCoverImageErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UploadCoverImageErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$UploadCoverImageErrorStateImpl>
+    implements _$$UploadCoverImageErrorStateImplCopyWith<$Res> {
+  __$$UploadCoverImageErrorStateImplCopyWithImpl(
+      _$UploadCoverImageErrorStateImpl _value,
+      $Res Function(_$UploadCoverImageErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UploadCoverImageErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UploadCoverImageErrorStateImpl implements UploadCoverImageErrorState {
+  const _$UploadCoverImageErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.uploadCoverImageError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadCoverImageErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadCoverImageErrorStateImplCopyWith<_$UploadCoverImageErrorStateImpl>
+      get copyWith => __$$UploadCoverImageErrorStateImplCopyWithImpl<
+          _$UploadCoverImageErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return uploadCoverImageError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return uploadCoverImageError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (uploadCoverImageError != null) {
+      return uploadCoverImageError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return uploadCoverImageError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return uploadCoverImageError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (uploadCoverImageError != null) {
+      return uploadCoverImageError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadCoverImageErrorState implements TripsoStates {
+  const factory UploadCoverImageErrorState(final String error) =
+      _$UploadCoverImageErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UploadCoverImageErrorStateImplCopyWith<_$UploadCoverImageErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateUserLoadingStateImplCopyWith<$Res> {
+  factory _$$UpdateUserLoadingStateImplCopyWith(
+          _$UpdateUserLoadingStateImpl value,
+          $Res Function(_$UpdateUserLoadingStateImpl) then) =
+      __$$UpdateUserLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateUserLoadingStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$UpdateUserLoadingStateImpl>
+    implements _$$UpdateUserLoadingStateImplCopyWith<$Res> {
+  __$$UpdateUserLoadingStateImplCopyWithImpl(
+      _$UpdateUserLoadingStateImpl _value,
+      $Res Function(_$UpdateUserLoadingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UpdateUserLoadingStateImpl implements UpdateUserLoadingState {
+  const _$UpdateUserLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.updateUserLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateUserLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return updateUserLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return updateUserLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateUserLoading != null) {
+      return updateUserLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return updateUserLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return updateUserLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateUserLoading != null) {
+      return updateUserLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateUserLoadingState implements TripsoStates {
+  const factory UpdateUserLoadingState() = _$UpdateUserLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateUserSuccessStateImplCopyWith<$Res> {
+  factory _$$UpdateUserSuccessStateImplCopyWith(
+          _$UpdateUserSuccessStateImpl value,
+          $Res Function(_$UpdateUserSuccessStateImpl) then) =
+      __$$UpdateUserSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateUserSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$UpdateUserSuccessStateImpl>
+    implements _$$UpdateUserSuccessStateImplCopyWith<$Res> {
+  __$$UpdateUserSuccessStateImplCopyWithImpl(
+      _$UpdateUserSuccessStateImpl _value,
+      $Res Function(_$UpdateUserSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UpdateUserSuccessStateImpl implements UpdateUserSuccessState {
+  const _$UpdateUserSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.updateUserSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateUserSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return updateUserSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return updateUserSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateUserSuccess != null) {
+      return updateUserSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return updateUserSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return updateUserSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateUserSuccess != null) {
+      return updateUserSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateUserSuccessState implements TripsoStates {
+  const factory UpdateUserSuccessState() = _$UpdateUserSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateUserErrorStateImplCopyWith<$Res> {
+  factory _$$UpdateUserErrorStateImplCopyWith(_$UpdateUserErrorStateImpl value,
+          $Res Function(_$UpdateUserErrorStateImpl) then) =
+      __$$UpdateUserErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UpdateUserErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$UpdateUserErrorStateImpl>
+    implements _$$UpdateUserErrorStateImplCopyWith<$Res> {
+  __$$UpdateUserErrorStateImplCopyWithImpl(_$UpdateUserErrorStateImpl _value,
+      $Res Function(_$UpdateUserErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UpdateUserErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateUserErrorStateImpl implements UpdateUserErrorState {
+  const _$UpdateUserErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.updateUserError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateUserErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateUserErrorStateImplCopyWith<_$UpdateUserErrorStateImpl>
+      get copyWith =>
+          __$$UpdateUserErrorStateImplCopyWithImpl<_$UpdateUserErrorStateImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return updateUserError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return updateUserError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateUserError != null) {
+      return updateUserError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return updateUserError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return updateUserError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateUserError != null) {
+      return updateUserError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateUserErrorState implements TripsoStates {
+  const factory UpdateUserErrorState(final String error) =
+      _$UpdateUserErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateUserErrorStateImplCopyWith<_$UpdateUserErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddToFavoriteSuccessStateImplCopyWith<$Res> {
+  factory _$$AddToFavoriteSuccessStateImplCopyWith(
+          _$AddToFavoriteSuccessStateImpl value,
+          $Res Function(_$AddToFavoriteSuccessStateImpl) then) =
+      __$$AddToFavoriteSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddToFavoriteSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$AddToFavoriteSuccessStateImpl>
+    implements _$$AddToFavoriteSuccessStateImplCopyWith<$Res> {
+  __$$AddToFavoriteSuccessStateImplCopyWithImpl(
+      _$AddToFavoriteSuccessStateImpl _value,
+      $Res Function(_$AddToFavoriteSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AddToFavoriteSuccessStateImpl implements AddToFavoriteSuccessState {
+  const _$AddToFavoriteSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.addToFavoriteSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddToFavoriteSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return addToFavoriteSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return addToFavoriteSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (addToFavoriteSuccess != null) {
+      return addToFavoriteSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return addToFavoriteSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return addToFavoriteSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (addToFavoriteSuccess != null) {
+      return addToFavoriteSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddToFavoriteSuccessState implements TripsoStates {
+  const factory AddToFavoriteSuccessState() = _$AddToFavoriteSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$AddToFavoriteErrorStateImplCopyWith<$Res> {
+  factory _$$AddToFavoriteErrorStateImplCopyWith(
+          _$AddToFavoriteErrorStateImpl value,
+          $Res Function(_$AddToFavoriteErrorStateImpl) then) =
+      __$$AddToFavoriteErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$AddToFavoriteErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$AddToFavoriteErrorStateImpl>
+    implements _$$AddToFavoriteErrorStateImplCopyWith<$Res> {
+  __$$AddToFavoriteErrorStateImplCopyWithImpl(
+      _$AddToFavoriteErrorStateImpl _value,
+      $Res Function(_$AddToFavoriteErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$AddToFavoriteErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddToFavoriteErrorStateImpl implements AddToFavoriteErrorState {
+  const _$AddToFavoriteErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.addToFavoriteError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddToFavoriteErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddToFavoriteErrorStateImplCopyWith<_$AddToFavoriteErrorStateImpl>
+      get copyWith => __$$AddToFavoriteErrorStateImplCopyWithImpl<
+          _$AddToFavoriteErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return addToFavoriteError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return addToFavoriteError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (addToFavoriteError != null) {
+      return addToFavoriteError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return addToFavoriteError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return addToFavoriteError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (addToFavoriteError != null) {
+      return addToFavoriteError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddToFavoriteErrorState implements TripsoStates {
+  const factory AddToFavoriteErrorState(final String error) =
+      _$AddToFavoriteErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddToFavoriteErrorStateImplCopyWith<_$AddToFavoriteErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnFavoriteSuccessStateImplCopyWith<$Res> {
+  factory _$$UnFavoriteSuccessStateImplCopyWith(
+          _$UnFavoriteSuccessStateImpl value,
+          $Res Function(_$UnFavoriteSuccessStateImpl) then) =
+      __$$UnFavoriteSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UnFavoriteSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$UnFavoriteSuccessStateImpl>
+    implements _$$UnFavoriteSuccessStateImplCopyWith<$Res> {
+  __$$UnFavoriteSuccessStateImplCopyWithImpl(
+      _$UnFavoriteSuccessStateImpl _value,
+      $Res Function(_$UnFavoriteSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UnFavoriteSuccessStateImpl implements UnFavoriteSuccessState {
+  const _$UnFavoriteSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.unFavoriteSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnFavoriteSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return unFavoriteSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return unFavoriteSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (unFavoriteSuccess != null) {
+      return unFavoriteSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return unFavoriteSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return unFavoriteSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (unFavoriteSuccess != null) {
+      return unFavoriteSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnFavoriteSuccessState implements TripsoStates {
+  const factory UnFavoriteSuccessState() = _$UnFavoriteSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$UnFavoriteErrorStateImplCopyWith<$Res> {
+  factory _$$UnFavoriteErrorStateImplCopyWith(_$UnFavoriteErrorStateImpl value,
+          $Res Function(_$UnFavoriteErrorStateImpl) then) =
+      __$$UnFavoriteErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UnFavoriteErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$UnFavoriteErrorStateImpl>
+    implements _$$UnFavoriteErrorStateImplCopyWith<$Res> {
+  __$$UnFavoriteErrorStateImplCopyWithImpl(_$UnFavoriteErrorStateImpl _value,
+      $Res Function(_$UnFavoriteErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UnFavoriteErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UnFavoriteErrorStateImpl implements UnFavoriteErrorState {
+  const _$UnFavoriteErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.unFavoriteError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnFavoriteErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnFavoriteErrorStateImplCopyWith<_$UnFavoriteErrorStateImpl>
+      get copyWith =>
+          __$$UnFavoriteErrorStateImplCopyWithImpl<_$UnFavoriteErrorStateImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return unFavoriteError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return unFavoriteError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (unFavoriteError != null) {
+      return unFavoriteError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return unFavoriteError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return unFavoriteError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (unFavoriteError != null) {
+      return unFavoriteError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnFavoriteErrorState implements TripsoStates {
+  const factory UnFavoriteErrorState(final String error) =
+      _$UnFavoriteErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnFavoriteErrorStateImplCopyWith<_$UnFavoriteErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetPlacesSuccessStateImplCopyWith<$Res> {
+  factory _$$GetPlacesSuccessStateImplCopyWith(
+          _$GetPlacesSuccessStateImpl value,
+          $Res Function(_$GetPlacesSuccessStateImpl) then) =
+      __$$GetPlacesSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetPlacesSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetPlacesSuccessStateImpl>
+    implements _$$GetPlacesSuccessStateImplCopyWith<$Res> {
+  __$$GetPlacesSuccessStateImplCopyWithImpl(_$GetPlacesSuccessStateImpl _value,
+      $Res Function(_$GetPlacesSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetPlacesSuccessStateImpl implements GetPlacesSuccessState {
+  const _$GetPlacesSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.getPlacesSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPlacesSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getPlacesSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getPlacesSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getPlacesSuccess != null) {
+      return getPlacesSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getPlacesSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getPlacesSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getPlacesSuccess != null) {
+      return getPlacesSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPlacesSuccessState implements TripsoStates {
+  const factory GetPlacesSuccessState() = _$GetPlacesSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetPlacesErrorStateImplCopyWith<$Res> {
+  factory _$$GetPlacesErrorStateImplCopyWith(_$GetPlacesErrorStateImpl value,
+          $Res Function(_$GetPlacesErrorStateImpl) then) =
+      __$$GetPlacesErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetPlacesErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$GetPlacesErrorStateImpl>
+    implements _$$GetPlacesErrorStateImplCopyWith<$Res> {
+  __$$GetPlacesErrorStateImplCopyWithImpl(_$GetPlacesErrorStateImpl _value,
+      $Res Function(_$GetPlacesErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetPlacesErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetPlacesErrorStateImpl implements GetPlacesErrorState {
+  const _$GetPlacesErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.getPlacesError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPlacesErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPlacesErrorStateImplCopyWith<_$GetPlacesErrorStateImpl> get copyWith =>
+      __$$GetPlacesErrorStateImplCopyWithImpl<_$GetPlacesErrorStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return getPlacesError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return getPlacesError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getPlacesError != null) {
+      return getPlacesError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return getPlacesError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return getPlacesError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (getPlacesError != null) {
+      return getPlacesError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPlacesErrorState implements TripsoStates {
+  const factory GetPlacesErrorState(final String error) =
+      _$GetPlacesErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetPlacesErrorStateImplCopyWith<_$GetPlacesErrorStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddPlanSuccessStateImplCopyWith<$Res> {
+  factory _$$AddPlanSuccessStateImplCopyWith(_$AddPlanSuccessStateImpl value,
+          $Res Function(_$AddPlanSuccessStateImpl) then) =
+      __$$AddPlanSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddPlanSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$AddPlanSuccessStateImpl>
+    implements _$$AddPlanSuccessStateImplCopyWith<$Res> {
+  __$$AddPlanSuccessStateImplCopyWithImpl(_$AddPlanSuccessStateImpl _value,
+      $Res Function(_$AddPlanSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AddPlanSuccessStateImpl implements AddPlanSuccessState {
+  const _$AddPlanSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.addPlanSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddPlanSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return addPlanSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return addPlanSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (addPlanSuccess != null) {
+      return addPlanSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return addPlanSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return addPlanSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (addPlanSuccess != null) {
+      return addPlanSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddPlanSuccessState implements TripsoStates {
+  const factory AddPlanSuccessState() = _$AddPlanSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$AddPlanErrorStateImplCopyWith<$Res> {
+  factory _$$AddPlanErrorStateImplCopyWith(_$AddPlanErrorStateImpl value,
+          $Res Function(_$AddPlanErrorStateImpl) then) =
+      __$$AddPlanErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$AddPlanErrorStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$AddPlanErrorStateImpl>
+    implements _$$AddPlanErrorStateImplCopyWith<$Res> {
+  __$$AddPlanErrorStateImplCopyWithImpl(_$AddPlanErrorStateImpl _value,
+      $Res Function(_$AddPlanErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$AddPlanErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddPlanErrorStateImpl implements AddPlanErrorState {
+  const _$AddPlanErrorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TripsoStates.addPlanError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddPlanErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddPlanErrorStateImplCopyWith<_$AddPlanErrorStateImpl> get copyWith =>
+      __$$AddPlanErrorStateImplCopyWithImpl<_$AddPlanErrorStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return addPlanError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return addPlanError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (addPlanError != null) {
+      return addPlanError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return addPlanError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return addPlanError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (addPlanError != null) {
+      return addPlanError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddPlanErrorState implements TripsoStates {
+  const factory AddPlanErrorState(final String error) = _$AddPlanErrorStateImpl;
+
+  String get error;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddPlanErrorStateImplCopyWith<_$AddPlanErrorStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteMyPlanSuccessStateImplCopyWith<$Res> {
+  factory _$$DeleteMyPlanSuccessStateImplCopyWith(
+          _$DeleteMyPlanSuccessStateImpl value,
+          $Res Function(_$DeleteMyPlanSuccessStateImpl) then) =
+      __$$DeleteMyPlanSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteMyPlanSuccessStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$DeleteMyPlanSuccessStateImpl>
+    implements _$$DeleteMyPlanSuccessStateImplCopyWith<$Res> {
+  __$$DeleteMyPlanSuccessStateImplCopyWithImpl(
+      _$DeleteMyPlanSuccessStateImpl _value,
+      $Res Function(_$DeleteMyPlanSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$DeleteMyPlanSuccessStateImpl implements DeleteMyPlanSuccessState {
+  const _$DeleteMyPlanSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'TripsoStates.deleteMyPlanSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteMyPlanSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanSuccess,
+  }) {
+    return deleteMyPlanSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanSuccess,
+  }) {
+    return deleteMyPlanSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteMyPlanSuccess != null) {
+      return deleteMyPlanSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+  }) {
+    return deleteMyPlanSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+  }) {
+    return deleteMyPlanSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteMyPlanSuccess != null) {
+      return deleteMyPlanSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteMyPlanSuccessState implements TripsoStates {
+  const factory DeleteMyPlanSuccessState() = _$DeleteMyPlanSuccessStateImpl;
+}

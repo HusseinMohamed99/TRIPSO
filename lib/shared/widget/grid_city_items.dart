@@ -37,7 +37,7 @@ class GridCitiesItem extends StatelessWidget {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).fetchCityData(cityModel.cId);
         TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
@@ -132,7 +132,7 @@ class GridEGItem extends StatelessWidget {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).fetchCityData(cityModel.cId);
         TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
@@ -223,7 +223,7 @@ class GridITItem extends StatelessWidget {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).fetchCityData(cityModel.cId);
         TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
@@ -314,7 +314,7 @@ class GridUAEItem extends StatelessWidget {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).fetchCityData(cityModel.cId);
         TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
@@ -405,7 +405,7 @@ class GridFRItem extends StatelessWidget {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).fetchCityData(cityModel.cId);
         TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
@@ -496,7 +496,7 @@ class GridPopularItem extends StatelessWidget {
         TripsoCubit.get(context).getUserData();
         TripsoCubit.get(context).getDataPlaces(cityModel.cId);
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
+        TripsoCubit.get(context).fetchCityData(cityModel.cId);
         TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
         navigateTo(
           context,
