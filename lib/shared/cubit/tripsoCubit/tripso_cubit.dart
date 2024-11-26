@@ -204,53 +204,21 @@ class TripsoCubit extends Cubit<TripsoStates> {
     }
   }
 
-  List<CityModel> cityEG = [];
-  List<String> cIdEG = [];
+  List<CityModel> city = [];
+  List<String> cId = [];
 
-  getEGData() async {
+  // Helper method for fetching city data based on country
+  void getCityDataByCountry(String country) async {
     FirebaseFirestore.instance
         .collection('cities')
-        .where("country", isEqualTo: 'Egypt')
+        .where("country", isEqualTo: country)
         .get()
         .then((value) {
-      cityEG = [];
+      city.clear();
+      cId.clear();
       for (var element in value.docs) {
-        cityEG.add(CityModel.fromFireStore(element.data()));
-        cIdEG.add(element.id);
-      }
-    });
-  }
-
-  List<CityModel> cityIT = [];
-  List<String> cIdIT = [];
-
-  getITData() async {
-    FirebaseFirestore.instance
-        .collection('cities')
-        .where("country", isEqualTo: "Italy")
-        .get()
-        .then((value) {
-      cityIT = [];
-      for (var element in value.docs) {
-        cityIT.add(CityModel.fromFireStore(element.data()));
-        cIdIT.add(element.id);
-      }
-    });
-  }
-
-  List<CityModel> cityFR = [];
-  List<String> cIdFR = [];
-
-  getFRData() async {
-    FirebaseFirestore.instance
-        .collection('cities')
-        .where("country", isEqualTo: "France")
-        .get()
-        .then((value) {
-      cityFR = [];
-      for (var element in value.docs) {
-        cityFR.add(CityModel.fromFireStore(element.data()));
-        cIdFR.add(element.id);
+        city.add(CityModel.fromFireStore(element.data()));
+        cId.add(element.id);
       }
     });
   }
@@ -268,23 +236,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       for (var element in value.docs) {
         cityPopular.add(CityModel.fromFireStore(element.data()));
         cIdPopular.add(element.id);
-      }
-    });
-  }
-
-  List<CityModel> cityUAE = [];
-  List<String> cIdUAE = [];
-
-  getUAEData() async {
-    FirebaseFirestore.instance
-        .collection('cities')
-        .where("country", isEqualTo: "UAE")
-        .get()
-        .then((value) {
-      cityUAE = [];
-      for (var element in value.docs) {
-        cityUAE.add(CityModel.fromFireStore(element.data()));
-        cIdUAE.add(element.id);
       }
     });
   }

@@ -23,10 +23,6 @@ class TripsoApp extends StatelessWidget {
             create: (context) => TripsoCubit()
               ..getUserData()
               ..getDataForPlace()
-              ..getITData()
-              ..getEGData()
-              ..getFRData()
-              ..getUAEData()
               ..getPopularData()),
         BlocProvider(
           create: (context) => WeatherCubit(WeatherService()),

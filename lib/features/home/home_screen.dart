@@ -109,24 +109,24 @@ class _CitiesScreenState extends State<CitiesScreen> {
                             ]),
                         Space(height: 30.h, width: 0.w),
                         Space(height: 5.h, width: 0.w),
-                        if (dropdownValue == 'All Countries')
-                          gridCitiesItem(
-                              context, cubit.placeModel!, cubit.bestPLanModel!),
-                        if (dropdownValue == 'Egypt')
-                          gridEGItem(
-                              context, cubit.placeModel!, cubit.bestPLanModel!),
-                        if (dropdownValue == 'Italy')
-                          gridITItem(
-                              context, cubit.placeModel!, cubit.bestPLanModel!),
-                        if (dropdownValue == 'France')
-                          gridFRItem(
-                              context, cubit.placeModel!, cubit.bestPLanModel!),
-                        if (dropdownValue == 'UAE')
-                          gridUAEItem(
-                              context, cubit.placeModel!, cubit.bestPLanModel!),
-                        if (dropdownValue == 'Popular')
-                          gridPopularItem(
-                              context, cubit.placeModel!, cubit.bestPLanModel!),
+                        // if (dropdownValue == 'All Countries')
+                        //   gridCitiesItem(
+                        //       context, cubit.placeModel!, cubit.bestPLanModel!),
+                        // if (dropdownValue == 'Egypt')
+                        //   gridEGItem(
+                        //       context, cubit.placeModel!, cubit.bestPLanModel!),
+                        // if (dropdownValue == 'Italy')
+                        //   gridITItem(
+                        //       context, cubit.placeModel!, cubit.bestPLanModel!),
+                        // if (dropdownValue == 'France')
+                        //   gridFRItem(
+                        //       context, cubit.placeModel!, cubit.bestPLanModel!),
+                        // if (dropdownValue == 'UAE')
+                        //   gridUAEItem(
+                        //       context, cubit.placeModel!, cubit.bestPLanModel!),
+                        // if (dropdownValue == 'Popular')
+                        //   gridPopularItem(
+                        //       context, cubit.placeModel!, cubit.bestPLanModel!),
                       ],
                     ),
                     Positioned(
@@ -222,93 +222,93 @@ class _CitiesScreenState extends State<CitiesScreen> {
     );
   }
 
-  Widget gridEGItem(BuildContext context, PlaceModel placeModel,
-      BestPLanModel bestPLanModel) {
-    var cubit = TripsoCubit.get(context);
+  // Widget gridEGItem(BuildContext context, PlaceModel placeModel,
+  //     BestPLanModel bestPLanModel) {
+  //   var cubit = TripsoCubit.get(context);
 
-    return GridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 8).r,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
-      crossAxisSpacing: 2.0.w,
-      mainAxisSpacing: 2.h,
-      childAspectRatio: 1.h / 1.2.h,
-      children: List.generate(
-          cubit.cityEG.length,
-          (index) => GridEGItem(
-                placeModel,
-                bestPLanModel,
-                cityModel: cubit.cityEG[index],
-              )),
-    );
-  }
+  //   return GridView.count(
+  //     padding: const EdgeInsets.symmetric(horizontal: 8).r,
+  //     shrinkWrap: true,
+  //     physics: const NeverScrollableScrollPhysics(),
+  //     crossAxisCount: 2,
+  //     crossAxisSpacing: 2.0.w,
+  //     mainAxisSpacing: 2.h,
+  //     childAspectRatio: 1.h / 1.2.h,
+  //     children: List.generate(
+  //         cubit.cityEG.length,
+  //         (index) => GridEGItem(
+  //               placeModel,
+  //               bestPLanModel,
+  //               cityModel: cubit.cityEG[index],
+  //             )),
+  //   );
+  // }
 
-  Widget gridITItem(BuildContext context, PlaceModel placeModel,
-      BestPLanModel bestPLanModel) {
-    var cubit = TripsoCubit.get(context);
+  // Widget gridITItem(BuildContext context, PlaceModel placeModel,
+  //     BestPLanModel bestPLanModel) {
+  //   var cubit = TripsoCubit.get(context);
 
-    return GridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 8).r,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
-      crossAxisSpacing: 2.0.w,
-      mainAxisSpacing: 2.h,
-      childAspectRatio: 1.h / 1.2.h,
-      children: List.generate(
-          cubit.cityIT.length,
-          (index) => GridITItem(
-                placeModel,
-                bestPLanModel,
-                cityModel: cubit.cityIT[index],
-              )),
-    );
-  }
+  //   return GridView.count(
+  //     padding: const EdgeInsets.symmetric(horizontal: 8).r,
+  //     shrinkWrap: true,
+  //     physics: const NeverScrollableScrollPhysics(),
+  //     crossAxisCount: 2,
+  //     crossAxisSpacing: 2.0.w,
+  //     mainAxisSpacing: 2.h,
+  //     childAspectRatio: 1.h / 1.2.h,
+  //     children: List.generate(
+  //         cubit.cityIT.length,
+  //         (index) => GridITItem(
+  //               placeModel,
+  //               bestPLanModel,
+  //               cityModel: cubit.cityIT[index],
+  //             )),
+  //   );
+  // }
 
-  Widget gridUAEItem(BuildContext context, PlaceModel placeModel,
-      BestPLanModel bestPLanModel) {
-    var cubit = TripsoCubit.get(context);
+  // Widget gridUAEItem(BuildContext context, PlaceModel placeModel,
+  //     BestPLanModel bestPLanModel) {
+  //   var cubit = TripsoCubit.get(context);
 
-    return GridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 8).r,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
-      crossAxisSpacing: 2.0.w,
-      mainAxisSpacing: 2.h,
-      childAspectRatio: 1.h / 1.2.h,
-      children: List.generate(
-          cubit.cityUAE.length,
-          (index) => GridUAEItem(
-                placeModel,
-                bestPLanModel,
-                cityModel: cubit.cityUAE[index],
-              )),
-    );
-  }
+  //   return GridView.count(
+  //     padding: const EdgeInsets.symmetric(horizontal: 8).r,
+  //     shrinkWrap: true,
+  //     physics: const NeverScrollableScrollPhysics(),
+  //     crossAxisCount: 2,
+  //     crossAxisSpacing: 2.0.w,
+  //     mainAxisSpacing: 2.h,
+  //     childAspectRatio: 1.h / 1.2.h,
+  //     children: List.generate(
+  //         cubit.cityUAE.length,
+  //         (index) => GridUAEItem(
+  //               placeModel,
+  //               bestPLanModel,
+  //               cityModel: cubit.cityUAE[index],
+  //             )),
+  //   );
+  // }
 
-  Widget gridFRItem(BuildContext context, PlaceModel placeModel,
-      BestPLanModel bestPLanModel) {
-    var cubit = TripsoCubit.get(context);
+  // Widget gridFRItem(BuildContext context, PlaceModel placeModel,
+  //     BestPLanModel bestPLanModel) {
+  //   var cubit = TripsoCubit.get(context);
 
-    return GridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 8).r,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
-      crossAxisSpacing: 2.0.w,
-      mainAxisSpacing: 2.h,
-      childAspectRatio: 1.h / 1.2.h,
-      children: List.generate(
-          cubit.cityFR.length,
-          (index) => GridFRItem(
-                placeModel,
-                bestPLanModel,
-                cityModel: cubit.cityFR[index],
-              )),
-    );
-  }
+  //   return GridView.count(
+  //     padding: const EdgeInsets.symmetric(horizontal: 8).r,
+  //     shrinkWrap: true,
+  //     physics: const NeverScrollableScrollPhysics(),
+  //     crossAxisCount: 2,
+  //     crossAxisSpacing: 2.0.w,
+  //     mainAxisSpacing: 2.h,
+  //     childAspectRatio: 1.h / 1.2.h,
+  //     children: List.generate(
+  //         cubit.cityFR.length,
+  //         (index) => GridFRItem(
+  //               placeModel,
+  //               bestPLanModel,
+  //               cityModel: cubit.cityFR[index],
+  //             )),
+  //   );
+  // }
 
   Widget gridPopularItem(BuildContext context, PlaceModel placeModel,
       BestPLanModel bestPLanModel) {
