@@ -1,18 +1,25 @@
-abstract class SignInStates {}
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class SignInInitialState extends SignInStates {}
+part 'sign_in_state.freezed.dart';
 
-class SignInLoadingState extends SignInStates {}
+@freezed
+class SignInStates with _$SignInStates {
+  /// Initial state
+  const factory SignInStates.initial() = SignInInitialState;
 
-class SignInSuccessState extends SignInStates {
-  final String uid;
-  SignInSuccessState(this.uid);
+  /// Loading state
+  const factory SignInStates.loading() = SignInLoadingState;
+
+  /// Success state with user ID
+  const factory SignInStates.success(String uid) = SignInSuccessState;
+
+  /// Error state with a message
+  const factory SignInStates.error(String error) = SignInErrorState;
+
+  /// Exception state with a message
+  const factory SignInStates.exception(String error) = SignInExceptionState;
+
+  /// State for toggling password visibility
+  const factory SignInStates.togglePasswordVisibility() =
+      TogglePasswordVisibilityState;
 }
-
-class SignInErrorState extends SignInStates {
-  final String error;
-
-  SignInErrorState(this.error);
-}
-
-class TogglePasswordVisibilityState extends SignInStates {}

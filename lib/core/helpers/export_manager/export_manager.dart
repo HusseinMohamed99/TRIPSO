@@ -12,7 +12,7 @@ import 'package:tripso/core/routing/routes.dart';
 import 'package:tripso/core/styles/asset_path.dart';
 import 'package:tripso/core/styles/font_family.dart';
 import 'package:tripso/core/styles/theme.dart';
-import 'package:tripso/features/Auth/forget_password/forget_password_screen.dart';
+import 'package:tripso/features/Auth/forget_password/view/forget_password_screen.dart';
 import 'package:tripso/features/update_password/update_password_screen.dart';
 import 'package:tripso/features/Auth/sign_in/logic/sign_in_state.dart';
 import 'package:tripso/features/Auth/sign_up/logic/sign_up_state.dart';

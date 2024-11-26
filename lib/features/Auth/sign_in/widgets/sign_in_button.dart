@@ -14,7 +14,7 @@ class SingInButton extends StatelessWidget {
       context: context,
       function: () {
         if (signInCubit.formKey.currentState!.validate()) {
-          signInCubit.userSignIn(
+          signInCubit.signInUser(
             email: signInCubit.emailController.text,
             password: signInCubit.passwordController.text,
           );

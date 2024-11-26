@@ -46,10 +46,10 @@ class InputField extends StatelessWidget {
             return ValidationManager.passwordValidator(value);
           },
           prefix: Icons.lock_outline_sharp,
-          suffix: signInCubit.suffix,
-          isPassword: signInCubit.isPassword,
+          suffix: signInCubit.passwordIcon,
+          isPassword: signInCubit.isPasswordVisible,
           suffixPressed: () {
-            signInCubit.showPassword();
+            signInCubit.togglePasswordVisibility();
           },
           hint: 'Enter Password',
         ),

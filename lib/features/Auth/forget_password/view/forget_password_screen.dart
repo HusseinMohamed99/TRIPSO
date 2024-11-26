@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
+import 'package:tripso/features/Auth/forget_password/logic/forget_password_cubit.dart';
+import 'package:tripso/features/Auth/forget_password/logic/forget_password_state.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
@@ -11,8 +13,6 @@ import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/scrollable_form.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
-import 'package:tripso/shared/cubit/restPasswordCubit/rest_password_cubit.dart';
-import 'package:tripso/shared/cubit/restPasswordCubit/rest_password_state.dart';
 
 enum AuthMode { forgot, verify }
 
@@ -30,8 +30,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ResetPasswordCubit(),
-      child: BlocConsumer<ResetPasswordCubit, ResetPasswordStates>(
+      create: (context) => ForgetPasswordCubit(),
+      child: BlocConsumer<ForgetPasswordCubit, ForgetPasswordStates>(
           listener: (context, state) {},
           builder: (context, state) {
             return Scaffold(
@@ -74,9 +74,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         context: context,
                         function: () {
                           if (forgetFormKey.currentState!.validate()) {
-                            ResetPasswordCubit.get(context).resetPassword(
-                              email: emailController.text,
-                            );
+                            // ForgetPasswordCubit.get(context).resetPassword(
+                            //   email: emailController.text,
+                            // );
                             MyDialog.showLoadingDialog(context, 'Loading...');
                             MyDialog.hideDialog(context);
                             MyDialog.showMessage(context, 'Check your mail',
