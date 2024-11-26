@@ -27,7 +27,7 @@ class HomeLayout extends StatelessWidget {
         var userModel = TripsoCubit.get(context).userModel;
         var tripsoCubit = TripsoCubit.get(context);
         return Scaffold(
-          appBar: thirdAppBar(),
+          appBar: secondaryAppBar(),
           bottomNavigationBar: Container(
             decoration: BoxDecoration(
               color: ColorsManager.whiteColor,

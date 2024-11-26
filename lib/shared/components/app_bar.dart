@@ -9,13 +9,6 @@ PreferredSizeWidget secondaryAppBar() => AppBar(
       toolbarHeight: 0,
     );
 
-PreferredSizeWidget thirdAppBar() => AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      scrolledUnderElevation: 0,
-      toolbarHeight: 0,
-    );
-
 PreferredSizeWidget primaryAppBar({
   required String title,
   required Function() function,

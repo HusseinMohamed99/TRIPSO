@@ -17,8 +17,6 @@ class TripsoApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
     return MultiBlocProvider(
       providers: [
         BlocProvider(

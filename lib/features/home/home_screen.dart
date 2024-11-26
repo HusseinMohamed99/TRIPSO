@@ -84,7 +84,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
-          appBar: thirdAppBar(),
+          appBar: secondaryAppBar(),
           body: cubit.city.isEmpty
               ? Center(
                   child: AdaptiveIndicator(

@@ -12,6 +12,8 @@ import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

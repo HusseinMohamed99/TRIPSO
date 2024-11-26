@@ -6,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tripso/core/helpers/string_manager/validation_message.dart';
 import 'package:tripso/core/routing/routes.dart';
@@ -32,6 +31,7 @@ import 'package:tripso/features/sights/sights_screen.dart';
 import 'package:tripso/features/update_password/update_password_screen.dart';
 import 'package:tripso/features/wishlist/wishlist.dart';
 import 'package:tripso/layout/layout.dart';
+import 'package:tripso/main.dart';
 import 'package:tripso/model/user_model/user_model.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/sized_box.dart';
@@ -42,9 +42,6 @@ import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/service/weather_service.dart';
 
 import '../../../features/Auth/forget_password/logic/forget_password_state.dart';
-import '../../../shared/adaptive/dialog.dart';
-import '../../../shared/components/app_bar.dart';
-import '../../../shared/components/scrollable_form.dart';
 
 part '../../../features/Auth/sign_up/logic/sign_up_cubit.dart';
 part '../../networking/cache_helper/shared_pref_helper.dart';

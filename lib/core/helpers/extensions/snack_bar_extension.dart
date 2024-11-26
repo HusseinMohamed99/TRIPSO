@@ -7,7 +7,7 @@ extension SnackBarExtension on BuildContext {
         content: Text(
           message,
           style: labelLarge!.copyWith(
-            color: color,
+            color: color ?? ColorsManager.greenColor,
           ),
         ),
       ),

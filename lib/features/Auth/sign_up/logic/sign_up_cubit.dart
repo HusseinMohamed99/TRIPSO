@@ -38,6 +38,8 @@ class SignUpCubit extends Cubit<SignUpStates> {
       await SharedPrefHelper.setSecuredString('uId', userCredential.user!.uid);
 
       emit(SignUpSuccessState());
+      // Trigger navigation to next screen
+      navigatorKey.currentState?.pushReplacementNamed(Routes.signInScreen);
     } on FirebaseAuthException catch (e) {
       emit(SignUpErrorState(
           e.message ?? 'An unknown FirebaseAuth error occurred.'));
