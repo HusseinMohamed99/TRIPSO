@@ -1,3 +1,4 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,11 +25,11 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   // Activate Firebase App Check
-  // await FirebaseAppCheck.instance.activate(
-  //   androidProvider: AndroidProvider.debug, // Use Play Integrity for Android
-  //   appleProvider: AppleProvider.debug, // Use DeviceCheck for iOS
-  // );
-  // await FirebaseAppCheck.instance.setTokenAutoRefreshEnabled(true);
+  await FirebaseAppCheck.instance.activate(
+    androidProvider: AndroidProvider.debug, // Use Play Integrity for Android
+    appleProvider: AppleProvider.debug, // Use DeviceCheck for iOS
+  );
+  await FirebaseAppCheck.instance.setTokenAutoRefreshEnabled(true);
 
   // Initialize cache helper
   await CacheHelper.init();
