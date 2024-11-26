@@ -1,29 +1,30 @@
-abstract class SignUpStates{}
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class SignUpInitialState extends SignUpStates{}
+part 'sign_up_state.freezed.dart';
 
-class SignUpLoadingState extends SignUpStates{}
+@freezed
+class SignUpStates with _$SignUpStates {
+  /// Initial state when no action has been taken
+  const factory SignUpStates.initial() = SignUpInitialState;
 
-class SignUpSuccessState extends SignUpStates{}
+  /// Loading state while signing up
+  const factory SignUpStates.loading() = SignUpLoadingState;
 
-class SignUpErrorState extends SignUpStates{
+  /// Success state when signup is successful
+  const factory SignUpStates.success() = SignUpSuccessState;
 
-  final String error;
+  /// Error state when there is a signup failure
+  const factory SignUpStates.error(String error) = SignUpErrorState;
 
-  SignUpErrorState(this.error);
+  /// Success state for user creation in Firestore
+  const factory SignUpStates.userCreateSuccess(String uid) =
+      UserCreateSuccessState;
+
+  /// Error state for user creation in Firestore
+  const factory SignUpStates.userCreateError(String error) =
+      UserCreateErrorState;
+
+  /// State for toggling password visibility
+  const factory SignUpStates.changePasswordVisibility() =
+      ChangePasswordSignUpState;
 }
-
-class UserCreateSuccessState extends SignUpStates
-{
- late final String uid;
-  UserCreateSuccessState(this.uid);
-}
-
-class UserCreateErrorState extends SignUpStates{
-
-  final String error;
-
-  UserCreateErrorState(this.error);
-}
-
-class ChangePasswordSignUpState extends SignUpStates{}

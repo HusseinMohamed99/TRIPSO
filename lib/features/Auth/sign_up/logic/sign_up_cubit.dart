@@ -3,13 +3,16 @@ part of '../../../../core/helpers/export_manager/export_manager.dart';
 class SignUpCubit extends Cubit<SignUpStates> {
   SignUpCubit() : super(SignUpInitialState());
 
-  final formKey = GlobalKey<FormState>();
-  TextEditingController userFirstNameController = TextEditingController();
-  TextEditingController userLastNameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
-  void userSignUp({
+  /// Form key and controllers
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController userFirstNameController = TextEditingController();
+  final TextEditingController userLastNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+
+  /// Sign up a new user
+  Future<void> userSignUp({
     required String email,
     required String password,
     required String firstName,
@@ -17,68 +20,83 @@ class SignUpCubit extends Cubit<SignUpStates> {
     required String phone,
   }) async {
     emit(SignUpLoadingState());
-    FirebaseAuth.instance
-        .createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    )
-        .then((value) {
-      userCreate(
-          phone: phone,
-          email: email,
-          firstName: firstName,
-          lastName: lastName,
-          uId: value.user!.uid);
-      SharedPrefHelper.setSecuredString(
-        'uId',
-        value.user!.uid,
+    try {
+      // Create a new user in Firebase Authentication
+      final userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password);
+
+      // Save user data in Firestore
+      await _userCreate(
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        phone: phone,
+        uId: userCredential.user!.uid,
       );
+
+      // Save user ID in secure storage
+      await SharedPrefHelper.setSecuredString('uId', userCredential.user!.uid);
 
       emit(SignUpSuccessState());
-    }).catchError((error) {
-      emit(
-        SignUpErrorState(error.toString()),
-      );
-    });
+    } on FirebaseAuthException catch (e) {
+      emit(SignUpErrorState(
+          e.message ?? 'An unknown FirebaseAuth error occurred.'));
+    } catch (e) {
+      emit(SignUpErrorState('SignUp Error: $e'));
+    }
   }
 
-  void userCreate({
+  /// Save user details in Firestore
+  Future<void> _userCreate({
     required String email,
     required String firstName,
     required String lastName,
-    required String uId,
     required String phone,
+    required String uId,
   }) async {
-    UserModel model = UserModel(
+    final model = UserModel(
       email: email,
       firstName: firstName,
       lastName: lastName,
+      phone: phone,
       uId: uId,
       image:
           'https://cdn-icons-png.flaticon.com/512/214/214070.png?w=740&t=st=1676604521~exp=1676605121~hmac=cbd7577a96e66bf8093132e5b5da0c2a649f4f7c7cdfb6019708db0b417ddc8c',
-      phone: phone,
     );
-    FirebaseFirestore.instance
-        .collection('users')
-        .doc(uId)
-        .set(model.toFireStore())
-        .then((value) {
+
+    try {
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(uId)
+          .set(model.toJson());
+
       emit(UserCreateSuccessState(uId));
-    }).catchError((error) {
-      emit(
-        UserCreateErrorState(error.toString()),
-      );
-    });
+    } catch (e) {
+      emit(UserCreateErrorState('Firestore Error: $e'));
+    }
   }
 
-  IconData suffix = Icons.visibility_outlined;
-  bool isPassword = true;
+  /// Toggle password visibility
+  bool isPasswordVisible = false;
+  IconData passwordIcon = Icons.visibility_outlined;
 
-  void showPassword() {
-    isPassword = !isPassword;
-    suffix =
-        isPassword ? Icons.visibility_outlined : Icons.visibility_off_outlined;
+  void togglePasswordVisibility() {
+    isPasswordVisible = !isPasswordVisible;
+    passwordIcon = isPasswordVisible
+        ? Icons.visibility_off_outlined
+        : Icons.visibility_outlined;
 
     emit(ChangePasswordSignUpState());
+  }
+
+  /// Clean up resources
+  @override
+  Future<void> close() {
+    userFirstNameController.dispose();
+    userLastNameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    phoneController.dispose();
+    return super.close();
   }
 }

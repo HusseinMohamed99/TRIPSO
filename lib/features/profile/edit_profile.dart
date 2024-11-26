@@ -35,7 +35,7 @@ class EditProfile extends StatelessWidget {
     lastNameController.text = tripsoCubit.lastName;
     phoneController.text = tripsoCubit.phone;
     emailController.text = tripsoCubit.email;
-    addressController.text = tripsoCubit.address;
+    addressController.text = tripsoCubit.address ?? '';
     var formKey = GlobalKey<FormState>();
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {
@@ -84,7 +84,7 @@ class EditProfile extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(65).r,
                                           child: CachedNetworkImage(
-                                            imageUrl: tripsoCubit.image!,
+                                            imageUrl: tripsoCubit.image,
                                             fit: BoxFit.fill,
                                             height: 200.h,
                                             width: double.infinity,

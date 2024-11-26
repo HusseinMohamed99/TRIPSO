@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/features/update_password/update_password_screen.dart';
 import 'package:tripso/features/profile/edit_profile.dart';
+import 'package:tripso/features/update_password/update_password_screen.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/log_out.dart';
@@ -45,7 +45,7 @@ class MyProfileScreen extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(75).r,
                             child: CachedNetworkImage(
-                              imageUrl: tripsoCubit!.image!,
+                              imageUrl: tripsoCubit!.image,
                               fit: BoxFit.fill,
                               height: 200.h,
                               width: double.infinity,

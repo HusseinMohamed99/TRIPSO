@@ -16,7 +16,7 @@ import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
 import 'package:tripso/model/plan_model.dart';
-import 'package:tripso/model/user_model.dart';
+import 'package:tripso/model/user_model/user_model.dart';
 import 'package:tripso/model/wishlist_model.dart';
 import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/constants/constants.dart';
@@ -75,7 +75,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   void getUserData() {
     emit(GetUserDataLoadingState());
     FirebaseFirestore.instance.collection('users').doc(uId).get().then((value) {
-      userModel = UserModel.fromFireStore(value.data()!);
+      // userModel = UserModel.fromFireStore(value.data()!);
       emit(GetUserDataSuccessState());
     }).catchError((error) {
       debugPrint(error.toString());
@@ -402,16 +402,16 @@ class TripsoCubit extends Cubit<TripsoStates> {
       lastName: lastName,
       address: address ?? '',
     );
-    FirebaseFirestore.instance
-        .collection('users')
-        .doc(userModel!.uId)
-        .update(model.toFireStore())
-        .then((value) {
-      emit(UpdateUserSuccessState());
-      getUserData();
-    }).catchError((error) {
-      emit(UpdateUserErrorState());
-    });
+    // FirebaseFirestore.instance
+    //     .collection('users')
+    //     .doc(userModel!.uId)
+    //     .update(model.toFireStore())
+    //     .then((value) {
+    //   emit(UpdateUserSuccessState());
+    //   getUserData();
+    // }).catchError((error) {
+    //   emit(UpdateUserErrorState());
+    // });
   }
 
   void addWishList({
