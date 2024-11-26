@@ -1,21 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/search/search_screen.dart';
-import 'package:tripso/model/best_plan_model.dart';
-import 'package:tripso/model/place_model.dart';
-import 'package:tripso/shared/components/layer.dart';
-import 'package:tripso/shared/components/log_out.dart';
-import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/components/search_bar.dart';
-import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
-import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/widget/grid_city_items.dart';
+part of './../../core/helpers/export_manager/export_manager.dart';
 
 class CitiesScreen extends StatefulWidget {
   static const String routeName = 'CitiesScreen';

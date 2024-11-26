@@ -77,6 +77,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   }
 
   late UserModel userModel;
+
   void getUserData() async {
     try {
       emit(GetUserDataLoadingState());
