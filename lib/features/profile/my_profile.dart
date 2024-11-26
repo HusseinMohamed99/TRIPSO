@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/features/password/update_password_screen.dart';
+import 'package:tripso/features/Auth/password/update_password_screen.dart';
 import 'package:tripso/features/profile/edit_profile.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
