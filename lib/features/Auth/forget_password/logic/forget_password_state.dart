@@ -1,9 +1,19 @@
-abstract class ForgetPasswordStates {}
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class InitialForgetPasswordState extends ForgetPasswordStates {}
+part 'forget_password_state.freezed.dart';
 
-class ForgetPasswordLoadingState extends ForgetPasswordStates {}
+@freezed
+class ForgetPasswordStates with _$ForgetPasswordStates {
+  /// Initial state before any action is taken
+  const factory ForgetPasswordStates.initial() = InitialForgetPasswordState;
 
-class ForgetPasswordSuccessfulState extends ForgetPasswordStates {}
+  /// State while the password reset request is in progress
+  const factory ForgetPasswordStates.loading() = ForgetPasswordLoadingState;
 
-class ForgotPasswordFailureState extends ForgetPasswordStates {}
+  /// State when the password reset email is successfully sent
+  const factory ForgetPasswordStates.success() = ForgetPasswordSuccessfulState;
+
+  /// State when the password reset request fails
+  const factory ForgetPasswordStates.failure(String error) =
+      ForgetPasswordFailureState;
+}

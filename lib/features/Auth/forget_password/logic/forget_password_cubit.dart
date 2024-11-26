@@ -1,25 +1,20 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tripso/features/Auth/forget_password/logic/forget_password_state.dart';
+part of './../../../../core/helpers/export_manager/export_manager.dart';
 
 class ForgetPasswordCubit extends Cubit<ForgetPasswordStates> {
-  ForgetPasswordCubit() : super(InitialForgetPasswordState());
+  ForgetPasswordCubit() : super(const ForgetPasswordStates.initial());
 
-  void resetPassword({
-    required String email,
-  }) {
-    emit(ForgetPasswordLoadingState());
+  /// Reset password for the given email
+  Future<void> resetPassword({required String email}) async {
+    emit(const ForgetPasswordStates.loading());
 
-    FirebaseAuth.instance
-        .sendPasswordResetEmail(
-      email: email,
-    )
-        .then((value) {
-      emit(ForgetPasswordSuccessfulState());
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(ForgotPasswordFailureState());
-    });
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      emit(const ForgetPasswordStates.success());
+    } on FirebaseAuthException catch (e) {
+      emit(ForgetPasswordStates.failure(
+          e.message ?? 'Unknown Firebase error occurred.'));
+    } catch (e) {
+      emit(const ForgetPasswordStates.failure('An unknown error occurred.'));
+    }
   }
 }

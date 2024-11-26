@@ -37,7 +37,10 @@ class AppRouters {
         );
       case Routes.forgetPassword:
         return MaterialPageRoute(
-          builder: (_) => ForgotPassword(),
+          builder: (_) => BlocProvider(
+            create: (context) => ForgetPasswordCubit(),
+            child: ForgotPassword(),
+          ),
         );
     }
     return null;

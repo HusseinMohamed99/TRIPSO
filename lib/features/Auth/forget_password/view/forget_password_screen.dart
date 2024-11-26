@@ -1,18 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/Auth/forget_password/logic/forget_password_cubit.dart';
-import 'package:tripso/features/Auth/forget_password/logic/forget_password_state.dart';
-import 'package:tripso/shared/adaptive/dialog.dart';
-import 'package:tripso/shared/components/app_bar.dart';
-import 'package:tripso/shared/components/buttons.dart';
-import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/components/scrollable_form.dart';
-import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/components/text_form_field.dart';
+part of './../../../../core/helpers/export_manager/export_manager.dart';
 
 enum AuthMode { forgot, verify }
 
@@ -47,7 +33,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           children: [
                             IconButton(
                               onPressed: () {
-                                pop(context);
+                                context.pop();
                               },
                               icon: Icon(
                                 Icons.arrow_back,
