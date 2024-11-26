@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/layout/layout.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';

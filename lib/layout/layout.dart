@@ -1,17 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:provider/provider.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/shared/adaptive/indicator.dart';
-import 'package:tripso/shared/components/app_bar.dart';
-import 'package:tripso/shared/constants/constants.dart';
-import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
-import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
+part of './../core/helpers/export_manager/export_manager.dart';
 
 class HomeLayout extends StatelessWidget {
   static const String routeName = 'home_layout';
@@ -118,12 +105,12 @@ class HomeLayout extends StatelessWidget {
                             progressIndicatorBuilder:
                                 (context, url, downloadProgress) => Center(
                               child: AdaptiveIndicator(
-                                os: getOs(),
+                                os: '',
                               ),
                             ),
                             errorWidget: (context, url, error) => Center(
                               child: AdaptiveIndicator(
-                                os: getOs(),
+                                os: '',
                               ),
                             ),
                           ),
@@ -147,7 +134,7 @@ class HomeLayout extends StatelessWidget {
                   tripsoCubit.city.isEmpty
               ? Center(
                   child: AdaptiveIndicator(
-                    os: getOs(),
+                    os: '',
                   ),
                 )
               : tripsoCubit.screens[tripsoCubit.currentIndex],
