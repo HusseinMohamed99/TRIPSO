@@ -18,15 +18,16 @@ import 'package:tripso/shared/service/weather_service.dart';
 
 class GridCitiesItem extends StatelessWidget {
   const GridCitiesItem(
-    this.placeModel,
-    this.bestPLanModel, {
+      // this.placeModel,
+      // this.bestPLanModel,
+      {
     super.key,
     required this.cityModel,
   });
 
   final CityModel cityModel;
-  final PlaceModel placeModel;
-  final BestPLanModel bestPLanModel;
+  // final PlaceModel placeModel;
+  // final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +39,14 @@ class GridCitiesItem extends StatelessWidget {
         TripsoCubit.get(context).getPopularPlace(cityModel.cId);
         TripsoCubit.get(context).fetchCityData(cityModel.cId);
         TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
-        navigateTo(
-          context,
-          routeName: HomeLayout.routeName,
-          arguments: ScreenArgs(
-              cityModel: cityModel,
-              placeModel: placeModel,
-              bestPLanModel: bestPLanModel),
-        );
+        // navigateTo(
+        //   context,
+        //   routeName: HomeLayout.routeName,
+        //   arguments: ScreenArgs(
+        //       cityModel: cityModel,
+        //       placeModel: placeModel,
+        //       bestPLanModel: bestPLanModel),
+        // );
 
         debugPrint('City ID = ${cityModel.cId}');
         WeatherService service = WeatherService();

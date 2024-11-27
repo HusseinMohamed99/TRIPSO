@@ -22,7 +22,6 @@ import 'package:tripso/shared/service/weather_service.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
-  static const String routeName = 'SearchScreen';
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();

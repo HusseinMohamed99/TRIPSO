@@ -10,7 +10,6 @@ import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
 import 'package:tripso/features/historical_city/historical_city.dart';
 import 'package:tripso/features/plans/create_customize_plan.dart';
-import 'package:tripso/features/search/search_screen.dart';
 import 'package:tripso/features/sights/popular_sights.dart';
 import 'package:tripso/features/sights/sights_screen.dart';
 import 'package:tripso/model/arg_model.dart';
@@ -27,6 +26,8 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
+
+import '../../core/routing/routes.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
@@ -159,10 +160,7 @@ class CityDetails extends StatelessWidget {
               ),
               child: IconButton(
                 onPressed: () {
-                  navigateTo(
-                    context,
-                    routeName: SearchScreen.routeName,
-                  );
+                  context.pushNamed(Routes.searchScreen);
                 },
                 icon: const ImageIcon(
                   AssetImage(

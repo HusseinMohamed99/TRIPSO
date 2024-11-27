@@ -6,4 +6,5 @@ class Routes {
   static const forgetPassword = '/forgetPassword';
   static const citiesScreen = '/CitiesScreen';
   static const homeLayout = '/homeLayout';
+  static const searchScreen = '/searchScreen';
 }
