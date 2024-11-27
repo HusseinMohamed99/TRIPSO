@@ -3,16 +3,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/features/historical_city/historical_city.dart';
 import 'package:tripso/features/plans/create_customize_plan.dart';
-import 'package:tripso/model/city_model.dart';
-import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/constants/constants.dart';
+import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
@@ -38,7 +34,6 @@ class ExploreScreen extends StatelessWidget {
               ),
               PopularSightsWidget(),
               const TopPlansWidget(),
-              //  const AllPlansButton(),
             ],
           ),
         );
@@ -59,37 +54,20 @@ class CityDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          height: 200.h,
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20),
-            ).r,
-          ),
-          child: CachedNetworkImage(
-            imageUrl: tripsoCubit.cityModel?.image ?? '',
-            fit: BoxFit.cover,
-            height: 400.h,
-            width: double.infinity,
-            progressIndicatorBuilder: (context, url, downloadProgress) =>
-                Center(
-              child: AdaptiveIndicator(os: getOs()),
-            ),
-            errorWidget: (context, url, error) => Icon(
-              FontAwesomeIcons.info,
-              size: 24.sp,
-            ),
+        CachedNetworkImage(
+          imageUrl: tripsoCubit.cityModel?.image ?? '',
+          fit: BoxFit.fitHeight,
+          height: context.height * 0.3,
+          width: double.infinity,
+          errorWidget: (context, url, error) => Icon(
+            Icons.info,
+            size: 24.sp,
           ),
         ),
         LayerImage(
-          height: 200.h,
+          height: context.height * 0.3,
           width: double.infinity,
-          borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
-          ).r,
+          borderRadius: BorderRadius.zero,
         ),
       ],
     );
@@ -116,146 +94,109 @@ class RowWidget extends StatelessWidget {
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Container(
         alignment: Alignment.center,
-        height: 150.h,
         width: double.infinity,
         padding: const EdgeInsets.all(10).r,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20).r,
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      navigateTo(
-                        context,
-                        routeName: HistoricalCity.routeName,
-                        arguments: CityModel(
-                          history: tripsoCubit.cityModel?.history ?? '',
-                          name: tripsoCubit.cityModel?.name ?? '',
-                          cId: tripsoCubit.cityModel?.cId ?? '',
-                          country: tripsoCubit.cityModel?.country ?? '',
-                          image: tripsoCubit.cityModel?.image ?? "",
-                          isPopular: tripsoCubit.cityModel?.isPopular ?? false,
-                        ),
-                      );
-                    },
-                    borderRadius: BorderRadius.circular(19).r,
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 70.w,
-                      height: 60.h,
-                      decoration: BoxDecoration(
-                        color: const Color.fromRGBO(216, 119, 119, 0.15),
-                        borderRadius:
-                            BorderRadius.all(const Radius.circular(19).r),
-                      ),
-                      child: CircleAvatar(
-                        radius: 22.r,
-                        backgroundColor: Colors.transparent,
-                        child: Icon(
-                          Icons.book_outlined,
-                          size: 28.sp,
-                          color: const Color.fromARGB(255, 216, 119, 119),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'Historical',
-                    style: Theme.of(context).textTheme.titleLarge,
+            _buildFeatureTile(
+              context: context,
+              onTap: () {
+                // Uncomment and implement navigation logic
+                // navigateTo(context, routeName: HistoricalCity.routeName, arguments: CityModel(...));
+              },
+              icon: Icons.book_outlined,
+              iconColor: const Color.fromARGB(255, 216, 119, 119),
+              backgroundColor: const Color.fromRGBO(216, 119, 119, 0.15),
+              label: 'Historical',
+            ),
+            Space(height: 0, width: 10),
+            _buildFeatureTile(
+              context: context,
+              onTap: () {
+                navigateTo(context, routeName: CreateCustomizePlan.routeName);
+              },
+              icon: Icons.dashboard_customize_outlined,
+              iconColor: const Color.fromARGB(255, 105, 155, 247),
+              backgroundColor: const Color.fromRGBO(105, 155, 247, 0.15),
+              label: 'Plans',
+            ),
+            Space(height: 0, width: 10),
+            _buildFeatureTile(
+              context: context,
+              onTap: () async {
+                // Uncomment and implement navigation logic
+                // TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+                // navigateTo(context, routeName: SightsScreen.routeName, arguments: ScreenArgs(...));
+              },
+              icon: Icons.remove_red_eye_outlined,
+              iconColor: const Color.fromARGB(255, 133, 84, 150),
+              backgroundColor: const Color.fromRGBO(133, 84, 150, 0.15),
+              label: 'Sights',
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Builds an individual feature tile with an icon, background, and label.
+  Widget _buildFeatureTile({
+    required BuildContext context,
+    required VoidCallback onTap,
+    required IconData icon,
+    required Color iconColor,
+    required Color backgroundColor,
+    required String label,
+  }) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: onTap,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: 80.h,
+              width: 80.h,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    backgroundColor.withOpacity(0.8),
+                    backgroundColor.withOpacity(0.5),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: backgroundColor.withOpacity(0.3),
+                    offset: Offset(0, 4),
+                    blurRadius: 10.r,
                   ),
                 ],
+                borderRadius: BorderRadius.circular(20).r,
+              ),
+              child: CircleAvatar(
+                radius: 30.r,
+                backgroundColor: Colors.white,
+                child: Icon(
+                  icon,
+                  size: 32.sp,
+                  color: iconColor,
+                ),
               ),
             ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      navigateTo(
-                        context,
-                        routeName: CreateCustomizePlan.routeName,
-                      );
-                    },
-                    borderRadius: BorderRadius.circular(19).r,
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 70.w,
-                      height: 60.h,
-                      decoration: BoxDecoration(
-                        color: const Color.fromRGBO(105, 155, 247, 0.15),
-                        borderRadius:
-                            BorderRadius.all(const Radius.circular(19).r),
-                      ),
-                      child: CircleAvatar(
-                        radius: 22.r,
-                        backgroundColor: Colors.transparent,
-                        child: Icon(
-                          Icons.dashboard_customize_outlined,
-                          size: 28.sp,
-                          color: const Color.fromARGB(255, 105, 155, 247),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'Customize Plans',
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  InkWell(
-                    onTap: () async {
-                      // TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-                      // TripsoCubit.get(context).fetchCityData(cityModel.cId);
-                      // navigateTo(
-                      //   context,
-                      //   routeName: SightsScreen.routeName,
-                      //   arguments: ScreenArgs(
-                      //     cityModel: cityModel,
-                      //     placeModel: placeModel,
-                      //     bestPLanModel: bestPLanModel,
-                      //   ),
-                      // );
-                      // debugPrint('City ID = ${cityModel.cId}');
-                    },
-                    borderRadius: BorderRadius.circular(19).r,
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 70.w,
-                      height: 60.h,
-                      decoration: BoxDecoration(
-                        color: const Color.fromRGBO(133, 84, 150, 0.15),
-                        borderRadius:
-                            BorderRadius.all(const Radius.circular(19).r),
-                      ),
-                      child: CircleAvatar(
-                        radius: 22.r,
-                        backgroundColor: Colors.transparent,
-                        child: Icon(
-                          Icons.remove_red_eye_outlined,
-                          size: 28.sp,
-                          color: const Color.fromARGB(255, 133, 84, 150),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'Sights',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                ],
+            SizedBox(height: 8.h),
+            Text(
+              label,
+              textAlign: TextAlign.center,
+              style: context.titleSmall?.copyWith(
+                fontWeight: FontWeightHelper.semiBold,
+                color: ColorsManager.blackPrimary,
               ),
             ),
           ],
