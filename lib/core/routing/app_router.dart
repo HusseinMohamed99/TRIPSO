@@ -52,7 +52,7 @@ class AppRouters {
       case Routes.homeLayout:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => TripsoCubit(),
+            create: (context) => TripsoCubit()..getUserData(),
             child: HomeLayout(),
           ),
         );

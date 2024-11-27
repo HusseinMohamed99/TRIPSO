@@ -44,7 +44,7 @@ class MyProfileScreen extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(75).r,
                             child: CachedNetworkImage(
-                              imageUrl: tripsoCubit.image,
+                              imageUrl: tripsoCubit?.image ?? '',
                               fit: BoxFit.fill,
                               height: 200.h,
                               width: double.infinity,
@@ -70,7 +70,8 @@ class MyProfileScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            tripsoCubit.firstName + tripsoCubit.lastName,
+                            tripsoCubit?.firstName ??
+                                '${tripsoCubit?.lastName}',
                             style: GoogleFonts.roboto(
                               fontSize: 20.sp,
                               fontWeight: FontWeight.w500,
@@ -82,7 +83,7 @@ class MyProfileScreen extends StatelessWidget {
                             width: 0.w,
                           ),
                           Text(
-                            tripsoCubit.email,
+                            tripsoCubit?.email ?? '',
                             style: GoogleFonts.roboto(
                               fontSize: 15.sp,
                               fontWeight: FontWeight.normal,

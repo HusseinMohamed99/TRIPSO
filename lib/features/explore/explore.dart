@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
 import 'package:tripso/features/historical_city/historical_city.dart';
@@ -23,7 +22,6 @@ import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
 
@@ -35,28 +33,28 @@ class ExploreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenArgs screenArgs =
-        ModalRoute.of(context)!.settings.arguments as ScreenArgs;
-    WeatherModel weatherData;
-    weatherData = Provider.of<WeatherProvider>(context).weatherData!;
+    // ScreenArgs screenArgs =
+    //     ModalRoute.of(context)!.settings.arguments as ScreenArgs;
+    // WeatherModel weatherData;
+    // weatherData = Provider.of<WeatherProvider>(context).weatherData!;
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
         return SingleChildScrollView(
           child: Column(
             children: [
-              CityDetails(screenArgs: screenArgs, weatherData: weatherData),
-              RowWidget(
-                screenArgs: screenArgs,
-                cityModel: screenArgs.cityModel,
-                placeModel: screenArgs.placeModel,
-                bestPLanModel: screenArgs.bestPLanModel,
-              ),
-              PopularSightsWidget(
-                cityModel: screenArgs.cityModel,
-                placeModel: screenArgs.placeModel,
-                bestPLanModel: screenArgs.bestPLanModel,
-              ),
+              // CityDetails(screenArgs: screenArgs, weatherData: weatherData),
+              // RowWidget(
+              //   screenArgs: screenArgs,
+              //   cityModel: screenArgs.cityModel,
+              //   placeModel: screenArgs.placeModel,
+              //   bestPLanModel: screenArgs.bestPLanModel,
+              // ),
+              // PopularSightsWidget(
+              //   cityModel: screenArgs.cityModel,
+              //   placeModel: screenArgs.placeModel,
+              //   bestPLanModel: screenArgs.bestPLanModel,
+              // ),
               const TopPlansWidget(),
               // const AllPlansButton(),
             ],

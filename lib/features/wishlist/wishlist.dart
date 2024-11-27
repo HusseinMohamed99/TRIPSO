@@ -164,7 +164,8 @@ class WishListScreen extends StatelessWidget {
                                       .deleteWishList(wishListModel.wishListId);
                                   TripsoCubit.get(context).getWishListData(
                                       cityModel.cId,
-                                      TripsoCubit.get(context).userModel.uId);
+                                      TripsoCubit.get(context).userModel?.uId ??
+                                          '');
                                 },
                                 icon: Icon(
                                   wishListModel.isWishList

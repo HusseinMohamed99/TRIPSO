@@ -52,7 +52,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     emit(ChangeBottomNavBarState());
   }
 
-  late UserModel userModel;
+  UserModel? userModel;
 
   void getUserData() async {
     try {
@@ -378,7 +378,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
         'firstName': firstName,
         'lastName': lastName,
         'phone': phone,
-        'image': image ?? userModel.image,
+        'image': image ?? userModel?.image,
         'address': address ?? '',
       }).then((_) {
         emit(UpdateUserSuccessState());
@@ -416,7 +416,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
       wishListIsPopular: wishListIsPopular,
       wishListAddress: wishListAddress,
       wishListRate: wishListRate,
-      uId: userModel.uId,
+      uId: userModel?.uId ?? '',
     );
     FirebaseFirestore.instance
         .collection('wishList')
@@ -494,7 +494,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
       planAddress: planAddress,
       planRate: planRate,
       planCityID: planCityID,
-      uId: userModel.uId,
+      uId: userModel?.uId ?? '',
       indexOfDays: indexOfDay,
       dateTime: dateTime,
     );
