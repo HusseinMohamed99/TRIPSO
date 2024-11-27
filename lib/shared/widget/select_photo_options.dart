@@ -5,7 +5,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/shared/components/re_usable_select_photo_button.dart';
 import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 
 class SelectPhotoOptions extends StatelessWidget {
   const SelectPhotoOptions({

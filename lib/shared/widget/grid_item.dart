@@ -14,7 +14,6 @@ import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
-import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 
 List<Icon> icon5Star({Color? color}) {
   return [

@@ -1,28 +1,4 @@
-import 'dart:io';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_cropper/image_cropper.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:tripso/features/explore/explore.dart';
-import 'package:tripso/features/plans/my_plans.dart';
-import 'package:tripso/features/profile/my_profile.dart';
-import 'package:tripso/features/wishlist/wishlist.dart';
-import 'package:tripso/model/best_plan_model.dart';
-import 'package:tripso/model/city_model.dart';
-import 'package:tripso/model/place_model.dart';
-import 'package:tripso/model/plan_model.dart';
-import 'package:tripso/model/user_model/user_model.dart';
-import 'package:tripso/model/wishlist_model.dart';
-import 'package:tripso/shared/constants/constants.dart';
-import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/network/cache_helper.dart';
-
-import '../../../core/networking/exceptions/user_exceptions.dart';
+part of './../../../core/helpers/export_manager/export_manager.dart';
 
 class TripsoCubit extends Cubit<TripsoStates> {
   TripsoCubit() : super(TripsoInitialState());
@@ -164,10 +140,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
       cityModel = CityModel.fromFireStore(cityDoc.data()!);
       emit(GetCityDataSuccessState());
-
-      if (kDebugMode) {
-        debugPrint("Fetched city data: ${cityDoc.data()}");
-      }
     } catch (error) {
       final errorMessage = "Failed to fetch city data: ${error.toString()}";
       debugPrint(errorMessage);
@@ -193,10 +165,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
       cityIds = querySnapshot.docs.map((doc) => doc.id).toList();
 
       emit(GetCityDataSuccessState());
-
-      if (kDebugMode) {
-        debugPrint("Fetched all cities: ${cities.length} cities loaded.");
-      }
     } catch (error) {
       final errorMessage = "Failed to fetch city data: ${error.toString()}";
       debugPrint(errorMessage);
@@ -270,9 +238,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .then((value) {
       placeModel = PlaceModel.fromFireStore(value.data()!);
       emit(GetPlaceDataSuccessState());
-      if (kDebugMode) {
-        print(value.data());
-      }
     }).catchError((error) {
       debugPrint(error.toString());
       emit(GetPlaceDataErrorState(error.toString()));
@@ -319,7 +284,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   void deleteAccount(context) async {
     await FirebaseAuth.instance.currentUser!.delete().then((value) async {
       await FirebaseFirestore.instance.collection('users').doc(uId).delete();
-      CacheHelper.removeData(key: 'uId');
+      // CacheHelper.removeData(key: 'uId');
       // navigateAndFinish(context, routeName: OnBoard.routeName);
     });
   }
@@ -662,9 +627,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .then((value) {
       best = Best.fromFireStore(value.data()!);
       emit(GetPlaceDataSuccessState());
-      if (kDebugMode) {
-        print(value.data());
-      }
     }).catchError((error) {
       debugPrint(error.toString());
       emit(GetPlaceDataErrorState(error.toString()));
