@@ -51,7 +51,10 @@ class AppRouters {
         );
       case Routes.homeLayout:
         return MaterialPageRoute(
-          builder: (_) => HomeLayout(),
+          builder: (_) => BlocProvider(
+            create: (context) => TripsoCubit(),
+            child: HomeLayout(),
+          ),
         );
     }
     return null;

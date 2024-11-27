@@ -11,8 +11,7 @@ class HomeLayout extends StatelessWidget {
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        var userModel = TripsoCubit.get(context).userModel;
-        var tripsoCubit = TripsoCubit.get(context);
+        final tripsoCubit = context.read<TripsoCubit>();
         return Scaffold(
           appBar: secondaryAppBar(),
           bottomNavigationBar: Container(
@@ -98,16 +97,10 @@ class HomeLayout extends StatelessWidget {
                         child: CircleAvatar(
                           radius: 15.r,
                           child: CachedNetworkImage(
-                            imageUrl: userModel.image ?? '',
+                            imageUrl: '',
                             fit: BoxFit.fill,
                             height: 200.h,
                             width: double.infinity,
-                            progressIndicatorBuilder:
-                                (context, url, downloadProgress) => Center(
-                              child: AdaptiveIndicator(
-                                os: '',
-                              ),
-                            ),
                             errorWidget: (context, url, error) => Center(
                               child: AdaptiveIndicator(
                                 os: '',
