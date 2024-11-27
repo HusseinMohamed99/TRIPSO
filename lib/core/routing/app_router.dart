@@ -6,7 +6,7 @@ class AppRouters {
   AppRouters(this.sharedPrefHelper);
   Route? generateRoute(RouteSettings settings) {
     // This arguments to be passed in any screen like this ( arguments as ClassName )
-    // final arguments = settings.arguments;
+    final arguments = settings.arguments;
 
     switch (settings.name) {
       // case Routes.splashScreen:
@@ -52,8 +52,17 @@ class AppRouters {
       case Routes.homeLayout:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => TripsoCubit()..getUserData(),
+            create: (context) => TripsoCubit()
+              ..getUserData()
+              ..fetchCityData(arguments as String),
             child: HomeLayout(),
+          ),
+        );
+      case Routes.searchScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => TripsoCubit(),
+            child: SearchScreen(),
           ),
         );
     }

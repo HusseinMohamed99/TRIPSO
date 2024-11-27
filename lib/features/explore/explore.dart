@@ -6,57 +6,39 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/core/styles/asset_path.dart';
 import 'package:tripso/features/historical_city/historical_city.dart';
 import 'package:tripso/features/plans/create_customize_plan.dart';
-import 'package:tripso/features/sights/popular_sights.dart';
-import 'package:tripso/features/sights/sights_screen.dart';
-import 'package:tripso/model/arg_model.dart';
-import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
-import 'package:tripso/model/place_model.dart';
-import 'package:tripso/model/weather_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
 
-import '../../core/routing/routes.dart';
-
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
-  static const String routeName = 'ExploreScreen';
 
   @override
   Widget build(BuildContext context) {
-    // ScreenArgs screenArgs =
-    //     ModalRoute.of(context)!.settings.arguments as ScreenArgs;
-    // WeatherModel weatherData;
-    // weatherData = Provider.of<WeatherProvider>(context).weatherData!;
+    final tripsoCubit = context.read<TripsoCubit>();
+
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
         return SingleChildScrollView(
           child: Column(
             children: [
-              // CityDetails(screenArgs: screenArgs, weatherData: weatherData),
-              // RowWidget(
-              //   screenArgs: screenArgs,
-              //   cityModel: screenArgs.cityModel,
-              //   placeModel: screenArgs.placeModel,
-              //   bestPLanModel: screenArgs.bestPLanModel,
-              // ),
-              // PopularSightsWidget(
-              //   cityModel: screenArgs.cityModel,
-              //   placeModel: screenArgs.placeModel,
-              //   bestPLanModel: screenArgs.bestPLanModel,
-              // ),
+              CityDetails(
+                tripsoCubit: tripsoCubit,
+              ),
+              RowWidget(
+                tripsoCubit: tripsoCubit,
+              ),
+              PopularSightsWidget(),
               const TopPlansWidget(),
-              // const AllPlansButton(),
+              //  const AllPlansButton(),
             ],
           ),
         );
@@ -68,144 +50,46 @@ class ExploreScreen extends StatelessWidget {
 class CityDetails extends StatelessWidget {
   const CityDetails({
     super.key,
-    required this.screenArgs,
-    required this.weatherData,
+    required this.tripsoCubit,
   });
 
-  final ScreenArgs screenArgs;
-  final WeatherModel weatherData;
+  final TripsoCubit tripsoCubit;
 
   @override
   Widget build(BuildContext context) {
-    var cubit = TripsoCubit.get(context);
     return Stack(
-      alignment: Alignment.center,
       children: [
-        Stack(
-          children: [
-            Container(
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              height: 200.h,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ).r,
-              ),
-              child: CachedNetworkImage(
-                imageUrl: screenArgs.cityModel.image,
-                fit: BoxFit.cover,
-                height: 400.h,
-                width: double.infinity,
-                progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    Center(
-                  child: AdaptiveIndicator(os: getOs()),
-                ),
-                errorWidget: (context, url, error) => Icon(
-                  FontAwesomeIcons.info,
-                  size: 24.sp,
-                ),
-              ),
+        Container(
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          height: 200.h,
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
+            ).r,
+          ),
+          child: CachedNetworkImage(
+            imageUrl: tripsoCubit.cityModel?.image ?? '',
+            fit: BoxFit.cover,
+            height: 400.h,
+            width: double.infinity,
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                Center(
+              child: AdaptiveIndicator(os: getOs()),
             ),
-            LayerImage(
-              height: 200.h,
-              width: double.infinity,
-              borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20),
-              ).r,
-            ),
-          ],
-        ),
-        Positioned(
-          top: 10.sp,
-          left: 10.sp,
-          child: Card(
-            elevation: 2,
-            color: Colors.black.withOpacity(0.5),
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            shape: const StadiumBorder(
-              side: BorderSide(
-                color: ColorsManager.whiteColor,
-              ),
-            ),
-            child: IconButton(
-              onPressed: () {
-                if (Navigator.canPop(context)) {
-                  pop(context);
-                  cubit.currentIndex = 0;
-                }
-              },
-              icon: Icon(
-                Icons.arrow_back,
-                color: ColorsManager.whiteColor,
-                size: 24.sp,
-              ),
+            errorWidget: (context, url, error) => Icon(
+              FontAwesomeIcons.info,
+              size: 24.sp,
             ),
           ),
         ),
-        Positioned(
-            top: 10.sp,
-            right: 10.sp,
-            child: Card(
-              elevation: 2,
-              color: Colors.black.withOpacity(0.5),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              shape: const StadiumBorder(
-                side: BorderSide(
-                  color: ColorsManager.whiteColor,
-                ),
-              ),
-              child: IconButton(
-                onPressed: () {
-                  context.pushNamed(Routes.searchScreen);
-                },
-                icon: const ImageIcon(
-                  AssetImage(
-                    AssetPath.searchImage,
-                  ),
-                  color: ColorsManager.whiteColor,
-                ),
-              ),
-            )),
-        Column(
-          children: [
-            CircleAvatar(
-              radius: 30.r,
-              backgroundColor: Colors.transparent,
-              child: Image(
-                image: NetworkImage('https:${weatherData.image}'),
-                fit: BoxFit.fill,
-              ),
-            ),
-            Text(
-              screenArgs.cityModel.name,
-              style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: ColorsManager.whiteColor,
-                  ),
-            ),
-            Text(
-              weatherData.weatherStateName,
-              style: TextStyle(
-                color: ColorsManager.whiteColor,
-                fontSize: 20.sp,
-                // fontWeight: FontWeight.bold,
-              ),
-            ),
-            Space(height: 10.h, width: 0.w),
-            Text(
-              '${weatherData.temp.toInt().toString()}°C',
-              style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: ColorsManager.whiteColor,
-                  ),
-            ),
-            Text(
-              '${weatherData.minTemp.toInt().toString()}°C / ${weatherData.maxTemp.toInt().toString()}°C',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: ColorsManager.whiteColor,
-                  ),
-            ),
-          ],
+        LayerImage(
+          height: 200.h,
+          width: double.infinity,
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ).r,
         ),
       ],
     );
@@ -215,17 +99,10 @@ class CityDetails extends StatelessWidget {
 class RowWidget extends StatelessWidget {
   const RowWidget({
     super.key,
-    required this.screenArgs,
-    required this.cityModel,
-    required this.placeModel,
-    required this.bestPLanModel,
+    required this.tripsoCubit,
   });
 
-  final ScreenArgs screenArgs;
-
-  final CityModel cityModel;
-  final PlaceModel placeModel;
-  final BestPLanModel bestPLanModel;
+  final TripsoCubit tripsoCubit;
 
   @override
   Widget build(BuildContext context) {
@@ -239,7 +116,7 @@ class RowWidget extends StatelessWidget {
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Container(
         alignment: Alignment.center,
-        height: 115.h,
+        height: 150.h,
         width: double.infinity,
         padding: const EdgeInsets.all(10).r,
         decoration: BoxDecoration(
@@ -257,12 +134,12 @@ class RowWidget extends StatelessWidget {
                         context,
                         routeName: HistoricalCity.routeName,
                         arguments: CityModel(
-                          history: screenArgs.cityModel.history,
-                          name: screenArgs.cityModel.name,
-                          cId: screenArgs.cityModel.cId,
-                          country: screenArgs.cityModel.country,
-                          image: screenArgs.cityModel.image,
-                          isPopular: screenArgs.cityModel.isPopular,
+                          history: tripsoCubit.cityModel?.history ?? '',
+                          name: tripsoCubit.cityModel?.name ?? '',
+                          cId: tripsoCubit.cityModel?.cId ?? '',
+                          country: tripsoCubit.cityModel?.country ?? '',
+                          image: tripsoCubit.cityModel?.image ?? "",
+                          isPopular: tripsoCubit.cityModel?.isPopular ?? false,
                         ),
                       );
                     },
@@ -340,18 +217,18 @@ class RowWidget extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () async {
-                      TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-                      TripsoCubit.get(context).fetchCityData(cityModel.cId);
-                      navigateTo(
-                        context,
-                        routeName: SightsScreen.routeName,
-                        arguments: ScreenArgs(
-                          cityModel: cityModel,
-                          placeModel: placeModel,
-                          bestPLanModel: bestPLanModel,
-                        ),
-                      );
-                      debugPrint('City ID = ${cityModel.cId}');
+                      // TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+                      // TripsoCubit.get(context).fetchCityData(cityModel.cId);
+                      // navigateTo(
+                      //   context,
+                      //   routeName: SightsScreen.routeName,
+                      //   arguments: ScreenArgs(
+                      //     cityModel: cityModel,
+                      //     placeModel: placeModel,
+                      //     bestPLanModel: bestPLanModel,
+                      //   ),
+                      // );
+                      // debugPrint('City ID = ${cityModel.cId}');
                     },
                     borderRadius: BorderRadius.circular(19).r,
                     child: Container(
@@ -391,18 +268,11 @@ class RowWidget extends StatelessWidget {
 class PopularSightsWidget extends StatelessWidget {
   const PopularSightsWidget({
     super.key,
-    required this.cityModel,
-    required this.placeModel,
-    required this.bestPLanModel,
   });
-
-  final CityModel cityModel;
-  final PlaceModel placeModel;
-  final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
-    var cubit = TripsoCubit.get(context);
+    final cubit = context.read<TripsoCubit>();
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -423,20 +293,20 @@ class PopularSightsWidget extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () async {
-                      TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-                      TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-                      TripsoCubit.get(context).fetchCityData(cityModel.cId);
+                      // TripsoCubit.get(context).getPopularPlace(cityModel.cId);
+                      // TripsoCubit.get(context).getDataPlaces(cityModel.cId);
+                      // TripsoCubit.get(context).fetchCityData(cityModel.cId);
 
-                      navigateTo(
-                        context,
-                        routeName: PopularSightsScreen.routeName,
-                        arguments: ScreenArgs(
-                          cityModel: cityModel,
-                          placeModel: placeModel,
-                          bestPLanModel: bestPLanModel,
-                        ),
-                      );
-                      debugPrint('City ID = ${cityModel.cId}');
+                      // navigateTo(
+                      //   context,
+                      //   routeName: PopularSightsScreen.routeName,
+                      //   arguments: ScreenArgs(
+                      //     cityModel: cityModel,
+                      //     placeModel: placeModel,
+                      //     bestPLanModel: bestPLanModel,
+                      //   ),
+                      // );
+                      // debugPrint('City ID = ${cityModel.cId}');
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0).r,
@@ -463,7 +333,8 @@ class PopularSightsWidget extends StatelessWidget {
             CarouselSlider(
               items: List.generate(
                   cubit.popularPlace.length,
-                  (index) => GridItemSights(cityModel, bestPLanModel,
+                  (index) => GridItemSights(
+                      cubit.cityModel!, cubit.bestPLanModel!,
                       placeModel: cubit.popularPlace[index])),
               options: CarouselOptions(
                 height: 227.h,
@@ -488,7 +359,7 @@ class TopPlansWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubit = TripsoCubit.get(context);
+    final cubit = context.read<TripsoCubit>();
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {

@@ -29,16 +29,14 @@ import 'package:tripso/features/profile/my_profile.dart';
 import 'package:tripso/features/wishlist/wishlist.dart';
 import 'package:tripso/main.dart';
 import 'package:tripso/model/user_model/user_model.dart';
-import 'package:tripso/shared/adaptive/indicator.dart';
-import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 
 import '../../../features/Auth/forget_password/logic/forget_password_state.dart';
 import '../../../features/cities/logic/cities_state.dart';
+import '../../../features/search/search_screen.dart';
 import '../../../model/best_plan_model.dart';
 import '../../../model/city_model.dart';
 import '../../../model/place_model.dart';

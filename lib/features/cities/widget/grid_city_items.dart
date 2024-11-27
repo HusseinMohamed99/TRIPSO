@@ -35,7 +35,7 @@ class GridCitiesItem extends StatelessWidget {
   void _onCityTap(BuildContext context) {
     context.pushNamed(
       Routes.homeLayout,
-      // arguments: cityModel, // Uncomment if you need to pass the city model.
+      arguments: cityModel.cId, // Uncomment if you need to pass the city model.
     );
   }
 
