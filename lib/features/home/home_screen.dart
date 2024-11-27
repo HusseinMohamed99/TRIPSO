@@ -6,17 +6,6 @@ class CitiesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tripsoCubit = context.read<TripsoCubit>();
-    List<Widget> widgetImages = [
-      Image.asset(AssetPath.gizaImage),
-      Image.asset(AssetPath.dubaiImage),
-      Image.asset(AssetPath.tripsoImage),
-      Image.asset(AssetPath.ancient1),
-      Image.asset(AssetPath.ancient2),
-      Image.asset(AssetPath.ancient3),
-      Image.asset(AssetPath.ancient4),
-      Image.asset(AssetPath.ancient5),
-      Image.asset(AssetPath.ancient6),
-    ];
 
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
@@ -26,8 +15,7 @@ class CitiesScreen extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  CarouselSliderWidget(widgetImages: widgetImages)
-                      .onlyPadding(bottomPadding: 30.h),
+                  CarouselSliderWidget().onlyPadding(bottomPadding: 30.h),
                   Positioned(
                     top: 225.h,
                     right: 10.w,
@@ -88,13 +76,22 @@ class DisplayGridCities extends StatelessWidget {
 class CarouselSliderWidget extends StatelessWidget {
   const CarouselSliderWidget({
     super.key,
-    required this.widgetImages,
   });
-
-  final List<Widget> widgetImages;
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> widgetImages = [
+      Image.asset(AssetPath.gizaImage),
+      Image.asset(AssetPath.dubaiImage),
+      Image.asset(AssetPath.tripsoImage),
+      Image.asset(AssetPath.ancient1),
+      Image.asset(AssetPath.ancient2),
+      Image.asset(AssetPath.ancient3),
+      Image.asset(AssetPath.ancient4),
+      Image.asset(AssetPath.ancient5),
+      Image.asset(AssetPath.ancient6),
+    ];
+
     return Stack(
       alignment: AlignmentDirectional.bottomStart,
       children: [
