@@ -52,6 +52,7 @@ import '../../networking/exceptions/user_exceptions.dart';
 
 part '../../../features/Auth/sign_up/logic/sign_up_cubit.dart';
 part '../../../features/cities/view/destination_cities_screen.dart';
+part '../../../features/cities/widget/grid_city_items.dart';
 part '../../networking/cache_helper/shared_pref_helper.dart';
 part './../../../features/Auth/forget_password/logic/forget_password_cubit.dart';
 part './../../../features/Auth/forget_password/view/forget_password_screen.dart';
@@ -75,7 +76,6 @@ part './../../../features/on_boarding/widgets/build_styled_text.dart';
 part './../../../features/on_boarding/widgets/build_welcome_text.dart';
 part './../../../layout/layout.dart';
 part './../../../shared/cubit/tripsoCubit/tripso_cubit.dart';
-part './../../../shared/widget/grid_city_items.dart';
 part './../../../tripso_app.dart';
 part './../../di/dependency_injection.dart';
 part './../../routing/app_router.dart';
