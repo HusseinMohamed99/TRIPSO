@@ -13,7 +13,7 @@ class SignInScreen extends StatelessWidget {
         if (state is SignInLoadingState) {
           context.showSnackBar('Loading...', color: ColorsManager.primaryColor);
         } else if (state is SignInSuccessState) {
-          sharedPrefHelper.isUserLogged();
+          sharedPrefHelper.setUserLogged();
           context.showSnackBar(
             'Sign in Successfully',
             color: ColorsManager.greenColor,

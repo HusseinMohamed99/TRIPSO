@@ -163,7 +163,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
           .map((doc) => CityModel.fromFireStore(doc.data()))
           .toList();
       cityIds = querySnapshot.docs.map((doc) => doc.id).toList();
-      print(cities);
       emit(GetCityDataSuccessState());
     } catch (error) {
       final errorMessage = "Failed to fetch city data: ${error.toString()}";

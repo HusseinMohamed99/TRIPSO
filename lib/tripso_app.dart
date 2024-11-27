@@ -39,13 +39,23 @@ class TripsoApp extends StatelessWidget {
             theme: buildLightTheme(context),
             darkTheme: buildLightTheme(context),
             themeMode: ThemeMode.light,
-            initialRoute: isOnBoardingViewed
-                ? Routes.signInScreen
-                : Routes.onBoardingView,
+            initialRoute: _getInitialRoute(),
+
             onGenerateRoute: AppRouters(sharedPrefHelper).generateRoute,
           ),
         );
       },
     );
+  }
+
+  // Determines the initial route based on the onboarding and login status.
+  String _getInitialRoute() {
+    if (isOnBoardingViewed) {
+      // If onboarding is viewed, check if the user is logged in.
+      return isUserLogged ? Routes.citiesScreen : Routes.signInScreen;
+    } else {
+      // If onboarding is not viewed, go to the onboarding view.
+      return Routes.onBoardingView;
+    }
   }
 }
