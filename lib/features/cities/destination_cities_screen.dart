@@ -1,7 +1,7 @@
-part of './../../core/helpers/export_manager/export_manager.dart';
+part of '../../core/helpers/export_manager/export_manager.dart';
 
-class CitiesScreen extends StatelessWidget {
-  const CitiesScreen({super.key});
+class DestinationCitiesScreen extends StatelessWidget {
+  const DestinationCitiesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

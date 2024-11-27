@@ -4,7 +4,7 @@ class Routes {
   static const signInScreen = '/sign In';
   static const signUpScreen = '/sign Up';
   static const forgetPassword = '/forgetPassword';
-  static const citiesScreen = '/CitiesScreen';
+  static const destinationCitiesScreen = '/DestinationCitiesScreen';
   static const homeLayout = '/homeLayout';
   static const searchScreen = '/searchScreen';
 }

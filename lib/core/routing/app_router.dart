@@ -42,11 +42,11 @@ class AppRouters {
             child: ForgotPassword(),
           ),
         );
-      case Routes.citiesScreen:
+      case Routes.destinationCitiesScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => TripsoCubit()..fetchAllCities(),
-            child: CitiesScreen(),
+            child: DestinationCitiesScreen(),
           ),
         );
       case Routes.homeLayout:

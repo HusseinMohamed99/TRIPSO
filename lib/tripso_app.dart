@@ -52,7 +52,9 @@ class TripsoApp extends StatelessWidget {
   String _getInitialRoute() {
     if (isOnBoardingViewed) {
       // If onboarding is viewed, check if the user is logged in.
-      return isUserLogged ? Routes.citiesScreen : Routes.signInScreen;
+      return isUserLogged
+          ? Routes.destinationCitiesScreen
+          : Routes.signInScreen;
     } else {
       // If onboarding is not viewed, go to the onboarding view.
       return Routes.onBoardingView;

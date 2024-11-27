@@ -40,7 +40,8 @@ class SignInCubit extends Cubit<SignInStates> {
       SharedPrefHelper.getSecuredString(
           'uId'); // This seems redundant, consider reviewing.
       emit(SignInSuccessState(userId));
-      navigatorKey.currentState?.pushReplacementNamed(Routes.citiesScreen);
+      navigatorKey.currentState
+          ?.pushReplacementNamed(Routes.destinationCitiesScreen);
     } on FirebaseAuthException catch (e) {
       // Handle Firebase-specific errors
       emit(SignInErrorState("FirebaseAuthException: ${e.message}"));
