@@ -23,19 +23,25 @@ class ExploreScreen extends StatelessWidget {
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        return SingleChildScrollView(
-          child: Column(
-            children: [
-              CityDetails(
-                tripsoCubit: tripsoCubit,
+        return Column(
+          children: [
+            CityDetails(
+              tripsoCubit: tripsoCubit,
+            ),
+            Expanded(
+              child: CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: RowWidget(
+                      tripsoCubit: tripsoCubit,
+                    ),
+                  ),
+                  SliverToBoxAdapter(child: PopularSightsWidget()),
+                  SliverToBoxAdapter(child: const TopPlansWidget()),
+                ],
               ),
-              RowWidget(
-                tripsoCubit: tripsoCubit,
-              ),
-              PopularSightsWidget(),
-              const TopPlansWidget(),
-            ],
-          ),
+            ),
+          ],
         );
       },
     );
