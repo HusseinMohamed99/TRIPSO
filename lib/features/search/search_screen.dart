@@ -3,22 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
-import 'package:tripso/model/weather_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/my_divider.dart';
-import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
-import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
-import 'package:tripso/shared/service/weather_service.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -41,9 +35,10 @@ class _SearchScreenState extends State<SearchScreen> {
   void runFilter(String enteredKeyword) {
     List<CityModel> results = [];
     if (enteredKeyword.trim().isEmpty) {
-      results = TripsoCubit.get(context).cities;
+      results = context.read<CitiesCubit>().cities;
     } else {
-      results = TripsoCubit.get(context)
+      results = context
+          .read<CitiesCubit>()
           .cities
           .where(
             (city) => city.name.toLowerCase().contains(
@@ -159,27 +154,27 @@ class _SearchScreenState extends State<SearchScreen> {
       PlaceModel placeModel, BestPLanModel bestPLanModel) {
     return InkWell(
       onTap: () async {
-        TripsoCubit.get(context).getUserData();
-        TripsoCubit.get(context).getDataPlaces(city.cId);
-        TripsoCubit.get(context).getPopularPlace(city.cId);
-        TripsoCubit.get(context).fetchCityData(city.cId);
-        TripsoCubit.get(context).getAllBestPlan(city.cId);
-        navigateTo(
-          context,
-          routeName: HomeLayout.routeName,
-          arguments: ScreenArgs(
-              cityModel: city,
-              placeModel: placeModel,
-              bestPLanModel: bestPLanModel),
-        );
+        // TripsoCubit.get(context).getUserData();
+        // TripsoCubit.get(context).getDataPlaces(city.cId);
+        // TripsoCubit.get(context).getPopularPlace(city.cId);
+        // TripsoCubit.get(context).fetchCityData(city.cId);
+        // TripsoCubit.get(context).getAllBestPlan(city.cId);
+        // navigateTo(
+        //   context,
+        //   routeName: HomeLayout.routeName,
+        //   arguments: ScreenArgs(
+        //       cityModel: city,
+        //       placeModel: placeModel,
+        //       bestPLanModel: bestPLanModel),
+        // );
 
-        debugPrint('City ID = ${city.cId}');
-        WeatherService service = WeatherService();
-        WeatherModel? weather = await service.getWeather(cityName: city.name);
-        Provider.of<WeatherProvider>(context, listen: false).cityName =
-            city.name;
-        Provider.of<WeatherProvider>(context, listen: false).weatherData =
-            weather;
+        // debugPrint('City ID = ${city.cId}');
+        // WeatherService service = WeatherService();
+        // WeatherModel? weather = await service.getWeather(cityName: city.name);
+        // Provider.of<WeatherProvider>(context, listen: false).cityName =
+        //     city.name;
+        // Provider.of<WeatherProvider>(context, listen: false).weatherData =
+        //     weather;
       },
       child: Container(
         height: 140.h,

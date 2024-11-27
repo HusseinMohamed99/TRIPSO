@@ -38,6 +38,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/cubit/weatherCubit/weather_cubit.dart';
 
 import '../../../features/Auth/forget_password/logic/forget_password_state.dart';
+import '../../../features/cities/logic/cities_state.dart';
 import '../../../model/best_plan_model.dart';
 import '../../../model/city_model.dart';
 import '../../../model/place_model.dart';
@@ -63,6 +64,7 @@ part './../../../features/Auth/sign_in/widgets/sign_in_button.dart';
 part './../../../features/Auth/sign_up/views/sign_up_screen.dart';
 part './../../../features/Auth/sign_up/widgets/sign_up_button.dart';
 part './../../../features/Auth/sign_up/widgets/sign_up_input_field.dart';
+part './../../../features/cities/logic/cities_cubit.dart';
 part './../../../features/cities/widget/carousel_slider_widget.dart';
 part './../../../features/cities/widget/destinations_cities_widget.dart';
 part './../../../features/cities/widget/display_grid_cities.dart';

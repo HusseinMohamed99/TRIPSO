@@ -116,8 +116,6 @@ class TripsoCubit extends Cubit<TripsoStates> {
   }
 
   CityModel? cityModel;
-  List<CityModel> cities = [];
-  List<String> cityIds = [];
 
   /// Fetches and sets data for a specific city by its ID.
   Future<void> fetchCityData(String? cityId) async {
@@ -147,65 +145,41 @@ class TripsoCubit extends Cubit<TripsoStates> {
     }
   }
 
-  /// Fetches and sets data for all cities in the collection.
-  Future<void> fetchAllCities() async {
-    emit(GetCityDataLoadingState());
+  // List<CityModel> city = [];
+  // List<String> cId = [];
 
-    try {
-      final querySnapshot =
-          await FirebaseFirestore.instance.collection('cities').get();
+  // // Helper method for fetching city data based on country
+  // void getCityDataByCountry(String country) async {
+  //   FirebaseFirestore.instance
+  //       .collection('cities')
+  //       .where("country", isEqualTo: country)
+  //       .get()
+  //       .then((value) {
+  //     city.clear();
+  //     cId.clear();
+  //     for (var element in value.docs) {
+  //       city.add(CityModel.fromFireStore(element.data()));
+  //       cId.add(element.id);
+  //     }
+  //   });
+  // }
 
-      if (querySnapshot.docs.isEmpty) {
-        debugPrint("No cities found.");
-      }
+  // List<CityModel> cityPopular = [];
+  // List<String> cIdPopular = [];
 
-      cities = querySnapshot.docs
-          .map((doc) => CityModel.fromFireStore(doc.data()))
-          .toList();
-      cityIds = querySnapshot.docs.map((doc) => doc.id).toList();
-      emit(GetCityDataSuccessState());
-    } catch (error) {
-      final errorMessage = "Failed to fetch city data: ${error.toString()}";
-      debugPrint(errorMessage);
-      emit(GetCityDataErrorState(errorMessage));
-    }
-  }
-
-  List<CityModel> city = [];
-  List<String> cId = [];
-
-  // Helper method for fetching city data based on country
-  void getCityDataByCountry(String country) async {
-    FirebaseFirestore.instance
-        .collection('cities')
-        .where("country", isEqualTo: country)
-        .get()
-        .then((value) {
-      city.clear();
-      cId.clear();
-      for (var element in value.docs) {
-        city.add(CityModel.fromFireStore(element.data()));
-        cId.add(element.id);
-      }
-    });
-  }
-
-  List<CityModel> cityPopular = [];
-  List<String> cIdPopular = [];
-
-  getPopularData() async {
-    FirebaseFirestore.instance
-        .collection('cities')
-        .where("isPopular", isEqualTo: true)
-        .get()
-        .then((value) {
-      cityPopular = [];
-      for (var element in value.docs) {
-        cityPopular.add(CityModel.fromFireStore(element.data()));
-        cIdPopular.add(element.id);
-      }
-    });
-  }
+  // getPopularData() async {
+  //   FirebaseFirestore.instance
+  //       .collection('cities')
+  //       .where("isPopular", isEqualTo: true)
+  //       .get()
+  //       .then((value) {
+  //     cityPopular = [];
+  //     for (var element in value.docs) {
+  //       cityPopular.add(CityModel.fromFireStore(element.data()));
+  //       cIdPopular.add(element.id);
+  //     }
+  //   });
+  // }
 
   PlaceModel? placeModel;
 

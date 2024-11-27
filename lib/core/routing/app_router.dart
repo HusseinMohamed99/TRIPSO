@@ -45,7 +45,7 @@ class AppRouters {
       case Routes.destinationCitiesScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => TripsoCubit()..fetchAllCities(),
+            create: (context) => CitiesCubit()..fetchAllCities(),
             child: DestinationCitiesScreen(),
           ),
         );

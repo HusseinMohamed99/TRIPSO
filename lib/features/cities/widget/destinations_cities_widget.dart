@@ -3,10 +3,10 @@ part of './../../../core/helpers/export_manager/export_manager.dart';
 class DestinationCitiesWidget extends StatelessWidget {
   const DestinationCitiesWidget({
     super.key,
-    required this.tripsoCubit,
+    required this.citiesCubit,
   });
 
-  final TripsoCubit tripsoCubit;
+  final CitiesCubit citiesCubit;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class DestinationCitiesWidget extends StatelessWidget {
             slivers: [
               SliverPadding(
                 padding: const EdgeInsets.symmetric(horizontal: 8).r,
-                sliver: DisplayGridCities(cubit: tripsoCubit),
+                sliver: DisplayGridCities(cubit: citiesCubit),
               ),
             ],
           ),

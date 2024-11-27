@@ -3,7 +3,7 @@ part of './../../../core/helpers/export_manager/export_manager.dart';
 class DisplayGridCities extends StatelessWidget {
   const DisplayGridCities({super.key, required this.cubit});
 
-  final TripsoCubit cubit;
+  final CitiesCubit cubit;
 
   @override
   Widget build(BuildContext context) {

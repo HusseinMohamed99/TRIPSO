@@ -8,4 +8,5 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<ForgetPasswordCubit>(() => ForgetPasswordCubit());
   getIt.registerFactory<WeatherCubit>(() => WeatherCubit(getIt()));
   getIt.registerFactory<TripsoCubit>(() => TripsoCubit());
+  getIt.registerFactory<TripsoCubit>(() => TripsoCubit());
 }

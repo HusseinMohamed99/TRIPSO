@@ -5,15 +5,15 @@ class DestinationCitiesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tripsoCubit = context.read<TripsoCubit>();
+    final citiesCubit = context.read<CitiesCubit>();
 
-    return BlocConsumer<TripsoCubit, TripsoStates>(
+    return BlocConsumer<CitiesCubit, CitiesStates>(
       listener: (context, state) {},
       builder: (context, state) {
         return AnnotatedRegion<SystemUiOverlayStyle>(
           value: systemUI(),
           child: Scaffold(
-            body: _buildBody(state, tripsoCubit),
+            body: _buildBody(state, citiesCubit),
           ),
         );
       },
@@ -21,14 +21,14 @@ class DestinationCitiesScreen extends StatelessWidget {
   }
 
   // Function to return the correct widget based on the current state
-  Widget _buildBody(TripsoStates state, TripsoCubit tripsoCubit) {
-    if (state is GetCityDataLoadingState) {
+  Widget _buildBody(CitiesStates state, CitiesCubit citiesCubit) {
+    if (state is CitiesLoadingState) {
       // Show skeleton loader when data is being loaded
-      return DestinationCitiesWidget(tripsoCubit: tripsoCubit).skeletonize();
-    } else if (state is GetCityDataSuccessState) {
+      return DestinationCitiesWidget(citiesCubit: citiesCubit).skeletonize();
+    } else if (state is CitiesSuccessState) {
       // Handle success state and show data
-      return DestinationCitiesWidget(tripsoCubit: tripsoCubit);
-    } else if (state is GetCityDataErrorState) {
+      return DestinationCitiesWidget(citiesCubit: citiesCubit);
+    } else if (state is CitiesErrorState) {
       // Optionally, show an error message when there is an error
       return Center(child: Text('Failed to load cities.'));
     } else {
