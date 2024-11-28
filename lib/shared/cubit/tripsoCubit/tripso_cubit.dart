@@ -17,38 +17,12 @@ class TripsoCubit extends Cubit<TripsoStates> {
   final List<String> titles = [
     'Explore',
     'Wishlist',
-    'My Plans',
+    'MyPlans',
     'Profile',
   ];
 
   void changeIndex(int index) {
-    if (index < 0 || index >= screens.length) {
-      // Handle invalid index, if necessary
-      debugPrint('Invalid index: $index');
-      return;
-    }
-
     currentIndex = index;
-
-    // Perform any specific actions based on the index
-    switch (index) {
-      case 0:
-        // Add logic for ExploreScreen if needed
-        break;
-      case 1:
-        // Add logic for WishListScreen if needed
-        break;
-      case 2:
-        // Add logic for MyPlansScreen if needed
-        break;
-      case 3:
-        // Add logic for MyProfileScreen if needed
-        break;
-      default:
-        // This should not be reached
-        debugPrint('Unhandled index: $index');
-    }
-
     emit(ChangeBottomNavBarState());
   }
 
@@ -192,7 +166,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc('Emirates National Auto Museum')
         .get()
         .then((value) {
-      placeModel = PlaceModel.fromFireStore(value.data()!);
+      placeModel = PlaceModel.fromJson(value.data()!);
       emit(GetPlaceDataSuccessState());
     }).catchError((error) {
       debugPrint(error.toString());
@@ -209,7 +183,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(pId)
         .get()
         .then((value) {
-      placeModel = PlaceModel.fromFireStore(value.data()!);
+      placeModel = PlaceModel.fromJson(value.data()!);
       emit(GetPlaceDataSuccessState());
     }).catchError((error) {
       debugPrint(error.toString());
@@ -229,7 +203,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .listen((value) async {
       place = [];
       for (var element in value.docs) {
-        place.add(PlaceModel.fromFireStore(element.data()));
+        place.add(PlaceModel.fromJson(element.data()));
         pId.add(element.id);
       }
     });
@@ -248,7 +222,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .then((value) {
       popularPlace = [];
       for (var element in value.docs) {
-        popularPlace.add(PlaceModel.fromFireStore(element.data()));
+        popularPlace.add(PlaceModel.fromJson(element.data()));
         popularPlaceId.add(element.id);
       }
     });

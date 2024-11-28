@@ -9,8 +9,8 @@ class HomeLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     final tripsoCubit = context.read<TripsoCubit>();
 
-    return BlocConsumer<TripsoCubit, TripsoStates>(
-      listener: (context, state) {},
+    return BlocBuilder<TripsoCubit, TripsoStates>(
+      bloc: context.read<TripsoCubit>(),
       builder: (context, state) {
         return Scaffold(
           bottomNavigationBar:
@@ -21,7 +21,6 @@ class HomeLayout extends StatelessWidget {
     );
   }
 
-  // Function to build the bottom navigation bar
   Widget _buildBottomNavigationBar(TripsoCubit tripsoCubit,
       {required BuildContext context}) {
     return GNav(
@@ -39,16 +38,13 @@ class HomeLayout extends StatelessWidget {
         context: context,
       ),
       selectedIndex: tripsoCubit.currentIndex,
-      onTabChange: (index) {
-        tripsoCubit.changeIndex(index);
-      },
+      onTabChange: tripsoCubit.changeIndex,
     ).allPadding(
       hPadding: 6,
       vPadding: 6,
     );
   }
 
-  // Function to build the tabs for the bottom navigation bar
   List<GButton> _buildTabs(TripsoCubit tripsoCubit,
       {required BuildContext context}) {
     return [
@@ -76,15 +72,13 @@ class HomeLayout extends StatelessWidget {
       _buildTab(
         context: context,
         icon: Icons.person,
-        imageAsset: AssetPath
-            .userImage, // Empty string since it's using a CachedNetworkImage
+        imageAsset: AssetPath.userImage,
         index: 3,
         tripsoCubit: tripsoCubit,
       ),
     ];
   }
 
-  // Function to build an individual tab for the bottom navigation bar
   GButton _buildTab({
     required IconData icon,
     required String imageAsset,

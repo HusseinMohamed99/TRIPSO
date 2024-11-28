@@ -20,74 +20,66 @@ class UpdatePassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => TripsoCubit(),
-      child:
-          BlocConsumer<TripsoCubit, TripsoStates>(listener: (context, state) {
-        if (state is ChangeUserPasswordLoadingState) {
-          MyDialog.showLoadingDialog(context, 'Loading...');
-        }
+    return BlocConsumer<TripsoCubit, TripsoStates>(listener: (context, state) {
+      if (state is ChangeUserPasswordLoadingState) {
+        MyDialog.showLoadingDialog(context, 'Loading...');
+      }
 
-        if (state is ChangeUserPasswordSuccessState) {
-          MyDialog.showLoadingDialog(
-              context, 'Change password is successfully');
-          MyDialog.hideDialog(context);
-          // navigateAndFinish(context, routeName: SignInScreen.routeName);
-        } else if (state is ChangeUserPasswordErrorState) {
-          MyDialog.showLoadingDialog(context, 'Change password is Error');
-          MyDialog.hideDialog(context);
-          MyDialog.showMessage(context, 'Change password is Error',
-              negActionTitle: 'Cancel', negAction: () {
-            Navigator.pop(context);
-          });
-        }
-      }, builder: (context, state) {
-        var newPasswordController = TextEditingController();
-        var confirmationPasswordController = TextEditingController();
-        var updatePasswordKey = GlobalKey<FormState>();
-        var cubit = TripsoCubit.get(context);
-        return Scaffold(
-          appBar: primaryAppBar(
-            title: '',
-            function: () {
-              newPasswordController.clear();
-              confirmationPasswordController.clear();
-              pop(context);
-            },
-            iconData: Icon(
-              Icons.arrow_back,
-              size: 25.sp,
+      if (state is ChangeUserPasswordSuccessState) {
+        MyDialog.showLoadingDialog(context, 'Change password is successfully');
+        MyDialog.hideDialog(context);
+        // navigateAndFinish(context, routeName: SignInScreen.routeName);
+      } else if (state is ChangeUserPasswordErrorState) {
+        MyDialog.showLoadingDialog(context, 'Change password is Error');
+        MyDialog.hideDialog(context);
+        MyDialog.showMessage(context, 'Change password is Error',
+            negActionTitle: 'Cancel', negAction: () {
+          Navigator.pop(context);
+        });
+      }
+    }, builder: (context, state) {
+      var newPasswordController = TextEditingController();
+      var confirmationPasswordController = TextEditingController();
+      var updatePasswordKey = GlobalKey<FormState>();
+      var cubit = TripsoCubit.get(context);
+      return Scaffold(
+        appBar: primaryAppBar(
+          title: '',
+          function: () {
+            newPasswordController.clear();
+            confirmationPasswordController.clear();
+            pop(context);
+          },
+          iconData: Icon(
+            Icons.arrow_back,
+            size: 25.sp,
+          ),
+        ),
+        body: Form(
+          key: updatePasswordKey,
+          child: CustomScrollableForm(
+            child: Column(
+              children: [
+                title(),
+                assetImage(),
+                Column(
+                  children: [
+                    PasswordFormField(
+                        newPasswordController: newPasswordController,
+                        confirmationPasswordController:
+                            confirmationPasswordController,
+                        cubit: cubit),
+                    Space(width: 0.w, height: 30.h),
+                    buildDefaultButton(updatePasswordKey, cubit,
+                        newPasswordController, confirmationPasswordController),
+                  ],
+                )
+              ],
             ),
           ),
-          body: Form(
-            key: updatePasswordKey,
-            child: CustomScrollableForm(
-              child: Column(
-                children: [
-                  title(),
-                  assetImage(),
-                  Column(
-                    children: [
-                      PasswordFormField(
-                          newPasswordController: newPasswordController,
-                          confirmationPasswordController:
-                              confirmationPasswordController,
-                          cubit: cubit),
-                      Space(width: 0.w, height: 30.h),
-                      buildDefaultButton(
-                          updatePasswordKey,
-                          cubit,
-                          newPasswordController,
-                          confirmationPasswordController),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ),
-        );
-      }),
-    );
+        ),
+      );
+    });
   }
 
   Widget buildDefaultButton(

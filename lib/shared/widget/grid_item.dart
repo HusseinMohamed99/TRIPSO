@@ -1,17 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/features/sights/sight_details_screen.dart';
-import 'package:tripso/model/arg_model.dart';
-import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
-import 'package:tripso/model/place_model.dart';
+import 'package:tripso/model/place_model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
-import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 
@@ -287,8 +282,7 @@ List<Icon> iconStar({Color? color}) {
 
 class GridItemSights extends StatelessWidget {
   const GridItemSights(
-    this.cityModel,
-    this.bestPLanModel, {
+    this.cityModel, {
     super.key,
     required this.placeModel,
   });
@@ -296,24 +290,24 @@ class GridItemSights extends StatelessWidget {
   final PlaceModel placeModel;
   final CityModel cityModel;
 
-  final BestPLanModel bestPLanModel;
+  // final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(20).r,
       onTap: () {
-        navigateTo(
-          context,
-          routeName: SightDetailsScreen.routeName,
-          arguments: ScreenArgs(
-              placeModel: placeModel,
-              cityModel: cityModel,
-              bestPLanModel: bestPLanModel),
-        );
-        if (kDebugMode) {
-          print(placeModel.pId);
-        }
+        // navigateTo(
+        //   context,
+        //   routeName: SightDetailsScreen.routeName,
+        //   arguments: ScreenArgs(
+        //       placeModel: placeModel,
+        //       cityModel: cityModel,
+        //       bestPLanModel: bestPLanModel),
+        // );
+        // if (kDebugMode) {
+        //   print(placeModel.pId);
+        // }
       },
       child: Stack(
         clipBehavior: Clip.antiAliasWithSaveLayer,

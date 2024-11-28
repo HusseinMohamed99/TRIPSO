@@ -54,7 +54,8 @@ class AppRouters {
           builder: (_) => BlocProvider(
             create: (context) => TripsoCubit()
               ..getUserData()
-              ..fetchCityData(arguments as String),
+              ..fetchCityData(arguments as String)
+              ..getPopularPlace(arguments),
             child: HomeLayout(),
           ),
         );
