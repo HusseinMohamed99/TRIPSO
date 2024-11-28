@@ -28,22 +28,19 @@ List<Icon> generateRatingIcons(int rating, {Color? color}) {
 }
 
 class GridItemSights extends StatelessWidget {
-  const GridItemSights(
-    this.cityModel, {
+  const GridItemSights({
     super.key,
     required this.placeModel,
   });
 
   final PlaceModel placeModel;
-  final CityModel cityModel;
 
   @override
   Widget build(BuildContext context) {
     // Parse rating from string to int
     int rating = (double.tryParse(placeModel.rate) ?? 0).toInt();
 
-    return InkWell(
-      borderRadius: BorderRadius.circular(20).r,
+    return GestureDetector(
       onTap: () {
         // Navigate to the place details page
         // navigateTo(

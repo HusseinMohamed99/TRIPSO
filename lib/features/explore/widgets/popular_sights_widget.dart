@@ -101,7 +101,6 @@ class PopularSightsWidget extends StatelessWidget {
           ],
         ),
         child: GridItemSights(
-          cubit.cityModel!,
           placeModel: cubit.popularPlace[index],
         ),
       ),
