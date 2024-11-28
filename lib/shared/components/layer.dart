@@ -20,7 +20,7 @@ class LayerImage extends StatelessWidget {
             const BorderRadius.all(
               Radius.circular(20),
             ).r,
-        color: const Color.fromRGBO(0, 0, 0, 0.3),
+        color: const Color.fromRGBO(0, 0, 0, 0.2),
       ),
       child: child,
     );

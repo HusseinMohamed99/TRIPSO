@@ -12,7 +12,7 @@ class ExploreScreen extends StatelessWidget {
       builder: (context, state) {
         return Column(
           children: [
-            CityDetails(
+            CityInformationWidget(
               tripsoCubit: tripsoCubit,
             ),
             Expanded(

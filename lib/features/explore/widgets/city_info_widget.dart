@@ -1,7 +1,7 @@
 part of './../../../core/helpers/export_manager/export_manager.dart';
 
-class CityDetails extends StatelessWidget {
-  const CityDetails({
+class CityInformationWidget extends StatelessWidget {
+  const CityInformationWidget({
     super.key,
     required this.tripsoCubit,
   });
@@ -14,7 +14,7 @@ class CityDetails extends StatelessWidget {
       children: [
         CachedNetworkImage(
           imageUrl: tripsoCubit.cityModel?.image ?? '',
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.fitWidth,
           height: context.height * 0.3,
           width: double.infinity,
           errorWidget: (context, url, error) => Icon(
