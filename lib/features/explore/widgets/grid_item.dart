@@ -1,29 +1,35 @@
 part of '../../../core/helpers/export_manager/export_manager.dart';
 
 // Function to generate a list of icons based on the rating
-List<Icon> generateRatingIcons(int rating, {Color? color}) {
+List<Icon> generateRatingIcons(double rating, {Color? color}) {
   List<Icon> icons = [];
-  for (int i = 0; i < 5; i++) {
-    if (i < rating) {
+
+  // Iterate up to 5 stars
+  for (int i = 1; i <= 5; i++) {
+    if (rating >= i) {
+      // Full star if the rating is greater than or equal to the star index
       icons.add(Icon(
         Icons.star,
         color: color ?? ColorsManager.yellowColor,
-        size: 20.sp,
+        size: 16.sp,
       ));
-    } else if (i == rating) {
+    } else if (rating >= i - 0.5) {
+      // Half star if the rating is greater than or equal to half of this star
       icons.add(Icon(
         Icons.star_half_outlined,
         color: color ?? ColorsManager.yellowColor,
-        size: 20.sp,
+        size: 16.sp,
       ));
     } else {
+      // Empty star if the rating is less than the current star index
       icons.add(Icon(
         Icons.star_border,
         color: color ?? ColorsManager.whiteColor,
-        size: 20.sp,
+        size: 16.sp,
       ));
     }
   }
+
   return icons;
 }
 
@@ -38,7 +44,7 @@ class GridItemSights extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Parse rating from string to int
-    int rating = (double.tryParse(placeModel.rate) ?? 0).toInt();
+    double rating = (double.tryParse(placeModel.rate) ?? 0).toDouble();
 
     return GestureDetector(
       onTap: () {
@@ -86,12 +92,9 @@ class GridItemSights extends StatelessWidget {
       borderRadius: BorderRadius.circular(12).r,
       child: CachedNetworkImage(
         imageUrl: imageUrl,
-        fit: BoxFit.cover,
+        fit: BoxFit.fitHeight,
         height: 220.h,
         width: double.infinity,
-        progressIndicatorBuilder: (context, url, downloadProgress) => Center(
-          child: AdaptiveIndicator(),
-        ),
         errorWidget: (context, url, error) => Icon(
           Icons.info,
           size: 24.sp,
@@ -110,34 +113,36 @@ class GridItemSights extends StatelessWidget {
   }
 
   // Helper function to build the place information text and rating row
-  Widget _buildPlaceInfo(BuildContext context, int rating) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0).r,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildPlaceName(context),
-          _buildRatingRow(rating),
-          _buildLocationRow(context),
-        ],
-      ),
-    );
+  Widget _buildPlaceInfo(BuildContext context, double rating) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildPlaceName(context),
+        _buildRatingRow(rating),
+        _buildLocationRow(context),
+      ],
+    ).allPadding(
+      hPadding: 10,
+      vPadding: 10,
+    ); // Using direct padding
   }
 
   // Helper function to build the place name text
   Widget _buildPlaceName(BuildContext context) {
     return Text(
       placeModel.name.trim(),
-      maxLines: 2,
+      maxLines: 1,
       overflow: TextOverflow.ellipsis,
-      style: context.labelLarge?.copyWith(
+      style: context.titleSmall?.copyWith(
         color: ColorsManager.whiteColor,
+        fontWeight:
+            FontWeightHelper.semiBold, // Ensure FontWeightHelper is defined
       ),
     );
   }
 
   // Helper function to build the rating row with stars
-  Widget _buildRatingRow(int rating) {
+  Widget _buildRatingRow(double rating) {
     return Row(
       children: generateRatingIcons(rating),
     );
@@ -149,16 +154,19 @@ class GridItemSights extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Text(
-          TripsoCubit.get(context).cityModel!.country,
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                color: ColorsManager.whiteColor,
-              ),
+          context.read<TripsoCubit>().cityModel?.country ??
+              '', // Ensure TripsoCubit is correctly provided
+          style: context.titleSmall?.copyWith(
+            color: ColorsManager.whiteColor,
+            fontWeight:
+                FontWeightHelper.semiBold, // Ensure FontWeightHelper is defined
+          ),
         ),
-        Space(height: 0.h, width: 10.w),
+        Space(height: 0, width: 10),
         Icon(
           Icons.location_on_outlined,
           color: ColorsManager.primaryColor,
-          size: 25.sp,
+          size: 24.sp,
         ),
       ],
     );
