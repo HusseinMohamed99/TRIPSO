@@ -7,7 +7,7 @@ import 'package:tripso/features/plans/top_plans.dart';
 import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
-import 'package:tripso/model/place_model.dart';
+import 'package:tripso/model/place_model/place_model.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';

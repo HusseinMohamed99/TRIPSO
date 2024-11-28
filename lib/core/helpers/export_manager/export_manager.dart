@@ -40,7 +40,7 @@ import '../../../features/plans/create_customize_plan.dart';
 import '../../../features/search/search_screen.dart';
 import '../../../model/best_plan_model.dart';
 import '../../../model/city_model.dart';
-import '../../../model/place_model.dart';
+import '../../../model/place_model/place_model.dart';
 import '../../../model/plan_model.dart';
 import '../../../model/wishlist_model.dart';
 import '../../../shared/components/layer.dart';

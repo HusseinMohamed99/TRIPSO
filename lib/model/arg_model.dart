@@ -1,6 +1,6 @@
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
-import 'package:tripso/model/place_model.dart';
+import 'package:tripso/model/place_model/place_model.dart';
 
 class ScreenArgs {
   CityModel cityModel;
