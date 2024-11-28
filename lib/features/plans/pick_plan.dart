@@ -261,46 +261,46 @@ class GridPlans extends StatelessWidget {
                     height: 6.h,
                     width: 0,
                   ),
-                  if (placeModel.rate == '5')
-                    Row(
-                      children: icon5Star(color: ColorsManager.primaryColor),
-                    ),
-                  if (placeModel.rate == '4.5')
-                    Row(
-                      children:
-                          icon4halfStar(color: ColorsManager.primaryColor),
-                    ),
-                  if (placeModel.rate == '4')
-                    Row(
-                      children: icon4Star(color: ColorsManager.primaryColor),
-                    ),
-                  if (placeModel.rate == '3.5')
-                    Row(
-                      children:
-                          icon3halfStar(color: ColorsManager.primaryColor),
-                    ),
-                  if (placeModel.rate == '3')
-                    Row(
-                      children: icon3Star(color: ColorsManager.primaryColor),
-                    ),
-                  if (placeModel.rate == '2.5')
-                    Row(
-                      children:
-                          icon2halfStar(color: ColorsManager.primaryColor),
-                    ),
-                  if (placeModel.rate == '2')
-                    Row(
-                      children: icon2Star(color: ColorsManager.primaryColor),
-                    ),
-                  if (placeModel.rate == '1.5')
-                    Row(
-                      children:
-                          icon1halfStar(color: ColorsManager.primaryColor),
-                    ),
-                  if (placeModel.rate == '1')
-                    Row(
-                      children: iconStar(color: ColorsManager.primaryColor),
-                    ),
+                  // if (placeModel.rate == '5')
+                  //   Row(
+                  //     children: icon5Star(color: ColorsManager.primaryColor),
+                  //   ),
+                  // if (placeModel.rate == '4.5')
+                  //   Row(
+                  //     children:
+                  //         icon4halfStar(color: ColorsManager.primaryColor),
+                  //   ),
+                  // if (placeModel.rate == '4')
+                  //   Row(
+                  //     children: icon4Star(color: ColorsManager.primaryColor),
+                  //   ),
+                  // if (placeModel.rate == '3.5')
+                  //   Row(
+                  //     children:
+                  //         icon3halfStar(color: ColorsManager.primaryColor),
+                  //   ),
+                  // if (placeModel.rate == '3')
+                  //   Row(
+                  //     children: icon3Star(color: ColorsManager.primaryColor),
+                  //   ),
+                  // if (placeModel.rate == '2.5')
+                  //   Row(
+                  //     children:
+                  //         icon2halfStar(color: ColorsManager.primaryColor),
+                  //   ),
+                  // if (placeModel.rate == '2')
+                  //   Row(
+                  //     children: icon2Star(color: ColorsManager.primaryColor),
+                  //   ),
+                  // if (placeModel.rate == '1.5')
+                  //   Row(
+                  //     children:
+                  //         icon1halfStar(color: ColorsManager.primaryColor),
+                  //   ),
+                  // if (placeModel.rate == '1')
+                  //   Row(
+                  //     children: iconStar(color: ColorsManager.primaryColor),
+                  //   ),
                   const Space(
                     height: 6,
                     width: 0,
