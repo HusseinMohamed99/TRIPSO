@@ -1,14 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/model/city_model.dart';
-import 'package:tripso/model/place_model/place_model.dart';
-import 'package:tripso/shared/adaptive/indicator.dart';
-import 'package:tripso/shared/components/layer.dart';
-import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/constants/constants.dart';
+part of './../../core/helpers/export_manager/export_manager.dart';
 
 List<Icon> icon5Star({Color? color}) {
   return [
@@ -334,12 +324,10 @@ class GridItemSights extends StatelessWidget {
                         width: double.infinity,
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) => Center(
-                          child: AdaptiveIndicator(
-                            os: getOs(),
-                          ),
+                          child: AdaptiveIndicator(),
                         ),
                         errorWidget: (context, url, error) => Icon(
-                          FontAwesomeIcons.info,
+                          Icons.info,
                           size: 24.sp,
                         ),
                       ),
@@ -413,7 +401,7 @@ class GridItemSights extends StatelessWidget {
                               ),
                               Space(height: 0.h, width: 10.w),
                               Icon(
-                                FontAwesomeIcons.locationDot,
+                                Icons.location_on_outlined,
                                 color: ColorsManager.primaryColor,
                                 size: 25.sp,
                               ),

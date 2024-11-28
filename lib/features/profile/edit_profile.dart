@@ -14,7 +14,6 @@ import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/show_toast.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/text_form_field.dart';
-import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/widget/select_photo_options.dart';
 
@@ -90,15 +89,11 @@ class EditProfile extends StatelessWidget {
                                             progressIndicatorBuilder: (context,
                                                     url, downloadProgress) =>
                                                 Center(
-                                              child: AdaptiveIndicator(
-                                                os: getOs(),
-                                              ),
+                                              child: AdaptiveIndicator(),
                                             ),
                                             errorWidget:
                                                 (context, url, error) => Center(
-                                              child: AdaptiveIndicator(
-                                                os: getOs(),
-                                              ),
+                                              child: AdaptiveIndicator(),
                                             ),
                                           ),
                                         )

@@ -11,7 +11,6 @@ import 'package:tripso/model/place_model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/my_divider.dart';
 import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -229,14 +228,10 @@ class _SearchScreenState extends State<SearchScreen> {
                 width: double.infinity,
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
                     Center(
-                  child: AdaptiveIndicator(
-                    os: getOs(),
-                  ),
+                  child: AdaptiveIndicator(),
                 ),
                 errorWidget: (context, url, error) => Center(
-                  child: AdaptiveIndicator(
-                    os: getOs(),
-                  ),
+                  child: AdaptiveIndicator(),
                 ),
               ),
             ),
