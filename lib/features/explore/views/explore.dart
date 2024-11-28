@@ -15,14 +15,12 @@ class ExploreScreen extends StatelessWidget {
             CityInformationWidget(
               tripsoCubit: tripsoCubit,
             ),
+            ExploreDestinationItem(
+              tripsoCubit: tripsoCubit,
+            ),
             Expanded(
               child: CustomScrollView(
                 slivers: [
-                  SliverToBoxAdapter(
-                    child: ExploreDestinationItem(
-                      tripsoCubit: tripsoCubit,
-                    ),
-                  ),
                   SliverToBoxAdapter(child: PopularSightsWidget()),
                   SliverToBoxAdapter(child: const TopPlansWidget()),
                 ],
