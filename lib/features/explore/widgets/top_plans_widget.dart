@@ -14,6 +14,7 @@ class TopPlansWidget extends StatelessWidget {
         return Column(
           children: [
             _buildTitleSection(context),
+            Space(height: 16, width: 0), // Space between title and carousel
             SizedBox(
               height: 200.h,
               child: ListView.builder(
