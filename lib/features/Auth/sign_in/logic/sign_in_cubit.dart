@@ -37,8 +37,10 @@ class SignInCubit extends Cubit<SignInStates> {
       if (userId.isEmpty) {
         throw SignInExceptionState("User ID is empty after sign-in.");
       }
-      SharedPrefHelper.getSecuredString(
-          'uId'); // This seems redundant, consider reviewing.
+      SharedPrefHelper.setSecuredString(
+        prefsKeyIsUserLoggedIn,
+        userId,
+      ); // This seems redundant, consider reviewing.
       emit(SignInSuccessState(userId));
       navigatorKey.currentState
           ?.pushReplacementNamed(Routes.destinationCitiesScreen);

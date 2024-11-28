@@ -31,18 +31,19 @@ class TripsoCubit extends Cubit<TripsoStates> {
   void getUserData() async {
     try {
       emit(GetUserDataLoadingState());
-      final userDoc = await FirebaseFirestore.instance
-          .collection('users')
-          .doc(prefsKeyIsUserLoggedIn)
-          .get();
-
-      if (userDoc.exists) {
+      final token =
+          await SharedPrefHelper.getSecuredString(prefsKeyIsUserLoggedIn);
+      if (token.isEmpty) {
+        throw UserNotFoundException('User ID is empty.');
+      }
+      final userDoc =
+          await FirebaseFirestore.instance.collection('users').doc(token).get();
+      if (userDoc.exists && userDoc.data() != null) {
         userModel = UserModel.fromJson(
             userDoc.data()!); // Deserialize JSON into the model
         emit(GetUserDataSuccessState());
       } else {
-        throw UserNotFoundException(
-            'User not found for ID: $prefsKeyIsUserLoggedIn');
+        throw UserNotFoundException('User not found for ID: $token');
       }
     } on FirebaseAuthException catch (e) {
       // Firebase Authentication specific error handling
