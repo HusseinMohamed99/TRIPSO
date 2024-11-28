@@ -7,7 +7,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/firebase_options.dart';
 import 'package:tripso/shared/bloc_observer.dart';
-import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -31,11 +30,11 @@ Future<void> main() async {
   );
   await FirebaseAppCheck.instance.setTokenAutoRefreshEnabled(true);
 
-  // Initialize cache helper
+  // // Initialize cache helper
   await CacheHelper.init();
 
-  // Retrieve user ID from cache
-  uId = CacheHelper.getData(key: 'uId');
+  // // Retrieve user ID from cache
+  // uId = CacheHelper.getData(key: 'uId');
 
   // Check if onboarding screen was viewed
   final isOnBoardingViewed = await sharedPrefHelper.isOnBoardingScreenViewed();

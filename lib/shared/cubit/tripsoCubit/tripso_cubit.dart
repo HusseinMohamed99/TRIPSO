@@ -31,15 +31,18 @@ class TripsoCubit extends Cubit<TripsoStates> {
   void getUserData() async {
     try {
       emit(GetUserDataLoadingState());
-      final userDoc =
-          await FirebaseFirestore.instance.collection('users').doc(uId).get();
+      final userDoc = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(prefsKeyIsUserLoggedIn)
+          .get();
 
       if (userDoc.exists) {
         userModel = UserModel.fromJson(
             userDoc.data()!); // Deserialize JSON into the model
         emit(GetUserDataSuccessState());
       } else {
-        throw UserNotFoundException('User not found for ID: $uId');
+        throw UserNotFoundException(
+            'User not found for ID: $prefsKeyIsUserLoggedIn');
       }
     } on FirebaseAuthException catch (e) {
       // Firebase Authentication specific error handling
@@ -230,8 +233,11 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   void deleteAccount(context) async {
     await FirebaseAuth.instance.currentUser!.delete().then((value) async {
-      await FirebaseFirestore.instance.collection('users').doc(uId).delete();
-      // CacheHelper.removeData(key: 'uId');
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(prefsKeyIsUserLoggedIn)
+          .delete();
+      // CacheHelper.removeData(key: 'prefsKeyIsUserLoggedIn');
       // navigateAndFinish(context, routeName: OnBoard.routeName);
     });
   }
@@ -347,7 +353,10 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
     try {
       emit(UpdateUserLoadingState());
-      FirebaseFirestore.instance.collection('users').doc(uId).update({
+      FirebaseFirestore.instance
+          .collection('users')
+          .doc(prefsKeyIsUserLoggedIn)
+          .update({
         'email': email,
         'firstName': firstName,
         'lastName': lastName,
@@ -394,7 +403,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     );
     FirebaseFirestore.instance
         .collection('wishList')
-        .doc(uId)
+        .doc(prefsKeyIsUserLoggedIn)
         .collection('yourWishList')
         .doc(wishListId)
         .set(model.toFireStore())
@@ -414,14 +423,14 @@ class TripsoCubit extends Cubit<TripsoStates> {
   ) async {
     FirebaseFirestore.instance
         .collection("wishList")
-        .doc(uId)
+        .doc(prefsKeyIsUserLoggedIn)
         .collection("yourWishList")
         .where("wishListCityID", isEqualTo: cId)
         .snapshots()
         .listen((event) {
       wishList = [];
       for (var element in event.docs) {
-        if (element.data()['uId'] == userID) {
+        if (element.data()['prefsKeyIsUserLoggedIn'] == userID) {
           wishList.add(WishListModel.fromFireStore(element.data()));
         }
       }
@@ -431,7 +440,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   deleteWishList(wishListId) {
     FirebaseFirestore.instance
         .collection("wishList")
-        .doc(uId)
+        .doc(prefsKeyIsUserLoggedIn)
         .collection("yourWishList")
         .doc(wishListId)
         .delete()
@@ -474,7 +483,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     );
     FirebaseFirestore.instance
         .collection("customizePlan")
-        .doc(uId)
+        .doc(prefsKeyIsUserLoggedIn)
         .collection('Day$index')
         .doc(planId)
         .set(planModel.toFireStore())
@@ -495,14 +504,14 @@ class TripsoCubit extends Cubit<TripsoStates> {
   ) async {
     FirebaseFirestore.instance
         .collection("customizePlan")
-        .doc(uId)
+        .doc(prefsKeyIsUserLoggedIn)
         .collection("Day$indexOfMyPlan")
         .where('planCityID', isEqualTo: cId)
         .snapshots()
         .listen((event) {
       allPlan = [];
       for (var element in event.docs) {
-        if (element.data()['uId'] == userID) {
+        if (element.data()['prefsKeyIsUserLoggedIn'] == userID) {
           allPlan.add(PlanModel.fromFireStore(element.data()));
         }
       }
@@ -512,7 +521,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
   deleteMyPlan(myPlanId, int indexOfMyPlan) {
     FirebaseFirestore.instance
         .collection("customizePlan")
-        .doc(uId)
+        .doc(prefsKeyIsUserLoggedIn)
         .collection("Day$indexOfMyPlan")
         .doc(myPlanId)
         .delete()

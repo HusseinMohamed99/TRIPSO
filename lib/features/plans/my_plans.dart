@@ -13,7 +13,6 @@ import 'package:tripso/shared/adaptive/dialog.dart';
 import 'package:tripso/shared/components/maps_utils.dart';
 import 'package:tripso/shared/components/my_divider.dart';
 import 'package:tripso/shared/components/sized_box.dart';
-import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 
 class MyPlansScreen extends StatefulWidget {
@@ -86,7 +85,9 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                                 TripsoCubit.get(context)
                                     .fetchCityData(tripsoCubit.cId);
                                 TripsoCubit.get(context).getMyAllPlan(
-                                    tripsoCubit.cId, uId, current + 1);
+                                    tripsoCubit.cId,
+                                    prefsKeyIsUserLoggedIn,
+                                    current + 1);
                                 if (kDebugMode) {
                                   print(current + 1);
                                 }
