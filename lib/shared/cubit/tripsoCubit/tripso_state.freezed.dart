@@ -36,6 +36,9 @@ mixin _$TripsoStates {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -88,6 +91,8 @@ mixin _$TripsoStates {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -140,6 +145,8 @@ mixin _$TripsoStates {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -198,6 +205,7 @@ mixin _$TripsoStates {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -269,6 +277,7 @@ mixin _$TripsoStates {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -335,6 +344,7 @@ mixin _$TripsoStates {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -461,6 +471,9 @@ class _$TripsoInitialStateImpl implements TripsoInitialState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -516,6 +529,8 @@ class _$TripsoInitialStateImpl implements TripsoInitialState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -571,6 +586,8 @@ class _$TripsoInitialStateImpl implements TripsoInitialState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -635,6 +652,7 @@ class _$TripsoInitialStateImpl implements TripsoInitialState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -709,6 +727,7 @@ class _$TripsoInitialStateImpl implements TripsoInitialState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -778,6 +797,7 @@ class _$TripsoInitialStateImpl implements TripsoInitialState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -894,6 +914,9 @@ class _$GetUserDataLoadingStateImpl implements GetUserDataLoadingState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -949,6 +972,8 @@ class _$GetUserDataLoadingStateImpl implements GetUserDataLoadingState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -1004,6 +1029,8 @@ class _$GetUserDataLoadingStateImpl implements GetUserDataLoadingState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -1068,6 +1095,7 @@ class _$GetUserDataLoadingStateImpl implements GetUserDataLoadingState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -1142,6 +1170,7 @@ class _$GetUserDataLoadingStateImpl implements GetUserDataLoadingState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -1211,6 +1240,7 @@ class _$GetUserDataLoadingStateImpl implements GetUserDataLoadingState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -1327,6 +1357,9 @@ class _$GetUserDataSuccessStateImpl implements GetUserDataSuccessState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -1382,6 +1415,8 @@ class _$GetUserDataSuccessStateImpl implements GetUserDataSuccessState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -1437,6 +1472,8 @@ class _$GetUserDataSuccessStateImpl implements GetUserDataSuccessState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -1501,6 +1538,7 @@ class _$GetUserDataSuccessStateImpl implements GetUserDataSuccessState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -1575,6 +1613,7 @@ class _$GetUserDataSuccessStateImpl implements GetUserDataSuccessState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -1644,6 +1683,7 @@ class _$GetUserDataSuccessStateImpl implements GetUserDataSuccessState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -1786,6 +1826,9 @@ class _$GetUserDataErrorStateImpl implements GetUserDataErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -1841,6 +1884,8 @@ class _$GetUserDataErrorStateImpl implements GetUserDataErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -1896,6 +1941,8 @@ class _$GetUserDataErrorStateImpl implements GetUserDataErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -1960,6 +2007,7 @@ class _$GetUserDataErrorStateImpl implements GetUserDataErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -2034,6 +2082,7 @@ class _$GetUserDataErrorStateImpl implements GetUserDataErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -2103,6 +2152,7 @@ class _$GetUserDataErrorStateImpl implements GetUserDataErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -2230,6 +2280,9 @@ class _$ChangeUserPasswordLoadingStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -2285,6 +2338,8 @@ class _$ChangeUserPasswordLoadingStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -2340,6 +2395,8 @@ class _$ChangeUserPasswordLoadingStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -2404,6 +2461,7 @@ class _$ChangeUserPasswordLoadingStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -2478,6 +2536,7 @@ class _$ChangeUserPasswordLoadingStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -2547,6 +2606,7 @@ class _$ChangeUserPasswordLoadingStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -2666,6 +2726,9 @@ class _$ChangeUserPasswordSuccessStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -2721,6 +2784,8 @@ class _$ChangeUserPasswordSuccessStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -2776,6 +2841,8 @@ class _$ChangeUserPasswordSuccessStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -2840,6 +2907,7 @@ class _$ChangeUserPasswordSuccessStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -2914,6 +2982,7 @@ class _$ChangeUserPasswordSuccessStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -2983,6 +3052,7 @@ class _$ChangeUserPasswordSuccessStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -3129,6 +3199,9 @@ class _$ChangeUserPasswordErrorStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -3184,6 +3257,8 @@ class _$ChangeUserPasswordErrorStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -3239,6 +3314,8 @@ class _$ChangeUserPasswordErrorStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -3303,6 +3380,7 @@ class _$ChangeUserPasswordErrorStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -3377,6 +3455,7 @@ class _$ChangeUserPasswordErrorStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -3446,6 +3525,7 @@ class _$ChangeUserPasswordErrorStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -3569,6 +3649,9 @@ class _$ShowPasswordStateImpl implements ShowPasswordState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -3624,6 +3707,8 @@ class _$ShowPasswordStateImpl implements ShowPasswordState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -3679,6 +3764,8 @@ class _$ShowPasswordStateImpl implements ShowPasswordState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -3743,6 +3830,7 @@ class _$ShowPasswordStateImpl implements ShowPasswordState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -3817,6 +3905,7 @@ class _$ShowPasswordStateImpl implements ShowPasswordState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -3886,6 +3975,7 @@ class _$ShowPasswordStateImpl implements ShowPasswordState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -4002,6 +4092,9 @@ class _$ChangeBottomNavBarStateImpl implements ChangeBottomNavBarState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -4057,6 +4150,8 @@ class _$ChangeBottomNavBarStateImpl implements ChangeBottomNavBarState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -4112,6 +4207,8 @@ class _$ChangeBottomNavBarStateImpl implements ChangeBottomNavBarState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -4176,6 +4273,7 @@ class _$ChangeBottomNavBarStateImpl implements ChangeBottomNavBarState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -4250,6 +4348,7 @@ class _$ChangeBottomNavBarStateImpl implements ChangeBottomNavBarState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -4319,6 +4418,7 @@ class _$ChangeBottomNavBarStateImpl implements ChangeBottomNavBarState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -4435,6 +4535,9 @@ class _$GetCityDataLoadingStateImpl implements GetCityDataLoadingState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -4490,6 +4593,8 @@ class _$GetCityDataLoadingStateImpl implements GetCityDataLoadingState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -4545,6 +4650,8 @@ class _$GetCityDataLoadingStateImpl implements GetCityDataLoadingState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -4609,6 +4716,7 @@ class _$GetCityDataLoadingStateImpl implements GetCityDataLoadingState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -4683,6 +4791,7 @@ class _$GetCityDataLoadingStateImpl implements GetCityDataLoadingState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -4752,6 +4861,7 @@ class _$GetCityDataLoadingStateImpl implements GetCityDataLoadingState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -4868,6 +4978,9 @@ class _$GetCityDataSuccessStateImpl implements GetCityDataSuccessState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -4923,6 +5036,8 @@ class _$GetCityDataSuccessStateImpl implements GetCityDataSuccessState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -4978,6 +5093,8 @@ class _$GetCityDataSuccessStateImpl implements GetCityDataSuccessState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -5042,6 +5159,7 @@ class _$GetCityDataSuccessStateImpl implements GetCityDataSuccessState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -5116,6 +5234,7 @@ class _$GetCityDataSuccessStateImpl implements GetCityDataSuccessState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -5185,6 +5304,7 @@ class _$GetCityDataSuccessStateImpl implements GetCityDataSuccessState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -5327,6 +5447,9 @@ class _$GetCityDataErrorStateImpl implements GetCityDataErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -5382,6 +5505,8 @@ class _$GetCityDataErrorStateImpl implements GetCityDataErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -5437,6 +5562,8 @@ class _$GetCityDataErrorStateImpl implements GetCityDataErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -5501,6 +5628,7 @@ class _$GetCityDataErrorStateImpl implements GetCityDataErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -5575,6 +5703,7 @@ class _$GetCityDataErrorStateImpl implements GetCityDataErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -5644,6 +5773,7 @@ class _$GetCityDataErrorStateImpl implements GetCityDataErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -5769,6 +5899,9 @@ class _$GetPlaceDataLoadingStateImpl implements GetPlaceDataLoadingState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -5824,6 +5957,8 @@ class _$GetPlaceDataLoadingStateImpl implements GetPlaceDataLoadingState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -5879,6 +6014,8 @@ class _$GetPlaceDataLoadingStateImpl implements GetPlaceDataLoadingState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -5943,6 +6080,7 @@ class _$GetPlaceDataLoadingStateImpl implements GetPlaceDataLoadingState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -6017,6 +6155,7 @@ class _$GetPlaceDataLoadingStateImpl implements GetPlaceDataLoadingState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -6086,6 +6225,7 @@ class _$GetPlaceDataLoadingStateImpl implements GetPlaceDataLoadingState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -6202,6 +6342,9 @@ class _$GetPlaceDataSuccessStateImpl implements GetPlaceDataSuccessState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -6257,6 +6400,8 @@ class _$GetPlaceDataSuccessStateImpl implements GetPlaceDataSuccessState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -6312,6 +6457,8 @@ class _$GetPlaceDataSuccessStateImpl implements GetPlaceDataSuccessState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -6376,6 +6523,7 @@ class _$GetPlaceDataSuccessStateImpl implements GetPlaceDataSuccessState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -6450,6 +6598,7 @@ class _$GetPlaceDataSuccessStateImpl implements GetPlaceDataSuccessState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -6519,6 +6668,7 @@ class _$GetPlaceDataSuccessStateImpl implements GetPlaceDataSuccessState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -6662,6 +6812,9 @@ class _$GetPlaceDataErrorStateImpl implements GetPlaceDataErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -6717,6 +6870,8 @@ class _$GetPlaceDataErrorStateImpl implements GetPlaceDataErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -6772,6 +6927,8 @@ class _$GetPlaceDataErrorStateImpl implements GetPlaceDataErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -6836,6 +6993,7 @@ class _$GetPlaceDataErrorStateImpl implements GetPlaceDataErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -6910,6 +7068,7 @@ class _$GetPlaceDataErrorStateImpl implements GetPlaceDataErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -6979,6 +7138,7 @@ class _$GetPlaceDataErrorStateImpl implements GetPlaceDataErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -7104,6 +7264,9 @@ class _$GetBestPlanLoadingStateImpl implements GetBestPlanLoadingState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -7159,6 +7322,8 @@ class _$GetBestPlanLoadingStateImpl implements GetBestPlanLoadingState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -7214,6 +7379,8 @@ class _$GetBestPlanLoadingStateImpl implements GetBestPlanLoadingState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -7278,6 +7445,7 @@ class _$GetBestPlanLoadingStateImpl implements GetBestPlanLoadingState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -7352,6 +7520,7 @@ class _$GetBestPlanLoadingStateImpl implements GetBestPlanLoadingState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -7421,6 +7590,7 @@ class _$GetBestPlanLoadingStateImpl implements GetBestPlanLoadingState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -7537,6 +7707,9 @@ class _$GetBestPlanSuccessStateImpl implements GetBestPlanSuccessState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -7592,6 +7765,8 @@ class _$GetBestPlanSuccessStateImpl implements GetBestPlanSuccessState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -7647,6 +7822,8 @@ class _$GetBestPlanSuccessStateImpl implements GetBestPlanSuccessState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -7711,6 +7888,7 @@ class _$GetBestPlanSuccessStateImpl implements GetBestPlanSuccessState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -7785,6 +7963,7 @@ class _$GetBestPlanSuccessStateImpl implements GetBestPlanSuccessState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -7854,6 +8033,7 @@ class _$GetBestPlanSuccessStateImpl implements GetBestPlanSuccessState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -7996,6 +8176,9 @@ class _$GetBestPlanErrorStateImpl implements GetBestPlanErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -8051,6 +8234,8 @@ class _$GetBestPlanErrorStateImpl implements GetBestPlanErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -8106,6 +8291,8 @@ class _$GetBestPlanErrorStateImpl implements GetBestPlanErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -8170,6 +8357,7 @@ class _$GetBestPlanErrorStateImpl implements GetBestPlanErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -8244,6 +8432,7 @@ class _$GetBestPlanErrorStateImpl implements GetBestPlanErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -8313,6 +8502,7 @@ class _$GetBestPlanErrorStateImpl implements GetBestPlanErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -8373,6 +8563,514 @@ abstract class GetBestPlanErrorState implements TripsoStates {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetBestPlanErrorStateImplCopyWith<_$GetBestPlanErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BestPlansUpdatedStateImplCopyWith<$Res> {
+  factory _$$BestPlansUpdatedStateImplCopyWith(
+          _$BestPlansUpdatedStateImpl value,
+          $Res Function(_$BestPlansUpdatedStateImpl) then) =
+      __$$BestPlansUpdatedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<BestPLanModel> bestPlans, List<String> bestPlanIds});
+}
+
+/// @nodoc
+class __$$BestPlansUpdatedStateImplCopyWithImpl<$Res>
+    extends _$TripsoStatesCopyWithImpl<$Res, _$BestPlansUpdatedStateImpl>
+    implements _$$BestPlansUpdatedStateImplCopyWith<$Res> {
+  __$$BestPlansUpdatedStateImplCopyWithImpl(_$BestPlansUpdatedStateImpl _value,
+      $Res Function(_$BestPlansUpdatedStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bestPlans = null,
+    Object? bestPlanIds = null,
+  }) {
+    return _then(_$BestPlansUpdatedStateImpl(
+      bestPlans: null == bestPlans
+          ? _value._bestPlans
+          : bestPlans // ignore: cast_nullable_to_non_nullable
+              as List<BestPLanModel>,
+      bestPlanIds: null == bestPlanIds
+          ? _value._bestPlanIds
+          : bestPlanIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BestPlansUpdatedStateImpl implements BestPlansUpdatedState {
+  const _$BestPlansUpdatedStateImpl(
+      {required final List<BestPLanModel> bestPlans,
+      required final List<String> bestPlanIds})
+      : _bestPlans = bestPlans,
+        _bestPlanIds = bestPlanIds;
+
+  final List<BestPLanModel> _bestPlans;
+  @override
+  List<BestPLanModel> get bestPlans {
+    if (_bestPlans is EqualUnmodifiableListView) return _bestPlans;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_bestPlans);
+  }
+
+  final List<String> _bestPlanIds;
+  @override
+  List<String> get bestPlanIds {
+    if (_bestPlanIds is EqualUnmodifiableListView) return _bestPlanIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_bestPlanIds);
+  }
+
+  @override
+  String toString() {
+    return 'TripsoStates.updated(bestPlans: $bestPlans, bestPlanIds: $bestPlanIds)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BestPlansUpdatedStateImpl &&
+            const DeepCollectionEquality()
+                .equals(other._bestPlans, _bestPlans) &&
+            const DeepCollectionEquality()
+                .equals(other._bestPlanIds, _bestPlanIds));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_bestPlans),
+      const DeepCollectionEquality().hash(_bestPlanIds));
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BestPlansUpdatedStateImplCopyWith<_$BestPlansUpdatedStateImpl>
+      get copyWith => __$$BestPlansUpdatedStateImplCopyWithImpl<
+          _$BestPlansUpdatedStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function() getUserDataSuccess,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() changeUserPasswordLoading,
+    required TResult Function() changeUserPasswordSuccess,
+    required TResult Function(String error) changeUserPasswordError,
+    required TResult Function() showPassword,
+    required TResult Function() changeBottomNavBar,
+    required TResult Function() getCityDataLoading,
+    required TResult Function() getCityDataSuccess,
+    required TResult Function(String error) getCityDataError,
+    required TResult Function() getPlaceDataLoading,
+    required TResult Function() getPlaceDataSuccess,
+    required TResult Function(String error) getPlaceDataError,
+    required TResult Function() getBestPlanLoading,
+    required TResult Function() getBestPlanSuccess,
+    required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
+    required TResult Function() getProfileImagePickedLoading,
+    required TResult Function() getProfileImagePickedSuccess,
+    required TResult Function(String error) getProfileImagePickedError,
+    required TResult Function() getCoverImagePickedLoading,
+    required TResult Function() getCoverImagePickedSuccess,
+    required TResult Function(String error) getCoverImagePickedError,
+    required TResult Function() uploadProfileImageLoading,
+    required TResult Function() uploadProfileImageSuccess,
+    required TResult Function(String error) uploadProfileImageError,
+    required TResult Function() uploadCoverImageLoading,
+    required TResult Function() uploadCoverImageSuccess,
+    required TResult Function(String error) uploadCoverImageError,
+    required TResult Function() updateUserLoading,
+    required TResult Function() updateUserSuccess,
+    required TResult Function(String error) updateUserError,
+    required TResult Function() addToFavoriteLoading,
+    required TResult Function() addToFavoriteSuccess,
+    required TResult Function(String error) addToFavoriteError,
+    required TResult Function() unFavoriteLoading,
+    required TResult Function() unFavoriteSuccess,
+    required TResult Function(String error) unFavoriteError,
+    required TResult Function() getPlacesLoading,
+    required TResult Function() getPlacesSuccess,
+    required TResult Function(String error) getPlacesError,
+    required TResult Function() addPlanLoading,
+    required TResult Function() addPlanSuccess,
+    required TResult Function(String error) addPlanError,
+    required TResult Function() deleteMyPlanLoading,
+    required TResult Function() deleteMyPlanSuccess,
+    required TResult Function(String error) deleteMyPlanError,
+  }) {
+    return updated(bestPlans, bestPlanIds);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function()? getUserDataSuccess,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? changeUserPasswordLoading,
+    TResult? Function()? changeUserPasswordSuccess,
+    TResult? Function(String error)? changeUserPasswordError,
+    TResult? Function()? showPassword,
+    TResult? Function()? changeBottomNavBar,
+    TResult? Function()? getCityDataLoading,
+    TResult? Function()? getCityDataSuccess,
+    TResult? Function(String error)? getCityDataError,
+    TResult? Function()? getPlaceDataLoading,
+    TResult? Function()? getPlaceDataSuccess,
+    TResult? Function(String error)? getPlaceDataError,
+    TResult? Function()? getBestPlanLoading,
+    TResult? Function()? getBestPlanSuccess,
+    TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
+    TResult? Function()? getProfileImagePickedLoading,
+    TResult? Function()? getProfileImagePickedSuccess,
+    TResult? Function(String error)? getProfileImagePickedError,
+    TResult? Function()? getCoverImagePickedLoading,
+    TResult? Function()? getCoverImagePickedSuccess,
+    TResult? Function(String error)? getCoverImagePickedError,
+    TResult? Function()? uploadProfileImageLoading,
+    TResult? Function()? uploadProfileImageSuccess,
+    TResult? Function(String error)? uploadProfileImageError,
+    TResult? Function()? uploadCoverImageLoading,
+    TResult? Function()? uploadCoverImageSuccess,
+    TResult? Function(String error)? uploadCoverImageError,
+    TResult? Function()? updateUserLoading,
+    TResult? Function()? updateUserSuccess,
+    TResult? Function(String error)? updateUserError,
+    TResult? Function()? addToFavoriteLoading,
+    TResult? Function()? addToFavoriteSuccess,
+    TResult? Function(String error)? addToFavoriteError,
+    TResult? Function()? unFavoriteLoading,
+    TResult? Function()? unFavoriteSuccess,
+    TResult? Function(String error)? unFavoriteError,
+    TResult? Function()? getPlacesLoading,
+    TResult? Function()? getPlacesSuccess,
+    TResult? Function(String error)? getPlacesError,
+    TResult? Function()? addPlanLoading,
+    TResult? Function()? addPlanSuccess,
+    TResult? Function(String error)? addPlanError,
+    TResult? Function()? deleteMyPlanLoading,
+    TResult? Function()? deleteMyPlanSuccess,
+    TResult? Function(String error)? deleteMyPlanError,
+  }) {
+    return updated?.call(bestPlans, bestPlanIds);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function()? getUserDataSuccess,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? changeUserPasswordLoading,
+    TResult Function()? changeUserPasswordSuccess,
+    TResult Function(String error)? changeUserPasswordError,
+    TResult Function()? showPassword,
+    TResult Function()? changeBottomNavBar,
+    TResult Function()? getCityDataLoading,
+    TResult Function()? getCityDataSuccess,
+    TResult Function(String error)? getCityDataError,
+    TResult Function()? getPlaceDataLoading,
+    TResult Function()? getPlaceDataSuccess,
+    TResult Function(String error)? getPlaceDataError,
+    TResult Function()? getBestPlanLoading,
+    TResult Function()? getBestPlanSuccess,
+    TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
+    TResult Function()? getProfileImagePickedLoading,
+    TResult Function()? getProfileImagePickedSuccess,
+    TResult Function(String error)? getProfileImagePickedError,
+    TResult Function()? getCoverImagePickedLoading,
+    TResult Function()? getCoverImagePickedSuccess,
+    TResult Function(String error)? getCoverImagePickedError,
+    TResult Function()? uploadProfileImageLoading,
+    TResult Function()? uploadProfileImageSuccess,
+    TResult Function(String error)? uploadProfileImageError,
+    TResult Function()? uploadCoverImageLoading,
+    TResult Function()? uploadCoverImageSuccess,
+    TResult Function(String error)? uploadCoverImageError,
+    TResult Function()? updateUserLoading,
+    TResult Function()? updateUserSuccess,
+    TResult Function(String error)? updateUserError,
+    TResult Function()? addToFavoriteLoading,
+    TResult Function()? addToFavoriteSuccess,
+    TResult Function(String error)? addToFavoriteError,
+    TResult Function()? unFavoriteLoading,
+    TResult Function()? unFavoriteSuccess,
+    TResult Function(String error)? unFavoriteError,
+    TResult Function()? getPlacesLoading,
+    TResult Function()? getPlacesSuccess,
+    TResult Function(String error)? getPlacesError,
+    TResult Function()? addPlanLoading,
+    TResult Function()? addPlanSuccess,
+    TResult Function(String error)? addPlanError,
+    TResult Function()? deleteMyPlanLoading,
+    TResult Function()? deleteMyPlanSuccess,
+    TResult Function(String error)? deleteMyPlanError,
+    required TResult orElse(),
+  }) {
+    if (updated != null) {
+      return updated(bestPlans, bestPlanIds);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TripsoInitialState value) initial,
+    required TResult Function(GetUserDataLoadingState value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccessState value) getUserDataSuccess,
+    required TResult Function(GetUserDataErrorState value) getUserDataError,
+    required TResult Function(ChangeUserPasswordLoadingState value)
+        changeUserPasswordLoading,
+    required TResult Function(ChangeUserPasswordSuccessState value)
+        changeUserPasswordSuccess,
+    required TResult Function(ChangeUserPasswordErrorState value)
+        changeUserPasswordError,
+    required TResult Function(ShowPasswordState value) showPassword,
+    required TResult Function(ChangeBottomNavBarState value) changeBottomNavBar,
+    required TResult Function(GetCityDataLoadingState value) getCityDataLoading,
+    required TResult Function(GetCityDataSuccessState value) getCityDataSuccess,
+    required TResult Function(GetCityDataErrorState value) getCityDataError,
+    required TResult Function(GetPlaceDataLoadingState value)
+        getPlaceDataLoading,
+    required TResult Function(GetPlaceDataSuccessState value)
+        getPlaceDataSuccess,
+    required TResult Function(GetPlaceDataErrorState value) getPlaceDataError,
+    required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
+    required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
+    required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
+    required TResult Function(GetProfileImagePickedLoadingState value)
+        getProfileImagePickedLoading,
+    required TResult Function(GetProfileImagePickedSuccessState value)
+        getProfileImagePickedSuccess,
+    required TResult Function(GetProfileImagePickedErrorState value)
+        getProfileImagePickedError,
+    required TResult Function(GetCoverImagePickedLoadingState value)
+        getCoverImagePickedLoading,
+    required TResult Function(GetCoverImagePickedSuccessState value)
+        getCoverImagePickedSuccess,
+    required TResult Function(GetCoverImagePickedErrorState value)
+        getCoverImagePickedError,
+    required TResult Function(UploadProfileImageLoadingState value)
+        uploadProfileImageLoading,
+    required TResult Function(UploadProfileImageSuccessState value)
+        uploadProfileImageSuccess,
+    required TResult Function(UploadProfileImageErrorState value)
+        uploadProfileImageError,
+    required TResult Function(UploadCoverImageLoadingState value)
+        uploadCoverImageLoading,
+    required TResult Function(UploadCoverImageSuccessState value)
+        uploadCoverImageSuccess,
+    required TResult Function(UploadCoverImageErrorState value)
+        uploadCoverImageError,
+    required TResult Function(UpdateUserLoadingState value) updateUserLoading,
+    required TResult Function(UpdateUserSuccessState value) updateUserSuccess,
+    required TResult Function(UpdateUserErrorState value) updateUserError,
+    required TResult Function(AddToFavoriteLoadingState value)
+        addToFavoriteLoading,
+    required TResult Function(AddToFavoriteSuccessState value)
+        addToFavoriteSuccess,
+    required TResult Function(AddToFavoriteErrorState value) addToFavoriteError,
+    required TResult Function(UnFavoriteLoadingState value) unFavoriteLoading,
+    required TResult Function(UnFavoriteSuccessState value) unFavoriteSuccess,
+    required TResult Function(UnFavoriteErrorState value) unFavoriteError,
+    required TResult Function(GetPlacesLoadingState value) getPlacesLoading,
+    required TResult Function(GetPlacesSuccessState value) getPlacesSuccess,
+    required TResult Function(GetPlacesErrorState value) getPlacesError,
+    required TResult Function(AddPlanLoadingState value) addPlanLoading,
+    required TResult Function(AddPlanSuccessState value) addPlanSuccess,
+    required TResult Function(AddPlanErrorState value) addPlanError,
+    required TResult Function(DeleteMyPlanLoadingState value)
+        deleteMyPlanLoading,
+    required TResult Function(DeleteMyPlanSuccessState value)
+        deleteMyPlanSuccess,
+    required TResult Function(DeleteMyPlanErrorState value) deleteMyPlanError,
+  }) {
+    return updated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TripsoInitialState value)? initial,
+    TResult? Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult? Function(GetUserDataErrorState value)? getUserDataError,
+    TResult? Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult? Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult? Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult? Function(ShowPasswordState value)? showPassword,
+    TResult? Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult? Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult? Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult? Function(GetCityDataErrorState value)? getCityDataError,
+    TResult? Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult? Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult? Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
+    TResult? Function(GetProfileImagePickedLoadingState value)?
+        getProfileImagePickedLoading,
+    TResult? Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult? Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult? Function(GetCoverImagePickedLoadingState value)?
+        getCoverImagePickedLoading,
+    TResult? Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult? Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult? Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult? Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult? Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult? Function(UploadCoverImageLoadingState value)?
+        uploadCoverImageLoading,
+    TResult? Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult? Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult? Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult? Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult? Function(UpdateUserErrorState value)? updateUserError,
+    TResult? Function(AddToFavoriteLoadingState value)? addToFavoriteLoading,
+    TResult? Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult? Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult? Function(UnFavoriteLoadingState value)? unFavoriteLoading,
+    TResult? Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult? Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult? Function(GetPlacesLoadingState value)? getPlacesLoading,
+    TResult? Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult? Function(GetPlacesErrorState value)? getPlacesError,
+    TResult? Function(AddPlanLoadingState value)? addPlanLoading,
+    TResult? Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult? Function(AddPlanErrorState value)? addPlanError,
+    TResult? Function(DeleteMyPlanLoadingState value)? deleteMyPlanLoading,
+    TResult? Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    TResult? Function(DeleteMyPlanErrorState value)? deleteMyPlanError,
+  }) {
+    return updated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TripsoInitialState value)? initial,
+    TResult Function(GetUserDataLoadingState value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccessState value)? getUserDataSuccess,
+    TResult Function(GetUserDataErrorState value)? getUserDataError,
+    TResult Function(ChangeUserPasswordLoadingState value)?
+        changeUserPasswordLoading,
+    TResult Function(ChangeUserPasswordSuccessState value)?
+        changeUserPasswordSuccess,
+    TResult Function(ChangeUserPasswordErrorState value)?
+        changeUserPasswordError,
+    TResult Function(ShowPasswordState value)? showPassword,
+    TResult Function(ChangeBottomNavBarState value)? changeBottomNavBar,
+    TResult Function(GetCityDataLoadingState value)? getCityDataLoading,
+    TResult Function(GetCityDataSuccessState value)? getCityDataSuccess,
+    TResult Function(GetCityDataErrorState value)? getCityDataError,
+    TResult Function(GetPlaceDataLoadingState value)? getPlaceDataLoading,
+    TResult Function(GetPlaceDataSuccessState value)? getPlaceDataSuccess,
+    TResult Function(GetPlaceDataErrorState value)? getPlaceDataError,
+    TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
+    TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
+    TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
+    TResult Function(GetProfileImagePickedLoadingState value)?
+        getProfileImagePickedLoading,
+    TResult Function(GetProfileImagePickedSuccessState value)?
+        getProfileImagePickedSuccess,
+    TResult Function(GetProfileImagePickedErrorState value)?
+        getProfileImagePickedError,
+    TResult Function(GetCoverImagePickedLoadingState value)?
+        getCoverImagePickedLoading,
+    TResult Function(GetCoverImagePickedSuccessState value)?
+        getCoverImagePickedSuccess,
+    TResult Function(GetCoverImagePickedErrorState value)?
+        getCoverImagePickedError,
+    TResult Function(UploadProfileImageLoadingState value)?
+        uploadProfileImageLoading,
+    TResult Function(UploadProfileImageSuccessState value)?
+        uploadProfileImageSuccess,
+    TResult Function(UploadProfileImageErrorState value)?
+        uploadProfileImageError,
+    TResult Function(UploadCoverImageLoadingState value)?
+        uploadCoverImageLoading,
+    TResult Function(UploadCoverImageSuccessState value)?
+        uploadCoverImageSuccess,
+    TResult Function(UploadCoverImageErrorState value)? uploadCoverImageError,
+    TResult Function(UpdateUserLoadingState value)? updateUserLoading,
+    TResult Function(UpdateUserSuccessState value)? updateUserSuccess,
+    TResult Function(UpdateUserErrorState value)? updateUserError,
+    TResult Function(AddToFavoriteLoadingState value)? addToFavoriteLoading,
+    TResult Function(AddToFavoriteSuccessState value)? addToFavoriteSuccess,
+    TResult Function(AddToFavoriteErrorState value)? addToFavoriteError,
+    TResult Function(UnFavoriteLoadingState value)? unFavoriteLoading,
+    TResult Function(UnFavoriteSuccessState value)? unFavoriteSuccess,
+    TResult Function(UnFavoriteErrorState value)? unFavoriteError,
+    TResult Function(GetPlacesLoadingState value)? getPlacesLoading,
+    TResult Function(GetPlacesSuccessState value)? getPlacesSuccess,
+    TResult Function(GetPlacesErrorState value)? getPlacesError,
+    TResult Function(AddPlanLoadingState value)? addPlanLoading,
+    TResult Function(AddPlanSuccessState value)? addPlanSuccess,
+    TResult Function(AddPlanErrorState value)? addPlanError,
+    TResult Function(DeleteMyPlanLoadingState value)? deleteMyPlanLoading,
+    TResult Function(DeleteMyPlanSuccessState value)? deleteMyPlanSuccess,
+    TResult Function(DeleteMyPlanErrorState value)? deleteMyPlanError,
+    required TResult orElse(),
+  }) {
+    if (updated != null) {
+      return updated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BestPlansUpdatedState implements TripsoStates {
+  const factory BestPlansUpdatedState(
+      {required final List<BestPLanModel> bestPlans,
+      required final List<String> bestPlanIds}) = _$BestPlansUpdatedStateImpl;
+
+  List<BestPLanModel> get bestPlans;
+  List<String> get bestPlanIds;
+
+  /// Create a copy of TripsoStates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BestPlansUpdatedStateImplCopyWith<_$BestPlansUpdatedStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -8440,6 +9138,9 @@ class _$GetProfileImagePickedLoadingStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -8495,6 +9196,8 @@ class _$GetProfileImagePickedLoadingStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -8550,6 +9253,8 @@ class _$GetProfileImagePickedLoadingStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -8614,6 +9319,7 @@ class _$GetProfileImagePickedLoadingStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -8688,6 +9394,7 @@ class _$GetProfileImagePickedLoadingStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -8757,6 +9464,7 @@ class _$GetProfileImagePickedLoadingStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -8876,6 +9584,9 @@ class _$GetProfileImagePickedSuccessStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -8931,6 +9642,8 @@ class _$GetProfileImagePickedSuccessStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -8986,6 +9699,8 @@ class _$GetProfileImagePickedSuccessStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -9050,6 +9765,7 @@ class _$GetProfileImagePickedSuccessStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -9124,6 +9840,7 @@ class _$GetProfileImagePickedSuccessStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -9193,6 +9910,7 @@ class _$GetProfileImagePickedSuccessStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -9340,6 +10058,9 @@ class _$GetProfileImagePickedErrorStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -9395,6 +10116,8 @@ class _$GetProfileImagePickedErrorStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -9450,6 +10173,8 @@ class _$GetProfileImagePickedErrorStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -9514,6 +10239,7 @@ class _$GetProfileImagePickedErrorStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -9588,6 +10314,7 @@ class _$GetProfileImagePickedErrorStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -9657,6 +10384,7 @@ class _$GetProfileImagePickedErrorStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -9785,6 +10513,9 @@ class _$GetCoverImagePickedLoadingStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -9840,6 +10571,8 @@ class _$GetCoverImagePickedLoadingStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -9895,6 +10628,8 @@ class _$GetCoverImagePickedLoadingStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -9959,6 +10694,7 @@ class _$GetCoverImagePickedLoadingStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -10033,6 +10769,7 @@ class _$GetCoverImagePickedLoadingStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -10102,6 +10839,7 @@ class _$GetCoverImagePickedLoadingStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -10221,6 +10959,9 @@ class _$GetCoverImagePickedSuccessStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -10276,6 +11017,8 @@ class _$GetCoverImagePickedSuccessStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -10331,6 +11074,8 @@ class _$GetCoverImagePickedSuccessStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -10395,6 +11140,7 @@ class _$GetCoverImagePickedSuccessStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -10469,6 +11215,7 @@ class _$GetCoverImagePickedSuccessStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -10538,6 +11285,7 @@ class _$GetCoverImagePickedSuccessStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -10685,6 +11433,9 @@ class _$GetCoverImagePickedErrorStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -10740,6 +11491,8 @@ class _$GetCoverImagePickedErrorStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -10795,6 +11548,8 @@ class _$GetCoverImagePickedErrorStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -10859,6 +11614,7 @@ class _$GetCoverImagePickedErrorStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -10933,6 +11689,7 @@ class _$GetCoverImagePickedErrorStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -11002,6 +11759,7 @@ class _$GetCoverImagePickedErrorStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -11130,6 +11888,9 @@ class _$UploadProfileImageLoadingStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -11185,6 +11946,8 @@ class _$UploadProfileImageLoadingStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -11240,6 +12003,8 @@ class _$UploadProfileImageLoadingStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -11304,6 +12069,7 @@ class _$UploadProfileImageLoadingStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -11378,6 +12144,7 @@ class _$UploadProfileImageLoadingStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -11447,6 +12214,7 @@ class _$UploadProfileImageLoadingStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -11566,6 +12334,9 @@ class _$UploadProfileImageSuccessStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -11621,6 +12392,8 @@ class _$UploadProfileImageSuccessStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -11676,6 +12449,8 @@ class _$UploadProfileImageSuccessStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -11740,6 +12515,7 @@ class _$UploadProfileImageSuccessStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -11814,6 +12590,7 @@ class _$UploadProfileImageSuccessStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -11883,6 +12660,7 @@ class _$UploadProfileImageSuccessStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -12029,6 +12807,9 @@ class _$UploadProfileImageErrorStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -12084,6 +12865,8 @@ class _$UploadProfileImageErrorStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -12139,6 +12922,8 @@ class _$UploadProfileImageErrorStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -12203,6 +12988,7 @@ class _$UploadProfileImageErrorStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -12277,6 +13063,7 @@ class _$UploadProfileImageErrorStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -12346,6 +13133,7 @@ class _$UploadProfileImageErrorStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -12473,6 +13261,9 @@ class _$UploadCoverImageLoadingStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -12528,6 +13319,8 @@ class _$UploadCoverImageLoadingStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -12583,6 +13376,8 @@ class _$UploadCoverImageLoadingStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -12647,6 +13442,7 @@ class _$UploadCoverImageLoadingStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -12721,6 +13517,7 @@ class _$UploadCoverImageLoadingStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -12790,6 +13587,7 @@ class _$UploadCoverImageLoadingStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -12908,6 +13706,9 @@ class _$UploadCoverImageSuccessStateImpl
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -12963,6 +13764,8 @@ class _$UploadCoverImageSuccessStateImpl
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -13018,6 +13821,8 @@ class _$UploadCoverImageSuccessStateImpl
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -13082,6 +13887,7 @@ class _$UploadCoverImageSuccessStateImpl
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -13156,6 +13962,7 @@ class _$UploadCoverImageSuccessStateImpl
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -13225,6 +14032,7 @@ class _$UploadCoverImageSuccessStateImpl
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -13369,6 +14177,9 @@ class _$UploadCoverImageErrorStateImpl implements UploadCoverImageErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -13424,6 +14235,8 @@ class _$UploadCoverImageErrorStateImpl implements UploadCoverImageErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -13479,6 +14292,8 @@ class _$UploadCoverImageErrorStateImpl implements UploadCoverImageErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -13543,6 +14358,7 @@ class _$UploadCoverImageErrorStateImpl implements UploadCoverImageErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -13617,6 +14433,7 @@ class _$UploadCoverImageErrorStateImpl implements UploadCoverImageErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -13686,6 +14503,7 @@ class _$UploadCoverImageErrorStateImpl implements UploadCoverImageErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -13811,6 +14629,9 @@ class _$UpdateUserLoadingStateImpl implements UpdateUserLoadingState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -13866,6 +14687,8 @@ class _$UpdateUserLoadingStateImpl implements UpdateUserLoadingState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -13921,6 +14744,8 @@ class _$UpdateUserLoadingStateImpl implements UpdateUserLoadingState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -13985,6 +14810,7 @@ class _$UpdateUserLoadingStateImpl implements UpdateUserLoadingState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -14059,6 +14885,7 @@ class _$UpdateUserLoadingStateImpl implements UpdateUserLoadingState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -14128,6 +14955,7 @@ class _$UpdateUserLoadingStateImpl implements UpdateUserLoadingState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -14244,6 +15072,9 @@ class _$UpdateUserSuccessStateImpl implements UpdateUserSuccessState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -14299,6 +15130,8 @@ class _$UpdateUserSuccessStateImpl implements UpdateUserSuccessState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -14354,6 +15187,8 @@ class _$UpdateUserSuccessStateImpl implements UpdateUserSuccessState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -14418,6 +15253,7 @@ class _$UpdateUserSuccessStateImpl implements UpdateUserSuccessState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -14492,6 +15328,7 @@ class _$UpdateUserSuccessStateImpl implements UpdateUserSuccessState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -14561,6 +15398,7 @@ class _$UpdateUserSuccessStateImpl implements UpdateUserSuccessState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -14703,6 +15541,9 @@ class _$UpdateUserErrorStateImpl implements UpdateUserErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -14758,6 +15599,8 @@ class _$UpdateUserErrorStateImpl implements UpdateUserErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -14813,6 +15656,8 @@ class _$UpdateUserErrorStateImpl implements UpdateUserErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -14877,6 +15722,7 @@ class _$UpdateUserErrorStateImpl implements UpdateUserErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -14951,6 +15797,7 @@ class _$UpdateUserErrorStateImpl implements UpdateUserErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -15020,6 +15867,7 @@ class _$UpdateUserErrorStateImpl implements UpdateUserErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -15145,6 +15993,9 @@ class _$AddToFavoriteLoadingStateImpl implements AddToFavoriteLoadingState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -15200,6 +16051,8 @@ class _$AddToFavoriteLoadingStateImpl implements AddToFavoriteLoadingState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -15255,6 +16108,8 @@ class _$AddToFavoriteLoadingStateImpl implements AddToFavoriteLoadingState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -15319,6 +16174,7 @@ class _$AddToFavoriteLoadingStateImpl implements AddToFavoriteLoadingState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -15393,6 +16249,7 @@ class _$AddToFavoriteLoadingStateImpl implements AddToFavoriteLoadingState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -15462,6 +16319,7 @@ class _$AddToFavoriteLoadingStateImpl implements AddToFavoriteLoadingState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -15578,6 +16436,9 @@ class _$AddToFavoriteSuccessStateImpl implements AddToFavoriteSuccessState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -15633,6 +16494,8 @@ class _$AddToFavoriteSuccessStateImpl implements AddToFavoriteSuccessState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -15688,6 +16551,8 @@ class _$AddToFavoriteSuccessStateImpl implements AddToFavoriteSuccessState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -15752,6 +16617,7 @@ class _$AddToFavoriteSuccessStateImpl implements AddToFavoriteSuccessState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -15826,6 +16692,7 @@ class _$AddToFavoriteSuccessStateImpl implements AddToFavoriteSuccessState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -15895,6 +16762,7 @@ class _$AddToFavoriteSuccessStateImpl implements AddToFavoriteSuccessState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -16038,6 +16906,9 @@ class _$AddToFavoriteErrorStateImpl implements AddToFavoriteErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -16093,6 +16964,8 @@ class _$AddToFavoriteErrorStateImpl implements AddToFavoriteErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -16148,6 +17021,8 @@ class _$AddToFavoriteErrorStateImpl implements AddToFavoriteErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -16212,6 +17087,7 @@ class _$AddToFavoriteErrorStateImpl implements AddToFavoriteErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -16286,6 +17162,7 @@ class _$AddToFavoriteErrorStateImpl implements AddToFavoriteErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -16355,6 +17232,7 @@ class _$AddToFavoriteErrorStateImpl implements AddToFavoriteErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -16480,6 +17358,9 @@ class _$UnFavoriteLoadingStateImpl implements UnFavoriteLoadingState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -16535,6 +17416,8 @@ class _$UnFavoriteLoadingStateImpl implements UnFavoriteLoadingState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -16590,6 +17473,8 @@ class _$UnFavoriteLoadingStateImpl implements UnFavoriteLoadingState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -16654,6 +17539,7 @@ class _$UnFavoriteLoadingStateImpl implements UnFavoriteLoadingState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -16728,6 +17614,7 @@ class _$UnFavoriteLoadingStateImpl implements UnFavoriteLoadingState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -16797,6 +17684,7 @@ class _$UnFavoriteLoadingStateImpl implements UnFavoriteLoadingState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -16913,6 +17801,9 @@ class _$UnFavoriteSuccessStateImpl implements UnFavoriteSuccessState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -16968,6 +17859,8 @@ class _$UnFavoriteSuccessStateImpl implements UnFavoriteSuccessState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -17023,6 +17916,8 @@ class _$UnFavoriteSuccessStateImpl implements UnFavoriteSuccessState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -17087,6 +17982,7 @@ class _$UnFavoriteSuccessStateImpl implements UnFavoriteSuccessState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -17161,6 +18057,7 @@ class _$UnFavoriteSuccessStateImpl implements UnFavoriteSuccessState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -17230,6 +18127,7 @@ class _$UnFavoriteSuccessStateImpl implements UnFavoriteSuccessState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -17372,6 +18270,9 @@ class _$UnFavoriteErrorStateImpl implements UnFavoriteErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -17427,6 +18328,8 @@ class _$UnFavoriteErrorStateImpl implements UnFavoriteErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -17482,6 +18385,8 @@ class _$UnFavoriteErrorStateImpl implements UnFavoriteErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -17546,6 +18451,7 @@ class _$UnFavoriteErrorStateImpl implements UnFavoriteErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -17620,6 +18526,7 @@ class _$UnFavoriteErrorStateImpl implements UnFavoriteErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -17689,6 +18596,7 @@ class _$UnFavoriteErrorStateImpl implements UnFavoriteErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -17813,6 +18721,9 @@ class _$GetPlacesLoadingStateImpl implements GetPlacesLoadingState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -17868,6 +18779,8 @@ class _$GetPlacesLoadingStateImpl implements GetPlacesLoadingState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -17923,6 +18836,8 @@ class _$GetPlacesLoadingStateImpl implements GetPlacesLoadingState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -17987,6 +18902,7 @@ class _$GetPlacesLoadingStateImpl implements GetPlacesLoadingState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -18061,6 +18977,7 @@ class _$GetPlacesLoadingStateImpl implements GetPlacesLoadingState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -18130,6 +19047,7 @@ class _$GetPlacesLoadingStateImpl implements GetPlacesLoadingState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -18245,6 +19163,9 @@ class _$GetPlacesSuccessStateImpl implements GetPlacesSuccessState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -18300,6 +19221,8 @@ class _$GetPlacesSuccessStateImpl implements GetPlacesSuccessState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -18355,6 +19278,8 @@ class _$GetPlacesSuccessStateImpl implements GetPlacesSuccessState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -18419,6 +19344,7 @@ class _$GetPlacesSuccessStateImpl implements GetPlacesSuccessState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -18493,6 +19419,7 @@ class _$GetPlacesSuccessStateImpl implements GetPlacesSuccessState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -18562,6 +19489,7 @@ class _$GetPlacesSuccessStateImpl implements GetPlacesSuccessState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -18703,6 +19631,9 @@ class _$GetPlacesErrorStateImpl implements GetPlacesErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -18758,6 +19689,8 @@ class _$GetPlacesErrorStateImpl implements GetPlacesErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -18813,6 +19746,8 @@ class _$GetPlacesErrorStateImpl implements GetPlacesErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -18877,6 +19812,7 @@ class _$GetPlacesErrorStateImpl implements GetPlacesErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -18951,6 +19887,7 @@ class _$GetPlacesErrorStateImpl implements GetPlacesErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -19020,6 +19957,7 @@ class _$GetPlacesErrorStateImpl implements GetPlacesErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -19143,6 +20081,9 @@ class _$AddPlanLoadingStateImpl implements AddPlanLoadingState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -19198,6 +20139,8 @@ class _$AddPlanLoadingStateImpl implements AddPlanLoadingState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -19253,6 +20196,8 @@ class _$AddPlanLoadingStateImpl implements AddPlanLoadingState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -19317,6 +20262,7 @@ class _$AddPlanLoadingStateImpl implements AddPlanLoadingState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -19391,6 +20337,7 @@ class _$AddPlanLoadingStateImpl implements AddPlanLoadingState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -19460,6 +20407,7 @@ class _$AddPlanLoadingStateImpl implements AddPlanLoadingState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -19574,6 +20522,9 @@ class _$AddPlanSuccessStateImpl implements AddPlanSuccessState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -19629,6 +20580,8 @@ class _$AddPlanSuccessStateImpl implements AddPlanSuccessState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -19684,6 +20637,8 @@ class _$AddPlanSuccessStateImpl implements AddPlanSuccessState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -19748,6 +20703,7 @@ class _$AddPlanSuccessStateImpl implements AddPlanSuccessState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -19822,6 +20778,7 @@ class _$AddPlanSuccessStateImpl implements AddPlanSuccessState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -19891,6 +20848,7 @@ class _$AddPlanSuccessStateImpl implements AddPlanSuccessState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -20032,6 +20990,9 @@ class _$AddPlanErrorStateImpl implements AddPlanErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -20087,6 +21048,8 @@ class _$AddPlanErrorStateImpl implements AddPlanErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -20142,6 +21105,8 @@ class _$AddPlanErrorStateImpl implements AddPlanErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -20206,6 +21171,7 @@ class _$AddPlanErrorStateImpl implements AddPlanErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -20280,6 +21246,7 @@ class _$AddPlanErrorStateImpl implements AddPlanErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -20349,6 +21316,7 @@ class _$AddPlanErrorStateImpl implements AddPlanErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -20473,6 +21441,9 @@ class _$DeleteMyPlanLoadingStateImpl implements DeleteMyPlanLoadingState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -20528,6 +21499,8 @@ class _$DeleteMyPlanLoadingStateImpl implements DeleteMyPlanLoadingState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -20583,6 +21556,8 @@ class _$DeleteMyPlanLoadingStateImpl implements DeleteMyPlanLoadingState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -20647,6 +21622,7 @@ class _$DeleteMyPlanLoadingStateImpl implements DeleteMyPlanLoadingState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -20721,6 +21697,7 @@ class _$DeleteMyPlanLoadingStateImpl implements DeleteMyPlanLoadingState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -20790,6 +21767,7 @@ class _$DeleteMyPlanLoadingStateImpl implements DeleteMyPlanLoadingState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -20906,6 +21884,9 @@ class _$DeleteMyPlanSuccessStateImpl implements DeleteMyPlanSuccessState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -20961,6 +21942,8 @@ class _$DeleteMyPlanSuccessStateImpl implements DeleteMyPlanSuccessState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -21016,6 +21999,8 @@ class _$DeleteMyPlanSuccessStateImpl implements DeleteMyPlanSuccessState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -21080,6 +22065,7 @@ class _$DeleteMyPlanSuccessStateImpl implements DeleteMyPlanSuccessState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -21154,6 +22140,7 @@ class _$DeleteMyPlanSuccessStateImpl implements DeleteMyPlanSuccessState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -21223,6 +22210,7 @@ class _$DeleteMyPlanSuccessStateImpl implements DeleteMyPlanSuccessState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?
@@ -21366,6 +22354,9 @@ class _$DeleteMyPlanErrorStateImpl implements DeleteMyPlanErrorState {
     required TResult Function() getBestPlanLoading,
     required TResult Function() getBestPlanSuccess,
     required TResult Function(String error) getBestPlanError,
+    required TResult Function(
+            List<BestPLanModel> bestPlans, List<String> bestPlanIds)
+        updated,
     required TResult Function() getProfileImagePickedLoading,
     required TResult Function() getProfileImagePickedSuccess,
     required TResult Function(String error) getProfileImagePickedError,
@@ -21421,6 +22412,8 @@ class _$DeleteMyPlanErrorStateImpl implements DeleteMyPlanErrorState {
     TResult? Function()? getBestPlanLoading,
     TResult? Function()? getBestPlanSuccess,
     TResult? Function(String error)? getBestPlanError,
+    TResult? Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult? Function()? getProfileImagePickedLoading,
     TResult? Function()? getProfileImagePickedSuccess,
     TResult? Function(String error)? getProfileImagePickedError,
@@ -21476,6 +22469,8 @@ class _$DeleteMyPlanErrorStateImpl implements DeleteMyPlanErrorState {
     TResult Function()? getBestPlanLoading,
     TResult Function()? getBestPlanSuccess,
     TResult Function(String error)? getBestPlanError,
+    TResult Function(List<BestPLanModel> bestPlans, List<String> bestPlanIds)?
+        updated,
     TResult Function()? getProfileImagePickedLoading,
     TResult Function()? getProfileImagePickedSuccess,
     TResult Function(String error)? getProfileImagePickedError,
@@ -21540,6 +22535,7 @@ class _$DeleteMyPlanErrorStateImpl implements DeleteMyPlanErrorState {
     required TResult Function(GetBestPlanLoadingState value) getBestPlanLoading,
     required TResult Function(GetBestPlanSuccessState value) getBestPlanSuccess,
     required TResult Function(GetBestPlanErrorState value) getBestPlanError,
+    required TResult Function(BestPlansUpdatedState value) updated,
     required TResult Function(GetProfileImagePickedLoadingState value)
         getProfileImagePickedLoading,
     required TResult Function(GetProfileImagePickedSuccessState value)
@@ -21614,6 +22610,7 @@ class _$DeleteMyPlanErrorStateImpl implements DeleteMyPlanErrorState {
     TResult? Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult? Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult? Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult? Function(BestPlansUpdatedState value)? updated,
     TResult? Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult? Function(GetProfileImagePickedSuccessState value)?
@@ -21683,6 +22680,7 @@ class _$DeleteMyPlanErrorStateImpl implements DeleteMyPlanErrorState {
     TResult Function(GetBestPlanLoadingState value)? getBestPlanLoading,
     TResult Function(GetBestPlanSuccessState value)? getBestPlanSuccess,
     TResult Function(GetBestPlanErrorState value)? getBestPlanError,
+    TResult Function(BestPlansUpdatedState value)? updated,
     TResult Function(GetProfileImagePickedLoadingState value)?
         getProfileImagePickedLoading,
     TResult Function(GetProfileImagePickedSuccessState value)?

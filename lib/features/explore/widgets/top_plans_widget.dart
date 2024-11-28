@@ -20,8 +20,8 @@ class TopPlansWidget extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return TopPlanItem(
-                    cityModel: cubit.cityModel!,
-                    placeModel: cubit.placeModel!,
+                    // cityModel: cubit.cityModel!,
+                    // placeModel: cubit.placeModel!,
                     bestPLanModel: cubit.bestPlan[index],
                   );
                 },

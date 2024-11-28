@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../model/best_plan_model.dart';
+
 part 'tripso_state.freezed.dart';
 
 @freezed
@@ -44,6 +46,11 @@ class TripsoStates with _$TripsoStates {
   const factory TripsoStates.getBestPlanSuccess() = GetBestPlanSuccessState;
   const factory TripsoStates.getBestPlanError(String error) =
       GetBestPlanErrorState;
+
+  const factory TripsoStates.updated({
+    required List<BestPLanModel> bestPlans,
+    required List<String> bestPlanIds,
+  }) = BestPlansUpdatedState;
 
   // **Profile Image Picked**
   const factory TripsoStates.getProfileImagePickedLoading() =

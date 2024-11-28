@@ -55,7 +55,8 @@ class AppRouters {
             create: (context) => TripsoCubit()
               ..getUserData()
               ..fetchCityData(arguments as String)
-              ..getPopularPlace(arguments),
+              ..getPopularPlace(arguments)
+              ..fetchBestPlans(arguments),
             child: HomeLayout(),
           ),
         );
