@@ -37,6 +37,7 @@ import '../../../features/Auth/forget_password/logic/forget_password_state.dart'
 import '../../../features/cities/logic/cities_state.dart';
 import '../../../features/plans/create_customize_plan.dart';
 import '../../../features/search/search_screen.dart';
+import '../../../features/sights/popular_sights.dart';
 import '../../../model/best_plan_model.dart';
 import '../../../model/city_model.dart';
 import '../../../model/place_model/place_model.dart';
@@ -104,3 +105,7 @@ part './../validations/validation_manager.dart';
 part './../value_manager/margin_helper.dart';
 part './../value_manager/padding_helper.dart';
 part './../value_manager/size_helper.dart';
+
+part './../../../features/explore/widgets/build_see_more_bottom.dart';
+part './../../../features/explore/widgets/build_title_section.dart';
+part './../extensions/adaptive_form_factor.dart';

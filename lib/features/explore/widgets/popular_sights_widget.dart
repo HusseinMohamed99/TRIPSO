@@ -13,58 +13,18 @@ class PopularSightsWidget extends StatelessWidget {
       builder: (context, state) {
         return Column(
           children: [
-            _buildTitleSection(context),
+            BuildTitleSection(
+              title: 'Popular Sights',
+              onTap: () {
+                // Handle the tap event to navigate
+              },
+            ),
             const Space(
                 height: 16, width: 0), // Space between title and carousel
             _buildCarousel(cubit),
           ],
         );
       },
-    );
-  }
-
-  // Title and See More Button Section
-  Widget _buildTitleSection(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16.w),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            'Popular Sights',
-            style: context.titleMedium?.copyWith(
-              fontWeight:
-                  FontWeightHelper.semiBold, // Slightly heavier font weight
-              color: ColorsManager.blackPrimary,
-            ),
-          ),
-          _buildSeeMoreButton(context),
-        ],
-      ),
-    );
-  }
-
-  // See More Button with subtle hover effect
-  Widget _buildSeeMoreButton(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        // Handle the tap event to navigate to the Popular Sights screen
-        // navigateTo(context, routeName: PopularSightsScreen.routeName, arguments: ...);
-      },
-      child: Row(
-        children: [
-          Text(
-            'See More',
-            style: context.labelLarge
-                ?.copyWith(fontWeight: FontWeightHelper.semiBold),
-          ),
-          Icon(
-            Icons.arrow_forward_ios,
-            size: 24.sp,
-            color: ColorsManager.primaryColor,
-          ),
-        ],
-      ),
     );
   }
 
