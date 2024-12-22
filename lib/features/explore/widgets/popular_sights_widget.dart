@@ -1,30 +1,22 @@
 part of './../../../core/helpers/export_manager/export_manager.dart';
 
 class PopularSightsWidget extends StatelessWidget {
-  const PopularSightsWidget({super.key});
+  const PopularSightsWidget({super.key, required this.cubit});
+  final TripsoCubit cubit;
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<TripsoCubit>();
-    return BlocConsumer<TripsoCubit, TripsoStates>(
-      listener: (context, state) {
-        // Handle any state changes if necessary
-      },
-      builder: (context, state) {
-        return Column(
-          children: [
-            BuildTitleSection(
-              title: 'Popular Sights',
-              onTap: () {
-                // Handle the tap event to navigate
-              },
-            ),
-            const Space(
-                height: 16, width: 0), // Space between title and carousel
-            _buildCarousel(cubit),
-          ],
-        );
-      },
+    return Column(
+      children: [
+        BuildTitleSection(
+          title: 'Popular Sights',
+          onTap: () {
+            // Handle the tap event to navigate
+          },
+        ),
+        const Space(height: 16, width: 0), // Space between title and carousel
+        _buildCarousel(cubit),
+      ],
     );
   }
 

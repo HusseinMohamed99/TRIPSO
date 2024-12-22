@@ -21,9 +21,17 @@ class ExploreScreen extends StatelessWidget {
             Expanded(
               child: CustomScrollView(
                 slivers: [
-                  SliverToBoxAdapter(child: PopularSightsWidget()),
+                  SliverToBoxAdapter(
+                    child: PopularSightsWidget(
+                      cubit: tripsoCubit,
+                    ),
+                  ),
                   SliverToBoxAdapter(child: Space(height: 16, width: 0)),
-                  SliverToBoxAdapter(child: TopPlansWidget()),
+                  SliverToBoxAdapter(
+                    child: TopPlansWidget(
+                      cubit: tripsoCubit,
+                    ),
+                  ),
                 ],
               ),
             ),
