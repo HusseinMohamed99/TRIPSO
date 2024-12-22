@@ -38,9 +38,11 @@ class HistoricalCity extends StatelessWidget {
         Positioned(
           right: 10.h,
           top: 360.h,
-          child: CustomAudioSpeaking(voidCallback: () {
-            speak(argument.history);
-          }),
+          child: CustomAudioSpeaking(
+            voidCallback: () {
+              speak(argument.history);
+            },
+          ),
         ),
       ],
     );
