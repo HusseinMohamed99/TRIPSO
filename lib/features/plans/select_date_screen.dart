@@ -8,6 +8,8 @@ import 'package:tripso/shared/components/date_time.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 
+import '../../core/routing/routes.dart';
+
 class SelectDateScreen extends StatefulWidget {
   const SelectDateScreen({super.key});
 
@@ -48,6 +50,10 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
               ],
             ),
             onTap: () {
+              context.pushNamed(
+                Routes.pickPlans,
+                // arguments: NumOf(numOfDays: _numberOfDays(), index: index),
+              );
               // Navigator.pushNamed(
               //   context,
               //   PickPlans.routeName,

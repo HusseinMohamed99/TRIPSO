@@ -86,7 +86,10 @@ class AppRouters {
         );
       case Routes.pickPlans:
         return MaterialPageRoute(
-          builder: (_) => PickPlans(),
+          builder: (_) => BlocProvider(
+            create: (context) => TripsoCubit(),
+            child: PickPlans(),
+          ),
         );
     }
     return null;

@@ -47,7 +47,9 @@ class _PickPlansState extends State<PickPlans> {
           child: Scaffold(
             body: Stack(
               children: [
-                const PickPlansWidget(),
+                PickPlansWidget(
+                  cubit: TripsoCubit(),
+                ),
                 Positioned(
                   top: 10.sp,
                   left: 10.sp,
@@ -87,22 +89,14 @@ class _PickPlansState extends State<PickPlans> {
 class PickPlansWidget extends StatelessWidget {
   const PickPlansWidget({
     super.key,
+    required this.cubit,
   });
+
+  final TripsoCubit cubit;
 
   @override
   Widget build(BuildContext context) {
-    var cubit = TripsoCubit.get(context);
-    return BlocConsumer<TripsoCubit, TripsoStates>(
-      listener: (context, state) {},
-      builder: (context, state) {
-        return SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0).r,
-            child: ListViewWidget(cubit: cubit),
-          ),
-        );
-      },
-    );
+    return ListViewWidget(cubit: cubit);
   }
 }
 
@@ -123,12 +117,13 @@ class ListViewWidget extends StatelessWidget {
           shrinkWrap: true,
           itemBuilder: (context, index) {
             return GridPlans(
-                placeModel: cubit.place[index],
-                cubit.cityModel!,
-                cubit.bestPLanModel!);
+              placeModel: cubit.place[index],
+              cubit.cityModel!,
+              cubit.bestPLanModel!,
+            );
           },
           separatorBuilder: (context, index) {
-            return Space(height: 10.h, width: 0);
+            return Space(height: 10, width: 0);
           },
           itemCount: cubit.place.length,
         ),
