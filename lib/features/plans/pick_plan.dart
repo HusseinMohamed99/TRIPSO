@@ -25,7 +25,6 @@ class PickPlans extends StatefulWidget {
   const PickPlans({
     super.key,
   });
-  static const String routeName = 'PickPlans';
 
   @override
   State<PickPlans> createState() => _PickPlansState();

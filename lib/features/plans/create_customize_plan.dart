@@ -97,10 +97,9 @@ class CustomCard extends StatelessWidget {
                   backgroundColor: ColorsManager.primaryColor,
                 ),
                 onPressed: () {
-                  // Navigator.pushNamed(
-                  //   context,
-                  //   SelectDateScreen.routeName,
-                  // );
+                  context.pushNamed(
+                    Routes.selectDateScreen,
+                  );
                 },
                 child: Text(
                   'Create',

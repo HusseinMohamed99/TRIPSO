@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/plans/pick_plan.dart';
 import 'package:tripso/shared/components/date_time.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
@@ -49,11 +48,11 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
               ],
             ),
             onTap: () {
-              Navigator.pushNamed(
-                context,
-                PickPlans.routeName,
-                arguments: NumOf(numOfDays: _numberOfDays(), index: index),
-              );
+              // Navigator.pushNamed(
+              //   context,
+              //   PickPlans.routeName,
+              //   arguments: NumOf(numOfDays: _numberOfDays(), index: index),
+              // );
               if (kDebugMode) {
                 print(index);
               }

@@ -78,10 +78,15 @@ class AppRouters {
         );
       case Routes.customizePlan:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => TripsoCubit(),
-            child: CreateCustomizePlan(),
-          ),
+          builder: (_) => CreateCustomizePlan(),
+        );
+      case Routes.selectDateScreen:
+        return MaterialPageRoute(
+          builder: (_) => SelectDateScreen(),
+        );
+      case Routes.pickPlans:
+        return MaterialPageRoute(
+          builder: (_) => PickPlans(),
         );
     }
     return null;
