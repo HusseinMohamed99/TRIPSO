@@ -22,7 +22,7 @@ class CustomArrowBack extends StatelessWidget {
           await flutterTts.pause();
         },
         icon: Icon(
-          Icons.arrow_back,
+          Icons.arrow_back_ios,
           color: ColorsManager.whiteColor,
           size: 24.sp,
         ),
