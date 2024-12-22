@@ -36,7 +36,7 @@ class HistoricalCityDescription extends StatelessWidget {
                   bottomPadding: 10,
                 ),
                 Text(
-                  historical,
+                  historical.trim(),
                   style: context.titleMedium?.copyWith(
                     color: ColorsManager.blackPrimary,
                     fontWeight: FontWeightHelper.thin,

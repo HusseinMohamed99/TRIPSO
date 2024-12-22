@@ -48,6 +48,7 @@ import '../../../shared/components/layer.dart';
 import '../../../shared/components/log_out.dart';
 import '../../../shared/components/navigator.dart';
 import '../../../shared/components/search_bar.dart';
+import '../../../shared/components/speak.dart';
 import '../../../shared/widget/plans_item.dart';
 import '../../networking/exceptions/user_exceptions.dart';
 
@@ -78,6 +79,8 @@ part './../../../features/explore/widgets/build_title_section.dart';
 part './../../../features/explore/widgets/explore_destination_item.dart';
 part './../../../features/explore/widgets/popular_sights_widget.dart';
 part './../../../features/explore/widgets/top_plans_widget.dart';
+part './../../../features/historical_city/widgets/city_and_cournty_title.dart';
+part './../../../features/historical_city/widgets/custom_arrow_back.dart';
 part './../../../features/historical_city/widgets/historical_city_description.dart';
 part './../../../features/on_boarding/controllers/navigation.dart';
 part './../../../features/on_boarding/on_boarding_screen.dart';
@@ -111,3 +114,5 @@ part './../value_manager/margin_helper.dart';
 part './../value_manager/padding_helper.dart';
 part './../value_manager/size_helper.dart';
 part './../widgets/custom_cached_network_image.dart';
+
+part './../../../features/historical_city/widgets/custom_audio_speaking.dart';
