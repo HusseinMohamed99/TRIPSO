@@ -26,7 +26,9 @@ class ExploreScreen extends StatelessWidget {
                       cubit: tripsoCubit,
                     ),
                   ),
-                  SliverToBoxAdapter(child: Space(height: 16, width: 0)),
+                  SliverToBoxAdapter(
+                    child: Space(height: 16, width: 0),
+                  ),
                   SliverToBoxAdapter(
                     child: TopPlansWidget(
                       cubit: tripsoCubit,
