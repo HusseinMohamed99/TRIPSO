@@ -41,8 +41,9 @@ class TopPlanItem extends StatelessWidget {
                 const Radius.circular(20).r,
               ),
               image: const DecorationImage(
-                fit: BoxFit.fitHeight,
-                image: AssetImage('assets/images/2021884.jpg'),
+                fit: BoxFit.fitWidth,
+                image: NetworkImage(
+                    'https://img.freepik.com/free-photo/marine-toys-sandy-beach_23-2148164591.jpg?t=st=1734873537~exp=1734877137~hmac=61b9412bfd2cbf5423c2d3f981854aba6b879d3aa2df024dce6ae71e3de7ed79&w=740'),
               ),
             ),
           ),
