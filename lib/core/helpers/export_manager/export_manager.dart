@@ -35,7 +35,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 
 import '../../../features/Auth/forget_password/logic/forget_password_state.dart';
 import '../../../features/cities/logic/cities_state.dart';
-import '../../../features/historical_city/historical_city.dart';
+import '../../../features/historical_city/view/historical_city.dart';
 import '../../../features/plans/create_customize_plan.dart';
 import '../../../features/search/search_screen.dart';
 import '../../../model/best_plan_model.dart';
@@ -108,3 +108,5 @@ part './../validations/validation_manager.dart';
 part './../value_manager/margin_helper.dart';
 part './../value_manager/padding_helper.dart';
 part './../value_manager/size_helper.dart';
+
+part './../../../features/historical_city/widgets/historical_city_description.dart';
