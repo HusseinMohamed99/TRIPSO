@@ -92,7 +92,7 @@ class GridItemSights extends StatelessWidget {
       borderRadius: BorderRadius.circular(12).r,
       child: CachedNetworkImage(
         imageUrl: imageUrl,
-        fit: BoxFit.fitHeight,
+        fit: BoxFit.fill,
         height: 220.h,
         width: double.infinity,
         errorWidget: (context, url, error) => Icon(
