@@ -1,10 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/model/city_model.dart';
-import 'package:tripso/shared/adaptive/indicator.dart';
-import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/components/speak.dart';
 
@@ -19,40 +16,18 @@ class HistoricalCity extends StatelessWidget {
         Stack(
           children: [
             Container(
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              height: 500.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: const Radius.circular(20).r,
-                  bottomRight: const Radius.circular(20).r,
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                height: 500.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: const Radius.circular(20).r,
+                    bottomRight: const Radius.circular(20).r,
+                  ),
                 ),
-              ),
-              child: Stack(
-                children: [
-                  CachedNetworkImage(
-                    imageUrl: argument.image,
-                    fit: BoxFit.fitHeight,
-                    height: 500.h,
-                    width: double.infinity,
-                    progressIndicatorBuilder:
-                        (context, url, downloadProgress) => Center(
-                      child: AdaptiveIndicator(),
-                    ),
-                    errorWidget: (context, url, error) => Center(
-                      child: AdaptiveIndicator(),
-                    ),
-                  ),
-                  LayerImage(
-                    height: 500.h,
-                    width: double.infinity,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: const Radius.circular(20).r,
-                      bottomRight: const Radius.circular(20).r,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+                child: CustomCachedNetworkImage(
+                  image: argument.image,
+                  imageHeight: 500,
+                )),
             Positioned(
               top: 280.h,
               child: Padding(
