@@ -8,7 +8,6 @@ import 'package:tripso/shared/components/sized_box.dart';
 
 class CreateCustomizePlan extends StatelessWidget {
   const CreateCustomizePlan({super.key});
-  static const String routeName = 'CreatePlan';
 
   @override
   Widget build(BuildContext context) {

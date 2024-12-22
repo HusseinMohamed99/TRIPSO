@@ -46,7 +46,7 @@ class ExploreDestinationItem extends StatelessWidget {
             _buildFeatureTile(
               context: context,
               onTap: () {
-                navigateTo(context, routeName: CreateCustomizePlan.routeName);
+                context.pushNamed(Routes.customizePlan);
               },
               icon: Icons.dashboard_customize_outlined,
               iconColor: const Color.fromARGB(255, 105, 155, 247),

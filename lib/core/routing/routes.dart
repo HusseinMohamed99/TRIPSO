@@ -13,4 +13,5 @@ class Routes {
   static const searchScreen = '/searchScreen';
   static const settingsScreen = '/SettingsScreen';
   static const historicalCity = '/HistoricalCity';
+  static const customizePlan = '/CreateCustomizePlan';
 }

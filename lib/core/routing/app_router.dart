@@ -76,6 +76,13 @@ class AppRouters {
             ),
           ),
         );
+      case Routes.customizePlan:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => TripsoCubit(),
+            child: CreateCustomizePlan(),
+          ),
+        );
     }
     return null;
   }
