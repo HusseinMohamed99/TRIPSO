@@ -32,7 +32,10 @@ class ExploreDestinationItem extends StatelessWidget {
               context: context,
               onTap: () {
                 // Uncomment and implement navigation logic
-                // navigateTo(context, routeName: HistoricalCity.routeName, arguments: CityModel(...));
+                context.pushNamed(
+                  Routes.historicalCity,
+                  arguments: tripsoCubit.cityModel,
+                );
               },
               icon: Icons.book_outlined,
               iconColor: const Color.fromARGB(255, 216, 119, 119),

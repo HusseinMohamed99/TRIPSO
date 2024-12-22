@@ -11,4 +11,6 @@ class Routes {
   static const myPlansScreen = '/MyPlansScreen';
   static const myProfileScreen = '/MyProfileScreen';
   static const searchScreen = '/searchScreen';
+  static const settingsScreen = '/SettingsScreen';
+  static const historicalCity = '/HistoricalCity';
 }

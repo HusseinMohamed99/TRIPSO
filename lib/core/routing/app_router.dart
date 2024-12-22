@@ -67,6 +67,15 @@ class AppRouters {
             child: SearchScreen(),
           ),
         );
+      case Routes.historicalCity:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => TripsoCubit(),
+            child: HistoricalCity(
+              argument: arguments as CityModel,
+            ),
+          ),
+        );
     }
     return null;
   }
