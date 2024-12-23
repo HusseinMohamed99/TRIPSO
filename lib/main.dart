@@ -20,20 +20,12 @@ Future<void> main() async {
   final sharedPrefHelper = SharedPrefHelper(sharedPreferences);
 
   // Initialize Firebase
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  // Activate Firebase App Check
-  await FirebaseAppCheck.instance.activate(
-    androidProvider: AndroidProvider.debug, // Use Play Integrity for Android
-    appleProvider: AppleProvider.debug, // Use DeviceCheck for iOS
-  );
-  await FirebaseAppCheck.instance.setTokenAutoRefreshEnabled(true);
+  await initializeFirebase();
 
-  // // Initialize cache helper
+  // Initialize cache helper
   await CacheHelper.init();
 
-  // // Retrieve user ID from cache
+  //  Retrieve user ID from cache
   // uId = CacheHelper.getData(key: 'uId');
 
   // Check if onboarding screen was viewed
@@ -50,6 +42,18 @@ Future<void> main() async {
       sharedPrefHelper: sharedPrefHelper,
     ),
   );
+}
+
+Future<void> initializeFirebase() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  // Activate Firebase App Check
+  await FirebaseAppCheck.instance.activate(
+    androidProvider: AndroidProvider.debug, // Use Play Integrity for Android
+    appleProvider: AppleProvider.debug, // Use DeviceCheck for iOS
+  );
+  await FirebaseAppCheck.instance.setTokenAutoRefreshEnabled(true);
 }
 
 /// Initializes services like `ScreenUtil` and Bloc observer.

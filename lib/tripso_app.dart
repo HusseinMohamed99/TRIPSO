@@ -11,7 +11,6 @@ class TripsoApp extends StatelessWidget {
   final AppRouters appRouter;
   final bool isOnBoardingViewed;
   final bool isUserLogged;
-
   final SharedPrefHelper sharedPrefHelper;
 
   // This widget is the root of your application.
@@ -40,7 +39,6 @@ class TripsoApp extends StatelessWidget {
             darkTheme: buildLightTheme(context),
             themeMode: ThemeMode.light,
             initialRoute: _getInitialRoute(),
-
             onGenerateRoute: AppRouters(sharedPrefHelper).generateRoute,
           ),
         );
