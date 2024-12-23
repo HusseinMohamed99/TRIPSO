@@ -5,13 +5,10 @@ class GridPlans extends StatelessWidget {
     super.key,
     required this.placeModel,
   });
-
   final PlaceModel placeModel;
-
   @override
   Widget build(BuildContext context) {
     double rating = double.tryParse(placeModel.rate) ?? 0;
-
     return GestureDetector(
       onTap: () {
         // navigateTo(
@@ -34,8 +31,7 @@ class GridPlans extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Space(height: 5, width: 0),
-                CustomTitle(title: placeModel.name),
+                CustomTitle(title: placeModel.name).onlyPadding(topPadding: 5),
                 buildRatingRow(rating).allPadding(vPadding: 6),
                 CustomTitle(
                   title: placeModel.history,
@@ -66,8 +62,8 @@ class GridPlans extends StatelessWidget {
 
   Widget _buildTicketInfo() {
     return Container(
-      width: 100,
-      height: 30,
+      width: 90.w,
+      height: 25.h,
       decoration: BoxDecoration(
         color: Colors.amber,
         borderRadius: BorderRadius.circular(15),
@@ -84,28 +80,22 @@ class GridPlans extends StatelessWidget {
       onPressed: () {
         MapUtils.urlLauncher(Uri.parse(placeModel.location));
       },
-      padding: const EdgeInsets.all(8),
-      icon: CircleAvatar(
-        backgroundColor: Colors.grey.shade400,
-        child: const Icon(
-          FontAwesomeIcons.locationArrow,
-          size: 24,
-          color: Colors.black,
-        ),
+      icon: Icon(
+        FontAwesomeIcons.locationArrow,
+        size: 24.sp,
+        color: ColorsManager.blackPrimary,
       ),
     );
   }
 
   Widget _buildTimeButton(BuildContext context) {
-    bool isClosed = placeModel.timeOfDay.contains('Closed');
     Icon icon = Icon(
       Icons.watch_later_outlined,
-      size: 30,
-      color: isClosed ? Colors.red : Colors.green,
+      size: 24.sp,
+      color: Colors.green,
     );
     return IconButton(
-      onPressed: isClosed ? () => _showTimeDialog(context) : null,
-      padding: const EdgeInsets.all(8),
+      onPressed: () => _showTimeDialog(context),
       icon: icon,
     );
   }
