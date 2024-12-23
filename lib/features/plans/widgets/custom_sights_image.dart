@@ -5,7 +5,6 @@ class CustomSightImage extends StatelessWidget {
     super.key,
     required this.placeModel,
   });
-
   final PlaceModel placeModel;
 
   @override
