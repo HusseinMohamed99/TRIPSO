@@ -40,29 +40,23 @@ class CustomCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(
-                    'Can\'t find what you\'re looking for?\nCreate your plan from\nthe start',
-                    maxLines: 4,
-                    style: context.labelLarge?.copyWith(
-                      color: ColorsManager.blackPrimary,
-                    ),
+                  CustomTitle(
+                    title:
+                        'Can\'t find what you\'re looking for?\nCreate your plan from\nthe start',
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: ColorsManager.primaryColor,
-                    ),
-                    onPressed: () {
+                  DefaultMaterialButton(
+                    function: () {
                       context.pushNamed(
                         Routes.selectDateScreen,
                       );
                     },
-                    child: Text(
-                      'Create',
-                      style: context.labelLarge?.copyWith(
-                        color: ColorsManager.whiteColor,
-                      ),
-                    ),
-                  )
+                    text: 'Create',
+                    context: context,
+                    width: 100.w,
+                    height: 35.h,
+                    radius: 20.r,
+                    color: ColorsManager.primaryColor,
+                  ),
                 ],
               ),
             )

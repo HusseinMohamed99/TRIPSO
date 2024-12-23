@@ -119,3 +119,4 @@ part './../widgets/custom_cached_network_image.dart';
 
 part './../../../features/plans/widgets/custom_card.dart';
 part './../widgets/custom_app_bar.dart';
+part './../../../features/plans/widgets/custom_title.dart';
