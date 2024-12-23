@@ -11,10 +11,7 @@ class SelectDateCalendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(
-        horizontal: 10.w,
-        vertical: 10.h,
-      ),
+      margin: EdgeInsets.only(top: 10.h),
       padding: EdgeInsets.symmetric(
         horizontal: 10.w,
         vertical: 10.h,
