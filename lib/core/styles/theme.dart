@@ -34,7 +34,6 @@ AppBarTheme _buildAppBarTheme(BuildContext context) {
     color: Colors.transparent,
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
-      systemNavigationBarColor: ColorsManager.blackPrimary,
       systemNavigationBarDividerColor: ColorsManager.whiteColor,
       statusBarIconBrightness: Brightness.light,
       statusBarBrightness: Brightness.dark,
