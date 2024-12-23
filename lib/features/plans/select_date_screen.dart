@@ -12,9 +12,6 @@ import '../../core/routing/routes.dart';
 
 class SelectDateScreen extends StatefulWidget {
   const SelectDateScreen({super.key});
-
-  static const String routeName = 'SelectDateScreen';
-
   @override
   State<SelectDateScreen> createState() => _SelectDateScreenState();
 }

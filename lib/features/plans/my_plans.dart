@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/core/helpers/export_manager/export_manager.dart';
+import 'package:tripso/core/routing/routes.dart';
 import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/features/plans/select_date_screen.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/plan_model.dart';
 import 'package:tripso/shared/adaptive/dialog.dart';
@@ -47,7 +47,7 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
           floatingActionButton: FloatingActionButton(
             backgroundColor: ColorsManager.primaryColor,
             onPressed: () {
-              Navigator.pushNamed(context, SelectDateScreen.routeName);
+              context.pushNamed(Routes.selectDateScreen);
             },
             child: const Icon(Icons.add),
           ),
