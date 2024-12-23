@@ -1,14 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
-import 'package:tripso/core/styles/asset_path.dart';
-import 'package:tripso/shared/components/date_time.dart';
-import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/components/sized_box.dart';
-
-import '../../core/routing/routes.dart';
+part of './../../core/helpers/export_manager/export_manager.dart';
 
 class SelectDateScreen extends StatefulWidget {
   const SelectDateScreen({super.key});
@@ -56,9 +46,6 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
               //   PickPlans.routeName,
               //   arguments: NumOf(numOfDays: _numberOfDays(), index: index),
               // );
-              if (kDebugMode) {
-                print(index);
-              }
             },
           ),
         ),
@@ -71,161 +58,77 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {
-              if (Navigator.canPop(context)) {
-                pop(context);
-              }
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              size: 28.sp,
-              color: ColorsManager.blackPrimary,
-            ),
-          ),
-          elevation: 0,
-          centerTitle: true,
-          backgroundColor: ColorsManager.whiteColor,
-          title: Text(
-            'Customize',
-            style: GoogleFonts.roboto(
-              fontSize: 20.sp,
-              fontWeight: FontWeight.bold,
-              color: ColorsManager.blackPrimary,
-            ),
-          ),
+        appBar: customAppBar(
+          context: context,
+          title: 'Select Date',
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(10.0).r,
-          child: Column(
-            children: [
+        body: Column(
+          children: [
+            Row(
+              children: [
+                Space(height: 0, width: context.width * 0.03),
+                CustomTitle(
+                  title: 'Starts on',
+                  color: Colors.grey,
+                ),
+                Space(height: 0, width: context.width * 0.26),
+                CustomTitle(
+                  title: 'Ends on',
+                  color: Colors.grey,
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: SelectDateCalendar(
+                    voidCallback: () async {
+                      buildFirstDatePicker(context);
+                    },
+                    title: _firstDate == null
+                        ? 'Select date'
+                        : DateTimeUtils.formatTasksDate(_firstDate),
+                  ),
+                ),
+                Expanded(
+                  child: SelectDateCalendar(
+                    voidCallback: () async {
+                      buildLastDatePicker(context);
+                    },
+                    title: _lastDate == null
+                        ? 'Select date'
+                        : DateTimeUtils.formatTasksDate(_lastDate),
+                  ),
+                ),
+              ],
+            ),
+            Space(height: 16, width: 0),
+            CustomTitle(
+              title: 'Number of Days: ${_numberOfDays()}',
+              // style: GoogleFonts.roboto(fontSize: 20.sp),
+            ),
+            if (_numberOfDays() >= 8)
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0).r,
-                child: Row(
-                  children: [
-                    Text(
-                      'Starts on',
-                      style: GoogleFonts.roboto(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    Space(height: 0, width: 120.w),
-                    Text(
-                      'Ends on',
-                      style: GoogleFonts.roboto(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ],
+                padding: const EdgeInsets.only(top: 60.0).r,
+                child: CustomTitle(
+                  title: 'You Can Selected Only 7 Days',
+                  color: Colors.redAccent,
                 ),
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.all(10).r,
-                      padding: const EdgeInsets.all(10).r,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10).r,
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      child: InkWell(
-                        onTap: () async {
-                          buildFirstDatePicker(context);
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              _firstDate == null
-                                  ? 'Select date'
-                                  : DateTimeUtils.formatTasksDate(_firstDate),
-                              style: GoogleFonts.roboto(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey,
-                              ),
-                            ),
-                            Icon(
-                              Icons.calendar_month,
-                              size: 24.sp,
-                              color: Colors.grey,
-                            ),
-                          ],
-                        ),
-                      ),
+            _numberOfDays() == 0 || _numberOfDays() >= 8
+                ? Expanded(
+                    child: Image.asset(AssetPath.imagesGroup92),
+                  )
+                : Expanded(
+                    child: ListView(
+                      children: _buildDateCheckboxes(),
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.all(10).r,
-                      padding: const EdgeInsets.all(10).r,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10).r,
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      child: InkWell(
-                        onTap: () {
-                          buildLastDatePicker(context);
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              _lastDate == null
-                                  ? 'Select date'
-                                  : DateTimeUtils.formatTasksDate(_lastDate),
-                              style: GoogleFonts.roboto(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey,
-                              ),
-                            ),
-                            Icon(
-                              Icons.calendar_month,
-                              size: 24.sp,
-                              color: Colors.grey,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Space(height: 16.h, width: 0),
-              Text(
-                'Number of Days: ${_numberOfDays()}',
-                style: GoogleFonts.roboto(fontSize: 20.sp),
-              ),
-              if (_numberOfDays() >= 8)
-                Padding(
-                  padding: const EdgeInsets.only(top: 60.0).r,
-                  child: Text(
-                    'You Can Selected Only 7 Days',
-                    style: GoogleFonts.roboto(
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.redAccent,
-                    ),
-                  ),
-                ),
-              _numberOfDays() == 0 || _numberOfDays() >= 8
-                  ? Expanded(
-                      child: Image.asset(AssetPath.imagesGroup92),
-                    )
-                  : Expanded(
-                      child: ListView(
-                        children: _buildDateCheckboxes(),
-                      ),
-                    ),
-            ],
-          ),
+          ],
+        ).onlyPadding(
+          leftPadding: 20,
+          rightPadding: 20,
+          topPadding: 20,
         ),
       ),
     );
