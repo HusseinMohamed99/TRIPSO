@@ -134,29 +134,30 @@ class TripsoCubit extends Cubit<TripsoStates> {
     emit(GetCityDataErrorState(errorMessage));
   }
 
-  PlaceModel? placeModel;
+  // PlaceModel? placeModel;
 
-  void getDataPlace(String? cId, String? pId) {
-    emit(GetPlaceDataLoadingState());
-    FirebaseFirestore.instance
-        .collection('cities')
-        .doc(cId)
-        .collection('places')
-        .doc(pId)
-        .get()
-        .then((value) {
-      placeModel = PlaceModel.fromJson(value.data()!);
-      emit(GetPlaceDataSuccessState());
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetPlaceDataErrorState(error.toString()));
-    });
-  }
+  // void getDataPlace(String? cId, String? pId) {
+  //   emit(GetPlaceDataLoadingState());
+  //   FirebaseFirestore.instance
+  //       .collection('cities')
+  //       .doc(cId)
+  //       .collection('places')
+  //       .doc(pId)
+  //       .get()
+  //       .then((value) {
+  //     placeModel = PlaceModel.fromJson(value.data()!);
+  //     emit(GetPlaceDataSuccessState());
+  //   }).catchError((error) {
+  //     debugPrint(error.toString());
+  //     emit(GetPlaceDataErrorState(error.toString()));
+  //   });
+  // }
 
   List<PlaceModel> place = [];
   List<String> pId = [];
 
   getDataPlaces(String? cId) {
+    emit(GetPlaceDataLoadingState());
     FirebaseFirestore.instance
         .collection('cities')
         .doc(cId)
@@ -168,6 +169,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
         place.add(PlaceModel.fromJson(element.data()));
         pId.add(element.id);
       }
+      emit(GetPlaceDataSuccessState());
     });
   }
 

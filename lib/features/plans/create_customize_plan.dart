@@ -1,7 +1,11 @@
 part of './../../core/helpers/export_manager/export_manager.dart';
 
 class CreateCustomizePlan extends StatelessWidget {
-  const CreateCustomizePlan({super.key});
+  const CreateCustomizePlan({
+    super.key,
+    required this.cId,
+  });
+  final String cId;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,9 @@ class CreateCustomizePlan extends StatelessWidget {
               AssetPath.plan,
             ),
           ),
-          CustomCard().onlyPadding(bottomPadding: 20),
+          CustomCard(
+            cId: cId,
+          ).onlyPadding(bottomPadding: 20),
         ],
       ),
     );

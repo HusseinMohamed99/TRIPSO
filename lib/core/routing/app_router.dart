@@ -78,17 +78,34 @@ class AppRouters {
         );
       case Routes.customizePlan:
         return MaterialPageRoute(
-          builder: (_) => CreateCustomizePlan(),
+          builder: (_) => CreateCustomizePlan(
+            cId: arguments as String,
+          ),
         );
       case Routes.selectDateScreen:
         return MaterialPageRoute(
-          builder: (_) => SelectDateScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => TripsoCubit(),
+            child: SelectDateScreen(
+              argument: arguments as String,
+            ),
+          ),
         );
       case Routes.pickPlans:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => TripsoCubit(),
+            create: (context) =>
+                TripsoCubit()..getDataPlaces(arguments as String),
             child: PickPlans(),
+          ),
+        );
+      case Routes.sightsScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => TripsoCubit(),
+            child: SightsScreen(
+              argument: arguments as ScreenArgs,
+            ),
           ),
         );
     }

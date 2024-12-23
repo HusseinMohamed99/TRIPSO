@@ -7,7 +7,6 @@ import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/core/styles/asset_path.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
-import 'package:tripso/model/place_model/place_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/my_divider.dart';
 import 'package:tripso/shared/components/sized_box.dart';
@@ -134,7 +133,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     itemBuilder: (context, index) => singleUserBuilder(
                         foundCity[index],
                         context,
-                        cubit.placeModel!,
+                        // cubit.placeModel!,
                         cubit.bestPLanModel!),
                     separatorBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0).r,
@@ -149,8 +148,12 @@ class _SearchScreenState extends State<SearchScreen> {
         listener: (context, state) {});
   }
 
-  Widget singleUserBuilder(CityModel city, BuildContext context,
-      PlaceModel placeModel, BestPLanModel bestPLanModel) {
+  Widget singleUserBuilder(
+    CityModel city,
+    BuildContext context,
+    // PlaceModel placeModel,
+    BestPLanModel bestPLanModel,
+  ) {
     return InkWell(
       onTap: () async {
         // TripsoCubit.get(context).getUserData();

@@ -1,8 +1,8 @@
 part of './../../../core/helpers/export_manager/export_manager.dart';
 
 class SelectDateContent extends StatefulWidget {
-  const SelectDateContent({super.key});
-
+  const SelectDateContent({super.key, required this.cId});
+  final String cId;
   @override
   State<SelectDateContent> createState() => _SelectDateContentState();
 }
@@ -31,7 +31,7 @@ class _SelectDateContentState extends State<SelectDateContent> {
         onTap: () {
           context.pushNamed(
             Routes.pickPlans,
-            // arguments: NumOf(numOfDays: _calculateNumberOfDays(), index: index + 1),
+            arguments: widget.cId,
           );
         },
       );

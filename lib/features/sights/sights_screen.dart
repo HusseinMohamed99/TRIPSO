@@ -18,14 +18,14 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 class SightsScreen extends StatelessWidget {
   const SightsScreen({
     super.key,
+    required this.argument,
   });
 
-  static const String routeName = 'SightsScreen';
-
+  final ScreenArgs argument;
   @override
   Widget build(BuildContext context) {
-    ScreenArgs screenArgs =
-        ModalRoute.of(context)!.settings.arguments as ScreenArgs;
+    // ScreenArgs screenArgs =
+    //     ModalRoute.of(context)!.settings.arguments as ScreenArgs;
     return BlocConsumer<TripsoCubit, TripsoStates>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -36,8 +36,8 @@ class SightsScreen extends StatelessWidget {
               child: Column(
                 children: [
                   SightsWidget(
-                      cityModel: screenArgs.cityModel,
-                      placeModel: screenArgs.placeModel)
+                      cityModel: argument.cityModel,
+                      placeModel: argument.placeModel)
                 ],
               ),
             ),

@@ -16,4 +16,5 @@ class Routes {
   static const customizePlan = '/CreateCustomizePlan';
   static const pickPlans = '/PickPlans';
   static const selectDateScreen = '/SelectDateScreen';
+  static const sightsScreen = '/SightsScreen';
 }

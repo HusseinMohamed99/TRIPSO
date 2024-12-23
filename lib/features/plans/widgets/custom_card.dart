@@ -1,10 +1,12 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of './../../../core/helpers/export_manager/export_manager.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({
     super.key,
+    required this.cId,
   });
-
+  final String cId;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -48,6 +50,7 @@ class CustomCard extends StatelessWidget {
                     function: () {
                       context.pushNamed(
                         Routes.selectDateScreen,
+                        arguments: cId,
                       );
                     },
                     text: 'Create',

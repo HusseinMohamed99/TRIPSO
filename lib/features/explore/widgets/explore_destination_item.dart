@@ -46,7 +46,10 @@ class ExploreDestinationItem extends StatelessWidget {
             _buildFeatureTile(
               context: context,
               onTap: () {
-                context.pushNamed(Routes.customizePlan);
+                context.pushNamed(
+                  Routes.customizePlan,
+                  arguments: tripsoCubit.cityModel!.cId,
+                );
               },
               icon: Icons.dashboard_customize_outlined,
               iconColor: const Color.fromARGB(255, 105, 155, 247),
@@ -59,7 +62,9 @@ class ExploreDestinationItem extends StatelessWidget {
               onTap: () async {
                 // Uncomment and implement navigation logic
                 // TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-                // navigateTo(context, routeName: SightsScreen.routeName, arguments: ScreenArgs(...));
+                context.pushNamed(
+                  Routes.sightsScreen,
+                );
               },
               icon: Icons.remove_red_eye_outlined,
               iconColor: const Color.fromARGB(255, 133, 84, 150),
