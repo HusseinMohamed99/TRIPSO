@@ -15,21 +15,23 @@ class PickPlans extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           TripsoCubit tripsoCubit = context.read<TripsoCubit>();
-          return ListView.separated(
-            padding: EdgeInsets.symmetric(
-              horizontal: 12.w,
-              vertical: 10.h,
-            ),
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return GridPlans(
-                placeModel: tripsoCubit.place[index],
-              );
-            },
-            separatorBuilder: (context, index) {
-              return Space(height: 10, width: 0);
-            },
-            itemCount: tripsoCubit.place.length,
+          return CustomScrollView(
+            slivers: [
+              SliverList.separated(
+                itemBuilder: (context, index) {
+                  return GridPlans(
+                    placeModel: tripsoCubit.place[index],
+                  ).allPadding(
+                    hPadding: 12,
+                    vPadding: 10,
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return Space(height: 10, width: 0);
+                },
+                itemCount: tripsoCubit.place.length,
+              ),
+            ],
           );
         },
       ),
