@@ -8,15 +8,13 @@ class SelectDateScreen extends StatelessWidget {
   final String argument;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: customAppBar(
-          context: context,
-          title: 'Select Date',
-        ),
-        body: SelectDateContent(
-          cId: argument,
-        ),
+    return Scaffold(
+      appBar: customAppBar(
+        context: context,
+        title: 'Select Date',
+      ),
+      body: SelectDateContent(
+        cId: argument,
       ),
     );
   }
