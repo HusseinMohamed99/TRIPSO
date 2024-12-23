@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-PreferredSizeWidget secondaryAppBar() => AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      scrolledUnderElevation: 0,
-      toolbarHeight: 0,
-    );
+// PreferredSizeWidget secondaryAppBar() => AppBar(
+//       backgroundColor: Colors.transparent,
+//       elevation: 0,
+//       scrolledUnderElevation: 0,
+//       toolbarHeight: 0,
+//     );
 
 PreferredSizeWidget primaryAppBar({
   required String title,

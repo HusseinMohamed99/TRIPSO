@@ -116,3 +116,6 @@ part './../value_manager/margin_helper.dart';
 part './../value_manager/padding_helper.dart';
 part './../value_manager/size_helper.dart';
 part './../widgets/custom_cached_network_image.dart';
+
+part './../../../features/plans/widgets/custom_card.dart';
+part './../widgets/custom_app_bar.dart';
