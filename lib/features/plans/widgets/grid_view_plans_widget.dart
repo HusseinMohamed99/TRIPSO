@@ -104,31 +104,38 @@ class GridPlans extends StatelessWidget {
     MyDialog.showAlertDialog(
       context,
       SizedBox(
-        height: 370.h,
+        height: context.height * 0.5,
+        width: context.width,
         child: Column(
-          children: List.generate(7, (index) {
-            return ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    _getDayName(index),
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  Text(
-                    placeModel.timeOfDay[index],
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ],
-              ),
-            );
-          })
-            ..add(
+          children: List.generate(
+            7,
+            (index) {
+              return ListTile(
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomTitle(
+                      title: _getDayName(index),
+                    ),
+                    CustomTitle(
+                      title: placeModel.timeOfDay[index],
+                      color: placeModel.timeOfDay[index] == 'Closed'
+                          ? ColorsManager.redColor
+                          : ColorsManager.greenColor,
+                    ),
+                  ],
+                ),
+              );
+            },
+          )..add(
               TextButton(
                 onPressed: () {
                   MyDialog.hideDialog(context);
                 },
-                child: const Text('Close'),
+                child: CustomTitle(
+                  title: 'Close',
+                  color: ColorsManager.primaryColor,
+                ),
               ),
             ),
         ),
