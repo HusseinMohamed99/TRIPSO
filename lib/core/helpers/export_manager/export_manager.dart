@@ -133,3 +133,4 @@ part './../widgets/custom_cached_network_image.dart';
 part './../widgets/custom_rating_icon.dart';
 
 part './../../../features/plans/widgets/custom_sights_image.dart';
+part './../../../features/explore/widgets/build_feature_title_for_destination.dart';
