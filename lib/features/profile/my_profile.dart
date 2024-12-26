@@ -305,7 +305,7 @@ class MyProfileScreen extends StatelessWidget {
                   height: 20.h,
                 ),
                 Text(
-                  'Created by TEAM ①',
+                  'Created by TEAM',
                   style: GoogleFonts.roboto(
                     fontWeight: FontWeight.w400,
                     fontSize: 18.sp,

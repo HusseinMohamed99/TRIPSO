@@ -18,7 +18,7 @@ Future<void> main() async {
   await _initServices();
   final sharedPreferences = await SharedPreferences.getInstance();
   final sharedPrefHelper = SharedPrefHelper(sharedPreferences);
-
+  debugInvertOversizedImages = true;
   // Initialize Firebase
   await initializeFirebase();
 
