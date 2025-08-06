@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
-import 'package:supercharged/supercharged.dart';
 
 enum AniProps { opacity, translateY }
 
@@ -13,17 +12,21 @@ class FadeAnimation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tween = MovieTween()
-      ..tween(AniProps.opacity, 0.0.tweenTo(1.0), duration: 500.milliseconds)
+      ..tween(
+        AniProps.opacity,
+        Tween<double>(begin: 0.0, end: 1.0),
+        duration: const Duration(milliseconds: 500),
+      )
       ..tween(
         AniProps.translateY,
-        (-30.0).tweenTo(0.0),
-        duration: 500.milliseconds,
+        Tween<double>(begin: -30.0, end: 0.0),
+        duration: const Duration(milliseconds: 500),
         curve: Curves.easeOut,
       );
 
     return PlayAnimationBuilder<Movie>(
       tween: tween,
-      delay: (500 * delay).round().milliseconds, // ✅
+      delay: Duration(milliseconds: (500 * delay).round()), // ✅
       duration: tween.duration,
       builder: (context, value, _) {
         return Opacity(

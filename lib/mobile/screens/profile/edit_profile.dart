@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
@@ -131,7 +130,7 @@ class EditProfile extends StatelessWidget {
                                     showSelectPhotoOptions(context);
                                   },
                                   icon: Icon(
-                                    IconlyLight.image,
+                                    Icons.image,
                                     color: ThemeApp.secondaryColor,
                                     size: 30.sp,
                                   ),

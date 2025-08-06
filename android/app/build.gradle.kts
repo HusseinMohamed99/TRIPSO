@@ -28,13 +28,17 @@ android {
         multiDexEnabled = true
     }
 
-    buildTypes {
-        release {
-            minifyEnabled = true
-            proguardFiles = getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            signingConfig = signingConfigs.getByName("debug")
-        }
+ buildTypes {
+    getByName("release") {
+        isMinifyEnabled = true
+        proguardFiles(
+            getDefaultProguardFile("proguard-android-optimize.txt"),
+            "proguard-rules.pro"
+        )
+        signingConfig = signingConfigs.getByName("debug")
     }
+}
+
 }
 
 flutter {
