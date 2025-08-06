@@ -12,7 +12,7 @@ import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class PrefScreen extends StatefulWidget {
-  const PrefScreen({Key? key}) : super(key: key);
+  const PrefScreen({super.key});
   static const String routeName = 'PrefScreen';
 
   @override
@@ -51,15 +51,14 @@ class _PrefScreenState extends State<PrefScreen> {
   ];
   bool isLast = false;
 
-  void submit() {
-    CacheHelper.saveData(
-      key: 'Pref',
-      value: true,
-    ).then((value) {
-      if (value) {
-        navigateAndFinish(context, routeName: OnBoard.routeName);
-      }
-    });
+  void submit() async {
+    final value = await CacheHelper.saveData(key: 'Pref', value: true);
+
+    if (!mounted) return; // ✅ تأكد أن الـ Widget ما زال موجود
+
+    if (value) {
+      navigateAndFinish(context, routeName: OnBoard.routeName);
+    }
   }
 
   @override
@@ -135,9 +134,7 @@ class _PrefScreenState extends State<PrefScreen> {
                               submit();
                             } else {
                               pageController.nextPage(
-                                duration: const Duration(
-                                  milliseconds: 780,
-                                ),
+                                duration: const Duration(milliseconds: 780),
                                 curve: Curves.ease,
                               );
                             }
@@ -147,13 +144,15 @@ class _PrefScreenState extends State<PrefScreen> {
                             child: Container(
                               alignment: Alignment.center,
                               padding: const EdgeInsets.symmetric(
-                                      horizontal: 35, vertical: 12)
-                                  .r,
+                                horizontal: 35,
+                                vertical: 12,
+                              ).r,
                               width: 163,
                               height: 48,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(
-                                    const Radius.circular(15).r),
+                                  const Radius.circular(15).r,
+                                ),
                                 color: ThemeApp.primaryColor,
                               ),
                               child: FittedBox(
@@ -199,28 +198,26 @@ class _PrefScreenState extends State<PrefScreen> {
   }
 
   Widget buildBoardingItem(BoardingModel model) => SingleChildScrollView(
-        child: Column(
-          children: [
-            FadeAnimation(2.0,
-                child: SvgPicture.asset(
-                  model.image,
-                  fit: BoxFit.fill,
-                  height: 300,
-                )),
-            Space(height: 10.h, width: 0),
-            FadeAnimation(
-              3.0,
-              child: Text(
-                model.title,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
-                  fontSize: 22.sp,
-                  color: ThemeApp.primaryColor,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-          ],
+    child: Column(
+      children: [
+        FadeAnimation(
+          2.0,
+          child: SvgPicture.asset(model.image, fit: BoxFit.fill, height: 300),
         ),
-      );
+        Space(height: 10.h, width: 0),
+        FadeAnimation(
+          3.0,
+          child: Text(
+            model.title,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.poppins(
+              fontSize: 22.sp,
+              color: ThemeApp.primaryColor,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }

@@ -11,10 +11,11 @@ import 'package:tripso/shared/components/speak.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/extensions/color_extension.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class HistoricalCity extends StatelessWidget {
-  const HistoricalCity({Key? key}) : super(key: key);
+  const HistoricalCity({super.key});
   static const String routeName = 'HistoricalCity';
 
   @override
@@ -52,16 +53,10 @@ class HistoricalCity extends StatelessWidget {
                           height: 400.h,
                           width: double.infinity,
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) => Center(
-                            child: AdaptiveIndicator(
-                              os: getOs(),
-                            ),
-                          ),
-                          errorWidget: (context, url, error) => Center(
-                            child: AdaptiveIndicator(
-                              os: getOs(),
-                            ),
-                          ),
+                              (context, url, downloadProgress) =>
+                                  Center(child: AdaptiveIndicator(os: getOs())),
+                          errorWidget: (context, url, error) =>
+                              Center(child: AdaptiveIndicator(os: getOs())),
                         ),
                         LayerImage(
                           height: 400.h,
@@ -83,9 +78,7 @@ class HistoricalCity extends StatelessWidget {
                         children: [
                           Text(
                             cityModel.name,
-                            style: Theme.of(context)
-                                .textTheme
-                                .displayMedium
+                            style: Theme.of(context).textTheme.displayMedium
                                 ?.copyWith(color: ThemeApp.secondaryColor),
                           ),
                           Space(height: 10.h, width: 0.w),
@@ -98,12 +91,8 @@ class HistoricalCity extends StatelessWidget {
                               ),
                               Text(
                                 cityModel.country.trim(),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleLarge
-                                    ?.copyWith(
-                                      color: ThemeApp.secondaryColor,
-                                    ),
+                                style: Theme.of(context).textTheme.titleLarge
+                                    ?.copyWith(color: ThemeApp.secondaryColor),
                               ),
                             ],
                           ),
@@ -121,11 +110,12 @@ class HistoricalCity extends StatelessWidget {
                       ),
                       height: 300.h,
                       decoration: BoxDecoration(
-                          color: ThemeApp.secondaryColor,
-                          borderRadius: BorderRadius.only(
-                            topLeft: const Radius.circular(40).r,
-                            topRight: const Radius.circular(40).r,
-                          )),
+                        color: ThemeApp.secondaryColor,
+                        borderRadius: BorderRadius.only(
+                          topLeft: const Radius.circular(40).r,
+                          topRight: const Radius.circular(40).r,
+                        ),
+                      ),
                       child: ListView(
                         children: [
                           Column(
@@ -134,14 +124,16 @@ class HistoricalCity extends StatelessWidget {
                               Space(height: 10.h, width: 0.w),
                               Text(
                                 'Description',
-                                style:
-                                    Theme.of(context).textTheme.displayMedium,
+                                style: Theme.of(
+                                  context,
+                                ).textTheme.displayMedium,
                               ),
                               Space(height: 10.h, width: 0.w),
                               Text(
                                 cityModel.history.trim(),
-                                style:
-                                    Theme.of(context).textTheme.headlineSmall,
+                                style: Theme.of(
+                                  context,
+                                ).textTheme.headlineSmall,
                               ),
                               Space(height: 30.h, width: 0.w),
                             ],
@@ -153,29 +145,30 @@ class HistoricalCity extends StatelessWidget {
                 ],
               ),
               Positioned(
-                  top: 10.h,
-                  left: 10.w,
-                  child: Card(
-                    elevation: 2,
-                    color: ThemeApp.blackPrimary.withOpacity(0.5),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    shape: const StadiumBorder(
-                      side: BorderSide(color: ThemeApp.secondaryColor),
+                top: 10.h,
+                left: 10.w,
+                child: Card(
+                  elevation: 2,
+                  color: ThemeApp.blackPrimary.withOpacityPercent(50),
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  shape: const StadiumBorder(
+                    side: BorderSide(color: ThemeApp.secondaryColor),
+                  ),
+                  child: IconButton(
+                    onPressed: () async {
+                      if (Navigator.canPop(context)) {
+                        pop(context);
+                      }
+                      await flutterTts.pause();
+                    },
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: ThemeApp.secondaryColor,
+                      size: 24.sp,
                     ),
-                    child: IconButton(
-                      onPressed: () async {
-                        if (Navigator.canPop(context)) {
-                          pop(context);
-                        }
-                        await flutterTts.pause();
-                      },
-                      icon: Icon(
-                        Icons.arrow_back,
-                        color: ThemeApp.secondaryColor,
-                        size: 24.sp,
-                      ),
-                    ),
-                  )),
+                  ),
+                ),
+              ),
               Positioned(
                 right: 10.h,
                 top: 330.h,
@@ -183,9 +176,7 @@ class HistoricalCity extends StatelessWidget {
                   elevation: 2,
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   shape: const StadiumBorder(
-                    side: BorderSide(
-                      color: ThemeApp.secondaryColor,
-                    ),
+                    side: BorderSide(color: ThemeApp.secondaryColor),
                   ),
                   child: CircleAvatar(
                     radius: 30.r,

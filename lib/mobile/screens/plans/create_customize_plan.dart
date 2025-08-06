@@ -7,7 +7,7 @@ import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class CreateCustomizePlan extends StatelessWidget {
-  const CreateCustomizePlan({Key? key}) : super(key: key);
+  const CreateCustomizePlan({super.key});
   static const String routeName = 'CreatePlan';
 
   @override
@@ -54,18 +54,18 @@ class CreateCustomizePlan extends StatelessWidget {
                     ),
                     Space(height: 0, width: 20.w),
                     Expanded(
-                        child: Padding(
-                      padding: const EdgeInsets.all(8.0).r,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            'Can\'t find what you\'re looking for? Create your plan from the start',
-                            maxLines: 3,
-                            style: Theme.of(context).textTheme.bodySmall,
-                          ),
-                          ElevatedButton(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0).r,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              'Can\'t find what you\'re looking for? Create your plan from the start',
+                              maxLines: 3,
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                            ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: ThemeApp.primaryColor,
                               ),
@@ -75,10 +75,12 @@ class CreateCustomizePlan extends StatelessWidget {
                                   SelectDateScreen.routeName,
                                 );
                               },
-                              child: const Text('Create'))
-                        ],
+                              child: const Text('Create'),
+                            ),
+                          ],
+                        ),
                       ),
-                    ))
+                    ),
                   ],
                 ),
               ),

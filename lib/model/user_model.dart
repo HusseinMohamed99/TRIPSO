@@ -18,15 +18,15 @@ class UserModel {
   });
 
   UserModel.fromFireStore(Map<String, dynamic> data)
-      : this(
-    uId: data['uId'],
-          email: data['email'],
-          firstName: data['firstName'],
-          lastName: data['lastName'],
-          image: data['image'],
-          phone: data['phone'],
-          address: data['address'],
-        );
+    : this(
+        uId: data['uId'],
+        email: data['email'],
+        firstName: data['firstName'],
+        lastName: data['lastName'],
+        image: data['image'],
+        phone: data['phone'],
+        address: data['address'],
+      );
 
   Map<String, dynamic> toFireStore() {
     return {

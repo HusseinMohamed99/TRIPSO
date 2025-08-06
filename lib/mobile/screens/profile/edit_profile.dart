@@ -20,7 +20,7 @@ import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/select_photo_options.dart';
 
 class EditProfile extends StatelessWidget {
-  EditProfile({Key? key}) : super(key: key);
+  EditProfile({super.key});
   static const String routeName = 'EditProfile';
   final firstnameController = TextEditingController();
   final lastnameController = TextEditingController();
@@ -41,7 +41,9 @@ class EditProfile extends StatelessWidget {
       listener: (context, state) {
         if (state is UpdateUserSuccessState) {
           showToast(
-              text: 'Update Data Successfully', state: ToastStates.success);
+            text: 'Update Data Successfully',
+            state: ToastStates.success,
+          );
         }
       },
       builder: (context, state) {
@@ -53,15 +55,14 @@ class EditProfile extends StatelessWidget {
             function: () {
               pop(context);
             },
-            iconData: Icon(
-              Icons.arrow_back,
-              size: 25.sp,
-            ),
+            iconData: Icon(Icons.arrow_back, size: 25.sp),
           ),
           body: SingleChildScrollView(
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20, vertical: 0).r,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 0,
+              ).r,
               child: Form(
                 key: formKey,
                 child: Column(
@@ -81,31 +82,36 @@ class EditProfile extends StatelessWidget {
                                   radius: 65.r,
                                   child: profileImage == null
                                       ? ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(65).r,
+                                          borderRadius: BorderRadius.circular(
+                                            65,
+                                          ).r,
                                           child: CachedNetworkImage(
                                             imageUrl: tripsoCubit.image!,
                                             fit: BoxFit.fill,
                                             height: 200.h,
                                             width: double.infinity,
-                                            progressIndicatorBuilder: (context,
-                                                    url, downloadProgress) =>
-                                                Center(
-                                              child: AdaptiveIndicator(
-                                                os: getOs(),
-                                              ),
-                                            ),
+                                            progressIndicatorBuilder:
+                                                (
+                                                  context,
+                                                  url,
+                                                  downloadProgress,
+                                                ) => Center(
+                                                  child: AdaptiveIndicator(
+                                                    os: getOs(),
+                                                  ),
+                                                ),
                                             errorWidget:
                                                 (context, url, error) => Center(
-                                              child: AdaptiveIndicator(
-                                                os: getOs(),
-                                              ),
-                                            ),
+                                                  child: AdaptiveIndicator(
+                                                    os: getOs(),
+                                                  ),
+                                                ),
                                           ),
                                         )
                                       : ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(65).r,
+                                          borderRadius: BorderRadius.circular(
+                                            65,
+                                          ).r,
                                           child: Image(
                                             image: FileImage(profileImage),
                                           ),
@@ -151,10 +157,7 @@ class EditProfile extends StatelessWidget {
                           label: 'First name',
                           prefix: Icons.account_circle_outlined,
                         ),
-                        Space(
-                          height: 26.h,
-                          width: 0,
-                        ),
+                        Space(height: 26.h, width: 0),
                         DefaultTextFormField(
                           borderSideColor: ThemeApp.blackPrimary,
                           styleColor: ThemeApp.blackPrimary,
@@ -171,10 +174,7 @@ class EditProfile extends StatelessWidget {
                           label: 'Last name',
                           prefix: Icons.account_circle_outlined,
                         ),
-                        Space(
-                          height: 26.h,
-                          width: 0,
-                        ),
+                        Space(height: 26.h, width: 0),
                         DefaultTextFormField(
                           borderSideColor: ThemeApp.blackPrimary,
                           styleColor: ThemeApp.blackPrimary,
@@ -191,10 +191,7 @@ class EditProfile extends StatelessWidget {
                           label: 'Address',
                           prefix: Icons.location_city,
                         ),
-                        Space(
-                          height: 26.h,
-                          width: 0,
-                        ),
+                        Space(height: 26.h, width: 0),
                         DefaultTextFormField(
                           borderSideColor: ThemeApp.blackPrimary,
                           styleColor: ThemeApp.blackPrimary,
@@ -213,10 +210,7 @@ class EditProfile extends StatelessWidget {
                           label: 'phone number',
                           prefix: Icons.phone,
                         ),
-                        Space(
-                          height: 26.h,
-                          width: 0,
-                        ),
+                        Space(height: 26.h, width: 0),
                         DefaultTextFormField(
                           borderSideColor: ThemeApp.blackPrimary,
                           styleColor: ThemeApp.blackPrimary,
@@ -233,10 +227,7 @@ class EditProfile extends StatelessWidget {
                           prefix: Icons.alternate_email,
                           label: 'Email Address',
                         ),
-                        Space(
-                          height: 30.h,
-                          width: 0.w,
-                        ),
+                        Space(height: 30.h, width: 0.w),
                         defaultButton(
                           color: ThemeApp.primaryColor,
                           function: () {
@@ -270,10 +261,7 @@ class EditProfile extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Space(
-                          height: 10.h,
-                          width: 0.w,
-                        ),
+                        Space(height: 10.h, width: 0.w),
                         if (state is UpdateUserLoadingState)
                           const LinearProgressIndicator(
                             color: ThemeApp.primaryColor,
@@ -295,9 +283,7 @@ class EditProfile extends StatelessWidget {
       context: context,
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
-        borderRadius: const BorderRadius.vertical(
-          top: Radius.circular(25.0),
-        ).r,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(25.0)).r,
       ),
       builder: (context) => DraggableScrollableSheet(
         initialChildSize: 0.28,

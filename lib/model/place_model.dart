@@ -24,18 +24,16 @@ class PlaceModel {
   });
 
   PlaceModel.fromFireStore(Map data)
-      : name = data['name'],
-        image = data['image'],
-        history = data['history'],
-        location = data['location'],
-        timeOfDay = List.from(
-          data['timeOfDay'],
-        ),
-        tickets = data['tickets'],
-        pId = data['pId'],
-        isPopular = data['isPopular'],
-        address = data['address'],
-        rate = data['rate'];
+    : name = data['name'],
+      image = data['image'],
+      history = data['history'],
+      location = data['location'],
+      timeOfDay = List.from(data['timeOfDay']),
+      tickets = data['tickets'],
+      pId = data['pId'],
+      isPopular = data['isPopular'],
+      address = data['address'],
+      rate = data['rate'];
 
   Map<String, dynamic> toFireStore() {
     return {

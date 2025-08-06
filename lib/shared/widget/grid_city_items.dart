@@ -8,7 +8,6 @@ import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
 import 'package:tripso/model/city_model.dart';
 import 'package:tripso/model/place_model.dart';
-import 'package:tripso/model/weather_model.dart';
 import 'package:tripso/shared/adaptive/indicator.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/navigator.dart';
@@ -22,9 +21,9 @@ class GridCitiesItem extends StatelessWidget {
   const GridCitiesItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -35,28 +34,41 @@ class GridCitiesItem extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(10),
       onTap: () async {
-        TripsoCubit.get(context).getUserData();
-        TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
-        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
+        final cubit = TripsoCubit.get(context);
+
+        // استدعاءات متزامنة قبل أي await
+        cubit.getUserData();
+        cubit.getDataPlaces(cityModel.cId);
+        cubit.getPopularPlace(cityModel.cId);
+        cubit.getDataForCity(cityModel.cId);
+        cubit.getAllBestPlan(cityModel.cId);
+
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
           arguments: ScreenArgs(
-              cityModel: cityModel,
-              placeModel: placeModel,
-              bestPLanModel: bestPLanModel),
+            cityModel: cityModel,
+            placeModel: placeModel,
+            bestPLanModel: bestPLanModel,
+          ),
         );
 
         debugPrint('City ID = ${cityModel.cId}');
-        WeatherService service = WeatherService();
-        WeatherModel? weather =
-            await service.getWeather(cityName: cityModel.name);
-        Provider.of<WeatherProvider>(context, listen: false).cityName =
-            cityModel.name;
-        Provider.of<WeatherProvider>(context, listen: false).weatherData =
-            weather;
+
+        // async gap يبدأ هنا 👇
+        final weather = await WeatherService().getWeather(
+          cityName: cityModel.name,
+        );
+
+        // ✅ تحقق أن الـ context لسه موجود
+        if (!context.mounted) return;
+
+        final weatherProvider = Provider.of<WeatherProvider>(
+          context,
+          listen: false,
+        );
+        weatherProvider.cityName = cityModel.name;
+        weatherProvider.weatherData = weather;
       },
       child: Card(
         clipBehavior: Clip.none,
@@ -75,36 +87,25 @@ class GridCitiesItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20).r,
               ),
               child: ClipRRect(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(20),
-                ).r,
+                borderRadius: const BorderRadius.all(Radius.circular(20)).r,
                 child: CachedNetworkImage(
                   imageUrl: cityModel.image,
                   fit: BoxFit.fill,
                   height: 200.h,
                   width: double.infinity,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
-                      Center(
-                    child: AdaptiveIndicator(
-                      os: getOs(),
-                    ),
-                  ),
-                  errorWidget: (context, url, error) => Icon(
-                    FontAwesomeIcons.info,
-                    size: 30.sp,
-                  ),
+                      Center(child: AdaptiveIndicator(os: getOs())),
+                  errorWidget: (context, url, error) =>
+                      Icon(FontAwesomeIcons.info, size: 30.sp),
                 ),
               ),
             ),
-            LayerImage(
-              width: 200.w,
-              height: 210.h,
-            ),
+            LayerImage(width: 200.w, height: 210.h),
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
           ],
         ),
@@ -117,9 +118,9 @@ class GridEGItem extends StatelessWidget {
   const GridEGItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -130,28 +131,37 @@ class GridEGItem extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(10),
       onTap: () async {
-        TripsoCubit.get(context).getUserData();
-        TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
-        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
+        final cubit = TripsoCubit.get(context);
+
+        cubit.getUserData();
+        cubit.getDataPlaces(cityModel.cId);
+        cubit.getPopularPlace(cityModel.cId);
+        cubit.getDataForCity(cityModel.cId);
+        cubit.getAllBestPlan(cityModel.cId);
+
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
           arguments: ScreenArgs(
-              cityModel: cityModel,
-              placeModel: placeModel,
-              bestPLanModel: bestPLanModel),
+            cityModel: cityModel,
+            placeModel: placeModel,
+            bestPLanModel: bestPLanModel,
+          ),
         );
 
         debugPrint('City ID = ${cityModel.cId}');
-        WeatherService service = WeatherService();
-        WeatherModel? weather =
-            await service.getWeather(cityName: cityModel.name);
-        Provider.of<WeatherProvider>(context, listen: false).cityName =
-            cityModel.name;
-        Provider.of<WeatherProvider>(context, listen: false).weatherData =
-            weather;
+
+        final service = WeatherService();
+        final weather = await service.getWeather(cityName: cityModel.name);
+
+        if (!context.mounted) return; // ✅ تأكد من أن الـ context ما زال موجودًا
+
+        final weatherProvider = Provider.of<WeatherProvider>(
+          context,
+          listen: false,
+        );
+        weatherProvider.cityName = cityModel.name;
+        weatherProvider.weatherData = weather;
       },
       child: Card(
         clipBehavior: Clip.none,
@@ -170,9 +180,7 @@ class GridEGItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20).r,
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.all(
-                  const Radius.circular(20).r,
-                ).r,
+                borderRadius: BorderRadius.all(const Radius.circular(20).r).r,
                 child: CachedNetworkImage(
                   imageUrl: cityModel.image,
                   fit: BoxFit.fill,
@@ -180,22 +188,17 @@ class GridEGItem extends StatelessWidget {
                   width: double.infinity,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
                       Center(child: AdaptiveIndicator(os: getOs())),
-                  errorWidget: (context, url, error) => Icon(
-                    FontAwesomeIcons.info,
-                    size: 30.sp,
-                  ),
+                  errorWidget: (context, url, error) =>
+                      Icon(FontAwesomeIcons.info, size: 30.sp),
                 ),
               ),
             ),
-            LayerImage(
-              width: 200.w,
-              height: 210.h,
-            ),
+            LayerImage(width: 200.w, height: 210.h),
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
           ],
         ),
@@ -208,9 +211,9 @@ class GridITItem extends StatelessWidget {
   const GridITItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -221,28 +224,41 @@ class GridITItem extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(10),
       onTap: () async {
-        TripsoCubit.get(context).getUserData();
-        TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
-        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
+        final cubit = TripsoCubit.get(context);
+        final weatherProvider = Provider.of<WeatherProvider>(
+          context,
+          listen: false,
+        );
+
+        // تحميل البيانات المتزامنة
+        cubit.getUserData();
+        cubit.getDataPlaces(cityModel.cId);
+        cubit.getPopularPlace(cityModel.cId);
+        cubit.getDataForCity(cityModel.cId);
+        cubit.getAllBestPlan(cityModel.cId);
+
+        // الانتقال للشاشة التالية مباشرة
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
           arguments: ScreenArgs(
-              cityModel: cityModel,
-              placeModel: placeModel,
-              bestPLanModel: bestPLanModel),
+            cityModel: cityModel,
+            placeModel: placeModel,
+            bestPLanModel: bestPLanModel,
+          ),
         );
 
         debugPrint('City ID = ${cityModel.cId}');
-        WeatherService service = WeatherService();
-        WeatherModel? weather =
-            await service.getWeather(cityName: cityModel.name);
-        Provider.of<WeatherProvider>(context, listen: false).cityName =
-            cityModel.name;
-        Provider.of<WeatherProvider>(context, listen: false).weatherData =
-            weather;
+
+        // تحميل بيانات الطقس بعد الانتقال
+        final weather = await WeatherService().getWeather(
+          cityName: cityModel.name,
+        );
+
+        if (!context.mounted) return; // ✅ منع استخدام context بعد await
+
+        weatherProvider.cityName = cityModel.name;
+        weatherProvider.weatherData = weather;
       },
       child: Card(
         clipBehavior: Clip.none,
@@ -261,9 +277,7 @@ class GridITItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20).r,
               ),
               child: ClipRRect(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(20),
-                ).r,
+                borderRadius: const BorderRadius.all(Radius.circular(20)).r,
                 child: CachedNetworkImage(
                   imageUrl: cityModel.image,
                   fit: BoxFit.fill,
@@ -271,22 +285,17 @@ class GridITItem extends StatelessWidget {
                   width: double.infinity,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
                       Center(child: AdaptiveIndicator(os: getOs())),
-                  errorWidget: (context, url, error) => Icon(
-                    FontAwesomeIcons.info,
-                    size: 30.sp,
-                  ),
+                  errorWidget: (context, url, error) =>
+                      Icon(FontAwesomeIcons.info, size: 30.sp),
                 ),
               ),
             ),
-            LayerImage(
-              width: 200.w,
-              height: 210.h,
-            ),
+            LayerImage(width: 200.w, height: 210.h),
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
           ],
         ),
@@ -299,9 +308,9 @@ class GridUAEItem extends StatelessWidget {
   const GridUAEItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -312,28 +321,40 @@ class GridUAEItem extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(10),
       onTap: () async {
-        TripsoCubit.get(context).getUserData();
-        TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
-        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
+        final cubit = TripsoCubit.get(context);
+        final weatherProvider = Provider.of<WeatherProvider>(
+          context,
+          listen: false,
+        );
+
+        // ✅ تحميل البيانات المرتبطة بالمدينة
+        cubit.getUserData();
+        cubit.getDataPlaces(cityModel.cId);
+        cubit.getPopularPlace(cityModel.cId);
+        cubit.getDataForCity(cityModel.cId);
+        cubit.getAllBestPlan(cityModel.cId);
+
+        // ✅ التنقل فورًا للشاشة التالية
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
           arguments: ScreenArgs(
-              cityModel: cityModel,
-              placeModel: placeModel,
-              bestPLanModel: bestPLanModel),
+            cityModel: cityModel,
+            placeModel: placeModel,
+            bestPLanModel: bestPLanModel,
+          ),
         );
 
+        // ✅ تحميل الطقس في الخلفية
         debugPrint('City ID = ${cityModel.cId}');
-        WeatherService service = WeatherService();
-        WeatherModel? weather =
-            await service.getWeather(cityName: cityModel.name);
-        Provider.of<WeatherProvider>(context, listen: false).cityName =
-            cityModel.name;
-        Provider.of<WeatherProvider>(context, listen: false).weatherData =
-            weather;
+        final weather = await WeatherService().getWeather(
+          cityName: cityModel.name,
+        );
+
+        if (!context.mounted) return;
+
+        weatherProvider.cityName = cityModel.name;
+        weatherProvider.weatherData = weather;
       },
       child: Card(
         clipBehavior: Clip.none,
@@ -352,9 +373,7 @@ class GridUAEItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20).r,
               ),
               child: ClipRRect(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(20),
-                ).r,
+                borderRadius: const BorderRadius.all(Radius.circular(20)).r,
                 child: CachedNetworkImage(
                   imageUrl: cityModel.image,
                   fit: BoxFit.fill,
@@ -362,22 +381,17 @@ class GridUAEItem extends StatelessWidget {
                   width: double.infinity,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
                       Center(child: AdaptiveIndicator(os: getOs())),
-                  errorWidget: (context, url, error) => Icon(
-                    FontAwesomeIcons.info,
-                    size: 30.sp,
-                  ),
+                  errorWidget: (context, url, error) =>
+                      Icon(FontAwesomeIcons.info, size: 30.sp),
                 ),
               ),
             ),
-            LayerImage(
-              width: 200.w,
-              height: 210.h,
-            ),
+            LayerImage(width: 200.w, height: 210.h),
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
           ],
         ),
@@ -390,9 +404,9 @@ class GridFRItem extends StatelessWidget {
   const GridFRItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -403,28 +417,40 @@ class GridFRItem extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(10),
       onTap: () async {
-        TripsoCubit.get(context).getUserData();
-        TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
-        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
+        final cubit = TripsoCubit.get(context);
+        final weatherProvider = Provider.of<WeatherProvider>(
+          context,
+          listen: false,
+        );
+
+        // ✅ تحميل البيانات المرتبطة بالمدينة
+        cubit.getUserData();
+        cubit.getDataPlaces(cityModel.cId);
+        cubit.getPopularPlace(cityModel.cId);
+        cubit.getDataForCity(cityModel.cId);
+        cubit.getAllBestPlan(cityModel.cId);
+
+        // ✅ التنقل فورًا للشاشة التالية
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
           arguments: ScreenArgs(
-              cityModel: cityModel,
-              placeModel: placeModel,
-              bestPLanModel: bestPLanModel),
+            cityModel: cityModel,
+            placeModel: placeModel,
+            bestPLanModel: bestPLanModel,
+          ),
         );
 
+        // ✅ تحميل الطقس في الخلفية
         debugPrint('City ID = ${cityModel.cId}');
-        WeatherService service = WeatherService();
-        WeatherModel? weather =
-            await service.getWeather(cityName: cityModel.name);
-        Provider.of<WeatherProvider>(context, listen: false).cityName =
-            cityModel.name;
-        Provider.of<WeatherProvider>(context, listen: false).weatherData =
-            weather;
+        final weather = await WeatherService().getWeather(
+          cityName: cityModel.name,
+        );
+
+        if (!context.mounted) return;
+
+        weatherProvider.cityName = cityModel.name;
+        weatherProvider.weatherData = weather;
       },
       child: Card(
         clipBehavior: Clip.none,
@@ -443,9 +469,7 @@ class GridFRItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: ClipRRect(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(20),
-                ).r,
+                borderRadius: const BorderRadius.all(Radius.circular(20)).r,
                 child: CachedNetworkImage(
                   imageUrl: cityModel.image,
                   fit: BoxFit.fill,
@@ -453,22 +477,17 @@ class GridFRItem extends StatelessWidget {
                   width: double.infinity,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
                       Center(child: AdaptiveIndicator(os: getOs())),
-                  errorWidget: (context, url, error) => Icon(
-                    FontAwesomeIcons.info,
-                    size: 30.sp,
-                  ),
+                  errorWidget: (context, url, error) =>
+                      Icon(FontAwesomeIcons.info, size: 30.sp),
                 ),
               ),
             ),
-            LayerImage(
-              width: 200.w,
-              height: 210.h,
-            ),
+            LayerImage(width: 200.w, height: 210.h),
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
           ],
         ),
@@ -481,9 +500,9 @@ class GridPopularItem extends StatelessWidget {
   const GridPopularItem(
     this.placeModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.cityModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -494,27 +513,40 @@ class GridPopularItem extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(10),
       onTap: () async {
-        TripsoCubit.get(context).getUserData();
-        TripsoCubit.get(context).getDataPlaces(cityModel.cId);
-        TripsoCubit.get(context).getPopularPlace(cityModel.cId);
-        TripsoCubit.get(context).getDataForCity(cityModel.cId);
-        TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
+        final cubit = TripsoCubit.get(context);
+        final weatherProvider = Provider.of<WeatherProvider>(
+          context,
+          listen: false,
+        );
+
+        // ✅ تحميل البيانات المرتبطة بالمدينة
+        cubit.getUserData();
+        cubit.getDataPlaces(cityModel.cId);
+        cubit.getPopularPlace(cityModel.cId);
+        cubit.getDataForCity(cityModel.cId);
+        cubit.getAllBestPlan(cityModel.cId);
+
+        // ✅ التنقل فورًا للشاشة التالية
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
           arguments: ScreenArgs(
-              cityModel: cityModel,
-              placeModel: placeModel,
-              bestPLanModel: bestPLanModel),
+            cityModel: cityModel,
+            placeModel: placeModel,
+            bestPLanModel: bestPLanModel,
+          ),
         );
+
+        // ✅ تحميل الطقس في الخلفية
         debugPrint('City ID = ${cityModel.cId}');
-        WeatherService service = WeatherService();
-        WeatherModel? weather =
-            await service.getWeather(cityName: cityModel.name);
-        Provider.of<WeatherProvider>(context, listen: false).cityName =
-            cityModel.name;
-        Provider.of<WeatherProvider>(context, listen: false).weatherData =
-            weather;
+        final weather = await WeatherService().getWeather(
+          cityName: cityModel.name,
+        );
+
+        if (!context.mounted) return;
+
+        weatherProvider.cityName = cityModel.name;
+        weatherProvider.weatherData = weather;
       },
       child: Card(
         clipBehavior: Clip.none,
@@ -533,9 +565,7 @@ class GridPopularItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: ClipRRect(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(20),
-                ).r,
+                borderRadius: const BorderRadius.all(Radius.circular(20)).r,
                 child: CachedNetworkImage(
                   imageUrl: cityModel.image,
                   fit: BoxFit.fill,
@@ -543,22 +573,17 @@ class GridPopularItem extends StatelessWidget {
                   width: double.infinity,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
                       Center(child: AdaptiveIndicator(os: getOs())),
-                  errorWidget: (context, url, error) => Icon(
-                    FontAwesomeIcons.info,
-                    size: 30.sp,
-                  ),
+                  errorWidget: (context, url, error) =>
+                      Icon(FontAwesomeIcons.info, size: 30.sp),
                 ),
               ),
             ),
-            LayerImage(
-              width: 200.w,
-              height: 210.h,
-            ),
+            LayerImage(width: 200.w, height: 210.h),
             Text(
               cityModel.name,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
           ],
         ),

@@ -23,7 +23,7 @@ import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class SearchScreen extends StatefulWidget {
-  const SearchScreen({Key? key}) : super(key: key);
+  const SearchScreen({super.key});
   static const String routeName = 'SearchScreen';
 
   @override
@@ -46,12 +46,10 @@ class _SearchScreenState extends State<SearchScreen> {
     if (enteredKeyword.trim().isEmpty) {
       results = TripsoCubit.get(context).city;
     } else {
-      results = TripsoCubit.get(context)
-          .city
+      results = TripsoCubit.get(context).city
           .where(
-            (city) => city.name.toLowerCase().contains(
-                  enteredKeyword.toLowerCase(),
-                ),
+            (city) =>
+                city.name.toLowerCase().contains(enteredKeyword.toLowerCase()),
           )
           .toList();
     }
@@ -63,122 +61,124 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<TripsoCubit, TripsoStates>(
-        builder: (context, state) {
-          var cubit = TripsoCubit.get(context);
-          return Scaffold(
-            appBar: AppBar(
-              backgroundColor: ThemeApp.secondaryColor,
-              centerTitle: false,
-              elevation: 2,
-              leading: IconButton(
-                icon: const ImageIcon(
-                  color: Colors.black,
-                  AssetImage(
-                    AssetPath.searchImage,
-                  ),
-                ),
-                onPressed: () {},
+      builder: (context, state) {
+        var cubit = TripsoCubit.get(context);
+        return Scaffold(
+          appBar: AppBar(
+            backgroundColor: ThemeApp.secondaryColor,
+            centerTitle: false,
+            elevation: 2,
+            leading: IconButton(
+              icon: const ImageIcon(
+                color: Colors.black,
+                AssetImage(AssetPath.searchImage),
               ),
-              actions: [
-                IconButton(
-                  icon: Icon(
-                    Icons.close,
-                    color: Colors.black,
-                    size: 25.sp,
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ],
-              title: TextFormField(
-                maxLines: 1,
-                autofocus: true,
-                keyboardType: TextInputType.text,
-                enableInteractiveSelection: true,
-                style: GoogleFonts.libreBaskerville(),
-                enableSuggestions: true,
-                scrollPhysics: const BouncingScrollPhysics(),
-                decoration: InputDecoration(
-                  focusedBorder: InputBorder.none,
-                  disabledBorder: InputBorder.none,
-                  border: InputBorder.none,
-                  hintText: 'Search',
-                  hintStyle: GoogleFonts.roboto(
-                    fontSize: 20.sp,
-                  ),
-                ),
-                validator: (value) {
-                  if (value!.trim().isEmpty) {
-                    return 'The search can\'t be empty';
-                  }
-                  return null;
-                },
-                onFieldSubmitted: (value) {},
-                onChanged: (value) {
-                  runFilter(value.trim());
-                },
-              ),
+              onPressed: () {},
             ),
-            body: foundCity.isEmpty
-                ? Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Icon(
-                        Icons.search,
-                        color: ThemeApp.primaryColor,
-                        size: 120.sp,
-                      ),
-                      Text(
-                        "Not found !".toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
-                          fontSize: 25.sp,
-                        ),
-                      ),
-                    ],
-                  )
-                : ListView.separated(
-                    itemBuilder: (context, index) => singleUserBuilder(
-                        foundCity[index],
-                        context,
-                        cubit.placeModel!,
-                        cubit.bestPLanModel!),
-                    separatorBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0).r,
-                      child: MyDivider(
-                        color: Colors.grey.shade300,
-                      ),
+            actions: [
+              IconButton(
+                icon: Icon(Icons.close, color: Colors.black, size: 25.sp),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+            title: TextFormField(
+              maxLines: 1,
+              autofocus: true,
+              keyboardType: TextInputType.text,
+              enableInteractiveSelection: true,
+              style: GoogleFonts.libreBaskerville(),
+              enableSuggestions: true,
+              scrollPhysics: const BouncingScrollPhysics(),
+              decoration: InputDecoration(
+                focusedBorder: InputBorder.none,
+                disabledBorder: InputBorder.none,
+                border: InputBorder.none,
+                hintText: 'Search',
+                hintStyle: GoogleFonts.roboto(fontSize: 20.sp),
+              ),
+              validator: (value) {
+                if (value!.trim().isEmpty) {
+                  return 'The search can\'t be empty';
+                }
+                return null;
+              },
+              onFieldSubmitted: (value) {},
+              onChanged: (value) {
+                runFilter(value.trim());
+              },
+            ),
+          ),
+          body: foundCity.isEmpty
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Icon(
+                      Icons.search,
+                      color: ThemeApp.primaryColor,
+                      size: 120.sp,
                     ),
-                    itemCount: foundCity.length,
+                    Text(
+                      "Not found !".toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.roboto(fontSize: 25.sp),
+                    ),
+                  ],
+                )
+              : ListView.separated(
+                  itemBuilder: (context, index) => singleUserBuilder(
+                    foundCity[index],
+                    context,
+                    cubit.placeModel!,
+                    cubit.bestPLanModel!,
                   ),
-          );
-        },
-        listener: (context, state) {});
+                  separatorBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0).r,
+                    child: MyDivider(color: Colors.grey.shade300),
+                  ),
+                  itemCount: foundCity.length,
+                ),
+        );
+      },
+      listener: (context, state) {},
+    );
   }
 
-  Widget singleUserBuilder(CityModel city, BuildContext context,
-      PlaceModel placeModel, BestPLanModel bestPLanModel) {
+  Widget singleUserBuilder(
+    CityModel city,
+    BuildContext context,
+    PlaceModel placeModel,
+    BestPLanModel bestPLanModel,
+  ) {
     return InkWell(
       onTap: () async {
-        TripsoCubit.get(context).getUserData();
-        TripsoCubit.get(context).getDataPlaces(city.cId);
-        TripsoCubit.get(context).getPopularPlace(city.cId);
-        TripsoCubit.get(context).getDataForCity(city.cId);
-        TripsoCubit.get(context).getAllBestPlan(city.cId);
+        final cubit = TripsoCubit.get(context);
+        cubit.getUserData();
+        cubit.getDataPlaces(city.cId);
+        cubit.getPopularPlace(city.cId);
+        cubit.getDataForCity(city.cId);
+        cubit.getAllBestPlan(city.cId);
+
         navigateTo(
           context,
           routeName: HomeLayout.routeName,
           arguments: ScreenArgs(
-              cityModel: city,
-              placeModel: placeModel,
-              bestPLanModel: bestPLanModel),
+            cityModel: city,
+            placeModel: placeModel,
+            bestPLanModel: bestPLanModel,
+          ),
         );
 
         debugPrint('City ID = ${city.cId}');
+
         WeatherService service = WeatherService();
         WeatherModel? weather = await service.getWeather(cityName: city.name);
+
+        // ✅ تحقق من أن الـ context لا يزال موجودًا
+        if (!context.mounted) return;
+
         Provider.of<WeatherProvider>(context, listen: false).cityName =
             city.name;
         Provider.of<WeatherProvider>(context, listen: false).weatherData =
@@ -210,10 +210,8 @@ class _SearchScreenState extends State<SearchScreen> {
                         city.history,
                         maxLines: 5,
                         overflow: TextOverflow.ellipsis,
-                        style:
-                            Theme.of(context).textTheme.titleMedium?.copyWith(
-                                  color: Colors.black54,
-                                ),
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(color: Colors.black54),
                       ),
                     ),
                   ],
@@ -236,16 +234,9 @@ class _SearchScreenState extends State<SearchScreen> {
                 height: 225.h,
                 width: double.infinity,
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    Center(
-                  child: AdaptiveIndicator(
-                    os: getOs(),
-                  ),
-                ),
-                errorWidget: (context, url, error) => Center(
-                  child: AdaptiveIndicator(
-                    os: getOs(),
-                  ),
-                ),
+                    Center(child: AdaptiveIndicator(os: getOs())),
+                errorWidget: (context, url, error) =>
+                    Center(child: AdaptiveIndicator(os: getOs())),
               ),
             ),
           ],

@@ -29,7 +29,7 @@ import 'package:tripso/shared/provider/weather_provider.dart';
 class TripsoCubit extends Cubit<TripsoStates> {
   TripsoCubit() : super(TripsoInitialState());
 
-  static TripsoCubit get(context) => BlocProvider.of(context);
+  static TripsoCubit get(BuildContext context) => BlocProvider.of(context);
 
   int currentIndex = 0;
   List<Widget> screens = [
@@ -39,12 +39,7 @@ class TripsoCubit extends Cubit<TripsoStates> {
     const MyProfileScreen(),
   ];
 
-  List<String> titles = [
-    'Explore',
-    'Wishlist',
-    'My Plans',
-    'Profile',
-  ];
+  List<String> titles = ['Explore', 'Wishlist', 'My Plans', 'Profile'];
 
   void changeIndex(int index) {
     if (index == 0) {
@@ -76,34 +71,37 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   void getUserData() {
     emit(GetUserDataLoadingState());
-    FirebaseFirestore.instance.collection('users').doc(uId).get().then((value) {
-      userModel = UserModel.fromFireStore(value.data()!);
-      emit(GetUserDataSuccessState());
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetUserDataErrorState(error.toString()));
-    });
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(uId)
+        .get()
+        .then((value) {
+          userModel = UserModel.fromFireStore(value.data()!);
+          emit(GetUserDataSuccessState());
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetUserDataErrorState(error.toString()));
+        });
   }
 
-  void changeUserPassword({
-    required String password,
-  }) {
+  void changeUserPassword({required String password}) {
     emit(ChangeUserPasswordLoadingState());
-    FirebaseAuth.instance.currentUser?.updatePassword(password).then((value) {
-      showToast(
-        state: ToastStates.success,
-        text: 'Change Successful',
-      );
-      emit(ChangeUserPasswordSuccessState());
-      getUserData();
-    }).catchError((error) {
-      showToast(
-        state: ToastStates.error,
-        text: 'process failed\nYou Should Re-login Before Change Password',
-      );
-      emit(ChangeUserPasswordErrorState(error.toString()));
-      debugPrint(error.toString());
-    });
+    FirebaseAuth.instance.currentUser
+        ?.updatePassword(password)
+        .then((value) {
+          showToast(state: ToastStates.success, text: 'Change Successful');
+          emit(ChangeUserPasswordSuccessState());
+          getUserData();
+        })
+        .catchError((error) {
+          showToast(
+            state: ToastStates.error,
+            text: 'process failed\nYou Should Re-login Before Change Password',
+          );
+          emit(ChangeUserPasswordErrorState(error.toString()));
+          debugPrint(error.toString());
+        });
   }
 
   IconData suffix = Icons.visibility_outlined;
@@ -111,8 +109,9 @@ class TripsoCubit extends Cubit<TripsoStates> {
 
   void showPassword() {
     isPassword = !isPassword;
-    suffix =
-        isPassword ? Icons.visibility_outlined : Icons.visibility_off_outlined;
+    suffix = isPassword
+        ? Icons.visibility_outlined
+        : Icons.visibility_off_outlined;
 
     emit(ShowPasswordState());
   }
@@ -126,21 +125,22 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(cId)
         .get()
         .then((value) {
-      cityModel = CityModel.fromFireStore(value.data()!);
-      emit(GetCityDataSuccessState());
-      if (kDebugMode) {
-        print(value.data());
-      }
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetCityDataErrorState(error.toString()));
-    });
+          cityModel = CityModel.fromFireStore(value.data()!);
+          emit(GetCityDataSuccessState());
+          if (kDebugMode) {
+            print(value.data());
+          }
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetCityDataErrorState(error.toString()));
+        });
   }
 
   List<CityModel> city = [];
   List<String> cId = [];
 
-  getCityData() async {
+  Future<void> getCityData() async {
     FirebaseFirestore.instance.collection('cities').get().then((value) {
       city = [];
       for (var element in value.docs) {
@@ -154,86 +154,86 @@ class TripsoCubit extends Cubit<TripsoStates> {
   List<CityModel> cityEG = [];
   List<String> cIdEG = [];
 
-  getEGData() async {
+  Future<void> getEGData() async {
     FirebaseFirestore.instance
         .collection('cities')
         .where("country", isEqualTo: 'Egypt')
         .get()
         .then((value) {
-      cityEG = [];
-      for (var element in value.docs) {
-        cityEG.add(CityModel.fromFireStore(element.data()));
-        cIdEG.add(element.id);
-      }
-    });
+          cityEG = [];
+          for (var element in value.docs) {
+            cityEG.add(CityModel.fromFireStore(element.data()));
+            cIdEG.add(element.id);
+          }
+        });
   }
 
   List<CityModel> cityIT = [];
   List<String> cIdIT = [];
 
-  getITData() async {
+  Future<void> getITData() async {
     FirebaseFirestore.instance
         .collection('cities')
         .where("country", isEqualTo: "Italy")
         .get()
         .then((value) {
-      cityIT = [];
-      for (var element in value.docs) {
-        cityIT.add(CityModel.fromFireStore(element.data()));
-        cIdIT.add(element.id);
-      }
-    });
+          cityIT = [];
+          for (var element in value.docs) {
+            cityIT.add(CityModel.fromFireStore(element.data()));
+            cIdIT.add(element.id);
+          }
+        });
   }
 
   List<CityModel> cityFR = [];
   List<String> cIdFR = [];
 
-  getFRData() async {
+  Future<void> getFRData() async {
     FirebaseFirestore.instance
         .collection('cities')
         .where("country", isEqualTo: "France")
         .get()
         .then((value) {
-      cityFR = [];
-      for (var element in value.docs) {
-        cityFR.add(CityModel.fromFireStore(element.data()));
-        cIdFR.add(element.id);
-      }
-    });
+          cityFR = [];
+          for (var element in value.docs) {
+            cityFR.add(CityModel.fromFireStore(element.data()));
+            cIdFR.add(element.id);
+          }
+        });
   }
 
   List<CityModel> cityPopular = [];
   List<String> cIdPopular = [];
 
-  getPopularData() async {
+  Future<void> getPopularData() async {
     FirebaseFirestore.instance
         .collection('cities')
         .where("isPopular", isEqualTo: true)
         .get()
         .then((value) {
-      cityPopular = [];
-      for (var element in value.docs) {
-        cityPopular.add(CityModel.fromFireStore(element.data()));
-        cIdPopular.add(element.id);
-      }
-    });
+          cityPopular = [];
+          for (var element in value.docs) {
+            cityPopular.add(CityModel.fromFireStore(element.data()));
+            cIdPopular.add(element.id);
+          }
+        });
   }
 
   List<CityModel> cityUAE = [];
   List<String> cIdUAE = [];
 
-  getUAEData() async {
+  Future<void> getUAEData() async {
     FirebaseFirestore.instance
         .collection('cities')
         .where("country", isEqualTo: "UAE")
         .get()
         .then((value) {
-      cityUAE = [];
-      for (var element in value.docs) {
-        cityUAE.add(CityModel.fromFireStore(element.data()));
-        cIdUAE.add(element.id);
-      }
-    });
+          cityUAE = [];
+          for (var element in value.docs) {
+            cityUAE.add(CityModel.fromFireStore(element.data()));
+            cIdUAE.add(element.id);
+          }
+        });
   }
 
   PlaceModel? placeModel;
@@ -247,12 +247,13 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc('Emirates National Auto Museum')
         .get()
         .then((value) {
-      placeModel = PlaceModel.fromFireStore(value.data()!);
-      emit(GetPlaceDataSuccessState());
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetPlaceDataErrorState(error.toString()));
-    });
+          placeModel = PlaceModel.fromFireStore(value.data()!);
+          emit(GetPlaceDataSuccessState());
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetPlaceDataErrorState(error.toString()));
+        });
   }
 
   void getDataPlace(String? cId, String? pId) {
@@ -264,39 +265,40 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(pId)
         .get()
         .then((value) {
-      placeModel = PlaceModel.fromFireStore(value.data()!);
-      emit(GetPlaceDataSuccessState());
-      if (kDebugMode) {
-        print(value.data());
-      }
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetPlaceDataErrorState(error.toString()));
-    });
+          placeModel = PlaceModel.fromFireStore(value.data()!);
+          emit(GetPlaceDataSuccessState());
+          if (kDebugMode) {
+            print(value.data());
+          }
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetPlaceDataErrorState(error.toString()));
+        });
   }
 
   List<PlaceModel> place = [];
   List<String> pId = [];
 
-  getDataPlaces(String? cId) {
+  void getDataPlaces(String? cId) {
     FirebaseFirestore.instance
         .collection('cities')
         .doc(cId ?? 'Aswan')
         .collection('places')
         .snapshots()
         .listen((value) async {
-      place = [];
-      for (var element in value.docs) {
-        place.add(PlaceModel.fromFireStore(element.data()));
-        pId.add(element.id);
-      }
-    });
+          place = [];
+          for (var element in value.docs) {
+            place.add(PlaceModel.fromFireStore(element.data()));
+            pId.add(element.id);
+          }
+        });
   }
 
   List<PlaceModel> popularPlace = [];
   List<String> popularPlaceId = [];
 
-  getPopularPlace(String? cId) async {
+  Future<void> getPopularPlace(String? cId) async {
     FirebaseFirestore.instance
         .collection('cities')
         .doc(cId ?? 'Aswan')
@@ -304,33 +306,38 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .where('isPopular', isEqualTo: true)
         .get()
         .then((value) {
-      popularPlace = [];
-      for (var element in value.docs) {
-        popularPlace.add(PlaceModel.fromFireStore(element.data()));
-        popularPlaceId.add(element.id);
-      }
-    });
+          popularPlace = [];
+          for (var element in value.docs) {
+            popularPlace.add(PlaceModel.fromFireStore(element.data()));
+            popularPlaceId.add(element.id);
+          }
+        });
   }
 
-  void deleteAccount(context) async {
-    await FirebaseAuth.instance.currentUser!.delete().then((value) async {
+  void deleteAccount(BuildContext context) async {
+    try {
+      await FirebaseAuth.instance.currentUser!.delete();
       await FirebaseFirestore.instance.collection('users').doc(uId).delete();
-      CacheHelper.removeData(key: 'uId');
+      await CacheHelper.removeData(key: 'uId');
+      if (!context.mounted) return;
       navigateAndFinish(context, routeName: OnBoard.routeName);
-    });
+    } catch (e) {
+      debugPrint('Delete account error: $e');
+    }
   }
 
   List<CityModel> searchList = [];
   Map<String, dynamic>? search;
 
-  searchCity(String searchText) {
+  void searchCity(String searchText) {
     FirebaseFirestore.instance
         .collection('cities')
         .where('name', isEqualTo: searchText)
         .get()
         .then((value) {
-      search = value.docs[0].data();
-    }).catchError((error) {});
+          search = value.docs[0].data();
+        })
+        .catchError((error) {});
   }
 
   var picker = ImagePicker();
@@ -349,8 +356,9 @@ class TripsoCubit extends Cubit<TripsoStates> {
   }
 
   Future<File?> cropImage({required File imageFile}) async {
-    CroppedFile? croppedImage =
-        await ImageCropper().cropImage(sourcePath: imageFile.path);
+    CroppedFile? croppedImage = await ImageCropper().cropImage(
+      sourcePath: imageFile.path,
+    );
     if (croppedImage == null) return null;
     return File(croppedImage.path);
   }
@@ -366,24 +374,29 @@ class TripsoCubit extends Cubit<TripsoStates> {
     firebase_storage.FirebaseStorage.instance
         .ref()
         .child(
-            'userProfileImage/${Uri.file(profileImage!.path).pathSegments.last}')
+          'userProfileImage/${Uri.file(profileImage!.path).pathSegments.last}',
+        )
         .putFile(profileImage!)
         .then((value) {
-      value.ref.getDownloadURL().then((value) {
-        updateUserData(
-          email: email,
-          phone: phone,
-          firstName: firstName,
-          lastName: lastName,
-          image: value,
-          address: address ?? '',
-        );
-      }).catchError((error) {
-        emit(UploadProfileImageErrorState());
-      });
-    }).catchError((error) {
-      emit(UploadProfileImageErrorState());
-    });
+          value.ref
+              .getDownloadURL()
+              .then((value) {
+                updateUserData(
+                  email: email,
+                  phone: phone,
+                  firstName: firstName,
+                  lastName: lastName,
+                  image: value,
+                  address: address ?? '',
+                );
+              })
+              .catchError((error) {
+                emit(UploadProfileImageErrorState());
+              });
+        })
+        .catchError((error) {
+          emit(UploadProfileImageErrorState());
+        });
   }
 
   void updateUserData({
@@ -409,11 +422,12 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(userModel!.uId)
         .update(model.toFireStore())
         .then((value) {
-      emit(UpdateUserSuccessState());
-      getUserData();
-    }).catchError((error) {
-      emit(UpdateUserErrorState());
-    });
+          emit(UpdateUserSuccessState());
+          getUserData();
+        })
+        .catchError((error) {
+          emit(UpdateUserErrorState());
+        });
   }
 
   void addWishList({
@@ -450,19 +464,17 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(wishListId)
         .set(model.toFireStore())
         .then((value) {
-      emit(AddToFavoriteSuccessState());
-    }).catchError((error) {
-      emit(AddToFavoriteErrorState(error.toString()));
-    });
+          emit(AddToFavoriteSuccessState());
+        })
+        .catchError((error) {
+          emit(AddToFavoriteErrorState(error.toString()));
+        });
   }
 
   List<WishListModel> wishList = [];
   WishListModel? wishListModel;
 
-  void getWishListData(
-    String? cId,
-    String? userID,
-  ) async {
+  void getWishListData(String? cId, String? userID) async {
     FirebaseFirestore.instance
         .collection("wishList")
         .doc(uId)
@@ -470,16 +482,16 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .where("wishListCityID", isEqualTo: cId)
         .snapshots()
         .listen((event) {
-      wishList = [];
-      for (var element in event.docs) {
-        if (element.data()['uId'] == userID) {
-          wishList.add(WishListModel.fromFireStore(element.data()));
-        }
-      }
-    });
+          wishList = [];
+          for (var element in event.docs) {
+            if (element.data()['uId'] == userID) {
+              wishList.add(WishListModel.fromFireStore(element.data()));
+            }
+          }
+        });
   }
 
-  deleteWishList(wishListId) {
+  void deleteWishList(String wishListId) {
     FirebaseFirestore.instance
         .collection("wishList")
         .doc(uId)
@@ -487,8 +499,8 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(wishListId)
         .delete()
         .then((value) {
-      emit(UnFavoriteSuccessState());
-    });
+          emit(UnFavoriteSuccessState());
+        });
   }
 
   void addMyPlan({
@@ -530,20 +542,17 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(planId)
         .set(planModel.toFireStore())
         .then((value) {
-      emit(AddPlanSuccessState());
-    }).catchError((error) {
-      emit(AddPlanErrorState(error));
-    });
+          emit(AddPlanSuccessState());
+        })
+        .catchError((error) {
+          emit(AddPlanErrorState(error));
+        });
   }
 
   List<PlanModel> allPlan = [];
   PlanModel? allPlanModel;
 
-  void getMyAllPlan(
-    String? cId,
-    String? userID,
-    int indexOfMyPlan,
-  ) async {
+  void getMyAllPlan(String? cId, String? userID, int indexOfMyPlan) async {
     FirebaseFirestore.instance
         .collection("customizePlan")
         .doc(uId)
@@ -551,16 +560,16 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .where('planCityID', isEqualTo: cId)
         .snapshots()
         .listen((event) {
-      allPlan = [];
-      for (var element in event.docs) {
-        if (element.data()['uId'] == userID) {
-          allPlan.add(PlanModel.fromFireStore(element.data()));
-        }
-      }
-    });
+          allPlan = [];
+          for (var element in event.docs) {
+            if (element.data()['uId'] == userID) {
+              allPlan.add(PlanModel.fromFireStore(element.data()));
+            }
+          }
+        });
   }
 
-  deleteMyPlan(myPlanId, int indexOfMyPlan) {
+  void deleteMyPlan(String myPlanId, int indexOfMyPlan) {
     FirebaseFirestore.instance
         .collection("customizePlan")
         .doc(uId)
@@ -568,26 +577,26 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(myPlanId)
         .delete()
         .then((value) {
-      emit(DeleteMyPlanSuccessState());
-    });
+          emit(DeleteMyPlanSuccessState());
+        });
   }
 
   List<BestPLanModel> bestPlan = [];
   List<String> bestPlanId = [];
 
-  getAllBestPlan(String? cId) {
+  void getAllBestPlan(String? cId) {
     FirebaseFirestore.instance
         .collection('cities')
         .doc(cId ?? 'Aswan')
         .collection('bestplan')
         .snapshots()
         .listen((value) async {
-      bestPlan = [];
-      for (var element in value.docs) {
-        bestPlan.add(BestPLanModel.fromFireStore(element.data()));
-        bestPlanId.add(element.id);
-      }
-    });
+          bestPlan = [];
+          for (var element in value.docs) {
+            bestPlan.add(BestPLanModel.fromFireStore(element.data()));
+            bestPlanId.add(element.id);
+          }
+        });
   }
 
   BestPLanModel? bestPLanModel;
@@ -601,15 +610,16 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc('Abu Dhabi Fast Visit')
         .get()
         .then((value) {
-      bestPLanModel = BestPLanModel.fromFireStore(value.data()!);
-      emit(GetBestPlanSuccessState());
-      if (kDebugMode) {
-        //  print(value.data());
-      }
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetBestPlanErrorState(error.toString()));
-    });
+          bestPLanModel = BestPLanModel.fromFireStore(value.data()!);
+          emit(GetBestPlanSuccessState());
+          if (kDebugMode) {
+            //  print(value.data());
+          }
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetBestPlanErrorState(error.toString()));
+        });
   }
 
   Best? best;
@@ -623,35 +633,36 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(pId)
         .get()
         .then((value) {
-      best = Best.fromFireStore(value.data()!);
-      emit(GetPlaceDataSuccessState());
-      if (kDebugMode) {
-        print(value.data());
-      }
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetPlaceDataErrorState(error.toString()));
-    });
+          best = Best.fromFireStore(value.data()!);
+          emit(GetPlaceDataSuccessState());
+          if (kDebugMode) {
+            print(value.data());
+          }
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetPlaceDataErrorState(error.toString()));
+        });
   }
 
-// void getMyPlan(
-//   String? cId,
-//   int indexOfMyPlan,
-// ) async {
-//   FirebaseFirestore.instance
-//       .collection("cities")
-//       .doc(cId)
-//       .collection('bestplan')
-//       .doc('Abu Dhabi Best Plan')
-//       .collection('Day$indexOfMyPlan')
-//       .where('planCityID', isEqualTo: cId)
-//       .snapshots()
-//       .listen((event) {
-//     allPlan = [];
-//     for (var element in event.docs) {
-//       allPlan.add(PlanModel.fromFireStore(element.data()));
-//       print(element.data());
-//     }
-//   });
-// }
+  // void getMyPlan(
+  //   String? cId,
+  //   int indexOfMyPlan,
+  // ) async {
+  //   FirebaseFirestore.instance
+  //       .collection("cities")
+  //       .doc(cId)
+  //       .collection('bestplan')
+  //       .doc('Abu Dhabi Best Plan')
+  //       .collection('Day$indexOfMyPlan')
+  //       .where('planCityID', isEqualTo: cId)
+  //       .snapshots()
+  //       .listen((event) {
+  //     allPlan = [];
+  //     for (var element in event.docs) {
+  //       allPlan.add(PlanModel.fromFireStore(element.data()));
+  //       print(element.data());
+  //     }
+  //   });
+  // }
 }

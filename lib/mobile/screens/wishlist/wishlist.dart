@@ -17,7 +17,7 @@ import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 
 class WishListScreen extends StatelessWidget {
-  const WishListScreen({Key? key}) : super(key: key);
+  const WishListScreen({super.key});
   static const String routeName = 'WishList';
 
   @override
@@ -52,9 +52,7 @@ class WishListScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 30.h,
-                    ),
+                    SizedBox(height: 30.h),
                     Text(
                       'Your ${tripsoCubit!.name} WishList is Empty',
                       style: TextStyle(
@@ -74,10 +72,7 @@ class WishListScreen extends StatelessWidget {
             return wishList(context, cubit.wishList[index], tripsoCubit!);
           },
           separatorBuilder: (context, index) {
-            return Space(
-              height: 10.h,
-              width: 0,
-            );
+            return Space(height: 10.h, width: 0);
           },
           itemCount: cubit.wishList.length,
         );
@@ -85,7 +80,11 @@ class WishListScreen extends StatelessWidget {
     );
   }
 
-  Widget wishList(context, WishListModel wishListModel, CityModel cityModel) {
+  Widget wishList(
+    BuildContext context,
+    WishListModel wishListModel,
+    CityModel cityModel,
+  ) {
     return Column(
       children: [
         Card(
@@ -97,10 +96,9 @@ class WishListScreen extends StatelessWidget {
           elevation: 8,
           child: Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10).r,
-                border: Border.all(
-                  color: ThemeApp.blackPrimary,
-                )),
+              borderRadius: BorderRadius.circular(10).r,
+              border: Border.all(color: ThemeApp.blackPrimary),
+            ),
             width: double.infinity,
             height: 150.h,
             child: Row(
@@ -122,15 +120,10 @@ class WishListScreen extends StatelessWidget {
                       height: 400.h,
                       width: double.infinity,
                       progressIndicatorBuilder:
-                          (context, url, downloadProgress) => Center(
-                        child: AdaptiveIndicator(
-                          os: getOs(),
-                        ),
-                      ),
-                      errorWidget: (context, url, error) => Icon(
-                        FontAwesomeIcons.info,
-                        size: 24.sp,
-                      ),
+                          (context, url, downloadProgress) =>
+                              Center(child: AdaptiveIndicator(os: getOs())),
+                      errorWidget: (context, url, error) =>
+                          Icon(FontAwesomeIcons.info, size: 24.sp),
                     ),
                   ),
                 ),
@@ -161,11 +154,13 @@ class WishListScreen extends StatelessWidget {
                                 splashRadius: 20.r,
                                 padding: const EdgeInsets.only(right: 30).r,
                                 onPressed: () {
-                                  TripsoCubit.get(context)
-                                      .deleteWishList(wishListModel.wishListId);
+                                  TripsoCubit.get(
+                                    context,
+                                  ).deleteWishList(wishListModel.wishListId);
                                   TripsoCubit.get(context).getWishListData(
-                                      cityModel.cId,
-                                      TripsoCubit.get(context).userModel!.uId);
+                                    cityModel.cId,
+                                    TripsoCubit.get(context).userModel!.uId,
+                                  );
                                 },
                                 icon: Icon(
                                   wishListModel.isWishList
@@ -184,8 +179,9 @@ class WishListScreen extends StatelessWidget {
                           ),
                         if (wishListModel.wishListRate == '4.5')
                           Row(
-                            children:
-                                icon4halfStar(color: ThemeApp.primaryColor),
+                            children: icon4halfStar(
+                              color: ThemeApp.primaryColor,
+                            ),
                           ),
                         if (wishListModel.wishListRate == '4')
                           Row(
@@ -193,8 +189,9 @@ class WishListScreen extends StatelessWidget {
                           ),
                         if (wishListModel.wishListRate == '3.5')
                           Row(
-                            children:
-                                icon3halfStar(color: ThemeApp.primaryColor),
+                            children: icon3halfStar(
+                              color: ThemeApp.primaryColor,
+                            ),
                           ),
                         if (wishListModel.wishListRate == '3')
                           Row(
@@ -202,8 +199,9 @@ class WishListScreen extends StatelessWidget {
                           ),
                         if (wishListModel.wishListRate == '2.5')
                           Row(
-                            children:
-                                icon2halfStar(color: ThemeApp.primaryColor),
+                            children: icon2halfStar(
+                              color: ThemeApp.primaryColor,
+                            ),
                           ),
                         if (wishListModel.wishListRate == '2')
                           Row(
@@ -211,17 +209,13 @@ class WishListScreen extends StatelessWidget {
                           ),
                         if (wishListModel.wishListRate == '1.5')
                           Row(
-                            children:
-                                icon1halfStar(color: ThemeApp.primaryColor),
+                            children: icon1halfStar(
+                              color: ThemeApp.primaryColor,
+                            ),
                           ),
                         if (wishListModel.wishListRate == '1')
-                          Row(
-                            children: iconStar(color: ThemeApp.primaryColor),
-                          ),
-                        Space(
-                          width: 0,
-                          height: 5.h,
-                        ),
+                          Row(children: iconStar(color: ThemeApp.primaryColor)),
+                        Space(width: 0, height: 5.h),
                         Text(
                           wishListModel.wishListHistory,
                           maxLines: 3,

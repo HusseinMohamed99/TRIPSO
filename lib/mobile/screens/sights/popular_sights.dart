@@ -14,12 +14,11 @@ import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/extensions/color_extension.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class PopularSightsScreen extends StatelessWidget {
-  const PopularSightsScreen({
-    Key? key,
-  }) : super(key: key);
+  const PopularSightsScreen({super.key});
 
   static const String routeName = 'PopularSightsScreen';
 
@@ -37,8 +36,9 @@ class PopularSightsScreen extends StatelessWidget {
               child: Column(
                 children: [
                   PopularSightsWidget(
-                      cityModel: screenArgs.cityModel,
-                      placeModel: screenArgs.placeModel)
+                    cityModel: screenArgs.cityModel,
+                    placeModel: screenArgs.placeModel,
+                  ),
                 ],
               ),
             ),
@@ -51,10 +51,10 @@ class PopularSightsScreen extends StatelessWidget {
 
 class PopularSightsWidget extends StatelessWidget {
   const PopularSightsWidget({
-    Key? key,
+    super.key,
     required this.cityModel,
     required this.placeModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -72,10 +72,7 @@ class PopularSightsWidget extends StatelessWidget {
 }
 
 class ListViewWidget extends StatelessWidget {
-  const ListViewWidget({
-    Key? key,
-    required this.cubit,
-  }) : super(key: key);
+  const ListViewWidget({super.key, required this.cubit});
 
   final TripsoCubit cubit;
 
@@ -86,9 +83,10 @@ class ListViewWidget extends StatelessWidget {
         ListView.separated(
           itemBuilder: (context, index) {
             return GridSights(
-                placeModel: cubit.popularPlace[index],
-                cubit.cityModel!,
-                cubit.bestPLanModel!);
+              placeModel: cubit.popularPlace[index],
+              cubit.cityModel!,
+              cubit.bestPLanModel!,
+            );
           },
           separatorBuilder: (context, index) {
             return Space(height: 10.h, width: 0.w);
@@ -96,30 +94,29 @@ class ListViewWidget extends StatelessWidget {
           itemCount: cubit.popularPlace.length,
         ),
         Positioned(
-            top: 10.sp,
-            left: 10.sp,
-            child: Card(
-              elevation: 2,
-              color: Colors.black.withOpacity(0.5),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              shape: const StadiumBorder(
-                side: BorderSide(
-                  color: ThemeApp.secondaryColor,
-                ),
+          top: 10.sp,
+          left: 10.sp,
+          child: Card(
+            elevation: 2,
+            color: Colors.black.withOpacityPercent(50),
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            shape: const StadiumBorder(
+              side: BorderSide(color: ThemeApp.secondaryColor),
+            ),
+            child: IconButton(
+              onPressed: () {
+                if (Navigator.canPop(context)) {
+                  pop(context);
+                }
+              },
+              icon: Icon(
+                Icons.arrow_back,
+                color: ThemeApp.secondaryColor,
+                size: 24.sp,
               ),
-              child: IconButton(
-                onPressed: () {
-                  if (Navigator.canPop(context)) {
-                    pop(context);
-                  }
-                },
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: ThemeApp.secondaryColor,
-                  size: 24.sp,
-                ),
-              ),
-            )),
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -129,9 +126,9 @@ class GridSights extends StatelessWidget {
   const GridSights(
     this.cityModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.placeModel,
-  }) : super(key: key);
+  });
 
   final PlaceModel placeModel;
   final CityModel cityModel;
@@ -146,9 +143,10 @@ class GridSights extends StatelessWidget {
           context,
           routeName: SightDetailsScreen.routeName,
           arguments: ScreenArgs(
-              placeModel: placeModel,
-              cityModel: cityModel,
-              bestPLanModel: bestPLanModel),
+            placeModel: placeModel,
+            cityModel: cityModel,
+            bestPLanModel: bestPLanModel,
+          ),
         );
       },
       child: Stack(
@@ -174,18 +172,13 @@ class GridSights extends StatelessWidget {
                         height: 180.h,
                         width: double.infinity,
                         progressIndicatorBuilder:
-                            (context, url, downloadProgress) => Center(
-                          child: AdaptiveIndicator(os: getOs()),
-                        ),
-                        errorWidget: (context, url, error) => Center(
-                          child: AdaptiveIndicator(os: getOs()),
-                        ),
+                            (context, url, downloadProgress) =>
+                                Center(child: AdaptiveIndicator(os: getOs())),
+                        errorWidget: (context, url, error) =>
+                            Center(child: AdaptiveIndicator(os: getOs())),
                       ),
                     ),
-                    LayerImage(
-                      height: 180.h,
-                      width: double.infinity,
-                    ),
+                    LayerImage(height: 180.h, width: double.infinity),
                   ],
                 ),
                 Padding(
@@ -207,9 +200,7 @@ class GridSights extends StatelessWidget {
                             placeModel.history.trim(),
                             maxLines: 5,
                             overflow: TextOverflow.fade,
-                            style: Theme.of(context)
-                                .textTheme
-                                .displaySmall
+                            style: Theme.of(context).textTheme.displaySmall
                                 ?.copyWith(color: Colors.black54),
                           ),
                         ],

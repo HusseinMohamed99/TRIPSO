@@ -19,7 +19,7 @@ import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class MyPlansScreen extends StatefulWidget {
-  const MyPlansScreen({Key? key}) : super(key: key);
+  const MyPlansScreen({super.key});
   static const String routeName = 'MyPlans';
 
   @override
@@ -56,10 +56,9 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
           ),
           body: Container(
             decoration: const BoxDecoration(
-              gradient: LinearGradient(colors: [
-                Color(0xFF5B818B),
-                Color(0xFF97B0B6),
-              ]),
+              gradient: LinearGradient(
+                colors: [Color(0xFF5B818B), Color(0xFF97B0B6)],
+              ),
             ),
             child: Column(
               children: [
@@ -74,210 +73,223 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
                     height: 60.h,
                     width: double.infinity,
                     child: ListView.builder(
-                        padding: const EdgeInsets.symmetric(horizontal: 16).r,
-                        physics: const BouncingScrollPhysics(),
-                        itemCount: items.length,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: () {
-                              setState(() {
-                                current = index;
-                                TripsoCubit.get(context)
-                                    .getDataPlaces(tripsoCubit!.cId);
-                                TripsoCubit.get(context)
-                                    .getDataForCity(tripsoCubit.cId);
-                                TripsoCubit.get(context).getMyAllPlan(
-                                    tripsoCubit.cId, uId, current + 1);
-                                if (kDebugMode) {
-                                  print(current + 1);
-                                }
-                              });
-                            },
-                            child: AnimatedContainer(
-                              duration: const Duration(microseconds: 300),
-                              margin: const EdgeInsets.all(4).r,
-                              width: 37.w,
-                              height: 20.h,
-                              decoration: BoxDecoration(
+                      padding: const EdgeInsets.symmetric(horizontal: 16).r,
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: items.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            setState(() {
+                              current = index;
+                              TripsoCubit.get(
+                                context,
+                              ).getDataPlaces(tripsoCubit!.cId);
+                              TripsoCubit.get(
+                                context,
+                              ).getDataForCity(tripsoCubit.cId);
+                              TripsoCubit.get(
+                                context,
+                              ).getMyAllPlan(tripsoCubit.cId, uId, current + 1);
+                              if (kDebugMode) {
+                                print(current + 1);
+                              }
+                            });
+                          },
+                          child: AnimatedContainer(
+                            duration: const Duration(microseconds: 300),
+                            margin: const EdgeInsets.all(4).r,
+                            width: 37.w,
+                            height: 20.h,
+                            decoration: BoxDecoration(
+                              color: current == index
+                                  ? ThemeApp.primaryColor
+                                  : ThemeApp.secondaryColor,
+                              borderRadius: current == index
+                                  ? BorderRadius.circular(22).r
+                                  : BorderRadius.circular(22).r,
+                              border: current == index
+                                  ? Border.all(
+                                      color: ThemeApp.primaryColor,
+                                      width: 4.w,
+                                    )
+                                  : null,
+                            ),
+                            child: Center(
+                              child: Text(
+                                items[index],
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w500,
                                   color: current == index
-                                      ? ThemeApp.primaryColor
-                                      : ThemeApp.secondaryColor,
-                                  borderRadius: current == index
-                                      ? BorderRadius.circular(22).r
-                                      : BorderRadius.circular(22).r,
-                                  border: current == index
-                                      ? Border.all(
-                                          color: ThemeApp.primaryColor,
-                                          width: 4.w,
-                                        )
-                                      : null),
-                              child: Center(
-                                child: Text(
-                                  items[index],
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w500,
-                                      color: current == index
-                                          ? Colors.white
-                                          : Colors.grey,
-                                      fontSize: 12.sp),
+                                      ? Colors.white
+                                      : Colors.grey,
+                                  fontSize: 12.sp,
                                 ),
                               ),
                             ),
-                          );
-                        }),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
                 ConditionalBuilder(
-                    condition: cubit.allPlan.isNotEmpty,
-                    builder: (context) {
-                      return Expanded(
-                        child: SingleChildScrollView(
-                          child: Column(
-                            children: [
-                              ListView.separated(
-                                padding: const EdgeInsets.all(10).r,
-                                physics: const NeverScrollableScrollPhysics(),
-                                shrinkWrap: true,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return DaysOfItems(
-                                    planModel: cubit.allPlan[index],
-                                    cityModel: tripsoCubit!,
-                                    current: current + 1,
-                                  );
-                                },
-                                separatorBuilder: (context, index) {
-                                  return Row(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Container(
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                          Container(
-                                            margin: const EdgeInsets.symmetric(
-                                                    horizontal: 50, vertical: 2)
-                                                .r,
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                          Container(
-                                            margin: const EdgeInsets.symmetric(
-                                                    horizontal: 50, vertical: 2)
-                                                .r,
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                          Icon(
-                                            Icons.free_breakfast_outlined,
-                                            color: Colors.white,
-                                            size: 25.sp,
-                                          ),
-                                          Container(
-                                            margin: const EdgeInsets.symmetric(
-                                              horizontal: 50,
-                                              vertical: 2,
-                                            ).r,
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                          Container(
-                                            margin: const EdgeInsets.symmetric(
-                                              horizontal: 50,
-                                              vertical: 2,
-                                            ).r,
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                          Container(
-                                            margin: const EdgeInsets.symmetric(
-                                              horizontal: 50,
-                                              vertical: 2,
-                                            ).r,
-                                            width: 5.w,
-                                            height: 5.h,
-                                            decoration: BoxDecoration(
-                                              color: ThemeApp.secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(5).r,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Text(
-                                        '30 mins Break',
-                                        style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15.sp,
-                                        ),
-                                      ),
-                                    ],
-                                  );
-                                },
-                                itemCount: cubit.allPlan.length,
-                              )
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                    fallback: (context) {
-                      return Center(
+                  condition: cubit.allPlan.isNotEmpty,
+                  builder: (context) {
+                    return Expanded(
+                      child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            SizedBox(
-                              height: 100.h,
-                            ),
-                            Container(
-                              width: double.infinity,
-                              height: 220.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(18).r,
-                                image: const DecorationImage(
-                                  image: AssetImage(AssetPath.emptyImage),
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'Your ${tripsoCubit!.name} Plan is Empty',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17.sp,
-                                fontWeight: FontWeight.w500,
-                              ),
+                            ListView.separated(
+                              padding: const EdgeInsets.all(10).r,
+                              physics: const NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              itemBuilder: (BuildContext context, int index) {
+                                return DaysOfItems(
+                                  planModel: cubit.allPlan[index],
+                                  cityModel: tripsoCubit!,
+                                  current: current + 1,
+                                );
+                              },
+                              separatorBuilder: (context, index) {
+                                return Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Container(
+                                          width: 5.w,
+                                          height: 5.h,
+                                          decoration: BoxDecoration(
+                                            color: ThemeApp.secondaryColor,
+                                            borderRadius: BorderRadius.circular(
+                                              5,
+                                            ).r,
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: const EdgeInsets.symmetric(
+                                            horizontal: 50,
+                                            vertical: 2,
+                                          ).r,
+                                          width: 5.w,
+                                          height: 5.h,
+                                          decoration: BoxDecoration(
+                                            color: ThemeApp.secondaryColor,
+                                            borderRadius: BorderRadius.circular(
+                                              5,
+                                            ).r,
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: const EdgeInsets.symmetric(
+                                            horizontal: 50,
+                                            vertical: 2,
+                                          ).r,
+                                          width: 5.w,
+                                          height: 5.h,
+                                          decoration: BoxDecoration(
+                                            color: ThemeApp.secondaryColor,
+                                            borderRadius: BorderRadius.circular(
+                                              5,
+                                            ).r,
+                                          ),
+                                        ),
+                                        Icon(
+                                          Icons.free_breakfast_outlined,
+                                          color: Colors.white,
+                                          size: 25.sp,
+                                        ),
+                                        Container(
+                                          margin: const EdgeInsets.symmetric(
+                                            horizontal: 50,
+                                            vertical: 2,
+                                          ).r,
+                                          width: 5.w,
+                                          height: 5.h,
+                                          decoration: BoxDecoration(
+                                            color: ThemeApp.secondaryColor,
+                                            borderRadius: BorderRadius.circular(
+                                              5,
+                                            ).r,
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: const EdgeInsets.symmetric(
+                                            horizontal: 50,
+                                            vertical: 2,
+                                          ).r,
+                                          width: 5.w,
+                                          height: 5.h,
+                                          decoration: BoxDecoration(
+                                            color: ThemeApp.secondaryColor,
+                                            borderRadius: BorderRadius.circular(
+                                              5,
+                                            ).r,
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: const EdgeInsets.symmetric(
+                                            horizontal: 50,
+                                            vertical: 2,
+                                          ).r,
+                                          width: 5.w,
+                                          height: 5.h,
+                                          decoration: BoxDecoration(
+                                            color: ThemeApp.secondaryColor,
+                                            borderRadius: BorderRadius.circular(
+                                              5,
+                                            ).r,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      '30 mins Break',
+                                      style: GoogleFonts.roboto(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 15.sp,
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                              itemCount: cubit.allPlan.length,
                             ),
                           ],
                         ),
-                      );
-                    })
+                      ),
+                    );
+                  },
+                  fallback: (context) {
+                    return Center(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 100.h),
+                          Container(
+                            width: double.infinity,
+                            height: 220.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18).r,
+                              image: const DecorationImage(
+                                image: AssetImage(AssetPath.emptyImage),
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Your ${tripsoCubit!.name} Plan is Empty',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 17.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
           ),
@@ -288,12 +300,12 @@ class _MyPlansScreenState extends State<MyPlansScreen> {
 }
 
 class DaysOfItems extends StatelessWidget {
-  const DaysOfItems(
-      {Key? key,
-      required this.planModel,
-      required this.cityModel,
-      required this.current})
-      : super(key: key);
+  const DaysOfItems({
+    super.key,
+    required this.planModel,
+    required this.cityModel,
+    required this.current,
+  });
   final int current;
   final PlanModel planModel;
   final CityModel cityModel;
@@ -306,8 +318,9 @@ class DaysOfItems extends StatelessWidget {
         return Card(
           elevation: 5,
           clipBehavior: Clip.antiAlias,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15).r),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15).r,
+          ),
           child: Column(
             children: [
               Stack(
@@ -317,14 +330,14 @@ class DaysOfItems extends StatelessWidget {
                     height: 120.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10)).r,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            planModel.planImage,
-                          ),
-                        )),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(10),
+                      ).r,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(planModel.planImage),
+                      ),
+                    ),
                   ),
                   Align(
                     alignment: Alignment.topRight,
@@ -336,15 +349,13 @@ class DaysOfItems extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15).r,
                         color: Colors.white,
-                        border: Border.all(
-                          width: 1.w,
-                          color: Colors.black,
-                        ),
+                        border: Border.all(width: 1.w, color: Colors.black),
                       ),
                       child: IconButton(
                         onPressed: () {
-                          TripsoCubit.get(context)
-                              .deleteMyPlan(planModel.planId, current);
+                          TripsoCubit.get(
+                            context,
+                          ).deleteMyPlan(planModel.planId, current);
                         },
                         icon: const Icon(Icons.delete_forever),
                       ),
@@ -381,10 +392,7 @@ class DaysOfItems extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Space(
-                      width: 0,
-                      height: 7.h,
-                    ),
+                    Space(width: 0, height: 7.h),
                     Text(
                       planModel.planHistory,
                       maxLines: 2,
@@ -396,10 +404,7 @@ class DaysOfItems extends StatelessWidget {
                         color: Colors.black54,
                       ),
                     ),
-                    Space(
-                      width: 0,
-                      height: 5.h,
-                    ),
+                    Space(width: 0, height: 5.h),
                     const MyDivider(
                       width: double.infinity,
                       height: 0.5,
@@ -425,14 +430,11 @@ class DaysOfItems extends StatelessWidget {
                               color: ThemeApp.blueColor,
                               fontSize: 22.sp,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
-                    const MyDivider(
-                      height: 0.5,
-                      color: Colors.black,
-                    ),
+                    const MyDivider(height: 0.5, color: Colors.black),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -441,9 +443,7 @@ class DaysOfItems extends StatelessWidget {
                             IconButton(
                               onPressed: () {
                                 MapUtils.urlLauncher(
-                                  Uri.parse(
-                                    planModel.planLocation..trim(),
-                                  ),
+                                  Uri.parse(planModel.planLocation..trim()),
                                 );
                               },
                               icon: Container(
@@ -498,16 +498,16 @@ class DaysOfItems extends StatelessWidget {
                                                   children: [
                                                     Text(
                                                       'Saturday:',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                     Text(
                                                       planModel
                                                           .planTimeOfDay[0],
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                   ],
                                                 ),
@@ -520,16 +520,16 @@ class DaysOfItems extends StatelessWidget {
                                                   children: [
                                                     Text(
                                                       'Sunday:',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                     Text(
                                                       planModel
                                                           .planTimeOfDay[1],
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                   ],
                                                 ),
@@ -542,16 +542,16 @@ class DaysOfItems extends StatelessWidget {
                                                   children: [
                                                     Text(
                                                       'Monday:',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                     Text(
                                                       planModel
                                                           .planTimeOfDay[2],
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                   ],
                                                 ),
@@ -564,16 +564,16 @@ class DaysOfItems extends StatelessWidget {
                                                   children: [
                                                     Text(
                                                       'Tuesday:',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                     Text(
                                                       planModel
                                                           .planTimeOfDay[3],
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                   ],
                                                 ),
@@ -586,16 +586,16 @@ class DaysOfItems extends StatelessWidget {
                                                   children: [
                                                     Text(
                                                       'Wednesday:',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                     Text(
                                                       planModel
                                                           .planTimeOfDay[4],
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                   ],
                                                 ),
@@ -608,16 +608,16 @@ class DaysOfItems extends StatelessWidget {
                                                   children: [
                                                     Text(
                                                       'Thursday:',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                     Text(
                                                       planModel
                                                           .planTimeOfDay[5],
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                   ],
                                                 ),
@@ -630,16 +630,16 @@ class DaysOfItems extends StatelessWidget {
                                                   children: [
                                                     Text(
                                                       'Friday:',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                     Text(
                                                       planModel
                                                           .planTimeOfDay[6],
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleMedium,
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleMedium,
                                                     ),
                                                   ],
                                                 ),
@@ -649,7 +649,7 @@ class DaysOfItems extends StatelessWidget {
                                                   MyDialog.hideDialog(context);
                                                 },
                                                 child: const Text('Close'),
-                                              )
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -666,9 +666,10 @@ class DaysOfItems extends StatelessWidget {
                                     'Closed',
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.roboto(
-                                        color: Colors.red,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600),
+                                      color: Colors.red,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
                                 ],
                               )
@@ -687,9 +688,10 @@ class DaysOfItems extends StatelessWidget {
                                     'Open',
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.roboto(
-                                        color: Colors.green,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600),
+                                      color: Colors.green,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
                                 ],
                               ),

@@ -1,35 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/extensions/color_extension.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class DefaultTextFormField extends StatelessWidget {
-  const DefaultTextFormField(
-      {required this.context,
-      required this.controller,
-      required this.keyboardType,
-      required this.validate,
-      this.hint,
-      this.label,
-      this.onTap,
-      this.onChanged,
-      this.onFieldSubmitted,
-      this.obscuringCharacter,
-      this.style,
-      this.color,
-      this.borderSideColor,
-      this.prefixColor,
-      this.styleColor,
-      this.focusNode,
-      this.isClickable,
-      this.isPassword,
-      this.decoration,
-      this.suffix,
-      this.suffixPressed,
-      this.prefix,
-      this.maxLength,
-      Key? key})
-      : super(key: key);
+  const DefaultTextFormField({
+    required this.context,
+    required this.controller,
+    required this.keyboardType,
+    required this.validate,
+    this.hint,
+    this.label,
+    this.onTap,
+    this.onChanged,
+    this.onFieldSubmitted,
+    this.obscuringCharacter,
+    this.style,
+    this.color,
+    this.borderSideColor,
+    this.prefixColor,
+    this.styleColor,
+    this.focusNode,
+    this.isClickable,
+    this.isPassword,
+    this.decoration,
+    this.suffix,
+    this.suffixPressed,
+    this.prefix,
+    this.maxLength,
+    super.key,
+  });
   final BuildContext context;
   final FocusNode? focusNode;
   final Color? color;
@@ -96,54 +97,33 @@ class DefaultTextFormField extends StatelessWidget {
                 onPressed: () {
                   suffixPressed!();
                 },
-                icon: Icon(
-                  suffix,
-                  color: ThemeApp.secondaryColor,
-                  size: 24.sp,
-                ),
+                icon: Icon(suffix, color: ThemeApp.secondaryColor, size: 24.sp),
               )
             : null,
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            const Radius.circular(12.0).r,
-          ),
-          borderSide: const BorderSide(
-            color: Colors.black,
-          ),
+          borderRadius: BorderRadius.all(const Radius.circular(12.0).r),
+          borderSide: const BorderSide(color: Colors.black),
         ),
         hintText: hint,
         hintStyle: TextStyle(
-          color: ThemeApp.secondaryColor.withOpacity(0.8),
+          color: ThemeApp.secondaryColor.withOpacityPercent(80),
           height: 1.h,
         ),
         labelText: label,
-        labelStyle: TextStyle(
-          color: ThemeApp.primaryColor,
-          height: 1.h,
-        ),
+        labelStyle: TextStyle(color: ThemeApp.primaryColor, height: 1.h),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            const Radius.circular(12.0).r,
-          ),
+          borderRadius: BorderRadius.all(const Radius.circular(12.0).r),
           borderSide: BorderSide(
             color: borderSideColor ?? ThemeApp.secondaryColor,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            const Radius.circular(12.0).r,
-          ),
-          borderSide: const BorderSide(
-            color: Colors.red,
-          ),
+          borderRadius: BorderRadius.all(const Radius.circular(12.0).r),
+          borderSide: const BorderSide(color: Colors.red),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            const Radius.circular(12.0).r,
-          ),
-          borderSide: const BorderSide(
-            color: Colors.red,
-          ),
+          borderRadius: BorderRadius.all(const Radius.circular(12.0).r),
+          borderSide: const BorderSide(color: Colors.red),
         ),
         errorStyle: TextStyle(color: Colors.red, fontSize: 12.sp),
       ),

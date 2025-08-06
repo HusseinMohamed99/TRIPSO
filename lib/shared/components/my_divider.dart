@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyDivider extends StatelessWidget {
-  const MyDivider({this.color, this.height, this.width, Key? key})
-      : super(key: key);
+  const MyDivider({this.color, this.height, this.width, super.key});
   final double? width;
   final double? height;
   final Color? color;

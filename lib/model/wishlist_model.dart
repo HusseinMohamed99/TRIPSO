@@ -30,23 +30,21 @@ class WishListModel {
   });
 
   WishListModel.fromFireStore(Map data)
-      : this(
-          uId: data['uId'],
-          wishListCityID: data['wishListCityID'],
-          wishListName: data['wishListName'],
-          wishListImage: data['wishListImage'],
-          wishListHistory: data['wishListHistory'],
-          wishListLocation: data['wishListLocation'],
-          wishListTimeOfDay: List.from(
-            data['wishListTimeOfDay'],
-          ),
-          wishListTickets: data['wishListTickets'],
-          wishListId: data['wishListId'],
-          wishListIsPopular: data['wishListIsPopular'],
-          wishListAddress: data['wishListAddress'],
-          wishListRate: data['wishListRate'],
-          isWishList: data['isWishList'],
-        );
+    : this(
+        uId: data['uId'],
+        wishListCityID: data['wishListCityID'],
+        wishListName: data['wishListName'],
+        wishListImage: data['wishListImage'],
+        wishListHistory: data['wishListHistory'],
+        wishListLocation: data['wishListLocation'],
+        wishListTimeOfDay: List.from(data['wishListTimeOfDay']),
+        wishListTickets: data['wishListTickets'],
+        wishListId: data['wishListId'],
+        wishListIsPopular: data['wishListIsPopular'],
+        wishListAddress: data['wishListAddress'],
+        wishListRate: data['wishListRate'],
+        isWishList: data['isWishList'],
+      );
 
   Map<String, dynamic> toFireStore() {
     return {

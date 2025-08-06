@@ -23,6 +23,7 @@ import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/extensions/color_extension.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
@@ -30,7 +31,7 @@ import 'package:tripso/shared/widget/grid_item.dart';
 import 'package:tripso/shared/widget/plans_item.dart';
 
 class ExploreScreen extends StatelessWidget {
-  const ExploreScreen({Key? key}) : super(key: key);
+  const ExploreScreen({super.key});
   static const String routeName = 'ExploreScreen';
 
   @override
@@ -69,10 +70,10 @@ class ExploreScreen extends StatelessWidget {
 
 class CityDetails extends StatelessWidget {
   const CityDetails({
-    Key? key,
+    super.key,
     required this.screenArgs,
     required this.weatherData,
-  }) : super(key: key);
+  });
 
   final ScreenArgs screenArgs;
   final WeatherModel weatherData;
@@ -100,13 +101,9 @@ class CityDetails extends StatelessWidget {
                 height: 400.h,
                 width: double.infinity,
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    Center(
-                  child: AdaptiveIndicator(os: getOs()),
-                ),
-                errorWidget: (context, url, error) => Icon(
-                  FontAwesomeIcons.info,
-                  size: 24.sp,
-                ),
+                    Center(child: AdaptiveIndicator(os: getOs())),
+                errorWidget: (context, url, error) =>
+                    Icon(FontAwesomeIcons.info, size: 24.sp),
               ),
             ),
             LayerImage(
@@ -124,12 +121,10 @@ class CityDetails extends StatelessWidget {
           left: 10.sp,
           child: Card(
             elevation: 2,
-            color: Colors.black.withOpacity(0.5),
+            color: Colors.black.withOpacityPercent(50),
             clipBehavior: Clip.antiAliasWithSaveLayer,
             shape: const StadiumBorder(
-              side: BorderSide(
-                color: ThemeApp.secondaryColor,
-              ),
+              side: BorderSide(color: ThemeApp.secondaryColor),
             ),
             child: IconButton(
               onPressed: () {
@@ -147,32 +142,26 @@ class CityDetails extends StatelessWidget {
           ),
         ),
         Positioned(
-            top: 10.sp,
-            right: 10.sp,
-            child: Card(
-              elevation: 2,
-              color: Colors.black.withOpacity(0.5),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              shape: const StadiumBorder(
-                side: BorderSide(
-                  color: ThemeApp.secondaryColor,
-                ),
+          top: 10.sp,
+          right: 10.sp,
+          child: Card(
+            elevation: 2,
+            color: Colors.black.withOpacityPercent(50),
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            shape: const StadiumBorder(
+              side: BorderSide(color: ThemeApp.secondaryColor),
+            ),
+            child: IconButton(
+              onPressed: () {
+                navigateTo(context, routeName: SearchScreen.routeName);
+              },
+              icon: const ImageIcon(
+                AssetImage(AssetPath.searchImage),
+                color: ThemeApp.secondaryColor,
               ),
-              child: IconButton(
-                onPressed: () {
-                  navigateTo(
-                    context,
-                    routeName: SearchScreen.routeName,
-                  );
-                },
-                icon: const ImageIcon(
-                  AssetImage(
-                    AssetPath.searchImage,
-                  ),
-                  color: ThemeApp.secondaryColor,
-                ),
-              ),
-            )),
+            ),
+          ),
+        ),
         Column(
           children: [
             CircleAvatar(
@@ -186,8 +175,8 @@ class CityDetails extends StatelessWidget {
             Text(
               screenArgs.cityModel.name,
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
             Text(
               weatherData.weatherStateName,
@@ -201,14 +190,14 @@ class CityDetails extends StatelessWidget {
             Text(
               '${weatherData.temp.toInt().toString()}°C',
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+                color: ThemeApp.secondaryColor,
+              ),
             ),
             Text(
               '${weatherData.minTemp.toInt().toString()}°C / ${weatherData.maxTemp.toInt().toString()}°C',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: ThemeApp.secondaryColor,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(color: ThemeApp.secondaryColor),
             ),
           ],
         ),
@@ -219,12 +208,12 @@ class CityDetails extends StatelessWidget {
 
 class RowWidget extends StatelessWidget {
   const RowWidget({
-    Key? key,
+    super.key,
     required this.screenArgs,
     required this.cityModel,
     required this.placeModel,
     required this.bestPLanModel,
-  }) : super(key: key);
+  });
 
   final ScreenArgs screenArgs;
 
@@ -236,9 +225,7 @@ class RowWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Colors.grey.shade200,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20).r,
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20).r),
       elevation: 2,
       margin: const EdgeInsets.all(10).r,
       clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -247,9 +234,7 @@ class RowWidget extends StatelessWidget {
         height: 115.h,
         width: double.infinity,
         padding: const EdgeInsets.all(10).r,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20).r,
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20).r),
         child: Row(
           children: [
             Expanded(
@@ -278,8 +263,9 @@ class RowWidget extends StatelessWidget {
                       height: 60.h,
                       decoration: BoxDecoration(
                         color: const Color.fromRGBO(216, 119, 119, 0.15),
-                        borderRadius:
-                            BorderRadius.all(const Radius.circular(19).r),
+                        borderRadius: BorderRadius.all(
+                          const Radius.circular(19).r,
+                        ),
                       ),
                       child: CircleAvatar(
                         radius: 22.r,
@@ -317,8 +303,9 @@ class RowWidget extends StatelessWidget {
                       height: 60.h,
                       decoration: BoxDecoration(
                         color: const Color.fromRGBO(105, 155, 247, 0.15),
-                        borderRadius:
-                            BorderRadius.all(const Radius.circular(19).r),
+                        borderRadius: BorderRadius.all(
+                          const Radius.circular(19).r,
+                        ),
                       ),
                       child: CircleAvatar(
                         radius: 22.r,
@@ -365,8 +352,9 @@ class RowWidget extends StatelessWidget {
                       height: 60.h,
                       decoration: BoxDecoration(
                         color: const Color.fromRGBO(133, 84, 150, 0.15),
-                        borderRadius:
-                            BorderRadius.all(const Radius.circular(19).r),
+                        borderRadius: BorderRadius.all(
+                          const Radius.circular(19).r,
+                        ),
                       ),
                       child: CircleAvatar(
                         radius: 22.r,
@@ -379,10 +367,7 @@ class RowWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text(
-                    'Sights',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
+                  Text('Sights', style: Theme.of(context).textTheme.titleLarge),
                 ],
               ),
             ),
@@ -395,11 +380,11 @@ class RowWidget extends StatelessWidget {
 
 class PopularSightsWidget extends StatelessWidget {
   const PopularSightsWidget({
-    Key? key,
+    super.key,
     required this.cityModel,
     required this.placeModel,
     required this.bestPLanModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -449,15 +434,13 @@ class PopularSightsWidget extends StatelessWidget {
                         children: [
                           const Text(
                             'See More',
-                            style: TextStyle(
-                              color: ThemeApp.primaryColor,
-                            ),
+                            style: TextStyle(color: ThemeApp.primaryColor),
                           ),
                           Icon(
                             Icons.arrow_forward_ios,
                             size: 16.0.sp,
                             color: ThemeApp.primaryColor,
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -467,9 +450,13 @@ class PopularSightsWidget extends StatelessWidget {
             ),
             CarouselSlider(
               items: List.generate(
-                  cubit.popularPlace.length,
-                  (index) => GridItemSights(cityModel, bestPLanModel,
-                      placeModel: cubit.popularPlace[index])),
+                cubit.popularPlace.length,
+                (index) => GridItemSights(
+                  cityModel,
+                  bestPLanModel,
+                  placeModel: cubit.popularPlace[index],
+                ),
+              ),
               options: CarouselOptions(
                 height: 227.h,
                 enlargeCenterPage: true,
@@ -487,9 +474,7 @@ class PopularSightsWidget extends StatelessWidget {
 }
 
 class TopPlansWidget extends StatelessWidget {
-  const TopPlansWidget({
-    Key? key,
-  }) : super(key: key);
+  const TopPlansWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -519,15 +504,13 @@ class TopPlansWidget extends StatelessWidget {
                       children: [
                         const Text(
                           'See More',
-                          style: TextStyle(
-                            color: ThemeApp.primaryColor,
-                          ),
+                          style: TextStyle(color: ThemeApp.primaryColor),
                         ),
                         Icon(
                           Icons.arrow_forward_ios,
                           size: 16.0.sp,
                           color: ThemeApp.primaryColor,
-                        )
+                        ),
                       ],
                     ),
                   ),

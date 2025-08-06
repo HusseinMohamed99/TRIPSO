@@ -13,32 +13,30 @@ Widget defaultMaterialButton({
   Color? color,
   Function? onTap,
 }) => Container(
-      width: width?.w ?? 320.w,
-      height: height?.h ?? 40.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-          radius?.r ?? 10.r,
-        ),
-        color: color,
-      ),
-      child: MaterialButton(
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        height: 22.h,
-        minWidth: 59.w,
-        onPressed: function,
-        child: FittedBox(
-          child: Text(
-            textAlign: TextAlign.center,
-            isUpperCase ? text.toUpperCase() : text,
-            style: GoogleFonts.roboto(
-              fontSize: 19.sp,
-              color: ThemeApp.secondaryColor,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
+  width: width?.w ?? 320.w,
+  height: height?.h ?? 40.h,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(radius?.r ?? 10.r),
+    color: color,
+  ),
+  child: MaterialButton(
+    clipBehavior: Clip.antiAliasWithSaveLayer,
+    height: 22.h,
+    minWidth: 59.w,
+    onPressed: function,
+    child: FittedBox(
+      child: Text(
+        textAlign: TextAlign.center,
+        isUpperCase ? text.toUpperCase() : text,
+        style: GoogleFonts.roboto(
+          fontSize: 19.sp,
+          color: ThemeApp.secondaryColor,
+          fontWeight: FontWeight.w500,
         ),
       ),
-    );
+    ),
+  ),
+);
 
 Widget defaultButton({
   required Function() function,
@@ -51,21 +49,16 @@ Widget defaultButton({
   Function? onTap,
 }) => Container(
   width: width?.w ?? 310.w,
-      height: height?.h ?? 43.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-          radius?.r ?? 10.r,
-        ),
-        color: color,
-      ),
-      child: MaterialButton(
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        height: 22.h,
-        minWidth: 59.w,
-        onPressed: function,
-        child: FittedBox(
-          child: widget,
-        ),
-      ),
-    );
-
+  height: height?.h ?? 43.h,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(radius?.r ?? 10.r),
+    color: color,
+  ),
+  child: MaterialButton(
+    clipBehavior: Clip.antiAliasWithSaveLayer,
+    height: 22.h,
+    minWidth: 59.w,
+    onPressed: function,
+    child: FittedBox(child: widget),
+  ),
+);

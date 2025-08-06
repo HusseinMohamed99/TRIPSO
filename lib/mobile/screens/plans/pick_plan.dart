@@ -21,13 +21,12 @@ import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/extensions/color_extension.dart';
 import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
 
 class PickPlans extends StatelessWidget {
-  const PickPlans({
-    Key? key,
-  }) : super(key: key);
+  const PickPlans({super.key});
   static const String routeName = 'PickPlans';
 
   @override
@@ -52,12 +51,10 @@ class PickPlans extends StatelessWidget {
                   left: 10.sp,
                   child: Card(
                     elevation: 2,
-                    color: Colors.black.withOpacity(0.5),
+                    color: Colors.black.withOpacityPercent(50),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     shape: const StadiumBorder(
-                      side: BorderSide(
-                        color: ThemeApp.secondaryColor,
-                      ),
+                      side: BorderSide(color: ThemeApp.secondaryColor),
                     ),
                     child: IconButton(
                       onPressed: () {
@@ -84,9 +81,7 @@ class PickPlans extends StatelessWidget {
 }
 
 class PickPlansWidget extends StatelessWidget {
-  const PickPlansWidget({
-    Key? key,
-  }) : super(key: key);
+  const PickPlansWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -106,10 +101,7 @@ class PickPlansWidget extends StatelessWidget {
 }
 
 class ListViewWidget extends StatelessWidget {
-  const ListViewWidget({
-    Key? key,
-    required this.cubit,
-  }) : super(key: key);
+  const ListViewWidget({super.key, required this.cubit});
 
   final TripsoCubit cubit;
 
@@ -122,9 +114,10 @@ class ListViewWidget extends StatelessWidget {
           shrinkWrap: true,
           itemBuilder: (context, index) {
             return GridPlans(
-                placeModel: cubit.place[index],
-                cubit.cityModel!,
-                cubit.bestPLanModel!);
+              placeModel: cubit.place[index],
+              cubit.cityModel!,
+              cubit.bestPLanModel!,
+            );
           },
           separatorBuilder: (context, index) {
             return Space(height: 10.h, width: 0);
@@ -140,9 +133,9 @@ class GridPlans extends StatelessWidget {
   const GridPlans(
     this.cityModel,
     this.bestPLanModel, {
-    Key? key,
+    super.key,
     required this.placeModel,
-  }) : super(key: key);
+  });
 
   final PlaceModel placeModel;
   final CityModel cityModel;
@@ -160,9 +153,10 @@ class GridPlans extends StatelessWidget {
           context,
           routeName: SightDetailsScreen.routeName,
           arguments: ScreenArgs(
-              placeModel: placeModel,
-              cityModel: cityModel,
-              bestPLanModel: bestPLanModel),
+            placeModel: placeModel,
+            cityModel: cityModel,
+            bestPLanModel: bestPLanModel,
+          ),
         );
       },
       child: Card(
@@ -183,12 +177,10 @@ class GridPlans extends StatelessWidget {
                     height: 200.h,
                     width: double.infinity,
                     progressIndicatorBuilder:
-                        (context, url, downloadProgress) => Center(
-                      child: AdaptiveIndicator(os: getOs()),
-                    ),
-                    errorWidget: (context, url, error) => Center(
-                      child: AdaptiveIndicator(os: getOs()),
-                    ),
+                        (context, url, downloadProgress) =>
+                            Center(child: AdaptiveIndicator(os: getOs())),
+                    errorWidget: (context, url, error) =>
+                        Center(child: AdaptiveIndicator(os: getOs())),
                   ),
                 ),
                 Padding(
@@ -227,20 +219,13 @@ class GridPlans extends StatelessWidget {
                           print('index ===== ${numOf.index}');
                         }
                       },
-                      icon: Icon(
-                        Icons.add,
-                        size: 25.sp,
-                        color: Colors.white,
-                      ),
+                      icon: Icon(Icons.add, size: 25.sp, color: Colors.white),
                     ),
                   ),
                 ),
               ],
             ),
-            const Space(
-              height: 5,
-              width: 0,
-            ),
+            const Space(height: 5, width: 0),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -255,50 +240,26 @@ class GridPlans extends StatelessWidget {
                       fontSize: 18.sp,
                     ),
                   ),
-                  Space(
-                    height: 6.h,
-                    width: 0,
-                  ),
+                  Space(height: 6.h, width: 0),
                   if (placeModel.rate == '5')
-                    Row(
-                      children: icon5Star(color: ThemeApp.primaryColor),
-                    ),
+                    Row(children: icon5Star(color: ThemeApp.primaryColor)),
                   if (placeModel.rate == '4.5')
-                    Row(
-                      children: icon4halfStar(color: ThemeApp.primaryColor),
-                    ),
+                    Row(children: icon4halfStar(color: ThemeApp.primaryColor)),
                   if (placeModel.rate == '4')
-                    Row(
-                      children: icon4Star(color: ThemeApp.primaryColor),
-                    ),
+                    Row(children: icon4Star(color: ThemeApp.primaryColor)),
                   if (placeModel.rate == '3.5')
-                    Row(
-                      children: icon3halfStar(color: ThemeApp.primaryColor),
-                    ),
+                    Row(children: icon3halfStar(color: ThemeApp.primaryColor)),
                   if (placeModel.rate == '3')
-                    Row(
-                      children: icon3Star(color: ThemeApp.primaryColor),
-                    ),
+                    Row(children: icon3Star(color: ThemeApp.primaryColor)),
                   if (placeModel.rate == '2.5')
-                    Row(
-                      children: icon2halfStar(color: ThemeApp.primaryColor),
-                    ),
+                    Row(children: icon2halfStar(color: ThemeApp.primaryColor)),
                   if (placeModel.rate == '2')
-                    Row(
-                      children: icon2Star(color: ThemeApp.primaryColor),
-                    ),
+                    Row(children: icon2Star(color: ThemeApp.primaryColor)),
                   if (placeModel.rate == '1.5')
-                    Row(
-                      children: icon1halfStar(color: ThemeApp.primaryColor),
-                    ),
+                    Row(children: icon1halfStar(color: ThemeApp.primaryColor)),
                   if (placeModel.rate == '1')
-                    Row(
-                      children: iconStar(color: ThemeApp.primaryColor),
-                    ),
-                  const Space(
-                    height: 6,
-                    width: 0,
-                  ),
+                    Row(children: iconStar(color: ThemeApp.primaryColor)),
+                  const Space(height: 6, width: 0),
                   Text(
                     placeModel.history,
                     maxLines: 2,
@@ -310,10 +271,7 @@ class GridPlans extends StatelessWidget {
                       color: Colors.black54,
                     ),
                   ),
-                  const MyDivider(
-                    height: 0.5,
-                    color: Colors.black,
-                  ),
+                  const MyDivider(height: 0.5, color: Colors.black),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -321,16 +279,18 @@ class GridPlans extends StatelessWidget {
                         width: 100,
                         height: 30,
                         decoration: BoxDecoration(
-                            color: Colors.amber,
-                            borderRadius: BorderRadius.circular(15)),
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                         child: Align(
                           alignment: Alignment.center,
                           child: Text(
                             'Tickets : ${placeModel.tickets}',
                             style: GoogleFonts.roboto(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14.sp),
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14.sp,
+                            ),
                           ),
                         ),
                       ),
@@ -339,7 +299,8 @@ class GridPlans extends StatelessWidget {
                           IconButton(
                             onPressed: () {
                               MapUtils.urlLauncher(
-                                  Uri.parse(placeModel.location));
+                                Uri.parse(placeModel.location),
+                              );
                             },
                             padding: const EdgeInsets.all(8),
                             icon: CircleAvatar(
@@ -355,9 +316,10 @@ class GridPlans extends StatelessWidget {
                             'Go',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.roboto(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600),
+                              color: Colors.black,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ],
                       ),
@@ -386,15 +348,15 @@ class GridPlans extends StatelessWidget {
                                                 children: [
                                                   Text(
                                                     'Saturday:',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                   Text(
                                                     placeModel.timeOfDay[0],
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                 ],
                                               ),
@@ -407,15 +369,15 @@ class GridPlans extends StatelessWidget {
                                                 children: [
                                                   Text(
                                                     'Sunday:',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                   Text(
                                                     placeModel.timeOfDay[1],
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                 ],
                                               ),
@@ -428,15 +390,15 @@ class GridPlans extends StatelessWidget {
                                                 children: [
                                                   Text(
                                                     'Monday:',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                   Text(
                                                     placeModel.timeOfDay[2],
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                 ],
                                               ),
@@ -449,15 +411,15 @@ class GridPlans extends StatelessWidget {
                                                 children: [
                                                   Text(
                                                     'Tuesday:',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                   Text(
                                                     placeModel.timeOfDay[3],
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                 ],
                                               ),
@@ -470,15 +432,15 @@ class GridPlans extends StatelessWidget {
                                                 children: [
                                                   Text(
                                                     'Wednesday:',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                   Text(
                                                     placeModel.timeOfDay[4],
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                 ],
                                               ),
@@ -491,15 +453,15 @@ class GridPlans extends StatelessWidget {
                                                 children: [
                                                   Text(
                                                     'Thursday:',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                   Text(
                                                     placeModel.timeOfDay[5],
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                 ],
                                               ),
@@ -512,15 +474,15 @@ class GridPlans extends StatelessWidget {
                                                 children: [
                                                   Text(
                                                     'Friday:',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                   Text(
                                                     placeModel.timeOfDay[6],
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
+                                                    style: Theme.of(
+                                                      context,
+                                                    ).textTheme.titleMedium,
                                                   ),
                                                 ],
                                               ),
@@ -530,7 +492,7 @@ class GridPlans extends StatelessWidget {
                                                 MyDialog.hideDialog(context);
                                               },
                                               child: const Text('Close'),
-                                            )
+                                            ),
                                           ],
                                         ),
                                       ),
@@ -547,9 +509,10 @@ class GridPlans extends StatelessWidget {
                                   'Closed',
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.roboto(
-                                      color: Colors.red,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600),
+                                    color: Colors.red,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                               ],
                             )
@@ -568,9 +531,10 @@ class GridPlans extends StatelessWidget {
                                   'Open',
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.roboto(
-                                      color: Colors.green,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600),
+                                    color: Colors.green,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                               ],
                             ),

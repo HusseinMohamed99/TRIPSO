@@ -15,10 +15,10 @@ class SelectDateScreen extends StatefulWidget {
   static const String routeName = 'SelectDateScreen';
 
   @override
-  _SelectDateScreenState createState() => _SelectDateScreenState();
+  SelectDateScreenState createState() => SelectDateScreenState();
 }
 
-class _SelectDateScreenState extends State<SelectDateScreen> {
+class SelectDateScreenState extends State<SelectDateScreen> {
   DateTime? _firstDate;
   DateTime? _lastDate;
 
@@ -42,10 +42,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Day $index'),
-                Icon(
-                  Icons.arrow_circle_right_outlined,
-                  size: 24.sp,
-                )
+                Icon(Icons.arrow_circle_right_outlined, size: 24.sp),
               ],
             ),
             onTap: () {
@@ -214,14 +211,8 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                   ),
                 ),
               _numberOfDays() == 0 || _numberOfDays() >= 8
-                  ? Expanded(
-                      child: Image.asset(AssetPath.imagesGroup92),
-                    )
-                  : Expanded(
-                      child: ListView(
-                        children: _buildDateCheckboxes(),
-                      ),
-                    ),
+                  ? Expanded(child: Image.asset(AssetPath.imagesGroup92))
+                  : Expanded(child: ListView(children: _buildDateCheckboxes())),
             ],
           ),
         ),
@@ -234,7 +225,8 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
       context: context,
       initialDate: _firstDate ?? DateTime.now(),
       firstDate: _firstDate ?? DateTime.now(),
-      lastDate: _firstDate?.add(const Duration(days: 6)) ??
+      lastDate:
+          _firstDate?.add(const Duration(days: 6)) ??
           DateTime.now().add(const Duration(days: 60)),
     );
     if (selectedDate != null) {

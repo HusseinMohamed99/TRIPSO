@@ -7,8 +7,9 @@ class ScreenArgs {
   PlaceModel placeModel;
   BestPLanModel bestPLanModel;
 
-  ScreenArgs(
-      {required this.placeModel,
-      required this.cityModel,
-      required this.bestPLanModel});
+  ScreenArgs({
+    required this.placeModel,
+    required this.cityModel,
+    required this.bestPLanModel,
+  });
 }

@@ -16,7 +16,7 @@ import 'package:tripso/shared/components/app_bar.dart';
 import 'package:tripso/shared/components/layer.dart';
 import 'package:tripso/shared/components/log_out.dart';
 import 'package:tripso/shared/components/navigator.dart';
-import 'package:tripso/shared/components/search_bar.dart';
+import 'package:tripso/shared/components/custom_search_bar.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
@@ -28,7 +28,7 @@ import 'package:tripso/shared/widget/grid_city_items.dart';
 class CitiesScreen extends StatefulWidget {
   static const String routeName = 'CitiesScreen';
 
-  const CitiesScreen({Key? key}) : super(key: key);
+  const CitiesScreen({super.key});
 
   @override
   State<CitiesScreen> createState() => _CitiesScreenState();
@@ -41,16 +41,19 @@ class _CitiesScreenState extends State<CitiesScreen> {
   bool isDeviceConnected = false;
   bool isAlertSet = false;
 
-  getConnectivity() =>
-      subscription = Connectivity().onConnectivityChanged.listen(
-        (ConnectivityResult result) async {
-          isDeviceConnected = await InternetConnectionChecker().hasConnection;
-          if (!isDeviceConnected && isAlertSet == false) {
-            checkInternet();
-            setState(() => isAlertSet = true);
-          }
-        },
-      );
+  StreamSubscription<List<ConnectivityResult>> getConnectivity() {
+    return subscription = Connectivity().onConnectivityChanged.listen((
+      List<ConnectivityResult> results,
+    ) async {
+      isDeviceConnected =
+          await InternetConnectionChecker.instance.hasConnection;
+
+      if (!isDeviceConnected && !isAlertSet) {
+        checkInternet();
+        setState(() => isAlertSet = true);
+      }
+    });
+  }
 
   @override
   void initState() {
@@ -85,11 +88,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
         return Scaffold(
           appBar: thirdAppBar(),
           body: cubit.city.isEmpty
-              ? Center(
-                  child: AdaptiveIndicator(
-                    os: getOs(),
-                  ),
-                )
+              ? Center(child: AdaptiveIndicator(os: getOs()))
               : SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,94 +99,116 @@ class _CitiesScreenState extends State<CitiesScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Stack(
-                                  alignment: AlignmentDirectional.bottomStart,
-                                  children: [
-                                    CarouselSlider(
-                                      items: List.generate(widgetImages.length,
-                                          (index) => widgetImages[index]),
-                                      options: CarouselOptions(
-                                        height: 250.h,
-                                        enlargeCenterPage: false,
-                                        disableCenter: false,
-                                        viewportFraction: 2,
-                                        autoPlay: true,
-                                        autoPlayCurve: Curves.decelerate,
-                                      ),
+                                alignment: AlignmentDirectional.bottomStart,
+                                children: [
+                                  CarouselSlider(
+                                    items: List.generate(
+                                      widgetImages.length,
+                                      (index) => widgetImages[index],
                                     ),
-                                    LayerImage(
+                                    options: CarouselOptions(
                                       height: 250.h,
-                                      width: double.infinity,
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: const Radius.circular(20).r,
-                                        bottomRight:
-                                            const Radius.circular(20).r,
-                                      ),
+                                      enlargeCenterPage: false,
+                                      disableCenter: false,
+                                      viewportFraction: 2,
+                                      autoPlay: true,
+                                      autoPlayCurve: Curves.decelerate,
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 15.w, bottom: 50.h),
-                                      child: Text(
-                                        'Where do you\nwant to go ?',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displayLarge
-                                            ?.copyWith(
-                                              color: ThemeApp.secondaryColor,
-                                            ),
-                                      ),
+                                  ),
+                                  LayerImage(
+                                    height: 250.h,
+                                    width: double.infinity,
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: const Radius.circular(20).r,
+                                      bottomRight: const Radius.circular(20).r,
                                     ),
-                                    Positioned(
-                                      top: 15.h,
-                                      right: 10.w,
-                                      child: InkWell(
-                                        onTap: () {
-                                          logOut(context);
-                                        },
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          width: 60.w,
-                                          height: 20.h,
-                                          padding: EdgeInsets.zero,
-                                          margin: EdgeInsets.zero,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                              10.r,
-                                            ),
-                                            color: ThemeApp.primaryColor,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 15.w,
+                                      bottom: 50.h,
+                                    ),
+                                    child: Text(
+                                      'Where do you\nwant to go ?',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displayLarge
+                                          ?.copyWith(
+                                            color: ThemeApp.secondaryColor,
                                           ),
-                                          child: Text(
-                                            textAlign: TextAlign.center,
-                                            'Log Out',
-                                            style: GoogleFonts.roboto(
-                                              fontSize: 14.sp,
-                                              color: ThemeApp.secondaryColor,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 15.h,
+                                    right: 10.w,
+                                    child: InkWell(
+                                      onTap: () {
+                                        logOut(context);
+                                      },
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        width: 60.w,
+                                        height: 20.h,
+                                        padding: EdgeInsets.zero,
+                                        margin: EdgeInsets.zero,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            10.r,
+                                          ),
+                                          color: ThemeApp.primaryColor,
+                                        ),
+                                        child: Text(
+                                          textAlign: TextAlign.center,
+                                          'Log Out',
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 14.sp,
+                                            color: ThemeApp.secondaryColor,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                         ),
                                       ),
-                                    )
-                                  ]),
+                                    ),
+                                  ),
+                                ],
+                              ),
                               Space(height: 30.h, width: 0.w),
                               Space(height: 5.h, width: 0.w),
                               if (dropdownValue == 'All Countries')
-                                gridCitiesItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
+                                gridCitiesItem(
+                                  context,
+                                  cubit.placeModel!,
+                                  cubit.bestPLanModel!,
+                                ),
                               if (dropdownValue == 'Egypt')
-                                gridEGItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
+                                gridEGItem(
+                                  context,
+                                  cubit.placeModel!,
+                                  cubit.bestPLanModel!,
+                                ),
                               if (dropdownValue == 'Italy')
-                                gridITItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
+                                gridITItem(
+                                  context,
+                                  cubit.placeModel!,
+                                  cubit.bestPLanModel!,
+                                ),
                               if (dropdownValue == 'France')
-                                gridFRItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
+                                gridFRItem(
+                                  context,
+                                  cubit.placeModel!,
+                                  cubit.bestPLanModel!,
+                                ),
                               if (dropdownValue == 'UAE')
-                                gridUAEItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
+                                gridUAEItem(
+                                  context,
+                                  cubit.placeModel!,
+                                  cubit.bestPLanModel!,
+                                ),
                               if (dropdownValue == 'Popular')
-                                gridPopularItem(context, cubit.placeModel!,
-                                    cubit.bestPLanModel!),
+                                gridPopularItem(
+                                  context,
+                                  cubit.placeModel!,
+                                  cubit.bestPLanModel!,
+                                ),
                             ],
                           ),
                           Positioned(
@@ -197,14 +218,15 @@ class _CitiesScreenState extends State<CitiesScreen> {
                             child: Row(
                               children: [
                                 Expanded(
-                                  child: SearchBar(
-                                      readOnly: true,
-                                      function: () {
-                                        navigateTo(
-                                          context,
-                                          routeName: SearchScreen.routeName,
-                                        );
-                                      }),
+                                  child: CustomSearchBar(
+                                    readOnly: true,
+                                    function: () {
+                                      navigateTo(
+                                        context,
+                                        routeName: SearchScreen.routeName,
+                                      );
+                                    },
+                                  ),
                                 ),
                                 Card(
                                   elevation: 3,
@@ -220,26 +242,27 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                       icon: const Icon(
                                         Icons.keyboard_arrow_down,
                                       ),
-                                      items: [
-                                        'All Countries',
-                                        'Egypt',
-                                        'Italy',
-                                        'France',
-                                        'UAE',
-                                        'Popular',
-                                      ].map((e) {
-                                        return DropdownMenuItem(
-                                          value: e,
-                                          child: Center(
-                                            child: Text(
-                                              e,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .displaySmall,
-                                            ),
-                                          ),
-                                        );
-                                      }).toList(),
+                                      items:
+                                          [
+                                            'All Countries',
+                                            'Egypt',
+                                            'Italy',
+                                            'France',
+                                            'UAE',
+                                            'Popular',
+                                          ].map((e) {
+                                            return DropdownMenuItem(
+                                              value: e,
+                                              child: Center(
+                                                child: Text(
+                                                  e,
+                                                  style: Theme.of(
+                                                    context,
+                                                  ).textTheme.displaySmall,
+                                                ),
+                                              ),
+                                            );
+                                          }).toList(),
                                       onChanged: (newValue) {
                                         setState(() {
                                           dropdownValue = newValue;
@@ -262,7 +285,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
     );
   }
 
-  checkInternet() {
+  void checkInternet() {
     MyDialog.showMessage(
       context,
       'Please check your internet connectivity',
@@ -270,8 +293,11 @@ class _CitiesScreenState extends State<CitiesScreen> {
       posAction: () async {
         Navigator.pop(context, 'Cancel');
         setState(() => isAlertSet = false);
-        isDeviceConnected = await InternetConnectionChecker().hasConnection;
-        if (!isDeviceConnected && isAlertSet == false) {
+
+        isDeviceConnected =
+            await InternetConnectionChecker.instance.hasConnection;
+
+        if (!isDeviceConnected && !isAlertSet) {
           checkInternet();
           setState(() => isAlertSet = true);
         }
@@ -279,8 +305,11 @@ class _CitiesScreenState extends State<CitiesScreen> {
     );
   }
 
-  Widget gridCitiesItem(BuildContext context, PlaceModel placeModel,
-      BestPLanModel bestPLanModel) {
+  Widget gridCitiesItem(
+    BuildContext context,
+    PlaceModel placeModel,
+    BestPLanModel bestPLanModel,
+  ) {
     var cubit = TripsoCubit.get(context);
     return GridView.count(
       shrinkWrap: true,
@@ -291,17 +320,21 @@ class _CitiesScreenState extends State<CitiesScreen> {
       mainAxisSpacing: 2.h,
       childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
-          cubit.city.length,
-          (index) => GridCitiesItem(
-                placeModel,
-                bestPLanModel,
-                cityModel: cubit.city[index],
-              )),
+        cubit.city.length,
+        (index) => GridCitiesItem(
+          placeModel,
+          bestPLanModel,
+          cityModel: cubit.city[index],
+        ),
+      ),
     );
   }
 
-  Widget gridEGItem(BuildContext context, PlaceModel placeModel,
-      BestPLanModel bestPLanModel) {
+  Widget gridEGItem(
+    BuildContext context,
+    PlaceModel placeModel,
+    BestPLanModel bestPLanModel,
+  ) {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
@@ -313,17 +346,21 @@ class _CitiesScreenState extends State<CitiesScreen> {
       mainAxisSpacing: 2.h,
       childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
-          cubit.cityEG.length,
-          (index) => GridEGItem(
-                placeModel,
-                bestPLanModel,
-                cityModel: cubit.cityEG[index],
-              )),
+        cubit.cityEG.length,
+        (index) => GridEGItem(
+          placeModel,
+          bestPLanModel,
+          cityModel: cubit.cityEG[index],
+        ),
+      ),
     );
   }
 
-  Widget gridITItem(BuildContext context, PlaceModel placeModel,
-      BestPLanModel bestPLanModel) {
+  Widget gridITItem(
+    BuildContext context,
+    PlaceModel placeModel,
+    BestPLanModel bestPLanModel,
+  ) {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
@@ -335,17 +372,21 @@ class _CitiesScreenState extends State<CitiesScreen> {
       mainAxisSpacing: 2.h,
       childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
-          cubit.cityIT.length,
-          (index) => GridITItem(
-                placeModel,
-                bestPLanModel,
-                cityModel: cubit.cityIT[index],
-              )),
+        cubit.cityIT.length,
+        (index) => GridITItem(
+          placeModel,
+          bestPLanModel,
+          cityModel: cubit.cityIT[index],
+        ),
+      ),
     );
   }
 
-  Widget gridUAEItem(BuildContext context, PlaceModel placeModel,
-      BestPLanModel bestPLanModel) {
+  Widget gridUAEItem(
+    BuildContext context,
+    PlaceModel placeModel,
+    BestPLanModel bestPLanModel,
+  ) {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
@@ -357,17 +398,21 @@ class _CitiesScreenState extends State<CitiesScreen> {
       mainAxisSpacing: 2.h,
       childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
-          cubit.cityUAE.length,
-          (index) => GridUAEItem(
-                placeModel,
-                bestPLanModel,
-                cityModel: cubit.cityUAE[index],
-              )),
+        cubit.cityUAE.length,
+        (index) => GridUAEItem(
+          placeModel,
+          bestPLanModel,
+          cityModel: cubit.cityUAE[index],
+        ),
+      ),
     );
   }
 
-  Widget gridFRItem(BuildContext context, PlaceModel placeModel,
-      BestPLanModel bestPLanModel) {
+  Widget gridFRItem(
+    BuildContext context,
+    PlaceModel placeModel,
+    BestPLanModel bestPLanModel,
+  ) {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
@@ -379,17 +424,21 @@ class _CitiesScreenState extends State<CitiesScreen> {
       mainAxisSpacing: 2.h,
       childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
-          cubit.cityFR.length,
-          (index) => GridFRItem(
-                placeModel,
-                bestPLanModel,
-                cityModel: cubit.cityFR[index],
-              )),
+        cubit.cityFR.length,
+        (index) => GridFRItem(
+          placeModel,
+          bestPLanModel,
+          cityModel: cubit.cityFR[index],
+        ),
+      ),
     );
   }
 
-  Widget gridPopularItem(BuildContext context, PlaceModel placeModel,
-      BestPLanModel bestPLanModel) {
+  Widget gridPopularItem(
+    BuildContext context,
+    PlaceModel placeModel,
+    BestPLanModel bestPLanModel,
+  ) {
     var cubit = TripsoCubit.get(context);
 
     return GridView.count(
@@ -401,12 +450,13 @@ class _CitiesScreenState extends State<CitiesScreen> {
       mainAxisSpacing: 2.h,
       childAspectRatio: 1.h / 1.2.h,
       children: List.generate(
-          cubit.cityPopular.length,
-          (index) => GridPopularItem(
-                placeModel,
-                bestPLanModel,
-                cityModel: cubit.cityPopular[index],
-              )),
+        cubit.cityPopular.length,
+        (index) => GridPopularItem(
+          placeModel,
+          bestPLanModel,
+          cityModel: cubit.cityPopular[index],
+        ),
+      ),
     );
   }
 }

@@ -16,7 +16,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class MyProfileScreen extends StatelessWidget {
-  const MyProfileScreen({Key? key}) : super(key: key);
+  const MyProfileScreen({super.key});
   static const String routeName = 'MyProfile';
 
   @override
@@ -51,15 +51,10 @@ class MyProfileScreen extends StatelessWidget {
                               width: double.infinity,
                               progressIndicatorBuilder:
                                   (context, url, downloadProgress) => Center(
-                                child: AdaptiveIndicator(
-                                  os: getOs(),
-                                ),
-                              ),
-                              errorWidget: (context, url, error) => Center(
-                                child: AdaptiveIndicator(
-                                  os: getOs(),
-                                ),
-                              ),
+                                    child: AdaptiveIndicator(os: getOs()),
+                                  ),
+                              errorWidget: (context, url, error) =>
+                                  Center(child: AdaptiveIndicator(os: getOs())),
                             ),
                           ),
                           // backgroundImage: NetworkImage(tripsoCubit!.image),
@@ -78,10 +73,7 @@ class MyProfileScreen extends StatelessWidget {
                               color: ThemeApp.blackPrimary,
                             ),
                           ),
-                          Space(
-                            height: 5.h,
-                            width: 0.w,
-                          ),
+                          Space(height: 5.h, width: 0.w),
                           Text(
                             tripsoCubit.email,
                             style: GoogleFonts.roboto(
@@ -95,14 +87,12 @@ class MyProfileScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Space(
-                  height: 20.h,
-                  width: 0.w,
-                ),
+                Space(height: 20.h, width: 0.w),
                 Card(
                   clipBehavior: Clip.antiAlias,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15).r),
+                    borderRadius: BorderRadius.circular(15).r,
+                  ),
                   elevation: 10,
                   child: InkWell(
                     onTap: () {
@@ -115,18 +105,19 @@ class MyProfileScreen extends StatelessWidget {
                         children: [
                           CircleAvatar(
                             radius: 22.r,
-                            backgroundColor:
-                                const Color.fromRGBO(105, 155, 247, 0.15),
+                            backgroundColor: const Color.fromRGBO(
+                              105,
+                              155,
+                              247,
+                              0.15,
+                            ),
                             child: Icon(
                               Icons.edit_outlined,
                               size: 26.sp,
                               color: const Color(0xff699BF7),
                             ),
                           ),
-                          Space(
-                            width: 35.w,
-                            height: 0.h,
-                          ),
+                          Space(width: 35.w, height: 0.h),
                           Text(
                             'Custom Profile',
                             style: GoogleFonts.roboto(
@@ -140,14 +131,12 @@ class MyProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Space(
-                  width: 0.w,
-                  height: 20.h,
-                ),
+                Space(width: 0.w, height: 20.h),
                 Card(
                   clipBehavior: Clip.antiAlias,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15).r),
+                    borderRadius: BorderRadius.circular(15).r,
+                  ),
                   elevation: 10,
                   child: InkWell(
                     onTap: () {
@@ -160,18 +149,19 @@ class MyProfileScreen extends StatelessWidget {
                         children: [
                           CircleAvatar(
                             radius: 22.r,
-                            backgroundColor:
-                                const Color.fromRGBO(255, 153, 0, 0.1),
+                            backgroundColor: const Color.fromRGBO(
+                              255,
+                              153,
+                              0,
+                              0.1,
+                            ),
                             child: Icon(
                               Icons.vpn_key_outlined,
                               size: 26.sp,
                               color: Colors.amber,
                             ),
                           ),
-                          Space(
-                            width: 35.w,
-                            height: 0.h,
-                          ),
+                          Space(width: 35.w, height: 0.h),
                           Text(
                             'Change Password',
                             style: GoogleFonts.roboto(
@@ -185,14 +175,12 @@ class MyProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Space(
-                  width: 0.w,
-                  height: 20.h,
-                ),
+                Space(width: 0.w, height: 20.h),
                 Card(
                   clipBehavior: Clip.antiAlias,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15).r),
+                    borderRadius: BorderRadius.circular(15).r,
+                  ),
                   elevation: 10,
                   child: InkWell(
                     onTap: () {
@@ -227,10 +215,7 @@ class MyProfileScreen extends StatelessWidget {
                               color: ThemeApp.blackPrimary,
                             ),
                           ),
-                          Space(
-                            width: 35.w,
-                            height: 0.h,
-                          ),
+                          Space(width: 35.w, height: 0.h),
                           Text(
                             'Delete account',
                             style: GoogleFonts.roboto(
@@ -244,14 +229,12 @@ class MyProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Space(
-                  width: 0.w,
-                  height: 20.h,
-                ),
+                Space(width: 0.w, height: 20.h),
                 Card(
                   clipBehavior: Clip.antiAlias,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15).r),
+                    borderRadius: BorderRadius.circular(15).r,
+                  ),
                   elevation: 10,
                   child: InkWell(
                     onTap: () {
@@ -280,18 +263,19 @@ class MyProfileScreen extends StatelessWidget {
                         children: [
                           CircleAvatar(
                             radius: 22.r,
-                            backgroundColor:
-                                const Color.fromRGBO(247, 21, 21, 0.1),
+                            backgroundColor: const Color.fromRGBO(
+                              247,
+                              21,
+                              21,
+                              0.1,
+                            ),
                             child: Icon(
                               Icons.logout,
                               size: 26.sp,
                               color: Colors.red,
                             ),
                           ),
-                          Space(
-                            width: 35.w,
-                            height: 0.h,
-                          ),
+                          Space(width: 35.w, height: 0.h),
                           Text(
                             'Log out',
                             style: GoogleFonts.roboto(
@@ -305,10 +289,7 @@ class MyProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Space(
-                  width: 0.w,
-                  height: 20.h,
-                ),
+                Space(width: 0.w, height: 20.h),
                 Text(
                   'Created by TEAM ①',
                   style: GoogleFonts.roboto(
@@ -317,10 +298,7 @@ class MyProfileScreen extends StatelessWidget {
                     color: Colors.black45,
                   ),
                 ),
-                Space(
-                  width: 0.w,
-                  height: 10.h,
-                ),
+                Space(width: 0.w, height: 10.h),
               ],
             ),
           ),

@@ -6,24 +6,20 @@ import 'package:tripso/shared/cubit/restPasswordCubit/rest_password_state.dart';
 class ResetPasswordCubit extends Cubit<ResetPasswordStates> {
   ResetPasswordCubit() : super(ResetPasswordInitialState());
 
-  static ResetPasswordCubit get(context) => BlocProvider.of(context);
+  static ResetPasswordCubit get(BuildContext context) =>
+      BlocProvider.of(context);
 
-
-  void resetPassword({
-    required String email,
-  })
-  {
+  void resetPassword({required String email}) {
     emit(ResetPasswordLoadingState());
 
-    FirebaseAuth.instance.sendPasswordResetEmail(
-      email: email,
-    ).then((value) {
-      emit(ResetPasswordSuccessState());
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(ResetPasswordErrorState());
-    });
+    FirebaseAuth.instance
+        .sendPasswordResetEmail(email: email)
+        .then((value) {
+          emit(ResetPasswordSuccessState());
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(ResetPasswordErrorState());
+        });
   }
-
-
 }

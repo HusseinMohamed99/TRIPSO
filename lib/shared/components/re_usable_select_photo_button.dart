@@ -11,11 +11,11 @@ class SelectPhoto extends StatelessWidget {
   final void Function()? onTap;
 
   const SelectPhoto({
-    Key? key,
+    super.key,
     required this.textLabel,
     required this.icon,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,17 +27,11 @@ class SelectPhoto extends StatelessWidget {
         shape: const StadiumBorder(),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 14,
-          horizontal: 6,
-        ).r,
+        padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 6).r,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              icon,
-              color: ThemeApp.blackPrimary,
-            ),
+            Icon(icon, color: ThemeApp.blackPrimary),
             Space(height: 0.h, width: 14.w),
             Text(
               textLabel,
@@ -45,7 +39,7 @@ class SelectPhoto extends StatelessWidget {
                 fontSize: 18.sp,
                 color: ThemeApp.blackPrimary,
               ),
-            )
+            ),
           ],
         ),
       ),

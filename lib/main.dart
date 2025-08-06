@@ -36,15 +36,13 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
 import 'package:tripso/shared/styles/theme.dart';
-import 'package:wakelock/wakelock.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   ScreenUtil.ensureScreenSize();
-  Wakelock.enable();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  WakelockPlus.enable();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   Bloc.observer = MyBlocObserver();
 
@@ -56,12 +54,14 @@ void main() async {
     print(uId);
   }
 
-  runApp(ChangeNotifierProvider(
-    create: (context) {
-      return WeatherProvider();
-    },
-    child: const MyApp(),
-  ));
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) {
+        return WeatherProvider();
+      },
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -73,16 +73,17 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => TripsoCubit()
-              ..getUserData()
-              ..getCityData()
-              ..getDataForPlace()
-              ..getITData()
-              ..getEGData()
-              ..getFRData()
-              ..getUAEData()
-              ..getPopularData()
-              ..getBestPlan()),
+          create: (context) => TripsoCubit()
+            ..getUserData()
+            ..getCityData()
+            ..getDataForPlace()
+            ..getITData()
+            ..getEGData()
+            ..getFRData()
+            ..getUAEData()
+            ..getPopularData()
+            ..getBestPlan(),
+        ),
       ],
       child: BlocConsumer<TripsoCubit, TripsoStates>(
         listener: (context, state) {},
@@ -96,38 +97,43 @@ class MyApp extends StatelessWidget {
             minTextAdapt: true,
             splitScreenMode: true,
             builder: (context, child) {
-              return MaterialApp(
-                debugShowCheckedModeBanner: false,
-                theme: ThemeApp.lightTheme,
-                routes: {
-                  PrefScreen.routeName: (_) => const PrefScreen(),
-                  OnBoard.routeName: (_) => const OnBoard(),
-                  SplashScreen.routeName: (_) => const SplashScreen(),
-                  CitiesScreen.routeName: (_) => const CitiesScreen(),
-                  HomeLayout.routeName: (_) => const HomeLayout(),
-                  SignInScreen.routeName: (_) => const SignInScreen(),
-                  SignUpScreen.routeName: (_) => const SignUpScreen(),
-                  ForgotPassword.routeName: (_) => const ForgotPassword(),
-                  UpdatePassword.routeName: (_) => const UpdatePassword(),
-                  SearchScreen.routeName: (_) => const SearchScreen(),
-                  MyProfileScreen.routeName: (_) => const MyProfileScreen(),
-                  WishListScreen.routeName: (_) => const WishListScreen(),
-                  ExploreScreen.routeName: (_) => const ExploreScreen(),
-                  MyPlansScreen.routeName: (_) => const MyPlansScreen(),
-                  TopPlansScreen.routeName: (_) => const TopPlansScreen(),
-                  HistoricalCity.routeName: (_) => const HistoricalCity(),
-                  SightsScreen.routeName: (_) => const SightsScreen(),
-                  SightDetailsScreen.routeName: (_) =>
-                      const SightDetailsScreen(),
-                  PopularSightsScreen.routeName: (_) =>
-                      const PopularSightsScreen(),
-                  EditProfile.routeName: (_) => EditProfile(),
-                  PickPlans.routeName: (_) => const PickPlans(),
-                  CreateCustomizePlan.routeName: (_) =>
-                      const CreateCustomizePlan(),
-                  SelectDateScreen.routeName: (_) => const SelectDateScreen(),
-                },
-                initialRoute: SplashScreen.routeName,
+              return MediaQuery(
+                data: MediaQuery.of(
+                  context,
+                ).copyWith(textScaler: const TextScaler.linear(1.0)),
+                child: MaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  theme: ThemeApp.lightTheme,
+                  routes: {
+                    PrefScreen.routeName: (_) => const PrefScreen(),
+                    OnBoard.routeName: (_) => const OnBoard(),
+                    SplashScreen.routeName: (_) => const SplashScreen(),
+                    CitiesScreen.routeName: (_) => const CitiesScreen(),
+                    HomeLayout.routeName: (_) => const HomeLayout(),
+                    SignInScreen.routeName: (_) => const SignInScreen(),
+                    SignUpScreen.routeName: (_) => const SignUpScreen(),
+                    ForgotPassword.routeName: (_) => const ForgotPassword(),
+                    UpdatePassword.routeName: (_) => const UpdatePassword(),
+                    SearchScreen.routeName: (_) => const SearchScreen(),
+                    MyProfileScreen.routeName: (_) => const MyProfileScreen(),
+                    WishListScreen.routeName: (_) => const WishListScreen(),
+                    ExploreScreen.routeName: (_) => const ExploreScreen(),
+                    MyPlansScreen.routeName: (_) => const MyPlansScreen(),
+                    TopPlansScreen.routeName: (_) => const TopPlansScreen(),
+                    HistoricalCity.routeName: (_) => const HistoricalCity(),
+                    SightsScreen.routeName: (_) => const SightsScreen(),
+                    SightDetailsScreen.routeName: (_) =>
+                        const SightDetailsScreen(),
+                    PopularSightsScreen.routeName: (_) =>
+                        const PopularSightsScreen(),
+                    EditProfile.routeName: (_) => EditProfile(),
+                    PickPlans.routeName: (_) => const PickPlans(),
+                    CreateCustomizePlan.routeName: (_) =>
+                        const CreateCustomizePlan(),
+                    SelectDateScreen.routeName: (_) => const SelectDateScreen(),
+                  },
+                  initialRoute: SplashScreen.routeName,
+                ),
               );
             },
           );

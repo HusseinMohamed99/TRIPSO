@@ -21,12 +21,13 @@ class WeatherModel {
     var jsonData = data['forecast']['forecastday'][0]['day'];
 
     return WeatherModel(
-        date: DateTime.parse(data['current']['last_updated']),
-        temp: data['current']['temp_c'],
-        maxTemp: jsonData['maxtemp_c'],
-        minTemp: jsonData['mintemp_c'],
-        weatherStateName: data['current']['condition']['text'],
-        image: data['current']['condition']['icon']);
+      date: DateTime.parse(data['current']['last_updated']),
+      temp: data['current']['temp_c'],
+      maxTemp: jsonData['maxtemp_c'],
+      minTemp: jsonData['mintemp_c'],
+      weatherStateName: data['current']['condition']['text'],
+      image: data['current']['condition']['icon'],
+    );
   }
 
   @override

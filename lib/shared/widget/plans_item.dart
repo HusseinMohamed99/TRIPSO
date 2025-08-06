@@ -15,11 +15,11 @@ import 'package:tripso/shared/styles/theme.dart';
 
 class TopPlanItem extends StatelessWidget {
   const TopPlanItem({
-    Key? key,
+    super.key,
     required this.bestPLanModel,
     required this.cityModel,
     required this.placeModel,
-  }) : super(key: key);
+  });
 
   final CityModel cityModel;
   final PlaceModel placeModel;
@@ -58,26 +58,20 @@ class TopPlanItem extends StatelessWidget {
                   height: 200.h,
                   width: 220.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      const Radius.circular(20).r,
-                    ),
+                    borderRadius: BorderRadius.all(const Radius.circular(20).r),
                     image: const DecorationImage(
                       fit: BoxFit.fill,
                       image: AssetImage('assets/images/2021884.jpg'),
                     ),
                   ),
                 ),
-                LayerImage(
-                  height: 200.h,
-                  width: 220.w,
-                ),
+                LayerImage(height: 200.h, width: 220.w),
                 Text(
                   bestPLanModel.name,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall
-                      ?.copyWith(color: ThemeApp.blackPrimary),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    color: ThemeApp.blackPrimary,
+                  ),
                 ),
               ],
             ),

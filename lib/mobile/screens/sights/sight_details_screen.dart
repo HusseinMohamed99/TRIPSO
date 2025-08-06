@@ -15,10 +15,11 @@ import 'package:tripso/shared/components/speak.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/extensions/color_extension.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class SightDetailsScreen extends StatelessWidget {
-  const SightDetailsScreen({Key? key}) : super(key: key);
+  const SightDetailsScreen({super.key});
   static const String routeName = 'SightDetailsScreen';
 
   @override
@@ -63,8 +64,8 @@ class SightDetailsScreen extends StatelessWidget {
                                 width: double.infinity,
                                 progressIndicatorBuilder:
                                     (context, url, downloadProgress) => Center(
-                                  child: AdaptiveIndicator(os: getOs()),
-                                ),
+                                      child: AdaptiveIndicator(os: getOs()),
+                                    ),
                                 errorWidget: (context, url, error) => Center(
                                   child: AdaptiveIndicator(os: getOs()),
                                 ),
@@ -83,7 +84,9 @@ class SightDetailsScreen extends StatelessWidget {
                               left: 20.w,
                               child: Card(
                                 elevation: 2,
-                                color: ThemeApp.blackPrimary.withOpacity(0.5),
+                                color: ThemeApp.blackPrimary.withOpacityPercent(
+                                  50,
+                                ),
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
                                 shape: const StadiumBorder(
                                   side: BorderSide(
@@ -148,12 +151,8 @@ class SightDetailsScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0).r,
                           child: Text(
                             screenArgs.placeModel.name,
-                            style: Theme.of(context)
-                                .textTheme
-                                .displayMedium
-                                ?.copyWith(
-                                  color: ThemeApp.secondaryColor,
-                                ),
+                            style: Theme.of(context).textTheme.displayMedium
+                                ?.copyWith(color: ThemeApp.secondaryColor),
                           ),
                         ),
                       ],
@@ -179,7 +178,11 @@ class SightDetailsScreen extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20).r,
                                       color: const Color.fromRGBO(
-                                          255, 154, 3, 0.6),
+                                        255,
+                                        154,
+                                        3,
+                                        0.6,
+                                      ),
                                     ),
                                     child: Row(
                                       mainAxisAlignment:
@@ -244,9 +247,7 @@ class SightDetailsScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            MyDivider(
-                              color: Colors.grey.shade200,
-                            ),
+                            MyDivider(color: Colors.grey.shade200),
                             Space(height: 10.h, width: 0.w),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -255,14 +256,10 @@ class SightDetailsScreen extends StatelessWidget {
                                   screenArgs.placeModel.history.trim(),
                                   maxLines: 5,
                                   overflow: TextOverflow.ellipsis,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge
+                                  style: Theme.of(context).textTheme.titleLarge
                                       ?.copyWith(
-                                        color:
-                                            ThemeApp.blackPrimary.withOpacity(
-                                          0.54,
-                                        ),
+                                        color: ThemeApp.blackPrimary
+                                            .withOpacityPercent(54),
                                       ),
                                 ),
                                 TextButton(
@@ -275,15 +272,21 @@ class SightDetailsScreen extends StatelessWidget {
                                         .textTheme
                                         .titleLarge
                                         ?.copyWith(
-                                            color: const Color.fromARGB(
-                                                255, 80, 159, 175)),
+                                          color: const Color.fromARGB(
+                                            255,
+                                            80,
+                                            159,
+                                            175,
+                                          ),
+                                        ),
                                   ),
                                 ),
                               ],
                             ),
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0).r,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ).r,
                               child: Row(
                                 children: [
                                   Icon(
@@ -299,15 +302,17 @@ class SightDetailsScreen extends StatelessWidget {
                                           .textTheme
                                           .titleLarge
                                           ?.copyWith(
-                                              color: ThemeApp.blackPrimary),
+                                            color: ThemeApp.blackPrimary,
+                                          ),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
                             ExpansionTile(
-                              tilePadding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0).r,
+                              tilePadding: const EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ).r,
                               leading: Icon(
                                 FontAwesomeIcons.clock,
                                 color: ThemeApp.primaryColor,
@@ -315,9 +320,7 @@ class SightDetailsScreen extends StatelessWidget {
                               ),
                               title: Text(
                                 'Open',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleLarge
+                                style: Theme.of(context).textTheme.titleLarge
                                     ?.copyWith(color: ThemeApp.blackPrimary),
                               ),
                               children: [
@@ -328,15 +331,15 @@ class SightDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Saturday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         screenArgs.placeModel.timeOfDay[0],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -348,15 +351,15 @@ class SightDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Sunday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         screenArgs.placeModel.timeOfDay[1],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -368,15 +371,15 @@ class SightDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Monday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         screenArgs.placeModel.timeOfDay[2],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -388,15 +391,15 @@ class SightDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Tuesday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         screenArgs.placeModel.timeOfDay[3],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -408,15 +411,15 @@ class SightDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Wednesday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         screenArgs.placeModel.timeOfDay[4],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -428,15 +431,15 @@ class SightDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Thursday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         screenArgs.placeModel.timeOfDay[5],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -448,15 +451,15 @@ class SightDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Friday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         screenArgs.placeModel.timeOfDay[6],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -485,9 +488,7 @@ class SightDetailsScreen extends StatelessWidget {
       backgroundColor: ThemeApp.secondaryColor,
       context: context,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: const Radius.circular(25.0).r,
-        ),
+        borderRadius: BorderRadius.vertical(top: const Radius.circular(25.0).r),
       ),
       builder: (context) => DraggableScrollableSheet(
         initialChildSize: 0.3.sp,
@@ -500,8 +501,9 @@ class SightDetailsScreen extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: ThemeApp.secondaryColor,
-                borderRadius:
-                    BorderRadius.vertical(top: const Radius.circular(20).r),
+                borderRadius: BorderRadius.vertical(
+                  top: const Radius.circular(20).r,
+                ),
               ),
               padding: const EdgeInsets.symmetric(horizontal: 10).r,
               margin: const EdgeInsets.symmetric(horizontal: 10).r,
@@ -522,50 +524,49 @@ class SightDetailsScreen extends StatelessWidget {
                     ),
                   ),
                   Space(height: 20.h, width: 0.w),
-                  Column(children: [
-                    Row(
-                      children: [
-                        IconButton(
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
                             onPressed: () async {
                               pop(context);
                               await flutterTts.pause();
                             },
-                            icon: Icon(
-                              Icons.clear,
-                              size: 24.sp,
-                            )),
-                        Text(
-                          screenArgs.placeModel.name.trim(),
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.titleLarge,
-                        )
-                      ],
-                    ),
-                    const MyDivider(),
-                    Space(height: 15.h, width: 0.w),
-                    Text(
-                      screenArgs.placeModel.history.trim(),
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            color: ThemeApp.blackPrimary.withOpacity(
-                              0.54,
-                            ),
+                            icon: Icon(Icons.clear, size: 24.sp),
                           ),
-                    ),
-                    Space(height: 20.h, width: 0.w),
-                    TextButton(
-                      onPressed: () {
-                        speak(screenArgs.placeModel.history);
-                      },
-                      child: CircleAvatar(
+                          Text(
+                            screenArgs.placeModel.name.trim(),
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
+                        ],
+                      ),
+                      const MyDivider(),
+                      Space(height: 15.h, width: 0.w),
+                      Text(
+                        screenArgs.placeModel.history.trim(),
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          color: ThemeApp.blackPrimary.withOpacityPercent(54),
+                        ),
+                      ),
+                      Space(height: 20.h, width: 0.w),
+                      TextButton(
+                        onPressed: () {
+                          speak(screenArgs.placeModel.history);
+                        },
+                        child: CircleAvatar(
                           radius: 24.r,
                           backgroundColor: ThemeApp.primaryColor,
                           child: Icon(
                             FontAwesomeIcons.play,
                             color: ThemeApp.secondaryColor,
                             size: 24.sp,
-                          )),
-                    ),
-                  ]),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

@@ -16,14 +16,14 @@ class CityModel {
   });
 
   CityModel.fromFireStore(Map<String, dynamic> data)
-      : this(
-    name: data['name'],
-          image: data['image'],
-          cId: data['cId'],
-          history: data['history'],
-          country: data['country'],
-          isPopular: data['isPopular'],
-        );
+    : this(
+        name: data['name'],
+        image: data['image'],
+        cId: data['cId'],
+        history: data['history'],
+        country: data['country'],
+        isPopular: data['isPopular'],
+      );
 
   Map<String, dynamic> toFireStore() {
     return {

@@ -69,8 +69,7 @@ class ThemeApp {
     primaryColor: primaryColor,
     scaffoldBackgroundColor: secondaryColor,
     cardColor: secondaryColor,
-    appBarTheme: const AppBarTheme(
-        ),
+    appBarTheme: const AppBarTheme(),
     textTheme: TextTheme(
       displayLarge: GoogleFonts.roboto(
         fontSize: 36.sp,

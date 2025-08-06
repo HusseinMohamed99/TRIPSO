@@ -11,11 +11,15 @@ import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/extensions/color_extension.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class BestPlanDetailsScreen extends StatelessWidget {
-  const BestPlanDetailsScreen({Key? key, required this.pId, required this.cId})
-      : super(key: key);
+  const BestPlanDetailsScreen({
+    super.key,
+    required this.pId,
+    required this.cId,
+  });
 
   final String pId;
   final String cId;
@@ -54,8 +58,8 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                 width: double.infinity,
                                 progressIndicatorBuilder:
                                     (context, url, downloadProgress) => Center(
-                                  child: AdaptiveIndicator(os: getOs()),
-                                ),
+                                      child: AdaptiveIndicator(os: getOs()),
+                                    ),
                                 errorWidget: (context, url, error) => Center(
                                   child: AdaptiveIndicator(os: getOs()),
                                 ),
@@ -74,7 +78,9 @@ class BestPlanDetailsScreen extends StatelessWidget {
                               left: 20.w,
                               child: Card(
                                 elevation: 2,
-                                color: ThemeApp.blackPrimary.withOpacity(0.5),
+                                color: ThemeApp.blackPrimary.withOpacityPercent(
+                                  50,
+                                ),
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
                                 shape: const StadiumBorder(
                                   side: BorderSide(
@@ -102,12 +108,8 @@ class BestPlanDetailsScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0).r,
                           child: Text(
                             best.name,
-                            style: Theme.of(context)
-                                .textTheme
-                                .displayMedium
-                                ?.copyWith(
-                                  color: ThemeApp.secondaryColor,
-                                ),
+                            style: Theme.of(context).textTheme.displayMedium
+                                ?.copyWith(color: ThemeApp.secondaryColor),
                           ),
                         ),
                       ],
@@ -133,7 +135,11 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20).r,
                                       color: const Color.fromRGBO(
-                                          255, 154, 3, 0.6),
+                                        255,
+                                        154,
+                                        3,
+                                        0.6,
+                                      ),
                                     ),
                                     child: Row(
                                       mainAxisAlignment:
@@ -198,14 +204,13 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                 // ),
                               ],
                             ),
-                            MyDivider(
-                              color: Colors.grey.shade200,
-                            ),
+                            MyDivider(color: Colors.grey.shade200),
                             Space(height: 10.h, width: 0.w),
                             ExpandableText(text: best.history),
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0).r,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ).r,
                               child: Row(
                                 children: [
                                   Icon(
@@ -221,15 +226,17 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                           .textTheme
                                           .titleLarge
                                           ?.copyWith(
-                                              color: ThemeApp.blackPrimary),
+                                            color: ThemeApp.blackPrimary,
+                                          ),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
                             ExpansionTile(
-                              tilePadding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0).r,
+                              tilePadding: const EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ).r,
                               leading: Icon(
                                 FontAwesomeIcons.clock,
                                 color: ThemeApp.primaryColor,
@@ -237,9 +244,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
                               ),
                               title: Text(
                                 'Open',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleLarge
+                                style: Theme.of(context).textTheme.titleLarge
                                     ?.copyWith(color: ThemeApp.blackPrimary),
                               ),
                               children: [
@@ -250,15 +255,15 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Saturday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         best.timeOfDay[0],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -270,15 +275,15 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Sunday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         best.timeOfDay[1],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -290,15 +295,15 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Monday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         best.timeOfDay[2],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -310,15 +315,15 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Tuesday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         best.timeOfDay[3],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -330,15 +335,15 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Wednesday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         best.timeOfDay[4],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -350,15 +355,15 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Thursday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         best.timeOfDay[5],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -370,15 +375,15 @@ class BestPlanDetailsScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Friday',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                       Text(
                                         best.timeOfDay[6],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleLarge,
                                       ),
                                     ],
                                   ),
@@ -401,7 +406,7 @@ class BestPlanDetailsScreen extends StatelessWidget {
 }
 
 class ExpandableText extends StatefulWidget {
-  const ExpandableText({Key? key, required this.text}) : super(key: key);
+  const ExpandableText({super.key, required this.text});
 
   final String text;
 
@@ -415,31 +420,43 @@ class ExpandableTextState extends State<ExpandableText>
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      AnimatedSize(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        AnimatedSize(
           duration: const Duration(milliseconds: 250),
           child: ConstrainedBox(
-              constraints: expanded
-                  ? const BoxConstraints()
-                  : const BoxConstraints(maxHeight: 85),
-              child: Text(
-                widget.text,
-                style: const TextStyle(fontSize: 18),
-                overflow: TextOverflow.fade,
-              ))),
-      expanded
-          ? OutlinedButton.icon(
-              icon: const Icon(Icons.arrow_upward, color: Color(0xFFD50000)),
-              label: const Text(
-                'Close Text / Read Less',
-                style: TextStyle(color: Color(0xFF2E7D32)),
+            constraints: expanded
+                ? const BoxConstraints()
+                : const BoxConstraints(maxHeight: 85),
+            child: Text(
+              widget.text,
+              style: const TextStyle(fontSize: 18),
+              overflow: TextOverflow.fade,
+            ),
+          ),
+        ),
+        expanded
+            ? OutlinedButton.icon(
+                icon: const Icon(Icons.arrow_upward, color: Color(0xFFD50000)),
+                label: const Text(
+                  'Close Text / Read Less',
+                  style: TextStyle(color: Color(0xFF2E7D32)),
+                ),
+                onPressed: () => setState(() => expanded = false),
+              )
+            : OutlinedButton.icon(
+                icon: const Icon(
+                  Icons.arrow_downward,
+                  color: Color(0xFFD50000),
+                ),
+                label: const Text(
+                  'Read More Here',
+                  style: TextStyle(color: Color(0xFF2E7D32)),
+                ),
+                onPressed: () => setState(() => expanded = true),
               ),
-              onPressed: () => setState(() => expanded = false))
-          : OutlinedButton.icon(
-              icon: const Icon(Icons.arrow_downward, color: Color(0xFFD50000)),
-              label: const Text('Read More Here',
-                  style: TextStyle(color: Color(0xFF2E7D32))),
-              onPressed: () => setState(() => expanded = true))
-    ]);
+      ],
+    );
   }
 }

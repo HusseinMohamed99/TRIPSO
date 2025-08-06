@@ -32,7 +32,7 @@ class MyDialog {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                )
+                ),
               ],
             ),
           );
@@ -72,7 +72,8 @@ class MyDialog {
   }) {
     List<Widget> actions = [];
     if (posActionTitle != null) {
-      actions.add(TextButton(
+      actions.add(
+        TextButton(
           onPressed: () {
             if (posAction != null) {
               posAction();
@@ -84,7 +85,9 @@ class MyDialog {
           child: Text(
             posActionTitle,
             style: GoogleFonts.roboto(fontSize: 15.sp),
-          )));
+          ),
+        ),
+      );
     }
     if (negActionTitle != null) {
       actions.add(
@@ -141,7 +144,7 @@ class MyDialog {
     );
   }
 
-  static void hideDialog(context) {
+  static void hideDialog(BuildContext context) {
     pop(context);
   }
 
@@ -156,7 +159,8 @@ class MyDialog {
   }) {
     List<Widget> actions = [];
     if (posActionTitle != null) {
-      actions.add(TextButton(
+      actions.add(
+        TextButton(
           onPressed: () {
             if (posAction != null) {
               posAction();
@@ -168,7 +172,9 @@ class MyDialog {
           child: Text(
             posActionTitle,
             style: GoogleFonts.roboto(fontSize: 15.sp),
-          )));
+          ),
+        ),
+      );
     }
     if (negActionTitle != null) {
       actions.add(
@@ -192,16 +198,10 @@ class MyDialog {
       context: context,
       builder: (context) {
         if (Platform.operatingSystem == 'android') {
-          return AlertDialog(
-            content: widget,
-            actions: actions,
-          );
+          return AlertDialog(content: widget, actions: actions);
         }
 
-        return CupertinoAlertDialog(
-          content: widget,
-          actions: actions,
-        );
+        return CupertinoAlertDialog(content: widget, actions: actions);
       },
       barrierDismissible: false,
     );

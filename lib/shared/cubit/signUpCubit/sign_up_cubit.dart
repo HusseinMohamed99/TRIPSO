@@ -8,7 +8,7 @@ import 'package:tripso/shared/cubit/SignUpCubit/sign_up_state.dart';
 class SignUpCubit extends Cubit<SignUpStates> {
   SignUpCubit() : super(SignUpInitialState());
 
-  static SignUpCubit get(context) => BlocProvider.of(context);
+  static SignUpCubit get(BuildContext context) => BlocProvider.of(context);
 
   void userSignUp({
     required String email,
@@ -19,20 +19,19 @@ class SignUpCubit extends Cubit<SignUpStates> {
   }) async {
     emit(SignUpLoadingState());
     FirebaseAuth.instance
-        .createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    )
+        .createUserWithEmailAndPassword(email: email, password: password)
         .then((value) {
-      userCreate(
-          phone: phone,
-          email: email,
-          firstName: firstName,
-          lastName: lastName,
-          uId: value.user!.uid);
-    }).catchError((error) {
-      emit(SignUpErrorState(error.toString()));
-    });
+          userCreate(
+            phone: phone,
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
+            uId: value.user!.uid,
+          );
+        })
+        .catchError((error) {
+          emit(SignUpErrorState(error.toString()));
+        });
   }
 
   void userCreate({
@@ -56,10 +55,11 @@ class SignUpCubit extends Cubit<SignUpStates> {
         .doc(uId)
         .set(model.toFireStore())
         .then((value) {
-      emit(UserCreateSuccessState(uId));
-    }).catchError((error) {
-      emit(UserCreateErrorState(error.toString()));
-    });
+          emit(UserCreateSuccessState(uId));
+        })
+        .catchError((error) {
+          emit(UserCreateErrorState(error.toString()));
+        });
   }
 
   IconData suffix = Icons.visibility_outlined;
@@ -67,8 +67,9 @@ class SignUpCubit extends Cubit<SignUpStates> {
 
   void showPassword() {
     isPassword = !isPassword;
-    suffix =
-        isPassword ? Icons.visibility_outlined : Icons.visibility_off_outlined;
+    suffix = isPassword
+        ? Icons.visibility_outlined
+        : Icons.visibility_off_outlined;
 
     emit(ChangePasswordSignUpState());
   }

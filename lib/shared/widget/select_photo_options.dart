@@ -8,9 +8,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class SelectPhotoOptions extends StatelessWidget {
-  const SelectPhotoOptions({
-    Key? key,
-  }) : super(key: key);
+  const SelectPhotoOptions({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,30 +31,29 @@ class SelectPhotoOptions extends StatelessWidget {
             ),
           ),
           Space(height: 20.h, width: 0.w),
-          Column(children: [
-            SelectPhoto(
-              onTap: () {
-                TripsoCubit.get(context).getProfileImage(ImageSource.gallery);
-              },
-              icon: Icons.image,
-              textLabel: 'Browse Gallery',
-            ),
-            Space(height: 10.h, width: 0.w),
-            Center(
-              child: Text(
-                'OR',
-                style: GoogleFonts.roboto(fontSize: 18.sp),
+          Column(
+            children: [
+              SelectPhoto(
+                onTap: () {
+                  TripsoCubit.get(context).getProfileImage(ImageSource.gallery);
+                },
+                icon: Icons.image,
+                textLabel: 'Browse Gallery',
               ),
-            ),
-            Space(height: 10.h, width: 0.w),
-            SelectPhoto(
-              onTap: () {
-                TripsoCubit.get(context).getProfileImage(ImageSource.camera);
-              },
-              icon: Icons.camera_alt_outlined,
-              textLabel: 'Use a Camera',
-            ),
-          ])
+              Space(height: 10.h, width: 0.w),
+              Center(
+                child: Text('OR', style: GoogleFonts.roboto(fontSize: 18.sp)),
+              ),
+              Space(height: 10.h, width: 0.w),
+              SelectPhoto(
+                onTap: () {
+                  TripsoCubit.get(context).getProfileImage(ImageSource.camera);
+                },
+                icon: Icons.camera_alt_outlined,
+                textLabel: 'Use a Camera',
+              ),
+            ],
+          ),
         ],
       ),
     );

@@ -70,7 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '536479207520',
     projectId: 'tripso-ac883',
     storageBucket: 'tripso-ac883.appspot.com',
-    iosClientId: '536479207520-atp51lgm4hpnfcp2b4ce1gd28rpq5gfp.apps.googleusercontent.com',
+    iosClientId:
+        '536479207520-atp51lgm4hpnfcp2b4ce1gd28rpq5gfp.apps.googleusercontent.com',
     iosBundleId: 'com.example.tripso',
   );
 }

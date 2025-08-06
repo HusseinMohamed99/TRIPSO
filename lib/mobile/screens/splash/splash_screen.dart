@@ -17,7 +17,7 @@ import 'package:tripso/shared/styles/theme.dart';
 class SplashScreen extends StatelessWidget {
   static const String routeName = 'splash_screen';
 
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class SplashScreen extends StatelessWidget {
 }
 
 class SplashScreenBody extends StatefulWidget {
-  const SplashScreenBody({Key? key}) : super(key: key);
+  const SplashScreenBody({super.key});
 
   @override
   State<SplashScreenBody> createState() => _SplashScreenBodyState();
@@ -40,16 +40,17 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
   bool isDeviceConnected = false;
   bool isAlertSet = false;
 
-  getConnectivity() =>
-      subscription = Connectivity().onConnectivityChanged.listen(
-        (ConnectivityResult result) async {
-          isDeviceConnected = await InternetConnectionChecker().hasConnection;
-          if (!isDeviceConnected && isAlertSet == false) {
-            showDialogBox();
-            setState(() => isAlertSet = true);
-          }
-        },
-      );
+  StreamSubscription<List<ConnectivityResult>> getConnectivity() =>
+      subscription = Connectivity().onConnectivityChanged.listen((
+        List<ConnectivityResult> results,
+      ) async {
+        isDeviceConnected =
+            await InternetConnectionChecker.instance.hasConnection;
+        if (!isDeviceConnected && !isAlertSet) {
+          showDialogBox();
+          setState(() => isAlertSet = true);
+        }
+      });
 
   @override
   void initState() {
@@ -79,41 +80,44 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
         ),
       ),
       child: Scaffold(
+        backgroundColor: Colors.transparent,
+        //appBar: primaryAppBar(),
+        body: AnimatedSplashScreen(
+          splashIconSize: 200,
           backgroundColor: Colors.transparent,
-          //appBar: primaryAppBar(),
-          body: AnimatedSplashScreen(
-              splashIconSize: 200,
-              backgroundColor: Colors.transparent,
-              pageTransitionType: PageTransitionType.rightToLeft,
-              splashTransition: SplashTransition.scaleTransition,
-              splash: AssetPath.logoImage,
-              nextScreen:
-                  uId != null ? const CitiesScreen() : const PrefScreen(),
-              duration: 2000,
-              animationDuration: const Duration(seconds: 2))),
+          pageTransitionType: PageTransitionType.rightToLeft,
+          splashTransition: SplashTransition.scaleTransition,
+          splash: AssetPath.logoImage,
+          nextScreen: uId != null ? const CitiesScreen() : const PrefScreen(),
+          duration: 2000,
+          animationDuration: const Duration(seconds: 2),
+        ),
+      ),
     );
   }
 
-  showDialogBox() => showCupertinoDialog<String>(
-        context: context,
-        builder: (BuildContext context) => CupertinoAlertDialog(
-          title: const Text('No Connection'),
-          content: const Text('Please check your internet connectivity'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () async {
-                Navigator.pop(context, 'Cancel');
-                setState(() => isAlertSet = false);
-                isDeviceConnected =
-                    await InternetConnectionChecker().hasConnection;
-                if (!isDeviceConnected && isAlertSet == false) {
-                  showDialogBox();
-                  setState(() => isAlertSet = true);
-                }
-              },
-              child: const Text('OK'),
-            ),
-          ],
+  Future<String?> showDialogBox() => showCupertinoDialog<String>(
+    context: context,
+    builder: (BuildContext context) => CupertinoAlertDialog(
+      title: const Text('No Connection'),
+      content: const Text('Please check your internet connectivity'),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () async {
+            Navigator.pop(context, 'Cancel');
+            setState(() => isAlertSet = false);
+
+            isDeviceConnected =
+                await InternetConnectionChecker.instance.hasConnection;
+
+            if (!isDeviceConnected && !isAlertSet) {
+              showDialogBox();
+              setState(() => isAlertSet = true);
+            }
+          },
+          child: const Text('OK'),
         ),
-      );
+      ],
+    ),
+  );
 }
