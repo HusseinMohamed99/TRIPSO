@@ -1,70 +1,83 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
+import 'package:tripso/mobile/screens/plans/top_plans.dart';
+import 'package:tripso/model/arg_model.dart';
 import 'package:tripso/model/best_plan_model.dart';
+import 'package:tripso/model/city_model.dart';
+import 'package:tripso/model/place_model.dart';
 import 'package:tripso/shared/components/layer.dart';
+import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class TopPlanItem extends StatelessWidget {
   const TopPlanItem({
     super.key,
     required this.bestPLanModel,
+    required this.cityModel,
+    required this.placeModel,
   });
 
+  final CityModel cityModel;
+  final PlaceModel placeModel;
   final BestPLanModel bestPLanModel;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () async {
-        // navigateTo(
-        //   context,
-        //   routeName: TopPlansScreen.routeName,
-        //   arguments: ScreenArgs(
-
-        //     bestPLanModel: bestPLanModel,
-        //   ),
-        // );
-        // if (kDebugMode) {
-        //   print(bestPLanModel.pId);
-        // }
+    return BlocConsumer<TripsoCubit, TripsoStates>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        return InkWell(
+          borderRadius: BorderRadius.circular(20).r,
+          onTap: () async {
+            TripsoCubit.get(context).getAllBestPlan(cityModel.cId);
+            navigateTo(
+              context,
+              routeName: TopPlansScreen.routeName,
+              arguments: ScreenArgs(
+                cityModel: cityModel,
+                placeModel: placeModel,
+                bestPLanModel: bestPLanModel,
+              ),
+            );
+            if (kDebugMode) {
+              print(bestPLanModel.pId);
+            }
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16, right: 16).r,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  alignment: Alignment.bottomLeft,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  height: 200.h,
+                  width: 220.w,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(const Radius.circular(20).r),
+                    image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage('assets/images/2021884.jpg'),
+                    ),
+                  ),
+                ),
+                LayerImage(height: 200.h, width: 220.w),
+                Text(
+                  bestPLanModel.name,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    color: ThemeApp.blackPrimary,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
       },
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Container(
-            alignment: Alignment.bottomLeft,
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            height: 200.h,
-            width: 220.w,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(
-                const Radius.circular(20).r,
-              ),
-              image: const DecorationImage(
-                fit: BoxFit.fitWidth,
-                image: NetworkImage(
-                    'https://img.freepik.com/free-photo/marine-toys-sandy-beach_23-2148164591.jpg?t=st=1734873537~exp=1734877137~hmac=61b9412bfd2cbf5423c2d3f981854aba6b879d3aa2df024dce6ae71e3de7ed79&w=740'),
-              ),
-            ),
-          ),
-          LayerImage(
-            height: 200.h,
-            width: 220.w,
-          ),
-          Text(
-            bestPLanModel.name,
-            textAlign: TextAlign.center,
-            style: context.titleSmall?.copyWith(
-              color: ColorsManager.blackPrimary,
-              fontWeight: FontWeightHelper
-                  .semiBold, // Ensure FontWeightHelper is defined
-            ),
-          ),
-        ],
-      ).onlyPadding(
-        leftPadding: 16,
-        rightPadding: 16,
-      ),
     );
   }
 }

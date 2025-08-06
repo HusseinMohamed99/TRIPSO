@@ -1,33 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/extensions/color_extension.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class DefaultTextFormField extends StatelessWidget {
-  const DefaultTextFormField(
-      {required this.context,
-      required this.controller,
-      required this.keyboardType,
-      required this.validate,
-      this.hint,
-      this.label,
-      this.onTap,
-      this.onChanged,
-      this.onFieldSubmitted,
-      this.obscuringCharacter,
-      this.style,
-      this.color,
-      this.borderSideColor,
-      this.prefixColor,
-      this.styleColor,
-      this.focusNode,
-      this.isClickable,
-      this.isPassword,
-      this.decoration,
-      this.suffix,
-      this.suffixPressed,
-      this.prefix,
-      this.maxLength,
-      super.key});
+  const DefaultTextFormField({
+    required this.context,
+    required this.controller,
+    required this.keyboardType,
+    required this.validate,
+    this.hint,
+    this.label,
+    this.onTap,
+    this.onChanged,
+    this.onFieldSubmitted,
+    this.obscuringCharacter,
+    this.style,
+    this.color,
+    this.borderSideColor,
+    this.prefixColor,
+    this.styleColor,
+    this.focusNode,
+    this.isClickable,
+    this.isPassword,
+    this.decoration,
+    this.suffix,
+    this.suffixPressed,
+    this.prefix,
+    this.maxLength,
+    super.key,
+  });
   final BuildContext context;
   final FocusNode? focusNode;
   final Color? color;
@@ -58,8 +61,11 @@ class DefaultTextFormField extends StatelessWidget {
       maxLength: maxLength,
       focusNode: focusNode,
       textAlignVertical: TextAlignVertical.center,
-      style: context.labelLarge!.copyWith(
-        color: ColorsManager.blackPrimary,
+      style: GoogleFonts.roboto(
+        fontStyle: FontStyle.normal,
+        color: styleColor ?? ThemeApp.secondaryColor,
+        fontSize: 17.sp,
+        fontWeight: FontWeight.w400,
       ),
       maxLines: 1,
       minLines: 1,
@@ -73,68 +79,51 @@ class DefaultTextFormField extends StatelessWidget {
       obscureText: isPassword ?? false,
       keyboardType: keyboardType,
       autofocus: false,
-      cursorColor: ColorsManager.primaryColor,
-      cursorErrorColor: ColorsManager.redColor,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.fromLTRB(20, 8, 8, 20).r,
         fillColor: color,
         filled: true,
-        prefixIcon: Icon(
-          prefix,
-          color: prefixColor ?? ColorsManager.whiteColor,
-          size: 24.sp,
-        ).allPadding(vPadding: 6, hPadding: 10),
+        prefixIcon: Padding(
+          padding: const EdgeInsets.all(15.0).r,
+          child: Icon(
+            prefix,
+            color: prefixColor ?? ThemeApp.secondaryColor,
+            size: 24.sp,
+          ),
+        ),
         suffixIcon: suffix != null
             ? IconButton(
+                padding: const EdgeInsets.all(15.0).r,
                 onPressed: () {
                   suffixPressed!();
                 },
-                icon: Icon(
-                  suffix,
-                  color: ColorsManager.whiteColor,
-                  size: 24.sp,
-                ),
-              ).allPadding(vPadding: 6, hPadding: 10)
+                icon: Icon(suffix, color: ThemeApp.secondaryColor, size: 24.sp),
+              )
             : null,
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            const Radius.circular(12.0).r,
-          ),
-          borderSide: BorderSide(
-            color: ColorsManager.blackPrimary,
-          ),
+          borderRadius: BorderRadius.all(const Radius.circular(12.0).r),
+          borderSide: const BorderSide(color: Colors.black),
         ),
         hintText: hint,
-        hintStyle: context.labelLarge!.copyWith(
-          color: ColorsManager.whiteColor,
+        hintStyle: TextStyle(
+          color: ThemeApp.secondaryColor.withOpacityPercent(80),
+          height: 1.h,
         ),
         labelText: label,
-        labelStyle: context.labelLarge!.copyWith(
-          color: ColorsManager.whiteColor,
-        ),
+        labelStyle: TextStyle(color: ThemeApp.primaryColor, height: 1.h),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            const Radius.circular(12.0).r,
-          ),
+          borderRadius: BorderRadius.all(const Radius.circular(12.0).r),
           borderSide: BorderSide(
-            color: borderSideColor ?? ColorsManager.whiteColor,
+            color: borderSideColor ?? ThemeApp.secondaryColor,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            const Radius.circular(12.0).r,
-          ),
-          borderSide: const BorderSide(
-            color: Colors.red,
-          ),
+          borderRadius: BorderRadius.all(const Radius.circular(12.0).r),
+          borderSide: const BorderSide(color: Colors.red),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            const Radius.circular(12.0).r,
-          ),
-          borderSide: const BorderSide(
-            color: Colors.red,
-          ),
+          borderRadius: BorderRadius.all(const Radius.circular(12.0).r),
+          borderSide: const BorderSide(color: Colors.red),
         ),
         errorStyle: TextStyle(color: Colors.red, fontSize: 12.sp),
       ),

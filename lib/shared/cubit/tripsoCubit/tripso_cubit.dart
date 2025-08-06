@@ -1,182 +1,304 @@
-part of './../../../core/helpers/export_manager/export_manager.dart';
+import 'dart:io';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:tripso/mobile/screens/explore/explore.dart';
+import 'package:tripso/mobile/screens/on_boarding/on_boarding_screen.dart';
+import 'package:tripso/mobile/screens/plans/my_plans.dart';
+import 'package:tripso/mobile/screens/profile/my_profile.dart';
+import 'package:tripso/mobile/screens/wishlist/wishlist.dart';
+import 'package:tripso/model/best_plan_model.dart';
+import 'package:tripso/model/city_model.dart';
+import 'package:tripso/model/place_model.dart';
+import 'package:tripso/model/plan_model.dart';
+import 'package:tripso/model/user_model.dart';
+import 'package:tripso/model/wishlist_model.dart';
+import 'package:tripso/shared/components/navigator.dart';
+import 'package:tripso/shared/components/show_toast.dart';
+import 'package:tripso/shared/constants/constants.dart';
+import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/network/cache_helper.dart';
+import 'package:tripso/shared/provider/weather_provider.dart';
 
 class TripsoCubit extends Cubit<TripsoStates> {
   TripsoCubit() : super(TripsoInitialState());
 
-  static TripsoCubit get(context) => BlocProvider.of(context);
+  static TripsoCubit get(BuildContext context) => BlocProvider.of(context);
 
   int currentIndex = 0;
-
-  final List<Widget> screens = [
+  List<Widget> screens = [
     const ExploreScreen(),
     const WishListScreen(),
     const MyPlansScreen(),
     const MyProfileScreen(),
   ];
 
-  final List<String> titles = [
-    'Explore',
-    'Wishlist',
-    'MyPlans',
-    'Profile',
-  ];
+  List<String> titles = ['Explore', 'Wishlist', 'My Plans', 'Profile'];
 
-  // Change the index of the bottom navigation
   void changeIndex(int index) {
-    currentIndex = index;
+    if (index == 0) {
+      getUserData();
+      getCityData();
+      WeatherProvider();
+      getDataPlaces(cityModel!.cId);
+      getDataForCity(cityModel!.cId);
+      getAllBestPlan(cityModel!.cId);
+    }
+    if (index == 1) {
+      getDataPlaces(cityModel!.cId);
+      getDataForCity(cityModel!.cId);
+      getAllBestPlan(cityModel!.cId);
+      getWishListData(cityModel!.cId, userModel!.uId);
+    }
+    if (index == 2) {
+      getDataPlaces(cityModel!.cId);
+      getDataForCity(cityModel!.cId);
+      getAllBestPlan(cityModel!.cId);
+      getMyAllPlan(cityModel!.cId, userModel!.uId, 1);
+    }
+    if (index == 3) getUserData();
     emit(ChangeBottomNavBarState());
+    currentIndex = index;
   }
 
   UserModel? userModel;
 
-  // Fetch user data from Firebase and emit appropriate states
-  Future<void> getUserData() async {
-    try {
-      emit(GetUserDataLoadingState());
-      final token =
-          await SharedPrefHelper.getSecuredString(prefsKeyIsUserLoggedIn);
-
-      if (token.isEmpty) throw UserNotFoundException('User ID is empty.');
-
-      final userDoc =
-          await FirebaseFirestore.instance.collection('users').doc(token).get();
-
-      if (userDoc.exists && userDoc.data() != null) {
-        userModel = UserModel.fromJson(userDoc.data()!);
-        emit(GetUserDataSuccessState());
-      } else {
-        throw UserNotFoundException('User not found for ID: $token');
-      }
-    } catch (e) {
-      _handleUserDataError(e);
-    }
+  void getUserData() {
+    emit(GetUserDataLoadingState());
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(uId)
+        .get()
+        .then((value) {
+          userModel = UserModel.fromFireStore(value.data()!);
+          emit(GetUserDataSuccessState());
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetUserDataErrorState(error.toString()));
+        });
   }
 
-  // Handle user data errors
-  void _handleUserDataError(error) {
-    if (error is FirebaseAuthException) {
-      emit(GetUserDataErrorState('Authentication error: ${error.message}'));
-    } else if (error is FirebaseException) {
-      emit(GetUserDataErrorState('Firestore error: ${error.message}'));
-    } else {
-      emit(GetUserDataErrorState('Error: $error'));
-    }
-  }
-
-  // Change user password
   void changeUserPassword({required String password}) {
     emit(ChangeUserPasswordLoadingState());
-
-    final user = FirebaseAuth.instance.currentUser;
-    if (user == null) {
-      _handlePasswordError('No user is currently signed in.');
-      return;
-    }
-
-    user.updatePassword(password).then((_) {
-      emit(ChangeUserPasswordSuccessState());
-      getUserData();
-    }).catchError((error) {
-      _handlePasswordError('Failed to change password: ${error.toString()}');
-    });
-  }
-
-  // Handle password change errors
-  void _handlePasswordError(String errorMessage) {
-    debugPrint(errorMessage);
-    emit(ChangeUserPasswordErrorState(errorMessage));
+    FirebaseAuth.instance.currentUser
+        ?.updatePassword(password)
+        .then((value) {
+          showToast(state: ToastStates.success, text: 'Change Successful');
+          emit(ChangeUserPasswordSuccessState());
+          getUserData();
+        })
+        .catchError((error) {
+          showToast(
+            state: ToastStates.error,
+            text: 'process failed\nYou Should Re-login Before Change Password',
+          );
+          emit(ChangeUserPasswordErrorState(error.toString()));
+          debugPrint(error.toString());
+        });
   }
 
   IconData suffix = Icons.visibility_outlined;
-  bool isPasswordVisible = true;
+  bool isPassword = true;
 
-  // Toggle password visibility
-  void togglePasswordVisibility() {
-    isPasswordVisible = !isPasswordVisible;
-    suffix = isPasswordVisible
+  void showPassword() {
+    isPassword = !isPassword;
+    suffix = isPassword
         ? Icons.visibility_outlined
         : Icons.visibility_off_outlined;
+
     emit(ShowPasswordState());
   }
 
   CityModel? cityModel;
 
-  // Fetch data for a specific city by ID
-  Future<void> fetchCityData(String? cityId) async {
-    if (cityId == null) {
-      emit(GetCityDataErrorState("City ID cannot be null."));
-      return;
-    }
-
+  void getDataForCity(String? cId) async {
     emit(GetCityDataLoadingState());
+    await FirebaseFirestore.instance
+        .collection('cities')
+        .doc(cId)
+        .get()
+        .then((value) {
+          cityModel = CityModel.fromFireStore(value.data()!);
+          emit(GetCityDataSuccessState());
+          if (kDebugMode) {
+            print(value.data());
+          }
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetCityDataErrorState(error.toString()));
+        });
+  }
 
-    try {
-      final cityDoc = await FirebaseFirestore.instance
-          .collection('cities')
-          .doc(cityId)
-          .get();
+  List<CityModel> city = [];
+  List<String> cId = [];
 
-      if (!cityDoc.exists || cityDoc.data() == null) {
-        throw Exception("City with ID '$cityId' not found.");
+  Future<void> getCityData() async {
+    FirebaseFirestore.instance.collection('cities').get().then((value) {
+      city = [];
+      for (var element in value.docs) {
+        city.add(CityModel.fromFireStore(element.data()));
+        cId.add(element.id);
+        //print("City Model = ${element.data()}");
       }
-
-      cityModel = CityModel.fromFireStore(cityDoc.data()!);
-      emit(GetCityDataSuccessState());
-    } catch (error) {
-      _handleCityDataError(error);
-    }
+    });
   }
 
-  // Handle errors while fetching city data
-  void _handleCityDataError(error) {
-    final errorMessage = "Failed to fetch city data: ${error.toString()}";
-    debugPrint(errorMessage);
-    emit(GetCityDataErrorState(errorMessage));
+  List<CityModel> cityEG = [];
+  List<String> cIdEG = [];
+
+  Future<void> getEGData() async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where("country", isEqualTo: 'Egypt')
+        .get()
+        .then((value) {
+          cityEG = [];
+          for (var element in value.docs) {
+            cityEG.add(CityModel.fromFireStore(element.data()));
+            cIdEG.add(element.id);
+          }
+        });
   }
 
-  // PlaceModel? placeModel;
+  List<CityModel> cityIT = [];
+  List<String> cIdIT = [];
 
-  // void getDataPlace(String? cId, String? pId) {
-  //   emit(GetPlaceDataLoadingState());
-  //   FirebaseFirestore.instance
-  //       .collection('cities')
-  //       .doc(cId)
-  //       .collection('places')
-  //       .doc(pId)
-  //       .get()
-  //       .then((value) {
-  //     placeModel = PlaceModel.fromJson(value.data()!);
-  //     emit(GetPlaceDataSuccessState());
-  //   }).catchError((error) {
-  //     debugPrint(error.toString());
-  //     emit(GetPlaceDataErrorState(error.toString()));
-  //   });
-  // }
+  Future<void> getITData() async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where("country", isEqualTo: "Italy")
+        .get()
+        .then((value) {
+          cityIT = [];
+          for (var element in value.docs) {
+            cityIT.add(CityModel.fromFireStore(element.data()));
+            cIdIT.add(element.id);
+          }
+        });
+  }
 
-  List<PlaceModel> place = [];
-  List<String> pId = [];
+  List<CityModel> cityFR = [];
+  List<String> cIdFR = [];
 
-  getDataPlaces(String? cId) {
+  Future<void> getFRData() async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where("country", isEqualTo: "France")
+        .get()
+        .then((value) {
+          cityFR = [];
+          for (var element in value.docs) {
+            cityFR.add(CityModel.fromFireStore(element.data()));
+            cIdFR.add(element.id);
+          }
+        });
+  }
+
+  List<CityModel> cityPopular = [];
+  List<String> cIdPopular = [];
+
+  Future<void> getPopularData() async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where("isPopular", isEqualTo: true)
+        .get()
+        .then((value) {
+          cityPopular = [];
+          for (var element in value.docs) {
+            cityPopular.add(CityModel.fromFireStore(element.data()));
+            cIdPopular.add(element.id);
+          }
+        });
+  }
+
+  List<CityModel> cityUAE = [];
+  List<String> cIdUAE = [];
+
+  Future<void> getUAEData() async {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .where("country", isEqualTo: "UAE")
+        .get()
+        .then((value) {
+          cityUAE = [];
+          for (var element in value.docs) {
+            cityUAE.add(CityModel.fromFireStore(element.data()));
+            cIdUAE.add(element.id);
+          }
+        });
+  }
+
+  PlaceModel? placeModel;
+
+  void getDataForPlace() {
+    emit(GetPlaceDataLoadingState());
+    FirebaseFirestore.instance
+        .collection('cities')
+        .doc('Abu Dhabi')
+        .collection('places')
+        .doc('Emirates National Auto Museum')
+        .get()
+        .then((value) {
+          placeModel = PlaceModel.fromFireStore(value.data()!);
+          emit(GetPlaceDataSuccessState());
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetPlaceDataErrorState(error.toString()));
+        });
+  }
+
+  void getDataPlace(String? cId, String? pId) {
     emit(GetPlaceDataLoadingState());
     FirebaseFirestore.instance
         .collection('cities')
         .doc(cId)
         .collection('places')
+        .doc(pId)
+        .get()
+        .then((value) {
+          placeModel = PlaceModel.fromFireStore(value.data()!);
+          emit(GetPlaceDataSuccessState());
+          if (kDebugMode) {
+            print(value.data());
+          }
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetPlaceDataErrorState(error.toString()));
+        });
+  }
+
+  List<PlaceModel> place = [];
+  List<String> pId = [];
+
+  void getDataPlaces(String? cId) {
+    FirebaseFirestore.instance
+        .collection('cities')
+        .doc(cId ?? 'Aswan')
+        .collection('places')
         .snapshots()
         .listen((value) async {
-      place = [];
-      for (var element in value.docs) {
-        place.add(PlaceModel.fromJson(element.data()));
-        pId.add(element.id);
-      }
-      emit(GetPlaceDataSuccessState());
-    });
+          place = [];
+          for (var element in value.docs) {
+            place.add(PlaceModel.fromFireStore(element.data()));
+            pId.add(element.id);
+          }
+        });
   }
 
   List<PlaceModel> popularPlace = [];
   List<String> popularPlaceId = [];
 
-  getPopularPlace(String? cId) async {
+  Future<void> getPopularPlace(String? cId) async {
     FirebaseFirestore.instance
         .collection('cities')
         .doc(cId ?? 'Aswan')
@@ -184,42 +306,40 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .where('isPopular', isEqualTo: true)
         .get()
         .then((value) {
-      popularPlace = [];
-      for (var element in value.docs) {
-        popularPlace.add(PlaceModel.fromJson(element.data()));
-        popularPlaceId.add(element.id);
-      }
-    });
+          popularPlace = [];
+          for (var element in value.docs) {
+            popularPlace.add(PlaceModel.fromFireStore(element.data()));
+            popularPlaceId.add(element.id);
+          }
+        });
   }
 
-  void deleteAccount(context) async {
-    await FirebaseAuth.instance.currentUser!.delete().then((value) async {
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(prefsKeyIsUserLoggedIn)
-          .delete();
-      // CacheHelper.removeData(key: 'prefsKeyIsUserLoggedIn');
-      // navigateAndFinish(context, routeName: OnBoard.routeName);
-    });
+  void deleteAccount(BuildContext context) async {
+    try {
+      await FirebaseAuth.instance.currentUser!.delete();
+      await FirebaseFirestore.instance.collection('users').doc(uId).delete();
+      await CacheHelper.removeData(key: 'uId');
+      if (!context.mounted) return;
+      navigateAndFinish(context, routeName: OnBoard.routeName);
+    } catch (e) {
+      debugPrint('Delete account error: $e');
+    }
   }
 
   List<CityModel> searchList = [];
   Map<String, dynamic>? search;
 
-  // Search for a city by name
   void searchCity(String searchText) {
     FirebaseFirestore.instance
         .collection('cities')
         .where('name', isEqualTo: searchText)
         .get()
         .then((value) {
-      search = value.docs.isNotEmpty ? value.docs[0].data() : null;
-    }).catchError((error) {
-      debugPrint('Error searching city: $error');
-    });
+          search = value.docs[0].data();
+        })
+        .catchError((error) {});
   }
 
-  // Handle profile image selection and cropping
   var picker = ImagePicker();
   File? profileImage;
 
@@ -230,111 +350,84 @@ class TripsoCubit extends Cubit<TripsoStates> {
       profileImage = await cropImage(imageFile: profileImage!);
       emit(GetProfileImagePickedSuccessState());
     } else {
-      emit(GetProfileImagePickedErrorState('No image selected'));
+      debugPrint('No image selected');
+      emit(GetProfileImagePickedErrorState());
     }
   }
 
-  // Crop the selected image
   Future<File?> cropImage({required File imageFile}) async {
-    CroppedFile? croppedImage =
-        await ImageCropper().cropImage(sourcePath: imageFile.path);
-    return croppedImage != null ? File(croppedImage.path) : null;
+    CroppedFile? croppedImage = await ImageCropper().cropImage(
+      sourcePath: imageFile.path,
+    );
+    if (croppedImage == null) return null;
+    return File(croppedImage.path);
   }
 
-  // Upload the selected profile image
-  Future<void> uploadProfileImage({
-    required File profileImage,
+  void uploadProfileImage({
     required String email,
     required String firstName,
     required String lastName,
     required String phone,
     String? address,
-  }) async {
-    try {
-      emit(UploadProfileImageLoadingState());
-
-      if (!_validateProfileImage(profileImage)) return;
-
-      final storageRef = firebase_storage.FirebaseStorage.instance.ref().child(
-          'userProfileImage/${Uri.file(profileImage.path).pathSegments.last}');
-      final uploadTask = storageRef.putFile(profileImage);
-      final snapshot = await uploadTask.whenComplete(() {});
-      final downloadUrl = await snapshot.ref.getDownloadURL();
-
-      updateUserData(
-          email: email,
-          firstName: firstName,
-          lastName: lastName,
-          phone: phone,
-          image: downloadUrl,
-          address: address);
-      emit(UploadProfileImageSuccessState());
-    } catch (e) {
-      emit(UploadProfileImageErrorState('Error uploading image: $e'));
-    }
+  }) {
+    emit(UpdateUserLoadingState());
+    firebase_storage.FirebaseStorage.instance
+        .ref()
+        .child(
+          'userProfileImage/${Uri.file(profileImage!.path).pathSegments.last}',
+        )
+        .putFile(profileImage!)
+        .then((value) {
+          value.ref
+              .getDownloadURL()
+              .then((value) {
+                updateUserData(
+                  email: email,
+                  phone: phone,
+                  firstName: firstName,
+                  lastName: lastName,
+                  image: value,
+                  address: address ?? '',
+                );
+              })
+              .catchError((error) {
+                emit(UploadProfileImageErrorState());
+              });
+        })
+        .catchError((error) {
+          emit(UploadProfileImageErrorState());
+        });
   }
 
-  // Validate the profile image (file size, type, etc.)
-  bool _validateProfileImage(File image) {
-    final allowedExtensions = ['jpg', 'jpeg', 'png'];
-    final fileExtension = image.path.split('.').last;
-
-    if (!allowedExtensions.contains(fileExtension)) {
-      emit(UploadProfileImageErrorState(
-          'Invalid file format. Allowed formats: jpg, jpeg, png'));
-      return false;
-    }
-
-    final fileSize = image.lengthSync();
-    if (fileSize > 5 * 1024 * 1024) {
-      emit(UploadProfileImageErrorState('File size exceeds the 5MB limit'));
-      return false;
-    }
-
-    return true;
-  }
-
-  // Update user data in Firebase
   void updateUserData({
     required String email,
     required String firstName,
     required String lastName,
     required String phone,
-    String? address,
     String? image,
+    String? address,
   }) {
-    if (!_isValidEmail(email)) {
-      emit(UpdateUserErrorState('Invalid email format'));
-      return;
-    }
-
-    try {
-      emit(UpdateUserLoadingState());
-      FirebaseFirestore.instance
-          .collection('users')
-          .doc(prefsKeyIsUserLoggedIn)
-          .update({
-        'email': email,
-        'firstName': firstName,
-        'lastName': lastName,
-        'phone': phone,
-        'image': image ?? userModel?.image,
-        'address': address ?? '',
-      }).then((_) {
-        emit(UpdateUserSuccessState());
-      }).catchError((error) {
-        emit(UpdateUserErrorState('Error updating user data: $error'));
-      });
-    } catch (e) {
-      emit(UpdateUserErrorState('Error: $e'));
-    }
-  }
-
-  // Validate email format using regular expression
-  bool _isValidEmail(String email) {
-    final emailRegExp =
-        RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
-    return emailRegExp.hasMatch(email);
+    emit(UpdateUserLoadingState());
+    UserModel model = UserModel(
+      email: email,
+      phone: phone,
+      image: image ?? userModel!.image,
+      uId: userModel!.uId,
+      firstName: firstName,
+      lastName: lastName,
+      address: address ?? '',
+    );
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(userModel!.uId)
+        .update(model.toFireStore())
+        .then((value) {
+          emit(UpdateUserSuccessState());
+          getUserData();
+        })
+        .catchError((error) {
+          emit(UpdateUserErrorState());
+        });
   }
 
   void addWishList({
@@ -362,54 +455,52 @@ class TripsoCubit extends Cubit<TripsoStates> {
       wishListIsPopular: wishListIsPopular,
       wishListAddress: wishListAddress,
       wishListRate: wishListRate,
-      uId: userModel?.uId ?? '',
+      uId: userModel!.uId,
     );
     FirebaseFirestore.instance
         .collection('wishList')
-        .doc(prefsKeyIsUserLoggedIn)
+        .doc(uId)
         .collection('yourWishList')
         .doc(wishListId)
         .set(model.toFireStore())
         .then((value) {
-      emit(AddToFavoriteSuccessState());
-    }).catchError((error) {
-      emit(AddToFavoriteErrorState(error.toString()));
-    });
+          emit(AddToFavoriteSuccessState());
+        })
+        .catchError((error) {
+          emit(AddToFavoriteErrorState(error.toString()));
+        });
   }
 
   List<WishListModel> wishList = [];
   WishListModel? wishListModel;
 
-  void getWishListData(
-    String? cId,
-    String? userID,
-  ) async {
+  void getWishListData(String? cId, String? userID) async {
     FirebaseFirestore.instance
         .collection("wishList")
-        .doc(prefsKeyIsUserLoggedIn)
+        .doc(uId)
         .collection("yourWishList")
         .where("wishListCityID", isEqualTo: cId)
         .snapshots()
         .listen((event) {
-      wishList = [];
-      for (var element in event.docs) {
-        if (element.data()['prefsKeyIsUserLoggedIn'] == userID) {
-          wishList.add(WishListModel.fromFireStore(element.data()));
-        }
-      }
-    });
+          wishList = [];
+          for (var element in event.docs) {
+            if (element.data()['uId'] == userID) {
+              wishList.add(WishListModel.fromFireStore(element.data()));
+            }
+          }
+        });
   }
 
-  deleteWishList(wishListId) {
+  void deleteWishList(String wishListId) {
     FirebaseFirestore.instance
         .collection("wishList")
-        .doc(prefsKeyIsUserLoggedIn)
+        .doc(uId)
         .collection("yourWishList")
         .doc(wishListId)
         .delete()
         .then((value) {
-      emit(UnFavoriteSuccessState());
-    });
+          emit(UnFavoriteSuccessState());
+        });
   }
 
   void addMyPlan({
@@ -440,95 +531,96 @@ class TripsoCubit extends Cubit<TripsoStates> {
       planAddress: planAddress,
       planRate: planRate,
       planCityID: planCityID,
-      uId: userModel?.uId ?? '',
+      uId: userModel!.uId,
       indexOfDays: indexOfDay,
       dateTime: dateTime,
     );
     FirebaseFirestore.instance
         .collection("customizePlan")
-        .doc(prefsKeyIsUserLoggedIn)
+        .doc(uId)
         .collection('Day$index')
         .doc(planId)
         .set(planModel.toFireStore())
         .then((value) {
-      emit(AddPlanSuccessState());
-    }).catchError((error) {
-      emit(AddPlanErrorState(error));
-    });
+          emit(AddPlanSuccessState());
+        })
+        .catchError((error) {
+          emit(AddPlanErrorState(error));
+        });
   }
 
   List<PlanModel> allPlan = [];
   PlanModel? allPlanModel;
 
-  void getMyAllPlan(
-    String? cId,
-    String? userID,
-    int indexOfMyPlan,
-  ) async {
+  void getMyAllPlan(String? cId, String? userID, int indexOfMyPlan) async {
     FirebaseFirestore.instance
         .collection("customizePlan")
-        .doc(prefsKeyIsUserLoggedIn)
+        .doc(uId)
         .collection("Day$indexOfMyPlan")
         .where('planCityID', isEqualTo: cId)
         .snapshots()
         .listen((event) {
-      allPlan = [];
-      for (var element in event.docs) {
-        if (element.data()['prefsKeyIsUserLoggedIn'] == userID) {
-          allPlan.add(PlanModel.fromFireStore(element.data()));
-        }
-      }
-    });
+          allPlan = [];
+          for (var element in event.docs) {
+            if (element.data()['uId'] == userID) {
+              allPlan.add(PlanModel.fromFireStore(element.data()));
+            }
+          }
+        });
   }
 
-  deleteMyPlan(myPlanId, int indexOfMyPlan) {
+  void deleteMyPlan(String myPlanId, int indexOfMyPlan) {
     FirebaseFirestore.instance
         .collection("customizePlan")
-        .doc(prefsKeyIsUserLoggedIn)
+        .doc(uId)
         .collection("Day$indexOfMyPlan")
         .doc(myPlanId)
         .delete()
         .then((value) {
-      emit(DeleteMyPlanSuccessState());
-    });
+          emit(DeleteMyPlanSuccessState());
+        });
   }
 
   List<BestPLanModel> bestPlan = [];
-  List<String> bestPlanIds = [];
+  List<String> bestPlanId = [];
 
-// Fetch all best plans for a given city ID
-  void fetchBestPlans(String? cityId) {
-    final String defaultCityId = 'Aswan';
-    final String selectedCityId = cityId ?? defaultCityId;
-
+  void getAllBestPlan(String? cId) {
     FirebaseFirestore.instance
         .collection('cities')
-        .doc(selectedCityId)
+        .doc(cId ?? 'Aswan')
         .collection('bestplan')
         .snapshots()
-        .listen((snapshot) {
-      _updateBestPlans(snapshot);
-    }, onError: (error) {
-      _handleBestPlanError(error);
-    });
-  }
-
-// Update the best plans list and IDs from snapshot
-  void _updateBestPlans(QuerySnapshot<Map<String, dynamic>> snapshot) {
-    bestPlan = snapshot.docs
-        .map((doc) => BestPLanModel.fromFireStore(doc.data()))
-        .toList();
-    bestPlanIds = snapshot.docs.map((doc) => doc.id).toList();
-    emit(TripsoStates.updated(bestPlans: bestPlan, bestPlanIds: bestPlanIds));
-  }
-
-// Handle errors during fetching best plans
-  void _handleBestPlanError(dynamic error) {
-    debugPrint("Error fetching best plans: $error");
-    emit(GetBestPlanErrorState("Failed to fetch best plans: $error"));
+        .listen((value) async {
+          bestPlan = [];
+          for (var element in value.docs) {
+            bestPlan.add(BestPLanModel.fromFireStore(element.data()));
+            bestPlanId.add(element.id);
+          }
+        });
   }
 
   BestPLanModel? bestPLanModel;
+
+  void getBestPlan() {
+    emit(GetBestPlanLoadingState());
+    FirebaseFirestore.instance
+        .collection('cities')
+        .doc('Abu Dhabi')
+        .collection('bestplan')
+        .doc('Abu Dhabi Fast Visit')
+        .get()
+        .then((value) {
+          bestPLanModel = BestPLanModel.fromFireStore(value.data()!);
+          emit(GetBestPlanSuccessState());
+          if (kDebugMode) {
+            //  print(value.data());
+          }
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetBestPlanErrorState(error.toString()));
+        });
+  }
 
   Best? best;
 
@@ -541,11 +633,36 @@ class TripsoCubit extends Cubit<TripsoStates> {
         .doc(pId)
         .get()
         .then((value) {
-      best = Best.fromFireStore(value.data()!);
-      emit(GetPlaceDataSuccessState());
-    }).catchError((error) {
-      debugPrint(error.toString());
-      emit(GetPlaceDataErrorState(error.toString()));
-    });
+          best = Best.fromFireStore(value.data()!);
+          emit(GetPlaceDataSuccessState());
+          if (kDebugMode) {
+            print(value.data());
+          }
+        })
+        .catchError((error) {
+          debugPrint(error.toString());
+          emit(GetPlaceDataErrorState(error.toString()));
+        });
   }
+
+  // void getMyPlan(
+  //   String? cId,
+  //   int indexOfMyPlan,
+  // ) async {
+  //   FirebaseFirestore.instance
+  //       .collection("cities")
+  //       .doc(cId)
+  //       .collection('bestplan')
+  //       .doc('Abu Dhabi Best Plan')
+  //       .collection('Day$indexOfMyPlan')
+  //       .where('planCityID', isEqualTo: cId)
+  //       .snapshots()
+  //       .listen((event) {
+  //     allPlan = [];
+  //     for (var element in event.docs) {
+  //       allPlan.add(PlanModel.fromFireStore(element.data()));
+  //       print(element.data());
+  //     }
+  //   });
+  // }
 }

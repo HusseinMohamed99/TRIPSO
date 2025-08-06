@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tripso/core/helpers/export_manager/export_manager.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
+import 'package:tripso/shared/styles/theme.dart';
 
 class MyDialog {
   static void showLoadingDialog(
@@ -27,12 +27,12 @@ class MyDialog {
                   message,
                   style: GoogleFonts.roboto(
                     textStyle: GoogleFonts.roboto(
-                      color: ColorsManager.blackPrimary,
+                      color: ThemeApp.blackPrimary,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                )
+                ),
               ],
             ),
           );
@@ -47,7 +47,7 @@ class MyDialog {
                 message,
                 style: GoogleFonts.roboto(
                   textStyle: GoogleFonts.roboto(
-                    color: ColorsManager.blackPrimary,
+                    color: ThemeApp.blackPrimary,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w700,
                   ),
@@ -72,7 +72,8 @@ class MyDialog {
   }) {
     List<Widget> actions = [];
     if (posActionTitle != null) {
-      actions.add(TextButton(
+      actions.add(
+        TextButton(
           onPressed: () {
             if (posAction != null) {
               posAction();
@@ -84,7 +85,9 @@ class MyDialog {
           child: Text(
             posActionTitle,
             style: GoogleFonts.roboto(fontSize: 15.sp),
-          )));
+          ),
+        ),
+      );
     }
     if (negActionTitle != null) {
       actions.add(
@@ -113,7 +116,7 @@ class MyDialog {
               message,
               style: GoogleFonts.roboto(
                 textStyle: GoogleFonts.roboto(
-                  color: ColorsManager.blackPrimary,
+                  color: ThemeApp.blackPrimary,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
                 ),
@@ -128,7 +131,7 @@ class MyDialog {
             message,
             style: GoogleFonts.roboto(
               textStyle: GoogleFonts.roboto(
-                color: ColorsManager.blackPrimary,
+                color: ThemeApp.blackPrimary,
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
               ),
@@ -141,7 +144,7 @@ class MyDialog {
     );
   }
 
-  static void hideDialog(context) {
+  static void hideDialog(BuildContext context) {
     pop(context);
   }
 
@@ -156,7 +159,8 @@ class MyDialog {
   }) {
     List<Widget> actions = [];
     if (posActionTitle != null) {
-      actions.add(TextButton(
+      actions.add(
+        TextButton(
           onPressed: () {
             if (posAction != null) {
               posAction();
@@ -168,7 +172,9 @@ class MyDialog {
           child: Text(
             posActionTitle,
             style: GoogleFonts.roboto(fontSize: 15.sp),
-          )));
+          ),
+        ),
+      );
     }
     if (negActionTitle != null) {
       actions.add(
@@ -192,16 +198,10 @@ class MyDialog {
       context: context,
       builder: (context) {
         if (Platform.operatingSystem == 'android') {
-          return AlertDialog(
-            content: widget,
-            actions: actions,
-          );
+          return AlertDialog(content: widget, actions: actions);
         }
 
-        return CupertinoAlertDialog(
-          content: widget,
-          actions: actions,
-        );
+        return CupertinoAlertDialog(content: widget, actions: actions);
       },
       barrierDismissible: false,
     );

@@ -1,120 +1,113 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+abstract class TripsoStates {}
 
-import '../../../model/best_plan_model.dart';
+class TripsoInitialState extends TripsoStates {}
 
-part 'tripso_state.freezed.dart';
+class GetUserDataLoadingState extends TripsoStates {}
 
-@freezed
-class TripsoStates with _$TripsoStates {
-  // Initial State
-  const factory TripsoStates.initial() = TripsoInitialState;
+class GetUserDataSuccessState extends TripsoStates {}
 
-  // **User Data**
-  const factory TripsoStates.getUserDataLoading() = GetUserDataLoadingState;
-  const factory TripsoStates.getUserDataSuccess() = GetUserDataSuccessState;
-  const factory TripsoStates.getUserDataError(String error) =
-      GetUserDataErrorState;
+class GetUserDataErrorState extends TripsoStates {
+  final String error;
 
-  // **Change User Password**
-  const factory TripsoStates.changeUserPasswordLoading() =
-      ChangeUserPasswordLoadingState;
-  const factory TripsoStates.changeUserPasswordSuccess() =
-      ChangeUserPasswordSuccessState;
-  const factory TripsoStates.changeUserPasswordError(String error) =
-      ChangeUserPasswordErrorState;
-
-  // **Password Visibility**
-  const factory TripsoStates.showPassword() = ShowPasswordState;
-
-  // **Bottom Navigation Bar**
-  const factory TripsoStates.changeBottomNavBar() = ChangeBottomNavBarState;
-
-  // **City Data**
-  const factory TripsoStates.getCityDataLoading() = GetCityDataLoadingState;
-  const factory TripsoStates.getCityDataSuccess() = GetCityDataSuccessState;
-  const factory TripsoStates.getCityDataError(String error) =
-      GetCityDataErrorState;
-
-  // **Place Data**
-  const factory TripsoStates.getPlaceDataLoading() = GetPlaceDataLoadingState;
-  const factory TripsoStates.getPlaceDataSuccess() = GetPlaceDataSuccessState;
-  const factory TripsoStates.getPlaceDataError(String error) =
-      GetPlaceDataErrorState;
-
-  // **Best Plan**
-  const factory TripsoStates.getBestPlanLoading() = GetBestPlanLoadingState;
-  const factory TripsoStates.getBestPlanSuccess() = GetBestPlanSuccessState;
-  const factory TripsoStates.getBestPlanError(String error) =
-      GetBestPlanErrorState;
-
-  const factory TripsoStates.updated({
-    required List<BestPLanModel> bestPlans,
-    required List<String> bestPlanIds,
-  }) = BestPlansUpdatedState;
-
-  // **Profile Image Picked**
-  const factory TripsoStates.getProfileImagePickedLoading() =
-      GetProfileImagePickedLoadingState;
-  const factory TripsoStates.getProfileImagePickedSuccess() =
-      GetProfileImagePickedSuccessState;
-  const factory TripsoStates.getProfileImagePickedError(String error) =
-      GetProfileImagePickedErrorState;
-
-  // **Cover Image Picked**
-  const factory TripsoStates.getCoverImagePickedLoading() =
-      GetCoverImagePickedLoadingState;
-  const factory TripsoStates.getCoverImagePickedSuccess() =
-      GetCoverImagePickedSuccessState;
-  const factory TripsoStates.getCoverImagePickedError(String error) =
-      GetCoverImagePickedErrorState;
-
-  // **Upload Profile Image**
-  const factory TripsoStates.uploadProfileImageLoading() =
-      UploadProfileImageLoadingState;
-  const factory TripsoStates.uploadProfileImageSuccess() =
-      UploadProfileImageSuccessState;
-  const factory TripsoStates.uploadProfileImageError(String error) =
-      UploadProfileImageErrorState;
-
-  // **Upload Cover Image**
-  const factory TripsoStates.uploadCoverImageLoading() =
-      UploadCoverImageLoadingState;
-  const factory TripsoStates.uploadCoverImageSuccess() =
-      UploadCoverImageSuccessState;
-  const factory TripsoStates.uploadCoverImageError(String error) =
-      UploadCoverImageErrorState;
-
-  // **Update User Data**
-  const factory TripsoStates.updateUserLoading() = UpdateUserLoadingState;
-  const factory TripsoStates.updateUserSuccess() = UpdateUserSuccessState;
-  const factory TripsoStates.updateUserError(String error) =
-      UpdateUserErrorState;
-
-  // **Add To Favorite**
-  const factory TripsoStates.addToFavoriteLoading() = AddToFavoriteLoadingState;
-  const factory TripsoStates.addToFavoriteSuccess() = AddToFavoriteSuccessState;
-  const factory TripsoStates.addToFavoriteError(String error) =
-      AddToFavoriteErrorState;
-
-  // **UnFavorite**
-  const factory TripsoStates.unFavoriteLoading() = UnFavoriteLoadingState;
-  const factory TripsoStates.unFavoriteSuccess() = UnFavoriteSuccessState;
-  const factory TripsoStates.unFavoriteError(String error) =
-      UnFavoriteErrorState;
-
-  // **Places Data**
-  const factory TripsoStates.getPlacesLoading() = GetPlacesLoadingState;
-  const factory TripsoStates.getPlacesSuccess() = GetPlacesSuccessState;
-  const factory TripsoStates.getPlacesError(String error) = GetPlacesErrorState;
-
-  // **Add Plan**
-  const factory TripsoStates.addPlanLoading() = AddPlanLoadingState;
-  const factory TripsoStates.addPlanSuccess() = AddPlanSuccessState;
-  const factory TripsoStates.addPlanError(String error) = AddPlanErrorState;
-
-  // **Delete My Plan**
-  const factory TripsoStates.deleteMyPlanLoading() = DeleteMyPlanLoadingState;
-  const factory TripsoStates.deleteMyPlanSuccess() = DeleteMyPlanSuccessState;
-  const factory TripsoStates.deleteMyPlanError(String error) =
-      DeleteMyPlanErrorState;
+  GetUserDataErrorState(this.error);
 }
+
+class ChangeUserPasswordLoadingState extends TripsoStates {}
+
+class ChangeUserPasswordSuccessState extends TripsoStates {}
+
+class ChangeUserPasswordErrorState extends TripsoStates {
+  final String error;
+
+  ChangeUserPasswordErrorState(this.error);
+}
+
+class ShowPasswordState extends TripsoStates {}
+
+class ChangeBottomNavBarState extends TripsoStates {}
+
+class GetCityDataLoadingState extends TripsoStates {}
+
+class GetCityDataSuccessState extends TripsoStates {}
+
+class GetCityDataErrorState extends TripsoStates {
+  final String error;
+
+  GetCityDataErrorState(this.error);
+}
+
+class GetPlaceDataLoadingState extends TripsoStates {}
+
+class GetPlaceDataSuccessState extends TripsoStates {}
+
+class GetPlaceDataErrorState extends TripsoStates {
+  final String error;
+
+  GetPlaceDataErrorState(this.error);
+}
+
+class GetBestPlanLoadingState extends TripsoStates {}
+
+class GetBestPlanSuccessState extends TripsoStates {}
+
+class GetBestPlanErrorState extends TripsoStates {
+  final String error;
+
+  GetBestPlanErrorState(this.error);
+}
+
+class GetProfileImagePickedSuccessState extends TripsoStates {}
+
+class GetProfileImagePickedErrorState extends TripsoStates {}
+
+class GetCoverImagePickedSuccessState extends TripsoStates {}
+
+class GetCoverImagePickedErrorState extends TripsoStates {}
+
+class UploadProfileImageSuccessState extends TripsoStates {}
+
+class UploadProfileImageErrorState extends TripsoStates {}
+
+class UploadCoverImageSuccessState extends TripsoStates {}
+
+class UploadCoverImageErrorState extends TripsoStates {}
+
+class UpdateUserLoadingState extends TripsoStates {}
+
+class UpdateUserSuccessState extends TripsoStates {}
+
+class UpdateUserErrorState extends TripsoStates {}
+
+class AddToFavoriteSuccessState extends TripsoStates {}
+
+class AddToFavoriteErrorState extends TripsoStates {
+  final String error;
+
+  AddToFavoriteErrorState(this.error);
+}
+
+class UnFavoriteSuccessState extends TripsoStates {}
+
+class UnFavoriteErrorState extends TripsoStates {
+  final String error;
+
+  UnFavoriteErrorState(this.error);
+}
+
+class GetPlacesSuccessState extends TripsoStates {}
+
+class GetPlacesErrorState extends TripsoStates {
+  final String error;
+
+  GetPlacesErrorState(this.error);
+}
+
+class AddPlanSuccessState extends TripsoStates {}
+
+class AddPlanErrorState extends TripsoStates {
+  final String error;
+
+  AddPlanErrorState(this.error);
+}
+
+class DeleteMyPlanSuccessState extends TripsoStates {}

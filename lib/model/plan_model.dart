@@ -34,23 +34,23 @@ class PlanModel {
   });
 
   PlanModel.fromFireStore(Map<String, dynamic> data)
-      : this(
-          uId: data['uId'],
-          planCityID: data['planCityID'],
-          planName: data['planName'],
-          planImage: data['planImage'],
-          planHistory: data['planHistory'],
-          planLocation: data['planLocation'],
-          planTimeOfDay: List.from(data['planTimeOfDay']),
-          planTickets: data['planTickets'],
-          planId: data['planId'],
-          planIsPopular: data['planIsPopular'],
-          planAddress: data['planAddress'],
-          planRate: data['planRate'],
-          planAdded: data['planAdded'],
-          indexOfDays: data['indexOfDays'],
-          dateTime: DateTime.fromMillisecondsSinceEpoch(data['dateTime']),
-        );
+    : this(
+        uId: data['uId'],
+        planCityID: data['planCityID'],
+        planName: data['planName'],
+        planImage: data['planImage'],
+        planHistory: data['planHistory'],
+        planLocation: data['planLocation'],
+        planTimeOfDay: List.from(data['planTimeOfDay']),
+        planTickets: data['planTickets'],
+        planId: data['planId'],
+        planIsPopular: data['planIsPopular'],
+        planAddress: data['planAddress'],
+        planRate: data['planRate'],
+        planAdded: data['planAdded'],
+        indexOfDays: data['indexOfDays'],
+        dateTime: DateTime.fromMillisecondsSinceEpoch(data['dateTime']),
+      );
 
   Map<String, dynamic> toFireStore() {
     return {

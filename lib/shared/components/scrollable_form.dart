@@ -8,12 +8,7 @@ class CustomScrollableForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      slivers: [
-        SliverFillRemaining(
-          hasScrollBody: false,
-          child: child,
-        )
-      ],
+      slivers: [SliverFillRemaining(hasScrollBody: false, child: child)],
     );
   }
 }

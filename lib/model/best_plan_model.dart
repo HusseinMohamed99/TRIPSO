@@ -17,17 +17,17 @@ class BestPLanModel {
   });
 
   BestPLanModel.fromFireStore(Map<String, dynamic> data)
-      : this(
-          city: data['city'],
-          country: data['country'],
-          name: data['name'],
-          // image: data['image'],
-          pId: data['pId'],
-          // days: List.from(
-          //   data['days'],
-          // ),
-          days: data['days'] is Iterable ? List.from(data['days']) : null,
-        );
+    : this(
+        city: data['city'],
+        country: data['country'],
+        name: data['name'],
+        // image: data['image'],
+        pId: data['pId'],
+        // days: List.from(
+        //   data['days'],
+        // ),
+        days: data['days'] is Iterable ? List.from(data['days']) : null,
+      );
 
   Map<String, dynamic> toFireStore() {
     return {
@@ -67,18 +67,16 @@ class Best {
   });
 
   Best.fromFireStore(Map data)
-      : name = data['name'],
-        image = data['image'],
-        history = data['history'],
-        location = data['location'],
-        timeOfDay = List.from(
-          data['timeOfDay'],
-        ),
-        tickets = data['tickets'],
-        pId = data['pId'],
-        isPopular = data['isPopular'],
-        address = data['address'],
-        rate = data['rate'];
+    : name = data['name'],
+      image = data['image'],
+      history = data['history'],
+      location = data['location'],
+      timeOfDay = List.from(data['timeOfDay']),
+      tickets = data['tickets'],
+      pId = data['pId'],
+      isPopular = data['isPopular'],
+      address = data['address'],
+      rate = data['rate'];
 
   Map<String, dynamic> toFireStore() {
     return {
