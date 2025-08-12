@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/responsive/responsive_font_size.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class CustomSearchBar extends StatelessWidget {
@@ -37,7 +39,7 @@ class CustomSearchBar extends StatelessWidget {
     return Card(
       elevation: 3,
       child: Container(
-        alignment: Alignment.bottomCenter,
+        alignment: Alignment.center,
         height: height ?? 40.h,
         width: width ?? 294.w,
         child: TextFormField(
@@ -72,6 +74,9 @@ class CustomSearchBar extends StatelessWidget {
               ),
             ),
             hintText: title ?? 'Search',
+            hintStyle: GoogleFonts.roboto(
+              fontSize: getResponsiveFontSize(context, fontSize: 22.sp),
+            ),
             prefixIcon:
                 iconData ??
                 Icon(

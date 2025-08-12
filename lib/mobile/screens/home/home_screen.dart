@@ -21,6 +21,7 @@ import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/constants/constants.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
+import 'package:tripso/shared/responsive/responsive_font_size.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/grid_city_items.dart';
@@ -141,7 +142,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                   Positioned(
                                     top: 15.h,
                                     right: 10.w,
-                                    child: InkWell(
+                                    child: GestureDetector(
                                       onTap: () {
                                         logOut(context);
                                       },
@@ -161,7 +162,10 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                           textAlign: TextAlign.center,
                                           'Log Out',
                                           style: GoogleFonts.roboto(
-                                            fontSize: 14.sp,
+                                            fontSize: getResponsiveFontSize(
+                                              context,
+                                              fontSize: 14.sp,
+                                            ),
                                             color: ThemeApp.secondaryColor,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -258,7 +262,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                                                   e,
                                                   style: Theme.of(
                                                     context,
-                                                  ).textTheme.displaySmall,
+                                                  ).textTheme.titleMedium,
                                                 ),
                                               ),
                                             );

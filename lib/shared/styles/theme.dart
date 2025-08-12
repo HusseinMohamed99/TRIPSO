@@ -25,31 +25,31 @@ class ThemeApp {
     ),
     textTheme: TextTheme(
       displayLarge: GoogleFonts.roboto(
-        fontSize: 36.sp,
+        fontSize: 30.sp,
         fontWeight: FontWeight.bold,
         color: blackPrimary,
       ),
       displayMedium: GoogleFonts.roboto(
-        fontSize: 30.sp,
+        fontSize: 28.sp,
         color: blackPrimary,
         fontWeight: FontWeight.bold,
       ),
       bodyLarge: GoogleFonts.roboto(
-        fontSize: 25.sp,
+        fontSize: 24.sp,
         color: blackPrimary,
         fontWeight: FontWeight.bold,
       ),
       bodyMedium: GoogleFonts.roboto(
-        fontSize: 22.sp,
+        fontSize: 20.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
       ),
       bodySmall: GoogleFonts.roboto(
-        fontSize: 20.sp,
+        fontSize: 18.sp,
         fontWeight: FontWeight.w500,
       ),
       displaySmall: GoogleFonts.roboto(
-        fontSize: 17.sp,
+        fontSize: 15.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
       ),
@@ -72,31 +72,31 @@ class ThemeApp {
     appBarTheme: const AppBarTheme(),
     textTheme: TextTheme(
       displayLarge: GoogleFonts.roboto(
-        fontSize: 36.sp,
+        fontSize: 30.sp,
         fontWeight: FontWeight.bold,
         color: blackPrimary,
       ),
       displayMedium: GoogleFonts.roboto(
-        fontSize: 30.sp,
+        fontSize: 28.sp,
         color: blackPrimary,
         fontWeight: FontWeight.bold,
       ),
       bodyLarge: GoogleFonts.roboto(
-        fontSize: 25.sp,
+        fontSize: 24.sp,
         color: blackPrimary,
         fontWeight: FontWeight.bold,
       ),
       bodyMedium: GoogleFonts.roboto(
-        fontSize: 22.sp,
+        fontSize: 20.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
       ),
       bodySmall: GoogleFonts.roboto(
-        fontSize: 20.sp,
+        fontSize: 18.sp,
         fontWeight: FontWeight.w500,
       ),
       displaySmall: GoogleFonts.roboto(
-        fontSize: 17.sp,
+        fontSize: 15.sp,
         color: blackPrimary,
         fontWeight: FontWeight.w500,
       ),

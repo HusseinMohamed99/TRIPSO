@@ -25,6 +25,7 @@ import 'package:tripso/shared/cubit/tripsoCubit/tripso_cubit.dart';
 import 'package:tripso/shared/cubit/tripsoCubit/tripso_state.dart';
 import 'package:tripso/shared/extensions/color_extension.dart';
 import 'package:tripso/shared/provider/weather_provider.dart';
+import 'package:tripso/shared/responsive/responsive_font_size.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
 import 'package:tripso/shared/widget/grid_item.dart';
@@ -197,7 +198,7 @@ class CityDetails extends StatelessWidget {
               '${weatherData.minTemp.toInt().toString()}°C / ${weatherData.maxTemp.toInt().toString()}°C',
               style: Theme.of(
                 context,
-              ).textTheme.titleMedium?.copyWith(color: ThemeApp.secondaryColor),
+              ).textTheme.titleSmall?.copyWith(color: ThemeApp.secondaryColor),
             ),
           ],
         ),
@@ -280,7 +281,7 @@ class RowWidget extends StatelessWidget {
                   ),
                   Text(
                     'Historical',
-                    style: Theme.of(context).textTheme.titleLarge,
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                 ],
               ),
@@ -321,7 +322,7 @@ class RowWidget extends StatelessWidget {
                   Text(
                     'Customize Plans',
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleLarge,
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                 ],
               ),
@@ -367,7 +368,7 @@ class RowWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text('Sights', style: Theme.of(context).textTheme.titleLarge),
+                  Text('Sights', style: Theme.of(context).textTheme.titleSmall),
                 ],
               ),
             ),
@@ -406,12 +407,12 @@ class PopularSightsWidget extends StatelessWidget {
                   Text(
                     'Popular Sights',
                     style: GoogleFonts.roboto(
-                      fontSize: 19.sp,
+                      fontSize: getResponsiveFontSize(context, fontSize: 16.sp),
                       color: ThemeApp.primaryColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  InkWell(
+                  GestureDetector(
                     onTap: () async {
                       TripsoCubit.get(context).getPopularPlace(cityModel.cId);
                       TripsoCubit.get(context).getDataPlaces(cityModel.cId);
@@ -432,9 +433,15 @@ class PopularSightsWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0).r,
                       child: Row(
                         children: [
-                          const Text(
+                          Text(
                             'See More',
-                            style: TextStyle(color: ThemeApp.primaryColor),
+                            style: TextStyle(
+                              color: ThemeApp.primaryColor,
+                              fontSize: getResponsiveFontSize(
+                                context,
+                                fontSize: 16.sp,
+                              ),
+                            ),
                           ),
                           Icon(
                             Icons.arrow_forward_ios,
@@ -492,7 +499,7 @@ class TopPlansWidget extends StatelessWidget {
                   Text(
                     'Top Plans',
                     style: GoogleFonts.roboto(
-                      fontSize: 19.sp,
+                      fontSize: getResponsiveFontSize(context, fontSize: 16.sp),
                       color: ThemeApp.primaryColor,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.5,
@@ -502,9 +509,15 @@ class TopPlansWidget extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0).r,
                     child: Row(
                       children: [
-                        const Text(
+                        Text(
                           'See More',
-                          style: TextStyle(color: ThemeApp.primaryColor),
+                          style: TextStyle(
+                            color: ThemeApp.primaryColor,
+                            fontSize: getResponsiveFontSize(
+                              context,
+                              fontSize: 16.sp,
+                            ),
+                          ),
                         ),
                         Icon(
                           Icons.arrow_forward_ios,
