@@ -9,6 +9,7 @@ import 'package:tripso/shared/components/buttons.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/extensions/color_extension.dart';
+import 'package:tripso/shared/responsive/responsive_font_size.dart';
 import 'package:tripso/shared/styles/asset_path.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
@@ -40,7 +41,7 @@ class OnBoard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Expanded(child: welcomeText()),
+                  Expanded(child: welcomeText(context)),
                   button(context),
                   Space(height: 50.h, width: 0.w),
                 ],
@@ -52,7 +53,7 @@ class OnBoard extends StatelessWidget {
     );
   }
 
-  Widget welcomeText() => Column(
+  Widget welcomeText(BuildContext context) => Column(
     mainAxisSize: MainAxisSize.min,
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +65,7 @@ class OnBoard extends StatelessWidget {
             textStyle: TextStyle(
               height: 1.h,
               color: ThemeApp.secondaryColor,
-              fontSize: 45.sp,
+              fontSize: getResponsiveFontSize(context, fontSize: 45.sp), 
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -79,7 +80,7 @@ class OnBoard extends StatelessWidget {
                 textStyle: TextStyle(
                   height: 1.h,
                   color: ThemeApp.secondaryColor,
-                  fontSize: 45.sp,
+                  fontSize: getResponsiveFontSize(context, fontSize: 45.sp),
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -92,7 +93,7 @@ class OnBoard extends StatelessWidget {
                 textStyle: TextStyle(
                   height: 1.h,
                   color: ThemeApp.primaryColor,
-                  fontSize: 45.sp,
+                  fontSize: getResponsiveFontSize(context, fontSize: 45.sp),
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -107,7 +108,7 @@ class OnBoard extends StatelessWidget {
             height: 1.h,
             textStyle: TextStyle(
               color: ThemeApp.primaryColor,
-              fontSize: 45.sp,
+              fontSize: getResponsiveFontSize(context, fontSize: 45.sp),
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -120,7 +121,7 @@ class OnBoard extends StatelessWidget {
             height: 1.h,
             textStyle: TextStyle(
               color: ThemeApp.secondaryColor,
-              fontSize: 45.sp,
+              fontSize: getResponsiveFontSize(context, fontSize: 45.sp),
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -132,6 +133,7 @@ class OnBoard extends StatelessWidget {
   Widget button(BuildContext context) => Column(
     children: [
       defaultMaterialButton(
+        context: context,
         function: () {
           navigateAndFinish(context, routeName: SignInScreen.routeName);
         },
@@ -140,6 +142,7 @@ class OnBoard extends StatelessWidget {
       ),
       Space(width: 0.w, height: 26.h),
       defaultMaterialButton(
+        context: context,
         function: () {
           navigateTo(context, routeName: SignUpScreen.routeName);
         },

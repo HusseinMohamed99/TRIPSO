@@ -205,6 +205,7 @@ class SignInScreen extends StatelessWidget {
                             children: [
                               Center(
                                 child: defaultMaterialButton(
+                                  context: context,
                                   function: () {
                                     if (formKey.currentState!.validate()) {
                                       SignInCubit.get(context).userSignIn(

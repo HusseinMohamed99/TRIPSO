@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tripso/shared/responsive/responsive_font_size.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 Widget defaultMaterialButton({
@@ -12,6 +13,7 @@ Widget defaultMaterialButton({
   bool isUpperCase = false,
   Color? color,
   Function? onTap,
+required  BuildContext context,
 }) => Container(
   width: width?.w ?? 320.w,
   height: height?.h ?? 40.h,
@@ -29,7 +31,7 @@ Widget defaultMaterialButton({
         textAlign: TextAlign.center,
         isUpperCase ? text.toUpperCase() : text,
         style: GoogleFonts.roboto(
-          fontSize: 19.sp,
+          fontSize: getResponsiveFontSize(context, fontSize: 19.sp),
           color: ThemeApp.secondaryColor,
           fontWeight: FontWeight.w500,
         ),

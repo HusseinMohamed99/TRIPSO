@@ -9,6 +9,7 @@ import 'package:tripso/shared/animation/fade_animation.dart';
 import 'package:tripso/shared/components/navigator.dart';
 import 'package:tripso/shared/components/sized_box.dart';
 import 'package:tripso/shared/network/cache_helper.dart';
+import 'package:tripso/shared/responsive/responsive_font_size.dart';
 import 'package:tripso/shared/styles/theme.dart';
 
 class PrefScreen extends StatefulWidget {
@@ -85,7 +86,7 @@ class _PrefScreenState extends State<PrefScreen> {
                     isLast ? '' : 'skip',
                     style: GoogleFonts.poppins(
                       color: ThemeApp.primaryColor,
-                      fontSize: 16.sp,
+                      fontSize: getResponsiveFontSize(context, fontSize: 16.sp),
                       fontWeight: FontWeight.w400,
                     ),
 
@@ -128,7 +129,7 @@ class _PrefScreenState extends State<PrefScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        InkWell(
+                        GestureDetector(
                           onTap: () {
                             if (isLast) {
                               submit();
@@ -161,7 +162,10 @@ class _PrefScreenState extends State<PrefScreen> {
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.poppins(
                                     color: Colors.white,
-                                    fontSize: 16.sp,
+                                    fontSize: getResponsiveFontSize(
+                                      context,
+                                      fontSize: 16.sp,
+                                    ),
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -211,7 +215,7 @@ class _PrefScreenState extends State<PrefScreen> {
             model.title,
             textAlign: TextAlign.center,
             style: GoogleFonts.poppins(
-              fontSize: 22.sp,
+              fontSize: getResponsiveFontSize(context, fontSize: 18.sp),
               color: ThemeApp.primaryColor,
               fontWeight: FontWeight.w500,
             ),
